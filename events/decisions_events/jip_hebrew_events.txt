@@ -131,6 +131,7 @@ jip_hebrew.0002 = {
 	}
 }
 
+# Canaan it up
 jip_hebrew.0010 = {
 	type = character_event
 	title = jip_hebrew.0010.t #change

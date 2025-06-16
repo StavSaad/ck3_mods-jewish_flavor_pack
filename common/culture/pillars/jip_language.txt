@@ -72,7 +72,7 @@ language_canaanite = {
 		}
 	}
 	
-	color = sephardi
+	color = canaanite
 }
 
 language_punic = {

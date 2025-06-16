@@ -3222,3 +3222,21 @@ e_canaan = {
 		}
 	}
 }
+
+k_carthage = {
+	color = { 191 220 255 }
+	capital = c_tunis # Tunis
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_canaanite }
+			}
+			add = @correct_culture_primary_score
+		}
+	}
+}

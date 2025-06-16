@@ -1,0 +1,5 @@
+﻿l_english:
+ bavlim_history_loc:0 "Formed from [CULTURE.GetName] and an unknown culture of $syriac_group$ [heritage|E] in the 6th century B.C."
+ hebrew_history_loc:0 "Formed from $canaanite_group$ [heritage|E] tribes a long time ago"
+ punic_history_loc:0 "Formed from $canaanite_group$ [heritage|E] traders and settlers a long time ago"
+ radhanite_history_loc:0 "Formed from [CULTURE.GetName] traders around the 8th century A.D."

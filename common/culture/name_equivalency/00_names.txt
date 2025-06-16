@@ -1,0 +1,9 @@
+﻿daniel_male = { Danail Danelu Daniel DaniE_l Danieli Daniil Danilo Daniyel Danyal Deiniol Deniel Taniel Danel }
+mikhabaal_male = { Mikhayahu Mikhabaal }
+adonibaal_male = { Adoniyah Adonibaal }
+amarbaal_male = { Amaryahu Amarbaal }
+anabaal_male = { Anabaal Anaiah }
+azazbaal_male = { Azazyahu Azazbaal }
+azarbaal_male = { Azaryah Azarbaal }
+chananbaal_male = { Chananyah Chananbaal }
+chizqibaal_male = { Chizqiyahu Chizqibaal }
