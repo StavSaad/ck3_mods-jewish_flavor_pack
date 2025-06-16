@@ -1,0 +1,131 @@
+ammonite = {
+	trigger = {
+		OR = {
+			capital_county = {
+				title:d_amman = {
+					is_de_jure_liege_or_above_target = prev
+				}
+			}
+			primary_title = title:c_balqa
+			primary_title = title:d_amman
+		}
+		culture = culture:hebrew
+	}
+}
+
+moabite = {
+	trigger = {
+		OR = {
+			primary_title = title:c_maab
+			capital_county = {
+				title:c_maab = {
+					is_de_jure_liege_or_above_target = prev
+				}
+			}
+		}
+		culture = culture:hebrew
+	}
+}
+
+edomite = {
+	trigger = {
+		OR = {
+			capital_county = {
+				title:d_oultrejourdain = {
+					is_de_jure_liege_or_above_target = prev
+				}
+			}
+			primary_title = title:c_kerak
+			primary_title = title:d_oultrejourdain
+		}
+		culture = culture:hebrew
+	}
+}
+
+galilean = {
+	trigger = {
+		OR = {
+			capital_county = {
+				title:d_urdunn = {
+					is_de_jure_liege_or_above_target = prev
+				}
+			}
+			primary_title = title:d_urdunn
+			primary_title = title:c_tiberias
+			primary_title = title:c_acre
+		}
+		culture = culture:hebrew
+	}
+}
+
+gileadite = {
+	trigger = {
+		OR = {
+			primary_title = title:c_irbid
+			capital_county = {
+				title:c_irbid = {
+					is_de_jure_liege_or_above_target = prev
+				}
+			}
+		}
+		culture = culture:hebrew
+	}
+}
+
+tzarfati = {
+	trigger = {
+		OR = {
+			capital_county = {
+				title:e_france = {
+					is_de_jure_liege_or_above_target = prev
+				}
+			}
+			has_primary_title = title:e_france
+		}
+		any_sub_realm_county = {
+			culture = { has_cultural_pillar = heritage_frankish }
+			title:e_france = {
+				is_de_jure_liege_or_above_target = prev
+			}
+		}
+		culture = { has_cultural_pillar = heritage_israelite }
+	}
+}
+
+italki = {
+	trigger = {
+		OR = {
+			capital_county = {
+				title:e_italy = {
+					is_de_jure_liege_or_above_target = prev
+				}
+			}
+			capital_county = {
+				title:k_sicily = {
+					is_de_jure_liege_or_above_target = prev
+				}
+			}
+			capital_county = {
+				title:k_trinacria = {
+					is_de_jure_liege_or_above_target = prev
+				}
+			}
+			has_primary_title = title:e_italy
+		}
+		any_sub_realm_county = {
+			culture = { has_cultural_pillar = heritage_latin }
+			OR = {
+				title:e_italy = {
+					is_de_jure_liege_or_above_target = prev
+				}
+				title:k_sicily = {
+					is_de_jure_liege_or_above_target = prev
+				}
+				title:k_trinacria = {
+					is_de_jure_liege_or_above_target = prev
+				}
+			}
+		}
+		culture = { has_cultural_pillar = heritage_israelite }
+	}
+}

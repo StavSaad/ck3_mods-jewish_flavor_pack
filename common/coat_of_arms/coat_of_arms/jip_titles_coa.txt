@@ -1,0 +1,41 @@
+e_canaan = {
+	pattern="pattern__solid_designer.dds"
+	color1=blue_light
+	color2=blue_light
+	color3=red
+	colored_emblem={
+		color1=yellow_light
+		color2=red
+		color3=black
+		texture="ce_lion_rampant_wide_stance.dds"
+		instance={
+			position={ 0.500000 0.550000 }
+			scale={ 0.660000 0.660000 }
+			depth=1.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=yellow
+		color2=yellow_light
+		color3=red
+		texture="ce_crancelin.dds"
+		instance={
+			position={ 0.500000 0.130000 }
+			rotation=135
+		}
+
+	}
+}
+
+k_phoenicia = {
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	colored_emblem = {
+		texture = "ce_tree.dds"
+		color1 = "yellow"
+		color2 = "yellow"
+	}
+}

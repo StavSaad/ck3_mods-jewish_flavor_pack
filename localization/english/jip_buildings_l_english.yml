@@ -1,0 +1,9 @@
+﻿l_english:
+ building_type_masada_01:1 "Masada"
+ building_type_masada_01_desc:0 "Abandoned after its fall to the Romans hundreds of years ago, Masada stands as nothing more then a shadow of its former self."
+ building_masada_01:0 "Ruins of Old Masada"
+ building_masada_01_desc:0 "$building_type_masada_01_desc$"
+ building_masada_02:0 "Restored Masadan Fortifications"
+ building_masada_02_desc:0 "The ancient fortress has been restored; the Roman battery, dismantled and dispersed. \n\nAtop natural walls of bedrock four hundred and fifty meters high, Masada stands rebuilt.\n\nAnd for all ages to come, as long as an Israelite sentry defends these walls, no one – not even a Roman legion – shall breach them."
+ building_masada_03:0 "Grand Fortifications of Masada"
+ building_masada_03_desc:0 "Restored according to the plans drafted by King Herod's architects, Masada contains an extensive garrison built to house a thousand men and thick walls that rise to meet the sky, all atop four hundred and fifty meters of raised bedrock.\n\nIts lavish palaces grant the residents a magnificent view of the Dead Sea."

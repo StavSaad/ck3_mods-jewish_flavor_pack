@@ -1,0 +1,115 @@
+﻿form_hebrew_decision_effects = {
+	#Covert self & court to hebrew culture
+	if = {
+		limit = { NOT = { has_culture = culture:hebrew } }
+
+		every_courtier = {
+			limit = { has_same_culture_as = scope:hebrew_former }
+			add_to_list = convert_list
+		}
+		#transfer over innovations from previous culture. 
+		culture:hebrew = {
+			reset_culture_creation_date = yes
+			get_all_innovations_from = scope:hebrew_former.culture
+		}
+		set_culture = culture:hebrew
+
+		every_in_list = {
+			list = convert_list
+			custom = hebrew_convert_list #This says "every subject in the realm" even though vassals and their courts only covert later, through event
+			set_culture = culture:hebrew
+		}
+	}
+
+	# Convert Israelite counties to Hebrew culture
+	every_sub_realm_county = {
+		limit = {
+			tier = tier_county
+			culture = { has_cultural_pillar = heritage_israelite }
+			OR = {
+				de_jure_liege = title:d_palestine
+				de_jure_liege = title:d_urdunn
+				de_jure_liege = title:d_oultrejourdain
+			}
+		}
+		custom = hebrew_convert_israelite_counties
+		set_county_culture = culture:hebrew
+	}
+	every_sub_realm_county = {
+		limit = {
+			tier = tier_county
+			NOT = { culture = { has_cultural_pillar = heritage_israelite } }
+			OR = {
+				de_jure_liege = title:d_palestine
+				de_jure_liege = title:d_urdunn
+				de_jure_liege = title:d_oultrejourdain
+			}
+		}
+		custom = hebrew_convert_non_israelite_counties
+		random = {
+			chance = 50
+			set_county_culture = culture:hebrew
+		}
+	}
+
+	#Innovations
+	culture:hebrew = {
+		add_random_innovation = culture_group_military
+		add_random_innovation = culture_group_civic
+	}
+
+	#fame
+	# This takes effect but scope doesn't work for the tooltip
+	scope:hebrew_former.dynasty = {
+		add_dynasty_prestige_level = 1	
+		add_dynasty_prestige = 250
+	}	
+}
+
+create_canaan_decision_effect = {
+	create_title_and_vassal_change = {
+			type = created
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+	if = {
+		limit = { has_title = title:k_jerusalem	}
+		title:k_jerusalem = { set_de_jure_liege_title = title:e_canaan }
+	}
+	if = {
+		limit = { has_title = title:k_israel }
+		title:k_israel = { set_de_jure_liege_title = title:e_canaan }
+	}
+	if = {
+		limit = { has_title = title:k_syria }
+		title:k_syria = { set_de_jure_liege_title = title:e_canaan }
+	}
+	if = {
+		limit = { has_title = title:k_phoenicia }
+		title:k_phoenicia = { set_de_jure_liege_title = title:e_canaan }
+	}
+	if = {
+		limit = { 
+			has_title = title:k_cyprus
+			completely_controls = title:k_cyprus
+		}
+		title:k_cyprus = { set_de_jure_liege_title = title:e_canaan }
+	}
+	if = {
+		limit = { 
+			has_title = title:k_jazira
+			completely_controls = title:k_jazira
+		}
+		title:k_jazira = { set_de_jure_liege_title = title:e_canaan }
+	}
+	title:e_canaan = {
+		change_title_holder = {
+			holder = root
+			change = scope:title_change
+		}
+	}
+	resolve_title_and_vassal_change = scope:title_change
+	dynasty = {
+		add_dynasty_prestige = 1000
+	}
+}

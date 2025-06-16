@@ -1,0 +1,5 @@
+﻿l_english:
+ nick_the_rising_lion: "the Rising Lion"
+ nick_the_rising_lion_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharAreIs(CHARACTER)] admired throughout the land for leading the resurgance of the land of Canaan"
+ nick_the_rising_lioness: "the Rising Lioness"
+ nick_the_rising_lioness_desc: "$nick_the_rising_lion_desc$"

@@ -1,0 +1,3 @@
+colors = {
+	canaanite = { 91 97 255 }
+}

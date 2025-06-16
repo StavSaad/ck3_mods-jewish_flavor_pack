@@ -1,0 +1,31 @@
+italki = {
+	trigger = {
+		scope:culture = culture:ashkenazi
+		scope:other_culture = {
+			has_cultural_pillar = heritage_latin
+		}
+		any_sub_realm_county = {
+			OR = {
+				culture = scope:culture
+				culture = scope:other_culture
+			}
+		}
+	}
+	hybrid = yes
+}
+
+tzarfati = {
+	trigger = {
+		scope:culture = culture:ashkenazi
+		scope:other_culture = {
+			has_cultural_pillar = heritage_frankish
+		}
+		any_sub_realm_county = {
+			OR = {
+				culture = scope:culture
+				culture = scope:other_culture
+			}
+		}
+	}
+	hybrid = yes
+}

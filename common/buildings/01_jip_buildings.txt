@@ -1,0 +1,217 @@
+﻿#################################
+# Fix Rebuilding the 3rd temple #
+#################################
+
+dome_of_the_rock_01 = {
+	effect_desc = {
+		triggered_desc = {
+			trigger = { has_dlc_feature = legends_of_the_dead }
+			desc = building_funeral_effect_desc
+		}
+	}
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_structure_dome_of_the_rock.dds"
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+	}
+	
+	is_enabled = {
+		custom_description = {
+			text = holy_site_building_trigger
+			barony = {
+				is_holy_site_of = scope:holder.faith
+			}
+		}
+	}
+	
+	show_disabled = yes
+	
+	cost_gold = 1000
+
+	character_modifier = {
+		monthly_piety_gain_per_knight_mult = 0.03
+		monthly_dynasty_prestige_mult = 0.05
+		monthly_county_control_growth_factor = 0.1
+		martial_per_piety_level = 1
+		knight_effectiveness_mult = 0.2
+	}
+	
+	county_modifier = {
+		tax_mult = 0.3
+		development_growth_factor = 0.3
+		development_growth = 0.3
+	}
+	
+	province_modifier = {
+		monthly_income = 3
+	}
+	
+	ai_value = {
+		base = 100
+		modifier = { # Fill all building slots before going for special buildings
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+	
+	next_building = temple_in_jerusalem_01
+	
+	type = special
+
+	flag = travel_point_of_interest_religious
+}
+
+##########
+# OLD MASADA
+##########
+
+masada_01 = {
+
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_structure_mesada_1.dds"
+	
+	can_construct_potential = {
+		barony = title:b_zughar
+		building_requirement_tribal = no
+	}
+	
+	cost_gold = 1000
+
+	max_garrison = 50
+
+	province_modifier = {
+		defender_holding_advantage = normal_building_advantage_tier_1
+		travel_danger = -10
+	}
+	county_modifier = {
+		hostile_raid_time = 0.5
+	}
+	character_modifier = {
+		martial = 1
+		monthly_dynasty_prestige_mult = 0.01
+	}
+	
+	ai_value = {
+		base = 100
+		culture_likely_to_fortify_modifier = yes
+	}
+	
+	next_building = masada_02
+	
+	type = special
+}
+
+masada_02 = {
+
+	asset = {
+		type = pdxmesh
+		name = "fp3_building_special_alamut_castle_01_a_mesh"
+	}
+
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_structure_mesada_2.dds"
+	
+	can_construct_potential = {
+		barony = title:b_zughar
+		building_requirement_tribal = no
+	}
+	
+	can_construct = {
+		scope:holder = {
+			culture = { has_cultural_pillar = heritage_israelite }
+		}
+	}
+	
+	cost_gold = 750
+
+	max_garrison = 300
+
+	province_modifier = {
+		defender_holding_advantage = normal_building_advantage_tier_1
+		fort_level = 2
+		garrison_size = 0.3
+		travel_danger = -20
+	}
+	county_modifier = {
+		development_growth = 0.1
+		development_growth_factor = 0.05
+		levy_size = 1.5
+		hostile_raid_time = 0.5
+	}
+	character_modifier = {
+		martial_per_prestige_level = 1
+		martial = 2
+		knight_limit = 1
+		knight_effectiveness_mult = 0.2
+		monthly_dynasty_prestige_mult = 0.02
+	}
+	
+	ai_value = {
+		base = 100
+		culture_likely_to_fortify_modifier = yes
+	}
+	
+	next_building = masada_03
+	
+	type = special
+}
+
+masada_03 = {
+
+	asset = {
+		type = pdxmesh
+		name = "fp3_building_special_alamut_castle_01_a_mesh"
+	}
+
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_structure_mesada_2.dds"
+	
+	can_construct_potential = {
+		barony = title:b_zughar
+		building_requirement_tribal = no
+	}
+	
+	can_construct = {
+		scope:holder = {
+			culture = { has_cultural_pillar = heritage_israelite }
+		}
+	}
+	
+	cost_gold = 1000
+	cost_prestige = 500
+
+	max_garrison = 1000
+
+	province_modifier = {
+		defender_holding_advantage = normal_building_advantage_tier_2
+		fort_level = 5
+		garrison_size = 1
+		travel_danger = -50
+	}
+	county_modifier = {
+		development_growth = 0.25
+		development_growth_factor = 0.1
+		levy_size = 2.5
+		hostile_raid_time = 0.7
+	}
+	character_modifier = {
+		martial_per_prestige_level = 1
+		diplo_per_prestige_level = 1
+		martial = 2
+		knight_limit = 2
+		knight_effectiveness_mult = 0.25
+		monthly_dynasty_prestige_mult = 0.05
+	}
+	
+	ai_value = {
+		base = 100
+		culture_likely_to_fortify_modifier = yes
+	}
+	
+	type = special
+}

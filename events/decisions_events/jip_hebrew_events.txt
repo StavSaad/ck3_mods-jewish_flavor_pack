@@ -1,0 +1,183 @@
+﻿namespace = jip_hebrew
+
+#decision_form_hebrew events
+#0001	- Tell founder about hebrew
+#0002	- Tell everyone in diplo range about hebrew (and convert people in israel to hebrew culture)
+
+#I revived the Hebrew culture!
+jip_hebrew.0001 = {
+	type = character_event
+	title = jip_hebrew.0001.t #change
+	desc = {
+		desc = jip_hebrew.0001.start.desc #change
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					game_start_date >= 789.1.1 #The end of Umayyad Conquest
+				}
+				desc = jip_hebrew.0001.jewish.desc #Jewish good desc
+			}
+		}
+		desc = jip_hebrew.0001.end.desc
+	}
+	theme = culture_change
+	left_portrait = {
+		character = scope:hebrew_former
+		animation = personality_honorable
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_positive_effect"
+		form_hebrew_decision_effects = yes #Title changes, prestige, culture swap
+	}
+
+	option = {
+		name = jip_hebrew.0001.a
+		set_nickname_effect = { NICKNAME = nick_the_sage }
+	}
+}
+
+scripted_trigger jip_hebrew_0002_is_in_israel_trigger = {
+	capital_province = {
+		county = {
+			any_this_title_or_de_jure_above = {
+				this = title:k_israel
+			}
+		}
+	}
+}
+
+#Someone reformed Hebrew culture!
+jip_hebrew.0002 = {
+	type = character_event
+	title = jip_hebrew.0001.t
+	desc = {
+		desc = jip_hebrew.0002.start.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_RelationToMe_relation = { CHARACTER = scope:hebrew_former }
+				}
+				desc = jip_hebrew.0002.relation_former.desc
+			}
+			desc = jip_hebrew.0002.former.desc
+		}	
+		desc = jip_hebrew.0002.end.desc		
+	}
+	theme = culture_change
+	left_portrait = {
+		character = scope:hebrew_former
+		animation = admiration
+	}
+
+	immediate = {
+		#If in israel, play the appropriate sound effect.
+		if = {
+			limit = { jip_hebrew_0002_is_in_israel_trigger = yes }
+			play_music_cue = "mx_cue_positive_effect"
+		}
+	}
+
+	#OK
+	option = {
+		trigger = { jip_hebrew_0002_is_in_israel_trigger = no }
+		name = {
+			trigger = { faith = scope:hebrew_former.faith }
+			text = jip_hebrew.0002.a1
+		}
+		name = {
+			trigger = { NOT = { faith = scope:hebrew_former.faith } }
+			text = name_i_see
+		}
+	}
+
+	#Convert to Hebrew
+	option = {
+		trigger = { jip_hebrew_0002_is_in_israel_trigger = yes }
+		name = jip_hebrew.0002.b
+
+		every_courtier = {
+			limit = { has_same_culture_as = root }
+			add_to_list = convert_list
+		}
+
+		set_culture = culture:hebrew
+
+		every_in_list = {
+			list = convert_list
+			custom = hebrew_convert_list_court
+			set_culture = culture:hebrew
+		}
+
+		ai_chance = {
+			base = 1
+		}
+	}
+
+	#Keep my culture
+	option = {
+		trigger = { jip_hebrew_0002_is_in_israel_trigger = yes }
+		name = jip_hebrew.0002.c
+
+		reverse_add_opinion = {
+			target = scope:hebrew_former
+			modifier = disappointed_opinion
+			opinion = -15
+		}
+
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+jip_hebrew.0010 = {
+	type = character_event
+	title = jip_hebrew.0010.t #change
+	desc = {
+		desc = jip_hebrew.0010.start.desc #change
+		desc = jip_hebrew.0010.end.desc
+	}
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = ecstasy
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_positive_effect"
+		create_canaan_decision_effect = yes
+		if = {
+			limit = { is_male = yes }
+			give_nickname = nick_the_rising_lion
+		}
+		if = {
+			limit = { is_female = yes }
+			give_nickname = nick_the_rising_lioness
+		}
+	}
+
+	# Jerusalem option
+	option = {
+		name = jip_hebrew.0010.a
+		title:e_canaan = {
+			set_capital_county = title:c_jerusalem
+		}
+	}
+
+	# Beirut option
+	option = {
+		name = jip_hebrew.0010.b
+		title:e_canaan = {
+			set_capital_county = title:c_beirut
+		}
+	}
+
+	# Antioch option
+	option = {
+		name = jip_hebrew.0010.c
+		title:e_canaan = {
+			set_capital_county = title:c_antiocheia
+		}
+	}
+}

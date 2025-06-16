@@ -1,0 +1,62 @@
+on_title_gain = {
+	effect = {
+		if = {
+			# Rename judea to Samaria
+			limit = {
+				scope:title = title:d_palestine
+				root.faith = faith:samaritan
+			}
+			scope:title = {
+				set_title_name = cn_samaria
+			}
+		}
+		if = {
+			# Rename judea to Samaria
+			limit = {
+				scope:title = title:d_palestine
+				root.religion = religion:judaism_religion
+				NOT = {
+					root.faith = faith:samaritan
+				}
+			}
+			scope:title = {
+				set_title_name = cn_judea
+			}
+		}
+	}
+}
+
+on_character_faith_change = {
+
+	effect = {
+		if = {
+			# Rename judea to Samaria
+			limit = {
+				root = {
+					has_title = title:d_palestine
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						faith = faith:samaritan
+					}
+				}
+				title:d_palestine = {
+					set_title_name = cn_samaria
+				}
+			}
+			else_if = {
+				limit = { 
+					root = {
+						religion = religion:judaism_religion
+					}
+				}
+				title:d_palestine = {
+					set_title_name = cn_judea
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,11 @@
+heritage_canaanite = {
+	type = heritage
+	is_shown = {
+		OR = {
+			heritage_is_shown_trigger = {
+				HERITAGE = heritage_canaanite
+			}
+		}
+	}
+	audio_parameter = european
+}
