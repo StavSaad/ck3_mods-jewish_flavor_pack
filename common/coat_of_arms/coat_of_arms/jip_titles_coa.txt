@@ -30,14 +30,57 @@ e_canaan = {
 }
 
 k_phoenicia = {
-	pattern = "pattern_solid.dds"
-	color1 = "blue"
-	color2 = "yellow"
-	colored_emblem = {
-		texture = "ce_tree.dds"
-		color1 = "yellow"
-		color2 = "yellow"
+	pattern="pattern__solid_designer.dds"
+	color1=purple
+	color2=white
+	color3=red
+
+	colored_emblem={
+		color1=white
+		texture="ce_annulet.dds"
+		instance={
+			position={ 0.500000 0.320000 }
+			scale={ 0.290000 0.290000 }
+		}
+
 	}
+
+	colored_emblem={
+		color1=white
+		texture="ce_block_05.dds"
+		instance={
+			position={ 0.680000 0.360000 }
+			scale={ 1.000000 0.120000 }
+			depth=1.010000
+			rotation=90
+		}
+
+		instance={
+			position={ 0.310000 0.360000 }
+			scale={ 1.000000 0.120000 }
+			depth=2.010000
+			rotation=90
+		}
+
+		instance={
+			position={ 0.500000 0.400000 }
+			scale={ 0.410000 1.000000 }
+			depth=3.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=white
+		texture="ce_african_ja_ir.dds"
+		instance={
+			position={ 0.500000 0.630000 }
+			scale={ 0.650000 0.650000 }
+			depth=4.010000
+		}
+
+	}
+
 }
 
 k_carthage = {
