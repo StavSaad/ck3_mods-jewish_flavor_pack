@@ -113,3 +113,45 @@ create_canaan_decision_effect = {
 		add_dynasty_prestige = 1000
 	}
 }
+
+reestablish_canaanite_city_effect = {
+	custom_description = {
+		text = reestablish_canaanite_city_decision_effect
+		create_character = {
+			random_traits = yes
+			culture = culture:canaanite # Replace with your desired culture ID
+			faith = root.faith
+			location = root.location
+			save_scope_as = new_owner
+		}
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		$COUNTY$ = {
+			change_title_holder = {
+				holder = scope:new_owner
+				change = scope:change
+				take_baronies = yes
+			}
+		}
+		resolve_title_and_vassal_change = scope:change
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						culture = { has_cultural_pillar = heritage_canaanite }
+					}
+				}
+			}
+			$COUNTY$ = {
+				set_county_culture = culture:canaanite
+			}
+		}
+		$BARONY$ = { set_capital_barony = yes }
+		scope:new_owner = {
+			change_government = republic_government
+		}
+	}
+}

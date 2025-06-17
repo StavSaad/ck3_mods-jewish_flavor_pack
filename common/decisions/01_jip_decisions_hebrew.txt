@@ -376,3 +376,114 @@ create_e_canaan_decision = {
 		base = 100
 	}
 }
+
+reestablish_canaanite_city_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	ai_check_interval = 60
+	desc = reestablish_canaanite_city_decision_desc
+	decision_group_type = major
+
+	is_shown = {
+		always = no
+		OR = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			culture = { has_cultural_pillar = heritage_syriac }
+			culture = { has_cultural_pillar = heritage_canaanite }
+		}
+		OR = {
+			has_title = title:c_acre
+			has_title = title:c_beirut
+			has_title = title:c_tripoli
+		}
+	}
+
+	is_valid = {
+		prestige_level >= high_prestige_level
+		highest_held_title_tier >= tier_duchy
+
+		
+	}
+
+	widget = {
+		gui = "decision_view_widget_option_list_generic"
+		controller = decision_option_list_controller
+		decision_to_second_step_button = "CHOOSE_CITY"
+		show_from_start = yes
+
+		item = { # acre / tyre
+			value = acre
+			is_shown = {
+				has_title = title:c_acre
+			}
+			is_valid = {
+				has_title = title:c_acre
+				completely_controls = title:c_acre
+			}
+			current_description = canaanite_city_acre_desc
+			localization = canaanite_city_acre_desc
+			icon = "gfx/interface/icons/barony_crown.dds"
+			ai_chance = { value = 10 }
+		}
+		item = { # beirut / sidon
+			value = beirut
+			is_shown = {
+				has_title = title:c_beirut
+			}
+			is_valid = {
+				has_title = title:c_beirut
+				completely_controls = title:c_beirut
+			}
+			current_description = canaanite_city_beirut_desc
+			localization = canaanite_city_beirut_desc
+			icon = "gfx/interface/icons/barony_crown.dds"
+			ai_chance = { value = 10 }
+		}
+		item = { # tripoli
+			value = tripoli
+			is_shown = {
+				has_title = title:c_tripoli
+			}
+			is_valid = {
+				has_title = title:c_tripoli
+				completely_controls = title:c_tripoli
+			}
+			current_description = canaanite_city_tripoli_desc
+			localization = canaanite_city_tripoli_desc
+			icon = "gfx/interface/icons/barony_crown.dds"
+			ai_chance = { value = 10 }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	effect = {
+		if = {
+			limit = { scope:acre = yes }
+			reestablish_canaanite_city_effect = { COUNTY = title:c_acre BARONY = title:b_tyre }
+		}
+		if = {
+			limit = { scope:beirut = yes }
+			reestablish_canaanite_city_effect = { COUNTY = title:c_beirut BARONY = title:b_saida }
+		}
+		if = {
+			limit = { scope:tripoli = yes }
+			reestablish_canaanite_city_effect = { COUNTY = title:c_tripoli BARONY = title:b_antartus }
+		}
+	}
+
+	cost = { prestige = { value = 250 } }
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+
+}
