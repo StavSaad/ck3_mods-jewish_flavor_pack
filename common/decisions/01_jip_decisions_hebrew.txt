@@ -386,7 +386,6 @@ reestablish_canaanite_city_decision = {
 	decision_group_type = major
 
 	is_shown = {
-		always = no
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
 			culture = { has_cultural_pillar = heritage_syriac }
@@ -402,8 +401,6 @@ reestablish_canaanite_city_decision = {
 	is_valid = {
 		prestige_level >= high_prestige_level
 		highest_held_title_tier >= tier_duchy
-
-		
 	}
 
 	widget = {
@@ -420,6 +417,9 @@ reestablish_canaanite_city_decision = {
 			is_valid = {
 				has_title = title:c_acre
 				completely_controls = title:c_acre
+				NOT = {
+					capital_county = title:c_acre
+				}
 			}
 			current_description = canaanite_city_acre_desc
 			localization = canaanite_city_acre_desc
@@ -434,6 +434,9 @@ reestablish_canaanite_city_decision = {
 			is_valid = {
 				has_title = title:c_beirut
 				completely_controls = title:c_beirut
+				NOT = {
+					capital_county = title:c_beirut
+				}
 			}
 			current_description = canaanite_city_beirut_desc
 			localization = canaanite_city_beirut_desc
@@ -448,6 +451,9 @@ reestablish_canaanite_city_decision = {
 			is_valid = {
 				has_title = title:c_tripoli
 				completely_controls = title:c_tripoli
+				NOT = {
+					capital_county = title:c_tripoli
+				}
 			}
 			current_description = canaanite_city_tripoli_desc
 			localization = canaanite_city_tripoli_desc
@@ -464,15 +470,15 @@ reestablish_canaanite_city_decision = {
 	effect = {
 		if = {
 			limit = { scope:acre = yes }
-			reestablish_canaanite_city_effect = { COUNTY = title:c_acre BARONY = title:b_tyre }
+			reestablish_canaanite_city_effect = { COUNTY = c_acre BARONY = b_tyre }
 		}
 		if = {
 			limit = { scope:beirut = yes }
-			reestablish_canaanite_city_effect = { COUNTY = title:c_beirut BARONY = title:b_saida }
+			reestablish_canaanite_city_effect = { COUNTY = c_beirut BARONY = b_saida }
 		}
 		if = {
 			limit = { scope:tripoli = yes }
-			reestablish_canaanite_city_effect = { COUNTY = title:c_tripoli BARONY = title:b_antartus }
+			reestablish_canaanite_city_effect = { COUNTY = c_tripoli BARONY = b_antartus }
 		}
 	}
 

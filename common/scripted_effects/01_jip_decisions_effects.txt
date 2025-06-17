@@ -1,4 +1,17 @@
-﻿form_hebrew_decision_effects = {
+﻿handle_maa_traditions_for_hebrew = {
+	if = {
+		limit = {
+			scope:hebrew_former.culture = {
+				has_cultural_tradition = tradition_$TRADITION$
+			}
+		}
+		culture:hebrew = {
+			add_culture_tradition = tradition_$TRADITION$
+		}
+	}
+}
+
+form_hebrew_decision_effects = {
 	#Covert self & court to hebrew culture
 	if = {
 		limit = { NOT = { has_culture = culture:hebrew } }
@@ -11,6 +24,35 @@
 		culture:hebrew = {
 			reset_culture_creation_date = yes
 			get_all_innovations_from = scope:hebrew_former.culture
+			handle_maa_traditions_for_hebrew = { TRADITION = futuwaa }
+			handle_maa_traditions_for_hebrew = { TRADITION = mubarizuns }
+			handle_maa_traditions_for_hebrew = { TRADITION = desert_ribat }
+			handle_maa_traditions_for_hebrew = { TRADITION = druzhina }
+			handle_maa_traditions_for_hebrew = { TRADITION = hussar }
+			handle_maa_traditions_for_hebrew = { TRADITION = horn_mountain_skirmishing }
+			handle_maa_traditions_for_hebrew = { TRADITION = bush_hunting }
+			handle_maa_traditions_for_hebrew = { TRADITION = mobile_guards }
+			handle_maa_traditions_for_hebrew = { TRADITION = khadga_puja }
+			handle_maa_traditions_for_hebrew = { TRADITION = garuda_warriors }
+			handle_maa_traditions_for_hebrew = { TRADITION = burman_royal_army }
+			handle_maa_traditions_for_hebrew = { TRADITION = mountain_herding }
+			handle_maa_traditions_for_hebrew = { TRADITION = forest_wardens }
+			handle_maa_traditions_for_hebrew = { TRADITION = upland_skirmishing }
+			handle_maa_traditions_for_hebrew = { TRADITION = strong_kinship }
+			handle_maa_traditions_for_hebrew = { TRADITION = amharic_highlanders }
+			handle_maa_traditions_for_hebrew = { TRADITION = polders }
+			handle_maa_traditions_for_hebrew = { TRADITION = caucasian_wolves }
+			handle_maa_traditions_for_hebrew = { TRADITION = hird }
+			handle_maa_traditions_for_hebrew = { TRADITION = chanson_de_geste }
+			handle_maa_traditions_for_hebrew = { TRADITION = fp1_coastal_warriors }
+			handle_maa_traditions_for_hebrew = { TRADITION = fp3_frontier_warriors }
+			handle_maa_traditions_for_hebrew = { TRADITION = ep3_indomitable_azatani }
+			handle_maa_traditions_for_hebrew = { TRADITION = ep3_audacious_cadets }
+			handle_maa_traditions_for_hebrew = { TRADITION = ep3_imperial_tagmata }
+			handle_maa_traditions_for_hebrew = { TRADITION = mpo_iron_cavalry }
+			handle_maa_traditions_for_hebrew = { TRADITION = mpo_wolves_of_the_deep_steppe }
+			handle_maa_traditions_for_hebrew = { TRADITION = devoted_horsemanship }
+			handle_maa_traditions_for_hebrew = { TRADITION = mpo_northern_tribes }
 		}
 		set_culture = culture:hebrew
 
@@ -115,43 +157,40 @@ create_canaan_decision_effect = {
 }
 
 reestablish_canaanite_city_effect = {
-	custom_description = {
-		text = reestablish_canaanite_city_decision_effect
-		create_character = {
-			random_traits = yes
-			culture = culture:canaanite # Replace with your desired culture ID
-			faith = root.faith
-			location = root.location
-			save_scope_as = new_owner
+	create_character = {
+		random_traits = yes
+		culture = culture:canaanite
+		faith = root.faith
+		location = root.location
+		save_scope_as = new_owner
+	}
+	create_title_and_vassal_change = {
+		type = granted
+		save_scope_as = change
+		add_claim_on_loss = no
+	}
+	title:$COUNTY$ = {
+		change_title_holder = {
+			holder = scope:new_owner
+			change = scope:change
+			take_baronies = yes
 		}
-		create_title_and_vassal_change = {
-			type = granted
-			save_scope_as = change
-			add_claim_on_loss = no
-		}
-		$COUNTY$ = {
-			change_title_holder = {
-				holder = scope:new_owner
-				change = scope:change
-				take_baronies = yes
-			}
-		}
-		resolve_title_and_vassal_change = scope:change
-		if = {
-			limit = {
-				NOT = {
-					OR = {
-						culture = { has_cultural_pillar = heritage_canaanite }
-					}
+	}
+	resolve_title_and_vassal_change = scope:change
+	scope:new_owner = {
+		change_government = republic_government
+	}
+	title:$BARONY$ = { set_capital_barony = yes }
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					culture = { has_cultural_pillar = heritage_canaanite }
 				}
 			}
-			$COUNTY$ = {
-				set_county_culture = culture:canaanite
-			}
 		}
-		$BARONY$ = { set_capital_barony = yes }
-		scope:new_owner = {
-			change_government = republic_government
+		title:$COUNTY$ = {
+			set_county_culture = culture:canaanite
 		}
 	}
 }
