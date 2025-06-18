@@ -105,7 +105,16 @@ expand_israel_decision = {
 
 	is_shown = {
 		culture = { has_cultural_pillar = heritage_israelite }
-		primary_title = title:k_israel
+		OR = {
+			has_primary_title = title:k_israel
+			AND = {
+				highest_held_title_tier = tier_empire
+				has_title = title:k_israel
+				primary_title = {
+					is_de_facto_liege_or_above_target = title:k_israel
+				}
+			}
+		}
 		NOT = {
 			AND = {
 				title:k_israel = {
