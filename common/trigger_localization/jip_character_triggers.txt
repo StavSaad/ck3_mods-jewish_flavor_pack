@@ -1,0 +1,5 @@
+found_empire_decision_two_kingdoms_held = {
+	global = HOLDS_TWO_OR_MORE_KINGDOM_TITLES_TRIGGER
+	first = I_HOLD_TWO_OR_MORE_KINGDOM_TITLES_TRIGGER
+	third = THEY_HOLD_TWO_OR_MORE_KINGDOM_TITLES_TRIGGER
+}

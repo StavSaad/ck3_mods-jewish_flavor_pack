@@ -316,6 +316,7 @@ create_e_canaan_decision = {
 			has_title = title:k_israel
 			has_title = title:k_syria
 			has_title = title:k_jerusalem
+			has_title = title:k_phoenicia
 		}
 		highest_held_title_tier = tier_kingdom
 		NOT = {
@@ -329,25 +330,43 @@ create_e_canaan_decision = {
 	is_valid = {
 		prestige_level >= high_prestige_level
 		is_independent_ruler = yes 
-		culture = { has_cultural_pillar = heritage_israelite }
+		OR = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			culture = { has_cultural_pillar = heritage_canaanite }
+		}
 		highest_held_title_tier = tier_kingdom
-
+		custom_description = {
+			text = found_empire_decision_two_kingdoms_held
+			any_held_title = {
+				count >= 2
+				tier = tier_kingdom
+			}
+		}
 		OR = {
 			trigger_if = {
-				limit = { has_title = title:c_jerusalem }
+				limit = { has_title = title:k_jerusalem }
 				has_title = title:k_jerusalem
-				completely_controls = title:k_jerusalem
 			}
-			trigger_if = {
+			trigger_else_if = {
 				limit = { has_title = title:k_israel }
 				has_title = title:k_israel
-				completely_controls = title:k_israel
+			}
+			trigger_if = {
+				limit = {
+					title:k_phoenicia = {
+						any_de_jure_county = {
+							count >= 1
+						}
+					}
+				}
+				has_title = title:k_phoenicia
+			}
+			trigger_else = {
+				has_title = title:k_syria
 			}
 		}
 
-		has_title = title:k_syria
-		completely_controls = title:k_syria
-
+		completely_controls_region = jip_region_canaan
 		
 	}
 
@@ -386,6 +405,7 @@ reestablish_canaanite_city_decision = {
 	decision_group_type = major
 
 	is_shown = {
+		highest_held_title_tier >= tier_duchy
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
 			culture = { has_cultural_pillar = heritage_syriac }
@@ -395,12 +415,14 @@ reestablish_canaanite_city_decision = {
 			has_title = title:c_acre
 			has_title = title:c_beirut
 			has_title = title:c_tripoli
+			has_title = title:c_antiocheia
+			has_title = title:c_famagusta
+			has_title = title:c_nicosia
 		}
 	}
 
 	is_valid = {
 		prestige_level >= high_prestige_level
-		highest_held_title_tier >= tier_duchy
 	}
 
 	widget = {
@@ -460,6 +482,63 @@ reestablish_canaanite_city_decision = {
 			icon = "gfx/interface/icons/barony_crown.dds"
 			ai_chance = { value = 10 }
 		}
+		item = { # antioch
+			value = antiocheia
+			is_shown = {
+				has_title = title:c_antiocheia
+			}
+			is_valid = {
+				has_title = title:c_antiocheia
+				completely_controls = title:c_antiocheia
+				NOT = {
+					capital_county = title:c_antiocheia
+				}
+				custom_description = {	#The county must be developed or have at least one city
+					text = latakia_must_be_city
+					title:b_latakia.title_province = {
+						has_holding_type = city_holding
+					}
+				}
+			}
+			current_description = canaanite_city_antiocheia_desc
+			localization = canaanite_city_antiocheia_desc
+			icon = "gfx/interface/icons/barony_crown.dds"
+			ai_chance = { value = 10 }
+		}
+		item = { # famagusta
+			value = famagusta
+			is_shown = {
+				has_title = title:c_famagusta
+			}
+			is_valid = {
+				has_title = title:c_famagusta
+				completely_controls = title:c_famagusta
+				NOT = {
+					capital_county = title:c_famagusta
+				}
+			}
+			current_description = canaanite_city_famagusta_desc
+			localization = canaanite_city_famagusta_desc
+			icon = "gfx/interface/icons/barony_crown.dds"
+			ai_chance = { value = 10 }
+		}
+		item = { # nicosia
+			value = nicosia
+			is_shown = {
+				has_title = title:c_nicosia
+			}
+			is_valid = {
+				has_title = title:c_nicosia
+				completely_controls = title:c_nicosia
+				NOT = {
+					capital_county = title:c_nicosia
+				}
+			}
+			current_description = canaanite_city_nicosia_desc
+			localization = canaanite_city_nicosia_desc
+			icon = "gfx/interface/icons/barony_crown.dds"
+			ai_chance = { value = 10 }
+		}
 	}
 
 	is_valid_showing_failures_only = {
@@ -479,6 +558,18 @@ reestablish_canaanite_city_decision = {
 		if = {
 			limit = { scope:tripoli = yes }
 			reestablish_canaanite_city_effect = { COUNTY = c_tripoli BARONY = b_antartus }
+		}
+		if = {
+			limit = { scope:antiocheia = yes }
+			reestablish_canaanite_city_effect = { COUNTY = c_antiocheia BARONY = b_latakia }
+		}
+		if = {
+			limit = { scope:famagusta = yes }
+			reestablish_canaanite_city_effect = { COUNTY = c_famagusta BARONY = b_cerynia }
+		}
+		if = {
+			limit = { scope:nicosia = yes }
+			reestablish_canaanite_city_effect = { COUNTY = c_nicosia BARONY = b_limisol }
 		}
 	}
 
