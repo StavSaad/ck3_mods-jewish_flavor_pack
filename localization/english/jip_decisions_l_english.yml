@@ -37,4 +37,4 @@
  beirut_tooltip:0 "[GetTitleByKey('b_saida').GetName]"
  canaanite_city_tripoli_desc:0 "[GetTitleByKey('b_antartus').GetName]"
  tripoli_tooltip:0 "[GetTitleByKey('b_antartus').GetName]"
- reestablish_canaanite_city_decision_effect:0 "A new [republic|E] will be created as a [vassal|E] under you in [BARONY.Title.GetName]"
+ reestablish_canaanite_city_decision_effect:0 "A new [republic|E] will be created as a [vassal|E] under you in [TARGET_TITLE.GetName]"

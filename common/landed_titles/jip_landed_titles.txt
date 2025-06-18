@@ -2192,10 +2192,10 @@ e_arabia = {
 			capital = c_kerak
 
 			cultural_names = {
-				name_list_canaanite = cn_negev
-				name_list_ashkenazi = cn_negev
-				name_list_sephardi = cn_negev
-				name_list_radhanite = cn_negev
+				name_list_canaanite = cn_edom
+				name_list_ashkenazi = cn_edom
+				name_list_sephardi = cn_edom
+				name_list_radhanite = cn_edom
 			}
 
 			c_kerak = { #Al-Karak
