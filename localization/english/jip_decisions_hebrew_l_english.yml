@@ -17,5 +17,6 @@
  jip_hebrew.0010.start.desc:0 "A new era has come to Canaan!"
  jip_hebrew.0010.end.desc:0 "For over millennia, the land of Canaan was ruled by foreigners, outsider conquerors. Through [ROOT.Char.GetHisHer] actions, [ROOT.Char.GetName] has united the disparate canaanite lands into a single, cohesive realm. One decision remains now. Where should Canaan's capital be?"
  jip_hebrew.0010.a:0 "[GetTitleByKey('c_jerusalem').GetName], ancient capital of the Hebrews."
- jip_hebrew.0010.b:0 "[GetTitleByKey('c_beirut').GetName], of the old Phoenician port cities."
+ jip_hebrew.0010.b:0 "[GetTitleByKey('c_tripoly').GetName], of the old Phoenician port cities."
  jip_hebrew.0010.c:0 "[GetTitleByKey('c_antiocheia').GetName], the new city, built by the Greeks."
+ jip_hebrew.0010.d:0 "[GetTitleByKey('c_palmyra').GetName], Where the Arameans erected a massive city."

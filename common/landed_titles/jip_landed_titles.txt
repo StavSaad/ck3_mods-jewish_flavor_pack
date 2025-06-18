@@ -764,12 +764,21 @@ e_arabia = {
 
 				cultural_names = {
 					name_list_canaanite = b_tyre
+					name_list_ashkenazi = cn_akko
+					name_list_sephardi = cn_akko
+					name_list_radhanite = cn_akko
 				}
 
 				b_acre = {
 					province = 5960
 
 					color = { 245 245 200 }
+
+					cultural_names = {
+						name_list_ashkenazi = cn_akko
+						name_list_sephardi = cn_akko
+						name_list_radhanite = cn_akko
+					}
 				}
 				b_tyre = {
 					province = 5921

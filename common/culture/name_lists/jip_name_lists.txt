@@ -38,7 +38,7 @@ name_list_ashkenazi = {
 	}
 	female_names = {
 		Beila Belet Chana Doltza Esther Guta Guthela Madrona Matrona Minna Pultzelina Rachel Rivkah Saris Scolaster
-		Shluida Shoinlin Shonlin Tziporah Yehudis Yeintil
+		Shluida Shoinlin Shonlin Tziporah Yehudis Yeintil Tehilla
 	}
 	
 	dynasty_of_location_prefix = "dynnp_of"
@@ -83,7 +83,7 @@ name_list_sephardi = {
 	}
 	female_names = {
 		Beila Belet Chana Doltza Esther Guta Guthela Madrona Matrona Minna Pultzelina Rachel Rivkah Saris Scolaster
-		Shluida Shoinlin Shonlin Tziporah Yehudis Yeintil
+		Shluida Shoinlin Shonlin Tziporah Yehudis Yeintil Tehilla
 	}
 	
 	dynasty_of_location_prefix = "dynnp_of"
@@ -147,7 +147,7 @@ name_list_radhanite = {
 		Adlai Adoniram Adoniyah Adriel Aharon Amaryahu Amittai Ammiel Amnon Amos Amram Anaiah Anan Anani Aran Arieh
 		AriEl Asa Asaf Asher Asnappar AvdiEl Avidan AviEl Avihu AvimaEl Avimelekh Aviram Avishay Avner Avraham
 		Avram Avshalom Azarel Azaryah Azazyahu AzriEl BaAl Barak Barukh Belshatzzar Benayahu BetUel Binyamin Boaz
-		Chaggai Chanan Chananyah Chanokh Chavaqquq ChazaEl Chizqiyahu Dan Daniyyel Daryawesh Dawid Delayahu Efrayim
+		Chaggai Chanan Chananyah Chanokh Chavaqquq ChazaEl Chizqiyahu Dan Daniyyel David Delayahu Efrayim
 		Ehud Eiran Eitan Elah ElAzar Elchanan Eli Eliav Eliel EliEzer Elifalet Elifelet Elihu Elisha Elishua Eliyyahu
 		Elkanah Elnatan Elon Enosh Esaw Evyatar Ezer Ezra Gad Gamaliel GavriEl Gedalyahu Gemaryahu Gershom Gershon
 		GidOn Gilad Golyat Haran Hevel Hillel Hiram Hoshea Iddo Ilai Immanuel Ira Itamar Iyyov Kalev Kayin
@@ -159,14 +159,14 @@ name_list_radhanite = {
 		TzuriEl Uri Uriyah UriyEl Uzzi Uzziel Uzziyyah Yaakov YachleEl YachtzeEl Yadon Yair Yamin YaRah YaravAm
 		Yared Yawan Yechezkel YechiEl Yedidyah Yefet YehoAsh Yehochanan Yehonatan Yehoram Yehoshafat Yehoshua Yehoyakhin
 		Yehoyakim Yehu Yehudah Yehudi Yekonyah YerachmeEl Yeriyahu YeshaYahu Yeshua Yiftach Yirmiyahu Yishai Ittay
-		BaAlZevuv Tovi Noach
+		BaAlZevuv Tovi Noach Haniyah
 	}
 	female_names = {
 		Anah Anat Atalyah MaAkhah Machlah Achinoam Asenat Atarah Avigayil Avishag Avital Basmat BatSheva
 		Beulah Bilhah Bityah Chaggit Channah Chavah CheftziBah Chuldah Delilah Devorah Dinah Ednah Efrat Elisheva
 		Ester Hadassah Hagar Hodiyah Izevel KetziAh Leah Machalat MeheitavEl Merav Mikhal Miriam NaAmah NaOmi
 		Orpah Rachel Rivqah Rut Sarah Shifra Shoshannah Shulammit Tamar Tirtzah Tzillah Tzipporah Tzivyah
-		Yael Yedidah Yehosheva Yehudit Yemima Yerushah NoAh Keren Aviyah Diklah Gomer Mikhayahu Ofir Yachin
+		Yael Yedidah Yehosheva Yehudit Yemima Yerushah NoAh Keren Aviyah Diklah Tehilla
 	}
 	
 	dynasty_of_location_prefix = "dynnp_of"
@@ -192,7 +192,7 @@ name_list_canaanite = {
 		"dynn_Sarphati"
 		"dynn_Sassoon"
 		"dynn_Chorath"
-		"dynn_Solomon"
+		"dynn_Barca"
 	}
 
 	dynasty_names = {
@@ -212,7 +212,7 @@ name_list_canaanite = {
 		"dynn_Sarphati"
 		"dynn_Sassoon"
 		"dynn_Chorath"
-		"dynn_Solomon"
+		"dynn_Barca"
 		"dynn_Yaakov"
 	}
 
@@ -221,17 +221,17 @@ name_list_canaanite = {
 		Adlai Adoniram Adonibaal Aharon Amarbaal Amittai Amnon Amos Amram Anabaal Anan Anani Aran Arieh
 		Asa Asaf Asher Asnappar Avidan AviEl Avimelekh Aviram Avishay Avner Avraham
 		Avram Avshalom Azarbaal Azazbaal AzriEl BaAl Barak Barukh Belshatzzar BetUel Boaz
-		Chaggai Chanan Chananbaal Chanokh Chavaqquq ChazaEl Chizqibaal Dan Danel David Efrayim
+		Chaggai Chanan Chananbaal Chanokh Chavaqquq ChazaEl Chizqibaal Danel David
 		Ehud Eiran Eitan Elah ElAzar Elchanan Eli Eliav EliEzer Elifalet Elifelet Elisha Elishua
-		Elon Enosh Esaw Evyatar Ezer Ezra Gad Gershom Gershon
+		Elon Enosh Esaw Evyatar Ezer Ezra Gad Gershon
 		GidOn Gilad Golyat Haran Hevel Hiram Hoshea Iddo Ilai Ira Itamar Iyyov Kalev Kayin
 		Keinan Laban Lael Lemuel Lot Machli MalAkhi Mattan
-		Melech Menachem Menashsheh Meshullam Metushelach Mikhah Mordokhay Nachum Nadav Naftali Natan
-		Nimrod Omri Oved Peleg Peretz Pinchas
-		RafaEl RehavAm Reuel Reuven Sancheriv Shalmaneser ShaUl Shelach Shelah
-		Shem Shet Shimon Shimshon Talmai Tammuz Teman Terach
-		Uri Uzzi Uzziel Yadon Yair Yamin YaRah YaravAm
-		Yared Yawan Yefet Yeshua Yiftach Yishai Ittay
+		Melech Menachem Meshullam Metushelach Mikhah Mordokhay Nachum Nadav Natan
+		Nimrod Omri Oved Peleg Baaliahon Pinchas
+		RafaEl RehavAm Reuel Reuven Sancheriv Shalmaneser Shelach Shelah
+		Shem Shet Shimshon Talmai Tammuz Abdhammon Terach
+		Uri Uzzi Uzziel Yadon Yair Yamin YaRah Urumilki Mago
+		Yared Yawan Yefet Yeshua Yiftach Yishai Ittay Hamilcar
 		BaAlZevuv Tovi Noach Amminadav Ratzin Hanibaal Hasdrubaal
 	}
 	female_names = {

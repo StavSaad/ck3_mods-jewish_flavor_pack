@@ -166,11 +166,11 @@ jip_hebrew.0010 = {
 		}
 	}
 
-	# Beirut option
+	# Byblos option
 	option = {
 		name = jip_hebrew.0010.b
 		title:e_canaan = {
-			set_capital_county = title:c_beirut
+			set_capital_county = title:c_tripoly
 		}
 	}
 
@@ -179,6 +179,22 @@ jip_hebrew.0010 = {
 		name = jip_hebrew.0010.c
 		title:e_canaan = {
 			set_capital_county = title:c_antiocheia
+		}
+	}
+
+	# Palmyra option
+	option = {
+		name = jip_hebrew.0010.d
+		trigger = {
+			AND = {
+				primary_title = {
+					is_de_facto_liege_or_above_target = title:c_palmyra
+					is_de_facto_liege_or_above_target = title:k_syria
+				}
+			}
+		}
+		title:e_canaan = {
+			set_capital_county = title:c_palmyra
 		}
 	}
 }

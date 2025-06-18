@@ -7,3 +7,4 @@ azazbaal_male = { Azazyahu Azazbaal }
 azarbaal_male = { Azaryah Azarbaal }
 chananbaal_male = { Chananyah Chananbaal }
 chizqibaal_male = { Chizqiyahu Chizqibaal }
+hanibaal_male = { Hanibaal Haniyah }
