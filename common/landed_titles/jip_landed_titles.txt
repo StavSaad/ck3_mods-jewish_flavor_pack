@@ -829,6 +829,13 @@ e_arabia = {
 
 		capital = c_damascus
 
+		cultural_names = {
+			name_list_ashkenazi = cn_aram
+			name_list_sephardi = cn_aram
+			name_list_radhanite = cn_aram
+			name_list_canaanite = cn_aram
+		}
+
 		d_aleppo = {
 			color = { 85 232 20 }
 

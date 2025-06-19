@@ -860,3 +860,70 @@ expand_phoenicia_decision = {
 	}
 
 }
+
+create_k_phoenicia_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	ai_check_interval = 60
+	desc = create_k_phoenicia_decision_desc
+	decision_group_type = major
+
+	is_shown = {
+		OR = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			culture = { has_cultural_pillar = heritage_canaanite }
+		}
+		OR = {
+			has_title = title:d_lebanon
+			has_title = title:d_antioch
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:create_k_phoenicia_decision
+			}
+		}
+	}
+
+	is_valid = {
+		prestige_level >= high_prestige_level
+		is_independent_ruler = yes 
+		OR = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			culture = { has_cultural_pillar = heritage_canaanite }
+		}
+		OR = {
+			has_primary_title = title:d_lebanon
+			has_primary_title = title:d_antioch
+		}
+		has_title = title:d_lebanon
+		has_title = title:d_antioch
+		
+	}
+
+	is_valid_showing_failures_only = {
+		is_landed = yes
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	effect = {
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:create_k_phoenicia_decision
+		}
+		trigger_event = jip_hebrew.0020
+	}
+
+	cost = { gold = { value = 500 } }
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}

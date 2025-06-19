@@ -199,6 +199,30 @@ jip_hebrew.0010 = {
 	}
 }
 
+# Phoenicia
+jip_hebrew.0020 = {
+	type = character_event
+	title = jip_hebrew.0020.t #change
+	desc = {
+		desc = jip_hebrew.0020.desc
+	}
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = ecstasy
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_positive_effect"
+		create_phoenicia_decision_effect = yes
+	}
+
+	# Jerusalem option
+	option = {
+		name = jip_hebrew.0020.a
+	}
+}
+
 # become canaanite
 jip_hebrew.0021 = {
 	type = character_event

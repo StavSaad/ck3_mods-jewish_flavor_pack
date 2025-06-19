@@ -1,0 +1,55 @@
+canaanite = {
+	color = canaanite
+
+	ethos = ethos_bureaucratic
+	heritage = heritage_canaanite
+	language = language_canaanite
+	martial_custom = martial_custom_male_only	
+	head_determination = head_determination_domain
+	traditions = { # I'm pretty sure anything I put in here or do not put in here will spark a discussion or two
+		tradition_maritime_mercantilism
+		tradition_eye_for_an_eye
+		tradition_seafaring
+		tradition_fervent_temple_builders
+	}
+
+	name_list = name_list_canaanite # The Radhanite namelist is near-exclusively biblical names
+
+	coa_gfx = { israelite_group_coa_gfx }
+	building_gfx = { mediterranean_building_gfx }
+	clothing_gfx = { byzantine_clothing_gfx }
+	unit_gfx = { mena_unit_gfx }
+
+	ethnicities = {
+		10 = mediterranean
+	}
+}
+
+punic = {
+	parents = { canaanite }
+	created = 52.1.1
+	history_loc_override = punic_history_loc
+	ethos = ethos_spiritual
+	heritage = heritage_canaanite
+	language = language_punic
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = { # I'm pretty sure anything I put in here or do not put in here will spark a discussion or two
+		tradition_maritime_mercantilism
+		tradition_lords_of_the_elephant
+		tradition_seafaring
+		tradition_republican_legacy
+	}
+
+	name_list = name_list_canaanite # The Radhanite namelist is near-exclusively biblical names
+
+	coa_gfx = { israelite_group_coa_gfx }
+	building_gfx = { mediterranean_building_gfx }
+	clothing_gfx = { byzantine_clothing_gfx }
+	unit_gfx = { mena_unit_gfx }
+
+	ethnicities = {
+		10 = mediterranean
+		10 = arab
+	}
+}

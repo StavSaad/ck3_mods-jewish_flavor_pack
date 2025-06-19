@@ -1,0 +1,5 @@
+867.1.1 = {
+	discover_innovation = innovation_elephantry
+	discover_innovation = innovation_city_planning
+	discover_innovation = innovation_crop_rotation
+}
