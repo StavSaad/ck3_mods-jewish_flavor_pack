@@ -198,3 +198,100 @@ jip_hebrew.0010 = {
 		}
 	}
 }
+
+# become canaanite
+jip_hebrew.0021 = {
+	type = character_event
+	title = jip_hebrew.0021.t #change
+	desc = {
+		desc = jip_hebrew.0021.start.desc #change
+	}
+	theme = culture_change
+	left_portrait = {
+		character = scope:canaanite_former
+		animation = personality_honorable
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_positive_effect"
+	}
+	
+	option = {
+		name = jip_hebrew.0021.a
+		if = {
+			limit = {
+				NOT = {
+					is_target_in_global_variable_list = {
+						name = unavailable_unique_decisions
+						target = flag:form_canaanite_decision
+					}
+				}
+			}
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:form_canaanite_decision
+			}
+		}
+		form_canaanite_decision_effects = yes #Title changes, prestige, culture swap
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	option = {
+		name = jip_hebrew.0021.b
+		add_prestige = 3000
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+jip_hebrew.0022 = {
+	type = character_event
+	title = jip_hebrew.0022.t #change
+	desc = {
+		desc = jip_hebrew.0022.desc #change
+	}
+	theme = culture_change
+	left_portrait = {
+		character = root
+		animation = personality_cynical
+	}
+
+	right_portrait = {
+		character = scope:canaanite_former
+		animation = personality_honorable
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_positive_effect"
+	}
+	
+	option = {
+		name = jip_hebrew.0022.a
+		set_culture = culture:canaanite
+		scope:canaanite_former = {
+			add_opinion = {
+				target = THIS
+				modifier = approving_opinion
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	option = {
+		name = jip_hebrew.0022.b
+		scope:canaanite_former = {
+			add_opinion = {
+				target = THIS
+				modifier = disapproving_opinion
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}

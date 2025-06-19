@@ -1,11 +1,11 @@
-﻿handle_maa_traditions_for_hebrew = {
+﻿handle_maa_traditions_for_culture = {
 	if = {
 		limit = {
-			scope:hebrew_former.culture = {
+			scope:$CULTURE$_former.culture = {
 				has_cultural_tradition = tradition_$TRADITION$
 			}
 		}
-		culture:hebrew = {
+		culture:$CULTURE$ = {
 			add_culture_tradition = tradition_$TRADITION$
 		}
 	}
@@ -24,35 +24,35 @@ form_hebrew_decision_effects = {
 		culture:hebrew = {
 			reset_culture_creation_date = yes
 			get_all_innovations_from = scope:hebrew_former.culture
-			handle_maa_traditions_for_hebrew = { TRADITION = futuwaa }
-			handle_maa_traditions_for_hebrew = { TRADITION = mubarizuns }
-			handle_maa_traditions_for_hebrew = { TRADITION = desert_ribat }
-			handle_maa_traditions_for_hebrew = { TRADITION = druzhina }
-			handle_maa_traditions_for_hebrew = { TRADITION = hussar }
-			handle_maa_traditions_for_hebrew = { TRADITION = horn_mountain_skirmishing }
-			handle_maa_traditions_for_hebrew = { TRADITION = bush_hunting }
-			handle_maa_traditions_for_hebrew = { TRADITION = mobile_guards }
-			handle_maa_traditions_for_hebrew = { TRADITION = khadga_puja }
-			handle_maa_traditions_for_hebrew = { TRADITION = garuda_warriors }
-			handle_maa_traditions_for_hebrew = { TRADITION = burman_royal_army }
-			handle_maa_traditions_for_hebrew = { TRADITION = mountain_herding }
-			handle_maa_traditions_for_hebrew = { TRADITION = forest_wardens }
-			handle_maa_traditions_for_hebrew = { TRADITION = upland_skirmishing }
-			handle_maa_traditions_for_hebrew = { TRADITION = strong_kinship }
-			handle_maa_traditions_for_hebrew = { TRADITION = amharic_highlanders }
-			handle_maa_traditions_for_hebrew = { TRADITION = polders }
-			handle_maa_traditions_for_hebrew = { TRADITION = caucasian_wolves }
-			handle_maa_traditions_for_hebrew = { TRADITION = hird }
-			handle_maa_traditions_for_hebrew = { TRADITION = chanson_de_geste }
-			handle_maa_traditions_for_hebrew = { TRADITION = fp1_coastal_warriors }
-			handle_maa_traditions_for_hebrew = { TRADITION = fp3_frontier_warriors }
-			handle_maa_traditions_for_hebrew = { TRADITION = ep3_indomitable_azatani }
-			handle_maa_traditions_for_hebrew = { TRADITION = ep3_audacious_cadets }
-			handle_maa_traditions_for_hebrew = { TRADITION = ep3_imperial_tagmata }
-			handle_maa_traditions_for_hebrew = { TRADITION = mpo_iron_cavalry }
-			handle_maa_traditions_for_hebrew = { TRADITION = mpo_wolves_of_the_deep_steppe }
-			handle_maa_traditions_for_hebrew = { TRADITION = devoted_horsemanship }
-			handle_maa_traditions_for_hebrew = { TRADITION = mpo_northern_tribes }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = futuwaa }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = mubarizuns }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = desert_ribat }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = druzhina }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = hussar }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = horn_mountain_skirmishing }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = bush_hunting }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = mobile_guards }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = khadga_puja }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = garuda_warriors }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = burman_royal_army }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = mountain_herding }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = forest_wardens }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = upland_skirmishing }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = strong_kinship }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = amharic_highlanders }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = polders }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = caucasian_wolves }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = hird }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = chanson_de_geste }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = fp1_coastal_warriors }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = fp3_frontier_warriors }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = ep3_indomitable_azatani }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = ep3_audacious_cadets }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = ep3_imperial_tagmata }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = mpo_iron_cavalry }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = mpo_wolves_of_the_deep_steppe }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = devoted_horsemanship }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = mpo_northern_tribes }
 		}
 		set_culture = culture:hebrew
 
@@ -103,6 +103,55 @@ form_hebrew_decision_effects = {
 	#fame
 	# This takes effect but scope doesn't work for the tooltip
 	scope:hebrew_former.dynasty = {
+		add_dynasty_prestige_level = 1	
+		add_dynasty_prestige = 250
+	}	
+}
+
+form_canaanite_decision_effects = {
+	#Covert self & court to canaanite culture
+	if = {
+		limit = { NOT = { has_culture = culture:canaanite } }
+
+		every_courtier = {
+			limit = { has_same_culture_as = scope:canaanite_former }
+			add_to_list = convert_list
+		}
+		#transfer over innovations from previous culture. 
+		culture:canaanite = {
+			reset_culture_creation_date = yes
+			get_all_innovations_from = scope:canaanite_former.culture
+		}
+		set_culture = culture:canaanite
+
+		every_in_list = {
+			list = convert_list
+			custom = canaanite_convert_list #This says "every subject in the realm" even though vassals and their courts only covert later, through event
+			set_culture = culture:canaanite
+		}
+
+		every_vassal_or_below = {
+			trigger_event = jip_hebrew.0022
+			every_courtier = {
+				limit = { has_same_culture_as = scope:canaanite_former }
+				set_culture = culture:canaanite
+			}
+		}
+	}
+
+	capital_county = {
+		set_county_culture = culture:canaanite
+	}
+
+	#Innovations
+	culture:canaanite = {
+		add_random_innovation = culture_group_military
+		add_random_innovation = culture_group_civic
+	}
+
+	#fame
+	# This takes effect but scope doesn't work for the tooltip
+	scope:canaanite_former.dynasty = {
 		add_dynasty_prestige_level = 1	
 		add_dynasty_prestige = 250
 	}	
@@ -162,7 +211,7 @@ reestablish_canaanite_city_effect = {
 		object = title:$BARONY$
 		create_character = {
 			random_traits = yes
-			culture = culture:canaanite
+			culture = root.culture
 			faith = root.faith
 			location = root.location
 			save_scope_as = new_owner
@@ -185,16 +234,4 @@ reestablish_canaanite_city_effect = {
 		}
 	}
 	title:$BARONY$ = { set_capital_barony = yes }
-	if = {
-		limit = {
-			NOT = {
-				OR = {
-					culture = { has_cultural_pillar = heritage_canaanite }
-				}
-			}
-		}
-		title:$COUNTY$ = {
-			set_county_culture = culture:canaanite
-		}
-	}
 }

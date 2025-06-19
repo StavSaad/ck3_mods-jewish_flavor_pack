@@ -592,6 +592,86 @@ reestablish_canaanite_city_decision = {
 
 }
 
+form_canaanite_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	}
+	ai_check_interval = 60
+	desc = form_canaanite_decision_desc
+	decision_group_type = major
+
+	is_shown = {
+		is_ruler = yes
+		OR = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			primary_title.capital_province = {
+				is_in_region = jip_region_phoenicia
+			}
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:form_canaanite_decision
+			}
+		}
+	}
+
+	is_valid = {
+		prestige_level >= very_high_prestige_level
+		culture = { has_cultural_pillar = heritage_israelite }
+		OR = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			primary_title.capital_province = {
+				is_in_region = jip_region_phoenicia
+			}
+		}
+		OR = {
+			has_trait = lunatic
+			has_trait = scholar
+			has_trait = ambitious
+			has_trait = eccentric
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_independent_ruler = yes
+		is_available_adult = yes
+	}
+
+	effect = {
+		save_scope_as = canaanite_former
+
+		show_as_tooltip = { form_canaanite_decision_effects = yes }
+
+		#Events
+		trigger_event = jip_hebrew.0021
+		every_vassal_or_below = {
+			limit = {
+				is_ai = yes
+				exists = capital_province
+				capital_province = {
+					is_in_region = jip_region_phoenicia
+				}	
+			}
+			trigger_event = jip_hebrew.0021 #So they can convert
+		}
+		set_global_variable = {
+			name = form_canaanite_decision
+			value = scope:canaanite_former
+		}
+	}
+
+	cost = { prestige = { value = 3000 } }
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 10
+	}
+}
+
 expand_phoenicia_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
