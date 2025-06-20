@@ -479,6 +479,13 @@ e_arabia = {
 					province = 6031
 
 					color = { 145 203 10 }
+
+					cultural_names = {
+						name_list_canaanite = cn_dizahab
+						name_list_ashkenazi = cn_dizahav
+						name_list_sephardi = cn_dizahav
+						name_list_radhanite = cn_dizahav
+					}
 				}
 			}
 		}
@@ -841,8 +848,24 @@ e_arabia = {
 
 			capital = c_aleppo
 
+			cultural_names = {
+				name_list_canaanite = cn_ebla
+				name_list_ashkenazi = cn_ebla
+				name_list_sephardi = cn_ebla
+				name_list_radhanite = cn_ebla
+				name_list_assyrian = cn_ebla
+			}
+
 			c_aleppo = {
 				color = { 91 238 26 }
+				
+				cultural_names = {
+					name_list_canaanite = cn_ebla
+					name_list_ashkenazi = cn_ebla
+					name_list_sephardi = cn_ebla
+					name_list_radhanite = cn_ebla
+					name_list_assyrian = cn_ebla
+				}
 
 				b_halab = {
 					province = 5934
@@ -907,7 +930,7 @@ e_arabia = {
 					name_list_ashkenazi = cn_qennesharim
 					name_list_sephardi = cn_qennesharim
 					name_list_radhanite = cn_qennesharim
-					name_list_syriac = cn_qennesrin
+					name_list_assyrian = cn_qennesrin
 				}
 
 				b_qinnasrin = {
@@ -921,7 +944,7 @@ e_arabia = {
 						name_list_ashkenazi = cn_qennesharim
 						name_list_sephardi = cn_qennesharim
 						name_list_radhanite = cn_qennesharim
-						name_list_syriac = cn_qennesrin
+						name_list_assyrian = cn_qennesrin
 					}
 				}
 				b_artah = {
@@ -947,7 +970,7 @@ e_arabia = {
 				name_list_ashkenazi = cn_adme
 				name_list_sephardi = cn_adme
 				name_list_radhanite = cn_adme
-				name_list_syriac = cn_adme
+				name_list_assyrian = cn_adme
 			}
 
 			c_edessa = {
@@ -958,7 +981,7 @@ e_arabia = {
 					name_list_ashkenazi = cn_adme
 					name_list_sephardi = cn_adme
 					name_list_radhanite = cn_adme
-					name_list_syriac = cn_adme
+					name_list_assyrian = cn_adme
 				}
 
 				b_edessa = {
@@ -971,7 +994,7 @@ e_arabia = {
 						name_list_ashkenazi = cn_adme
 						name_list_sephardi = cn_adme
 						name_list_radhanite = cn_adme
-						name_list_syriac = cn_adme
+						name_list_assyrian = cn_adme
 					}
 				}
 				b_al-bira = {
@@ -1050,7 +1073,7 @@ e_arabia = {
 				name_list_ashkenazi = cn_aramzobah
 				name_list_sephardi = cn_aramzobah
 				name_list_radhanite = cn_aramzobah
-				name_list_syriac = cn_aramzobah
+				name_list_assyrian = cn_aramzobah
 			}
 
 			c_homs = {
@@ -1062,7 +1085,7 @@ e_arabia = {
 					name_list_ashkenazi = cn_zobah
 					name_list_sephardi = cn_zobah
 					name_list_radhanite = cn_zobah
-					name_list_syriac = cn_zobah
+					name_list_assyrian = cn_zobah
 				}
 
 				b_hims = {
@@ -1076,7 +1099,7 @@ e_arabia = {
 						name_list_ashkenazi = cn_zobah
 						name_list_sephardi = cn_zobah
 						name_list_radhanite = cn_zobah
-						name_list_syriac = cn_zobah
+						name_list_assyrian = cn_zobah
 					}
 				}
 				b_rafaniya-krak = {
@@ -1103,7 +1126,7 @@ e_arabia = {
 					name_list_ashkenazi = cn_sezer
 					name_list_sephardi = cn_sezer
 					name_list_radhanite = cn_sezer
-					name_list_syriac = cn_sezer
+					name_list_assyrian = cn_sezer
 				}
 
 				b_shayzar = {
@@ -1117,7 +1140,7 @@ e_arabia = {
 						name_list_ashkenazi = cn_sezer
 						name_list_sephardi = cn_sezer
 						name_list_radhanite = cn_sezer
-						name_list_syriac = cn_sezer
+						name_list_assyrian = cn_sezer
 					}
 				}
 				b_masyaf = {
@@ -1130,7 +1153,7 @@ e_arabia = {
 						name_list_ashkenazi = cn_mansuate
 						name_list_sephardi = cn_mansuate
 						name_list_radhanite = cn_mansuate
-						name_list_syriac = cn_mansuate
+						name_list_assyrian = cn_mansuate
 					}
 				}
 			}
@@ -1142,7 +1165,7 @@ e_arabia = {
 					name_list_ashkenazi = cn_hamath
 					name_list_sephardi = cn_hamath
 					name_list_radhanite = cn_hamath
-					name_list_syriac = cn_hamath
+					name_list_assyrian = cn_hamath
 				}
 
 				b_hama = {
@@ -1155,7 +1178,7 @@ e_arabia = {
 						name_list_ashkenazi = cn_hamath
 						name_list_sephardi = cn_hamath
 						name_list_radhanite = cn_hamath
-						name_list_syriac = cn_hamath
+						name_list_assyrian = cn_hamath
 					}
 				}
 				b_salamiya = {
@@ -1173,7 +1196,7 @@ e_arabia = {
 						name_list_ashkenazi = cn_kfartav
 						name_list_sephardi = cn_kfartav
 						name_list_radhanite = cn_kfartav
-						name_list_syriac = cn_kfartav
+						name_list_assyrian = cn_kfartav
 					}
 				}
 			}
@@ -1211,7 +1234,7 @@ e_arabia = {
 						name_list_ashkenazi = cn_ramitha
 						name_list_sephardi = cn_ramitha
 						name_list_radhanite = cn_ramitha
-						name_list_syriac = cn_ramitha
+						name_list_assyrian = cn_ramitha
 					}
 				}
 				b_jabala = {
@@ -1348,7 +1371,7 @@ e_arabia = {
 				name_list_ashkenazi = cn_aramdamascus
 				name_list_sephardi = cn_aramdamascus
 				name_list_radhanite = cn_aramdamascus
-				name_list_syriac = cn_aramdamascus
+				name_list_assyrian = cn_aramdamascus
 			}
 
 			c_damascus = {
@@ -1369,7 +1392,7 @@ e_arabia = {
 						name_list_ashkenazi = cn_neve
 						name_list_sephardi = cn_neve
 						name_list_radhanite = cn_neve
-						name_list_syriac = cn_neve
+						name_list_assyrian = cn_neve
 					}
 				}
 				b_darayya = {
@@ -1387,7 +1410,7 @@ e_arabia = {
 						name_list_ashkenazi = cn_geshur
 						name_list_sephardi = cn_geshur
 						name_list_radhanite = cn_geshur
-						name_list_syriac = cn_geshur
+						name_list_assyrian = cn_geshur
 					}
 				}
 			}
@@ -1453,7 +1476,7 @@ e_arabia = {
 						name_list_ashkenazi = cn_canatha
 						name_list_sephardi = cn_canatha
 						name_list_radhanite = cn_canatha
-						name_list_syriac = cn_canatha
+						name_list_assyrian = cn_canatha
 					}
 				}
 			}
@@ -1469,7 +1492,7 @@ e_arabia = {
 				name_list_ashkenazi = cn_tadmur
 				name_list_sephardi = cn_tadmur
 				name_list_radhanite = cn_tadmur
-				name_list_syriac = cn_tadmur
+				name_list_assyrian = cn_tadmur
 			}
 
 			c_palmyra = {
@@ -1480,7 +1503,7 @@ e_arabia = {
 					name_list_ashkenazi = cn_tadmur
 					name_list_sephardi = cn_tadmur
 					name_list_radhanite = cn_tadmur
-					name_list_syriac = cn_tadmur
+					name_list_assyrian = cn_tadmur
 				}
 
 				b_tadmur = { #AKA Palmyra
@@ -1493,7 +1516,7 @@ e_arabia = {
 						name_list_ashkenazi = cn_tadmur
 						name_list_sephardi = cn_tadmur
 						name_list_radhanite = cn_tadmur
-						name_list_syriac = cn_tadmur
+						name_list_assyrian = cn_tadmur
 					}
 				}
 				b_arak = {
@@ -1524,10 +1547,26 @@ e_arabia = {
 			c_qaryatan = {
 				color = { 39 236 24 }
 
+				cultural_names = {
+					name_list_canaanite = cn_qiryatain
+					name_list_assyrian = cn_qiryatain
+					name_list_ashkenazi = cn_kiryataim
+					name_list_sephardi = cn_kiryataim
+					name_list_radhanite = cn_kiryataim
+				}
+
 				b_al-qaryatan = {
 					province = 5950
 
 					color = { 39 236 24 }
+
+					cultural_names = {
+						name_list_canaanite = cn_qiryatain
+						name_list_assyrian = cn_qiryatain
+						name_list_ashkenazi = cn_kiryataim
+						name_list_sephardi = cn_kiryataim
+						name_list_radhanite = cn_kiryataim
+					}
 				}
 				b_judr = {
 					province = 5949
@@ -1712,6 +1751,629 @@ e_byzantium = {
 	}
 }
 
+e_persia = {
+	color = { 30 240 230 }
+
+	capital = c_isfahan #	Esfahan
+
+	definite_form = yes
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = culture:persian
+			}
+			add = @better_than_the_alternatives_score
+		}
+	}
+
+	k_jazira = {
+		color = { 10 205 90 }
+
+		capital	= c_mosul # Mosul
+
+		cultural_names = {
+			name_list_canaanite = cn_assyria
+			name_list_ashkenazi = cn_assyria
+			name_list_sephardi = cn_assyria
+			name_list_radhanite = cn_assyria
+			name_list_assyrian = cn_assyria
+		}
+
+		d_diyarrabia = {
+			color = { 15 200 85 }
+
+			capital = c_mosul
+
+			cultural_names = {
+				name_list_canaanite = cn_aramnaharain
+				name_list_ashkenazi = cn_aramnaharaim
+				name_list_sephardi = cn_aramnaharaim
+				name_list_radhanite = cn_aramnaharaim
+				name_list_assyrian = cn_aramnaharain
+			}
+
+			c_mosul = {
+				color = { 5 210 95 }
+
+				cultural_names = {
+					name_list_canaanite = cn_ashur
+					name_list_ashkenazi = cn_ashur
+					name_list_sephardi = cn_ashur
+					name_list_radhanite = cn_ashur
+					name_list_assyrian = cn_ashur
+				}
+
+				b_mosul = {
+					province = 4840
+
+					color = { 10 205 90 }
+
+					cultural_names = {
+						name_list_canaanite = cn_ashur
+						name_list_ashkenazi = cn_ashur
+						name_list_sephardi = cn_ashur
+						name_list_radhanite = cn_ashur
+						name_list_assyrian = cn_ashur
+					}
+				}
+				b_ain_al-qayyara = {
+					province = 4836
+
+					color = { 10 205 90 }
+				}
+				b_al-hadr = {
+					province = 4837
+
+					color = { 10 205 90 }
+				}
+				b_juhaina = {
+					province = 4838
+
+					color = { 10 205 90 }
+				}
+				b_tall_afar = {
+					province = 4839
+
+					color = { 10 205 90 }
+				}
+				b_balad-mosul = {
+					province = 4841
+
+					color = { 10 205 90 }
+				}
+			}
+			c_ninive = {
+				color = { 30 225 110 }
+
+				cultural_names = {
+					name_list_assyrian = cn_nineveh
+					name_list_canaanite = cn_nineveh
+					name_list_ashkenazi = cn_nineveh
+					name_list_sephardi = cn_nineveh
+					name_list_radhanite = cn_nineveh
+				}
+
+				b_ninawa = {
+					province = 4811
+
+					color = { 30 225 110 }
+
+					cultural_names = {
+						name_list_assyrian = cn_nineveh
+						name_list_canaanite = cn_nineveh
+						name_list_ashkenazi = cn_nineveh
+						name_list_sephardi = cn_nineveh
+						name_list_radhanite = cn_nineveh
+					}
+				}
+				b_bartulla = {
+					province = 4810
+
+					color = { 30 225 110 }
+				}
+				b_fishabur = {
+					province = 4812
+
+					color = { 30 225 110 }
+				}
+			}
+			c_sinjar = {
+				color = { 0 185 70 }
+
+				b_sinjar = {
+					province = 4848
+
+					color = { 0 185 70 }
+				}
+				b_bashazza = {
+					province = 4843
+
+					color = { 0 185 70 }
+				}
+				b_al-hayyal = {
+					province = 4849
+
+					color = { 0 185 70 }
+				}
+				b_al-jibal = {
+					province = 4850
+
+					color = { 0 185 70 }
+				}
+				b_tunamir = {
+					province = 4851
+
+					color = { 0 185 70 }
+				}
+			}
+			c_nasibin = {
+				color = { 40 205 90 }
+
+				b_nasibin = {
+					province = 4845
+
+					color = { 25 150 90 }
+				}
+				b_barqaid = {
+					province = 4842
+
+					color = { 25 150 90 }
+				}
+				b_gazirat_ibn_umar = {
+					province = 4844
+
+					color = { 25 150 90 }
+				}
+				b_dara = {
+					province = 4846
+
+					color = { 25 150 90 }
+				}
+			}
+			c_khabur = {
+				color = { 40 145 85 }
+
+				cultural_names = {
+					name_list_canaanite = cn_habor
+					name_list_ashkenazi = cn_habor
+					name_list_sephardi = cn_habor
+					name_list_radhanite = cn_habor
+					name_list_assyrian = cn_habor
+				}
+
+				b_makisin = {
+					province = 4883
+
+					color = { 40 145 85 }
+				}
+				b_mijdal = {
+					province = 4852
+
+					color = { 40 145 85 }
+				}
+				b_araban = {
+					province = 4879
+
+					color = { 40 145 85 }
+				}
+				b_al-khanuqa = {
+					province = 4880
+
+					color = { 40 145 85 }
+				}
+				b_ash-shamsiya = {
+					province = 4881
+
+					color = { 40 145 85 }
+				}
+				b_qarqisiya = {
+					province = 4882
+
+					color = { 40 145 85 }
+				}
+			}
+			c_upper_khabur = {
+				color = { 25 175 75 }
+
+				cultural_names = {
+					name_list_canaanite = cn_upperhabor
+					name_list_ashkenazi = cn_upperhabor
+					name_list_sephardi = cn_upperhabor
+					name_list_radhanite = cn_upperhabor
+					name_list_assyrian = cn_upperhabor
+				}
+
+				b_ras_al-ain = {
+					province = 4853
+
+					color = { 25 175 75 }
+				}
+				b_mardin = {
+					province = 4854
+
+					color = { 25 175 75 }
+				}
+				b_kafartutha = {
+					province = 4856
+
+					color = { 25 175 75 }
+
+					cultural_names = {
+						name_list_canaanite = cn_kfartut
+						name_list_ashkenazi = cn_kfartut
+						name_list_sephardi = cn_kfartut
+						name_list_radhanite = cn_kfartut
+						name_list_assyrian = cn_kfartut
+					}
+				}
+			}
+		}
+
+		d_diyarmudar = {
+			color = { 10 205 125 }
+
+			capital = c_raqqa
+
+			cultural_names = {
+				name_list_canaanite = cn_padanaram
+				name_list_ashkenazi = cn_padanaram
+				name_list_sephardi = cn_padanaram
+				name_list_radhanite = cn_padanaram
+			}
+
+			c_raqqa = {
+				color = { 10 205 125 }
+
+				cultural_names = {
+					name_list_canaanite = cn_mari
+					name_list_ashkenazi = cn_mari
+					name_list_sephardi = cn_mari
+					name_list_radhanite = cn_mari
+					name_list_assyrian = cn_mari
+				}
+
+				b_raqqa = {
+					province = 4876
+
+					color = { 10 205 125 }
+
+					cultural_names = {
+						name_list_canaanite = cn_mari
+						name_list_ashkenazi = cn_mari
+						name_list_sephardi = cn_mari
+						name_list_radhanite = cn_mari
+						name_list_assyrian = cn_mari
+					}
+				}
+				b_bajarwan = {
+					province = 4877
+
+					color = { 10 205 125 }
+				}
+				b_ratla = {
+					province = 5943
+
+					color = { 10 205 125 }
+				}
+			}
+			c_harran = {
+				color = { 5 128 71 }
+
+				b_harran = {
+					province = 4870
+
+					color = { 5 128 71 }
+				}
+				b_saruj = {
+					province = 4874
+
+					color = { 5 128 71 }
+				}
+				b_tall_mahra = {
+					province = 4878
+
+					color = { 5 128 71 }
+				}
+			}
+			c_dausar = {
+				color = { 35 235 160 }
+
+				b_dausar = {
+					province = 4875
+
+					color = { 95 150 40 }
+				}
+				b_tall_ammar = {
+					province = 4873
+
+					color = { 95 150 40 }
+				}
+			}
+		}
+
+		d_diyarbakr = {
+			color = { 70 195 100 }
+
+			capital = c_amida
+
+			c_amida = {
+				color = { 70 195 100 }
+
+				b_amid = {
+					province = 4867
+
+					color = { 70 195 100 }
+				}
+				b_zermion = {
+					province = 4866
+
+					color = { 70 195 100 }
+				}
+				b_as-suwaida = {
+					province = 4868
+
+					color = { 70 195 100 }
+				}
+				b_tall_mauzan = {
+					province = 4871
+
+					color = { 70 195 100 }
+				}
+			}
+			c_tall_basma = {
+				color = { 90 215 120 }
+
+				b_tall_basma = {
+					province = 4855
+
+					color = { 90 215 120 }
+				}
+				b_hisn_kaifa = {
+					province = 4847
+
+					color = { 90 215 120 }
+				}
+			}
+			c_hakkari = {
+				color = { 50 175 80 }
+
+				b_hakkari = {
+					province = 4815
+
+					color = { 50 175 80 }
+				}
+				b_baqirda = {
+					province = 4813
+
+					color = { 50 175 80 }
+				}
+				b_tamanin = {
+					province = 4814
+
+					color = { 50 175 80 }
+				}
+				b_saird = {
+					province = 4816
+
+					color = { 50 175 80 }
+				}
+				b_juza = {
+					province = 4817
+
+					color = { 50 175 80 }
+				}
+			}
+			c_mayyafariqin = {
+				color = { 30 145 110 }
+
+				b_mayyafariqin = {
+					province = 4859
+
+					color = { 30 145 110 }
+				}
+				b_tall_fafan = {
+					province = 4857
+
+					color = { 30 145 110 }
+				}
+				b_arzan = {
+					province = 4858
+
+					color = { 30 145 110 }
+				}
+				b_nasriye = {
+					province = 4860
+
+					color = { 30 145 110 }
+				}
+			}
+			c_bakriya = {
+				color = { 70 125 120 }
+
+				b_hani = {
+					province = 4861
+
+					color = { 70 125 120 }
+				}
+				b_hisn_di-l-qarnain = {
+					province = 4862
+
+					color = { 70 125 120  }
+				}
+				b_qulb = {
+					province = 4864
+
+					color = { 70 125 120  }
+				}
+				b_erkne = {
+					province = 4865
+
+					color = { 70 125 120  }
+				}
+				b_shimshat = {
+					province = 4863
+
+					color = { 70 125 120  }
+				}
+			}
+		}
+
+		d_euphrates = {
+			color = { 30 180 120 }
+
+			capital = c_rahba
+
+			c_rahba = {
+				color = { 30 180 120 }
+
+				b_al-rahba = {
+					province = 4889
+
+					color = { 30 180 120 }
+				}
+				b_ad-daliya = {
+					province = 4888
+
+					color = { 30 180 120 }
+				}
+			}
+			c_hadithat-ana = {
+				color = { 60 200 120 }
+
+				b_hadithat-ana = {
+					province = 4885
+
+					color = { 60 200 120 }
+				}
+				b_sukayr_al-abbas = {
+					province = 4884
+
+					color = { 60 200 120 }
+				}
+			}
+			c_al-haditha = {
+				color = { 70 160 80 }
+
+				b_al-haditha-furat = {
+					province = 4886
+
+					color = { 70 160 80 }
+				}
+				b_ana = {
+					province = 4887
+
+					color = { 70 160 80 }
+				}
+			}
+		}
+
+		d_kurdistan = {
+			color = { 60 210 150 }
+
+			capital = c_irbil
+
+			c_irbil = {
+				color = { 60 210 150 }
+
+				cultural_names = {
+					name_list_canaanite = cn_arbela
+					name_list_ashkenazi = cn_arbela
+					name_list_sephardi = cn_arbela
+					name_list_radhanite = cn_arbela
+					name_list_assyrian = cn_arbela
+				}
+
+				b_irbil = {
+					province = 4777
+
+					color = { 60 210 150 }
+
+					cultural_names = {
+						name_list_canaanite = cn_arbela
+						name_list_ashkenazi = cn_arbela
+						name_list_sephardi = cn_arbela
+						name_list_radhanite = cn_arbela
+						name_list_assyrian = cn_arbela
+					}
+				}
+				b_al-haditha = {
+					province = 4808
+
+					color = { 60 210 150 }
+				}
+				b_as-sinn = {
+					province = 4809
+
+					color = { 60 210 150 }
+				}
+			}
+			c_kurdistan = {
+				color = { 40 190 130 }
+
+				b_tall_haftun = {
+					province = 4774
+
+					color = { 40 190 130 }
+				}
+				b_khuftiyan = {
+					province = 4773
+
+					color = { 40 190 130 }
+				}
+				b_shaqlabadh = {
+					province = 4775
+
+					color = { 40 190 130 }
+				}
+				b_bamardani = {
+					province = 4776
+
+					color = { 40 190 130 }
+				}
+			}
+			c_shahrazur = {
+				color = { 80 230 180 }
+
+				b_shahrazur = {
+					province = 4780
+
+					color = { 80 230 180 }
+				}
+				b_khuftidkan = {
+					province = 4778
+
+					color = { 80 230 180 }
+				}
+				b_tiranshah = {
+					province = 4779
+
+					color = { 80 230 180 }
+				}
+			}
+		}
+	}
+}
+
+e_beth_nahrain = {
+	color = { 35 79 78 }
+	capital = c_damascus # Damascus
+
+	cultural_names = {
+		name_list_ashkenazi = cn_bethnaharaim
+		name_list_sephardi = cn_bethnaharaim
+		name_list_radhanite = cn_bethnaharaim
+	}
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+}
+
 e_maghreb = {
 	color = { 209 63 44 }
 
@@ -1736,6 +2398,15 @@ e_maghreb = {
 	k_carthage = {
 		color = { 191 220 255 }
 		capital = c_tunis # Tunis
+
+		cultural_names = {
+			name_list_greek = cn_carthago
+			name_list_latin = cn_carthago
+			name_list_canaanite = cn_qarthadasht
+			name_list_ashkenazi = cn_qarthadasht
+			name_list_sephardi= cn_qarthadasht
+			name_list_radhanite = cn_qarthadasht
+		}
 
 		can_create = {
 			rule_title_creation_imperial_power_projection_title_creation_trigger = yes

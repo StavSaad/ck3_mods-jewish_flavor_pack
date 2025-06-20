@@ -15,3 +15,9 @@ jip_region_canaan = {
 		jip_region_israel jip_region_phoenicia
 	}
 }
+
+jip_region_carthage = {
+	counties = {
+		c_tunis c_satfura c_medjerda c_mahdiya c_constantine c_annaba c_gabes c_sfax c_kairwan c_west_qamuda c_tabassa
+	}
+}

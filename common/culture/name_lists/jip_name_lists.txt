@@ -235,12 +235,12 @@ name_list_canaanite = {
 		BaAlZevuv Tovi Noach Amminadav Ratzin Hanibaal Hasdrubaal
 	}
 	female_names = {
-		Anah Anat MaAkhah Machlah Achinoam Asenat Atarah Avigayil Avishag Avital Basmat BatSheva
-		Beulah Bilhah Bityah Chaggit Channah Chavah CheftziBah Chuldah Delilah Devorah Dinah Ednah Efrat Elisheva
+		Anah Anat MaAkhah Achinoam Asenat Atarah Avigayil Avishag Avital Basmat BatSheva
+		Beulah Bilhah Bityah Chaggit Channah Chavah Chuldah Delilah Devorah Dinah Ednah Efrat Elisheva
 		Ester Hadassah Hagar Izevel KetziAh Leah Machalat MeheitavEl Merav Mikhal Miriam NaAmah NaOmi
 		Orpah Rachel Rivqah Rut Sarah Shifra Shoshannah Shulammit Tamar Tirtzah Tzillah Tzipporah
 		Yael Yedidah Yemima Yerushah NoAh Keren Diklah Gomer Mikhayahu Ofir Yachin
-		Hurriyah Pigat
+		Hurriyah Pigat Dido Elishat
 	}
 	
 	dynasty_of_location_prefix = "dynnp_of"
