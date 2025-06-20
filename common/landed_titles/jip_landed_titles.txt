@@ -925,7 +925,6 @@ e_arabia = {
 				color = { 84 220 20 }
 
 				cultural_names = {
-					name_list_greek = cn_khalkis
 					name_list_canaanite = cn_qennesharim
 					name_list_ashkenazi = cn_qennesharim
 					name_list_sephardi = cn_qennesharim
@@ -939,7 +938,6 @@ e_arabia = {
 					color = { 84 220 20 }
 
 					cultural_names = {
-						name_list_greek = cn_khalkis
 						name_list_canaanite = cn_qennesharim
 						name_list_ashkenazi = cn_qennesharim
 						name_list_sephardi = cn_qennesharim
@@ -1329,9 +1327,9 @@ e_arabia = {
 
 				cultural_names = {
 					name_list_canaanite = cn_geval
-					name_list_ashkenazi = cn_athar
-					name_list_sephardi = cn_athar
-					name_list_radhanite = cn_athar
+					name_list_ashkenazi = cn_geval
+					name_list_sephardi = cn_geval
+					name_list_radhanite = cn_geval
 				}
 
 				b_syrtripolis = {
@@ -1340,10 +1338,10 @@ e_arabia = {
 					color = { 75 154 36 }
 
 					cultural_names = {
-						name_list_canaanite = cn_athar
-						name_list_ashkenazi = cn_athar
-						name_list_sephardi = cn_athar
-						name_list_radhanite = cn_athar
+						name_list_canaanite = cn_geval
+						name_list_ashkenazi = cn_geval
+						name_list_sephardi = cn_geval
+						name_list_radhanite = cn_geval
 					}
 				}
 				b_antartus = {
@@ -1352,10 +1350,10 @@ e_arabia = {
 					color = { 75 154 36 }
 
 					cultural_names = {
-						name_list_canaanite = cn_geval
-						name_list_ashkenazi = cn_geval
-						name_list_sephardi = cn_geval
-						name_list_radhanite = cn_geval
+						name_list_canaanite = cn_arvad
+						name_list_ashkenazi = cn_arvad
+						name_list_sephardi = cn_arvad
+						name_list_radhanite = cn_arvad
 					}
 				}
 			}
@@ -1451,6 +1449,14 @@ e_arabia = {
 					province = 5937
 
 					color = { 134 255 15 }
+
+					cultural_names = {
+						name_list_canaanite = cn_iturea
+						name_list_ashkenazi = cn_iturea
+						name_list_sephardi = cn_iturea
+						name_list_radhanite = cn_iturea
+						name_list_assyrian = cn_iturea
+					}
 				}
 			}
 			c_hauran = {

@@ -564,7 +564,7 @@ reestablish_canaanite_city_decision = {
 		}
 		if = {
 			limit = { scope:tripoli = yes }
-			reestablish_canaanite_city_effect = { COUNTY = c_tripoli BARONY = b_antartus }
+			reestablish_canaanite_city_effect = { COUNTY = c_tripoli BARONY = b_syrtripolis }
 		}
 		if = {
 			limit = { scope:antiocheia = yes }
