@@ -882,11 +882,27 @@ e_arabia = {
 					province = 5907
 
 					color = { 91 238 26 }
+
+					cultural_names = {
+						name_list_assyrian = cn_hazazu
+						name_list_canaanite = cn_hazazu
+						name_list_ashkenazi = cn_hazazu
+						name_list_sephardi = cn_hazazu
+						name_list_radhanite = cn_hazazu
+					}
 				}
 				b_manbij = {
 					province = 5908
 
 					color = { 91 238 26 }
+
+					cultural_names = {
+						name_list_assyrian = cn_manbug
+						name_list_canaanite = cn_manbug
+						name_list_ashkenazi = cn_manbug
+						name_list_sephardi = cn_manbug
+						name_list_radhanite = cn_manbug
+					}
 				}
 				b_buzaa = {
 					province = 5938
@@ -1200,6 +1216,14 @@ e_arabia = {
 					province = 5931
 
 					color = { 95 242 30 }
+
+					cultural_names = {
+						name_list_canaanite = cn_luash
+						name_list_ashkenazi = cn_luash
+						name_list_sephardi = cn_luash
+						name_list_radhanite = cn_luash
+						name_list_assyrian = cn_luash
+					}
 				}
 				b_kafartab = {
 					province = 5932
@@ -1480,6 +1504,14 @@ e_arabia = {
 					province = 5956
 
 					color = { 103 214 143 }
+
+					cultural_names = {
+						name_list_canaanite = cn_salcah
+						name_list_ashkenazi = cn_salcah
+						name_list_sephardi = cn_salcah
+						name_list_radhanite = cn_salcah
+						name_list_assyrian = cn_salcah
+					}
 				}
 				b_as-suwaida-hauran = {
 					province = 5957
@@ -1900,10 +1932,26 @@ e_persia = {
 			c_sinjar = {
 				color = { 0 185 70 }
 
+				cultural_names = {
+					name_list_assyrian = cn_shingar
+					name_list_canaanite = cn_shingar
+					name_list_ashkenazi = cn_shingar
+					name_list_sephardi = cn_shingar
+					name_list_radhanite = cn_shingar
+				}
+
 				b_sinjar = {
 					province = 4848
 
 					color = { 0 185 70 }
+
+					cultural_names = {
+						name_list_assyrian = cn_shingar
+						name_list_canaanite = cn_shingar
+						name_list_ashkenazi = cn_shingar
+						name_list_sephardi = cn_shingar
+						name_list_radhanite = cn_shingar
+					}
 				}
 				b_bashazza = {
 					province = 4843
@@ -2007,6 +2055,14 @@ e_persia = {
 					province = 4853
 
 					color = { 25 175 75 }
+
+					cultural_names = {
+						name_list_canaanite = cn_gozan
+						name_list_ashkenazi = cn_gozan
+						name_list_sephardi = cn_gozan
+						name_list_radhanite = cn_gozan
+						name_list_assyrian = cn_gozan
+					}
 				}
 				b_mardin = {
 					province = 4854
@@ -2098,6 +2154,14 @@ e_persia = {
 			}
 			c_dausar = {
 				color = { 35 235 160 }
+
+				cultural_names = {
+					name_list_assyrian = cn_bethadini
+					name_list_canaanite = cn_bethadini
+					name_list_ashkenazi = cn_bethadini
+					name_list_sephardi = cn_bethadini
+					name_list_radhanite = cn_bethadini
+				}
 
 				b_dausar = {
 					province = 4875
