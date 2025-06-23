@@ -877,6 +877,9 @@ create_k_phoenicia_decision = {
 		OR = {
 			has_title = title:d_lebanon
 			has_title = title:d_antioch
+			capital_county = {
+				is_within_region = jip_region_phoenicia
+			}
 		}
 		NOT = {
 			is_target_in_global_variable_list = {
@@ -896,10 +899,11 @@ create_k_phoenicia_decision = {
 		OR = {
 			has_primary_title = title:d_lebanon
 			has_primary_title = title:d_antioch
+			primary_title.capital_county = {
+				is_within_region = jip_region_phoenicia
+			}
 		}
-		has_title = title:d_lebanon
-		has_title = title:d_antioch
-		
+		completely_controls_region = jip_region_phoenicia
 	}
 
 	is_valid_showing_failures_only = {
