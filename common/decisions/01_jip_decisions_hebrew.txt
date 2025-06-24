@@ -318,7 +318,10 @@ create_e_canaan_decision = {
 	decision_group_type = major
 
 	is_shown = {
-		culture = { has_cultural_pillar = heritage_israelite }
+		OR = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			culture = { has_cultural_pillar = heritage_canaanite }
+		}
 		OR = {
 			has_title = title:k_israel
 			has_title = title:k_syria

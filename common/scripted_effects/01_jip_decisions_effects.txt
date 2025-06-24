@@ -159,10 +159,10 @@ form_canaanite_decision_effects = {
 
 create_canaan_decision_effect = {
 	create_title_and_vassal_change = {
-			type = created
-			save_scope_as = title_change
-			add_claim_on_loss = no
-		}
+		type = created
+		save_scope_as = title_change
+		add_claim_on_loss = no
+	}
 	if = {
 		limit = { has_title = title:k_jerusalem	}
 		title:k_jerusalem = { set_de_jure_liege_title = title:e_canaan }
@@ -182,6 +182,13 @@ create_canaan_decision_effect = {
 			completely_controls = title:k_cyprus
 		}
 		title:k_cyprus = { set_de_jure_liege_title = title:e_canaan }
+	}
+	if = {
+		limit = {
+			has_title = title:k_egypt
+			completely_controls = title:k_egypt
+		}
+		title:k_egypt = { set_de_jure_liege_title = title:e_canaan }
 	}
 	title:e_canaan = {
 		change_title_holder = {

@@ -231,7 +231,9 @@
 	culture = levantine
 	religion = ashari
 	
-	# History
+	769.1.1 = {
+		special_building_slot = generic_copper_mines_01
+	}
 
 }
 
