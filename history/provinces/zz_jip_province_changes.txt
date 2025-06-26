@@ -1,0 +1,82 @@
+4552 = {	# 4552 - SYRTE
+	culture = punic
+	#culture = zanata
+	religion = ibadi
+	holding = castle_holding
+	
+	# History
+	1050.1.1 = { #Area conquered by tribals and turned into nomadic pastures
+		holding = tribal_holding
+	}
+	1055.1.1 = {
+		culture = maghrebi
+		religion = ashari
+	}
+}
+
+# 4875 - DAUSAR
+4875 = {	# 4875 - Dausar
+	
+	# Misc
+	culture = aramean # For the Syrian Melkites
+	religion = orthodox
+	
+	# History
+	1120.1.1 = { culture = levantine }
+	1270.1.1 = { religion = ashari }
+
+}
+
+5915 = {	# 5915 - Shaizar
+	
+	# Misc
+	culture = aramean # For the Syrian Melkites
+	religion = orthodox
+	
+	# History
+	1120.1.1 = {
+		culture = levantine
+		religion = nizari
+	}
+	1271.1.1 = { religion = ashari }
+
+}
+
+# 5933 - QINNASRIN
+5933 = {	# 5933 - Qinnasrin
+	
+	# Misc
+	culture = aramean # For the Syrian Melkites
+	religion = orthodox
+	
+	# History
+	1120.1.1 = { culture = levantine }
+	1271.1.1 = { religion = ashari }
+
+}
+
+# 5969 - ZUGHAR
+5969 = {	# 5969 - Zughar
+	
+	# Misc
+	culture = bedouin
+	religion = ashari
+	
+	# History
+	769.1.1 = {
+		special_building = masada_01
+	}
+}
+
+# 5972 - ARANDAL
+5972 = {	# 5972 - Arandal
+	
+	# Misc
+	culture = levantine
+	religion = ashari
+	
+	769.1.1 = {
+		special_building_slot = generic_copper_mines_01
+	}
+
+}

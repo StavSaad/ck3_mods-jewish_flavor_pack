@@ -1,0 +1,15 @@
+replace_temple_description = {
+	global = replace_temple_description
+}
+
+every_islamic_loses_fervor = {
+	global = every_islamic_loses_fervor
+}
+
+every_muslim_ruler_loses_opinion = {
+	global = every_muslim_ruler_loses_opinion
+}
+
+reestablish_canaanite_city_decision_effect = {
+	global = reestablish_canaanite_city_decision_effect
+}

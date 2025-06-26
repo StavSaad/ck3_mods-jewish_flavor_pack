@@ -757,75 +757,6 @@ expand_phoenicia_decision = {
 		}
 	}
 
-	widget = {
-		gui = "decision_view_widget_option_list_generic"
-		controller = decision_option_list_controller
-		decision_to_second_step_button = "CHOOSE_TITLE"
-		show_from_start = yes
-
-		item = { # baalbek
-			value = baalbek
-			is_shown = {
-				NOT = {
-					title:d_lebanon = {
-						is_de_jure_liege_or_above_target = title:c_baalbek
-					}
-				}
-			}
-			is_valid = {
-				completely_controls = title:c_baalbek
-			}
-			current_description = expand_phoenicia_baalbek_desc
-			localization = expand_phoenicia_baalbek_desc
-			icon = "gfx/interface/icons/county_crown.dds"
-			ai_chance = { value = 10 }
-		}
-		item = { # acre
-			value = acre
-			is_shown = {
-				NOT = {
-					has_primary_title = title:k_israel
-				}
-				NOT = {
-					title:d_lebanon = {
-						is_de_jure_liege_or_above_target = title:c_acre
-					}
-				}
-			}
-			is_valid = {
-				completely_controls = title:c_acre
-			}
-			current_description = expand_phoenicia_acre_desc
-			localization = expand_phoenicia_acre_desc
-			icon = "gfx/interface/icons/county_crown.dds"
-			ai_chance = { value = 10 }
-		}
-		item = { # cyprus
-			value = cyprus
-			is_shown = {
-				OR = {
-					has_primary_title = title:k_phoenicia
-					primary_title = {
-						is_de_facto_liege_or_above_target = title:k_phoenicia
-					}
-				}
-				NOT = {
-					title:k_phoenicia = {
-						is_de_jure_liege_or_above_target = title:d_cyprus
-					}
-				}
-			}
-			is_valid = {
-				has_title = title:d_cyprus
-				completely_controls = title:d_cyprus
-			}
-			current_description = expand_phoenicia_cyprus_desc
-			localization = expand_phoenicia_cyprus_desc
-			icon = "gfx/interface/icons/duchy_crown.dds"
-			ai_chance = { value = 10 }
-		}
-	}
-
 	is_valid_showing_failures_only = {
 		is_available_adult = yes
 		is_at_war = no
@@ -853,6 +784,61 @@ expand_phoenicia_decision = {
 	}
 
 	cost = { prestige = { value = 500 } }
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+
+}
+
+clear_grounds_for_the_third_temple_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	ai_check_interval = 60
+	desc = clear_grounds_for_the_third_temple_decision_desc
+	decision_group_type = major
+
+	is_shown = {
+		culture = { has_cultural_pillar = heritage_israelite }
+		has_religion = religion:judaism_religion
+		has_title = title:c_jerusalem
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:clear_grounds_for_the_third_temple_decision
+			}
+		}
+	}
+
+	is_valid = {
+		piety_level >= 4
+		is_independent_ruler = yes
+		title:c_jerusalem = {
+			has_religion = religion:judaism_religion
+		}
+		has_title = title:k_israel
+		completely_controls = title:k_israel
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	effect = {
+		rebuild_the_third_temple_effect = yes
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:clear_grounds_for_the_third_temple_decision
+		}
+	}
+
+	cost = { piety = { value = 500 } }
 
 	ai_potential = {
 		always = yes

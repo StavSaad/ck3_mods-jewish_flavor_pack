@@ -256,3 +256,40 @@ reestablish_canaanite_city_effect = {
 	}
 	title:$BARONY$ = { set_capital_barony = yes }
 }
+
+rebuild_the_third_temple_effect = {
+	title:c_jerusalem = { 
+		title_province = {
+			remove_building = dome_of_the_rock_01
+			custom_description = {
+				text = replace_temple_description
+				add_special_building = temple_in_jerusalem_01
+				remove_building = temple_in_jerusalem_01
+			}
+		} 
+	}
+	custom_description = {
+		text = every_islamic_loses_fervor
+		religion:islam_religion = {
+			every_faith = {
+				limit = {
+					NOT = { this = faith:druze }
+				}
+				change_fervor = -15
+			}
+		}
+	}
+	custom_description = {
+		text = every_muslim_ruler_loses_opinion
+		object = ROOT
+		every_ruler = {
+			limit = {
+				has_religion = religion:islam_religion
+			}
+			add_opinion = {
+				target = ROOT
+				modifier = destroyed_dome_of_the_rock_opinion
+			}
+		}
+	}
+}
