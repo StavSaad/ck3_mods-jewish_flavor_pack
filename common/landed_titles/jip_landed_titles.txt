@@ -3131,6 +3131,16 @@ e_maghreb = {
 					province = 4582
 
 					color = { 96 128 224 }
+
+					cultural_names = {
+						name_list_greek = cn_carthago
+						name_list_latin = cn_carthago
+						name_list_canaanite = cn_qarthadasht
+						name_list_assyrian = cn_qarthadasht
+						name_list_ashkenazi = cn_qarthadasht
+						name_list_sephardi = cn_qarthadasht
+						name_list_radhanite = cn_qarthadasht
+					}
 				}
 				b_zaghwan = {
 					province = 4581
@@ -3143,13 +3153,13 @@ e_maghreb = {
 					color = { 96 128 224 }
 
 					cultural_names = {
-						name_list_greek = cn_carthago
-						name_list_latin = cn_carthago
-						name_list_canaanite = cn_qarthadasht
-						name_list_assyrian = cn_qarthadasht
-						name_list_ashkenazi = cn_qarthadasht
-						name_list_sephardi = cn_qarthadasht
-						name_list_radhanite = cn_qarthadasht
+						name_list_greek = cn_utica
+						name_list_latin = cn_utica
+						name_list_canaanite = cn_ataq
+						name_list_assyrian = cn_ataq
+						name_list_ashkenazi = cn_ataq
+						name_list_sephardi = cn_ataq
+						name_list_radhanite = cn_ataq
 					}
 				}
 				b_nabeul = {
@@ -3166,10 +3176,24 @@ e_maghreb = {
 			c_satfura = {
 				color = { 77 117 240 }
 
+				cultural_names = {
+					name_list_canaanite = cn_ipun
+					name_list_radhanite = cn_ipun
+					name_list_ashkenazi = cn_ipun
+					name_list_sephardi = cn_ipun
+				}
+
 				b_banzart = {
 					province = 4585
 
 					color = { 77 117 240 }
+
+					cultural_names = {
+						name_list_canaanite = cn_ipun
+						name_list_radhanite = cn_ipun
+						name_list_ashkenazi = cn_ipun
+						name_list_sephardi = cn_ipun
+					}
 				}
 					b_tabarqa = {
 					province = 4586
@@ -3213,11 +3237,25 @@ e_maghreb = {
 					province = 4579
 
 					color = { 122 140 196 }
+
+					cultural_names = {
+						name_list_canaanite = cn_roshpinat
+						name_list_radhanite = cn_roshpinat
+						name_list_ashkenazi = cn_roshpinat
+						name_list_sephardi = cn_roshpinat
+					}
 				}
 				b_susa = {
 					province = 4580
 
 					color = { 122 140 196 }
+
+					cultural_names = {
+						name_list_canaanite = cn_hadrumete
+						name_list_radhanite = cn_hadrumete
+						name_list_ashkenazi = cn_hadrumete
+						name_list_sephardi = cn_hadrumete
+					}
 				}
 			}
 		}

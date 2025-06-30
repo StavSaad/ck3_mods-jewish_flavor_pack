@@ -1,0 +1,39 @@
+duke_republic_male_israelite_canaanite = {
+	type = character
+	gender = male
+	special = holder
+	priority = 27
+	tier = duchy
+	heritages = { heritage_israelite heritage_canaanite }
+	governments = { republic_government }
+}
+
+duke_republic_female_israelite_canaanite = {
+	type = character
+	gender = female
+	special = holder
+	priority = 27
+	tier = duchy
+	heritages = { heritage_israelite heritage_canaanite }
+	governments = { republic_government }
+}
+
+king_republic_male_israelite_canaanite = {
+	type = character
+	gender = male
+	special = holder
+	priority = 35
+	tier = kingdom
+	heritages = { heritage_israelite heritage_canaanite }
+	governments = { republic_government }
+}
+
+king_republic_female_israelite_canaanite = {
+	type = character
+	gender = female
+	special = holder
+	priority = 35
+	tier = kingdom
+	heritages = { heritage_israelite heritage_canaanite }
+	governments = { republic_government }
+}
