@@ -141,9 +141,9 @@ temple_in_jerusalem_01 = {
 	flag = travel_point_of_interest_religious
 }
 
-##########
-# OLD MASADA
-##########
+##############
+# OLD MASADA #
+##############
 
 masada_01 = {
 

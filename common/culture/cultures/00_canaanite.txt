@@ -13,9 +13,9 @@ canaanite = {
 		tradition_fervent_temple_builders
 	}
 
-	name_list = name_list_canaanite # The Radhanite namelist is near-exclusively biblical names
+	name_list = name_list_canaanite
 
-	coa_gfx = { israelite_group_coa_gfx }
+	coa_gfx = { byzantine_group_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
 	clothing_gfx = { byzantine_clothing_gfx }
 	unit_gfx = { mena_unit_gfx }
@@ -31,7 +31,7 @@ punic = {
 	history_loc_override = punic_history_loc
 	ethos = ethos_spiritual
 	heritage = heritage_canaanite
-	language = language_punic
+	language = language_canaanite
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = { # I'm pretty sure anything I put in here or do not put in here will spark a discussion or two
@@ -43,7 +43,7 @@ punic = {
 
 	name_list = name_list_canaanite # The Radhanite namelist is near-exclusively biblical names
 
-	coa_gfx = { israelite_group_coa_gfx }
+	coa_gfx = { byzantine_group_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
 	clothing_gfx = { byzantine_clothing_gfx }
 	unit_gfx = { mena_unit_gfx }

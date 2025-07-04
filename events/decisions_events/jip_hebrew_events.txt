@@ -319,3 +319,34 @@ jip_hebrew.0022 = {
 		}
 	}
 }
+
+# Carthage
+jip_hebrew.0030 = {
+	type = character_event
+	title = jip_hebrew.0030.t #change
+	desc = {
+		desc = jip_hebrew.0030.desc #change
+	}
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = ecstasy
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_positive_effect"
+		create_carthage_decision_effect = yes
+		# if = {
+		# 	limit = { is_male = yes }
+		# 	give_nickname = nick_the_rising_lion
+		# }
+		# if = {
+		# 	limit = { is_female = yes }
+		# 	give_nickname = nick_the_rising_lioness
+		# }
+	}
+
+	option = {
+		name = jip_hebrew.0030.a
+	}
+}

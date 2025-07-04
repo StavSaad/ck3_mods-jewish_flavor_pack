@@ -3612,26 +3612,179 @@ e_maghreb = {
 		}
 	}
 
-	k_carthage = {
-		color = { 191 220 255 }
-		capital = c_tunis # Tunis
+}
 
-		cultural_names = {
-			name_list_greek = cn_carthago
-			name_list_latin = cn_carthago
+e_carthage = {
+	color = { 191 220 255 }
+	capital = c_tunis # Tunis
+
+	cultural_names = {
+		name_list_greek = cn_carthago
+		name_list_latin = cn_carthago
+	}
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_canaanite }
+			}
+			add = @correct_culture_primary_score
 		}
+	}
+}
+
+e_germany = {
+	color = { 190 200 190 }
+
+	capital = c_nassau
+
+	can_create = {
+		custom_description = {
+			text = form_germania_christian_trigger
+
+			NOT = {
+				faith = {
+					religion_tag = christianity_religion
+					has_doctrine = doctrine_spiritual_head
+				}
+			}
+		}
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_central_germanic }
+			}
+			add = @correct_culture_primary_score
+		}
+	}
+
+	cultural_names = {
+		name_list_ashkenazi = cn_ashkenaz
+		name_list_sephardi = cn_ashkenaz
+		name_list_radhanite = cn_ashkenaz
+	}
+
+	k_east_francia = {	#Germany
+		color = { 160 160 160 }
+
+		capital = c_frankfurt
 
 		can_create = {
-			rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+			trigger_if = {
+				limit = { is_ai = yes }
+				NOT = { exists = title:e_hre }
+			}
 		}
 
 		ai_primary_priority = {
 			if = {
 				limit = {
-					culture = { has_cultural_pillar = heritage_canaanite }
+					culture = culture:franconian
 				}
 				add = @correct_culture_primary_score
 			}
+			if = {
+				limit = {
+					NOT = { culture = culture:franconian }
+					culture = { has_cultural_pillar = heritage_central_germanic }
+				}
+				add = @better_than_the_alternatives_score
+			}
+		}
+
+		d_west_franconia = {
+			color = { 170 170 170 }
+
+			capital = c_frankfurt
+
+			cultural_names = {
+				name_list_ashkenazi = cn_shum
+				name_list_sephardi = cn_shum
+				name_list_radhanite = cn_shum
+			}
+		}
+	}
+}
+
+e_spain = {
+	color = { 233 200 20 }
+
+	capital = c_toledo # Toledo
+	can_be_named_after_dynasty = no
+
+	cultural_names = {
+		name_list_ashkenazi = cn_sepharad
+		name_list_sephardi = cn_sepharad
+		name_list_radhanite = cn_sepharad
+		name_list_bedouin = cn_isbaniya
+		name_list_butr = cn_isbaniya
+		name_list_baranis = cn_isbaniya
+		name_list_zaghawa = cn_isbaniya
+		name_list_levantine = cn_isbaniya
+		name_list_egyptian = cn_isbaniya
+		name_list_maghrebi = cn_isbaniya
+		name_list_andalusian = cn_isbaniya
+		name_list_yemeni = cn_isbaniya
+	}
+
+	can_create = {
+		custom_description = {
+			text = form_hispania_must_end_struggle_trigger
+
+			NOT = { exists = struggle:iberian_struggle }
+		}
+
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_iberian }
+			}
+			add = @correct_culture_primary_score
+		}
+	}
+
+}
+
+e_france = {
+	color = { 11 22 170 }
+
+	capital = c_ile_de_france
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
+	cultural_names = {
+		name_list_ashkenazi = cn_tzarfat
+		name_list_sephardi = cn_tzarfat
+		name_list_radhanite = cn_tzarfat
+	}
+
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = culture:french
+			}
+			add = @correct_culture_primary_score
+		}
+		if = {
+			limit = {
+				OR = {
+					culture = culture:norman
+					culture = culture:occitan
+				}
+			}
+			add = @better_than_the_alternatives_score
 		}
 	}
 }

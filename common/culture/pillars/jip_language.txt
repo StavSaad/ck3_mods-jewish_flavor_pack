@@ -74,39 +74,3 @@ language_canaanite = {
 	
 	color = canaanite
 }
-
-language_punic = {
-	type = language
-	is_shown = {
-		language_is_shown_trigger = {
-			LANGUAGE = language_punic
-		}
-	}
-	ai_will_do = {
-		value = 10
-		if = {
-			limit = { has_cultural_pillar = language_punic }
-			multiply = 10
-		}
-		if = {
-			limit = {
-				scope:character = {
-					AND = {
-						NOT = {
-							religion = religion:judaism_religion
-						}
-						culture = {
-							OR = {
-								has_cultural_pillar = heritage_israelite
-								any_parent_culture = { has_cultural_pillar = language_canaanite }
-							}
-						}
-					}
-				}
-			}
-			multiply = 2
-		}
-	}
-	
-	color = bavlim
-}

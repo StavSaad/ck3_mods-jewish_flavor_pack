@@ -83,7 +83,7 @@ k_phoenicia = {
 
 }
 
-k_carthage = {
+e_carthage = {
 	pattern="pattern__solid_designer.dds"
 	color1=white
 	color2=white

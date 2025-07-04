@@ -18,6 +18,6 @@ jip_region_canaan = {
 
 jip_region_carthage = {
 	counties = {
-		c_tunis c_satfura c_medjerda c_mahdiya c_constantine c_annaba c_gabes c_sfax c_kairwan c_west_qamuda c_tabassa
+		c_tunis c_satfura c_medjerda c_mahdiya c_constantine c_annaba c_gabes c_sfax c_kairwan c_west_qamuda c_tabassa c_djerba c_tripolitana c_jafara c_labda c_waddan c_syrte c_satif c_bejaia c_algier c_tanas
 	}
 }
