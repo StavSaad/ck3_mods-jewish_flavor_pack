@@ -27,6 +27,19 @@ rabbinic_exilarchate_chaniani = {
 	}
 }
 
+rabbinic_exilarchate_adai_wife_of_bostanai = {
+	name = "Adai"
+	religion = "rabbinism"
+	culture = "bavlim"
+	female = yes
+	621.1.1 = {
+		birth = "621.1.1"
+	}
+	667.1.1 = {
+		death = "667.1.1"
+	}
+}
+
 rabbinic_exilarchate_bostanai_i = {
 	name = "Bostanai"
 	religion = "rabbinism"
@@ -36,6 +49,12 @@ rabbinic_exilarchate_bostanai_i = {
 	trait = education_learning_3
 	618.1.1 = {
 		birth = "618.1.1"
+	}
+	647.1.1 = {
+		add_spouse = rabbinic_exilarchate_adai_wife_of_bostanai
+	}
+	653.1.1 = {
+		add_spouse = 180639
 	}
 	670.1.1 = {
 		death = "670.1.1"
@@ -65,11 +84,11 @@ rabbinic_exilarchate_shahariada = {
 	mother = 180639
 	dynasty_house = house_izdundadite
 	trait = education_learning_3
-	643.1.1 = {
-		birth = "643.1.1"
+	667.1.1 = {
+		birth = "667.1.1"
 	}
-	690.1.1 = {
-		death = "690.1.1"
+	721.1.1 = {
+		death = "721.1.1"
 	}
 }
 
@@ -80,8 +99,8 @@ rabbinic_exilarchate_ahonai = {
 	father = rabbinic_exilarchate_shahariada
 	dynasty_house = house_izdundadite
 	trait = education_learning_3
-	685.1.1 = {
-		birth = "685.1.1"
+	695.1.1 = {
+		birth = "695.1.1"
 	}
 	740.1.1 = {
 		death = "740.1.1"
@@ -89,10 +108,11 @@ rabbinic_exilarchate_ahonai = {
 }
 
 rabbinic_exilarchate_baradawi = {
-	name = "Baradawi"
+	name = "Chaninai"
 	religion = "rabbinism"
 	culture = "bavlim"
 	father = rabbinic_exilarchate_bostanai_i
+	mother = rabbinic_exilarchate_adai_wife_of_bostanai
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	648.1.1 = {
@@ -108,10 +128,11 @@ rabbinic_exilarchate_chasdai_i = {
 	religion = "rabbinism"
 	culture = "bavlim"
 	father = rabbinic_exilarchate_bostanai_i
+	mother = rabbinic_exilarchate_adai_wife_of_bostanai
 	dynasty_house = house_bostanite
 	trait = education_learning_3
-	660.1.1 = {
-		birth = "660.1.1"
+	655.1.1 = {
+		birth = "655.1.1"
 	}
 	733.1.1 = {
 		death = "733.1.1"
