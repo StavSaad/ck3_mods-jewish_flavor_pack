@@ -959,7 +959,7 @@ karaite_exilarchate_chasdai_i = {
 }
 
 karaite_exilarchate_solomon_ii = {
-	name = "Solomon"
+	name = "Shlomo"
 	religion = "karaism"
 	culture = "bavlim"
 	father = karaite_exilarchate_chasdai_i
