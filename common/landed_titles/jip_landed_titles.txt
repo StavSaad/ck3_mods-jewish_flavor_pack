@@ -1,3 +1,35 @@
+﻿d_exilarchate = {
+	color = { 100 100 100 }
+	capital = c_baghdad
+
+	definite_form = yes
+	landless = yes
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+	ruler_uses_title_name = no
+	ignore_titularity_for_title_weighting = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_karaite_exilarchate = {
+	color = { 100 100 100 }
+	capital = c_baghdad
+
+	definite_form = yes
+	landless = yes
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+	ruler_uses_title_name = no
+	ignore_titularity_for_title_weighting = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
 e_arabia = {
 	color = { 32 150 85 }
 

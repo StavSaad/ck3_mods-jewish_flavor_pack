@@ -1,0 +1,14 @@
+﻿house_ananite = {
+	name = "dynn_Ananite"
+	dynasty = davidite_dynasty
+}
+
+house_izdundadite = {
+	name = "dynn_Izdundadite"
+	dynasty = davidite_dynasty
+}
+
+house_bostanite = {
+	name = "dynn_Bostanite"
+	dynasty = davidite_dynasty
+}

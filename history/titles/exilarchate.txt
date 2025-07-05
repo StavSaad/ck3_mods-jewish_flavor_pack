@@ -1,0 +1,214 @@
+﻿d_exilarchate = {
+
+	1.1.1 = {
+		government = feudal_government
+		succession_laws = {
+			noble_family_succession_law
+			male_only_law
+			same_faith_only_law
+		}
+	}
+
+	642.1.1 = {
+		holder = rabbinic_exilarchate_bostanai_i
+	}
+
+	670.1.1 = {
+		holder = rabbinic_exilarchate_baradawi
+	}
+
+	680.1.1 = {
+		holder = rabbinic_exilarchate_chasdai_i
+	}
+	
+	680.5.6 = {
+		liege = e_arabia
+	}
+
+	733.1.1 = {
+		holder = rabbinic_exilarchate_solomon_i
+	}
+
+	760.1.1 = {
+		holder = rabbinic_exilarchate_yitzhak_iskawi_i
+	}
+
+	760.9.1 = {
+		holder = rabbinic_exilarchate_chananiah
+	}
+
+	771.1.1 = {
+		holder = rabbinic_exilarchate_mar_zakkai_i
+	}
+
+	790.1.1 = {
+		holder = rabbinic_exilarchate_moshe
+	}
+
+	810.1.1 = {
+		holder = rabbinic_exilarchate_yitzhak_iskawi_ii
+	}
+
+	820.1.1 = {
+		holder = rabbinic_exilarchate_yehuda_i
+	}
+
+	827.1.1 = {
+		holder = rabbinic_exilarchate_david_i
+	}
+
+	840.1.1 = {
+		holder = rabbinic_exilarchate_yehudah_ii
+	}
+
+	857.1.1 = {
+		holder = rabbinic_exilarchate_natronai_ii
+	}
+
+	865.1.1 = {
+		holder = rabbinic_exilarchate_hasdai_ii
+	}
+
+	870.1.1 = {
+		holder = rabbinic_exilarchate_yizthak_iii
+	}
+
+	890.1.1 = {
+		holder = rabbinic_exilarchate_zakkai_ii
+	}
+
+	890.11.1 = {
+		holder = rabbinic_exilarchate_okbah
+	}
+
+	917.1.1 = {
+		holder = 0
+	}
+
+	918.1.1 = {
+		holder = rabbinic_exilarchate_okbah
+	}
+
+	919.1.1 = {
+		holder = rabbinic_exilarchate_david_ii
+	}
+
+	930.1.1 = {
+		holder = rabbinic_exilarchate_yehoshiyahu_i
+	}
+
+	933.1.1 = {
+		holder = rabbinic_exilarchate_david_ii
+	}
+
+	940.1.1 = {
+		holder = rabbinic_exilarchate_yehudah_iii
+	}
+
+	940.8.1 = {
+		holder = rabbinic_exilarchate_chizkiyahu_i
+	}
+
+	951.1.1 = {
+		holder = rabbinic_exilarchate_solomon_ii
+	}
+
+	967.1.1 = {
+		holder = rabbinic_exilarchate_azariah_i
+	}
+
+	984.1.1 = {
+		holder = rabbinic_exilarchate_david_iii
+	}
+
+	1021.1.1 = {
+		holder = rabbinic_exilarchate_chizkiyahu_ii
+	}
+
+	1055.1.1 = {
+		liege = e_persia
+	}
+
+	1060.1.1 = {
+		holder = rabbinic_exilarchate_david_iv
+	}
+
+	1081.1.1 = {
+		holder = rabbinic_exilarchate_chizkiyahu_iii
+	}
+
+	1097.1.1 = {
+		holder = rabbinic_exilarchate_david_v
+	}
+
+	1119.1.1 = {
+		holder = rabbinic_exilarchate_chasdai_iii
+	}
+
+	1155.1.1 = {
+		holder = rabbinic_exilarchate_daniel_i
+	}
+
+	1175.1.1 = {
+		holder = none
+	}
+}
+
+d_karaite_exilarchate = {
+
+	760.9.1 = {
+		government = feudal_government
+		succession_laws = {
+			noble_family_succession_law
+			male_only_law
+			same_faith_only_law
+		}
+		liege = e_arabia
+		holder = karaite_exilarchate_anan_i
+	}
+
+	795.1.1 = {
+		holder = karaite_exilarchate_saul_i
+	}
+
+	798.1.1 = {
+		holder = karaite_exilarchate_josaiah_i
+	}
+
+	805.1.1 = {
+		holder = karaite_exilarchate_jehoshaphat_i
+	}
+
+	847.1.1 = {
+		holder = karaite_exilarchate_boaz_i
+	}
+
+	897.1.1 = {
+		holder = karaite_exilarchate_david_i
+	}
+
+	963.1.1 = {
+		holder = karaite_exilarchate_solomon_i
+	}
+
+	1011.1.1 = {
+		holder = karaite_exilarchate_hezekiah_i
+	}
+
+	1053.1.1 = {
+		holder = karaite_exilarchate_chasdai_i
+	}
+
+	1055.1.1 = {
+		liege = e_persia
+	}
+
+	1109.1.1 = {
+		holder = karaite_exilarchate_solomon_ii
+	}
+
+	1159.1.1 = {
+		holder = 0
+	}
+
+}

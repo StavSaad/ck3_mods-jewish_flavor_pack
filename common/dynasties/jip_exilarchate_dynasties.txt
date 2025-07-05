@@ -1,0 +1,4 @@
+﻿davidite_dynasty = {
+	name = "dynn_Davidite"
+	culture = "bavlim"
+}
