@@ -329,7 +329,7 @@ rabbinic_exilarchate_yizthak_iii = {
 }
 
 rabbinic_exilarchate_zakkai_ii = {
-	name = "Yitzhak"
+	name = "Zakkai"
 	religion = "rabbinism"
 	culture = "bavlim"
 	father = rabbinic_exilarchate_yehudah_ii
@@ -580,6 +580,21 @@ rabbinic_exilarchate_daniel_i = {
 	}
 	1175.1.1 = {
 		death = "1175.1.1"
+	}
+}
+
+rabbinic_exilarchate_zakkai_iii = {
+	name = "Zakkai"
+	religion = "rabbinism"
+	culture = "bavlim"
+	father = rabbinic_exilarchate_daniel_i
+	dynasty_house = house_bostanite
+	trait = education_learning_3
+	1152.1.1 = {
+		birth = "1152.1.1"
+	}
+	1202.1.1 = {
+		death = "1202.1.1"
 	}
 }
 

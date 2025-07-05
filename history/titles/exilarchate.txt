@@ -150,7 +150,7 @@
 	}
 
 	1175.1.1 = {
-		holder = none
+		holder = rabbinic_exilarchate_zakkai_iii
 	}
 }
 
