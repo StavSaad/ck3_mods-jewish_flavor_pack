@@ -5,10 +5,10 @@
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	552.1.1 = {
-		birth = "552.1.1"
+		birth = yes
 	}
 	601.1.1 = {
-		death = "601.1.1"
+		death = yes
 	}
 }
 
@@ -20,10 +20,10 @@ rabbinic_exilarchate_chaniani = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	575.1.1 = {
-		birth = "575.1.1"
+		birth = yes
 	}
 	642.1.1 = {
-		death = "642.1.1"
+		death = yes
 	}
 }
 
@@ -33,10 +33,10 @@ rabbinic_exilarchate_adai_wife_of_bostanai = {
 	culture = "bavlim"
 	female = yes
 	621.1.1 = {
-		birth = "621.1.1"
+		birth = yes
 	}
 	667.1.1 = {
-		death = "667.1.1"
+		death = yes
 	}
 }
 
@@ -48,7 +48,7 @@ rabbinic_exilarchate_bostanai_i = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	618.1.1 = {
-		birth = "618.1.1"
+		birth = yes
 	}
 	647.1.1 = {
 		add_spouse = rabbinic_exilarchate_adai_wife_of_bostanai
@@ -57,7 +57,7 @@ rabbinic_exilarchate_bostanai_i = {
 		add_spouse = 180639
 	}
 	670.1.1 = {
-		death = "670.1.1"
+		death = yes
 	}
 }
 
@@ -69,10 +69,10 @@ rabbinic_exilarchate_david_father_of_anan = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	640.1.1 = {
-		birth = "640.1.1"
+		birth = yes
 	}
 	718.1.1 = {
-		death = "718.1.1"
+		death = yes
 	}
 }
 
@@ -85,10 +85,10 @@ rabbinic_exilarchate_shahariada = {
 	dynasty_house = house_izdundadite
 	trait = education_learning_3
 	667.1.1 = {
-		birth = "667.1.1"
+		birth = yes
 	}
 	721.1.1 = {
-		death = "721.1.1"
+		death = yes
 	}
 }
 
@@ -100,10 +100,10 @@ rabbinic_exilarchate_ahonai = {
 	dynasty_house = house_izdundadite
 	trait = education_learning_3
 	695.1.1 = {
-		birth = "695.1.1"
+		birth = yes
 	}
 	740.1.1 = {
-		death = "740.1.1"
+		death = yes
 	}
 }
 
@@ -116,10 +116,10 @@ rabbinic_exilarchate_baradawi = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	648.1.1 = {
-		birth = "648.1.1"
+		birth = yes
 	}
 	680.1.1 = {
-		death = "680.1.1"
+		death = yes
 	}
 }
 
@@ -132,10 +132,10 @@ rabbinic_exilarchate_chasdai_i = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	655.1.1 = {
-		birth = "655.1.1"
+		birth = yes
 	}
 	733.1.1 = {
-		death = "733.1.1"
+		death = yes
 	}
 }
 
@@ -147,10 +147,10 @@ rabbinic_exilarchate_solomon_i = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	701.1.1 = {
-		birth = "701.1.1"
+		birth = yes
 	}
 	760.1.1 = {
-		death = "760.1.1"
+		death = yes
 	}
 }
 
@@ -162,10 +162,10 @@ rabbinic_exilarchate_david_son_of_chasdai_ii = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	690.1.1 = {
-		birth = "690.1.1"
+		birth = yes
 	}
 	750.1.1 = {
-		death = "750.1.1"
+		death = yes
 	}
 }
 
@@ -177,10 +177,10 @@ rabbinic_exilarchate_yitzhak_iskawi_i = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	733.1.1 = {
-		birth = "733.1.1"
+		birth = yes
 	}
 	760.9.1 = {
-		death = "760.9.1"
+		death = yes
 	}
 }
 
@@ -192,10 +192,10 @@ rabbinic_exilarchate_chananiah = {
 	father = rabbinic_exilarchate_david_son_of_chasdai_ii
 	trait = education_learning_3
 	731.1.1 = {
-		birth = "731.1.1"
+		birth = yes
 	}
 	771.1.1 = {
-		death = "771.1.1"
+		death = yes
 	}
 }
 
@@ -207,10 +207,10 @@ rabbinic_exilarchate_mar_zakkai_i = {
 	dynasty_house = house_izdundadite
 	trait = education_learning_3
 	731.1.1 = {
-		birth = "731.1.1"
+		birth = yes
 	}
 	790.1.1 = {
-		death = "790.1.1"
+		death = yes
 	}
 }
 
@@ -222,10 +222,10 @@ rabbinic_exilarchate_moshe = {
 	father = rabbinic_exilarchate_mar_zakkai_i
 	trait = education_learning_3
 	750.1.1 = {
-		birth = "750.1.1"
+		birth = yes
 	}
 	820.1.1 = {
-		death = "810.1.1"
+		death = yes
 	}
 }
 
@@ -237,10 +237,10 @@ rabbinic_exilarchate_yitzhak_iskawi_ii = {
 	dynasty_house = house_izdundadite
 	trait = education_learning_3
 	764.1.1 = {
-		birth = "764.1.1"
+		birth = yes
 	}
 	820.1.1 = {
-		death = "820.1.1"
+		death = yes
 	}
 }
 
@@ -252,10 +252,10 @@ rabbinic_exilarchate_yehuda_i = {
 	father = rabbinic_exilarchate_yitzhak_iskawi_i
 	trait = education_learning_3
 	758.1.1 = {
-		birth = "758.1.1"
+		birth = yes
 	}
 	827.1.1 = {
-		death = "827.1.1"
+		death = yes
 	}
 }
 
@@ -267,10 +267,10 @@ rabbinic_exilarchate_david_i = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	782.1.1 = {
-		birth = "782.1.1"
+		birth = yes
 	}
 	840.1.1 = {
-		death = "840.1.1"
+		death = yes
 	}
 }
 
@@ -282,10 +282,10 @@ rabbinic_exilarchate_yehudah_ii = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	794.1.1 = {
-		birth = "794.1.1"
+		birth = yes
 	}
 	857.1.1 = {
-		death = "857.1.1"
+		death = yes
 	}
 }
 
@@ -297,10 +297,10 @@ rabbinic_exilarchate_hilai = {
 	father = rabbinic_exilarchate_yitzhak_iskawi_ii
 	trait = education_learning_3
 	780.1.1 = {
-		birth = "780.1.1"
+		birth = yes
 	}
 	820.1.1 = {
-		death = "840.1.1"
+		death = yes
 	}
 }
 
@@ -312,10 +312,10 @@ rabbinic_exilarchate_natronai_ii = {
 	father = rabbinic_exilarchate_hilai
 	trait = education_learning_3
 	805.1.1 = {
-		birth = "805.1.1"
+		birth = yes
 	}
 	865.1.1 = {
-		death = "865.1.1"
+		death = yes
 	}
 }
 
@@ -327,10 +327,10 @@ rabbinic_exilarchate_hasdai_ii = {
 	dynasty_house = house_izdundadite
 	trait = education_learning_3
 	823.1.1 = {
-		birth = "823.1.1"
+		birth = yes
 	}
 	870.1.1 = {
-		death = "870.1.1"
+		death = yes
 	}
 }
 
@@ -341,11 +341,11 @@ rabbinic_exilarchate_yizthak_iii = {
 	father = rabbinic_exilarchate_hasdai_ii
 	dynasty_house = house_izdundadite
 	trait = education_learning_3
-	833.1.1 = {
-		birth = "833.1.1"
+	843.1.1 = {
+		birth = yes
 	}
 	890.1.1 = {
-		death = "890.1.1"
+		death = yes
 	}
 }
 
@@ -357,10 +357,10 @@ rabbinic_exilarchate_zakkai_ii = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	843.1.1 = {
-		birth = "843.1.1"
+		birth = yes
 	}
 	890.11.1 = {
-		death = "890.11.1"
+		death = yes
 	}
 }
 
@@ -372,10 +372,10 @@ rabbinic_exilarchate_father_of_okbah = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	817.1.1 = {
-		birth = "817.1.1"
+		birth = yes
 	}
 	866.1.1 = {
-		death = "866.1.1"
+		death = yes
 	}
 }
 
@@ -387,10 +387,10 @@ rabbinic_exilarchate_okbah = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	845.1.1 = {
-		birth = "845.1.1"
+		birth = yes
 	}
 	922.1.1 = {
-		death = "922.1.1"
+		death = yes
 	}
 }
 
@@ -402,10 +402,10 @@ rabbinic_exilarchate_david_ii = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	876.1.1 = {
-		birth = "876.1.1"
+		birth = yes
 	}
 	940.1.1 = {
-		death = "940.1.1"
+		death = yes
 	}
 }
 
@@ -417,10 +417,10 @@ rabbinic_exilarchate_yehoshiyahu_i = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	878.1.1 = {
-		birth = "878.1.1"
+		birth = yes
 	}
 	952.1.1 = {
-		death = "952.1.1"
+		death = yes
 	}
 }
 
@@ -432,10 +432,10 @@ rabbinic_exilarchate_yehudah_iii = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	901.1.1 = {
-		birth = "901.1.1"
+		birth = yes
 	}
 	940.8.1 = {
-		death = "940.8.1"
+		death = yes
 	}
 }
 
@@ -447,10 +447,10 @@ rabbinic_exilarchate_solomon_ii = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	909.1.1 = {
-		birth = "909.1.1"
+		birth = yes
 	}
 	967.1.1 = {
-		death = "967.1.1"
+		death = yes
 	}
 }
 
@@ -462,10 +462,10 @@ rabbinic_exilarchate_azariah_i = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	940.1.1 = {
-		birth = "940.1.1"
+		birth = yes
 	}
 	976.1.1 = {
-		death = "967.1.1"
+		death = yes
 	}
 }
 
@@ -477,10 +477,10 @@ rabbinic_exilarchate_chizkiyahu_i = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	919.1.1 = {
-		birth = "919.1.1"
+		birth = yes
 	}
 	951.1.1 = {
-		death = "951.1.1"
+		death = yes
 	}
 }
 
@@ -492,10 +492,10 @@ rabbinic_exilarchate_david_iii = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	945.1.1 = {
-		birth = "945.1.1"
+		birth = yes
 	}
 	1021.1.1 = {
-		death = "951.1.1"
+		death = yes
 	}
 }
 
@@ -507,10 +507,10 @@ rabbinic_exilarchate_chizkiyahu_ii = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	997.1.1 = {
-		birth = "997.1.1"
+		birth = yes
 	}
 	1060.1.1 = {
-		death = "1060.1.1"
+		death = yes
 	}
 }
 
@@ -522,10 +522,10 @@ rabbinic_exilarchate_shealtiel = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	1037.1.1 = {
-		birth = "1037.1.1"
+		birth = yes
 	}
 	1098.1.1 = {
-		death = "1098.1.1"
+		death = yes
 	}
 }
 
@@ -537,10 +537,10 @@ rabbinic_exilarchate_david_iv = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	1030.1.1 = {
-		birth = "1030.1.1"
+		birth = yes
 	}
 	1081.1.1 = {
-		death = "1081.1.1"
+		death = yes
 	}
 }
 
@@ -552,10 +552,10 @@ rabbinic_exilarchate_chizkiyahu_iii = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	1052.1.1 = {
-		birth = "1052.1.1"
+		birth = yes
 	}
 	1097.1.1 = {
-		death = "1097.1.1"
+		death = yes
 	}
 }
 
@@ -567,10 +567,10 @@ rabbinic_exilarchate_david_v = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	1076.1.1 = {
-		birth = "1076.1.1"
+		birth = yes
 	}
 	1119.1.1 = {
-		death = "1119.1.1"
+		death = yes
 	}
 }
 
@@ -582,10 +582,10 @@ rabbinic_exilarchate_chasdai_iii = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	1097.1.1 = {
-		birth = "1097.1.1"
+		birth = yes
 	}
 	1155.1.1 = {
-		death = "1125.1.1"
+		death = yes
 	}
 }
 
@@ -597,10 +597,10 @@ rabbinic_exilarchate_daniel_i = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	1120.1.1 = {
-		birth = "1120.1.1"
+		birth = yes
 	}
 	1175.1.1 = {
-		death = "1175.1.1"
+		death = yes
 	}
 }
 
@@ -612,10 +612,10 @@ rabbinic_exilarchate_zakkai_iii = {
 	dynasty_house = house_bostanite
 	trait = education_learning_3
 	1152.1.1 = {
-		birth = "1152.1.1"
+		birth = yes
 	}
 	1202.1.1 = {
-		death = "1202.1.1"
+		death = yes
 	}
 }
 
@@ -627,10 +627,10 @@ karaite_exilarchate_anan_i = {
 	dynasty_house = house_ananite
 	trait = education_learning_3
 	715.1.1 = {
-		birth = "715.1.1"
+		birth = yes
 	}
 	795.1.1 = {
-		death = "795.1.1"
+		death = yes
 	}
 }
 
@@ -642,10 +642,10 @@ karaite_exilarchate_saul_i = {
 	dynasty_house = house_ananite
 	trait = education_learning_3
 	740.1.1 = {
-		birth = "740.1.1"
+		birth = yes
 	}
 	798.1.1 = {
-		death = "798.1.1"
+		death = yes
 	}
 }
 
@@ -657,10 +657,10 @@ karaite_exilarchate_josaiah_i = {
 	dynasty_house = house_ananite
 	trait = education_learning_3
 	762.1.1 = {
-		birth = "762.1.1"
+		birth = yes
 	}
 	805.1.1 = {
-		death = "805.1.1"
+		death = yes
 	}
 }
 
@@ -672,10 +672,10 @@ karaite_exilarchate_semach_son_of_josaiah = {
 	dynasty_house = house_ananite
 	trait = education_learning_3
 	790.1.1 = {
-		birth = "790.1.1"
+		birth = yes
 	}
 	853.1.1 = {
-		death = "853.1.1"
+		death = yes
 	}
 }
 
@@ -687,10 +687,10 @@ karaite_exilarchate_jehoshaphat_i = {
 	dynasty_house = house_ananite
 	trait = education_learning_3
 	792.1.1 = {
-		birth = "792.1.1"
+		birth = yes
 	}
 	847.1.1 = {
-		death = "847.1.1"
+		death = yes
 	}
 }
 
@@ -702,10 +702,10 @@ karaite_exilarchate_boaz_i = {
 	dynasty_house = house_ananite
 	trait = education_learning_3
 	835.1.1 = {
-		birth = "835.1.1"
+		birth = yes
 	}
 	897.1.1 = {
-		death = "897.1.1"
+		death = yes
 	}
 }
 
@@ -717,10 +717,10 @@ karaite_exilarchate_david_i = {
 	dynasty_house = house_ananite
 	trait = education_learning_3
 	891.1.1 = {
-		birth = "891.1.1"
+		birth = yes
 	}
 	963.1.1 = {
-		death = "963.1.1"
+		death = yes
 	}
 }
 
@@ -732,10 +732,10 @@ karaite_exilarchate_solomon_i = {
 	dynasty_house = house_ananite
 	trait = education_learning_3
 	942.1.1 = {
-		birth = "942.1.1"
+		birth = yes
 	}
 	1011.1.1 = {
-		death = "1011.1.1"
+		death = yes
 	}
 }
 
@@ -747,10 +747,10 @@ karaite_exilarchate_hezekiah_i = {
 	dynasty_house = house_ananite
 	trait = education_learning_3
 	987.1.1 = {
-		birth = "987.1.1"
+		birth = yes
 	}
 	1053.1.1 = {
-		death = "1053.1.1"
+		death = yes
 	}
 }
 
@@ -762,10 +762,10 @@ karaite_exilarchate_chasdai_i = {
 	dynasty_house = house_ananite
 	trait = education_learning_3
 	1031.1.1 = {
-		birth = "1031.1.1"
+		birth = yes
 	}
 	1109.1.1 = {
-		death = "1109.1.1"
+		death = yes
 	}
 }
 
@@ -777,9 +777,9 @@ karaite_exilarchate_solomon_ii = {
 	dynasty_house = house_ananite
 	trait = education_learning_3
 	1084.1.1 = {
-		birth = "1084.1.1"
+		birth = yes
 	}
 	1159.1.1 = {
-		death = "1159.1.1"
+		death = yes
 	}
 }
