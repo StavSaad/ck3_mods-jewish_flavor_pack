@@ -43,6 +43,9 @@ name_list_ashkenazi = {
 	
 	dynasty_of_location_prefix = "dynnp_of"
 	
+	patronym_prefix_male = "dynnpat_pre_ben"
+	patronym_prefix_female = "dynnpat_pre_bat"
+	always_use_patronym = yes
 	
 }
 name_list_sephardi = {
@@ -87,6 +90,10 @@ name_list_sephardi = {
 	}
 	
 	dynasty_of_location_prefix = "dynnp_of"
+
+	patronym_prefix_male = "dynnpat_pre_ben"
+	patronym_prefix_female = "dynnpat_pre_bat"
+	always_use_patronym = yes
 	
 	
 }
@@ -170,6 +177,10 @@ name_list_radhanite = {
 	}
 	
 	dynasty_of_location_prefix = "dynnp_of"
+
+	patronym_prefix_male = "dynnpat_pre_ben"
+	patronym_prefix_female = "dynnpat_pre_bat"
+	always_use_patronym = yes
 	
 	
 }
@@ -244,6 +255,9 @@ name_list_canaanite = {
 	}
 	
 	dynasty_of_location_prefix = "dynnp_of"
-	
+
+	patronym_prefix_male = "dynnpat_pre_bar"
+	patronym_prefix_female = "dynnpat_pre_bat"
+	always_use_patronym = yes
 	
 }
