@@ -2913,6 +2913,14 @@ e_persia = {
 					province = 4825
 
 					color = { 16 135 12 }
+
+					cultural_names = {
+						name_list_canaanite = cn_sura
+						name_list_assyrian = cn_sura
+						name_list_ashkenazi = cn_sura
+						name_list_sephardi = cn_sura
+						name_list_radhanite = cn_sura
+					}
 				}
 				b_sarsar = {
 					province = 4827
@@ -2942,10 +2950,26 @@ e_persia = {
 			c_anbar = {
 				color = { 150 205 80 }
 
+				cultural_names = {
+					name_list_canaanite = cn_pumbedita
+					name_list_assyrian = cn_pumbedita
+					name_list_ashkenazi = cn_pumbedita
+					name_list_sephardi = cn_pumbedita
+					name_list_radhanite = cn_pumbedita
+				}
+
 				b_al-anbar = {
 					province = 4829
 
 					color = { 150 205 80 }
+
+					cultural_names = {
+						name_list_canaanite = cn_pumbedita
+						name_list_assyrian = cn_pumbedita
+						name_list_ashkenazi = cn_pumbedita
+						name_list_sephardi = cn_pumbedita
+						name_list_radhanite = cn_pumbedita
+					}
 				}
 				b_ar-rabb = {
 					province = 4831

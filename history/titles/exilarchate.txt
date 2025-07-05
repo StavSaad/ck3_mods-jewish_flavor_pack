@@ -42,6 +42,14 @@
 		holder = rabbinic_exilarchate_mar_zakkai_i
 	}
 
+	773.1.1 = {
+		holder = rabbinic_exilarchate_makhir_ben_habibai
+	}
+
+	773.3.1 = {
+		holder = rabbinic_exilarchate_mar_zakkai_i
+	}
+
 	790.1.1 = {
 		holder = rabbinic_exilarchate_moshe
 	}
