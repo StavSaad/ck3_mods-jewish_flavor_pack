@@ -1,3 +1,4 @@
 nick_the_rising_lion = {}
 nick_the_rising_lioness = {}
 nick_habibai = {}
+nick_detzutzita = {}

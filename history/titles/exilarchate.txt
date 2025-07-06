@@ -10,6 +10,102 @@
 		liege = e_persia
 	}
 
+	130.1.1 = {
+		holder = rabbinic_exilarchate_nathan_i
+	}
+
+	150.1.1 = {
+		holder = rabbinic_exilarchate_hunah_i
+	}
+
+	200.1.1 = {
+		holder = rabbinic_exilarchate_nathan_ii
+	}
+
+	220.1.1 = {
+		holder = rabbinic_exilarchate_nehemiah
+	}
+
+	240.1.1 = {
+		holder = rabbinic_exilarchate_ukba_i
+	}
+
+	270.1.1 = {
+		holder = rabbinic_exilarchate_ukban_dezuzita
+	}
+
+	300.1.1 = {
+		holder = rabbinic_exilarchate_aba_mari
+	}
+
+	320.1.1 = {
+		holder = rabbinic_exilarchate_ukba_ii
+	}
+
+	340.1.1 = {
+		holder = rabbinic_exilarchate_hunah_ii
+	}
+
+	360.0.0 = {
+		holder = rabbinic_exilarchate_nathan_iii
+	}
+
+	380.0.0 = {
+		holder = rabbinic_exilarchate_zutra_i
+	}
+
+	415.1.1 = {
+		holder = rabbinic_exilarchate_maremar
+	}
+
+	435.1.1 = {
+		holder = rabbinic_exilarchate_kahana_i
+	}
+
+	440.1.1 = {
+		holder = rabbinic_exilarchate_huna_iii
+	}
+
+	445.1.1 = {
+		holder = rabbinic_exilarchate_zutra_ii
+	}
+
+	455.1.1 = {
+		holder = rabbinic_exilarchate_kahana_ii
+	}
+
+	465.1.1 = {
+		holder = rabbinic_exilarchate_hunah_iv
+	}
+
+	470.1.1 = {
+		holder = 0
+	}
+
+	484.1.1 = {
+		holder = rabbinic_exilarchate_hunah_v
+	}
+
+	508.1.1 = {
+		holder = rabbinic_exilarchate_zutra_iii
+	}
+
+	518.1.1 = {
+		holder = 0
+	}
+
+	560.1.1 = {
+		holder = rabbinic_exilarchate_khafnai
+	}
+
+	581.1.1 = {
+		holder = rabbinic_exilarchate_chaniani
+	}
+
+	589.6.1 = {
+		holder = 0
+	}
+
 	642.1.1 = {
 		holder = rabbinic_exilarchate_bostanai_i
 	}
@@ -233,7 +329,7 @@ d_karaite_exilarchate = {
 	}
 
 	1159.1.1 = {
-		holder = 0
+		holder = karaite_exilarchate_david_ii
 	}
 
 }
