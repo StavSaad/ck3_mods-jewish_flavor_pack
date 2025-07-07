@@ -1,4 +1,4 @@
-assyrian = {
+﻿assyrian = {
 	color = assyrian
 	
 	ethos = ethos_communal

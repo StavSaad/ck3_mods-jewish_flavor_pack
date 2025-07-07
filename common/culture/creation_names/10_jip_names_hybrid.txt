@@ -1,4 +1,4 @@
-italki = {
+﻿italki = {
 	trigger = {
 		scope:culture = culture:ashkenazi
 		scope:other_culture = {

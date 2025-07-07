@@ -1,4 +1,4 @@
-ammonite = {
+﻿ammonite = {
 	trigger = {
 		OR = {
 			capital_county = {

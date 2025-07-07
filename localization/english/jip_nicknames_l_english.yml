@@ -7,3 +7,5 @@
  nick_habibai_desc: "$nick_habibai$"
  nick_detzutzita: "DeTzutzita"
  nick_detzutzita_desc: "$nick_detzutzita$"
+ nick_gaon: "Gaon"
+ nick_gaon_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] was appopinted to be the head of one of the great Jewish Yeshivas, also known as Gaon"

@@ -1,8 +1,4 @@
 ﻿l_english:
- duke_republic_male_israelite_canaanite: "Shophet"
- duke_republic_female_israelite_canaanite: "Shophetet"
- king_republic_male_israelite_canaanite: "Shophet Gadol"
- king_republic_female_israelite_canaanite: "Shophetet Gedola"`
  exilarchate_duchy: "Exilarch"
  exilarchate_kingdom: "$exilarchate_duchy$"
  exilarchate_empire: "$exilarchate_duchy$"

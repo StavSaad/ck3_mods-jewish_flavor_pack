@@ -626,9 +626,7 @@ form_canaanite_decision = {
 		is_ruler = yes
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
-			primary_title.capital_province = {
-				is_in_region = jip_region_phoenicia
-			}
+			capital_province = { geographical_region = jip_region_phoenicia }
 		}
 		NOT = {
 			is_target_in_global_variable_list = {
@@ -643,9 +641,7 @@ form_canaanite_decision = {
 		culture = { has_cultural_pillar = heritage_israelite }
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
-			primary_title.capital_province = {
-				is_in_region = jip_region_phoenicia
-			}
+			capital_province = { geographical_region = jip_region_phoenicia }
 		}
 		OR = {
 			has_trait = lunatic
@@ -755,8 +751,8 @@ expand_phoenicia_decision = {
 			is_valid = {
 				completely_controls = title:c_baalbek
 			}
-			current_description = expand_israel_baalbek_desc
-			localization = expand_israel_baalbek_desc
+			current_description = expand_phoenicia_baalbek_desc
+			localization = expand_phoenicia_baalbek_desc
 			icon = "gfx/interface/icons/county_crown.dds"
 			ai_chance = { value = 10 }
 		}
@@ -772,8 +768,8 @@ expand_phoenicia_decision = {
 			is_valid = {
 				completely_controls = title:c_acre
 			}
-			current_description = expand_israel_acre_desc
-			localization = expand_israel_acre_desc
+			current_description = expand_phoenicia_acre_desc
+			localization = expand_phoenicia_acre_desc
 			icon = "gfx/interface/icons/county_crown.dds"
 			ai_chance = { value = 10 }
 		}
@@ -795,8 +791,8 @@ expand_phoenicia_decision = {
 				}
 				completely_controls = title:d_cyprus
 			}
-			current_description = expand_israel_cyprus_desc
-			localization = expand_israel_sinai_desc
+			current_description = expand_phoenicia_cyprus_desc
+			localization = expand_phoenicia_sinai_desc
 			icon = "gfx/interface/icons/duchy_crown.dds"
 			ai_chance = { value = 10 }
 		}
@@ -950,8 +946,8 @@ create_k_phoenicia_decision = {
 		OR = {
 			has_title = title:d_lebanon
 			has_title = title:d_antioch
-			capital_county = {
-				is_within_region = jip_region_phoenicia
+			capital_province = {
+				geographical_region = jip_region_phoenicia
 			}
 		}
 		NOT = {
@@ -972,8 +968,8 @@ create_k_phoenicia_decision = {
 		OR = {
 			has_primary_title = title:d_lebanon
 			has_primary_title = title:d_antioch
-			primary_title.capital_county = {
-				is_within_region = jip_region_phoenicia
+			capital_province = {
+				geographical_region = jip_region_phoenicia
 			}
 		}
 		completely_controls_region = jip_region_phoenicia

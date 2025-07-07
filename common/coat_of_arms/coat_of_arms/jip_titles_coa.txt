@@ -1,4 +1,4 @@
-e_canaan = {
+﻿e_canaan = {
 	pattern="pattern__solid_designer.dds"
 	color1=blue_light
 	color2=blue_light

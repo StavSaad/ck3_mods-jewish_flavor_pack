@@ -2,22 +2,22 @@
 	type = character
 	special = holder
 	tier = duchy
-	priority = 26
-	titles = { d_exilarchate }
+	priority = 60
+	titles = { d_exilarchate d_karaite_exilarchate }
 }
 
 exilarchate_kingdom = {
 	type = character
 	special = holder
 	tier = kingdom
-	priority = 26
-	titles = { d_exilarchate }
+	priority = 60
+	titles = { d_exilarchate d_karaite_exilarchate }
 }
 
 exilarchate_empire = {
 	type = character
 	special = holder
 	tier = empire
-	priority = 26
-	titles = { d_exilarchate }
+	priority = 60
+	titles = { d_exilarchate d_karaite_exilarchate }
 }

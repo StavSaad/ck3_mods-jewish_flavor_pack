@@ -1,4 +1,4 @@
-replace_temple_description = {
+﻿replace_temple_description = {
 	global = replace_temple_description
 }
 

@@ -1,4 +1,4 @@
-canaanite = {
+﻿canaanite = {
 	color = canaanite
 
 	ethos = ethos_bureaucratic

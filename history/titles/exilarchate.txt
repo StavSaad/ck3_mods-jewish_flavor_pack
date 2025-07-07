@@ -1,7 +1,25 @@
-﻿d_exilarchate = {
+﻿d_laamp_davidite = {
+	867.1.1 = {
+		liege = 0
+		holder = rabbinic_exilarchate_hatzub_ben_pinchas
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+
+	868.1.1 = {
+		holder = 0
+	}
+}
+
+d_exilarchate = {
 
 	1.1.1 = {
-		government = feudal_government
+		government = landless_adventurer_government
 		succession_laws = {
 			noble_family_succession_law
 			male_only_law
@@ -211,7 +229,7 @@
 	}
 
 	940.8.1 = {
-		holder = rabbinic_exilarchate_chizkiyahu_i
+		holder = 0
 	}
 
 	951.1.1 = {
@@ -222,7 +240,7 @@
 		holder = rabbinic_exilarchate_azariah_i
 	}
 
-	984.1.1 = {
+	989.1.1 = {
 		holder = rabbinic_exilarchate_david_iii
 	}
 
@@ -234,12 +252,12 @@
 		liege = k_persia
 	}
 
-	1063.9.4 = {
-		liege = e_persia
+	1058.1.1 = {
+		holder = rabbinic_exilarchate_david_iv
 	}
 
-	1060.1.1 = {
-		holder = rabbinic_exilarchate_david_iv
+	1063.9.4 = {
+		liege = e_persia
 	}
 
 	1081.1.1 = {
@@ -263,14 +281,14 @@
 	}
 
 	1175.1.1 = {
-		holder = rabbinic_exilarchate_zakkai_iii
+		holder = rabbinic_exilarchate_shmuel_i
 	}
 }
 
 d_karaite_exilarchate = {
 
 	760.9.1 = {
-		government = feudal_government
+		government = landless_adventurer_government
 		succession_laws = {
 			noble_family_succession_law
 			male_only_law

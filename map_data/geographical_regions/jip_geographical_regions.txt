@@ -1,4 +1,4 @@
-jip_region_israel = {
+﻿jip_region_israel = {
 	counties = {
 		c_acre c_tiberias c_irbid c_jaffa c_ghazza c_jerusalem c_kerak c_negev
 	}

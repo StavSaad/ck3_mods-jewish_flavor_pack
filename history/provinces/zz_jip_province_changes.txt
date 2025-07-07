@@ -1,4 +1,4 @@
-4552 = {	# 4552 - SYRTE
+﻿4552 = {	# 4552 - SYRTE
 	culture = punic
 	#culture = zanata
 	religion = ibadi
