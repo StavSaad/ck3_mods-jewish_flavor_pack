@@ -14,6 +14,25 @@
 	868.1.1 = {
 		holder = 0
 	}
+
+	1065.1.1 = {
+		effect = {
+			set_capital_county = title:c_leon
+		}
+	}
+	
+	1066.1.1 = {
+		holder = rabbinic_exilarchate_shealtiel_ben_chizkiyahu_ii
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+
+	1067.1.1 = {
+		holder = 0
+	}
 }
 
 d_exilarchate = {

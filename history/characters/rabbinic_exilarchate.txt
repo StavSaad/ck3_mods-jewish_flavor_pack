@@ -648,7 +648,7 @@ rabbinic_exilarchate_nehemiah_son_of_baradawi = {
 }
 
 rabbinic_exilarchate_yitzhak_son_of_nehemiah_son_of_baradawi = {
-	name = "Yizhak"
+	name = "Yizchak"
 	religion = "rabbinism"
 	culture = "bavlim"
 	father = rabbinic_exilarchate_nehemiah_son_of_baradawi
@@ -898,7 +898,7 @@ rabbinic_exilarchate_chananiah = {
 }
 
 rabbinic_exilarchate_mar_zakkai_i = {
-	name = "Yehudah Zakkai"
+	name = "Zakkai"
 	religion = "rabbinism"
 	culture = "bavlim"
 	father = rabbinic_exilarchate_ahonai
@@ -1337,7 +1337,7 @@ rabbinic_exilarchate_shlomo_ben_azariah = {
 
 
 rabbinic_exilarchate_chizkiyahu_i = {
-	name = "Chizkiyahu"
+	name = "Chizkiyah"
 	religion = "rabbinism"
 	culture = "bavlim"
 	father = rabbinic_exilarchate_yehudah_iii
@@ -1367,7 +1367,7 @@ rabbinic_exilarchate_david_iii = {
 }
 
 rabbinic_exilarchate_chizkiyahu_ii = {
-	name = "Chizkiyahu"
+	name = "Chizkiyah"
 	religion = "rabbinism"
 	culture = "bavlim"
 	father = rabbinic_exilarchate_david_iii
@@ -1397,9 +1397,6 @@ rabbinic_exilarchate_shealtiel_ben_chizkiyahu_ii = {
 	1025.1.1 = {
 		birth = yes
 	}
-	1066.1.1 = {
-		employer = 108500
-	}
 	1097.12.13 = {
 		death = yes
 	}
@@ -1420,7 +1417,7 @@ rabbinic_exilarchate_daruda_bat_shealtiel = {
 		add_spouse = gershom_baal_daruda
 	}
 	1066.1.1 = {
-		employer = 108500
+		employer = rabbinic_exilarchate_shealtiel_ben_chizkiyahu_ii
 	}
 	1102.1.1 = {
 		death = yes
@@ -1436,7 +1433,7 @@ gershom_baal_daruda = {
 		birth = yes
 	}
 	1066.1.1 = {
-		employer = 108500
+		employer = rabbinic_exilarchate_shealtiel_ben_chizkiyahu_ii
 	}
 	1109.1.1 = {
 		death = yes
@@ -1454,7 +1451,7 @@ rabbinic_exilarchate_shmuel_ben_shealtiel = {
 		birth = yes
 	}
 	1066.1.1 = {
-		employer = 108500
+		employer = rabbinic_exilarchate_shealtiel_ben_chizkiyahu_ii
 	}
 	1097.12.13 = {
 		death = yes
@@ -1529,7 +1526,7 @@ rabbinic_exilarchate_david_iv = {
 }
 
 rabbinic_exilarchate_chizkiyahu_iii = {
-	name = "Chizkiyahu"
+	name = "Chizkiyah"
 	religion = "rabbinism"
 	culture = "bavlim"
 	father = rabbinic_exilarchate_david_iv
@@ -1784,7 +1781,7 @@ karaite_exilarchate_josaiah_ben_shlomo = {
 }
 
 karaite_exilarchate_hezekiah_i = {
-	name = "Chizkiyahu"
+	name = "Chizkiyah"
 	religion = "karaism"
 	culture = "bavlim"
 	father = karaite_exilarchate_solomon_i
