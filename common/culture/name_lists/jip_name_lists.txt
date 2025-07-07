@@ -38,7 +38,7 @@ name_list_ashkenazi = {
 	}
 	female_names = {
 		Beila Belet Chana Doltza Esther Guta Guthela Madrona Matrona Minna Pultzelina Rachel Rivkah Saris Scolaster
-		Shluida Shoinlin Shonlin Tziporah Yehudis Yeintil Tehilla
+		Shluida Shoinlin Shonlin Tziporah Yehudis Yeintil Tehilla Drora
 	}
 	
 	dynasty_of_location_prefix = "dynnp_of"
@@ -86,7 +86,7 @@ name_list_sephardi = {
 	}
 	female_names = {
 		Beila Belet Chana Doltza Esther Guta Guthela Madrona Matrona Minna Pultzelina Rachel Rivkah Saris Scolaster
-		Shluida Shoinlin Shonlin Tziporah Yehudis Yeintil Tehilla
+		Shluida Shoinlin Shonlin Tziporah Yehudis Yeintil Tehilla Drora
 	}
 	
 	dynasty_of_location_prefix = "dynnp_of"
@@ -173,7 +173,7 @@ name_list_radhanite = {
 		Beulah Bilhah Bityah Chaggit Channah Chavah CheftziBah Chuldah Delilah Devorah Dinah Ednah Efrat Elisheva
 		Ester Hadassah Hagar Hodiyah Izevel KetziAh Leah Machalat MeheitavEl Merav Mikhal Miriam NaAmah NaOmi
 		Orpah Rachel Rivqah Rut Sarah Shifra Shoshannah Shulammit Tamar Tirtzah Tzillah Tzipporah Tzivyah
-		Yael Yedidah Yehosheva Yehudit Yemima Yerushah NoAh Keren Aviyah Diklah Tehilla
+		Yael Yedidah Yehosheva Yehudit Yemima Yerushah NoAh Keren Aviyah Drora Diklah Tehilla
 	}
 	
 	dynasty_of_location_prefix = "dynnp_of"
