@@ -29,6 +29,21 @@ d_laamp_davidite = {
 	ai_primary_priority = { add = @never_primary_score }
 }
 
+d_laamp_spanish_davidite = {
+	color = { 100 100 100 }
+	capital = c_leon
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	always_follows_primary_heir = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+	ruler_uses_title_name = no
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
 d_karaite_exilarchate = {
 	color = { 100 100 100 }
 	capital = c_baghdad
