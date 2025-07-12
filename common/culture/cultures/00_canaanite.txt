@@ -1,4 +1,4 @@
-﻿canaanite = {
+﻿phoenician = {
 	color = canaanite
 
 	ethos = ethos_bureaucratic
@@ -26,7 +26,7 @@
 }
 
 punic = {
-	parents = { canaanite }
+	parents = { phoenician }
 	created = 52.1.1
 	history_loc_override = punic_history_loc
 	ethos = ethos_spiritual

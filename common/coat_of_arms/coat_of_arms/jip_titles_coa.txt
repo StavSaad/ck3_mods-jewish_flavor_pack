@@ -73,6 +73,40 @@ d_karaite_exilarchate = {
 	}
 }
 
+k_judah = {
+	pattern="pattern_solid.dds"
+	color1=white
+	color2=white
+	color3=red
+	colored_emblem={
+		color1=yellow
+		color2=yellow
+		texture="ce_lion_rampant_wide_stance.dds"
+		instance={
+			scale={ 0.940000 0.940000 }
+		}
+
+	}
+
+}
+
+house_shealtiel = {
+	pattern="pattern_solid.dds"
+	color1=yellow
+	color2=white
+	color3=red
+	colored_emblem={
+		color1=blue_light
+		color2=blue_light
+		texture="ce_lion_rampant_crown_sword.dds"
+		instance={
+			scale={ 0.940000 0.940000 }
+		}
+
+	}
+
+}
+
 house_ananite = {
 	pattern="pattern_solid.dds"
 	color1=blue_light

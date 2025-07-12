@@ -1,6 +1,6 @@
 ﻿hebrew = {
 	color = hebrew
-	parents = { canaanite }
+	parents = { phoenician }
 	created = 52.1.1
 	history_loc_override = hebrew_history_loc
 	ethos = ethos_spiritual

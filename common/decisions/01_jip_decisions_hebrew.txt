@@ -340,6 +340,7 @@ create_e_canaan_decision = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
 			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_levantine }
 		}
 		OR = {
 			has_title = title:k_israel
@@ -362,6 +363,7 @@ create_e_canaan_decision = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
 			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_levantine }
 		}
 		highest_held_title_tier = tier_kingdom
 		custom_description = {
@@ -439,6 +441,7 @@ reestablish_canaanite_city_decision = {
 			culture = { has_cultural_pillar = heritage_israelite }
 			culture = { has_cultural_pillar = heritage_syriac }
 			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_levantine }
 		}
 		OR = {
 			has_title = title:c_acre
@@ -699,7 +702,10 @@ expand_phoenicia_decision = {
 	decision_group_type = major
 
 	is_shown = {
-		culture = { has_cultural_pillar = heritage_canaanite }
+		OR = {
+			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_levantine }
+		}
 		OR = {
 			has_primary_title = title:k_phoenicia
 			has_primary_title = title:d_lebanon
@@ -805,7 +811,10 @@ expand_phoenicia_decision = {
 			has_primary_title = title:k_phoenicia
 			has_primary_title = title:d_lebanon
 		}
-		culture = { has_cultural_pillar = heritage_canaanite }
+		OR = {
+			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_levantine }
+		}
 
 		completely_controls = title:d_lebanon
 
@@ -942,6 +951,7 @@ create_k_phoenicia_decision = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
 			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_levantine }
 		}
 		OR = {
 			has_title = title:d_lebanon
@@ -964,6 +974,7 @@ create_k_phoenicia_decision = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
 			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_levantine }
 		}
 		OR = {
 			has_primary_title = title:d_lebanon
@@ -1010,7 +1021,10 @@ create_e_carthage_decision = {
 	decision_group_type = major
 
 	is_shown = {
-		culture = { has_cultural_pillar = heritage_canaanite }
+		OR = {
+			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_levantine }
+		}
 		capital_province = { geographical_region = jip_region_carthage }
 		highest_held_title_tier = tier_kingdom
 		NOT = {
@@ -1025,14 +1039,18 @@ create_e_carthage_decision = {
 		is_independent_ruler = yes 
 		OR = {
 			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_levantine }
 		}
 		highest_held_title_tier = tier_kingdom
 		completely_controls_region = jip_region_carthage
 		has_title = title:k_africa
 		title:c_tunis = {
 			title_province = {
-				culture = {
-					has_cultural_pillar = heritage_canaanite
+				OR = {
+					culture = {
+						has_cultural_pillar = heritage_canaanite
+					}
+					culture = { has_cultural_pillar = heritage_levantine }
 				}
 			}
 		}

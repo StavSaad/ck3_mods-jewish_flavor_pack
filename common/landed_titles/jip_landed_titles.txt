@@ -1703,6 +1703,25 @@ e_canaan = {
 			add = @correct_culture_primary_score
 		}
 	}
+
+	k_judah = {
+		color = { 91 97 255 }
+		capital = c_jerusalem
+
+		can_create = {
+			always = no
+		}
+
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = { has_cultural_pillar = heritage_israelite }
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+
+	}
 }
 
 e_byzantium = {
@@ -3716,7 +3735,10 @@ e_carthage = {
 	ai_primary_priority = {
 		if = {
 			limit = {
-				culture = { has_cultural_pillar = heritage_canaanite }
+				OR = {
+					culture = { has_cultural_pillar = heritage_canaanite }
+					culture = { has_cultural_pillar = heritage_levantine }
+				}
 			}
 			add = @correct_culture_primary_score
 		}

@@ -1,4 +1,59 @@
 ﻿davidite_dynasty = {
 	name = "dynn_Davidite"
-	culture = "bavlim"
+	culture = "hebrew"
+}
+
+omriid_dynasty = {
+	name = "dynn_Omriid"
+	culture = "hebrew"
+}
+
+jeroboam_dynasty = {
+	name = "dynn_Jeroboam"
+	culture = "hebrew"
+}
+
+baasha_dynasty = {
+	name = "dynn_Baasha"
+	culture = "hebrew"
+}
+
+zimri_dynasty = {
+	name = "dynn_Zimri"
+	culture = "hebrew"
+}
+
+yehu_dynasty = {
+	name = "dynn_Yehu"
+	culture = "hebrew"
+}
+
+shalom_dynasty = {
+	name = "dynn_Shalom"
+	culture = hebrew
+}
+
+menachem_dynasty = {
+	name = "dynn_Menachem"
+	culture = hebrew
+}
+
+pekach_dynasty = {
+	name = "dynn_Pekach"
+	culture = hebrew
+}
+
+hoshea_dynasty = {
+	name = "dynn_Hoshea"
+	culture = hebrew
+}
+
+hasmonean_dynasty = {
+	name = "dynn_Hashmonai"
+	culture = hebrew
+}
+
+herodian_dynasty = {
+	name = "dynn_Herod"
+	culture = hebrew
 }

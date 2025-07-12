@@ -294,7 +294,7 @@ jip_hebrew.0022 = {
 	
 	option = {
 		name = jip_hebrew.0022.a
-		set_culture = culture:canaanite
+		set_culture = culture:phoenician
 		scope:canaanite_former = {
 			add_opinion = {
 				target = THIS

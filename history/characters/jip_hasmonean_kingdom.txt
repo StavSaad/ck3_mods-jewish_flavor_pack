@@ -1,0 +1,808 @@
+yochanan_hakohen = {
+	name = "Yochanan"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	trait = education_learning_4
+	trait = zealous
+	-243.1.1 = {
+		birth = yes
+	}
+	-222.1.1 = {
+		give_nickname = nick_hasmonean
+	}
+	-197.1.1 = {
+		death = yes
+	}
+}
+
+matityahu_hakohen = {
+	name = "Mattithyahu"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	trait = education_learning_4
+	father = yochanan_hakohen
+	trait = zealous
+	trait = heresiarch
+	-211.1.1 = {
+		birth = yes
+	}
+	-166.1.1 = {
+		death = yes
+	}
+}
+
+yonatan_havafsi = {
+	name = "Yehonatan"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	trait = education_learning_3
+	father = matityahu_hakohen
+	trait = zealous
+	-180.1.1 = {
+		birth = yes
+		give_nickname = nick_vafsi
+	}
+	-142.1.1 = {
+		death = {
+			death_reason = death_hostage_execution
+		}
+	}
+}
+
+elazar_hachorani = {
+	name = "ElAzar"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	father = matityahu_hakohen
+	trait = zealous
+	-182.1.1 = {
+		birth = yes
+		give_nickname = nick_chornai
+	}
+	-162.1.1 = {
+		death = {
+			death_reason = death_elephant
+		}
+	}
+}
+
+yehudah_macabee = {
+	name = "Yehudah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	father = matityahu_hakohen
+	trait = zealous
+	trait = brave
+	-184.1.1 = {
+		birth = yes
+	}
+	-166.1.1 = {
+		give_nickname = nick_maccabee
+	}
+	-160.1.1 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+yochanan_hagadi = {
+	name = "Yochanan"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	father = matityahu_hakohen
+	-181.1.1 = {
+		birth = yes
+		give_nickname = nick_hagadi
+	}
+	-163.1.1 = {
+		death = {
+			death_reason = death_execution
+		}
+	}
+}
+
+simon_tassi = {
+	name = "Shimon"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	father = matityahu_hakohen
+	trait = zealous
+	-183.1.1 = {
+		birth = yes
+		give_nickname = nick_tassi
+	}
+	-134.1.1 = {
+		death = {
+			death_reason = death_murder
+		}
+	}
+}
+
+mattityahu_ben_tasi = {
+	name = "Mattithyahu"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	father = simon_tassi
+	-163.1.1 = {
+		birth = yes
+	}
+	-134.1.1 = {
+		death = {
+			death_reason = death_murder
+		}
+	}
+}
+
+yehuda_ben_tasi = {
+	name = "Yehudah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	father = simon_tassi
+	-160.1.1 = {
+		birth = yes
+	}
+	-134.1.1 = {
+		death = {
+			death_reason = death_murder
+		}
+	}
+}
+
+yochanan_hyrkanus_i = {
+	name = "Yochanan"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	father = simon_tassi
+	-161.1.1 = {
+		birth = yes
+		give_nickname = nick_hyrcanus
+	}
+	-104.1.1 = {
+		death = yes
+	}
+}
+
+antigonus_i = {
+	name = "Mattithyahu"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	father = yochanan_hyrkanus_i
+	-135.1.1 = {
+		birth = yes
+		give_nickname = nick_antigonos
+	}
+	-103.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = queen_salome
+		}
+	}
+}
+
+avshalom_ben_yochanan = {
+	name = "Avshalom"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	father = yochanan_hyrkanus_i
+	-131.1.1 = {
+		birth = yes
+	}
+	-103.1.1 = {
+		death = yes
+	}
+}
+
+yehudah_aristobolos_i = {
+	name = "Yehudah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	father = yochanan_hyrkanus_i
+	-134.1.1 = {
+		birth = yes
+		give_nickname = nick_aristobolos
+	}
+	-104.1.1 = {
+		add_spouse = queen_salome
+	}
+	-103.1.1 = {
+		death = yes
+	}
+}
+
+alexander_yanai = {
+	name = "Yanai"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	father = yochanan_hyrkanus_i
+	-127.1.1 = {
+		birth = yes
+		give_nickname = nick_alexander
+	}
+	-103.1.1 = {
+		add_spouse = queen_salome
+	}
+	-76.1.1 = {
+		death = yes
+	}
+}
+
+queen_salome = {
+	name = "Salome"
+	religion = "rabbinism"
+	culture = "hebrew"
+	female = yes
+	-127.1.1 = {
+		give_nickname = nick_alexandra
+		birth = yes
+	}
+	-67.1.1 = {
+		death = yes
+	}
+}
+
+yochanan_hyrkanus_ii = {
+	name = "Yochanan"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	father = alexander_yanai
+	mother = queen_salome
+	-103.1.1 = {
+		birth = yes
+		give_nickname = nick_hyrcanus
+	}
+	-30.1.1 = {
+		death = yes
+	}
+}
+
+yehudah_aristobolos_ii = {
+	name = "Yehudah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	father = alexander_yanai
+	mother = queen_salome
+	-100.1.1 = {
+		birth = yes
+		give_nickname = nick_aristobolos
+	}
+	-49.1.1 = {
+		death = yes
+	}
+}
+
+alexandra = {
+	name = "Salome"
+	religion = "rabbinism"
+	culture = "hebrew"
+	female = yes
+	dynasty = hasmonean_dynasty
+	father = yochanan_hyrkanus_ii
+	-83.1.1 = {
+		birth = yes
+		give_nickname = nick_alexandra
+	}
+	-29.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = herod_i
+		}
+	}
+}
+
+antigonos_ii = {
+	name = "Mattithyahu"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	father = yehudah_aristobolos_ii
+	-80.1.1 = {
+		birth = yes
+		give_nickname = nick_antigonos
+	}
+	-37.1.1 = {
+		death = yes
+	}
+}
+
+alexander_yanai_ii = {
+	name = "Yanai"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	father = yehudah_aristobolos_ii
+	-83.1.1 = {
+		birth = yes
+		give_nickname = nick_alexander
+	}
+	-63.1.1 = {
+		add_spouse = alexandra
+	}
+	-49.1.1 = {
+		death = yes
+	}
+}
+
+yehudah_aristobolos_iii = {
+	name = "Yehudah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	father = alexander_yanai_ii
+	mother = alexandra
+	trait = twin
+	-53.1.1 = {
+		birth = yes
+		give_nickname = nick_aristobolos
+	}
+	-36.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = herod_i
+		}
+	}
+}
+
+miriam_hasmonean = {
+	name = "Miriam"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = hasmonean_dynasty
+	female = yes
+	father = alexander_yanai_ii
+	mother = alexandra
+	trait = twin
+	-53.1.1 = {
+		birth = yes
+	}
+	-29.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = herod_i
+		}
+	}
+}
+
+antipatros = {
+	name = "Antipatros"
+	religion = "rabbinism"
+	culture = "phoenician"
+	dynasty = herodian_dynasty
+	-103.1.1 = {
+		birth = yes
+	}
+	-43.1.1 = {
+		death = {
+			death_reason = death_poison
+		}
+	}
+}
+
+salome_bat_antipater = {
+	name = "Salome"
+	religion = "rabbinism"
+	culture = "phoenician"
+	female = yes
+	-71.1.1 = {
+		birth = yes
+	}
+	-22.1.1 = {
+		death = yes
+	}
+}
+
+berenice_bat_salome = {
+	name = "Berenice"
+	religion = "rabbinism"
+	culture = "phoenician"
+	female = yes
+	-35.1.1 = {
+		birth = yes
+	}
+	15.1.1 = {
+		death = yes
+	}
+}
+
+doris = {
+	name = "Doris"
+	religion = "pagan"
+	culture = "phoenician"
+	female = yes
+	-70.1.1 = {
+		birth = yes
+	}
+	-4.1.1 = {
+		death = yes
+	}
+}
+
+herod_i = {
+	name = "Herod"
+	religion = "rabbinism"
+	culture = "phoenician"
+	dynasty = herodian_dynasty
+	father = antipatros
+	trait = murderer
+	trait = paranoid
+	trait = kinslayer_3
+	-72.1.1 = {
+		birth = yes
+		give_nickname = nick_the_great
+	}
+	-51.1.1 = {
+		add_spouse = doris
+	}
+	-41.1.1 = {
+		remove_spouse = doris
+		add_spouse = miriam_hasmonean
+	}
+	-27.1.1 = {
+		add_spouse = malthace
+	}
+	-4.1.1 = {
+		death = {
+			death_reason = death_poison
+		}
+	}
+}
+
+phasael_i = {
+	name = "Phasael"
+	religion = "rabbinism"
+	culture = "phoenician"
+	dynasty = herodian_dynasty
+	father = antipatros
+	-82.1.1 = {
+		birth = yes
+	}
+	-40.1.1 = {
+		death = yes
+	}
+}
+
+phasael_ii = {
+	name = "Phasael"
+	religion = "rabbinism"
+	culture = "phoenician"
+	dynasty = herodian_dynasty
+	father = phasael_i
+	-57.1.1 = {
+		birth = yes
+	}
+	-5.1.1 = {
+		death = yes
+	}
+}
+
+cypros_ii = {
+	name = "Cypros"
+	religion = "rabbinism"
+	culture = "phoenician"
+	female = yes
+	dynasty = herodian_dynasty
+	father = phasael_ii
+	-10.1.1 = {
+		birth = yes
+	}
+	50.1.1 = {
+		death = yes
+	}
+}
+
+antipatros_ii = {
+	name = "Antipatros"
+	religion = "rabbinism"
+	culture = "phoenician"
+	dynasty = herodian_dynasty
+	father = herod_i
+	mother = doris
+	-46.1.1 = {
+		birth = yes
+	}
+	-4.1.1 = {
+		death = yes
+	}
+}
+
+aristobolos_iv = {
+	name = "Yehudah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = herodian_dynasty
+	father = herod_i
+	mother = miriam_hasmonean
+	-31.1.1 = {
+		birth = yes
+		give_nickname = nick_aristobolos
+	}
+	-15.1.1 = {
+		add_spouse = berenice_bat_salome
+	}
+	-7.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = herod_i
+		}
+	}
+}
+
+alexander_yanai_iii = {
+	name = "Yanai"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = herodian_dynasty
+	father = herod_i
+	mother = miriam_hasmonean
+	-35.1.1 = {
+		birth = yes
+		give_nickname = nick_alexander
+	}
+	-7.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = herod_i
+		}
+	}
+}
+
+mariamne_iii = {
+	name = "Miriam"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = herodian_dynasty
+	female = yes
+	father = aristobolos_iv
+	mother = berenice_bat_salome
+	-12.1.1 = {
+		birth = yes
+	}
+	41.1.1 = {
+		death = yes
+	}
+}
+
+herodias = {
+	name = "Herodias"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = herodian_dynasty
+	female = yes
+	father = aristobolos_iv
+	mother = berenice_bat_salome
+	-15.1.1 = {
+		birth = yes
+	}
+	39.1.1 = {
+		death = yes
+	}
+}
+
+aggripas_i = {
+	name = "Aggripa"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = herodian_dynasty
+	father = aristobolos_iv
+	mother = berenice_bat_salome
+	-11.1.1 = {
+		birth = yes
+	}
+	19.1.1 = {
+		add_spouse = cypros_ii
+	}
+	44.1.1 = {
+		death = yes
+	}
+}
+
+herod_v = {
+	name = "Herod"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = herodian_dynasty
+	father = aristobolos_iv
+	mother = berenice_bat_salome
+	-10.1.1 = {
+		birth = yes
+	}
+	48.1.1 = {
+		death = yes
+	}
+}
+
+herod_ii = {
+	name = "Herod"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = herodian_dynasty
+	father = herod_i
+	-27.1.1 = {
+		birth = yes
+	}
+	2.1.1 = {
+		add_spouse = herodias
+	}
+	33.1.1 = {
+		death = yes
+	}
+}
+
+salome_iii = {
+	name = "Salome"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = herodian_dynasty
+	father = herod_ii
+	mother = herodias
+	female = yes
+	4.1.1 = {
+		birth = yes
+	}
+	75.1.1 = {
+		death = yes
+	}
+}
+
+aristobulus_minor = {
+	name = "Aristobulus"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = herodian_dynasty
+	father = aristobolos_iv
+	mother = berenice_bat_salome
+	-1.1.1 = {
+		birth = yes
+		give_nickname = nick_the_younger
+	}
+	46.1.1 = {
+		death = yes
+	}
+}
+
+aggripas_ii = {
+	name = "Aggripa"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = herodian_dynasty
+	father = aggripas_i
+	mother = cypros_ii
+	27.1.1 = {
+		birth = yes
+		give_nickname = nick_the_younger
+	}
+	92.1.1 = {
+		death = yes
+	}
+}
+
+berenice_ii = {
+	name = "Berenice"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = herodian_dynasty
+	father = aggripas_i
+	mother = cypros_ii
+	female = yes
+	28.1.1 = {
+		birth = yes
+	}
+	85.1.1 = {
+		death = yes
+	}
+}
+
+mariamne_vi = {
+	name = "Miriam"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = herodian_dynasty
+	father = aggripas_i
+	mother = cypros_ii
+	female = yes
+	34.1.1 = {
+		birth = yes
+	}
+	93.1.1 = {
+		death = yes
+	}
+}
+
+drusilla = {
+	name = "Drusilla"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = herodian_dynasty
+	father = aggripas_i
+	mother = cypros_ii
+	female = yes
+	38.1.1 = {
+		birth = yes
+	}
+	79.1.1 = {
+		death = yes
+	}
+}
+
+malthace = {
+	name = "malthace"
+	religion = "samaritan"
+	culture = "hebrew"
+	female = yes
+	-47.1.1 = {
+		birth = yes
+	}
+	-4.1.1 = {
+		death = yes
+	}
+}
+
+herod_iii_antipas = {
+	name = "Herod"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = herodian_dynasty
+	father = herod_i
+	mother = malthace
+	-22.1.1 = {
+		birth = yes
+		give_nickname = nick_antipas
+	}
+	34.1.1 = {
+		add_spouse = herodias
+	}
+	42.1.1 = {
+		death = yes
+	}
+}
+
+herod_iv_archelaus = {
+	name = "Herod"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = herodian_dynasty
+	father = herod_i
+	mother = malthace
+	-23.1.1 = {
+		birth = yes
+		give_nickname = nick_archelaus
+	}
+	5.1.1 = {
+		add_spouse = mariamne_iii
+	}
+	18.1.1 = {
+		death = yes
+	}
+}
+
+olympias = {
+	name = "Olympias"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = herodian_dynasty
+	father = herod_i
+	mother = malthace
+	female = yes
+	-19.1.1 = {
+		birth = yes
+	}
+	46.1.1 = {
+		death = yes
+	}
+}

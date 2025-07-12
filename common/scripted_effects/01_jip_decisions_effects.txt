@@ -111,40 +111,40 @@ form_hebrew_decision_effects = {
 form_canaanite_decision_effects = {
 	#Covert self & court to canaanite culture
 	if = {
-		limit = { NOT = { has_culture = culture:canaanite } }
+		limit = { NOT = { has_culture = culture:phoenician } }
 
 		every_courtier = {
 			limit = { has_same_culture_as = scope:canaanite_former }
 			add_to_list = convert_list
 		}
 		#transfer over innovations from previous culture. 
-		culture:canaanite = {
+		culture:phoenician = {
 			reset_culture_creation_date = yes
 			get_all_innovations_from = scope:canaanite_former.culture
 		}
-		set_culture = culture:canaanite
+		set_culture = culture:phoenician
 
 		every_in_list = {
 			list = convert_list
 			custom = canaanite_convert_list #This says "every subject in the realm" even though vassals and their courts only covert later, through event
-			set_culture = culture:canaanite
+			set_culture = culture:phoenician
 		}
 
 		every_vassal_or_below = {
 			trigger_event = jip_hebrew.0022
 			every_courtier = {
 				limit = { has_same_culture_as = scope:canaanite_former }
-				set_culture = culture:canaanite
+				set_culture = culture:phoenician
 			}
 		}
 	}
 
 	capital_county = {
-		set_county_culture = culture:canaanite
+		set_county_culture = culture:phoenician
 	}
 
 	#Innovations
-	culture:canaanite = {
+	culture:phoenician = {
 		add_random_innovation = culture_group_military
 		add_random_innovation = culture_group_civic
 	}

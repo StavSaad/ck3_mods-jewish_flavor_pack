@@ -1,7 +1,7 @@
 ﻿d_laamp_davidite = {
 	867.1.1 = {
 		liege = 0
-		holder = rabbinic_exilarchate_hatzub_ben_pinchas
+		holder = rabbinic_exilarchate_pinchas_ben_abdimi
 		government = landless_adventurer_government
 		succession_laws = { landless_adventurer_succession_law }
 		effect = {
@@ -36,9 +36,262 @@ d_laamp_spanish_davidite = {
 
 }
 
+k_judah = {
+	-1000.1.1 = {
+		holder = king_david_i
+	}
+
+	-970.1.1 = {
+		holder = king_shelomoh_i
+	}
+
+	-931.1.1 = {
+		holder = king_rehavam_i
+	}
+
+	-914.1.1 = {
+		holder = king_aviyah_i
+	}
+
+	-911.1.1 = {
+		holder = king_asa_i
+	}
+
+	-870.1.1 = {
+		holder = king_yehoshafat_i
+	}
+
+	-845.1.1 = {
+		holder = king_yehoram_i
+	}
+
+	-842.1.1 = {
+		holder = king_ahaziah_i
+	}
+
+	-841.1.1 = {
+		holder = queen_athaliah_i
+	}
+
+	-835.1.1 = {
+		holder = king_yehoash_i
+	}
+
+	-796.1.1 = {
+		holder = king_amaziah_i
+	}
+
+	-767.1.1 = {
+		holder = king_uzziyyah_i
+	}
+
+	-758.1.1 = {
+		holder = king_yotam_i
+	}
+
+	-742.1.1 = {
+		holder = king_ahaz_i
+	}
+
+	-726.1.1 = {
+		holder = king_chizkiyahu_i
+	}
+
+	-697.1.1 = {
+		holder = king_menashe_i
+	}
+
+	-642.1.1 = {
+		holder = king_amon_i
+	}
+
+	-640.1.1 = {
+		holder = king_yehoshiyahu_i
+	}
+
+	-609.1.1 = {
+		holder = king_yehoahaz_i
+	}
+
+	-609.4.1 = {
+		holder = king_yehoyachim_i
+	}
+
+	-597.1.1 = {
+		holder = king_yehoyachin_i
+	}
+
+	-597.4.1 = {
+		holder = king_zedekiah_i
+	}
+
+	-586.1.1 = {
+		holder = 0
+	}
+
+	-167.1.1 = {
+		holder = matityahu_hakohen
+	}
+
+	-166.1.1 = {
+		holder = yehudah_macabee
+	}
+
+	-160.1.1 = {
+		holder = 0
+	}
+
+	-155.1.1 = {
+		holder = yonatan_havafsi
+	}
+
+	-142.1.1 = {
+		holder = simon_tassi
+	}
+
+	-134.1.1 = {
+		holder = yochanan_hyrkanus_i
+	}
+
+	-104.1.1 = {
+		holder = yehudah_aristobolos_i
+	}
+
+	-103.1.1 = {
+		holder = alexander_yanai
+	}
+
+	-76.1.1 = {
+		holder = queen_salome
+	}
+
+	-67.1.1 = {
+		holder = yehudah_aristobolos_ii
+	}
+
+	-63.1.1 = {
+		holder = yochanan_hyrkanus_ii
+	}
+
+	-40.1.1 = {
+		holder = antigonos_ii
+	}
+
+	-37.1.1 = {
+		holder = herod_i
+	}
+
+	-4.1.1 = {
+		holder = herod_iv_archelaus
+	}
+
+	6.1.1 = {
+		holder = 0
+	}
+
+	41.1.1 = {
+		holder = aggripas_i
+	}
+
+	44.1.1 = {
+		holder = 0
+	}
+}
+
+k_israel = {
+
+	-1000.1.1 = {
+		holder = king_david_i
+	}
+
+	-970.1.1 = {
+		holder = king_shelomoh_i
+	}
+
+	-931.1.1 = {
+		holder = king_jeroboam
+	}
+
+	-910.1.1 = {
+		holder = king_nadav
+	}
+
+	-909.1.1 = {
+		holder = king_baasha
+	}
+
+	-886.1.1 = {
+		holder = king_ellah_ben_baash
+	}
+
+	-885.1.1 = {
+		holder = king_zimri
+	}
+
+	-885.1.7 = {
+		holder = king_omri
+	}
+
+	-873.1.1 = {
+		holder = king_ahab
+	}
+
+	-852.12.1 = {
+		holder = king_ahaziyahu_ben_ahab
+	}
+
+	-851.12.1 = {
+		holder = king_yehoram_ben_ahab
+	}
+
+	-842.1.1 = {
+		holder = king_yehu
+	}
+
+	-815.1.1 = {
+		holder = king_yehoahaz_ben_yehu
+	}
+
+	-800.1.1 = {
+		holder = king_yehoash_ben_yehoahaz
+	}
+
+	-786.1.1 = {
+		holder = king_jeroboam_ii
+	}
+
+	-746.7.1 = {
+		holder = king_zechariah
+	}
+
+	-745.1.1 = {
+		holder = king_shalom
+	}
+
+	-745.2.1 = {
+		holder = king_menachem
+	}
+
+	-738.1.1 = {
+		holder = king_pekahaiah
+	}
+
+	-736.1.1 = {
+		holder = king_pekach
+	}
+
+	-732.1.1 = {
+		holder = king_hoshea
+	}
+
+	-722.1.1 = {
+		holder = 0
+	}
+}
+
 d_exilarchate = {
 
-	1.1.1 = {
+	-596.1.1 = {
 		government = landless_adventurer_government
 		succession_laws = {
 			noble_family_succession_law
@@ -48,7 +301,75 @@ d_exilarchate = {
 		liege = e_persia
 	}
 
-	130.1.1 = {
+	-597.4.1 = {
+		holder = king_yehoyachin_i
+	}
+
+	-543.1.1 = {
+		holder = rabbinic_exilarchate_shealtiel_i
+	}
+
+	-462.1.1 = {
+		holder = rabbinic_exilarchate_zerubabel_i
+	}
+
+	-383.1.1 = {
+		holder = rabbinic_exilarchate_meshulam_i
+	}
+
+	-308.1.1 = {
+		holder = rabbinic_exilarchate_chananiah_i
+	}
+
+	-244.1.1 = {
+		holder = rabbinic_exilarchate_brachiah_i
+	}
+
+	-162.1.1 = {
+		holder = rabbinic_exilarchate_chasdiah_i
+	}
+
+	-100.1.1 = {
+		holder = rabbinic_exilarchate_yishayah_i
+	}
+
+	-40.1.1 = {
+		holder = rabbinic_exilarchate_ovadiah_i
+	}
+
+	1.1.1 = {
+		holder = rabbinic_exilarchate_shechania_i
+	}
+
+	40.1.1 = {
+		holder = rabbinic_exilarchate_shemaia_i
+	}
+
+	70.1.1 = {
+		holder = rabbinic_exilarchate_hezekiah_i
+	}
+
+	75.1.1 = {
+		holder = rabbinic_exilarchate_akkub_i
+	}
+
+	93.1.1 = {
+		holder = rabbinic_exilarchate_nachum_i
+	}
+
+	105.1.1 = {
+		holder = rabbinic_exilarchate_yochanan_i
+	}
+
+	119.1.1 = {
+		holder = rabbinic_exilarchate_shafat_i
+	}
+
+	125.1.1 = {
+		holder = rabbinic_exilarchate_anan_i
+	}
+
+	135.1.1 = {
 		holder = rabbinic_exilarchate_nathan_i
 	}
 

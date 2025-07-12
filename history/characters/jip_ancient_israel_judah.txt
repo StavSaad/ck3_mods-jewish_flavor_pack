@@ -1,0 +1,1308 @@
+boaz_father_of_oved = {
+	name = "Boaz"
+	religion = "rabbinism"
+	culture = "hebrew"
+	-1125.1.1 = {
+		birth = yes
+	}
+	-1071.1.1 = {
+		death = yes
+	}
+}
+
+ruth = {
+	name = "Ruth"
+	religion = "rabbinism"
+	culture = "phoenician"
+	female = yes
+	-1106.1.1 = {
+		birth = yes
+	}
+	-1063.1.1 = {
+		death = yes
+	}
+}
+
+oved = {
+	name = "Oved"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = boaz_father_of_oved
+	mother = ruth
+	-1090.1.1 = {
+		birth = yes
+	}
+	-1030.1.1 = {
+		death = yes
+	}
+}
+
+jessa_father_of_david = {
+	name = "Yishai"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = oved
+	mother = ruth
+	-1037.1.1 = {
+		birth = yes
+	}
+	-989.1.1 = {
+		death = yes
+	}
+}
+
+king_david_i = {
+	name = "David"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = jessa_father_of_david
+	trait = lustful
+	-1021.1.1 = {
+		birth = yes
+	}
+	-1004.1.1 = {
+		add_spouse = achinoam_mother_of_amnon
+	}
+	-1002.1.1 = {
+		add_spouse = maakha_mother_of_avshalom	
+	}
+	-1000.1.1 = {
+		add_spouse = batsheva
+	}
+	-970.1.1 = {
+		death = yes
+	}
+}
+
+achinoam_mother_of_amnon = {
+	name = "Achinoam"
+	religion = "rabbinism"
+	culture = "hebrew"
+	female = yes
+	-1021.1.1 = {
+		birth = yes
+	}
+	-976.1.1 = {
+		death = yes
+	}
+}
+
+amnon = {
+	name = "Amnon"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_david_i
+	mother = achinoam_mother_of_amnon
+	trait = incestuous
+	trait = rakish
+	-1001.1.1 = {
+		birth = yes
+	}
+	-980.1.1 = {
+		death = {
+			death_reason = death_revenge
+			killer = avshalom
+		}
+	}
+}
+
+maakha_mother_of_avshalom = {
+	name = "MaAkhah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	female = yes
+	-1019.1.1 = {
+		birth = yes
+	}
+	-974.1.1 = {
+		death = yes
+	}
+}
+
+avshalom = {
+	name = "Avshalom"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_david_i
+	mother = maakha_mother_of_avshalom
+	trait = murderer
+	trait = kinslayer_3
+	-1000.1.1 = {
+		birth = yes
+	}
+	-972.1.1 = {
+		death = yes
+	}
+}
+
+tamar = {
+	name = "Tamar"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	female = yes
+	father = king_david_i
+	mother = maakha_mother_of_avshalom
+	-992.1.1 = {
+		birth = yes
+	}
+	-972.1.1 = {
+		death = yes
+	}
+}
+
+eliav = {
+	name = "Eliav"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = jessa_father_of_david
+	-1031.1.1 = {
+		birth = yes
+	}
+	-960.1.1 = {
+		death = yes
+	}
+}
+
+avinadav = {
+	name = "Avinadav"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = jessa_father_of_david
+	-1030.1.1 = {
+		birth = yes
+	}
+	-962.1.1 = {
+		death = yes
+	}
+}
+
+shemaa = {
+	name = "Shemaiah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = jessa_father_of_david
+	-1029.1.1 = {
+		birth = yes
+	}
+	-962.1.1 = {
+		death = yes
+	}
+}
+
+natanel = {
+	name = "NetanEl"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = jessa_father_of_david
+	-1028.1.1 = {
+		birth = yes
+	}
+	-956.1.1 = {
+		death = yes
+	}
+}
+
+radi = {
+	name = "Radi"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = jessa_father_of_david
+	-1027.1.1 = {
+		birth = yes
+	}
+	-956.1.1 = {
+		death = yes
+	}
+}
+
+uzzam = {
+	name = "Otzam"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = jessa_father_of_david
+	-1025.1.1 = {
+		birth = yes
+	}
+	-956.1.1 = {
+		death = yes
+	}
+}
+
+elishema = {
+	name = "Elishema"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = jessa_father_of_david
+	-1023.1.1 = {
+		birth = yes
+	}
+	-950.1.1 = {
+		death = yes
+	}
+}
+
+zeruyah = {
+	name = "Tzruia"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = jessa_father_of_david
+	female = yes
+	-1026.1.1 = {
+		birth = yes
+	}
+	-950.1.1 = {
+		death = yes
+	}
+}
+
+avigail = {
+	name = "Avigayil"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = jessa_father_of_david
+	female = yes
+	-1024.1.1 = {
+		birth = yes
+	}
+	-950.1.1 = {
+		death = yes
+	}
+}
+
+yoav_ben_zeruyah = {
+	name = "Yoav"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = zeruyah
+	-1001.1.1 = {
+		birth = yes
+	}
+	-950.1.1 = {
+		death = yes
+	}
+}
+
+avishay_ben_zeruyah = {
+	name = "Avishay"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = zeruyah
+	-1000.1.1 = {
+		birth = yes
+	}
+	-949.1.1 = {
+		death = yes
+	}
+}
+
+asael_ben_zeruyah = {
+	name = "AsaEl"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = zeruyah
+	-999.1.1 = {
+		birth = yes
+	}
+	-943.1.1 = {
+		death = yes
+	}
+}
+
+yehonadav = {
+	name = "Yehonadav"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = shemaa
+	-1000.1.1 = {
+		birth = yes
+	}
+	-969.1.1 = {
+		death = yes
+	}
+}
+
+avigail_bat_eliav = {
+	name = "Avigayil"
+	religion = "rabbinism"
+	culture = "hebrew"
+	female = yes
+	father = eliav
+	-971.1.1 = {
+		birth = yes
+	}
+	-905.1.1 = {
+		death = yes
+	}
+}
+
+batsheva = {
+	name = "BatSheva"
+	religion = "rabbinism"
+	culture = "phoenician"
+	female = yes
+	-1025.1.1 = {
+		birth = yes
+	}
+	-960.1.1 = {
+		death = yes
+	}
+}
+
+tamar_bat_avshalom = {
+	name = "Tamar"
+	religion = "rabbinism"
+	culture = "hebrew"
+	female = yes
+	dynasty = davidite_dynasty
+	trait = beauty_good_3
+	father = avshalom
+	-973.1.1 = {
+		birth = yes
+	}
+	-915.1.1 = {
+		death = yes
+	}
+}
+
+maakha_bat_avshalom = {
+	name = "MaAkhah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	female = yes
+	dynasty = davidite_dynasty
+	mother = tamar_bat_avshalom
+	trait = beauty_good_2
+	-955.1.1 = {
+		birth = yes
+	}
+	-901.1.1 = {
+		death = yes
+	}
+}
+
+king_shelomoh_i = {
+	name = "Shelomoh"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_david_i
+	mother = batsheva
+	trait = intellect_good_3
+	-999.1.1 = {
+		birth = yes
+	}
+	-931.1.1 = {
+		death = yes
+	}
+}
+
+bosmat_bat_shlomo = {
+	name = "Bosmat"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = king_shelomoh_i
+	dynasty = davidite_dynasty
+	female = yes
+	-997.1.1 = {
+		birth = yes
+	}
+	-925.1.1 = {
+		death = yes
+	}
+}
+
+tafat_bat_shlomo = {
+	name = "Tafat"
+	religion = "rabbinism"
+	culture = "hebrew"
+	father = king_shelomoh_i
+	dynasty = davidite_dynasty
+	female = yes
+	-995.1.1 = {
+		birth = yes
+	}
+	-921.1.1 = {
+		death = yes
+	}
+}
+
+king_rehavam_i = {
+	name = "RehavAm"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_shelomoh_i
+	-972.1.1 = {
+		birth = yes
+	}
+	-936.1.1 = {
+		add_spouse = avigail_bat_eliav
+	}
+	-937.1.1 = {
+		add_spouse = maakha_bat_avshalom
+	}
+	-914.1.1 = {
+		death = yes
+	}
+}
+
+attai_ben_rehavam = {
+	name = "Attai"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_rehavam_i
+	mother = maakha_bat_avshalom
+	-939.1.1 = {
+		birth = yes
+	}
+	-909.1.1 = {
+		death = yes
+	}
+}
+
+yeush_ben_rehavam = {
+	name = "YeUsh"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_rehavam_i
+	mother = avigail_bat_eliav
+	-940.1.1 = {
+		birth = yes
+	}
+	-897.1.1 = {
+		death = yes
+	}
+}
+
+zaham_ben_rehavam = {
+	name = "Zaham"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_rehavam_i
+	mother = avigail_bat_eliav
+	-939.1.1 = {
+		birth = yes
+	}
+	-892.1.1 = {
+		death = yes
+	}
+}
+
+shemaria_ben_rehavam = {
+	name = "Shemaryah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_rehavam_i
+	mother = avigail_bat_eliav
+	-938.1.1 = {
+		birth = yes
+	}
+	-893.1.1 = {
+		death = yes
+	}
+}
+
+ziza_ben_rehavam = {
+	name = "Ziza"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_rehavam_i
+	mother = maakha_bat_avshalom
+	-942.1.1 = {
+		birth = yes
+	}
+	-905.1.1 = {
+		death = yes
+	}
+}
+
+shlomit_bat_rehavam = {
+	name = "Shlomit"
+	religion = "rabbinism"
+	culture = "hebrew"
+	female = yes
+	dynasty = davidite_dynasty
+	father = king_rehavam_i
+	mother = maakha_bat_avshalom
+	-945.1.1 = {
+		birth = yes
+	}
+	-889.1.1 = {
+		death = yes
+	}
+}
+
+king_aviyah_i = {
+	name = "Aviyah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_rehavam_i
+	mother = maakha_bat_avshalom
+	-938.1.1 = {
+		birth = yes
+	}
+	-911.1.1 = {
+		death = yes
+	}
+}
+
+king_asa_i = {
+	name = "Asa"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_aviyah_i
+	-930.1.1 = {
+		birth = yes
+	}
+	-870.1.1 = {
+		death = yes
+	}
+}
+
+king_yehoshafat_i = {
+	name = "Yehoshafat"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_asa_i
+	-900.1.1 = {
+		birth = yes
+	}
+	-845.1.1 = {
+		death = yes
+	}
+}
+
+king_yehoram_i = {
+	name = "Yehoram"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_yehoshafat_i
+	trait = murderer
+	trait = kinslayer_3
+	-870.1.1 = {
+		birth = yes
+	}
+	-864.1.1 = {
+		add_spouse = queen_athaliah_i
+	}
+	-842.1.1 = {
+		death = yes
+	}
+}
+
+azariah_ben_yehoshafat = {
+	name = "Azariah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_yehoshafat_i
+	-869.1.1 = {
+		birth = yes
+	}
+	-845.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = king_yehoram_i
+		}
+	}
+}
+
+yechiel_ben_yehoshafat = {
+	name = "YechiEl"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_yehoshafat_i
+	-868.1.1 = {
+		birth = yes
+	}
+	-845.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = king_yehoram_i
+		}
+	}
+}
+
+zecharyahu_ben_yehoshafat = {
+	name = "Zachariah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_yehoshafat_i
+	-867.1.1 = {
+		birth = yes
+	}
+	-845.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = king_yehoram_i
+		}
+	}
+}
+
+michael_ben_yehoshafat = {
+	name = "MichaE_l"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_yehoshafat_i
+	-866.1.1 = {
+		birth = yes
+	}
+	-845.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = king_yehoram_i
+		}
+	}
+}
+
+shefatyahu_ben_yehoshafat = {
+	name = "Shefatyahu"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_yehoshafat_i
+	-865.1.1 = {
+		birth = yes
+	}
+	-845.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = king_yehoram_i
+		}
+	}
+}
+
+navat = {
+	name = "Navat"
+	religion = "pagan"
+	culture = "hebrew"
+	-999.1.1 = {
+		birth = yes
+	}
+	-947.1.1 = {
+		death = yes
+	}
+}
+
+king_jeroboam = {
+	name = "YeravAm"
+	religion = "pagan"
+	culture = "hebrew"
+	dynasty = jeroboam_dynasty
+	father = navat
+	-960.1.1 = {
+		birth = yes
+	}
+	-910.1.1 = {
+		death = yes
+	}
+}
+
+king_nadav = {
+	name = "Nadav"
+	religion = "pagan"
+	culture = "hebrew"
+	father = king_jeroboam
+	dynasty = jeroboam_dynasty
+	-930.1.1 = {
+		birth = yes
+	}
+	-909.1.1 = {
+		death = {
+			death_reason = death_siege
+			killer = king_baasha
+		}
+	}
+}
+
+king_baasha = {
+	name = "Baasha"
+	religion = "pagan"
+	culture = "hebrew"
+	dynasty = baasha_dynasty
+	-930.1.1 = {
+		birth = yes
+	}
+	-886.1.1 = {
+		death = {
+			death_reason = death_assassination
+			killer = king_zimri
+		}
+	}
+}
+
+king_ellah_ben_baash = {
+	name = "Alla"
+	religion = "pagan"
+	culture = "hebrew"
+	father = king_baasha
+	dynasty = baasha_dynasty
+	-905.1.1 = {
+		birth = yes
+	}
+	-885.1.1 = {
+		death = {
+			death_reason = death_assassination
+			killer = king_zimri
+		}
+	}
+}
+
+king_zimri = {
+	name = "Zimri"
+	religion = "pagan"
+	culture = "hebrew"
+	trait = murderer
+	dynasty = zimri_dynasty
+	-925.1.1 = {
+		birth = yes
+	}
+	-885.1.7 = {
+		death = {
+			death_reason = death_execution
+			killer = king_omri
+		}
+	}
+}
+
+king_omri = {
+	name = "Omri"
+	religion = "pagan"
+	culture = "hebrew"
+	dynasty = omriid_dynasty
+	-925.1.1 = {
+		birth = yes
+	}
+	-873.1.1 = {
+		death = yes
+	}
+}
+
+king_ahab = {
+	name = "Ahab"
+	religion = "pagan"
+	culture = "hebrew"
+	dynasty = omriid_dynasty
+	father = king_omri
+	-905.1.1 = {
+		birth = yes
+	}
+	-879.1.1 = {
+		add_spouse = jezebel
+	}
+	-852.1.1 = {
+		death = yes
+	}
+}
+
+jezebel = {
+	name = "Izevel"
+	religion = "pagan"
+	culture = "phoenician"
+	female = yes
+	-896.1.1 = {
+		birth = yes
+	}
+	-842.1.1 = {
+		death = yes
+	}
+}
+
+king_ahaziyahu_ben_ahab = {
+	name = "AhaziYahu"
+	religion = "pagan"
+	culture = "hebrew"
+	dynasty = omriid_dynasty
+	father = king_ahab
+	mother = jezebel
+	-873.1.1 = {
+		birth = yes
+	}
+	-851.12.1 = {
+		death = yes
+	}
+}
+
+king_yehoram_ben_ahab = {
+	name = "Yehoram"
+	religion = "pagan"
+	culture = "hebrew"
+	dynasty = omriid_dynasty
+	father = king_ahab
+	mother = jezebel
+	-871.1.1 = {
+		birth = yes
+	}
+	-842.1.1 = {
+		death = {
+			death_reason = death_coup_successful
+			killer = king_yehu
+		}
+	}
+}
+
+queen_athaliah_i = {
+	name = "Athaliah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = omriid_dynasty
+	father = king_ahab
+	mother = jezebel
+	trait = murderer
+	female = yes
+	-880.1.1 = {
+		birth = yes
+	}
+	-831.1.1 = {
+		death = yes
+	}
+}
+
+nimshi = {
+	name = "Nimshi"
+	religion = "pagan"
+	culture = "hebrew"
+	-871.1.1 = {
+		birth = yes
+	}
+	-842.1.1 = {
+		death = yes
+	}
+}
+
+king_yehu = {
+	name = "Yehu"
+	religion = "pagan"
+	culture = "hebrew"
+	dynasty = yehu_dynasty
+	father = nimshi
+	-880.1.1 = {
+		birth = yes
+	}
+	-815.1.1 = {
+		death = yes
+	}
+}
+
+king_yehoahaz_ben_yehu = {
+	name = "YehoAhaz"
+	religion = "pagan"
+	culture = "hebrew"
+	dynasty = yehu_dynasty
+	father = king_yehu
+	-850.1.1 = {
+		birth = yes
+	}
+	-800.1.1 = {
+		death = yes
+	}
+}
+
+king_yehoash_ben_yehoahaz = {
+	name = "YehoAsh"
+	religion = "pagan"
+	culture = "hebrew"
+	dynasty = yehu_dynasty
+	father = king_yehoahaz_ben_yehu
+	-830.1.1 = {
+		birth = yes
+	}
+	-786.1.1 = {
+		death = yes
+	}
+}
+
+king_jeroboam_ii = {
+	name = "YeravAm"
+	religion = "pagan"
+	culture = "hebrew"
+	dynasty = yehu_dynasty
+	father = king_yehoash_ben_yehoahaz
+	-800.1.1 = {
+		birth = yes
+	}
+	-746.7.1 = {
+		death = yes
+	}
+}
+
+king_zechariah = {
+	name = "Zachariah"
+	religion = "pagan"
+	culture = "hebrew"
+	dynasty = yehu_dynasty
+	father = king_jeroboam_ii
+	-765.1.1 = {
+		birth = yes
+	}
+	-745.1.1 = {
+		death = {
+			death_reason = death_coup_successful
+			killer = king_shalom
+		}
+	}
+}
+
+yavesh = {
+	name = "Yavesh"
+	religion = "pagan"
+	culture = "hebrew"
+	-799.1.1 = {
+		birth = yes
+	}
+	-750.2.1 = {
+		death = yes
+	}
+}
+
+king_shalom = {
+	name = "Shalom"
+	religion = "pagan"
+	culture = "hebrew"
+	father = yavesh
+	dynasty = shalom_dynasty
+	-779.1.1 = {
+		birth = yes
+	}
+	-745.2.1 = {
+		death = yes
+	}
+}
+
+gadi = {
+	name = "Gadi"
+	religion = "pagan"
+	culture = "hebrew"
+	-799.1.1 = {
+		birth = yes
+	}
+	-750.2.1 = {
+		death = yes
+	}
+}
+
+king_menachem = {
+	name = "Menachem"
+	religion = "pagan"
+	culture = "hebrew"
+	father = gadi
+	dynasty = menachem_dynasty
+	-780.1.1 = {
+		birth = yes
+	}
+	-738.1.1 = {
+		death = yes
+	}
+}
+
+king_pekahaiah = {
+	name = "Pikchiyah"
+	religion = "pagan"
+	culture = "hebrew"
+	father = king_menachem
+	dynasty = menachem_dynasty
+	-755.1.1 = {
+		birth = yes
+	}
+	-736.1.1 = {
+		death = {
+			death_reason = death_coup_successful
+			killer = king_pekach
+		}
+	}
+}
+
+remalyahu = {
+	name = "Remalyahu"
+	religion = "pagan"
+	culture = "hebrew"
+	-779.1.1 = {
+		birth = yes
+	}
+	-740.2.1 = {
+		death = yes
+	}
+}
+
+king_pekach = {
+	name = "Pekach"
+	religion = "pagan"
+	culture = "hebrew"
+	father = remalyahu
+	dynasty = pekach_dynasty
+	-760.1.1 = {
+		birth = yes
+	}
+	-732.1.1 = {
+		death = {
+			death_reason = death_coup_successful
+			killer = king_hoshea
+		}
+	}
+}
+
+alla = {
+	name = "Alla"
+	religion = "pagan"
+	culture = "hebrew"
+	-779.1.1 = {
+		birth = yes
+	}
+	-740.2.1 = {
+		death = yes
+	}
+}
+
+king_hoshea = {
+	name = "Hoshea"
+	religion = "pagan"
+	culture = "hebrew"
+	father = alla
+	dynasty = hoshea_dynasty
+	-760.1.1 = {
+		birth = yes
+	}
+	-722.1.1 = {
+		death = {
+			death_reason = death_execution
+		}
+	}
+}
+
+king_ahaziah_i = {
+	name = "Ahaziah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	mother = queen_athaliah_i
+	father = king_yehoram_i
+	-865.1.1 = {
+		birth = yes
+	}
+	-841.1.1 = {
+		death = yes
+	}
+}
+
+king_yehoash_i = {
+	name = "YehoAsh"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_ahaziah_i
+	-842.1.1 = {
+		birth = yes
+	}
+	-796.1.1 = {
+		death = yes
+	}
+}
+
+king_amaziah_i = {
+	name = "Amaziah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_yehoash_i
+	-820.1.1 = {
+		birth = yes
+	}
+	-767.1.1 = {
+		death = yes
+	}
+}
+
+king_uzziyyah_i = {
+	name = "Uzziyyah"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_amaziah_i
+	trait = arrogant
+	trait = leper
+	-800.1.1 = {
+		birth = yes
+	}
+	-758.1.1 = {
+		death = {
+			death_reason = death_leper
+		}
+	}
+}
+
+king_yotam_i = {
+	name = "Yotam"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_uzziyyah_i
+	trait = just
+	-775.1.1 = {
+		birth = yes
+	}
+	-742.1.1 = {
+		death = yes
+	}
+}
+
+king_ahaz_i = {
+	name = "Ahaz"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_yotam_i
+	trait = sadistic
+	-760.1.1 = {
+		birth = yes
+	}
+	-726.1.1 = {
+		death = yes
+	}
+}
+
+king_chizkiyahu_i = {
+	name = "Chizkiyahu"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_ahaz_i
+	trait = just
+	trait = zealous
+	-750.1.1 = {
+		birth = yes
+	}
+	-697.1.1 = {
+		death = yes
+	}
+}
+
+king_menashe_i = {
+	name = "Menashe"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_chizkiyahu_i
+	-709.1.1 = {
+		birth = yes
+	}
+	-642.1.1 = {
+		death = yes
+	}
+}
+
+king_amon_i = {
+	name = "Amon"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_menashe_i
+	-664.1.1 = {
+		birth = yes
+	}
+	-640.1.1 = {
+		death = yes
+	}
+}
+
+king_yehoshiyahu_i = {
+	name = "Yehoshiyahu"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_amon_i
+	-648.1.1 = {
+		birth = yes
+	}
+	-609.1.1 = {
+		death = yes
+	}
+}
+
+yochanan_ben_yehoshiyahu = {
+	name = "Yochanan"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_yehoshiyahu_i
+	-630.1.1 = {
+		birth = yes
+	}
+	-601.1.1 = {
+		death = yes
+	}
+}
+
+king_yehoahaz_i = {
+	name = "YehoAhaz"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_yehoshiyahu_i
+	-632.1.1 = {
+		birth = yes
+	}
+	-609.4.1 = {
+		death = yes
+	}
+}
+
+king_zedekiah_i = {
+	name = "Tzidkiyahu"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_yehoshiyahu_i
+	trait = arrogant
+	-634.1.1 = {
+		birth = yes
+	}
+	-586.4.1 = {
+		death = {
+			death_reason = death_siege
+		}
+	}
+}
+
+King_yehoyachim_i = {
+	name = "Yehoyakhim"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = king_yehoshiyahu_i
+	-631.1.1 = {
+		birth = yes
+	}
+	-597.1.1 = {
+		death = yes
+	}
+}
+
+king_yehoyachin_i = {
+	name = "Yehoyakhin"
+	religion = "rabbinism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	father = King_yehoyachim_i
+	-615.1.1 = {
+		birth = yes
+	}
+	-543.1.1 = {
+		death = yes
+	}
+}
