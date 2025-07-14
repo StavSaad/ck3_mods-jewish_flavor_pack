@@ -1,5 +1,5 @@
 yochanan_hakohen = {
-	name = "Yochanan"
+	name = "Yehochanan"
 	religion = "rabbinism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
@@ -92,7 +92,7 @@ yehudah_macabee = {
 }
 
 yochanan_hagadi = {
-	name = "Yochanan"
+	name = "Yehochanan"
 	religion = "rabbinism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
@@ -159,7 +159,7 @@ yehuda_ben_tasi = {
 }
 
 yochanan_hyrkanus_i = {
-	name = "Yochanan"
+	name = "Yehochanan"
 	religion = "rabbinism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
@@ -256,7 +256,7 @@ queen_salome = {
 }
 
 yochanan_hyrkanus_ii = {
-	name = "Yochanan"
+	name = "Yehochanan"
 	religion = "rabbinism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
@@ -741,7 +741,7 @@ drusilla = {
 }
 
 malthace = {
-	name = "malthace"
+	name = "Malthace"
 	religion = "samaritan"
 	culture = "hebrew"
 	female = yes

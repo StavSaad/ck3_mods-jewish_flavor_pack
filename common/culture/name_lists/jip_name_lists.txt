@@ -154,7 +154,7 @@ name_list_radhanite = {
 		Adlai Adoniram Adoniyah Adriel Aharon Amaryahu Amittai Ammiel Amnon Amos Amram Anaiah Anan Anani Aran Arieh
 		AriEl Asa Asaf Asher Asnappar AvdiEl Avidan AviEl Avihu AvimaEl Avimelekh Aviram Avishay Avner Avraham
 		Avram Avshalom Azarel Azaryah Azazyahu AzriEl BaAl Barak Barukh Belshatzzar Benayahu BetUel Binyamin Boaz
-		Chaggai Chanan Chananyah Chanokh Chavaqquq ChazaEl Chizqiyahu Dan Daniyyel David Delayahu Efrayim
+		Chaggai Chanan Chananyah Chanokh Chavaqquq ChazaEl Chizqiyahu Dan Daniyyel David Delayahu Efrayim Ahab Zimri Attai
 		Ehud Eiran Eitan Elah ElAzar Elchanan Eli Eliav Eliel EliEzer Elifalet Elifelet Elihu Elisha Elishua Eliyyahu
 		Elkanah Elnatan Elon Enosh Esaw Evyatar Ezer Ezra Gad Gamaliel GavriEl Gedalyahu Gemaryahu Gershom Gershon
 		GidOn Gilad Golyat Haran Hevel Hillel Hiram Hoshea Iddo Ilai Immanuel Ira Itamar Iyyov Kalev Kayin
@@ -163,17 +163,17 @@ name_list_radhanite = {
 		Neriah NetanEl Netanyahu Nimrod Omri Ovadyah Oved Peleg Pikchiyah Penuel Peretz Pinchas QemuEl Shechanya Chasdiah Brachiah Meshulam Zerubavel
 		RafaEl RehavAm YeravAm Reuel Reuven Sancheriv Seraiah Shalmaneser ShaUl SheAltiEl Shelach Shelah Shelomoh Ahaz
 		Shem ShemaYah ShemuEl Shet Shimon Shimshon Talmai Tammuz Teman Terach Toviyyah Tzefanyah Tzidkiyahu Tzion Tzivah
-		TzuriEl Uri Uriyah UriyEl Uzzi Uzziel Uzziyyah Yaakov YachleEl YachtzeEl Yadon Yair Yamin YaRah YaravAm
+		TzuriEl Uri Uriyah UriyEl Uzzi Uzziel Uzziyyah Yaakov YachleEl YachtzeEl Yadon Yair Yamin YaRah YaravAm Avinadav
 		Yared Yawan Yechezkel YechiEl Nimshi Yavesh Yedidyah Yefet YehoAsh Yehochanan Yehonatan Yehoram Yehoshafat Yehoshua Yehoyakhin
-		Yehoyakim Yehu Yehudah Yehudi Yekonyah YerachmeEl Yeriyahu YeshaYahu Yeshua Yiftach Yirmiyahu Yishai Ittay
-		BaAlZevuv Tovi Noach Haniyah Huna Zutra Ukban Guriya Aviyah Ahonai Migam Yehoshiyahu Chananiah
+		Yehoyakim Yehu Yehudah Yehudi Yekonyah YerachmeEl Yeriyahu YeshaYahu Yeshua Yiftach Yirmiyahu Yishai Ittay Yoav
+		BaAlZevuv Tovi Noach Haniyah Huna Zutra Ukban Guriya Aviyah Ahonai Migam Yehoshiyahu Chananiah Ziza Chizkiyahu
 	}
 	female_names = {
 		Anah Anat Atalyah MaAkhah Machlah Achinoam Asenat Atarah Avigayil Avishag Avital Basmat BatSheva
 		Beulah Bilhah Bityah Chaggit Channah Chavah CheftziBah Chuldah Delilah Devorah Dinah Ednah Efrat Elisheva
 		Ester Hadassah Hagar Hodiyah Izevel KetziAh Leah Machalat MeheitavEl Merav Mikhal Miriam NaAmah NaOmi
 		Orpah Rachel Rivqah Rut Sarah Shifra Shoshannah Shulammit Tamar Tirtzah Tzillah Tzipporah Tzivyah
-		Yael Yedidah Yehosheva Yehudit Yemima Yerushah NoAh Keren Drora Diklah Tehilla
+		Yael Yedidah Yehosheva Yehudit Yemima Yerushah NoAh Keren Drora Diklah Tehilla Bosmat
 	}
 	
 	dynasty_of_location_prefix = "dynnp_of"

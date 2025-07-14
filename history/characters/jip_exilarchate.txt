@@ -194,7 +194,7 @@ rabbinic_exilarchate_nachum_i = {
 }
 
 rabbinic_exilarchate_yochanan_i = {
-	name = "Yochanan"
+	name = "Yehochanan"
 	religion = "rabbinism"
 	culture = "bavlim"
 	dynasty = davidite_dynasty
@@ -920,7 +920,7 @@ rabbinic_exilarchate_nehemiah_son_of_baradawi = {
 }
 
 rabbinic_exilarchate_yitzhak_son_of_nehemiah_son_of_baradawi = {
-	name = "Yizchak"
+	name = "Yitzchak"
 	religion = "rabbinism"
 	culture = "bavlim"
 	father = rabbinic_exilarchate_nehemiah_son_of_baradawi

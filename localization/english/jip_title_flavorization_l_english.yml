@@ -1,4 +1,2 @@
 ﻿l_english:
- exilarchate_duchy: "Exilarch"
- exilarchate_kingdom: "$exilarchate_duchy$"
- exilarchate_empire: "$exilarchate_duchy$"
+ exilarch: "Exilarch"
