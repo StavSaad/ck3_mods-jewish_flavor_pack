@@ -1,6 +1,7 @@
 ﻿exilarch = {
 	type = character
 	special = holder
-	priority = 301
-	titles = { d_exilarchate }
+	priority = 15
+	tier = duchy
+	titles = { d_exilarchate d_karaite_exilarchate }
 }

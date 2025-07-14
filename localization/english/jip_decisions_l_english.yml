@@ -68,7 +68,6 @@
  expand_phoenicia_baalbek_desc: "[GetTitleByKey('c_baalbek').GetName]"
  baalbek_tooltip: "[GetTitleByKey('c_baalbek').GetName]"
  expand_phoenicia_acre_desc: "[GetTitleByKey('c_acre').GetName]"
- acre_tooltip: "[GetTitleByKey('c_acre').GetName]"
  expand_phoenicia_cyprus_desc: "[GetTitleByKey('d_cyprus').GetName]"
  cyprus_tooltip: "[GetTitleByKey('d_cyprus').GetName]"
  every_islamic_loses_fervor: "Every Muslim faith loses #N 15#! [fervor|E]"
