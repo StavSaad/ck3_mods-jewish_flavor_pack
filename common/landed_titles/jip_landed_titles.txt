@@ -65,6 +65,19 @@ d_karaite_exilarchate = {
 	ai_primary_priority = { add = @never_primary_score }
 }
 
+d_kohanism = {
+	color = { 0 140 255 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+	capital = c_jerusalem
+}
+
 e_arabia = {
 	color = { 32 150 85 }
 

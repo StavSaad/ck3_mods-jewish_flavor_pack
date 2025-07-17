@@ -43,3 +43,4 @@ ace_hebrew_gaon.dds = { colors = 1 category = writing }
 ace_hebrew_tsedek.dds = { colors = 1 category = writing }
 ace_six_stars.dds = { colors = 1 category = nature }
 ace_hebrew_lion_judea.dds = { colors = 2 category = animals }
+ace_kohen.dds = { colors = 3 category = faiths }

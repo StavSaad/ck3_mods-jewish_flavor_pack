@@ -1,6 +1,6 @@
 ﻿rabbinic_exilarchate_shealtiel_i = {
 	name = "SheAltiEl"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = education_learning_3
@@ -15,7 +15,7 @@
 
 rabbinic_exilarchate_zerubabel_i = {
 	name = "Zerubavel"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = education_learning_3
@@ -30,7 +30,7 @@ rabbinic_exilarchate_zerubabel_i = {
 
 rabbinic_exilarchate_meshulam_i = {
 	name = "Meshulam"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = education_learning_3
@@ -45,7 +45,7 @@ rabbinic_exilarchate_meshulam_i = {
 
 rabbinic_exilarchate_chananiah_i = {
 	name = "Chananiah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = education_learning_3
@@ -60,7 +60,7 @@ rabbinic_exilarchate_chananiah_i = {
 
 rabbinic_exilarchate_brachiah_i = {
 	name = "Brachiah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = education_learning_3
@@ -75,7 +75,7 @@ rabbinic_exilarchate_brachiah_i = {
 
 rabbinic_exilarchate_chasdiah_i = {
 	name = "Chasdiah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = education_learning_3
@@ -90,7 +90,7 @@ rabbinic_exilarchate_chasdiah_i = {
 
 rabbinic_exilarchate_yishayah_i = {
 	name = "YeshaYahu"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = education_learning_3
@@ -105,7 +105,7 @@ rabbinic_exilarchate_yishayah_i = {
 
 rabbinic_exilarchate_ovadiah_i = {
 	name = "Ovadyah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = education_learning_3
@@ -120,7 +120,7 @@ rabbinic_exilarchate_ovadiah_i = {
 
 rabbinic_exilarchate_shechania_i = {
 	name = "Shechania"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = education_learning_3
@@ -135,7 +135,7 @@ rabbinic_exilarchate_shechania_i = {
 
 rabbinic_exilarchate_shemaia_i = {
 	name = "ShemaYah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = education_learning_3
@@ -150,7 +150,7 @@ rabbinic_exilarchate_shemaia_i = {
 
 rabbinic_exilarchate_hezekiah_i = {
 	name = "Chizqiyahu"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = education_learning_3

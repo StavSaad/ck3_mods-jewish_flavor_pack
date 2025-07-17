@@ -17,3 +17,5 @@ nick_chornai = {}
 nick_maccabee = {}
 nick_antipas = {}
 nick_archelaus = {}
+nick_cantheras = {}
+nick_hakof = {}

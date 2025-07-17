@@ -1,6 +1,6 @@
 boaz_father_of_oved = {
 	name = "Boaz"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	-1125.1.1 = {
 		birth = yes
@@ -12,7 +12,7 @@ boaz_father_of_oved = {
 
 ruth = {
 	name = "Ruth"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "phoenician"
 	female = yes
 	-1106.1.1 = {
@@ -25,7 +25,7 @@ ruth = {
 
 oved = {
 	name = "Oved"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = boaz_father_of_oved
 	mother = ruth
@@ -39,7 +39,7 @@ oved = {
 
 jessa_father_of_david = {
 	name = "Yishai"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = oved
 	mother = ruth
@@ -53,7 +53,7 @@ jessa_father_of_david = {
 
 king_david_i = {
 	name = "David"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = jessa_father_of_david
@@ -77,7 +77,7 @@ king_david_i = {
 
 achinoam_mother_of_amnon = {
 	name = "Achinoam"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	female = yes
 	-1021.1.1 = {
@@ -90,7 +90,7 @@ achinoam_mother_of_amnon = {
 
 amnon = {
 	name = "Amnon"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_david_i
@@ -110,7 +110,7 @@ amnon = {
 
 maakha_mother_of_avshalom = {
 	name = "MaAkhah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	female = yes
 	-1019.1.1 = {
@@ -123,7 +123,7 @@ maakha_mother_of_avshalom = {
 
 avshalom = {
 	name = "Avshalom"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_david_i
@@ -140,7 +140,7 @@ avshalom = {
 
 tamar = {
 	name = "Tamar"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	female = yes
@@ -156,7 +156,7 @@ tamar = {
 
 eliav = {
 	name = "Eliav"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = jessa_father_of_david
 	-1031.1.1 = {
@@ -169,7 +169,7 @@ eliav = {
 
 avinadav = {
 	name = "Avinadav"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = jessa_father_of_david
 	-1030.1.1 = {
@@ -182,7 +182,7 @@ avinadav = {
 
 shemaa = {
 	name = "Shemaiah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = jessa_father_of_david
 	-1029.1.1 = {
@@ -195,7 +195,7 @@ shemaa = {
 
 natanel = {
 	name = "NetanEl"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = jessa_father_of_david
 	-1028.1.1 = {
@@ -208,7 +208,7 @@ natanel = {
 
 radi = {
 	name = "Radi"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = jessa_father_of_david
 	-1027.1.1 = {
@@ -221,7 +221,7 @@ radi = {
 
 uzzam = {
 	name = "Otzam"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = jessa_father_of_david
 	-1025.1.1 = {
@@ -234,7 +234,7 @@ uzzam = {
 
 elishema = {
 	name = "Elishema"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = jessa_father_of_david
 	-1023.1.1 = {
@@ -247,7 +247,7 @@ elishema = {
 
 zeruyah = {
 	name = "Tzruia"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = jessa_father_of_david
 	female = yes
@@ -261,7 +261,7 @@ zeruyah = {
 
 avigail = {
 	name = "Avigayil"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = jessa_father_of_david
 	female = yes
@@ -275,7 +275,7 @@ avigail = {
 
 yoav_ben_zeruyah = {
 	name = "Yoav"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = zeruyah
 	-1001.1.1 = {
@@ -288,7 +288,7 @@ yoav_ben_zeruyah = {
 
 avishay_ben_zeruyah = {
 	name = "Avishay"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = zeruyah
 	-1000.1.1 = {
@@ -301,7 +301,7 @@ avishay_ben_zeruyah = {
 
 asael_ben_zeruyah = {
 	name = "AsaEl"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = zeruyah
 	-999.1.1 = {
@@ -314,7 +314,7 @@ asael_ben_zeruyah = {
 
 yehonadav = {
 	name = "Yehonadav"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = shemaa
 	-1000.1.1 = {
@@ -327,7 +327,7 @@ yehonadav = {
 
 avigail_bat_eliav = {
 	name = "Avigayil"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	female = yes
 	father = eliav
@@ -341,7 +341,7 @@ avigail_bat_eliav = {
 
 batsheva = {
 	name = "BatSheva"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "phoenician"
 	female = yes
 	-1025.1.1 = {
@@ -354,7 +354,7 @@ batsheva = {
 
 tamar_bat_avshalom = {
 	name = "Tamar"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	female = yes
 	dynasty = davidite_dynasty
@@ -370,7 +370,7 @@ tamar_bat_avshalom = {
 
 maakha_bat_avshalom = {
 	name = "MaAkhah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	female = yes
 	dynasty = davidite_dynasty
@@ -386,7 +386,7 @@ maakha_bat_avshalom = {
 
 king_shelomoh_i = {
 	name = "Shelomoh"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_david_i
@@ -402,7 +402,7 @@ king_shelomoh_i = {
 
 bosmat_bat_shlomo = {
 	name = "Bosmat"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = king_shelomoh_i
 	dynasty = davidite_dynasty
@@ -417,7 +417,7 @@ bosmat_bat_shlomo = {
 
 tafat_bat_shlomo = {
 	name = "Tafat"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	father = king_shelomoh_i
 	dynasty = davidite_dynasty
@@ -452,7 +452,7 @@ king_rehavam_i = {
 
 attai_ben_rehavam = {
 	name = "Attai"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_rehavam_i
@@ -467,7 +467,7 @@ attai_ben_rehavam = {
 
 yeush_ben_rehavam = {
 	name = "YeUsh"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_rehavam_i
@@ -482,7 +482,7 @@ yeush_ben_rehavam = {
 
 zaham_ben_rehavam = {
 	name = "Zaham"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_rehavam_i
@@ -497,7 +497,7 @@ zaham_ben_rehavam = {
 
 shemaria_ben_rehavam = {
 	name = "Shemaryah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_rehavam_i
@@ -512,7 +512,7 @@ shemaria_ben_rehavam = {
 
 ziza_ben_rehavam = {
 	name = "Ziza"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_rehavam_i
@@ -527,7 +527,7 @@ ziza_ben_rehavam = {
 
 shlomit_bat_rehavam = {
 	name = "Shlomit"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	female = yes
 	dynasty = davidite_dynasty
@@ -558,7 +558,7 @@ king_aviyah_i = {
 
 king_asa_i = {
 	name = "Asa"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_aviyah_i
@@ -572,7 +572,7 @@ king_asa_i = {
 
 king_yehoshafat_i = {
 	name = "Yehoshafat"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_asa_i
@@ -605,7 +605,7 @@ king_yehoram_i = {
 
 azariah_ben_yehoshafat = {
 	name = "Azariah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_yehoshafat_i
@@ -622,7 +622,7 @@ azariah_ben_yehoshafat = {
 
 yechiel_ben_yehoshafat = {
 	name = "YechiEl"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_yehoshafat_i
@@ -639,7 +639,7 @@ yechiel_ben_yehoshafat = {
 
 zecharyahu_ben_yehoshafat = {
 	name = "Zachariah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_yehoshafat_i
@@ -656,7 +656,7 @@ zecharyahu_ben_yehoshafat = {
 
 michael_ben_yehoshafat = {
 	name = "MichaE_l"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_yehoshafat_i
@@ -673,7 +673,7 @@ michael_ben_yehoshafat = {
 
 shefatyahu_ben_yehoshafat = {
 	name = "Shefatyahu"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_yehoshafat_i
@@ -859,7 +859,7 @@ king_yehoram_ben_ahab = {
 
 queen_athaliah_i = {
 	name = "Athaliah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = omriid_dynasty
 	father = king_ahab
@@ -1102,7 +1102,7 @@ king_ahaziah_i = {
 
 king_yehoash_i = {
 	name = "YehoAsh"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_ahaziah_i
@@ -1116,7 +1116,7 @@ king_yehoash_i = {
 
 king_amaziah_i = {
 	name = "Amaziah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_yehoash_i
@@ -1130,7 +1130,7 @@ king_amaziah_i = {
 
 king_uzziyyah_i = {
 	name = "Uzziyyah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_amaziah_i
@@ -1148,7 +1148,7 @@ king_uzziyyah_i = {
 
 king_yotam_i = {
 	name = "Yotam"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_uzziyyah_i
@@ -1178,7 +1178,7 @@ king_ahaz_i = {
 
 king_chizkiyahu_i = {
 	name = "Chizkiyahu"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_ahaz_i
@@ -1222,7 +1222,7 @@ king_amon_i = {
 
 king_yehoshiyahu_i = {
 	name = "Yehoshiyahu"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_amon_i
@@ -1236,7 +1236,7 @@ king_yehoshiyahu_i = {
 
 yochanan_ben_yehoshiyahu = {
 	name = "Yehochanan"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_yehoshiyahu_i
@@ -1250,7 +1250,7 @@ yochanan_ben_yehoshiyahu = {
 
 king_yehoahaz_i = {
 	name = "YehoAhaz"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_yehoshiyahu_i
@@ -1264,7 +1264,7 @@ king_yehoahaz_i = {
 
 king_zedekiah_i = {
 	name = "Tzidkiyahu"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_yehoshiyahu_i
@@ -1281,7 +1281,7 @@ king_zedekiah_i = {
 
 King_yehoyachim_i = {
 	name = "Yehoyakim"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = king_yehoshiyahu_i
@@ -1295,7 +1295,7 @@ King_yehoyachim_i = {
 
 king_yehoyachin_i = {
 	name = "Yehoyakhin"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	father = King_yehoyachim_i

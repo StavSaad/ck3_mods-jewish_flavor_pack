@@ -57,3 +57,23 @@ herodian_dynasty = {
 	name = "dynn_Herod"
 	culture = hebrew
 }
+
+boethus_dynasty = {
+	name = "dynn_Boethus"
+	culture = hebrew
+}
+
+phabi_dynasty = {
+	name = "dynn_Phabi"
+	culture = hebrew
+}
+
+hanan_dynasty = {
+	name = "dynn_Hanan"
+	culture = hebrew
+}
+
+camithus_dynasty = {
+	name = "dynn_Camithus"
+	culture = hebrew
+}

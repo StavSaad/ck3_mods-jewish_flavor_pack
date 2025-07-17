@@ -1,6 +1,6 @@
 yochanan_hakohen = {
 	name = "Yehochanan"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	trait = education_learning_4
@@ -18,7 +18,7 @@ yochanan_hakohen = {
 
 matityahu_hakohen = {
 	name = "Mattithyahu"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	trait = education_learning_4
@@ -35,7 +35,7 @@ matityahu_hakohen = {
 
 yonatan_havafsi = {
 	name = "Yehonatan"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	trait = education_learning_3
@@ -54,7 +54,7 @@ yonatan_havafsi = {
 
 elazar_hachorani = {
 	name = "ElAzar"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	father = matityahu_hakohen
@@ -72,7 +72,7 @@ elazar_hachorani = {
 
 yehudah_macabee = {
 	name = "Yehudah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	father = matityahu_hakohen
@@ -93,7 +93,7 @@ yehudah_macabee = {
 
 yochanan_hagadi = {
 	name = "Yehochanan"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	father = matityahu_hakohen
@@ -110,7 +110,7 @@ yochanan_hagadi = {
 
 simon_tassi = {
 	name = "Shimon"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	father = matityahu_hakohen
@@ -128,7 +128,7 @@ simon_tassi = {
 
 mattityahu_ben_tasi = {
 	name = "Mattithyahu"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	father = simon_tassi
@@ -144,7 +144,7 @@ mattityahu_ben_tasi = {
 
 yehuda_ben_tasi = {
 	name = "Yehudah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	father = simon_tassi
@@ -160,7 +160,7 @@ yehuda_ben_tasi = {
 
 yochanan_hyrkanus_i = {
 	name = "Yehochanan"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	father = simon_tassi
@@ -175,7 +175,7 @@ yochanan_hyrkanus_i = {
 
 antigonus_i = {
 	name = "Mattithyahu"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	father = yochanan_hyrkanus_i
@@ -193,7 +193,7 @@ antigonus_i = {
 
 avshalom_ben_yochanan = {
 	name = "Avshalom"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	father = yochanan_hyrkanus_i
@@ -207,7 +207,7 @@ avshalom_ben_yochanan = {
 
 yehudah_aristobolos_i = {
 	name = "Yehudah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	father = yochanan_hyrkanus_i
@@ -225,7 +225,7 @@ yehudah_aristobolos_i = {
 
 alexander_yanai = {
 	name = "Yanai"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	father = yochanan_hyrkanus_i
@@ -243,7 +243,7 @@ alexander_yanai = {
 
 queen_salome = {
 	name = "Salome"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	female = yes
 	-127.1.1 = {
@@ -257,7 +257,7 @@ queen_salome = {
 
 yochanan_hyrkanus_ii = {
 	name = "Yehochanan"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	father = alexander_yanai
@@ -273,7 +273,7 @@ yochanan_hyrkanus_ii = {
 
 yehudah_aristobolos_ii = {
 	name = "Yehudah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	father = alexander_yanai
@@ -289,7 +289,7 @@ yehudah_aristobolos_ii = {
 
 alexandra = {
 	name = "Salome"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	female = yes
 	dynasty = hasmonean_dynasty
@@ -308,7 +308,7 @@ alexandra = {
 
 antigonos_ii = {
 	name = "Mattithyahu"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	father = yehudah_aristobolos_ii
@@ -323,7 +323,7 @@ antigonos_ii = {
 
 alexander_yanai_ii = {
 	name = "Yanai"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	father = yehudah_aristobolos_ii
@@ -341,7 +341,7 @@ alexander_yanai_ii = {
 
 yehudah_aristobolos_iii = {
 	name = "Yehudah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	father = alexander_yanai_ii
@@ -351,7 +351,7 @@ yehudah_aristobolos_iii = {
 		birth = yes
 		give_nickname = nick_aristobolos
 	}
-	-36.1.1 = {
+	-36.4.1 = {
 		death = {
 			death_reason = death_murder_known
 			killer = herod_i
@@ -361,7 +361,7 @@ yehudah_aristobolos_iii = {
 
 miriam_hasmonean = {
 	name = "Miriam"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = hasmonean_dynasty
 	female = yes
@@ -381,7 +381,7 @@ miriam_hasmonean = {
 
 antipatros = {
 	name = "Antipatros"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "phoenician"
 	dynasty = herodian_dynasty
 	-103.1.1 = {
@@ -396,7 +396,7 @@ antipatros = {
 
 salome_bat_antipater = {
 	name = "Salome"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "phoenician"
 	female = yes
 	-71.1.1 = {
@@ -409,7 +409,7 @@ salome_bat_antipater = {
 
 berenice_bat_salome = {
 	name = "Berenice"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "phoenician"
 	female = yes
 	-35.1.1 = {
@@ -435,7 +435,7 @@ doris = {
 
 herod_i = {
 	name = "Herod"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "phoenician"
 	dynasty = herodian_dynasty
 	father = antipatros
@@ -453,6 +453,9 @@ herod_i = {
 		remove_spouse = doris
 		add_spouse = miriam_hasmonean
 	}
+	-28.1.1 = {
+		add_spouse = kohanism_mariamne_ii_boethus
+	}
 	-27.1.1 = {
 		add_spouse = malthace
 	}
@@ -465,7 +468,7 @@ herod_i = {
 
 phasael_i = {
 	name = "Phasael"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "phoenician"
 	dynasty = herodian_dynasty
 	father = antipatros
@@ -479,7 +482,7 @@ phasael_i = {
 
 phasael_ii = {
 	name = "Phasael"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "phoenician"
 	dynasty = herodian_dynasty
 	father = phasael_i
@@ -493,7 +496,7 @@ phasael_ii = {
 
 cypros_ii = {
 	name = "Cypros"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "phoenician"
 	female = yes
 	dynasty = herodian_dynasty
@@ -508,7 +511,7 @@ cypros_ii = {
 
 antipatros_ii = {
 	name = "Antipatros"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "phoenician"
 	dynasty = herodian_dynasty
 	father = herod_i
@@ -523,7 +526,7 @@ antipatros_ii = {
 
 aristobolos_iv = {
 	name = "Yehudah"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = herodian_dynasty
 	father = herod_i
@@ -545,7 +548,7 @@ aristobolos_iv = {
 
 alexander_yanai_iii = {
 	name = "Yanai"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = herodian_dynasty
 	father = herod_i
@@ -564,7 +567,7 @@ alexander_yanai_iii = {
 
 mariamne_iii = {
 	name = "Miriam"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = herodian_dynasty
 	female = yes
@@ -580,7 +583,7 @@ mariamne_iii = {
 
 herodias = {
 	name = "Herodias"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = herodian_dynasty
 	female = yes
@@ -596,7 +599,7 @@ herodias = {
 
 aggripas_i = {
 	name = "Aggripa"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = herodian_dynasty
 	father = aristobolos_iv
@@ -614,7 +617,7 @@ aggripas_i = {
 
 herod_v = {
 	name = "Herod"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = herodian_dynasty
 	father = aristobolos_iv
@@ -629,10 +632,11 @@ herod_v = {
 
 herod_ii = {
 	name = "Herod"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = herodian_dynasty
 	father = herod_i
+	mother = kohanism_mariamne_ii_boethus
 	-27.1.1 = {
 		birth = yes
 	}
@@ -646,7 +650,7 @@ herod_ii = {
 
 salome_iii = {
 	name = "Salome"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = herodian_dynasty
 	father = herod_ii
@@ -662,7 +666,7 @@ salome_iii = {
 
 aristobulus_minor = {
 	name = "Aristobulus"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = herodian_dynasty
 	father = aristobolos_iv
@@ -678,7 +682,7 @@ aristobulus_minor = {
 
 aggripas_ii = {
 	name = "Aggripa"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = herodian_dynasty
 	father = aggripas_i
@@ -694,7 +698,7 @@ aggripas_ii = {
 
 berenice_ii = {
 	name = "Berenice"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = herodian_dynasty
 	father = aggripas_i
@@ -710,7 +714,7 @@ berenice_ii = {
 
 mariamne_vi = {
 	name = "Miriam"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = herodian_dynasty
 	father = aggripas_i
@@ -726,7 +730,7 @@ mariamne_vi = {
 
 drusilla = {
 	name = "Drusilla"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = herodian_dynasty
 	father = aggripas_i
@@ -755,7 +759,7 @@ malthace = {
 
 herod_iii_antipas = {
 	name = "Herod"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = herodian_dynasty
 	father = herod_i
@@ -774,7 +778,7 @@ herod_iii_antipas = {
 
 herod_iv_archelaus = {
 	name = "Herod"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = herodian_dynasty
 	father = herod_i
@@ -793,7 +797,7 @@ herod_iv_archelaus = {
 
 olympias = {
 	name = "Olympias"
-	religion = "rabbinism"
+	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = herodian_dynasty
 	father = herod_i

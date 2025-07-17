@@ -1,0 +1,563 @@
+kohanism_ananleus = {
+	name = "Chananel"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	-95.1.1 = {
+		birth = yes
+	}
+	-30.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_phabi = {
+	name = "Phabi"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = phabi_dynasty
+	-95.1.1 = {
+		birth = yes
+	}
+	-30.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_joshua_ben_phabi = {
+	name = "Yehoshua"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = phabi_dynasty
+	-58.1.1 = {
+		birth = yes
+	}
+	-23.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_theophilus_i = {
+	name = "Theophilus"
+	religion = "kohanism"
+	culture = "hebrew"
+	-85.1.1 = {
+		birth = yes
+	}
+	-30.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_mathatias_ben_theophilus = {
+	name = "Mattityahu"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	father = kohanism_theophilus_i
+	-58.1.1 = {
+		birth = yes
+	}
+	-4.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_boethus = {
+	name = "Boethus"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = boethus_dynasty
+	-95.1.1 = {
+		birth = yes
+	}
+	-48.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_simon_boethus = {
+	name = "Shimon"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = boethus_dynasty
+	-70.1.1 = {
+		birth = yes
+	}
+	-5.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_mariamne_ii_boethus = {
+	name = "Miriam"
+	religion = "kohanism"
+	culture = "hebrew"
+	father = kohanism_simon_boethus
+	female = yes
+	trait = beauty_good_3
+	dynasty = boethus_dynasty
+	-41.1.1 = {
+		birth = yes
+	}
+	14.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_yoazar_ben_simon_boethus = {
+	name = "Yoazar"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	father = kohanism_simon_boethus
+	dynasty = boethus_dynasty
+	-43.1.1 = {
+		birth = yes
+	}
+	7.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_elazar_ben_simon_boethus = {
+	name = "ElAzar"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	father = kohanism_simon_boethus
+	dynasty = boethus_dynasty
+	-42.1.1 = {
+		birth = yes
+	}
+	10.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_sie = {
+	name = "Shay"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	-80.1.1 = {
+		birth = yes
+	}
+	-20.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_joshua_ben_sie = {
+	name = "Yehoshua"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	father = kohanism_sie
+	-50.1.1 = {
+		birth = yes
+	}
+	6.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_seth = {
+	name = "Seth"
+	religion = "kohanism"
+	culture = "hebrew"
+	-80.1.1 = {
+		birth = yes
+	}
+	-22.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_chanan_ben_seth = {
+	name = "Chanan"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = hanan_dynasty
+	father = kohanism_seth
+	-50.1.1 = {
+		birth = yes
+	}
+	15.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_ishmael_ben_phabi = {
+	name = "IshmaEl"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = phabi_dynasty
+	father = kohanism_phabi
+	-47.1.1 = {
+		birth = yes
+	}
+	25.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_elazar_ben_chanan = {
+	name = "ElAzar"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = hanan_dynasty
+	father = kohanism_chanan_ben_seth
+	-25.1.1 = {
+		birth = yes
+	}
+	35.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_simon_ben_camithos = {
+	name = "Shimon"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	father = kohanism_camithus
+	dynasty = camithus_dynasty
+	-25.1.1 = {
+		birth = yes
+	}
+	36.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_salome_hanan = {
+	name = "Salome"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	father = kohanism_chanan_ben_seth
+	dynasty = hanan_dynasty
+	-24.1.1 = {
+		birth = yes
+	}
+	36.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_yosef_hakayaf = {
+	name = "Yosef"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	-30.1.1 = {
+		birth = yes
+	}
+	-4.1.1 = {
+		add_spouse = kohanism_salome_hanan
+		give_nickname = nick_hakof
+	}
+	36.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_yonatan_ben_hanan = {
+	name = "Yehonatan"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = hanan_dynasty
+	father = kohanism_chanan_ben_seth
+	-30.1.1 = {
+		birth = yes
+	}
+	37.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_theophylus_ben_hanan = {
+	name = "Theophilus"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = hanan_dynasty
+	father = kohanism_chanan_ben_seth
+	-30.1.1 = {
+		birth = yes
+	}
+	41.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_simon_cantheras = {
+	name = "Shimon"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = boethus_dynasty
+	father = kohanism_simon_boethus
+	-29.1.1 = {
+		birth = yes
+	}
+	1.1.1 = {
+		give_nickname = nick_cantheras
+	}
+	43.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_mattityahu_ben_hanan = {
+	name = "Mattityahu"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = hanan_dynasty
+	father = kohanism_chanan_ben_seth
+	-32.1.1 = {
+		birth = yes
+	}
+	44.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_camithus = {
+	name = "Kimchit"
+	religion = "kohanism"
+	culture = "hebrew"
+	dynasty = camithus_dynasty
+	female = yes
+	-60.1.1 = {
+		birth = yes
+	}
+	-22.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_yosef_ben_camithus = {
+	name = "Yosef"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	father = kohanism_camithus
+	dynasty = camithus_dynasty
+	-26.1.1 = {
+		birth = yes
+	}
+	48.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_nadvai = {
+	name = "Nadvai"
+	religion = "kohanism"
+	culture = "hebrew"
+	-36.1.1 = {
+		birth = yes
+	}
+	16.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_chananiah_ben_nadvai = {
+	name = "Chananiah"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	father = kohanism_nadvai
+	-6.1.1 = {
+		birth = yes
+	}
+	59.1.1 = {
+		death = {
+			death_reason = death_murdered_by_rebels
+		}
+	}
+}
+
+kohanism_ishmael_phabi_ii = {
+	name = "Ishmael"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = phabi_dynasty
+	1.1.1 = {
+		birth = yes
+	}
+	62.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_yosef_cabi = {
+	name = "Yosef"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	father = kohanism_simon_cantheras
+	dynasty = boethus_dynasty
+	1.1.1 = {
+		birth = yes
+	}
+	62.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_chanan_ben_chanan = {
+	name = "Chanan"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	father = kohanism_chanan_ben_seth
+	dynasty = hanan_dynasty
+	-2.1.1 = {
+		birth = yes
+	}
+	63.4.1 = {
+		death = yes
+	}
+}
+
+kohanism_damneus = {
+	name = "Damneus"
+	religion = "kohanism"
+	culture = "hebrew"
+	-30.1.1 = {
+		birth = yes
+	}
+	23.8.1 = {
+		death = yes
+	}
+}
+
+kohanism_yeshua_ben_damneus = {
+	name = "Yeshua"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	father = kohanism_damneus
+	5.1.1 = {
+		birth = yes
+	}
+	63.8.1 = {
+		death = yes
+	}
+}
+
+kohanism_martha_bat_boetus = {
+	name = "Martha"
+	religion = "kohanism"
+	culture = "hebrew"
+	female = yes
+	dynasty = boethus_dynasty
+	father = kohanism_simon_cantheras
+	trait = education_learning_3
+	10.1.1 = {
+		birth = yes
+	}
+	70.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_gamla_i = {
+	name = "Gamla"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	-5.1.1 = {
+		birth = yes
+	}
+	46.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_joshua_ben_gamla = {
+	name = "Yehoshua"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	father = kohanism_gamla_i
+	dynasty = boethus_dynasty
+	15.1.1 = {
+		birth = yes
+	}
+	46.1.1 = {
+		add_spouse = kohanism_martha_bat_boetus
+	}
+	65.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_theophilus_ii = {
+	name = "Theophilus"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	9.1.1 = {
+		birth = yes
+	}
+	66.9.1 = {
+		death = yes
+	}	
+}
+
+kohanism_mattityahu_ben_theophylus = {
+	name = "Mattityahu"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	father = kohanism_theophilus_ii
+	9.1.1 = {
+		birth = yes
+	}
+	66.9.1 = {
+		death = yes
+	}
+}
+
+kohanism_samuel_father_i = {
+	name = "Samuel"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	-12.1.1 = {
+		birth = yes
+	}
+	43.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_pinchas_ben_samuel = {
+	name = "Pinchas"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	father = kohanism_samuel_father_i
+	12.1.1 = {
+		birth = yes
+	}
+	70.1.1 = {
+		death = yes
+	}
+}
+

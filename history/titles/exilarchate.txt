@@ -626,6 +626,169 @@ d_exilarchate = {
 	}
 }
 
+d_kohanism = {
+
+	-165.1.1 = {
+		holder = yehudah_macabee
+	}
+
+	-162.1.1 = {
+		holder = 0
+	}
+
+	-153.1.1 = {
+		holder = yonatan_havafsi
+	}
+
+	-142.1.1 = {
+		holder = simon_tassi
+	}
+
+	-134.1.1 = {
+		holder = yochanan_hyrkanus_i
+	}
+
+	-104.1.1 = {
+		holder = yehudah_aristobolos_i
+	}
+
+	-103.1.1 = {
+		holder = alexander_yanai
+	}
+
+	-76.1.1 = {
+		holder = yochanan_hyrkanus_ii
+	}
+
+	-66.1.1 = {
+		holder = yehudah_aristobolos_ii
+	}
+
+	-63.1.1 = {
+		holder = yochanan_hyrkanus_ii
+	}
+
+	-40.1.1 = {
+		holder = antigonos_ii
+	}
+
+	-37.1.1 = {
+		holder = kohanism_ananleus
+	}
+
+	-36.1.1 = {
+		holder = yehudah_aristobolos_iii
+	}
+
+	-36.4.1 = {
+		holder = kohanism_ananleus
+	}
+
+	-30.1.1 = {
+		holder = kohanism_joshua_ben_phabi
+	}
+
+	-23.1.1 = {
+		holder = kohanism_simon_boethus
+	}
+
+	-5.1.1 = {
+		holder = kohanism_mathatias_ben_theophilus
+	}
+
+	-4.1.1 = {
+		holder = kohanism_yoazar_ben_simon_boethus
+	}
+
+	-4.4.1 = {
+		holder = kohanism_elazar_ben_simon_boethus
+	}
+
+	3.1.1 = {
+		holder = kohanism_joshua_ben_sie
+	}
+
+	6.1.1 = {
+		holder = kohanism_yoazar_ben_simon_boethus
+	}
+
+	6.4.1 = {
+		holder = kohanism_chanan_ben_seth
+	}
+
+	15.1.1 = {
+		holder = kohanism_ishmael_ben_phabi
+	}
+
+	16.1.1 = {
+		holder = kohanism_elazar_ben_chanan
+	}
+
+	17.1.1 = {
+		holder = kohanism_simon_ben_camithos
+	}
+
+	18.1.1 = {
+		holder = kohanism_yosef_hakayaf
+	}
+
+	36.1.1 = {
+		holder = kohanism_yonatan_ben_hanan
+	}
+
+	37.1.1 = {
+		holder = kohanism_theophylus_ben_hanan
+	}
+
+	41.1.1 = {
+		holder = kohanism_simon_cantheras
+	}
+
+	43.1.1 = {
+		holder = kohanism_mattityahu_ben_hanan
+	}
+
+	44.1.1 = {
+		holder = kohanism_yosef_ben_camithus
+	}
+
+	48.1.1 = {
+		holder = kohanism_chananiah_ben_nadvai
+	}
+
+	59.1.1 = {
+		holder = kohanism_ishmael_phabi_ii
+	}
+
+	62.1.1 = {
+		holder = kohanism_yosef_cabi
+	}
+
+	63.1.1 = {
+		holder = kohanism_chanan_ben_chanan
+	}
+
+	63.4.1 = {
+		holder = kohanism_yeshua_ben_damneus
+	}
+
+	63.8.1 = {
+		holder = kohanism_joshua_ben_gamla
+	}
+
+	65.1.1 = {
+		holder = kohanism_mattityahu_ben_theophylus
+	}
+
+	66.9.1 = {
+		holder = kohanism_pinchas_ben_samuel
+	}
+
+	70.1.1 = {
+		holder = 0
+	}
+}
+
 d_karaite_exilarchate = {
 
 	760.9.1 = {

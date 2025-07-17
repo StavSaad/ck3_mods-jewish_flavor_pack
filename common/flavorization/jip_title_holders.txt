@@ -5,3 +5,11 @@
 	tier = duchy
 	titles = { d_exilarchate d_karaite_exilarchate }
 }
+
+kohen_gadol = {
+	type = character
+	special = holder
+	priority = 15
+	tier = duchy
+	titles = { d_kohanism }
+}
