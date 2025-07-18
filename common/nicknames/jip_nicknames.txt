@@ -19,3 +19,4 @@ nick_antipas = {}
 nick_archelaus = {}
 nick_cantheras = {}
 nick_hakof = {}
+nick_hasofer = {}

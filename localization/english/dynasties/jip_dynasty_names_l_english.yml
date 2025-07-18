@@ -40,3 +40,7 @@
  dynn_Hanan:0 "$hanan_dynasty$"
  camithus_dynasty:0 "Beth Kimchit"
  dynn_Camithus:0 "$camithus_dynasty$"
+ zadokite_dynasty:0 "Beth Tzadok"
+ dynn_Zadok:0 "$zadokite_dynasty$"
+ house_onias:0 "Beth Chunyahu"
+ dynn_Onias:0 "$house_onias$"

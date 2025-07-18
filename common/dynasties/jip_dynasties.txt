@@ -77,3 +77,8 @@ camithus_dynasty = {
 	name = "dynn_Camithus"
 	culture = hebrew
 }
+
+zadokite_dynasty = {
+	name = "dynn_Zadok"
+	culture = hebrew
+}

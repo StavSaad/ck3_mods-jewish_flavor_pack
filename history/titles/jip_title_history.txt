@@ -628,6 +628,70 @@ d_exilarchate = {
 
 d_kohanism = {
 
+	-629.1.1 = {
+		holder = kohanism_seraiah
+	}
+
+	-597.1.1 = {
+		holder = kohanism_yehozadak
+	}
+
+	-540.1.1 = {
+		holder = kohanism_yeshua
+	}
+
+	-489.1.1 = {
+		holder = kohanism_yehoyakim
+	}
+
+	-450.1.1 = {
+		holder = kohanism_elyashiv
+	}
+
+	-415.1.1 = {
+		holder = kohanism_yehoyada
+	}
+
+	-385.1.1 = {
+		holder = kohanism_yochanan_ii
+	}
+
+	-350.1.1 = {
+		holder = kohanism_yadoaa
+	}
+
+	-330.1.1 = {
+		holder = kohanism_onias_i
+	}
+
+	-310.1.1 = {
+		holder = kohanism_simon_i
+	}
+
+	-260.1.1 = {
+		holder = kohanism_elazar
+	}
+
+	-245.1.1 = {
+		holder = kohanism_menashe
+	}
+
+	-240.1.1 = {
+		holder = kohanism_onias_ii
+	}
+
+	-220.1.1 = {
+		holder = kohanism_simon_ii
+	}
+
+	-195.1.1 = {
+		holder = kohanism_onias_iii
+	}
+
+	-175.1.1 = {
+		holder = 0
+	}
+
 	-165.1.1 = {
 		holder = yehudah_macabee
 	}

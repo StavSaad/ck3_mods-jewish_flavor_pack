@@ -150,14 +150,14 @@ name_list_radhanite = {
 	}
 
 	male_names = {
-		Anah MaAkhah Gomer Mikhayahu Ofir Yachin AchAv Adam
+		Anah MaAkhah Gomer Mikhayahu Ofir Yachin AchAv Adam Chunyahu
 		Adlai Adoniram Adoniyah Adriel Aharon Amaryahu Amittai Ammiel Amnon Amos Amram Anaiah Anan Anani Aran Arieh
-		AriEl Asa Asaf Asher Asnappar AvdiEl Avidan AviEl Avihu AvimaEl Avimelekh Aviram Avishay Avner Avraham
+		AriEl Asa Asaf Asher Asnappar AvdiEl Avidan AviEl Avihu AvimaEl Avimelekh Aviram Avishay Avner Avraham ElYashiv
 		Avram Avshalom Azarel Azaryah Azazyahu AzriEl BaAl Barak Barukh Belshatzzar Benayahu BetUel Binyamin Boaz
 		Chaggai Chanan Chananyah Chanokh Chavaqquq ChazaEl Chizqiyahu Dan Daniyyel David Delayahu Efrayim Ahab Zimri Attai
 		Ehud Eiran Eitan Elah ElAzar Elchanan Eli Eliav Eliel EliEzer Elifalet Elifelet Elihu Elisha Elishua Eliyyahu
 		Elkanah Elnatan Elon Enosh Esaw Evyatar Ezer Ezra Gad Gamaliel GavriEl Gedalyahu Gemaryahu Gershom Gershon
-		GidOn Gilad Golyat Haran Hevel Hillel Hiram Hoshea Iddo Ilai Immanuel Ira Itamar Iyyov Kalev Kayin
+		GidOn Gilad Golyat Haran Hevel Hillel Hiram Hoshea Iddo Ilai Immanuel Ira Itamar Iyyov Kalev Kayin Yehotzadak
 		Keinan Kenanyahu Koresh Laban Lael Lemuel Levi Lot Machli MalAkhi Mattan Mattanyahu Mattithyahu Mattityahu
 		Melech Menachem Menashsheh Meshullam Metushelach MikhaEl Mikhah Mordokhay Moshe Nachum Nadav Naftali Natan Nechemyah
 		Neriah NetanEl Netanyahu Nimrod Omri Ovadyah Oved Peleg Pikchiyah Penuel Peretz Pinchas QemuEl Shechanya Chasdiah Brachiah Meshulam Zerubavel
@@ -165,8 +165,8 @@ name_list_radhanite = {
 		Shem ShemaYah ShemuEl Shet Shimon Shimshon Talmai Tammuz Teman Terach Toviyyah Tzefanyah Tzidkiyahu Tzion Tzivah
 		TzuriEl Uri Uriyah UriyEl Uzzi Uzziel Uzziyyah Yaakov YachleEl YachtzeEl Yadon Yair Yamin YaRah YaravAm Avinadav
 		Yared Yawan Yechezkel YechiEl Nimshi Yavesh Yedidyah Yefet YehoAsh Yehochanan Yehonatan Yehoram Yehoshafat Yehoshua Yehoyakhin
-		Yehoyakim Yehu Yehudah Yehudi Yekonyah YerachmeEl Yeriyahu YeshaYahu Yeshua Yiftach Yirmiyahu Yishai Ittay Yoav
-		BaAlZevuv Tovi Noach Haniyah Huna Zutra Ukban Guriya Aviyah Ahonai Migam Yehoshiyahu Chananiah Ziza Chizkiyahu
+		Yehoyakim Yehu Yehudah Yehudi Yekonyah YerachmeEl Yeriyahu YeshaYahu Yeshua Yiftach Yirmiyahu Yishai Ittay Yoav Yehoyada
+		BaAlZevuv Tovi Noach Haniyah Huna Zutra Ukban Guriya Aviyah Ahonai Migam Yehoshiyahu Chananiah Ziza Chizkiyahu YadoA
 	}
 	female_names = {
 		Anah Anat Atalyah MaAkhah Machlah Achinoam Asenat Atarah Avigayil Avishag Avital Basmat BatSheva

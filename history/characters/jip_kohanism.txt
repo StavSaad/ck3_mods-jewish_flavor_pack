@@ -1,3 +1,246 @@
+kohanism_seraiah = {
+	name = "Seraiah"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = zadokite_dynasty
+	-649.1.1 = {
+		birth = yes
+	}
+	-597.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_ezra_hasofer = {
+	name = "Ezra"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = zadokite_dynasty
+	father = kohanism_seraiah
+	-615.1.1 = {
+		birth = yes
+		give_nickname = nick_hasofer
+	}
+	-539.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_yehozadak = {
+	name = "Yehotzadak"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = zadokite_dynasty
+	father = kohanism_seraiah
+	-616.1.1 = {
+		birth = yes
+	}
+	-540.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_yeshua = {
+	name = "Yehoshua"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = zadokite_dynasty
+	father = kohanism_yehozadak
+	-570.1.1 = {
+		birth = yes
+	}
+	-505.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_yehoyakim = {
+	name = "Yehoyakim"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = zadokite_dynasty
+	father = kohanism_yeshua
+	-525.1.1 = {
+		birth = yes
+	}
+	-450.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_elyashiv = {
+	name = "ElYashiv"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = zadokite_dynasty
+	father = kohanism_yehoyakim
+	-470.1.1 = {
+		birth = yes
+	}
+	-415.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_yehoyada = {
+	name = "Yehoyada"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = zadokite_dynasty
+	father = kohanism_elyashiv
+	-440.1.1 = {
+		birth = yes
+	}
+	-385.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_yochanan_ii = {
+	name = "Yehochanan"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = zadokite_dynasty
+	father = kohanism_yehoyada
+	-405.1.1 = {
+		birth = yes
+	}
+	-350.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_yadoaa = {
+	name = "YadoA"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = zadokite_dynasty
+	father = kohanism_yochanan_ii
+	-380.1.1 = {
+		birth = yes
+	}
+	-330.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_menashe = {
+	name = "Menashsheh"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty = zadokite_dynasty
+	father = kohanism_yadoaa
+	-331.1.1 = {
+		birth = yes
+	}
+	-240.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_onias_i = {
+	name = "Chunyahu"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty_house = house_onias
+	father = kohanism_yadoaa
+	-367.1.1 = {
+		birth = yes
+	}
+	-310.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_simon_i = {
+	name = "Shimon"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty_house = house_onias
+	father = kohanism_onias_i
+	-327.1.1 = {
+		birth = yes
+		give_nickname = nick_the_just
+	}
+	-260.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_elazar = {
+	name = "ElAzar"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty_house = house_onias
+	father = kohanism_onias_i
+	-305.1.1 = {
+		birth = yes
+	}
+	-245.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_onias_ii = {
+	name = "Chunyahu"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty_house = house_onias
+	father = kohanism_simon_i
+	-262.1.1 = {
+		birth = yes
+	}
+	-220.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_simon_ii = {
+	name = "Shimon"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty_house = house_onias
+	father = kohanism_onias_ii
+	-252.1.1 = {
+		birth = yes
+	}
+	-195.1.1 = {
+		death = yes
+	}
+}
+
+kohanism_onias_iii = {
+	name = "Chunyahu"
+	religion = "kohanism"
+	culture = "hebrew"
+	trait = education_learning_3
+	dynasty_house = house_onias
+	father = kohanism_simon_ii
+	-223.1.1 = {
+		birth = yes
+	}
+	-171.1.1 = {
+		death = {
+			death_reason = death_execution
+		}
+	}
+}
+
 kohanism_ananleus = {
 	name = "Chananel"
 	religion = "kohanism"
