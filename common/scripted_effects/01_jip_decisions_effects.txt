@@ -234,6 +234,7 @@ reestablish_canaanite_city_effect = {
 			random_traits = yes
 			culture = root.culture
 			faith = root.faith
+			gender = male
 			location = root.location
 			save_scope_as = new_owner
 		}
@@ -275,7 +276,11 @@ rebuild_the_third_temple_effect = {
 				limit = {
 					NOT = { this = faith:druze }
 				}
-				change_fervor = -15
+				change_fervor = {
+					subtract = {
+						value = 15
+					}
+				}
 			}
 		}
 	}

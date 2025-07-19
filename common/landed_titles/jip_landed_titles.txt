@@ -3229,7 +3229,6 @@ e_maghreb = {
 
 			cultural_names = {
 				name_list_greek = cn_carthago
-				name_list_latin = cn_carthago
 				name_list_canaanite = cn_qarthadasht
 				name_list_assyrian = cn_qarthadasht
 				name_list_ashkenazi = cn_qarthadasht
@@ -3242,7 +3241,6 @@ e_maghreb = {
 
 				cultural_names = {
 					name_list_greek = cn_carthago
-					name_list_latin = cn_carthago
 					name_list_canaanite = cn_qarthadasht
 					name_list_assyrian = cn_qarthadasht
 					name_list_ashkenazi = cn_qarthadasht
@@ -3257,7 +3255,6 @@ e_maghreb = {
 
 					cultural_names = {
 						name_list_greek = cn_carthago
-						name_list_latin = cn_carthago
 						name_list_canaanite = cn_qarthadasht
 						name_list_assyrian = cn_qarthadasht
 						name_list_ashkenazi = cn_qarthadasht
@@ -3277,7 +3274,6 @@ e_maghreb = {
 
 					cultural_names = {
 						name_list_greek = cn_utica
-						name_list_latin = cn_utica
 						name_list_canaanite = cn_ataq
 						name_list_assyrian = cn_ataq
 						name_list_ashkenazi = cn_ataq
@@ -3743,7 +3739,6 @@ e_carthage = {
 
 	cultural_names = {
 		name_list_greek = cn_carthago
-		name_list_latin = cn_carthago
 	}
 
 	can_create = {

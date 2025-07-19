@@ -170,7 +170,7 @@ jip_hebrew.0010 = {
 	option = {
 		name = jip_hebrew.0010.b
 		title:e_canaan = {
-			set_capital_county = title:c_tripoly
+			set_capital_county = title:c_tripoli
 		}
 	}
 
@@ -348,5 +348,36 @@ jip_hebrew.0030 = {
 
 	option = {
 		name = jip_hebrew.0030.a
+	}
+}
+
+jip_hebrew.0040 = {
+	type = character_event
+	title = jip_hebrew.0040.t #change
+	desc = {
+		desc = jip_hebrew.0040.desc #change
+	}
+	theme = faith
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+
+	option = {
+		name = jip_hebrew.0040.a # NOTHING
+	}
+
+	option = {
+		name = jip_hebrew.0041.b
+		root = {
+			set_character_faith = faith:kohanism
+			save_scope_as = actor
+			save_scope_as = recipient
+			grab_spouses_and_family_to_convert_effect = yes
+			convert_family_to_faith_effect = {
+				FORCED = no
+				FALSE_CONVERSION = no
+			}
+		}
 	}
 }

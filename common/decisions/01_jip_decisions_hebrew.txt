@@ -670,8 +670,8 @@ form_canaanite_decision = {
 			limit = {
 				is_ai = yes
 				exists = capital_province
-				capital_province = {
-					is_in_region = jip_region_phoenicia
+				capital_province ?= {
+					geographical_region = jip_region_phoenicia
 				}	
 			}
 			trigger_event = jip_hebrew.0021 #So they can convert
@@ -798,7 +798,7 @@ expand_phoenicia_decision = {
 				completely_controls = title:d_cyprus
 			}
 			current_description = expand_phoenicia_cyprus_desc
-			localization = expand_phoenicia_sinai_desc
+			localization = expand_phoenicia_cyprus_desc
 			icon = "gfx/interface/icons/duchy_crown.dds"
 			ai_chance = { value = 10 }
 		}

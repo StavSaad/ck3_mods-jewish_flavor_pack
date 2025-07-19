@@ -279,7 +279,7 @@ masada_03 = {
 	}
 	character_modifier = {
 		martial_per_prestige_level = 1
-		diplo_per_prestige_level = 1
+		diplomacy_per_prestige_level = 1
 		martial = 2
 		knight_limit = 2
 		knight_effectiveness_mult = 0.25

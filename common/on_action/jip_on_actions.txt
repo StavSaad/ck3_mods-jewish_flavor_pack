@@ -1,0 +1,11 @@
+﻿on_building_completed = {
+	trigger = {
+		root = {
+			has_building = temple_in_jerusalem_01
+		}
+	}
+	
+	events = {
+		jip_hebrew.0040
+	}
+}

@@ -1,4 +1,4 @@
-name_list_ashkenazi = {
+﻿name_list_ashkenazi = {
 
 	cadet_dynasty_names = {
 		"dynn_Ben_Aharon"
