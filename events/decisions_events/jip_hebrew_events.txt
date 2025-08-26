@@ -336,14 +336,6 @@ jip_hebrew.0030 = {
 	immediate = {
 		play_music_cue = "mx_cue_positive_effect"
 		create_carthage_decision_effect = yes
-		# if = {
-		# 	limit = { is_male = yes }
-		# 	give_nickname = nick_the_rising_lion
-		# }
-		# if = {
-		# 	limit = { is_female = yes }
-		# 	give_nickname = nick_the_rising_lioness
-		# }
 	}
 
 	option = {
@@ -369,15 +361,13 @@ jip_hebrew.0040 = {
 
 	option = {
 		name = jip_hebrew.0041.b
-		root = {
-			set_character_faith = faith:kohanism
-			save_scope_as = actor
-			save_scope_as = recipient
-			grab_spouses_and_family_to_convert_effect = yes
-			convert_family_to_faith_effect = {
-				FORCED = no
-				FALSE_CONVERSION = no
-			}
+		set_character_faith = faith:kohanism
+		save_scope_as = actor
+		save_scope_as = recipient
+		grab_spouses_and_family_to_convert_effect = yes
+		convert_family_to_faith_effect = {
+			FORCED = no
+			FALSE_CONVERSION = no
 		}
 	}
 }

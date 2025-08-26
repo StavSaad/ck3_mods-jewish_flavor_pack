@@ -1,0 +1,218 @@
+abibaal_i = {
+	name = "Abibaal"
+	culture = phoenician
+	religion = "semitic_pagan"
+	dynasty = abibaal_dynasty
+	-1020.1.1 = {
+		birth = yes
+	}
+	-980.1.1 = {
+		death = yes
+	}
+}
+
+hiram_i = {
+	name = "Hiram"
+	culture = phoenician
+	religion = "semitic_pagan"
+	dynasty = abibaal_dynasty
+	father = abibaal_i
+	-1000.1.1 = {
+		birth = yes
+	}
+	-946.1.1 = {
+		death = yes
+	}
+}
+
+baal_eser_i = {
+	name = "Baal-Eser"
+	culture = phoenician
+	religion = "semitic_pagan"
+	dynasty = abibaal_dynasty
+	father = hiram_i
+	-973.1.1 = {
+		birth = yes
+	}
+	-929.1.1 = {
+		death = yes
+	}
+}
+
+abdastartus = {
+	name = "Abd-Ashtart"
+	culture = phoenician
+	religion = "semitic_pagan"
+	dynasty = abibaal_dynasty
+	father = baal_eser_i
+	-950.1.1 = {
+		birth = yes
+	}
+	-920.1.1 = {
+		death = {
+			death_reason = death_murdered_by_rebels
+			killer = astartus
+		}
+	}
+}
+
+mother_of_the_four_brothers = {
+	name = "Izevel"
+	culture = phoenician
+	religion = "semitic_pagan"
+	female = yes
+	dynasty = arbaa_dynasty
+	-974.1.1 = {
+		birth = yes
+	}
+	-930.1.1 = {
+		death = yes
+	}
+}
+
+astartus = {
+	name = "Ahstart"
+	culture = phoenician
+	religion = "semitic_pagan"
+	mother = mother_of_the_four_brothers
+	dynasty = arbaa_dynasty
+	-954.1.1 = {
+		birth = yes
+	}
+	-900.1.1 = {
+		death = yes
+	}
+}
+
+deleastartus = {
+	name = "Dalay-Ahstart"
+	culture = phoenician
+	religion = "semitic_pagan"
+	mother = mother_of_the_four_brothers
+	dynasty = arbaa_dynasty
+	-943.1.1 = {
+		birth = yes
+	}
+	-888.1.1 = {
+		death = yes
+	}
+}
+
+astarymus = {
+	name = "Ashtar-Rom"
+	culture = phoenician
+	religion = "semitic_pagan"
+	mother = mother_of_the_four_brothers
+	dynasty = arbaa_dynasty
+	-934.1.1 = {
+		birth = yes
+	}
+	-879.1.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = phelles
+		}
+	}
+}
+
+phelles = {
+	name = "Phelles"
+	culture = phoenician
+	religion = "semitic_pagan"
+	mother = mother_of_the_four_brothers
+	dynasty = arbaa_dynasty
+	-929.1.1 = {
+		birth = yes
+	}
+	-879.9.1 = {
+		death = {
+			death_reason = death_murdered_by_religious_rebels
+			killer = ithobaal_i
+		}
+	}
+}
+
+ithobaal_i = {
+	name = "Ithobaal"
+	religion = "semitic_pagan"
+	culture = phoenician
+	dynasty = ithobaal_dynasty
+	-915.1.1 = {
+		birth = yes
+	}
+	-846.1.1 = {
+		death = yes
+	}
+}
+
+baal_eser_ii = {
+	name = "Baal-Eser"
+	religion = "semitic_pagan"
+	culture = phoenician
+	dynasty = ithobaal_dynasty
+	father = ithobaal_i
+	-886.1.1 = {
+		birth = yes
+	}
+	-841.1.1 = {
+		death = yes
+	}
+}
+
+jezebel = {
+	name = "Izevel"
+	religion = "semitic_pagan"
+	culture = "phoenician"
+	father = ithobaal_i
+	dynasty = ithobaal_dynasty
+	female = yes
+	-896.1.1 = {
+		birth = yes
+	}
+	-842.1.1 = {
+		death = yes
+	}
+}
+
+mattan_i = {
+	name = "Mattan"
+	religion = "semitic_pagan"
+	culture = phoenician
+	dynasty = ithobaal_dynasty
+	father = baal_eser_ii
+	-864.1.1 = {
+		birth = yes
+	}
+	-832.1.1 = {
+		death = yes
+	}
+}
+
+pummay = {
+	name = "Pummay"
+	religion = "semitic_pagan"
+	culture = phoenician
+	dynasty = ithobaal_dynasty
+	father = mattan_i
+	-843.1.1 = {
+		birth = yes
+	}
+	-785.1.1 = {
+		death = yes
+	}
+}
+
+queen_dido = {
+	name = "Dido"
+	religion = "carthage_pagan"
+	culture = punic
+	dynasty = ithobaal_dynasty
+	father = mattan_i
+	female = yes
+	-839.1.1 = {
+		birth = yes
+	}
+	-765.1.1 = {
+		death = yes
+	}
+}

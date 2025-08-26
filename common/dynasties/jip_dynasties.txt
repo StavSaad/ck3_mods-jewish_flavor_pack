@@ -82,3 +82,18 @@ zadokite_dynasty = {
 	name = "dynn_Zadok"
 	culture = hebrew
 }
+
+ithobaal_dynasty = {
+	name = "dynn_Ithobaal"
+	culture = phoenician
+}
+
+abibaal_dynasty = {
+	name = "dynn_Abibaal"
+	culture = phoenician
+}
+
+arbaa_dynasty = {
+	name = "dynn_Arbaa"
+	culture = phoenician
+}

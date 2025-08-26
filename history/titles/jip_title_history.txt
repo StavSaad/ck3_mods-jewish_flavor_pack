@@ -36,6 +36,57 @@ d_laamp_spanish_davidite = {
 
 }
 
+k_tyre = {
+	-993.1.1 = {
+		holder = abibaal_i
+	}
+	-980.1.1 = {
+		holder = hiram_i
+	}
+	-946.1.1 = {
+		holder = baal_eser_i
+	}
+	-929.1.1 = {
+		holder = abdastartus
+	}
+	-920.1.1 = {
+		holder = astartus
+	}
+	-900.1.1 = {
+		holder = deleastartus
+	}
+	-888.1.1 = {
+		holder = astarymus
+	}
+	-879.1.1 = {
+		holder = phelles
+	}
+	-879.9.1 = {
+		holder = ithobaal_i
+	}
+	-846.1.1 = {
+		holder = baal_eser_ii
+	}
+	-841.1.1 = {
+		holder = mattan_i
+	}
+	-832.1.1 = {
+		holder = pummay
+	}
+	-785.1.1 = {
+		holder = 0
+	}
+}
+
+e_carthage = {
+	-825.1.1 = {
+		holder = queen_dido
+	}
+	-765.1.1 = {
+		holder = 0
+	}
+}
+
 k_judah = {
 	-1000.1.1 = {
 		holder = king_david_i

@@ -1722,6 +1722,67 @@ e_canaan = {
 		}
 	}
 
+	k_tyre = {
+		color = { 97 41 255 }
+		capital = c_acre
+
+		can_create = {
+			always = no
+		}
+
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = { has_cultural_pillar = heritage_canaanite }
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+	}
+
+	k_sidon = {
+		color = { 125 85 255 }
+		capital = c_beirut
+
+		can_create = {
+			always = no
+		}
+
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = { has_cultural_pillar = heritage_canaanite }
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+	}
+
+	k_byblos = {
+		color = { 125 85 255 }
+		capital = c_tripoli
+
+		cultural_names = {
+			name_list_canaanite = cn_geval
+			name_list_ashkenazi = cn_geval
+			name_list_sephardi = cn_geval
+			name_list_radhanite = cn_geval
+		}
+
+		can_create = {
+			always = no
+		}
+
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = { has_cultural_pillar = heritage_canaanite }
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+	}
+
 	k_judah = {
 		color = { 91 97 255 }
 		capital = c_jerusalem
