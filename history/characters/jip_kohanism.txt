@@ -1,4 +1,4 @@
-kohanism_seraiah = {
+﻿kohanism_seraiah = {
 	name = "Seraiah"
 	religion = "kohanism"
 	culture = "hebrew"

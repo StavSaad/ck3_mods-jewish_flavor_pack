@@ -1,4 +1,4 @@
-abibaal_i = {
+﻿abibaal_i = {
 	name = "Abibaal"
 	culture = phoenician
 	religion = "semitic_pagan"
@@ -71,7 +71,7 @@ mother_of_the_four_brothers = {
 }
 
 astartus = {
-	name = "Ahstart"
+	name = "Ashtart"
 	culture = phoenician
 	religion = "semitic_pagan"
 	mother = mother_of_the_four_brothers
@@ -85,7 +85,7 @@ astartus = {
 }
 
 deleastartus = {
-	name = "Dalay-Ahstart"
+	name = "Dalay-Ashtart"
 	culture = phoenician
 	religion = "semitic_pagan"
 	mother = mother_of_the_four_brothers

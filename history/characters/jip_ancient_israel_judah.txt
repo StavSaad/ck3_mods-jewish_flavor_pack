@@ -1,4 +1,4 @@
-boaz_father_of_oved = {
+﻿boaz_father_of_oved = {
 	name = "Boaz"
 	religion = "kohanism"
 	culture = "hebrew"
@@ -865,7 +865,7 @@ nimshi = {
 	name = "Nimshi"
 	religion = "semitic_pagan"
 	culture = "hebrew"
-	-871.1.1 = {
+	-899.1.1 = {
 		birth = yes
 	}
 	-842.1.1 = {
@@ -1266,7 +1266,7 @@ king_zedekiah_i = {
 	}
 }
 
-King_yehoyachim_i = {
+king_yehoyachim_i = {
 	name = "Yehoyakim"
 	religion = "kohanism"
 	culture = "hebrew"
@@ -1285,7 +1285,7 @@ king_yehoyachin_i = {
 	religion = "kohanism"
 	culture = "hebrew"
 	dynasty = davidite_dynasty
-	father = King_yehoyachim_i
+	father = king_yehoyachim_i
 	-615.1.1 = {
 		birth = yes
 	}

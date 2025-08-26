@@ -1,4 +1,4 @@
-yochanan_hakohen = {
+﻿yochanan_hakohen = {
 	name = "Yehochanan"
 	religion = "kohanism"
 	culture = "hebrew"
