@@ -10,7 +10,6 @@
  form_canaanite_decision: "Reform the Canaanite Culture"
  form_canaanite_decision_desc: "Once I am in control of the phoenician coast, I can reform the Canaanite society."
  canaanite_convert_list: "Every [THIS.Char.GetCulture.GetHeritage.GetNameNoTooltip] [heritage|E] subject in [THIS.Char.GetUINamePossessive] realm"
- hebrew_convert_list_court: "Every [THIS.Char.GetCulture.GetName] [courtier|E]"
  canaanite_convert_counties: "Every county in your kingdom"
  form_canaanite_decision_confirm: "Reform the Canaanite Culture"
  form_canaanite_decision_tooltip: "Reform the Canaanite culture and establish it in the phoenician coastline"
