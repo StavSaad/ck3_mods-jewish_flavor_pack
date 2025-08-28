@@ -488,6 +488,7 @@ kohanism_salome_hanan = {
 	trait = education_learning_3
 	father = kohanism_chanan_ben_seth
 	dynasty = hanan_dynasty
+	female = yes
 	-24.1.1 = {
 		birth = yes
 	}
