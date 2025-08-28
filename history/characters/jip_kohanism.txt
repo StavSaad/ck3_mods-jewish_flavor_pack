@@ -634,7 +634,7 @@ kohanism_chananiah_ben_nadvai = {
 }
 
 kohanism_ishmael_phabi_ii = {
-	name = "Ishmael"
+	name = "IshmaEl"
 	religion = "kohanism"
 	culture = "hebrew"
 	trait = education_learning_3

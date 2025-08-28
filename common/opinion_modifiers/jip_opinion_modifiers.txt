@@ -2,5 +2,4 @@
 	opinion = -100
 	decaying = no
 	imprisonment_reason = yes
-	disable_non_aggression_pacts = yes
 }
