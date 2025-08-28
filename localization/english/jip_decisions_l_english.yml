@@ -42,7 +42,7 @@
  CHOOSE_CITY: "Choose City"
  reestablish_canaanite_city_decision: "Reestablish a Phoenician Trade City"
  reestablish_canaanite_city_decision_desc: "Reestablish a trade republic in one of the ancient Phoenician cities."
- reestablish_canaanite_city_tooltip: "Reestablish a phoenician trade republic in one of their historic cities"
+ reestablish_canaanite_city_decision_tooltip: "Reestablish a phoenician trade republic in one of their historic cities"
  reestablish_canaanite_city_decision_confirm: "Confirm"
  canaanite_city_antiocheia_desc: "[GetTitleByKey('b_latakia').GetName]"
  antiocheia_tooltip: "[GetTitleByKey('b_latakia').GetName]"
