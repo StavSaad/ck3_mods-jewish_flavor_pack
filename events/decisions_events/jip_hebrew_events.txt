@@ -395,6 +395,7 @@ jip_hebrew.0040 = {
 		faith:rabbinism = {
 			remove_doctrine = doctrine_no_head
 			add_doctrine = doctrine_spiritual_head
+			set_religious_head_title = faith:kohanism.religious_head_title
 		}
 		faith = {
 			save_scope_as = faith
@@ -405,8 +406,13 @@ jip_hebrew.0040 = {
 	option = {
 		name = jip_hebrew.0040.c # Convert to Kohenism
 		trigger = {
-			NOT = {
-				faith = faith:kohanism
+			AND = {
+				NOT = {
+					faith = faith:kohanism
+				}
+				NOT = {
+					faith = faith:samaritan
+				}
 			}
 		}
 		set_character_faith = faith:kohanism

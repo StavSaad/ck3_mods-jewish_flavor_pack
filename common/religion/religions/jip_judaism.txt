@@ -252,7 +252,7 @@
 		karaism = {
 			color = { 0.1 0.3 0.7 }
 			icon = karaism
-			religious_head = d_karaism
+			religious_head = d_kohen_gadol
 
 			holy_site = jerusalem
 			holy_site = sufed
@@ -277,7 +277,7 @@
 		haymanot = {
 			color = { 0.1 0.5 0.9 }
 			icon = judaism
-			religious_head = d_haymanot
+			religious_head = d_kohen_gadol
 
 			holy_site = jerusalem
 			holy_site = sufed
@@ -331,7 +331,7 @@
 		malabarism = {
 			color = { 0.3 0.5 0.7 }
 			icon = malabarism
-			religious_head = d_malabarism
+			religious_head = d_kohen_gadol
 
 			holy_site = jerusalem
 			holy_site = sinai
@@ -357,7 +357,7 @@
 		kohanism = {
 			color = { 0.1 0.6 0.6 }
 			icon = kohanist
-			religious_head = d_kohanism
+			religious_head = d_kohen_gadol
 
 			holy_site = jerusalem
 			holy_site = sufed
@@ -419,7 +419,7 @@
 			color = { 0.1 0.3 0.7 }
 			icon = kabarism
 			reformed_icon = kabarism
-			religious_head = d_kabarism
+			religious_head = d_kohen_gadol
 			doctrine = unreformed_faith_doctrine
 
 			holy_site = jerusalem

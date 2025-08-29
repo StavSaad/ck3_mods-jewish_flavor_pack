@@ -51,7 +51,7 @@ d_exilarchate = {
 	}
 }
 
-d_kohanism = {
+d_kohen_gadol = {
 	pattern="pattern_solid.dds"
 	color1=white
 	color2=white

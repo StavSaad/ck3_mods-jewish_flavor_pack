@@ -42,7 +42,6 @@ jessa_father_of_david = {
 	religion = "kohanism"
 	culture = "hebrew"
 	father = oved
-	mother = ruth
 	-1037.1.1 = {
 		birth = yes
 	}
