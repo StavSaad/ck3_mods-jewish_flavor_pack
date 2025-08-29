@@ -367,6 +367,8 @@
 
 			#Halakha authority
 			doctrine = temple_authority_kohanim_doctrine
+			#Cannot HoF
+			doctrine = special_doctrine_not_allowed_to_hof
 
 			#tenets
 			doctrine = tenet_communal_identity
@@ -374,7 +376,7 @@
 			doctrine = tenet_ritual_celebrations
 
 			#Doctrines
-			doctrine = doctrine_spiritual_head
+			doctrine = doctrine_temporal_head
 			doctrine = doctrine_pluralism_righteous
 			doctrine = doctrine_monogamy
 		}

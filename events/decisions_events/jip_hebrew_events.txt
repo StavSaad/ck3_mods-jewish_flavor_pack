@@ -355,20 +355,60 @@ jip_hebrew.0040 = {
 		animation = personality_zealous
 	}
 
+	immediate = {
+		faith:rabbinism = {
+			remove_doctrine = special_doctrine_not_allowed_to_hof
+		}
+		faith:karaism = {
+			remove_doctrine = special_doctrine_not_allowed_to_hof
+		}
+		faith:kabarism = {
+			remove_doctrine = special_doctrine_not_allowed_to_hof
+		}
+		faith:malabarism = {
+			remove_doctrine = special_doctrine_not_allowed_to_hof
+		}
+		faith:haymanot = {
+			remove_doctrine = special_doctrine_not_allowed_to_hof
+		}
+		faith:kohanism = {
+			remove_doctrine = special_doctrine_not_allowed_to_hof
+		}
+	}
+
 	option = {
 		name = jip_hebrew.0040.a # NOTHING
 	}
 
 	option = {
-		name = jip_hebrew.0040.b # Restore Kohen Gadol for Rabbinism
+		name = jip_hebrew.0040.b # Restore Kohen Gadol for Judaism
+		trigger = {
+			OR = {
+				faith = faith:rabbinism
+				faith = faith:karaism
+				faith = faith:kabarism
+				faith = faith:malabarism
+				faith = faith:haymanot
+				faith = faith:kohanism
+			}
+		}
 		faith:rabbinism = {
+			remove_doctrine = doctrine_no_head
+			add_doctrine = doctrine_spiritual_head
+		}
+		faith = {
 			save_scope_as = faith
 		}
-		force_create_head_of_faith_title_Effect = yes
+		create_head_of_faith_title_effect = yes
 	}
 
 	option = {
-		name = jip_hebrew.0040.c # Conver to Kohenism
+		name = jip_hebrew.0040.c # Convert to Kohenism
+		trigger = {
+			NOT = {
+				faith = faith:kohanism
+			}
+		}
 		set_character_faith = faith:kohanism
 		save_scope_as = actor
 		save_scope_as = recipient
@@ -380,6 +420,6 @@ jip_hebrew.0040 = {
 			FORCED = no
 			FALSE_CONVERSION = no
 		}
-		force_create_head_of_faith_title_Effect = yes
+		create_head_of_faith_title_effect = yes
 	}
 }

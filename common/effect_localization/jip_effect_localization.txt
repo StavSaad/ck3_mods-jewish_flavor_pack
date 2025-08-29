@@ -13,3 +13,7 @@ every_muslim_ruler_loses_opinion = {
 reestablish_canaanite_city_decision_effect = {
 	global = reestablish_canaanite_city_decision_effect
 }
+
+judaism_hof_restored_effect = {
+	global = judaism_hof_restored_effect
+}
