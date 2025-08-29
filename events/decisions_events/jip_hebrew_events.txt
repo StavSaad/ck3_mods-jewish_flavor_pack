@@ -360,14 +360,26 @@ jip_hebrew.0040 = {
 	}
 
 	option = {
-		name = jip_hebrew.0041.b
+		name = jip_hebrew.0040.b # Restore Kohen Gadol for Rabbinism
+		faith:rabbinism = {
+			save_scope_as = faith
+		}
+		force_create_head_of_faith_title_Effect = yes
+	}
+
+	option = {
+		name = jip_hebrew.0040.c # Conver to Kohenism
 		set_character_faith = faith:kohanism
 		save_scope_as = actor
 		save_scope_as = recipient
+		faith:kohanism = {
+			save_scope_as = faith
+		}
 		grab_spouses_and_family_to_convert_effect = yes
 		convert_family_to_faith_effect = {
 			FORCED = no
 			FALSE_CONVERSION = no
 		}
+		force_create_head_of_faith_title_Effect = yes
 	}
 }

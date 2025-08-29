@@ -277,9 +277,8 @@ rebuild_the_third_temple_effect = {
 					NOT = { this = faith:druze }
 				}
 				change_fervor = {
-					subtract = {
-						value = 15
-					}
+					value = -15
+					desc = fervor_loss_third_temple
 				}
 			}
 		}

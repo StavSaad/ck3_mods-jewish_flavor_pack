@@ -1,18 +1,12 @@
 ﻿exilarch = {
 	type = character
 	tier = duchy
+	special = holder
 	gender = male
 	titles = { d_exilarchate d_karaite_exilarchate }
-	priority = 2
+	priority = 301
 	flavourization_rules = {
 		spouse_takes_title = no
 		only_holder = yes
 	}
-}
-
-kohen_gadol = {
-	type = character
-	special = holder
-	tier = duchy
-	titles = { d_kohanism }
 }

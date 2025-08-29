@@ -32,3 +32,8 @@
  jip_hebrew.0030.t:0 "Carthago Delenda Est... No More!"
  jip_hebrew.0030.desc:0 "A new dawn breaks over the Mediterranean! From the ashes of history, Carthago Reinstituta Est – Carthage is re-established! Your unyielding ambition has resurrected the ancient Phoenician Empire, forging a magnificent realm that stretches from the sun-drenched shores of Africa to the distant horizons. Let the echoes of your triumph resonate across the world, for the Punic Eagle soars once more, reclaiming its rightful place as the dominant power of the sea and land"
  jip_hebrew.0030.a:0 "Qart-Hadasht will rise again!"
+ jip_hebrew.0040.t:0 "The Temple, Rebuilt"
+ jip_hebrew.0040.desc:0 "\"Your Grace, the Temple stands complete. The sacrifices are being made, and the people rejoice. But what now? The ancient ways of Temple Judaism are before us once more; we could restore the old laws and rituals, placing the Kohen Gadol at the heart of our faith. Or, we could maintain the traditions that have guided us through centuries of exile, the rabbinic laws and schools, and allow the Temple to be a monument to our people's endurance. This decision will define the course of our faith for generations to come. What is your command?\""
+ jip_hebrew.0040.a:0 "Nonsense. The Rabbinic tradition must be upheld!"
+ jip_hebrew.0040.b:0 "The Rabbinic tradition have changed before, it will change again"
+ jip_hebrew.0040.c:0 "We should restore our ancient traditions, and concentrate our worhsip"
