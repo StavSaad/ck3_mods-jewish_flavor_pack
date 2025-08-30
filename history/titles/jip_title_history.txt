@@ -677,7 +677,7 @@ d_exilarchate = {
 	}
 }
 
-d_kohanism = {
+d_kohen_gadol = {
 
 	-629.1.1 = {
 		holder = kohanism_seraiah

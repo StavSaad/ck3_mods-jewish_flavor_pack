@@ -10,3 +10,11 @@
 		only_holder = yes
 	}
 }
+
+kohen_gadol = {
+	type = character
+	special = holder
+	tier = duchy
+	titles = { d_kohen_gadol d_samaritan }
+	priority = 1
+}

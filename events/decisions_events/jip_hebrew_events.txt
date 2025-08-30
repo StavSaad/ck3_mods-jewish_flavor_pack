@@ -343,6 +343,7 @@ jip_hebrew.0030 = {
 	}
 }
 
+# Restore HoF Event after the third temple is built
 jip_hebrew.0040 = {
 	type = character_event
 	title = jip_hebrew.0040.t #change
@@ -356,28 +357,36 @@ jip_hebrew.0040 = {
 	}
 
 	immediate = {
-		faith:rabbinism = {
-			remove_doctrine = special_doctrine_not_allowed_to_hof
-		}
-		faith:karaism = {
-			remove_doctrine = special_doctrine_not_allowed_to_hof
-		}
-		faith:kabarism = {
-			remove_doctrine = special_doctrine_not_allowed_to_hof
-		}
-		faith:malabarism = {
-			remove_doctrine = special_doctrine_not_allowed_to_hof
-		}
-		faith:haymanot = {
-			remove_doctrine = special_doctrine_not_allowed_to_hof
-		}
-		faith:kohanism = {
-			remove_doctrine = special_doctrine_not_allowed_to_hof
+		custom_description_no_bullet = {
+			text = judaism_hof_restored_effect
+			faith:rabbinism = {
+				remove_doctrine = special_doctrine_not_allowed_to_hof
+			}
+			faith:karaism = {
+				remove_doctrine = special_doctrine_not_allowed_to_hof
+			}
+			faith:kabarism = {
+				remove_doctrine = special_doctrine_not_allowed_to_hof
+			}
+			faith:malabarism = {
+				remove_doctrine = special_doctrine_not_allowed_to_hof
+			}
+			faith:haymanot = {
+				remove_doctrine = special_doctrine_not_allowed_to_hof
+			}
+			faith:kohanism = {
+				remove_doctrine = special_doctrine_not_allowed_to_hof
+			}
 		}
 	}
 
 	option = {
-		name = jip_hebrew.0040.a # NOTHING
+		name = jip_hebrew.0040.a # NOTHING for non-samaritans
+		trigger = {
+			NOT = {
+				faith = faith:samaritan
+			}
+		}
 	}
 
 	option = {
@@ -427,5 +436,12 @@ jip_hebrew.0040 = {
 			FALSE_CONVERSION = no
 		}
 		create_head_of_faith_title_effect = yes
+	}
+
+	option = {
+		name = jip_hebrew.0040.d # nothing for Samaritans
+		trigger = {
+			faith = faith:samaritan
+		}
 	}
 }

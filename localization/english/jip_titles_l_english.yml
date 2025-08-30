@@ -20,7 +20,7 @@
  k_judah:0 "Judea"
  k_judah_adj:0 "Judean"
  d_kohen_gadol:1 "Jewish Kohen Gadol"
- d_kohen_gadol:1 "Kohenic"
+ d_kohen_gadol_adj:1 "Kohenic"
  k_tyre:0 "Tyre"
  k_tyre_adj:0 "Tyrian"
  k_sidon:0 "Sidon"

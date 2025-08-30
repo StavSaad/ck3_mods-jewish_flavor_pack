@@ -351,7 +351,7 @@
 
 			#Doctrines
 			doctrine = doctrine_theocracy_lay_clergy
-			doctrine = doctrine_temporal_head
+			doctrine = doctrine_spiritual_head
 		}
 		
 		kohanism = {
@@ -376,7 +376,7 @@
 			doctrine = tenet_ritual_celebrations
 
 			#Doctrines
-			doctrine = doctrine_temporal_head
+			doctrine = doctrine_spiritual_head
 			doctrine = doctrine_pluralism_righteous
 			doctrine = doctrine_monogamy
 		}
