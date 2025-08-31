@@ -914,6 +914,9 @@ clear_grounds_for_the_third_temple_decision = {
 			name = unavailable_unique_decisions
 			target = flag:clear_grounds_for_the_third_temple_decision
 		}
+		show_as_tooltip = {
+			rebuild_the_third_temple_effect = yes
+		}
 		trigger_event = jip_hebrew.0041
 	}
 

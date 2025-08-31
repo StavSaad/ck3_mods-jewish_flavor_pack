@@ -425,17 +425,30 @@ jip_hebrew.0040 = {
 			}
 		}
 		set_character_faith = faith:kohanism
-		save_scope_as = actor
-		save_scope_as = recipient
 		faith:kohanism = {
 			save_scope_as = faith
 		}
+		create_head_of_faith_title_effect = yes
+		create_title_and_vassal_change = {
+			type = swear_fealty
+			save_scope_as = change
+		}
+		title:d_kohen_gadol = {
+			holder = {
+				save_scope_as = actor
+				change_liege = {
+					liege = root
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+		}
+		save_scope_as = recipient
 		grab_spouses_and_family_to_convert_effect = yes
 		convert_family_to_faith_effect = {
-			FORCED = no
+			FORCED = yes
 			FALSE_CONVERSION = no
 		}
-		create_head_of_faith_title_effect = yes
 	}
 
 	option = {
