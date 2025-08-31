@@ -445,3 +445,26 @@ jip_hebrew.0040 = {
 		}
 	}
 }
+
+# Dome of the Rock Cleared
+jip_hebrew.0041 = {
+	type = character_event
+	title = jip_hebrew.0041.t #change
+	desc = {
+		desc = jip_hebrew.0041.desc #change
+	}
+	theme = faith
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+
+	immediate = {
+		rebuild_the_third_temple_effect = yes
+	}
+
+	option = {
+		name = jip_hebrew.0041.a # NOTHING
+	}
+
+}

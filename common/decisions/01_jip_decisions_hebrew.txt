@@ -910,11 +910,11 @@ clear_grounds_for_the_third_temple_decision = {
 	}
 
 	effect = {
-		rebuild_the_third_temple_effect = yes
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
 			target = flag:clear_grounds_for_the_third_temple_decision
 		}
+		trigger_event = jip_hebrew.0041
 	}
 
 	cost = { piety = { value = 500 } }
