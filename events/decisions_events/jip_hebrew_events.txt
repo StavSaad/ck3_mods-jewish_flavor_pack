@@ -164,6 +164,9 @@ jip_hebrew.0010 = {
 		title:e_canaan = {
 			set_capital_county = title:c_jerusalem
 		}
+		stress_impact = {
+			ambitious = major_stress_loss
+		}
 	}
 
 	# Byblos option
@@ -172,6 +175,9 @@ jip_hebrew.0010 = {
 		title:e_canaan = {
 			set_capital_county = title:c_tripoli
 		}
+		stress_impact = {
+			ambitious = major_stress_loss
+		}
 	}
 
 	# Antioch option
@@ -179,6 +185,9 @@ jip_hebrew.0010 = {
 		name = jip_hebrew.0010.c
 		title:e_canaan = {
 			set_capital_county = title:c_antiocheia
+		}
+		stress_impact = {
+			ambitious = major_stress_loss
 		}
 	}
 
@@ -195,6 +204,9 @@ jip_hebrew.0010 = {
 		}
 		title:e_canaan = {
 			set_capital_county = title:c_palmyra
+		}
+		stress_impact = {
+			ambitious = major_stress_loss
 		}
 	}
 }
@@ -217,9 +229,11 @@ jip_hebrew.0020 = {
 		create_phoenicia_decision_effect = yes
 	}
 
-	# Jerusalem option
 	option = {
 		name = jip_hebrew.0020.a
+		stress_impact = {
+			ambitious = major_stress_loss
+		}
 	}
 }
 
@@ -340,6 +354,9 @@ jip_hebrew.0030 = {
 
 	option = {
 		name = jip_hebrew.0030.a
+		stress_impact = {
+			ambitious = major_stress_loss
+		}
 	}
 }
 
@@ -387,6 +404,10 @@ jip_hebrew.0040 = {
 				faith = faith:samaritan
 			}
 		}
+		stress_impact = {
+			zealous = medium_stress_loss
+			diligent = medium_stress_loss
+		}
 	}
 
 	option = {
@@ -410,6 +431,10 @@ jip_hebrew.0040 = {
 			save_scope_as = faith
 		}
 		create_head_of_faith_title_effect = yes
+		stress_impact = { 
+			zealous = medium_stress_gain
+			diligent = medium_stress_loss
+		}
 	}
 
 	option = {
@@ -435,7 +460,6 @@ jip_hebrew.0040 = {
 		}
 		title:d_kohen_gadol = {
 			holder = {
-				save_scope_as = actor
 				change_liege = {
 					liege = root
 					change = scope:change
@@ -443,11 +467,10 @@ jip_hebrew.0040 = {
 				resolve_title_and_vassal_change = scope:change
 			}
 		}
-		save_scope_as = recipient
-		grab_spouses_and_family_to_convert_effect = yes
-		convert_family_to_faith_effect = {
-			FORCED = yes
-			FALSE_CONVERSION = no
+		stress_impact = {
+			zealous = major_stress_gain
+			ambitious = major_stress_loss
+			diligent = medium_stress_loss
 		}
 	}
 
@@ -478,6 +501,10 @@ jip_hebrew.0041 = {
 
 	option = {
 		name = jip_hebrew.0041.a # NOTHING
+		stress_impact = {
+			zealous = medium_stress_loss
+			ambitious = minor_stress_loss
+		}
 	}
 
 }
