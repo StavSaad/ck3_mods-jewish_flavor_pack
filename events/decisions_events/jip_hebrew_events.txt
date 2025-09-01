@@ -164,6 +164,9 @@ jip_hebrew.0010 = {
 		title:e_canaan = {
 			set_capital_county = title:c_jerusalem
 		}
+		stress_impact = {
+			ambitious = major_stress_loss
+		}
 	}
 
 	# Byblos option
@@ -172,6 +175,9 @@ jip_hebrew.0010 = {
 		title:e_canaan = {
 			set_capital_county = title:c_tripoli
 		}
+		stress_impact = {
+			ambitious = major_stress_loss
+		}
 	}
 
 	# Antioch option
@@ -179,6 +185,9 @@ jip_hebrew.0010 = {
 		name = jip_hebrew.0010.c
 		title:e_canaan = {
 			set_capital_county = title:c_antiocheia
+		}
+		stress_impact = {
+			ambitious = major_stress_loss
 		}
 	}
 
@@ -195,6 +204,9 @@ jip_hebrew.0010 = {
 		}
 		title:e_canaan = {
 			set_capital_county = title:c_palmyra
+		}
+		stress_impact = {
+			ambitious = major_stress_loss
 		}
 	}
 }
@@ -217,9 +229,11 @@ jip_hebrew.0020 = {
 		create_phoenicia_decision_effect = yes
 	}
 
-	# Jerusalem option
 	option = {
 		name = jip_hebrew.0020.a
+		stress_impact = {
+			ambitious = major_stress_loss
+		}
 	}
 }
 
@@ -340,9 +354,13 @@ jip_hebrew.0030 = {
 
 	option = {
 		name = jip_hebrew.0030.a
+		stress_impact = {
+			ambitious = major_stress_loss
+		}
 	}
 }
 
+# Restore HoF Event after the third temple is built
 jip_hebrew.0040 = {
 	type = character_event
 	title = jip_hebrew.0040.t #change
@@ -356,28 +374,40 @@ jip_hebrew.0040 = {
 	}
 
 	immediate = {
-		faith:rabbinism = {
-			remove_doctrine = special_doctrine_not_allowed_to_hof
-		}
-		faith:karaism = {
-			remove_doctrine = special_doctrine_not_allowed_to_hof
-		}
-		faith:kabarism = {
-			remove_doctrine = special_doctrine_not_allowed_to_hof
-		}
-		faith:malabarism = {
-			remove_doctrine = special_doctrine_not_allowed_to_hof
-		}
-		faith:haymanot = {
-			remove_doctrine = special_doctrine_not_allowed_to_hof
-		}
-		faith:kohanism = {
-			remove_doctrine = special_doctrine_not_allowed_to_hof
+		custom_description_no_bullet = {
+			text = judaism_hof_restored_effect
+			faith:rabbinism = {
+				remove_doctrine = special_doctrine_not_allowed_to_hof
+			}
+			faith:karaism = {
+				remove_doctrine = special_doctrine_not_allowed_to_hof
+			}
+			faith:kabarism = {
+				remove_doctrine = special_doctrine_not_allowed_to_hof
+			}
+			faith:malabarism = {
+				remove_doctrine = special_doctrine_not_allowed_to_hof
+			}
+			faith:haymanot = {
+				remove_doctrine = special_doctrine_not_allowed_to_hof
+			}
+			faith:kohanism = {
+				remove_doctrine = special_doctrine_not_allowed_to_hof
+			}
 		}
 	}
 
 	option = {
-		name = jip_hebrew.0040.a # NOTHING
+		name = jip_hebrew.0040.a # NOTHING for non-samaritans
+		trigger = {
+			NOT = {
+				faith = faith:samaritan
+			}
+		}
+		stress_impact = {
+			zealous = medium_stress_loss
+			diligent = medium_stress_loss
+		}
 	}
 
 	option = {
@@ -395,31 +425,86 @@ jip_hebrew.0040 = {
 		faith:rabbinism = {
 			remove_doctrine = doctrine_no_head
 			add_doctrine = doctrine_spiritual_head
+			set_religious_head_title = faith:kohanism.religious_head_title
 		}
 		faith = {
 			save_scope_as = faith
 		}
 		create_head_of_faith_title_effect = yes
+		stress_impact = { 
+			zealous = medium_stress_gain
+			diligent = medium_stress_loss
+		}
 	}
 
 	option = {
 		name = jip_hebrew.0040.c # Convert to Kohenism
 		trigger = {
-			NOT = {
-				faith = faith:kohanism
+			AND = {
+				NOT = {
+					faith = faith:kohanism
+				}
+				NOT = {
+					faith = faith:samaritan
+				}
 			}
 		}
 		set_character_faith = faith:kohanism
-		save_scope_as = actor
-		save_scope_as = recipient
 		faith:kohanism = {
 			save_scope_as = faith
 		}
-		grab_spouses_and_family_to_convert_effect = yes
-		convert_family_to_faith_effect = {
-			FORCED = no
-			FALSE_CONVERSION = no
-		}
 		create_head_of_faith_title_effect = yes
+		create_title_and_vassal_change = {
+			type = swear_fealty
+			save_scope_as = change
+		}
+		title:d_kohen_gadol = {
+			holder = {
+				change_liege = {
+					liege = root
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+		}
+		stress_impact = {
+			zealous = major_stress_gain
+			ambitious = major_stress_loss
+			diligent = medium_stress_loss
+		}
 	}
+
+	option = {
+		name = jip_hebrew.0040.d # nothing for Samaritans
+		trigger = {
+			faith = faith:samaritan
+		}
+	}
+}
+
+# Dome of the Rock Cleared
+jip_hebrew.0041 = {
+	type = character_event
+	title = jip_hebrew.0041.t #change
+	desc = {
+		desc = jip_hebrew.0041.desc #change
+	}
+	theme = faith
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+
+	immediate = {
+		rebuild_the_third_temple_effect = yes
+	}
+
+	option = {
+		name = jip_hebrew.0041.a # NOTHING
+		stress_impact = {
+			zealous = medium_stress_loss
+			ambitious = minor_stress_loss
+		}
+	}
+
 }

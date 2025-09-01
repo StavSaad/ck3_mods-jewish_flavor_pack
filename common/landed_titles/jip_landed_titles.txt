@@ -65,7 +65,7 @@ d_karaite_exilarchate = {
 	ai_primary_priority = { add = @never_primary_score }
 }
 
-d_kohanism = {
+d_kohen_gadol = {
 	color = { 0 140 255 }
 	definite_form = yes
 	ruler_uses_title_name = no
