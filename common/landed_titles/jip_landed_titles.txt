@@ -105,18 +105,6 @@ e_arabia = {
 		}
 	}
 
-	k_phoenicia = {
-		color = { 135 20 255 }
-
-		capital = c_beirut
-	}
-
-	k_israel = {
-		color = { 20 138 255 }
-
-		capital = c_jerusalem
-	}
-
 	k_arabia = {
 		color = { 124 199 50 }
 
@@ -649,10 +637,10 @@ e_arabia = {
 					color = { 150 150 170 }
 
 					cultural_names = { # Mountain where Israelites camped on the edge of Edom
-						name_list_canaanite = cn_hor
-						name_list_ashkenazi = cn_hor
-						name_list_sephardi = cn_hor
-						name_list_radhanite = cn_hor
+						name_list_canaanite = cn_tophel
+						name_list_ashkenazi = cn_tophel
+						name_list_sephardi = cn_tophel
+						name_list_radhanite = cn_tophel
 					}
 				}
 			}
@@ -1720,6 +1708,18 @@ e_canaan = {
 			}
 			add = @correct_culture_primary_score
 		}
+	}
+
+	k_phoenicia = {
+		color = { 135 20 255 }
+
+		capital = c_beirut
+	}
+
+	k_israel = {
+		color = { 20 138 255 }
+
+		capital = c_jerusalem
 	}
 
 	k_tyre = {
