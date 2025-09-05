@@ -1,0 +1,51 @@
+davidic_legacy_1 = { # TODO: change buffs
+	legacy = davidic_line_legacy_track
+
+	character_modifier = {
+		name = blood_legacy_1_modifier
+		positive_random_genetic_chance = 0.30
+		positive_inactive_inheritance_chance = 0.30
+	}
+	
+	ai_chance = {
+		value = 11
+		if = {
+			limit = {
+				can_start_new_legacy_track_trigger = no
+			}
+			multiply = 0
+		}
+	}
+}
+
+davidic_legacy_2 = { # TODO change buffs
+	legacy = davidic_line_legacy_track
+
+	character_modifier = {
+		genetic_trait_strengthen_chance = 0.3
+	}
+}
+
+davidic_legacy_3 = { # TODO change buffs
+	legacy = davidic_line_legacy_track
+
+	character_modifier = {
+		genetic_trait_strengthen_chance = 0.3
+	}
+}
+
+davidic_legacy_4 = {
+	legacy = davidic_line_legacy_track
+
+	character_modifier = {
+		learning = 3
+	}
+}
+
+davidic_legacy_5 = { # TODO change buffs
+	legacy = davidic_line_legacy_track
+
+	character_modifier = {
+		genetic_trait_strengthen_chance = 0.3
+	}
+}
