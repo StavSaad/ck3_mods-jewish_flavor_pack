@@ -18,11 +18,13 @@ davidic_legacy_1 = { # TODO: change buffs
 	}
 }
 
-davidic_legacy_2 = { # TODO change buffs
+davidic_legacy_2 = {
 	legacy = davidic_line_legacy_track
 
 	character_modifier = {
-		genetic_trait_strengthen_chance = 0.3
+		max_seduce_schemes_add = 1
+		fertility = 0.25
+		years_of_fertility = 5
 	}
 }
 
