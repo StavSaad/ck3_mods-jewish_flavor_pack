@@ -1,0 +1,26 @@
+davidic_line = {
+	category = fame
+
+	zealot_opinion = 5
+	same_faith_opinion = 10
+	monthly_prestige = 0.2
+	flag = initial_legitimacy_boost
+	
+	shown_in_ruler_designer = no
+	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_davidic_line_desc
+			}
+			desc = trait_davidic_line_desc
+		}
+	}
+
+	inherit_chance = 100
+	parent_inheritance_sex = male
+	inherit_from_real_father = no
+}

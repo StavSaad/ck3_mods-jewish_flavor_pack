@@ -11,10 +11,27 @@
 	}
 }
 
-kohen_gadol = {
+kohen_gadol_theocracy_male_judaism_religion = {
 	type = character
+	gender = male
 	special = holder
 	tier = duchy
-	titles = { d_kohen_gadol d_samaritan }
-	priority = 1
+	priority = 3
+	governments = { theocracy_government }
+	religions = { judaism_religion }
+	titles = {
+		d_samaritan d_kohen_gadol
+	}
+}
+kohen_gadol_theocracy_female_judaism_religion = {
+	type = character
+	gender = female
+	special = holder
+	tier = duchy
+	priority = 3
+	governments = { theocracy_government }
+	religions = { judaism_religion }
+	titles = {
+		d_samaritan d_kohen_gadol
+	}
 }
