@@ -43,13 +43,16 @@ davidic_legacy_4 = {
 
 	character_modifier = {
 		learning = 3
+		max_learn_language_schemes_add = 1
 	}
 }
 
-davidic_legacy_5 = { # TODO change buffs
+davidic_legacy_5 = {
 	legacy = davidic_line_legacy_track
 
 	character_modifier = {
-		genetic_trait_strengthen_chance = 0.3
+		development_growth_factor = 0.5
+		domain_limit = 1
+		tax_mult = 0.2
 	}
 }
