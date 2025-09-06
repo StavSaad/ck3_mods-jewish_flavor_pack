@@ -30,11 +30,13 @@ davidic_legacy_2 = {
 	}
 }
 
-davidic_legacy_3 = { # TODO change buffs
+davidic_legacy_3 = {
 	legacy = davidic_line_legacy_track
 
 	character_modifier = {
-		genetic_trait_strengthen_chance = 0.3
+		diplomacy = 2
+        monthly_piety = 0.5
+        vassal_opinion = 10
 	}
 }
 
