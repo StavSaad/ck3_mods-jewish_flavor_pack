@@ -1,10 +1,12 @@
-davidic_legacy_1 = { # TODO: change buffs
+davidic_legacy_1 = {
 	legacy = davidic_line_legacy_track
 
 	character_modifier = {
-		name = blood_legacy_1_modifier
-		positive_random_genetic_chance = 0.30
-		positive_inactive_inheritance_chance = 0.30
+		skirmishers_max_size_add = 2
+		skirmishers_damage_add = 20
+		skirmishers_pursuit_add = 20
+		skirmishers_toughness_mult = 1
+		skirmishers_screen_mult = 1
 	}
 	
 	ai_chance = {
