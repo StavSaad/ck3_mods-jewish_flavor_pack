@@ -1,0 +1,60 @@
+davidic_legacy_1 = {
+	legacy = davidic_line_legacy_track
+
+	character_modifier = {
+		skirmishers_max_size_add = 2
+		skirmishers_damage_add = 20
+		skirmishers_pursuit_add = 20
+		skirmishers_toughness_mult = 1
+		skirmishers_screen_mult = 1
+	}
+	
+	ai_chance = {
+		value = 11
+		if = {
+			limit = {
+				can_start_new_legacy_track_trigger = no
+			}
+			multiply = 0
+		}
+	}
+}
+
+davidic_legacy_2 = {
+	legacy = davidic_line_legacy_track
+
+	character_modifier = {
+		max_seduce_schemes_add = 1
+		fertility = 0.25
+		years_of_fertility = 5
+	}
+}
+
+davidic_legacy_3 = {
+	legacy = davidic_line_legacy_track
+
+	character_modifier = {
+		diplomacy = 2
+        monthly_piety = 0.5
+        vassal_opinion = 10
+	}
+}
+
+davidic_legacy_4 = {
+	legacy = davidic_line_legacy_track
+
+	character_modifier = {
+		learning = 3
+		max_learn_language_schemes_add = 1
+	}
+}
+
+davidic_legacy_5 = {
+	legacy = davidic_line_legacy_track
+
+	character_modifier = {
+		development_growth_factor = 0.5
+		domain_limit = 1
+		tax_mult = 0.2
+	}
+}
