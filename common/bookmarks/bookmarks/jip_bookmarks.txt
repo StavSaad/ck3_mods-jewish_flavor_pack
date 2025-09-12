@@ -42,7 +42,7 @@
 			relation = "BOOKMARK_RELATION_RIVAL" #enemy change
 			dynasty = house_ananite
 			type = male
-			birth = 840.1.1
+			birth = 835.1.1
 			culture = bavlim
 			religion = karaism
 			history_id = karaite_exilarchate_boaz_i
