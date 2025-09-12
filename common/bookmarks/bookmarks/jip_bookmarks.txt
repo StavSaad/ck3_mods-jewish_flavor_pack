@@ -36,6 +36,7 @@
 		history_id = rabbinic_exilarchate_hasdai_ii 
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		position = { 803 560 }
+		animation = steward
 
 		character = {
 			name = "bookmark_jip_exilarch_karaite_boaz"
@@ -63,6 +64,7 @@
 		history_id = rabbinic_exilarchate_pinchas_ben_abdimi 
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		position = { 472 537 }
+		animation = reading
 	}
 
 	character = {
@@ -78,6 +80,7 @@
 		history_id = karaite_exilarchate_boaz_i 
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		position = { 1092 460 }
+		animation = anger
 
 		character = {
 			name = "bookmark_jip_exilarch_chisdai_ii"
