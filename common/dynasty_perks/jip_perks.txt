@@ -1,4 +1,4 @@
-davidic_legacy_1 = {
+﻿davidic_legacy_1 = {
 	legacy = davidic_line_legacy_track
 
 	character_modifier = {
