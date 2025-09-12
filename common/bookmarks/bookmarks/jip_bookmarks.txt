@@ -1,0 +1,139 @@
+﻿bm_867_jip = {
+	start_date = 867.1.1
+	recommended = no
+	is_playable = yes
+	group = bm_group_867
+	requires_dlc_flag = landless_adventurer
+	weight = {
+		value = 90
+	}
+
+	character = {
+		name = "bookmark_jip_radhanite"
+		dynasty = 2001327
+		dynasty_splendor_level = 1
+		type = male
+		birth = 845.1.2
+		title = c_tmutarakan
+		government = tribal_government
+		culture = radhanite
+		religion = rabbinism 
+		history_id = 3022740 
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 630 195 }
+	}
+
+	character = {
+		name = "bookmark_jip_exilarch_chisdai_ii"
+		dynasty = house_izdundadite
+		dynasty_splendor_level = 7
+		type = male
+		birth = 823.1.1
+		title = "d_exilarchate"
+		government = landless_adventurer_government
+		culture = bavlim
+		religion = rabbinism 
+		history_id = rabbinic_exilarchate_hasdai_ii 
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 803 560 }
+
+		character = {
+			name = "bookmark_jip_exilarch_karaite_boaz"
+			relation = "BOOKMARK_RELATION_RIVAL" #enemy change
+			dynasty = house_ananite
+			type = male
+			birth = 840.1.1
+			culture = bavlim
+			religion = karaism
+			history_id = karaite_exilarchate_boaz_i
+			animation = dismissal
+		}
+	}
+
+	character = {
+		name = "bookmark_jip_pinchas"
+		dynasty = davidite_dynasty
+		dynasty_splendor_level = 7
+		type = male
+		birth = 810.1.1
+		title = "d_laamp_davidite"
+		government = landless_adventurer_government
+		culture = bavlim
+		religion = rabbinism 
+		history_id = rabbinic_exilarchate_pinchas_ben_abdimi 
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 472 537 }
+	}
+
+	character = {
+		name = "bookmark_jip_exilarch_karaite_boaz"
+		dynasty = house_ananite
+		dynasty_splendor_level = 7
+		type = male
+		birth = 835.1.1
+		title = "d_karaite_exilarchate"
+		government = landless_adventurer_government
+		culture = bavlim
+		religion = karaism 
+		history_id = karaite_exilarchate_boaz_i 
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 1092 460 }
+
+		character = {
+			name = "bookmark_jip_exilarch_chisdai_ii"
+			relation = "BOOKMARK_RELATION_RIVAL" #enemy change
+			dynasty = house_izdundadite
+			type = male
+			birth = 823.1.1
+			culture = bavlim
+			religion = rabbinism
+			history_id = rabbinic_exilarchate_hasdai_ii
+			animation = dismissal
+		}
+	}
+
+	character = {
+		name = "bookmark_jip_khazar"
+		dynasty = 12270
+		dynasty_splendor_level = 4
+		type = male
+		birth = 838.1.1
+		title = "e_caspian-pontic_steppe"
+		government = nomad_government
+		culture = khazar
+		religion = kabarism
+		history_id = 74025 
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
+		position = { 1006 165 }
+	}
+
+	character = {
+		name = "bookmark_jip_gideon"
+		dynasty = 1022242
+		dynasty_splendor_level = 1
+		type = male
+		birth = 834.1.1
+		title = c_semien
+		government = feudal_government
+		culture = ethiopian
+		religion = haymanot
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
+		history_id = 145646
+		position = { 710 780 }
+		
+		animation = war_attacker
+
+		# ---
+		character = {
+			name = "bookmark_jip_gideon_alt"
+			relation = "BOOKMARK_RELATION_LIEGE" #enemy change
+			dynasty = 7246
+			type = male
+			birth = 840.1.1
+			culture = ethiopian
+			religion = coptic
+			history_id = 167708
+			animation = dismissal
+		}
+	}
+}

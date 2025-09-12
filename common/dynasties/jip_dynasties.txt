@@ -97,3 +97,13 @@ arbaa_dynasty = {
 	name = "dynn_Arbaa"
 	culture = phoenician
 }
+
+house_ananite = {
+	name = "dynn_Ananite"
+	culture = bavlim
+}
+
+house_izdundadite = {
+	name = "dynn_Izdundadite"
+	culture = bavlim
+}

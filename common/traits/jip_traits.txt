@@ -1,4 +1,4 @@
-davidic_line = {
+﻿davidic_line = {
 	category = fame
 
 	zealot_opinion = 5
