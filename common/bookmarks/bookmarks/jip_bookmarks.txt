@@ -25,7 +25,7 @@
 
 	character = {
 		name = "bookmark_jip_exilarch_chisdai_ii"
-		dynasty = house_izdundadite
+		dynasty_house = house_izdundadite
 		dynasty_splendor_level = 7
 		type = male
 		birth = 823.1.1
@@ -41,13 +41,25 @@
 		character = {
 			name = "bookmark_jip_exilarch_karaite_boaz"
 			relation = "BOOKMARK_RELATION_RIVAL" #enemy change
-			dynasty = house_ananite
+			dynasty_house = house_ananite
 			type = male
 			birth = 835.1.1
 			culture = bavlim
 			religion = karaism
 			history_id = karaite_exilarchate_boaz_i
 			animation = dismissal
+		}
+
+		character = {
+			name = "bookmark_persia_muhammad_ibn_abdallah_alt_caliph"
+			relation = "BOOKMARK_RELATION_LIEGE"
+			dynasty_house = house_abbasid
+			type = male
+			birth = 847.1.1
+			culture = levantine
+			religion = ashari
+			history_id = 34014
+			animation = personality_compassionate 
 		}
 	}
 
@@ -69,7 +81,7 @@
 
 	character = {
 		name = "bookmark_jip_exilarch_karaite_boaz"
-		dynasty = house_ananite
+		dynasty_house = house_ananite
 		dynasty_splendor_level = 7
 		type = male
 		birth = 835.1.1
@@ -85,13 +97,25 @@
 		character = {
 			name = "bookmark_jip_exilarch_chisdai_ii"
 			relation = "BOOKMARK_RELATION_RIVAL" #enemy change
-			dynasty = house_izdundadite
+			dynasty_house = house_izdundadite
 			type = male
 			birth = 823.1.1
 			culture = bavlim
 			religion = rabbinism
 			history_id = rabbinic_exilarchate_hasdai_ii
 			animation = dismissal
+		}
+
+		character = {
+			name = "bookmark_persia_muhammad_ibn_abdallah_alt_caliph"
+			relation = "BOOKMARK_RELATION_LIEGE"
+			dynasty_house = house_abbasid
+			type = male
+			birth = 847.1.1
+			culture = levantine
+			religion = ashari
+			history_id = 34014
+			animation = personality_compassionate 
 		}
 	}
 
