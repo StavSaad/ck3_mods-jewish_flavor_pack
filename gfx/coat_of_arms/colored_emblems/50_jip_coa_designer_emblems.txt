@@ -30,17 +30,4 @@
 
 # Double underscore intentional to make it the first option in the list
 
-ace_hebrew_hai.dds = { colors = 1 category = writing }
-ace_hebrew_shalom.dds = { colors = 1 category = writing }
-ace_hebrew_shmaisrael_guttmann.dds = { colors = 1 category = writing }
-ace_hebrew_shmaisrael_rashi.dds = { colors = 1 category = writing }
-ace_hebrew_wedding_vow.dds = { colors = 1 category = writing }
-ace_hebrew_adonai.dds = { colors = 1 category = writing }
-ace_hebrew_emet.dds = { colors = 1 category = writing }
-ace_hebrew_shadai.dds = { colors = 1 category = writing }
-ace_hebrew_yehuda.dds = { colors = 1 category = writing }
-ace_hebrew_gaon.dds = { colors = 1 category = writing }
-ace_hebrew_tsedek.dds = { colors = 1 category = writing }
-ace_six_stars.dds = { colors = 1 category = nature }
-ace_hebrew_lion_judea.dds = { colors = 2 category = animals }
-ace_kohen.dds = { colors = 3 category = faiths }
+jip_kohen.dds = { colors = 3 category = faiths }

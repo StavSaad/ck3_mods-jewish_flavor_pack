@@ -1,4 +1,4 @@
-version="0.7.8"
+version="0.7.10"
 tags={
 	"Religion"
 	"Culture"
