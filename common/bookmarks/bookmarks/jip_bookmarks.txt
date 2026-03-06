@@ -140,7 +140,7 @@
 		dynasty_splendor_level = 1
 		type = male
 		birth = 834.1.1
-		title = c_semien
+		title = c_dembiya
 		government = feudal_government
 		culture = ethiopian
 		religion = haymanot

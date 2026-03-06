@@ -498,6 +498,25 @@ c_tmutarakan = {
 	}
 }
 
+c_dembiya = {
+	pattern="pattern_solid.dds"
+	color1=black
+	color2=black
+	color3=yellow
+	color4=yellow
+	colored_emblem={
+		color1=yellow
+		color2=yellow
+		texture="ce_boar_passant.dds"
+		instance={
+			scale={ 0.900000 0.900000 }
+		}
+
+	}
+
+}
+
+
 e_carthage = {
 	pattern="pattern__solid_designer.dds"
 	color1=white
