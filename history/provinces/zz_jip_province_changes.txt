@@ -55,19 +55,6 @@
 
 }
 
-# 5969 - ZUGHAR
-5969 = {	# 5969 - Zughar
-	
-	# Misc
-	culture = bedouin
-	religion = ashari
-	
-	# History
-	769.1.1 = {
-		special_building = masada_01
-	}
-}
-
 # 5972 - ARANDAL
 5972 = {	# 5972 - Arandal
 	
