@@ -17,12 +17,31 @@
 	
 }
 
-d_laamp_spanish_davidite = {
+d_nasi_barcelona = {
 	1066.1.1 = {
 		liege = 0
 		government = landless_adventurer_government
 		succession_laws = { landless_adventurer_succession_law }
 		holder = solomon_bar_shealtiel
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.1.1 }
+		}
+	}
+	
+	1067.1.1 = {
+		holder = 0
+	}
+
+}
+
+d_nasi_toledo = {
+	1066.1.1 = {
+		liege = 0
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		holder = yosef_cidellus_shealtiel
 		effect = {
 			create_landless_adventurer_title_history_effect = yes
 			set_variable = { name = adventurer_creation_reason value = flag:historical }
