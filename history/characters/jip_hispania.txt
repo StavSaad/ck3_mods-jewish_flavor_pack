@@ -123,6 +123,23 @@ solomon_ben_cidellus_shealtiel = {
 	}
 }
 
+reyna_bat_elijah_hakohen = {
+	name = "Reyna"
+	female = yes
+	religion = "rabbinism"
+	culture = "sephardi"
+	mother = rabbinic_exilarchate_reyna_bat_chizqiyahu_ii
+	1036.1.1 = {
+		birth = yes
+	}
+	1066.1.1 = {
+		employer = solomon_bar_shealtiel
+	}
+	1082.1.1 = {
+		death = yes
+	}
+}
+
 yosef_oroved_ben_isaac = {
 	name = "Yosef" # Oroved?
 	religion = "rabbinism"
@@ -133,6 +150,9 @@ yosef_oroved_ben_isaac = {
 	trait = education_learning_3
 	1035.1.1 = {
 		birth = yes
+	}
+	1056.1.1 = {
+		add_spouse = reyna_bat_elijah_hakohen
 	}
 	1066.1.1 = {
 		employer = solomon_bar_shealtiel
@@ -147,6 +167,7 @@ barzilay_ben_yosef = {
 	religion = "rabbinism"
 	culture = "sephardi"
 	father = yosef_oroved_ben_isaac
+	mother = reyna_bat_elijah_hakohen
 	dynasty_house = house_bostanite
 	trait = davidic_line
 	trait = education_learning_3

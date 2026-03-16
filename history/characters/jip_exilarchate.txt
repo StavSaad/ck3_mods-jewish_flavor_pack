@@ -1763,6 +1763,23 @@ rabbinic_exilarchate_isaac_ben_chizqiyahu_ii = {
 	}
 }
 
+rabbinic_exilarchate_reyna_bat_chizqiyahu_ii = {
+	name = "Reyna"
+	female = yes
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = rabbinic_exilarchate_chizkiyahu_ii
+	dynasty_house = house_bostanite
+	trait = davidic_line
+	trait = education_learning_3
+	1002.1.1 = {
+		birth = yes
+	}
+	1075.1.1 = {
+		death = yes
+	}
+}
+
 rabbinic_exilarchate_david_iv = {
 	name = "David"
 	religion = "rabbinism"
