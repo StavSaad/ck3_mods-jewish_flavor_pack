@@ -162,59 +162,6 @@ yosef_oroved_ben_isaac = {
 	}
 }
 
-barzilay_ben_yosef = {
-	name = "Barzilai"
-	religion = "rabbinism"
-	culture = "sephardi"
-	father = yosef_oroved_ben_isaac
-	mother = reyna_bat_elijah_hakohen
-	dynasty_house = house_bostanite
-	trait = davidic_line
-	trait = education_learning_3
-	1062.1.1 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = solomon_bar_shealtiel
-	}
-	1080.1.1 = {
-		add_spouse = bonnadonna_wife_of_barzilay_ben_yosef
-	}
-	1121.1.1 = {
-		death = yes
-	}
-}
-
-bonnadonna_wife_of_barzilay_ben_yosef = {
-	name = "Bonnadonna"
-	religion = "rabbinism"
-	culture = "sephardi"
-	female = yes
-	1063.1.1 = {
-		birth = yes
-	}
-	1131.1.1 = {
-		death = yes
-	}
-}
-
-yehudah_ben_barzilai = {
-	name = "Yehudah"
-	religion = "rabbinism"
-	culture = "sephardi"
-	father = barzilay_ben_yosef
-	mother = bonnadonna_wife_of_barzilay_ben_yosef
-	dynasty_house = house_bostanite
-	trait = davidic_line
-	trait = education_learning_3
-	1081.1.1 = {
-		birth = yes
-	}
-	1153.1.1 = {
-		death = yes
-	}
-}
-
 joseph_barun_benveniste = {
 	name = "Joseph"
 	religion = "rabbinism"
