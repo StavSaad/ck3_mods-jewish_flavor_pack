@@ -171,7 +171,6 @@ house_benveniste = {
 		instance={
 			position={ 0.750000 0.830000 }
 			scale={ 0.150000 0.150000 }
-			rotation=-15
 		}
 
 		instance={
