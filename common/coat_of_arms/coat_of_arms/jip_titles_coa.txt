@@ -149,7 +149,7 @@ house_shealtiel = {
 		color1 = "yellow"
 		color2 = "black"
 		color3 = "red"
-		texture="ce_lion_rampant.dds"
+		texture="ce_lion_rampant_crown_sword.dds"
 		instance={
 			scale={ 0.940000 0.940000 }
 		}
