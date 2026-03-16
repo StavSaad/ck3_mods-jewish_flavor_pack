@@ -160,7 +160,7 @@ house_shealtiel = {
 
 house_benveniste = {
 	pattern="pattern_solid.dds"
-	color1=blue
+	color1=black
 	color2=red
 	color3=black
 	colored_emblem={
@@ -169,20 +169,19 @@ house_benveniste = {
 		color3=white
 		texture="ce_crescent_mask_02.dds"
 		instance={
-			position={ 0.750000 0.840000 }
+			position={ 0.750000 0.830000 }
 			scale={ 0.150000 0.150000 }
 			rotation=-15
 		}
 
 		instance={
-			position={ 0.270000 0.820000 }
+			position={ 0.270000 0.830000 }
 			scale={ 0.150000 0.150000 }
 			depth=1.010000
-			rotation=15
 		}
 
 		instance={
-			position={ 0.880000 0.640000 }
+			position={ 0.880000 0.650000 }
 			scale={ 0.150000 0.150000 }
 			depth=2.010000
 		}
@@ -191,7 +190,6 @@ house_benveniste = {
 			position={ 0.130000 0.640000 }
 			scale={ 0.150000 0.150000 }
 			depth=3.010000
-			rotation=15
 		}
 
 		instance={
@@ -219,13 +217,13 @@ house_benveniste = {
 		}
 
 		instance={
-			position={ 0.500000 0.900000 }
+			position={ 0.500000 0.930000 }
 			scale={ 0.150000 0.150000 }
 			depth=8.010000
 		}
 
 		instance={
-			position={ 0.500000 0.070000 }
+			position={ 0.500000 0.080000 }
 			scale={ 0.150000 0.150000 }
 			depth=9.010000
 		}
@@ -233,13 +231,13 @@ house_benveniste = {
 	}
 
 	colored_emblem={
-		color1=black
+		color1=blue_light
 		color2=black
 		color3=black
-		texture="ce_border_shield.dds"
+		texture="ce_escutcheon.dds"
 		instance={
-			scale={ 1.100000 1.100000 }
-			depth=10.010000
+			position={ 0.500000 0.510000 }
+			depth=13.010000
 		}
 
 	}
@@ -250,9 +248,9 @@ house_benveniste = {
 		color3=red
 		texture="ce_lion_rampant.dds"
 		instance={
-			position={ 0.600000 0.560000 }
-			scale={ 0.500000 0.500000 }
-			depth=13.010000
+			position={ 0.600000 0.530000 }
+			scale={ 0.440000 0.440000 }
+			depth=12.010000
 		}
 
 	}
@@ -263,9 +261,9 @@ house_benveniste = {
 		color3=red
 		texture="ce_star_06.dds"
 		instance={
-			position={ 0.500000 0.230000 }
+			position={ 0.500000 0.260000 }
 			scale={ 0.260000 0.260000 }
-			depth=11.010000
+			depth=10.010000
 		}
 
 	}
@@ -277,8 +275,8 @@ house_benveniste = {
 		texture="ce_tower.dds"
 		instance={
 			position={ 0.400000 0.560000 }
-			scale={ 0.500000 0.500000 }
-			depth=12.010000
+			scale={ 0.400000 0.400000 }
+			depth=11.010000
 		}
 
 	}
@@ -676,7 +674,6 @@ c_dembiya = {
 	}
 
 }
-
 
 e_carthage = {
 	pattern="pattern__solid_designer.dds"
