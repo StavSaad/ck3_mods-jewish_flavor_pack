@@ -18,6 +18,11 @@ house_shealtiel = {
 	dynasty = davidite_dynasty
 }
 
+house_benveniste = {
+	name = "dynn_Benveniste"
+	dynasty = davidite_dynasty
+}
+
 house_onias = {
 	name = "dynn_Onias"
 	dynasty = zadokite_dynasty

@@ -1747,151 +1747,18 @@ rabbinic_exilarchate_chizkiyahu_ii = {
 	}
 }
 
-rabbinic_exilarchate_shealtiel_ben_chizkiyahu_ii = {
-	name = "SheAltiEl"
+rabbinic_exilarchate_isaac_ben_chizqiyahu_ii = {
+	name = "Yitzchak"
 	religion = "rabbinism"
 	culture = "sephardi"
 	father = rabbinic_exilarchate_chizkiyahu_ii
-	dynasty_house = house_shealtiel
+	dynasty_house = house_bostanite
 	trait = davidic_line
 	trait = education_learning_3
-	1025.1.1 = {
+	1000.1.1 = {
 		birth = yes
 	}
-	1097.12.13 = {
-		death = {
-			death_reason = death_accident
-		}
-	}
-}
-
-rabbinic_exilarchate_daruda_bat_shealtiel = {
-	name = "Drora"
-	religion = "rabbinism"
-	culture = "sephardi"
-	female = yes
-	father = rabbinic_exilarchate_shealtiel_ben_chizkiyahu_ii
-	dynasty_house = house_shealtiel
-	trait = davidic_line
-	trait = education_learning_3
-	1045.1.1 = {
-		birth = yes
-	}
-	1061.1.1 = {
-		add_spouse = gershom_baal_daruda
-	}
-	1066.1.1 = {
-		employer = rabbinic_exilarchate_shealtiel_ben_chizkiyahu_ii
-	}
-	1097.12.13 = {
-		death = {
-			death_reason = death_accident
-		}
-	}
-}
-
-gershom_baal_daruda = {
-	name = "Gershom"
-	religion = "rabbinism"
-	culture = "sephardi"
-	trait = education_learning_3
-	1039.1.1 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = rabbinic_exilarchate_shealtiel_ben_chizkiyahu_ii
-	}
-	1109.1.1 = {
-		death = yes
-	}
-}
-
-rabbinic_exilarchate_shmuel_ben_shealtiel = {
-	name = "Shmuel"
-	religion = "rabbinism"
-	culture = "sephardi"
-	father = rabbinic_exilarchate_shealtiel_ben_chizkiyahu_ii
-	dynasty_house = house_shealtiel
-	trait = davidic_line
-	trait = education_learning_3
-	1044.1.1 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = rabbinic_exilarchate_shealtiel_ben_chizkiyahu_ii
-	}
-	1097.12.13 = {
-		death = yes
-	}
-}
-
-rabbinic_exilarchate_yosef_ben_chizqiyahu_ii = {
-	name = "Yosef"
-	religion = "rabbinism"
-	culture = "sephardi"
-	father = rabbinic_exilarchate_chizkiyahu_ii
-	dynasty_house = house_shealtiel
-	trait = davidic_line
-	trait = education_learning_3
-	1035.1.1 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = rabbinic_exilarchate_shealtiel_ben_chizkiyahu_ii
-	}
-	1075.1.1 = {
-		death = yes
-	}
-}
-
-rabbinic_exilarchate_barzilay_ben_yosef = {
-	name = "Barzilai"
-	religion = "rabbinism"
-	culture = "sephardi"
-	father = rabbinic_exilarchate_yosef_ben_chizqiyahu_ii
-	dynasty_house = house_shealtiel
-	trait = davidic_line
-	trait = education_learning_3
-	1062.1.1 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = rabbinic_exilarchate_shealtiel_ben_chizkiyahu_ii
-	}
-	1080.1.1 = {
-		add_spouse = bonnadonna_wife_of_barzilay_ben_yosef
-	}
-	1121.1.1 = {
-		death = yes
-	}
-}
-
-bonnadonna_wife_of_barzilay_ben_yosef = {
-	name = "Bonnadonna"
-	religion = "rabbinism"
-	culture = "sephardi"
-	female = yes
-	1063.1.1 = {
-		birth = yes
-	}
-	1131.1.1 = {
-		death = yes
-	}
-}
-
-rabbinic_exilarchate_yehudah_ben_barzilai = {
-	name = "Yehudah"
-	religion = "rabbinism"
-	culture = "sephardi"
-	father = rabbinic_exilarchate_barzilay_ben_yosef
-	mother = bonnadonna_wife_of_barzilay_ben_yosef
-	dynasty_house = house_shealtiel
-	trait = davidic_line
-	trait = education_learning_3
-	1081.1.1 = {
-		birth = yes
-	}
-	1153.1.1 = {
+	1060.1.1 = {
 		death = yes
 	}
 }

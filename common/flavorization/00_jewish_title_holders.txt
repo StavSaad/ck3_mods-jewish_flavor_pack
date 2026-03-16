@@ -1,0 +1,16 @@
+﻿
+#############################################
+
+# Special Titles
+exilarch = {
+	type = character
+	gender = male
+	special = holder
+	domicile_type = camp
+	governments = { landless_adventurer_government }
+	priority = 1000
+	titles = { d_exilarchate d_karaite_exilarchate }
+	flavourization_rules = {
+		spouse_takes_title = no
+	}
+}

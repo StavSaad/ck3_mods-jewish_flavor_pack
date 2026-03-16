@@ -20,3 +20,4 @@ nick_archelaus = {}
 nick_cantheras = {}
 nick_hakof = {}
 nick_hasofer = {}
+nick_cidellus = {}
