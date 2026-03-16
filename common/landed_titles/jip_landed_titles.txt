@@ -19,7 +19,7 @@ d_exilarchate = {
 	ai_primary_priority = { add = @never_primary_score }
 }
 
-d_laamp_davidite = {
+c_nasi_tiberias = {
 	color = { 100 100 100 }
 	capital = c_tiberias
 
@@ -34,7 +34,7 @@ d_laamp_davidite = {
 	ai_primary_priority = { add = @never_primary_score }
 }
 
-d_nasi_barcelona = {
+c_nasi_barcelona = {
 	color = { 100 100 100 }
 	capital = c_barcelona
 
@@ -49,7 +49,7 @@ d_nasi_barcelona = {
 	ai_primary_priority = { add = @never_primary_score }
 }
 
-d_nasi_toledo = {
+c_nasi_toledo = {
 	color = { 100 100 100 }
 	capital = c_toledo
 

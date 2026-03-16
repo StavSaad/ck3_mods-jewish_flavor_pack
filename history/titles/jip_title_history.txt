@@ -1,11 +1,10 @@
-﻿d_laamp_davidite = {
+﻿c_nasi_tiberias = {
 	867.1.1 = {
-		liege = 0
+		liege = e_arabia
 		holder = rabbinic_exilarchate_pinchas_ben_abdimi
-		government = landless_adventurer_government
-		succession_laws = { landless_adventurer_succession_law }
+		government = nasi_administrative_government
+		succession_laws = { noble_family_succession_law same_faith_only_law }
 		effect = {
-			create_landless_adventurer_title_history_effect = yes
 			set_variable = { name = adventurer_creation_reason value = flag:historical }
 			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
 		}
@@ -17,14 +16,13 @@
 	
 }
 
-d_nasi_barcelona = {
+c_nasi_barcelona = {
 	1066.1.1 = {
-		liege = 0
-		government = landless_adventurer_government
-		succession_laws = { landless_adventurer_succession_law }
+		liege = d_barcelona
+		government = nasi_administrative_government
+		succession_laws = { noble_family_succession_law same_faith_only_law }
 		holder = solomon_bar_shealtiel
 		effect = {
-			create_landless_adventurer_title_history_effect = yes
 			set_variable = { name = adventurer_creation_reason value = flag:historical }
 			destroy_landless_title_no_dlc_effect = { DATE = 1066.1.1 }
 		}
@@ -36,14 +34,13 @@ d_nasi_barcelona = {
 
 }
 
-d_nasi_toledo = {
+c_nasi_toledo = {
 	1066.1.1 = {
-		liege = 0
-		government = landless_adventurer_government
-		succession_laws = { landless_adventurer_succession_law }
+		liege = k_leon
+		government = nasi_administrative_government
+		succession_laws = { noble_family_succession_law same_faith_only_law }
 		holder = yosef_cidellus_shealtiel
 		effect = {
-			create_landless_adventurer_title_history_effect = yes
 			set_variable = { name = adventurer_creation_reason value = flag:historical }
 			destroy_landless_title_no_dlc_effect = { DATE = 1066.1.1 }
 		}
