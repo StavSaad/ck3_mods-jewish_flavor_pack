@@ -1717,7 +1717,7 @@ rabbinic_exilarchate_david_iii = {
 	dynasty_house = house_bostanite
 	trait = davidic_line
 	trait = education_learning_3
-	976.1.1 = {
+	960.1.1 = {
 		birth = yes
 	}
 	1021.1.1 = {
@@ -1733,7 +1733,7 @@ rabbinic_exilarchate_chizkiyahu_ii = {
 	dynasty_house = house_bostanite
 	trait = davidic_line
 	trait = education_learning_3
-	997.1.1 = {
+	977.1.1 = {
 		birth = yes
 	}
 	1038.1.1 = {
@@ -1760,7 +1760,9 @@ rabbinic_exilarchate_isaac_ben_chizqiyahu_ii = {
 		give_nickname = nick_shealtiel
 	}
 	1060.1.1 = {
-		death = yes
+		death = {
+			death_reason = death_raid_estate
+		}
 	}
 }
 

@@ -52,16 +52,16 @@ solomon_bar_shealtiel = {
 	}
 }
 
-drora_bat_solomon_shealtiel = {
+drora_bat_shealtiel = {
 	name = "Drora"
 	religion = "rabbinism"
 	culture = "sephardi"
 	female = yes
-	father = solomon_bar_shealtiel
+	father = rabbinic_exilarchate_isaac_ben_chizqiyahu_ii
 	dynasty_house = house_shealtiel
 	trait = davidic_line
 	trait = education_learning_3
-	1045.1.1 = {
+	1035.1.1 = {
 		birth = yes
 	}
 	1061.1.1 = {
