@@ -3,13 +3,13 @@
 	dynasty = davidite_dynasty
 }
 
-house_izdundadite = {
-	name = "dynn_Izdundadite"
+house_bostanite = {
+	name = "dynn_Bostanite"
 	dynasty = davidite_dynasty
 }
 
-house_bostanite = {
-	name = "dynn_Bostanite"
+house_barzillai = {
+	name = "dynn_Barzillai"
 	dynasty = davidite_dynasty
 }
 

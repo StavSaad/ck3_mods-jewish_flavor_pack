@@ -14,3 +14,27 @@ exilarch = {
 		spouse_takes_title = no
 	}
 }
+
+nasi = {
+	type = character
+	gender = male
+	special = holder
+	domicile_type = estate
+	governments = { nasi_administrative_government }
+	priority = 1000
+	flavourization_rules = {
+		spouse_takes_title = no
+	}
+}
+
+nasi_female = {
+	type = character
+	gender = female
+	special = holder
+	domicile_type = estate
+	governments = { nasi_administrative_government }
+	priority = 1000
+	flavourization_rules = {
+		spouse_takes_title = no
+	}
+}

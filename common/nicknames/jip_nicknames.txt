@@ -21,3 +21,6 @@ nick_cantheras = {}
 nick_hakof = {}
 nick_hasofer = {}
 nick_cidellus = {}
+nick_shealtiel = {}
+nick_oravad = {}
+nick_al_bargeloni = {}

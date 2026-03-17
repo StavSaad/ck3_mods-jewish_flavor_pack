@@ -1,3 +1,39 @@
+barzillai_ben_yosef = {
+	name = "Barzillai"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = rabbinic_exilarchate_yosef_oroved_ben_chizqiyahu_ii
+	dynasty_house = house_barzillai
+	trait = davidic_line
+	trait = education_learning_3
+	1035.1.1 = {
+		birth = yes
+	}
+	1066.1.1 = {
+		employer = solomon_bar_shealtiel
+	}
+	1105.12.13 = {
+		death = yes
+	}
+}
+
+yehudah_al_bargeloni = {
+	name = "Yehudah"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = barzillai_ben_yosef
+	dynasty_house = house_barzillai
+	trait = davidic_line
+	trait = education_learning_3
+	1070.1.1 = {
+		birth = yes
+		give_nickname = nick_al_bargeloni
+	}
+	1135.1.1 = {
+		death = yes
+	}
+}
+
 solomon_bar_shealtiel = {
 	name = "Solomon" # Felez Perruz, Hapatish Ha-hazak
 	religion = "rabbinism"
@@ -118,45 +154,6 @@ solomon_ben_cidellus_shealtiel = {
 		employer = 108500
 	}
 	1108.1.1 = {
-		death = yes
-	}
-}
-
-reyna_bat_elijah_hakohen = {
-	name = "Reyna"
-	female = yes
-	religion = "rabbinism"
-	culture = "sephardi"
-	mother = rabbinic_exilarchate_reyna_bat_chizqiyahu_ii
-	1036.1.1 = {
-		birth = yes
-	}
-	1066.1.1 = {
-		employer = solomon_bar_shealtiel
-	}
-	1082.1.1 = {
-		death = yes
-	}
-}
-
-yosef_oroved_ben_isaac = {
-	name = "Yosef" # Oroved?
-	religion = "rabbinism"
-	culture = "sephardi"
-	father = rabbinic_exilarchate_isaac_ben_chizqiyahu_ii
-	dynasty_house = house_bostanite
-	trait = davidic_line
-	trait = education_learning_3
-	1035.1.1 = {
-		birth = yes
-	}
-	1056.1.1 = {
-		add_spouse = reyna_bat_elijah_hakohen
-	}
-	1066.1.1 = {
-		employer = solomon_bar_shealtiel
-	}
-	1075.1.1 = {
 		death = yes
 	}
 }
