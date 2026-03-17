@@ -1,8 +1,8 @@
-﻿c_nasi_tiberias = {
+﻿c_jip_davidite = {
 	867.1.1 = {
 		liege = e_arabia
 		holder = rabbinic_exilarchate_pinchas_ben_abdimi
-		government = nasi_administrative_government
+		government = jewish_admin_family_government
 		succession_laws = { noble_family_succession_law male_only_law same_faith_only_law }
 		effect = {
 			set_variable = { name = adventurer_creation_reason value = flag:historical }
@@ -20,7 +20,7 @@ c_nasi_narbonne = {
 	867.1.1 = {
 		liege = k_france
 		holder = 0
-		government = nasi_administrative_government
+		government = jewish_admin_family_government
 		succession_laws = { noble_family_succession_law male_only_law same_faith_only_law }
 		effect = {
 			set_variable = { name = adventurer_creation_reason value = flag:historical }
@@ -30,10 +30,10 @@ c_nasi_narbonne = {
 	
 }
 
-c_nasi_barcelona = {
+c_jip_shealtiel = {
 	1066.1.1 = {
 		liege = d_barcelona
-		government = nasi_administrative_government
+		government = jewish_admin_family_government
 		succession_laws = { noble_family_succession_law same_faith_only_law }
 		holder = solomon_bar_shealtiel
 		effect = {
@@ -48,10 +48,10 @@ c_nasi_barcelona = {
 
 }
 
-c_nasi_toledo = {
+c_jip_benveniste = {
 	1066.1.1 = {
 		liege = k_leon
-		government = nasi_administrative_government
+		government = jewish_admin_family_government
 		succession_laws = { noble_family_succession_law same_faith_only_law }
 		holder = yosef_cidellus_shealtiel
 		effect = {

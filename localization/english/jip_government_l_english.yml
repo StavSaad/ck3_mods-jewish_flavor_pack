@@ -1,7 +1,7 @@
 ﻿l_english:
- nasi_administrative_government: "Nasi'ut"
- nasi_administrative_government_with_icon: "@government_type_nasi! $nasi_administrative_government$"
- nasi_administrative_government_adjective: "Nasi'ut"
- nasi_administrative_government_realm: "Jewish Community"
- nasi_administrative_government_desc: "\n$game_concept_administrative_desc$\n\n#F Nasi'ut is a form of administrative government where the local jewish community elects their leader, which is their representative with the local feudal ruler.#!"
- nasi_administrative_government_vassals_label: "[administrative|E] [obligations|E] are based on [GetPlayer.Custom('GetProvinceAdministrationConcept')]"
+ jewish_admin_family_government: "Nasi'ut"
+ jewish_admin_family_government_with_icon: "@government_type_nasi! $jewish_admin_family_government$"
+ jewish_admin_family_government_adjective: "Nasi'ut"
+ jewish_admin_family_government_realm: "Jewish Community"
+ jewish_admin_family_government_desc: "\n$game_concept_administrative_desc$\n\n#F Nasi'ut is a form of administrative government where a local prominent jewish family becomes the vassal representative of their people in front of the local ruler.#!"
+ jewish_admin_family_government_vassals_label: "[administrative|E] [obligations|E] are based on [GetPlayer.Custom('GetProvinceAdministrationConcept')]"

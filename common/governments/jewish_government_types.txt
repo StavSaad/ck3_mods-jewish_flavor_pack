@@ -1,4 +1,4 @@
-nasi_administrative_government = { # Nasi
+﻿jewish_admin_family_government = { # Nasi
 	government_rules = {
 		create_cadet_branches = yes
 		rulers_should_have_dynasty = yes
@@ -14,7 +14,7 @@ nasi_administrative_government = { # Nasi
 		house_aspirations = yes
 		noble_families = yes
 		deny_powerful_vassal = yes
-		disable_regnal_numbers = yes
+		uses_culture_and_house_head_named_realms = yes
 	}
 
 	royal_court = any

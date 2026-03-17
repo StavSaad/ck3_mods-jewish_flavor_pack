@@ -1,5 +1,5 @@
-c_nasi_toledo = house_benveniste
-c_nasi_barcelona = house_shealtiel
-c_nasi_tiberias = davidite_dynasty
+c_jip_benveniste = house_benveniste
+c_jip_shealtiel = house_shealtiel
+c_jip_davidite = davidite_dynasty
 d_exilarchate = house_bostanite
 d_karaite_exilarchate = house_ananite

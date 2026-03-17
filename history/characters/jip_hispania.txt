@@ -9,6 +9,9 @@ barzillai_ben_yosef = {
 	1035.1.1 = {
 		birth = yes
 	}
+	1065.1.1 = {
+		add_spouse = bonnadona_bat_shealtiel
+	}
 	1066.1.1 = {
 		employer = solomon_bar_shealtiel
 	}
@@ -22,6 +25,7 @@ yehudah_al_bargeloni = {
 	religion = "rabbinism"
 	culture = "sephardi"
 	father = barzillai_ben_yosef
+	mother = bonnadona_bat_shealtiel
 	dynasty_house = house_barzillai
 	trait = davidic_line
 	trait = education_learning_3
@@ -44,6 +48,27 @@ solomon_bar_shealtiel = {
 	trait = education_learning_3
 	1017.1.1 = {
 		birth = yes
+	}
+	1097.12.13 = {
+		death = {
+			death_reason = death_accident
+		}
+	}
+}
+
+bonnadona_bat_shealtiel = {
+	name = "Bonadona"
+	religion = "rabbinism"
+	culture = "sephardi"
+	female = yes
+	father = solomon_bar_shealtiel
+	dynasty_house = house_shealtiel
+	trait = davidic_line
+	1048.1.1 = {
+		birth = yes
+	}
+	1066.1.1 = {
+		employer = solomon_bar_shealtiel
 	}
 	1097.12.13 = {
 		death = {
@@ -147,11 +172,45 @@ solomon_ben_cidellus_shealtiel = {
 	dynasty_house = house_benveniste
 	trait = davidic_line
 	trait = education_learning_3
+	1050.1.1 = {
+		birth = yes
+	}
+	1066.1.1 = {
+		employer = yosef_cidellus_shealtiel
+	}
+	1102.1.1 = {
+		death = yes
+	}
+}
+
+meshulam_ben_cidellus_shealtiel = {
+	name = "Meshulam"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = yosef_cidellus_shealtiel
+	dynasty_house = house_benveniste
+	trait = davidic_line
 	1055.1.1 = {
 		birth = yes
 	}
 	1066.1.1 = {
-		employer = 108500
+		employer = yosef_cidellus_shealtiel
+	}
+	1108.1.1 = {
+		death = yes
+	}
+}
+
+shealtiel_ben_cidellus_shealtiel = {
+	name = "SheAltiEl"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = yosef_cidellus_shealtiel
+	dynasty_house = house_benveniste
+	trait = davidic_line
+	1066.1.1 = {
+		birth = yes
+		employer = yosef_cidellus_shealtiel
 	}
 	1108.1.1 = {
 		death = yes
@@ -159,7 +218,7 @@ solomon_ben_cidellus_shealtiel = {
 }
 
 joseph_barun_benveniste = {
-	name = "Joseph"
+	name = "Yosef"
 	religion = "rabbinism"
 	culture = "sephardi"
 	father = yosef_cidellus_shealtiel
@@ -170,9 +229,24 @@ joseph_barun_benveniste = {
 		birth = yes
 	}
 	1066.1.1 = {
-		employer = 108500
+		employer = yosef_cidellus_shealtiel
 	}
 	1101.1.1 = {
+		death = yes
+	}
+}
+
+solomon_ben_joseph_benveniste = {
+	name = "Solomon"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = joseph_barun_benveniste
+	dynasty_house = house_benveniste
+	trait = davidic_line
+	1080.1.1 = {
+		birth = yes
+	}
+	1126.1.1 = {
 		death = yes
 	}
 }
@@ -225,11 +299,11 @@ isaac_benveniste_nasi = {
 	}
 }
 
-sheshet_benveniste_nasi = {
-	name = "Sheshet"
+yosef_ben_isaac_benveniste = {
+	name = "Yosef"
 	religion = "rabbinism"
 	culture = "sephardi"
-	father = abraham_benveniste
+	father = isaac_benveniste_nasi
 	dynasty_house = house_benveniste
 	trait = davidic_line
 	trait = education_learning_4
@@ -237,6 +311,57 @@ sheshet_benveniste_nasi = {
 		birth = yes
 	}
 	1209.1.1 = {
+		death = yes
+	}
+}
+
+isaac_zag_ben_yosef_benveniste = {
+	name = "Yitzchak"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = yosef_ben_isaac_benveniste
+	dynasty_house = house_benveniste
+	trait = davidic_line
+	trait = education_learning_4
+	1160.1.1 = {
+		birth = yes
+	}
+	1178.1.1 = {
+		add_spouse = mira_bat_sheshet_benveniste_nasi
+	}
+	1230.1.1 = {
+		death = yes
+	}
+}
+
+sheshet_benveniste_nasi = {
+	name = "Sheshet"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = isaac_benveniste_nasi
+	dynasty_house = house_benveniste
+	trait = davidic_line
+	trait = education_learning_4
+	1131.1.1 = {
+		birth = yes
+	}
+	1209.1.1 = {
+		death = yes
+	}
+}
+
+mira_bat_sheshet_benveniste_nasi = {
+	name = "Mira"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = sheshet_benveniste_nasi
+	female = yes
+	dynasty_house = house_benveniste
+	trait = davidic_line
+	1158.1.1 = {
+		birth = yes
+	}
+	1224.1.1 = {
 		death = yes
 	}
 }
@@ -249,7 +374,6 @@ tolsana_bat_sheshet_benveniste_nasi = {
 	female = yes
 	dynasty_house = house_benveniste
 	trait = davidic_line
-	trait = education_learning_4
 	1160.1.1 = {
 		birth = yes
 	}
