@@ -15,26 +15,47 @@ exilarch = {
 	}
 }
 
-nasi = {
+duke_exilarchate = {
+	type = character
+	governments = {
+		landless_adventurer_government
+	}
+	priority = 5
+	titles = {
+		d_exilarchate
+		d_karaite_exilarchate
+	}
+}
+
+count_nasi_male = {
 	type = character
 	gender = male
 	special = holder
 	domicile_type = estate
+	tier = county
 	governments = { jewish_admin_family_government }
-	priority = 1000
+	priority = 5
 	flavourization_rules = {
 		spouse_takes_title = no
 	}
 }
 
-nasi_female = {
+count_nasi_female = {
 	type = character
-	gender = female
+	gender = male
 	special = holder
 	domicile_type = estate
+	tier = county
 	governments = { jewish_admin_family_government }
-	priority = 1000
+	priority = 5
 	flavourization_rules = {
 		spouse_takes_title = no
 	}
+}
+
+count_nasi = {
+	type = character
+	tier = county
+	governments = { jewish_admin_family_government }
+	priority = 5
 }
