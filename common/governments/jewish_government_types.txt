@@ -2,7 +2,7 @@
 	government_rules = {
 		create_cadet_branches = yes
 		rulers_should_have_dynasty = yes
-		dynasty_named_realms = no
+		dynasty_named_realms = yes
 		administrative = yes
 		legitimacy = yes
 		landless_playable = yes
@@ -14,7 +14,7 @@
 		house_aspirations = yes
 		noble_families = yes
 		deny_powerful_vassal = yes
-		uses_culture_and_house_head_named_realms = yes
+		uses_culture_and_house_head_named_realms = no
 	}
 
 	royal_court = any

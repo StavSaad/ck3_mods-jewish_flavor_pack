@@ -11,6 +11,13 @@
 		effect = {
 			set_variable = { name = adventurer_creation_reason value = flag:historical }
 			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+			if = {
+				limit = {
+					exists = holder
+					holder = { has_government = administrative_government }
+				}
+				set_state_faith = faith:rabbinism
+			}
 		}
 	}
 
@@ -29,6 +36,13 @@ c_nasi_narbonne = {
 		effect = {
 			set_variable = { name = adventurer_creation_reason value = flag:historical }
 			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+			if = {
+				limit = {
+					exists = holder
+					holder = { has_government = administrative_government }
+				}
+				set_state_faith = faith:rabbinism
+			}
 		}
 	}
 	
@@ -43,6 +57,13 @@ c_jip_shealtiel = {
 		effect = {
 			set_variable = { name = adventurer_creation_reason value = flag:historical }
 			destroy_landless_title_no_dlc_effect = { DATE = 1066.1.1 }
+			if = {
+				limit = {
+					exists = holder
+					holder = { has_government = administrative_government }
+				}
+				set_state_faith = faith:rabbinism
+			}
 		}
 	}
 	
@@ -54,13 +75,20 @@ c_jip_shealtiel = {
 
 c_jip_benveniste = {
 	1066.1.1 = {
-		liege = k_leon
+		liege = d_barcelona
 		government = jewish_admin_family_government
 		succession_laws = { noble_family_succession_law same_faith_only_law }
 		holder = yosef_cidellus_shealtiel
 		effect = {
 			set_variable = { name = adventurer_creation_reason value = flag:historical }
 			destroy_landless_title_no_dlc_effect = { DATE = 1066.1.1 }
+			if = {
+				limit = {
+					exists = holder
+					holder = { has_government = administrative_government }
+				}
+				set_state_faith = faith:rabbinism
+			}
 		}
 	}
 
@@ -76,9 +104,9 @@ c_jip_benveniste = {
 		holder = isaac_benveniste_nasi
 	}
 
-	1174.10.1 = {
+	1178.10.1 = {
 		holder = sheshet_benveniste_nasi
-		liege = k_castile
+		liege = k_aragon
 		effect = {
 			destroy_landless_title_no_dlc_effect = { DATE = 1078.10.1 }
 		}
@@ -584,6 +612,15 @@ d_exilarchate = {
 	
 	651.1.1 = {
 		liege = e_arabia
+		effect = {
+			if = {
+				limit = {
+					exists = holder
+					holder = { has_government = administrative_government }
+				}
+				set_state_faith = faith:rabbinism
+			}
+		}
 	}
 
 	733.1.1 = {
@@ -969,6 +1006,15 @@ d_karaite_exilarchate = {
 		}
 		liege = e_arabia
 		holder = karaite_exilarchate_anan_i
+		effect = {
+			if = {
+				limit = {
+					exists = holder
+					holder = { has_government = administrative_government }
+				}
+				set_state_faith = faith:rabbinism
+			}
+		}
 	}
 
 	795.1.1 = {

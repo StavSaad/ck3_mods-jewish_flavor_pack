@@ -82,7 +82,7 @@ c_jip_shealtiel = {
 
 c_jip_benveniste = {
 	color = { 100 100 100 }
-	capital = c_toledo
+	capital = c_barcelona
 
 	definite_form = yes
 	landless = yes
