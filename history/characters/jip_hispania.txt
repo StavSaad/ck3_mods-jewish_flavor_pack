@@ -334,6 +334,40 @@ isaac_zag_ben_yosef_benveniste = {
 	}
 }
 
+don_abram_ben_yosef_benveniste = {
+	name = "Abraham"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = yosef_ben_isaac_benveniste
+	dynasty_house = house_benveniste
+	trait = davidic_line
+	trait = education_learning_4
+	1165.1.1 = {
+		birth = yes
+	}
+	1181.1.1 = {
+		add_trait = lifestyle_physician
+	}
+	1235.1.1 = {
+		death = yes
+	}
+}
+
+meshulam_ben_yosef_benveniste = {
+	name = "Meshulam"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = yosef_ben_isaac_benveniste
+	dynasty_house = house_benveniste
+	trait = davidic_line
+	1170.1.1 = {
+		birth = yes
+	}
+	1240.1.1 = {
+		death = yes
+	}
+}
+
 sheshet_benveniste_nasi = {
 	name = "Sheshet"
 	religion = "rabbinism"
@@ -362,6 +396,21 @@ mira_bat_sheshet_benveniste_nasi = {
 		birth = yes
 	}
 	1224.1.1 = {
+		death = yes
+	}
+}
+
+samuel_bat_sheshet_benveniste_nasi = {
+	name = "Shmuel"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = sheshet_benveniste_nasi
+	dynasty_house = house_benveniste
+	trait = davidic_line
+	1185.1.1 = {
+		birth = yes
+	}
+	1204.1.1 = {
 		death = yes
 	}
 }
