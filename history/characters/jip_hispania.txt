@@ -122,7 +122,7 @@ shmuel_shealtiel = {
 	name = "Shmuel"
 	religion = "rabbinism"
 	culture = "sephardi"
-	father = rabbinic_exilarchate_isaac_ben_chizqiyahu_ii
+	father = solomon_bar_shealtiel
 	dynasty_house = house_shealtiel
 	trait = davidic_line
 	trait = education_learning_3
@@ -307,10 +307,13 @@ yosef_ben_isaac_benveniste = {
 	dynasty_house = house_benveniste
 	trait = davidic_line
 	trait = education_learning_4
-	1131.1.1 = {
+	1134.1.1 = {
 		birth = yes
 	}
-	1209.1.1 = {
+	1178.10.1 = {
+		employer = sheshet_benveniste_nasi
+	}
+	1212.1.1 = {
 		death = yes
 	}
 }
@@ -329,6 +332,9 @@ isaac_zag_ben_yosef_benveniste = {
 	1178.1.1 = {
 		add_spouse = mira_bat_sheshet_benveniste_nasi
 	}
+	1178.10.1 = {
+		employer = sheshet_benveniste_nasi
+	}
 	1230.1.1 = {
 		death = yes
 	}
@@ -344,6 +350,9 @@ don_abram_ben_yosef_benveniste = {
 	trait = education_learning_4
 	1165.1.1 = {
 		birth = yes
+	}
+	1178.10.1 = {
+		employer = sheshet_benveniste_nasi
 	}
 	1181.1.1 = {
 		add_trait = lifestyle_physician
@@ -362,6 +371,9 @@ meshulam_ben_yosef_benveniste = {
 	trait = davidic_line
 	1170.1.1 = {
 		birth = yes
+	}
+	1178.10.1 = {
+		employer = sheshet_benveniste_nasi
 	}
 	1240.1.1 = {
 		death = yes
@@ -395,12 +407,15 @@ mira_bat_sheshet_benveniste_nasi = {
 	1158.1.1 = {
 		birth = yes
 	}
+	1178.10.1 = {
+		employer = sheshet_benveniste_nasi
+	}
 	1224.1.1 = {
 		death = yes
 	}
 }
 
-samuel_bat_sheshet_benveniste_nasi = {
+samuel_ben_sheshet_benveniste_nasi = {
 	name = "Shmuel"
 	religion = "rabbinism"
 	culture = "sephardi"
@@ -425,6 +440,9 @@ tolsana_bat_sheshet_benveniste_nasi = {
 	trait = davidic_line
 	1160.1.1 = {
 		birth = yes
+	}
+	1178.10.1 = {
+		employer = sheshet_benveniste_nasi
 	}
 	1226.1.1 = {
 		death = yes

@@ -59,8 +59,28 @@ c_jip_benveniste = {
 			destroy_landless_title_no_dlc_effect = { DATE = 1066.1.1 }
 		}
 	}
-	
-	1067.1.1 = {
+
+	1101.1.1 = {
+		holder = isaac_ibn_barun_ben_joseph_benveniste
+	}
+
+	1136.1.1 = {
+		holder = abraham_benveniste
+	}
+
+	1153.1.1 = {
+		holder = isaac_benveniste_nasi
+	}
+
+	1174.10.1 = {
+		holder = sheshet_benveniste_nasi
+		liege = k_castile
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1078.10.1 }
+		}
+	}
+
+	1179.1.1 = {
 		holder = 0
 	}
 
