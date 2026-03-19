@@ -114,6 +114,10 @@ c_jip_benveniste = {
 		}
 	}
 
+	1085.1.1 = {
+		liege = k_leon
+	}
+
 	1101.1.1 = {
 		holder = isaac_ibn_barun_ben_joseph_benveniste
 	}
@@ -124,11 +128,11 @@ c_jip_benveniste = {
 
 	1153.1.1 = {
 		holder = isaac_benveniste_nasi
+		liege = k_aragon
 	}
 
 	1178.10.1 = {
 		holder = sheshet_benveniste_nasi
-		liege = k_aragon
 		effect = {
 			destroy_landless_title_no_dlc_effect = { DATE = 1078.10.1 }
 		}
