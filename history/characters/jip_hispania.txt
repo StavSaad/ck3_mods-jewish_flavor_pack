@@ -1,9 +1,210 @@
+mar_mencachem_bar_shealtiel = {
+	name = "Menachem"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = rabbinic_exilarchate_isaac_ben_chizqiyahu_ii
+	dynasty_house = house_shealtiel
+	trait = davidic_line
+	1035.1.1 = {
+		birth = yes
+	}
+	1102.1.1 = {
+		death = yes
+	}
+}
+
+judah_ben_menachem = {
+	name = "Yehudah"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = mar_mencachem_bar_shealtiel
+	dynasty_house = house_shealtiel
+	trait = davidic_line
+	1062.1.1 = {
+		birth = yes
+	}
+	1123.1.1 = {
+		death = yes
+	}
+}
+
+nathan_ben_judah = {
+	name = "Nathan"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = judah_ben_menachem
+	dynasty_house = house_shealtiel
+	trait = davidic_line
+	1082.1.1 = {
+		birth = yes
+	}
+	1149.1.1 = {
+		death = yes
+	}
+}
+
+shlomon_ben_judah = {
+	name = "Shlomo"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = judah_ben_menachem
+	dynasty_house = house_shealtiel
+	trait = davidic_line
+	1089.1.1 = {
+		birth = yes
+	}
+	1157.1.1 = {
+		death = yes
+	}
+}
+
+goig_bat_judah = {
+	name = "Goig"
+	religion = "rabbinism"
+	culture = "sephardi"
+	female = yes
+	father = judah_ben_menachem
+	dynasty_house = house_shealtiel
+	trait = davidic_line
+	1098.1.1 = {
+		birth = yes
+	}
+	1175.1.1 = {
+		death = yes
+	}
+}
+
+isaac_ben_menachem = {
+	name = "Yitzchak"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = mar_mencachem_bar_shealtiel
+	dynasty_house = house_shealtiel
+	trait = davidic_line
+	1055.1.1 = {
+		birth = yes
+	}
+	1115.1.1 = {
+		death = yes
+	}
+}
+
+david_ben_isaac = {
+	name = "David"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = isaac_ben_menachem
+	dynasty_house = house_shealtiel
+	trait = davidic_line
+	1090.1.1 = {
+		birth = yes
+	}
+	1162.1.1 = {
+		death = yes
+	}
+}
+
+isaac_ben_david = {
+	name = "Yitzchak"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = david_ben_isaac
+	dynasty_house = house_shealtiel
+	trait = davidic_line
+	1120.1.1 = {
+		birth = yes
+	}
+	1194.1.1 = {
+		death = yes
+	}
+}
+
+nathan_ben_david = {
+	name = "Nathan"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = david_ben_isaac
+	dynasty_house = house_shealtiel
+	trait = davidic_line
+	1135.1.1 = {
+		birth = yes
+	}
+	1160.1.1 = {
+		add_spouse = perciosa_bat_nathan
+	}
+	1207.1.1 = {
+		death = yes
+	}
+}
+
+nathan_ben_isaac = {
+	name = "Nathan"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = isaac_ben_menachem
+	dynasty_house = house_shealtiel
+	trait = davidic_line
+	1075.1.1 = {
+		birth = yes
+	}
+	1145.1.1 = {
+		death = yes
+	}
+}
+
+perciosa_bat_nathan = {
+	name = "Perciosa"
+	religion = "rabbinism"
+	culture = "sephardi"
+	female = yes
+	father = nathan_ben_isaac
+	dynasty_house = house_shealtiel
+	trait = davidic_line
+	1140.1.1 = {
+		birth = yes
+	}
+	1201.1.1 = {
+		death = yes
+	}
+}
+
+judah_bar_nathan = {
+	name = "Yehudah"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = nathan_ben_isaac
+	dynasty_house = house_shealtiel
+	trait = davidic_line
+	1117.1.1 = {
+		birth = yes
+	}
+	1190.1.1 = {
+		death = yes
+	}
+}
+
+goig_bat_yuda = {
+	name = "Goig"
+	religion = "rabbinism"
+	culture = "sephardi"
+	female = yes
+	father = nathan_ben_isaac
+	dynasty_house = house_shealtiel
+	trait = davidic_line
+	1149.1.1 = {
+		birth = yes
+	}
+	1219.1.1 = {
+		death = yes
+	}
+}
+
 barzillai_ben_yosef = {
 	name = "Barzillai"
 	religion = "rabbinism"
 	culture = "sephardi"
 	father = rabbinic_exilarchate_yosef_oroved_ben_chizqiyahu_ii
-	dynasty_house = house_barzillai
+	dynasty_house = house_bostanite
 	trait = davidic_line
 	trait = education_learning_3
 	1035.1.1 = {
@@ -26,7 +227,7 @@ yehudah_al_bargeloni = {
 	culture = "sephardi"
 	father = barzillai_ben_yosef
 	mother = bonnadona_bat_shealtiel
-	dynasty_house = house_barzillai
+	dynasty_house = house_bostanite
 	trait = davidic_line
 	trait = education_learning_3
 	1070.1.1 = {

@@ -8,11 +8,6 @@ house_bostanite = {
 	dynasty = davidite_dynasty
 }
 
-house_barzillai = {
-	name = "dynn_Barzillai"
-	dynasty = davidite_dynasty
-}
-
 house_shealtiel = {
 	name = "dynn_Shealtiel"
 	dynasty = davidite_dynasty
