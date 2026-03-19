@@ -1,21 +1,11 @@
 ﻿house_ananite = {
 	name = "dynn_Ananite"
-	dynasty = davidite_dynasty
-}
-
-house_bostanite = {
-	name = "dynn_Bostanite"
-	dynasty = davidite_dynasty
-}
-
-house_shealtiel = {
-	name = "dynn_Shealtiel"
-	dynasty = davidite_dynasty
+	dynasty = bostanite_dynasty
 }
 
 house_benveniste = {
 	name = "dynn_Benveniste"
-	dynasty = davidite_dynasty
+	dynasty = shealtiel_dynasty
 }
 
 house_onias = {

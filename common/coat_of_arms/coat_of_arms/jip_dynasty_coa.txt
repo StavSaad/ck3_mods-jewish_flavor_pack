@@ -1,4 +1,4 @@
-house_shealtiel = {
+shealtiel_dynasty = {
 	pattern="pattern_solid.dds"
 	color1 = "blue"
 	color2 = "red"
@@ -162,7 +162,7 @@ house_ananite = {
 	}
 }
 
-house_bostanite = {
+bostanite_dynasty = {
 	pattern="pattern_solid.dds"
 	color1=yellow
 	color2=yellow

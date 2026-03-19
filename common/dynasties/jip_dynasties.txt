@@ -3,6 +3,16 @@
 	culture = "hebrew"
 }
 
+bostanite_dynasty = {
+	name = "dynn_Bostanite"
+	culture = "bavlim"
+}
+
+shealtiel_dynasty = {
+	name = "dynn_Shealtiel"
+	culture = "sephardi"
+}
+
 omriid_dynasty = {
 	name = "dynn_Omriid"
 	culture = "hebrew"
