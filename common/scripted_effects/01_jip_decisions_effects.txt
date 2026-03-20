@@ -1,14 +1,14 @@
 ﻿reclaim_davidic_heritage_effect = {
 	custom_description_no_bullet = {
 		text = reclaim_davidic_heritage_effect_desc
-	}
-	if = {
-		limit = {
-			house = scope:reclaimer_house
-		}
-		set_house = character:king_david_i.house
-		every_child = {
-			reclaim_davidic_heritage_effect = yes
+		if = {
+			limit = {
+				house = scope:reclaimer_house
+			}
+			set_house = character:king_david_i.house
+			every_child = {
+				reclaim_davidic_heritage_effect = yes
+			}
 		}
 	}
 }
