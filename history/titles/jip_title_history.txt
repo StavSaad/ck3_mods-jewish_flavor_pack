@@ -1,7 +1,7 @@
 ﻿c_jip_nathanite = {
-	867.1.1 = {
-		liege = e_arabia
-		holder = rabbinic_exilarchate_pinchas_ben_abdimi
+
+	518.1.1 = {
+		holder = rabbinic_exilarchate_zutra_iv
 		government = landless_adventurer_government
 		succession_laws = {
 			noble_family_succession_law
@@ -10,14 +10,48 @@
 		}
 		effect = {
 			set_variable = { name = adventurer_creation_reason value = flag:historical }
-			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
-			if = {
+				if = {
 				limit = {
 					exists = holder
 					holder = { has_government = administrative_government }
 				}
 				set_state_faith = faith:rabbinism
 			}
+		}
+	}
+
+	572.1.1 = {
+		holder = rabbinic_exilarchate_guriya
+	}
+
+	601.1.1 = {
+		holder = rabbinic_exilarchate_zutra_v
+	}
+
+	632.1.1 = {
+		holder = rabbinic_exilarchate_yaakov_ben_zutra
+	}
+
+	669.1.1 = {
+		holder = rabbinic_exilarchate_migam
+	}
+
+	702.1.1 = {
+		holder = rabbinic_exilarchate_nehemiah_ben_migam
+	}
+
+	770.1.1 = {
+		holder = rabbinic_exilarchate_abdimi
+	}
+
+	812.1.1 = {
+		liege = e_arabia
+		holder = rabbinic_exilarchate_pinchas_ben_abdimi
+	}
+	
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
 		}
 	}
 
