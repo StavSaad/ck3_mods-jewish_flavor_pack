@@ -80,4 +80,4 @@
  reclaim_davidic_heritage_desc: "Finally a king in your own right, you can act upon the tradition claiming your house to be descendant of [GetScriptedCharacterByHistoryID('king_david_i').GetFirstNameRegnal] and make it your [house|e]."
  reclaim_davidic_heritage_tooltip: "Relcaim the heritage of King David"
  reclaim_davidic_heritage_confirm: "Make it so!"
- reclaim_davidic_heritage_effect_desc: "You and all your descndandts of the same [house|e] become members of [GetScriptedCharacterByHistoryID('king_david_i').GetDynastyName]"
+ switch_house_effect_desc: "You and all your descndandts of the same [house|e] become members of [GetScriptedCharacterByHistoryID('king_david_i').GetDynastyName]"

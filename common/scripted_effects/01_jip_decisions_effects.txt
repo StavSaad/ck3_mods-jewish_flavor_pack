@@ -1,15 +1,22 @@
-﻿reclaim_davidic_heritage_effect = {
-	custom_description_no_bullet = {
-		text = reclaim_davidic_heritage_effect_desc
-		if = {
-			limit = {
-				house = scope:reclaimer_house
-			}
-			set_house = character:king_david_i.house
-			every_child = {
-				reclaim_davidic_heritage_effect = yes
-			}
+﻿davidic_reclamation_decision_effect = {
+	root = {
+		save_scope_as = origin
+		house = {
+			save_scope_as = original_house
 		}
+	}
+	character:king_david_i = {
+		save_scope_as = destination
+		house = {
+			save_scope_as = destination_house
+		} 
+	}
+	hidden_effect = {
+		copy_all_dynasty_legacies_effect = yes
+	}
+	switch_house_effect = yes
+	scope:destination.house = {
+		set_house_head = scope:reclaimer
 	}
 }
 

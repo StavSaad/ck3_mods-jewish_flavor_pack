@@ -131,11 +131,12 @@ reclaim_davidic_heritage = {
 	}
 
 	effect = {
+		save_scope_as = reclaimer
 		house = {
 			save_scope_as = reclaimer_house
 		}
 		show_as_tooltip = {
-			reclaim_davidic_heritage_effect = yes
+			davidic_reclamation_decision_effect = yes
 		}
 
 		#Events

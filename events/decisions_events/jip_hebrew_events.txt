@@ -523,11 +523,14 @@ jip_hebrew.0050 = {
 	}
 
 	immediate = {
-		reclaim_davidic_heritage_effect = yes
+		davidic_reclamation_decision_effect = yes
 	}
 
 	option = {
-		name = jip_hebrew.0050.a # NOTHING
+		name = jip_hebrew.0050.a 
+		dynasty = {
+			add_dynasty_prestige = 1000
+		}
 		stress_impact = {
 			zealous = medium_stress_loss
 			ambitious = minor_stress_loss
