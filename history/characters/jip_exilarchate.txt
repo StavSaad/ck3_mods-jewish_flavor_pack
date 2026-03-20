@@ -336,7 +336,7 @@ rabbinic_exilarchate_ukba_i = {
 }
 
 rabbinic_exilarchate_ukban_dezuzita = {
-	name = "Ukban"
+	name = "Nathan"
 	religion = "rabbinism"
 	culture = "bavlim"
 	dynasty = nathanite_dynasty
