@@ -1,4 +1,4 @@
-﻿c_jip_nathanite = {
+﻿d_jip_nathanite = {
 
 	518.1.1 = {
 		holder = rabbinic_exilarchate_zutra_iv
@@ -73,7 +73,7 @@
 	
 }
 
-c_nasi_narbonne = {
+d_nasi_narbonne = {
 	867.1.1 = {
 		liege = k_france
 		holder = 0
@@ -94,7 +94,7 @@ c_nasi_narbonne = {
 	
 }
 
-c_jip_shealtiel = {
+d_jip_shealtiel = {
 	1066.1.1 = {
 		liege = d_barcelona
 		government = jewish_admin_family_government
@@ -141,7 +141,7 @@ c_jip_shealtiel = {
 
 }
 
-c_jip_benveniste = {
+d_jip_benveniste = {
 	1066.1.1 = {
 		liege = d_barcelona
 		government = jewish_admin_family_government
