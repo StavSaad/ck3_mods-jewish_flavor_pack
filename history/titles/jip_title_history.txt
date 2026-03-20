@@ -9,6 +9,7 @@
 			same_faith_only_law
 		}
 		effect = {
+			set_variable = { name = is_jewish_family value = yes }
 			set_variable = { name = adventurer_creation_reason value = flag:historical }
 				if = {
 				limit = {
@@ -80,6 +81,7 @@ d_nasi_narbonne = {
 		government = jewish_admin_family_government
 		succession_laws = { noble_family_succession_law male_only_law same_faith_only_law }
 		effect = {
+			set_variable = { name = is_jewish_family value = yes }
 			set_variable = { name = adventurer_creation_reason value = flag:historical }
 			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
 			if = {
@@ -101,6 +103,7 @@ d_jip_shealtiel = {
 		succession_laws = { noble_family_succession_law same_faith_only_law }
 		holder = solomon_bar_shealtiel
 		effect = {
+			set_variable = { name = is_jewish_family value = yes }
 			set_variable = { name = adventurer_creation_reason value = flag:historical }
 			destroy_landless_title_no_dlc_effect = { DATE = 1066.1.1 }
 			if = {
@@ -148,6 +151,7 @@ d_jip_benveniste = {
 		succession_laws = { noble_family_succession_law same_faith_only_law }
 		holder = yosef_cidellus_shealtiel
 		effect = {
+			set_variable = { name = is_jewish_family value = yes }
 			set_variable = { name = adventurer_creation_reason value = flag:historical }
 			destroy_landless_title_no_dlc_effect = { DATE = 1066.1.1 }
 			if = {
