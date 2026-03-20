@@ -5,6 +5,8 @@
  bostanite_dynasty:0 "Beth Bostanai"
  dynn_Ananite:0 "$house_ananite$"
  dynn_Bostanite:0 "$bostanite_dynasty$"
+ nathanite_dynasty:0 "Beth Nathan"
+ dynn_Nathanite:0 "$nathanite_dynasty$"
  davidite_dynasty:0 "Beth David"
  shealtiel_dynasty:0 "She'Alti'El"
  dynn_Shealtiel:0 "$shealtiel_dynasty$"

@@ -1,4 +1,4 @@
-﻿c_jip_davidite = {
+﻿c_jip_nathanite = {
 	867.1.1 = {
 		liege = e_arabia
 		holder = rabbinic_exilarchate_pinchas_ben_abdimi

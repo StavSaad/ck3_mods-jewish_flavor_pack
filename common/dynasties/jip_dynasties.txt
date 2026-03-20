@@ -3,6 +3,11 @@
 	culture = "hebrew"
 }
 
+nathanite_dynasty = {
+	name = "dynn_Nathanite"
+	culture = "bavlim"
+}
+
 bostanite_dynasty = {
 	name = "dynn_Bostanite"
 	culture = "bavlim"

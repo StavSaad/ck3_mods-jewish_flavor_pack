@@ -19,7 +19,7 @@ d_exilarchate = {
 	ai_primary_priority = { add = @never_primary_score }
 }
 
-c_jip_davidite = {
+c_jip_nathanite = {
 	color = { 100 100 100 }
 	capital = c_tiberias
 
