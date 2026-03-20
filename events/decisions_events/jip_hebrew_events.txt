@@ -508,3 +508,30 @@ jip_hebrew.0041 = {
 	}
 
 }
+
+# Reclaim Davidic Heritage
+jip_hebrew.0050 = {
+	type = character_event
+	title = jip_hebrew.0050.t #change
+	desc = {
+		desc = jip_hebrew.0050.desc #change
+	}
+	theme = dynasty
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	immediate = {
+		reclaim_davidic_heritage_effect = yes
+	}
+
+	option = {
+		name = jip_hebrew.0050.a # NOTHING
+		stress_impact = {
+			zealous = medium_stress_loss
+			ambitious = minor_stress_loss
+		}
+	}
+
+}

@@ -42,3 +42,7 @@
  jip_hebrew.0041.t:0 "Cleansing of the Dvir"
  jip_hebrew.0041.desc:0 "As the builders clear the last of the rubble from where the Muslim dome once stood, You watch the Kohanim entering the Dvir, The Holy of Holies, to cleanse it from the defilement brought on it by the Romans, and then the Arabs. You know what the people want - A new temple, rebuilt in the name of god."
  jip_hebrew.0041.a:0 "The destruction is done. Now, we must build."
+ jip_hebrew.0050.t:0 "Davidic Heritage Reclaimed"
+ jip_hebrew.0050.desc:0 "For over a millenia our house's claim of davidic descent has been just that. A claim. But no more, finally a Jewish ruler of my own, I hereby proclaim that I am [GetScriptedCharacterByHistoryID('king_david_i').GetNameRegnal]'s true heir!"
+ jip_hebrew.0050.a:0 "It is done"
+ reclaim_davidic_heritage_effect_desc:0 "You and all your descendants of [house|e] [CHARACTER.GetDynastyHouseName] become of [house|e] [GetScriptedCharacterByHistoryID('king_david_i').GetDynastyName]"
