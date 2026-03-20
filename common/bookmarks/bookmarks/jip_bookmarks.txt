@@ -69,7 +69,7 @@
 		dynasty_splendor_level = 7
 		type = male
 		birth = 810.1.1
-		title = "c_jip_davidite"
+		title = "c_jip_nathanite"
 		government = jewish_admin_family_government
 		culture = bavlim
 		religion = rabbinism 
