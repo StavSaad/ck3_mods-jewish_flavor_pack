@@ -3,7 +3,7 @@
 @always_primary_score = 1000
 @never_primary_score = -1000
 
-c_jip_nathanite = {
+d_jip_nathanite = {
 	color = { 100 100 100 }
 	capital = c_tiberias
 
@@ -18,7 +18,7 @@ c_jip_nathanite = {
 	ai_primary_priority = { add = @never_primary_score }
 }
 
-c_jip_bostanite = {
+d_jip_bostanite = {
 	color = { 100 100 100 }
 	capital = c_baghdad
 
@@ -33,7 +33,7 @@ c_jip_bostanite = {
 	ai_primary_priority = { add = @never_primary_score }
 }
 
-c_jip_ananite = {
+d_jip_ananite = {
 	color = { 100 100 100 }
 	capital = c_baghdad
 
@@ -48,7 +48,7 @@ c_jip_ananite = {
 	ai_primary_priority = { add = @never_primary_score }
 }
 
-c_jip_shealtiel = {
+d_jip_shealtiel = {
 	color = { 100 100 100 }
 	capital = c_barcelona
 
@@ -63,7 +63,7 @@ c_jip_shealtiel = {
 	ai_primary_priority = { add = @never_primary_score }
 }
 
-c_jip_benveniste = {
+d_jip_benveniste = {
 	color = { 100 100 100 }
 	capital = c_barcelona
 
@@ -78,7 +78,7 @@ c_jip_benveniste = {
 	ai_primary_priority = { add = @never_primary_score }
 }
 
-c_nasi_narbonne = {
+d_nasi_narbonne = {
 	color = { 100 100 100 }
 	capital = c_narbonne
 
