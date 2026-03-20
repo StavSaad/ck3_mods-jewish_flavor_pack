@@ -27,12 +27,12 @@ duke_exilarchate = {
 	}
 }
 
-count_nasi_male = {
+duke_nasi_male = {
 	type = character
 	gender = male
 	special = holder
 	domicile_type = estate
-	tier = county
+	tier = duchy
 	governments = { jewish_admin_family_government }
 	priority = 5
 	flavourization_rules = {
@@ -40,12 +40,12 @@ count_nasi_male = {
 	}
 }
 
-count_nasi_female = {
+duke_nasi_female = {
 	type = character
 	gender = male
 	special = holder
 	domicile_type = estate
-	tier = county
+	tier = duchy
 	governments = { jewish_admin_family_government }
 	priority = 5
 	flavourization_rules = {
@@ -53,9 +53,9 @@ count_nasi_female = {
 	}
 }
 
-count_nasi = {
+duke_nasi = {
 	type = character
-	tier = county
+	tier = duchy
 	governments = { jewish_admin_family_government }
 	priority = 5
 }

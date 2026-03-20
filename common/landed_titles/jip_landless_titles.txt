@@ -15,7 +15,7 @@ d_jip_nathanite = {
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
-	ai_primary_priority = { add = @never_primary_score }
+	ai_primary_priority = { add = @always_primary_score }
 }
 
 d_jip_bostanite = {
@@ -30,7 +30,7 @@ d_jip_bostanite = {
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
-	ai_primary_priority = { add = @never_primary_score }
+	ai_primary_priority = { add = @always_primary_score }
 }
 
 d_jip_ananite = {
@@ -45,7 +45,7 @@ d_jip_ananite = {
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
-	ai_primary_priority = { add = @never_primary_score }
+	ai_primary_priority = { add = @always_primary_score }
 }
 
 d_jip_shealtiel = {
@@ -60,7 +60,7 @@ d_jip_shealtiel = {
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
-	ai_primary_priority = { add = @never_primary_score }
+	ai_primary_priority = { add = @always_primary_score }
 }
 
 d_jip_benveniste = {
@@ -75,7 +75,7 @@ d_jip_benveniste = {
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
-	ai_primary_priority = { add = @never_primary_score }
+	ai_primary_priority = { add = @always_primary_score }
 }
 
 d_nasi_narbonne = {
@@ -90,5 +90,5 @@ d_nasi_narbonne = {
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
-	ai_primary_priority = { add = @never_primary_score }
+	ai_primary_priority = { add = @always_primary_score }
 }

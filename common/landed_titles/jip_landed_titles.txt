@@ -2,6 +2,7 @@
 @better_than_the_alternatives_score = 50
 @always_primary_score = 1000
 @never_primary_score = -1000
+@exilarchate_primary_score = 1500
 
 d_exilarchate = {
 	color = { 100 100 100 }
@@ -16,7 +17,7 @@ d_exilarchate = {
 	ruler_uses_title_name = no
 	ignore_titularity_for_title_weighting = yes
 
-	ai_primary_priority = { add = @never_primary_score }
+	ai_primary_priority = { add = @exilarchate_primary_score }
 }
 
 d_karaite_exilarchate = {
@@ -32,7 +33,7 @@ d_karaite_exilarchate = {
 	ruler_uses_title_name = no
 	ignore_titularity_for_title_weighting = yes
 
-	ai_primary_priority = { add = @never_primary_score }
+	ai_primary_priority = { add = @exilarchate_primary_score }
 }
 
 e_arabia = {
