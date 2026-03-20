@@ -70,7 +70,7 @@
 		type = male
 		birth = 810.1.1
 		title = "c_jip_nathanite"
-		government = jewish_admin_family_government
+		government = landless_adventurer_government
 		culture = bavlim
 		religion = rabbinism 
 		history_id = rabbinic_exilarchate_pinchas_ben_abdimi 
