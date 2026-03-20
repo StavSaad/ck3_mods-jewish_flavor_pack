@@ -117,10 +117,12 @@ reclaim_davidic_heritage = {
 	}
 
 	is_valid = {
-		prestige_level >= high_prestige_level
-		is_independent_ruler = yes 
-		primary_title.tier >= tier_kingdom
 		is_house_head = yes
+		is_independent_ruler = yes
+		prestige_level >= high_prestige_level
+		primary_title = {
+			tier >= tier_kingdom
+		}
 		culture = { has_cultural_pillar = heritage_israelite }
 
 		OR = { #Must be Jewish/Samaritan
