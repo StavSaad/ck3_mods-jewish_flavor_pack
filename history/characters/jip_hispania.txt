@@ -1,4 +1,4 @@
-mar_mencachem_bar_shealtiel = {
+﻿mar_mencachem_bar_shealtiel = {
 	name = "Menachem"
 	religion = "rabbinism"
 	culture = "sephardi"
@@ -356,9 +356,6 @@ yosef_cidellus_shealtiel = {
 			give_nickname = nick_cidellus
 			set_relation_friend = { reason = friend_hired_physician target = character:108500 } # Friend and physician to King Alfonso VI
 		}
-	}
-	1066.1.1 = {
-		employer = 108500
 	}
 	1125.12.13 = {
 		death = yes

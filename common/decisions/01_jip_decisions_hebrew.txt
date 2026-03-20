@@ -444,7 +444,7 @@ create_e_canaan_decision = {
 				limit = { has_title = title:k_israel }
 				has_title = title:k_israel
 			}
-			trigger_if = {
+			trigger_else_if = {
 				limit = {
 					title:k_phoenicia = {
 						any_de_jure_county = {
