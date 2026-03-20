@@ -55,7 +55,19 @@
 		}
 	}
 
-	868.1.1 = {
+	870.1.1 = {
+		holder = rabbinic_exilarchate_hatzub_ben_pinchas
+	}
+
+	909.1.1 = {
+		holder = rabbinic_exilarchate_natan_ben_hatzub
+	}
+
+	945.1.1 = {
+		holder = rabbinic_exilarchate_avraham_ben_natan
+	}
+
+	967.1.1 = {
 		holder = 0
 	}
 	
