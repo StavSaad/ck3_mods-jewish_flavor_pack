@@ -1,0 +1,35 @@
+﻿on_domicile_moved = {
+	on_actions = {
+		jewish_admin_migration_on_action
+	}
+}
+
+jewish_admin_migration_on_action = {
+	trigger = {
+		exists = scope:owner
+		scope:owner = {
+			has_government = jewish_admin_family_government
+		}
+		domicile_location.county.holder.top_liege = {
+			primary_title.tier >= tier_kingdom
+		}
+	}
+
+	effect = {
+		domicile_location.county.holder.top_liege = {
+			save_scope_as = recipient_liege
+		}
+		scope:owner = {
+			create_title_and_vassal_change = {
+				type = swear_fealty
+				save_scope_as = change
+				add_claim_on_loss = no
+			}
+			change_liege = {
+				liege = scope:recipient_liege
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+	}
+}
