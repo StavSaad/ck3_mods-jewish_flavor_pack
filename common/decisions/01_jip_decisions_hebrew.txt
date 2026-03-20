@@ -1,6 +1,6 @@
 ﻿form_hebrew_decision = {
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+		reference = "gfx/interface/illustrations/decisions/decision_culture.dds"
 	}
 	ai_check_interval = 60
 	desc = form_hebrew_decision_desc
@@ -81,6 +81,68 @@
 		set_global_variable = {
 			name = form_hebrew_decision
 			value = scope:hebrew_former
+		}
+	}
+
+	cost = { prestige = { value = 2000 } }
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+reclaim_davidic_heritage = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	ai_check_interval = 60
+	desc = reclaim_davidic_heritage_desc
+	decision_group_type = major
+
+	is_shown = {
+		has_trait = trait:davidic_line
+		NOT = {
+			dynasty = dynasty:davidite_dynasty
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:reclaim_davidic_heritage
+			}
+		}
+	}
+
+	is_valid = {
+		prestige_level >= high_prestige_level
+		is_independent_ruler = yes 
+		primary_title.tier >= tier_kingdom
+		is_house_head = yes
+		culture = { has_cultural_pillar = heritage_israelite }
+
+		OR = { #Must be Jewish/Samaritan
+			faith.religion = religion:judaism_religion
+		}
+	}
+
+	effect = {
+		house = {
+			save_scope_as = reclaimer_house
+		}
+		show_as_tooltip = {
+			reclaim_davidic_heritage_effect = yes
+		}
+
+		#Events
+		trigger_event = jip_hebrew.0050
+
+		#Can only happen once
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:reclaim_davidic_heritage
 		}
 	}
 
@@ -616,7 +678,7 @@ reestablish_canaanite_city_decision = {
 
 form_canaanite_decision = {
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+		reference = "gfx/interface/illustrations/decisions/decision_culture.dds"
 	}
 	ai_check_interval = 60
 	desc = form_canaanite_decision_desc
