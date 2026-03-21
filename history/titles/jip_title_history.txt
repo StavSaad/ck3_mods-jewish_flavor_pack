@@ -97,15 +97,14 @@ d_nasi_narbonne = {
 }
 
 d_jip_shealtiel = {
-	1066.1.1 = {
-		liege = d_barcelona
+
+	1058.1.1 = {
+		holder = rabbinic_exilarchate_isaac_ben_chizqiyahu_ii
 		government = jewish_admin_family_government
 		succession_laws = { noble_family_succession_law same_faith_only_law }
-		holder = solomon_bar_shealtiel
 		effect = {
 			set_variable = { name = is_jewish_family value = yes }
 			set_variable = { name = adventurer_creation_reason value = flag:historical }
-			destroy_landless_title_no_dlc_effect = { DATE = 1066.1.1 }
 			if = {
 				limit = {
 					exists = holder
@@ -113,6 +112,16 @@ d_jip_shealtiel = {
 				}
 				set_state_faith = faith:rabbinism
 			}
+		}
+	}
+
+	1060.1.1 = {
+		holder = solomon_bar_shealtiel
+	}
+
+	1066.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.1.1 }
 		}
 	}
 	
@@ -146,7 +155,6 @@ d_jip_shealtiel = {
 
 d_jip_benveniste = {
 	1066.1.1 = {
-		liege = d_barcelona
 		government = jewish_admin_family_government
 		succession_laws = { noble_family_succession_law same_faith_only_law }
 		holder = yosef_cidellus_shealtiel
