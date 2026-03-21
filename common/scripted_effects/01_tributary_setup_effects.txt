@@ -1,0 +1,116 @@
+﻿# This file contains the setup effects for the tributaries in the game.
+# The setup_tributaries_effect is invoked by on_game_start and should make calls to subsequent scripted effects.
+# Sections are organized by top-suzerain title.
+# Note that existing vassals (as established in title history) must be released and recreated into tributaries before
+# they can have their own tributaries.
+
+setup_tributaries_effect = {
+	if = {
+		limit = { has_mpo_dlc_trigger = yes	}
+		if = {
+    		limit = { current_date < 1066.9.15 } # so, 867
+        	mpo_867_tributary_setup_effect = yes
+    	}
+    	else_if = {
+    		limit = { current_date = 1066.9.15 }
+        	mpo_1066_tributary_setup_effect = yes
+    	}
+    	else_if = {
+    		limit = { current_date > 1066.9.15 } # so, 1178
+        	mpo_1178_tributary_setup_effect = yes
+    	}
+    }
+	if = {
+		limit = { has_tgp_dlc_trigger = yes	}
+		if = {
+    		limit = { current_date < 1066.9.15 } # so, 867
+        	tgp_867_tributary_setup_effect = yes
+    	}
+    	else_if = {
+    		limit = { current_date = 1066.9.15 }
+        	tgp_1066_tributary_setup_effect = yes
+    	}
+    	else_if = {
+    		limit = { current_date > 1066.9.15 } # so, 1178
+        	tgp_1178_tributary_setup_effect = yes
+    	}
+    }
+   	if = {
+		limit = {
+			current_date < 1066.9.15
+		}
+		base_867_tributary_setup_effect = yes
+		jip_867_tributary_setup_effect = yes
+	}
+	else_if = {
+		limit = { 
+			current_date = 1066.9.15 
+		}
+		base_1066_tributary_setup_effect = yes
+		jip_1066_tributary_setup_effect = yes
+	}
+	else_if = {
+		limit = { 
+			current_date > 1066.9.15
+		}
+		base_1178_tributary_setup_effect = yes
+		jip_1178_tributary_setup_effect = yes
+	}
+}
+
+jip_867_tributary_setup_effect = {
+	character:34014 = { # Abbasid Caliph
+		save_scope_as = suzerain
+		character:rabbinic_exilarchate_pinchas_ben_abdimi = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+		character:rabbinic_exilarchate_hasdai_ii = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+		character:karaite_exilarchate_boaz_i = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+	}
+}
+
+jip_1066_tributary_setup_effect = {
+	character:3040 = { # Seljuk Sultan
+		save_scope_as = suzerain
+		character:rabbinic_exilarchate_david_iv = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+		character:karaite_exilarchate_chasdai_i = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+	}
+	character:110520 = { # Duke Ramon Berenguer of Barcelona
+		save_scope_as = suzerain
+		character:solomon_bar_shealtiel = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+		character:yosef_cidellus_shealtiel = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+	}
+}
+
+jip_1178_tributary_setup_effect = {
+	character:227000 = { # Abbasid Sulta
+		save_scope_as = suzerain
+		character:rabbinic_exilarchate_shmuel_i = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+		character:karaite_exilarchate_david_ii = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+	}
+	character:201500 = { # King Alfons II of Aragon
+		save_scope_as = suzerain
+		character:judah_bar_nathan = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+		character:sheshet_benveniste_nasi = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+	}
+}

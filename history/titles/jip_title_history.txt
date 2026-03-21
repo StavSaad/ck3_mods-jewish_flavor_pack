@@ -46,7 +46,6 @@
 	}
 
 	812.1.1 = {
-		liege = e_arabia
 		holder = rabbinic_exilarchate_pinchas_ben_abdimi
 	}
 	

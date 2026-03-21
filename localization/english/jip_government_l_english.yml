@@ -5,3 +5,5 @@
  jewish_admin_family_government_realm: "Jewish Community"
  jewish_admin_family_government_desc: "\n$game_concept_administrative_desc$\n\n#F Nasi'ut is a form of administrative government where a local prominent jewish family becomes the vassal representative of their people in front of the local ruler.#!"
  jewish_admin_family_government_vassals_label: "[administrative|E] [obligations|E] are based on [GetPlayer.Custom('GetProvinceAdministrationConcept')]"
+ jewish_admin_family_government_house_attribute_flavor_name: "[powerful_family_attribute|E]"
+ jewish_admin_family_government_house_attribute_flavor_name_no_tooltip: "$game_concept_powerful_family_attribute$"
