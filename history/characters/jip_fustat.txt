@@ -15,7 +15,7 @@ maimon_ben_yosef = {
 	religion = rabbinism
 	culture = sephardi
 	father = yosef_grandfather_of_maimonides
-	dynasty_house = house_maimon
+	dynasty = ben_maimon
 	1107.1.1 = {
 		birth = yes
 	}
@@ -29,7 +29,7 @@ david_brother_of_maimonides = {
 	religion = rabbinism
 	culture = sephardi
 	father = maimon_ben_yosef
-	dynasty_house = house_maimon
+	dynasty = ben_maimon
 	1140.1.1 = {
 		birth = yes
 	}
@@ -43,7 +43,7 @@ maimonides_1 = {
 	religion = rabbinism
 	culture = sephardi
 	father = maimon_ben_yosef
-	dynasty_house = house_maimon
+	dynasty = ben_maimon
 	trait = education_learning_4
 	trait = diligent
 	trait = lifestyle_physician
@@ -84,7 +84,7 @@ abraham_ben_maimonides = {
 	religion = rabbinism
 	culture = sephardi
 	father = maimonides_1
-	dynasty_house = house_maimon
+	dynasty = ben_maimon
 	1186.1.1 = {
 		birth = yes
 	}
@@ -98,7 +98,7 @@ david_ben_abraham_ben_maimonides = {
 	religion = rabbinism
 	culture = sephardi
 	father = abraham_ben_maimonides
-	dynasty_house = house_maimon
+	dynasty = ben_maimon
 	1222.1.1 = {
 		birth = yes
 	}
