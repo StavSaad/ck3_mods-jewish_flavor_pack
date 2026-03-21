@@ -1,7 +1,7 @@
 ﻿d_jip_nathanite = {
 
 	518.1.1 = {
-		holder = rabbinic_exilarchate_zutra_iv
+		holder = jewish_admin_family_government
 		government = landless_adventurer_government
 		succession_laws = {
 			noble_family_succession_law
