@@ -65,7 +65,7 @@
 
 	character = {
 		name = "bookmark_jip_pinchas"
-		dynasty = davidite_dynasty
+		dynasty = nathanite_dynasty
 		dynasty_splendor_level = 7
 		type = male
 		birth = 810.1.1
