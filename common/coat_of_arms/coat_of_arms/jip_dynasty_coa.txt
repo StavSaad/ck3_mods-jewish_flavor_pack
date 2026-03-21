@@ -16,6 +16,10 @@ shealtiel_dynasty = {
 
 }
 
+house_shealtiel = shealtiel_dynasty
+house_davidite = davidite_dynasty
+house_bostanite = bostanite_dynasty
+
 house_benveniste = {
 	pattern="pattern_solid.dds"
 	color1=black
