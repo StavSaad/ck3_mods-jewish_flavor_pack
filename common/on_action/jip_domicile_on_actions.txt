@@ -10,8 +10,18 @@ jewish_admin_migration_on_action = {
 		scope:owner = {
 			has_government = jewish_admin_family_government
 		}
-		domicile_location.county.holder.top_liege = {
-			primary_title.tier >= tier_kingdom
+		root.domicile_location.county.holder = {
+			trigger_if = {
+				limit = {
+					exists = liege
+				}
+				top_liege = {
+					primary_title.tier >= tier_kingdom
+				}
+			}
+			trigger_else = {
+				primary_title.tier >= tier_kingdom
+			}
 		}
 	}
 
