@@ -25,7 +25,7 @@
 
 	character = {
 		name = "bookmark_jip_exilarch_chisdai_ii"
-		dynasty = bostanite_dynasty
+		dynasty_house = house_bostanite
 		dynasty_splendor_level = 7
 		type = male
 		birth = 823.1.1
@@ -97,7 +97,7 @@
 		character = {
 			name = "bookmark_jip_exilarch_chisdai_ii"
 			relation = "BOOKMARK_RELATION_RIVAL" #enemy change
-			dynasty = bostanite_dynasty
+			dynasty_house = house_bostanite
 			type = male
 			birth = 823.1.1
 			culture = bavlim

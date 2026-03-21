@@ -12,3 +12,23 @@ house_onias = {
 	name = "dynn_Onias"
 	dynasty = zadokite_dynasty
 }
+
+house_bostanite = {
+	name = "dynn_Bostanite"
+	dynasty = bostanite_dynasty
+}
+
+house_shealtiel = {
+	name = "dynn_Shealtiel"
+	dynasty = shealtiel_dynasty
+}
+
+house_davidite = {
+	name = "dynn_Davidite"
+	dynasty = davidite_dynasty
+}
+
+house_nathanite = {
+	name = "dynn_Nathanite"
+	dynasty = nathanite_dynasty
+}
