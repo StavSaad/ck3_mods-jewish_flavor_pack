@@ -527,3 +527,17 @@ judah_hasid_kalonymos = {
 		death = yes
 	}	
 }
+
+samuel_harar_kalonymos = {
+	name = "Shmuel"
+	religion = "rabbinism"
+	culture = "ashkenazi"
+	father = judah_hasid_kalonymos
+	dynasty = kalonymos_dynasty
+	1165.1.1 = {
+		birth = yes
+	}
+	1230.1.1 = {
+		death = yes
+	}	
+}
