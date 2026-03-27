@@ -71,6 +71,13 @@ jip_867_tributary_setup_effect = {
 			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
+
+	character:163070 = { #Duke of tuscany
+		save_scope_as = suzerain
+		character:moses_i_kalonymos = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+	}
 }
 
 jip_1066_tributary_setup_effect = {
@@ -89,6 +96,12 @@ jip_1066_tributary_setup_effect = {
 			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 		character:yosef_cidellus_shealtiel = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+	}
+	character:20256 = { # Bishop of Mainz
+		save_scope_as = suzerain
+		character:moses_ben_kalonymos_kalonymos = {
 			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
