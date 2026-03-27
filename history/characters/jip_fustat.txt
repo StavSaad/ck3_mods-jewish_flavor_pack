@@ -1,4 +1,4 @@
-yosef_grandfather_of_maimonides = {
+﻿yosef_grandfather_of_maimonides = {
 	name = "Yosef"
 	religion = rabbinism
 	culture = sephardi

@@ -112,3 +112,8 @@ arbaa_dynasty = {
 	name = "dynn_Arbaa"
 	culture = phoenician
 }
+
+kalonymos_dynasty = {
+	name = "dynn_Kalonymos"
+	culture = ashkenazi
+}

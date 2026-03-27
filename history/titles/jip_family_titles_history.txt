@@ -1,0 +1,291 @@
+d_jip_nathanite = {
+
+	518.1.1 = {
+		holder = rabbinic_exilarchate_zutra_iv
+		government = jewish_admin_family_government
+		succession_laws = {
+			noble_family_succession_law
+			male_only_law
+			same_faith_only_law
+		}
+		effect = {
+			# set_variable = { name = is_jewish_family value = yes }
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+				if = {
+				limit = {
+					exists = holder
+					holder = { has_government = administrative_government }
+				}
+				set_state_faith = faith:rabbinism
+			}
+		}
+	}
+
+	572.1.1 = {
+		holder = rabbinic_exilarchate_guriya
+	}
+
+	601.1.1 = {
+		holder = rabbinic_exilarchate_zutra_v
+	}
+
+	632.1.1 = {
+		holder = rabbinic_exilarchate_yaakov_ben_zutra
+	}
+
+	669.1.1 = {
+		holder = rabbinic_exilarchate_migam
+	}
+
+	702.1.1 = {
+		holder = rabbinic_exilarchate_nehemiah_ben_migam
+	}
+
+	770.1.1 = {
+		holder = rabbinic_exilarchate_abdimi
+	}
+
+	812.1.1 = {
+		holder = rabbinic_exilarchate_pinchas_ben_abdimi
+	}
+	
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+
+	870.1.1 = {
+		holder = rabbinic_exilarchate_hatzub_ben_pinchas
+	}
+
+	909.1.1 = {
+		holder = rabbinic_exilarchate_natan_ben_hatzub
+	}
+
+	945.1.1 = {
+		holder = rabbinic_exilarchate_avraham_ben_natan
+	}
+
+	967.1.1 = {
+		holder = 0
+	}
+	
+}
+
+d_nasi_narbonne = {
+	867.1.1 = {
+		liege = k_france
+		holder = 0
+		government = jewish_admin_family_government
+		succession_laws = { noble_family_succession_law male_only_law same_faith_only_law }
+		effect = {
+			# set_variable = { name = is_jewish_family value = yes }
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+			if = {
+				limit = {
+					exists = holder
+					holder = { has_government = administrative_government }
+				}
+				set_state_faith = faith:rabbinism
+			}
+		}
+	}
+	
+}
+
+d_jip_shealtiel = {
+
+	1058.1.1 = {
+		holder = rabbinic_exilarchate_isaac_ben_chizqiyahu_ii
+		government = jewish_admin_family_government
+		succession_laws = { noble_family_succession_law same_faith_only_law }
+		effect = {
+			# set_variable = { name = is_jewish_family value = yes }
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			if = {
+				limit = {
+					exists = holder
+					holder = { has_government = administrative_government }
+				}
+				set_state_faith = faith:rabbinism
+			}
+		}
+	}
+
+	1060.1.1 = {
+		holder = solomon_bar_shealtiel
+	}
+
+	1066.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.1.1 }
+		}
+	}
+	
+	1097.12.13 = {
+		holder = mar_mencachem_bar_shealtiel
+	}
+
+	1102.1.1 = {
+		holder = isaac_ben_menachem
+	}
+
+	1115.1.1 = {
+		holder = nathan_ben_isaac
+	}
+
+	1145.1.1 = {
+		holder = judah_bar_nathan
+	}
+
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1078.10.1 }
+		}
+	}
+
+	1190.1.1 = {
+		holder = 0
+	}
+
+}
+
+d_jip_benveniste = {
+	1066.1.1 = {
+		government = jewish_admin_family_government
+		succession_laws = { noble_family_succession_law same_faith_only_law }
+		holder = yosef_cidellus_shealtiel
+		effect = {
+			# set_variable = { name = is_jewish_family value = yes }
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.1.1 }
+			if = {
+				limit = {
+					exists = holder
+					holder = { has_government = administrative_government }
+				}
+				set_state_faith = faith:rabbinism
+			}
+		}
+	}
+
+	1085.1.1 = {
+		liege = k_leon
+	}
+
+	1101.1.1 = {
+		holder = isaac_ibn_barun_ben_joseph_benveniste
+	}
+
+	1136.1.1 = {
+		holder = abraham_benveniste
+	}
+
+	1153.1.1 = {
+		holder = isaac_benveniste_nasi
+		liege = k_aragon
+	}
+
+	1178.10.1 = {
+		holder = sheshet_benveniste_nasi
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1078.10.1 }
+		}
+	}
+
+	1179.1.1 = {
+		holder = 0
+	}
+
+}
+
+d_jip_kalonymos = {
+	738.1.1 = {
+		holder = meshullam_i_kalonymos
+		government = jewish_admin_family_government
+		succession_laws = {
+			noble_family_succession_law
+			male_only_law
+			same_faith_only_law
+		}
+		effect = {
+			# set_variable = { name = is_jewish_family value = yes }
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+				if = {
+				limit = {
+					exists = holder
+					holder = { has_government = administrative_government }
+				}
+				set_state_faith = faith:rabbinism
+			}
+		}
+	}
+
+	800.1.1 = {
+		holder = ithiel_i_kalonymos
+	}
+
+	825.1.1 = {
+		holder = meshullam_ii_kalonymos
+	}
+
+	850.1.1 = {
+		holder = moses_i_kalonymos
+	}
+
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+
+	876.1.1 = {
+		holder = yekuthiel_i_kalonymos
+	}
+
+	900.1.1 = {
+		holder = kalonymos_i_kalonymos
+	}
+
+	926.1.1 = {
+		holder = moses_ii_kalonymos
+	}
+
+	950.1.1 = {
+		holder = kalonymos_ii_kalonymos
+	}
+
+	976.1.1 = {
+		holder = meshullam_iii_the_great_kalonymos
+	}
+
+	1000.1.1 = {
+		holder = kalonymos_iii_kalonymos
+	}
+
+	1020.1.1 = {
+		holder = hananel_i_kalonymos
+	}
+
+	1049.1.1 = {
+		holder = moses_ben_kalonymos_kalonymos
+		effect = {
+			set_capital_county = title:c_mainz
+			holder.domicile ?= {
+				move_domicile = title:b_mainz.title_province
+			}
+		}
+	}
+
+	1066.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.1.1 }
+		}
+	}
+
+	1070.1.1 = {
+		holder = ithiel_ii_kalonymos
+	}
+}

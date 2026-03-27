@@ -21,6 +21,8 @@
  d_jip_bostanite_adj:0 "$bostanite_dynasty$"
  d_jip_ananite:0 "$house_ananite$"
  d_jip_ananite_adj:0 "$house_ananite$"
+ d_jip_kalonymos:0 "$kalonymos_dynasty$"
+ d_jip_kalonymos_adj:0 "$kalonymos_dynasty$"
  c_nasi_narbonne:0 "$c_narbonne$ Nasi'ut"
  c_nasi_narbonne_adj:0 "$c_narbonne_adj$ Nasi"
  k_judah:0 "Judea"

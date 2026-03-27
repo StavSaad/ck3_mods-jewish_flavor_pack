@@ -78,10 +78,6 @@
 			name = unavailable_unique_decisions
 			target = flag:form_hebrew_decision
 		}
-		set_global_variable = {
-			name = form_hebrew_decision
-			value = scope:hebrew_former
-		}
 	}
 
 	cost = { prestige = { value = 2000 } }
@@ -737,10 +733,6 @@ form_canaanite_decision = {
 				}	
 			}
 			trigger_event = jip_hebrew.0021 #So they can convert
-		}
-		set_global_variable = {
-			name = form_canaanite_decision
-			value = scope:canaanite_former
 		}
 	}
 

@@ -30,7 +30,7 @@
 
 	primary_holding = city_holding
 	primary_heritages = { heritage_israelite }
-	valid_holdings = { castle_holding }
+	valid_holdings = { castle_holding city_holding }
 	required_county_holdings = { castle_holding city_holding }
 
 	vassal_contract_group = admin_vassal
@@ -70,7 +70,6 @@
 	flags = {
 		# These flags only exist for loc and in-game descriptions
 		government_is_administrative
-
 		# These flags only exist for loc and in-game descriptions
 		government_has_influence
 		government_has_title_men_at_arms
