@@ -280,6 +280,9 @@ yekuthiel_of_speyer_kalonymos = {
 	1030.1.1 = {
 		birth = yes
 	}
+	1066.9.15 = {
+		employer = 33134
+	}
 	1095.1.1 = {
 		death = yes
 	}
@@ -293,6 +296,9 @@ moses_v_of_speyer_kalonymos = {
 	dynasty = kalonymos_dynasty
 	1060.1.1 = {
 		birth = yes
+	}
+	1066.9.15 = {
+		employer = 33134
 	}
 	1125.1.1 = {
 		death = yes
@@ -356,4 +362,168 @@ eliezer_ben_meshulam_of_mainz_kalonymos = {
 	1155.1.1 = {
 		death = yes
 	}
+}
+
+abun_the_great_kalonymos = {
+	name = "Abun"
+	religion = "rabbinism"
+	culture = "ashkenazi"
+	father = meshullam_iii_the_great_kalonymos
+	dynasty = kalonymos_dynasty
+	960.1.1 = {
+		birth = yes
+	}
+	985.1.1 = {
+		give_nickname = nick_the_great
+	}
+	1022.1.1 = {
+		death = yes
+	}	
+}
+
+joshua_hasid_kalonymos = {
+	name = "Yehoshua"
+	religion = "rabbinism"
+	culture = "ashkenazi"
+	father = abun_the_great_kalonymos
+	dynasty = kalonymos_dynasty
+	980.1.1 = {
+		birth = yes
+	}
+	1043.1.1 = {
+		death = yes
+	}	
+}
+
+isaac_hasid_kalonymos = {
+	name = "Yitzchak"
+	religion = "rabbinism"
+	culture = "ashkenazi"
+	father = joshua_hasid_kalonymos
+	dynasty = kalonymos_dynasty
+	1000.1.1 = {
+		birth = yes
+	}
+	1061.1.1 = {
+		death = yes
+	}	
+}
+
+eliezer_the_great_kalonymos = {
+	name = "Eliezer"
+	religion = "rabbinism"
+	culture = "ashkenazi"
+	father = isaac_hasid_kalonymos
+	dynasty = kalonymos_dynasty
+	1020.1.1 = {
+		birth = yes
+	}
+	1070.1.1 = {
+		give_nickname = nick_the_great
+	}
+	1085.1.1 = {
+		death = yes
+	}	
+}
+
+isaac_ben_eliezer_kalonymos = {
+	name = "Yitzchak"
+	religion = "rabbinism"
+	culture = "ashkenazi"
+	father = eliezer_the_great_kalonymos
+	dynasty = kalonymos_dynasty
+	1040.1.1 = {
+		birth = yes
+	}
+	1103.1.1 = {
+		death = yes
+	}	
+}
+
+kalonymos_ben_isaac_the_elder_kalonymos = {
+	name = "Kalonymos"
+	religion = "rabbinism"
+	culture = "ashkenazi"
+	father = isaac_ben_eliezer_kalonymos
+	dynasty = kalonymos_dynasty
+	1062.1.1 = {
+		birth = yes
+	}
+	1085.1.1 = {
+		give_nickname = nick_the_elder
+	}
+	1126.1.1 = {
+		death = yes
+	}	
+}
+
+judah_ben_kalonymos_kalonymos = {
+	name = "Yehudah"
+	religion = "rabbinism"
+	culture = "ashkenazi"
+	father = kalonymos_ben_isaac_the_elder_kalonymos
+	dynasty = kalonymos_dynasty
+	1090.1.1 = {
+		birth = yes
+	}
+	1157.1.1 = {
+		death = yes
+	}
+}
+
+samuel_hasid_kalonymos = {
+	name = "Shmuel"
+	religion = "rabbinism"
+	culture = "ashkenazi"
+	father = kalonymos_ben_isaac_the_elder_kalonymos
+	dynasty = kalonymos_dynasty
+	1087.1.1 = {
+		birth = yes
+	}
+	1149.1.1 = {
+		death = yes
+	}	
+}
+
+golde_kalonymos = {
+	name = "Golde"
+	religion = "rabbinism"
+	culture = "ashkenazi"
+	female = yes
+	father = samuel_hasid_kalonymos
+	dynasty = kalonymos_dynasty
+	1105.1.1 = {
+		birth = yes
+	}
+	1167.1.1 = {
+		death = yes
+	}	
+}
+
+abraham_kalonymos = {
+	name = "Abraham"
+	religion = "rabbinism"
+	culture = "ashkenazi"
+	father = samuel_hasid_kalonymos
+	dynasty = kalonymos_dynasty
+	1107.1.1 = {
+		birth = yes
+	}
+	1170.1.1 = {
+		death = yes
+	}	
+}
+
+judah_hasid_kalonymos = {
+	name = "Yehudah"
+	religion = "rabbinism"
+	culture = "ashkenazi"
+	father = samuel_hasid_kalonymos
+	dynasty = kalonymos_dynasty
+	1137.1.1 = {
+		birth = yes
+	}
+	1217.1.1 = {
+		death = yes
+	}	
 }

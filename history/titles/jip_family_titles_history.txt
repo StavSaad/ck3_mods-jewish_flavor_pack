@@ -286,6 +286,28 @@ d_jip_kalonymos = {
 	}
 
 	1070.1.1 = {
-		holder = ithiel_ii_kalonymos
+		holder = eliezer_the_great_kalonymos
+	}
+
+	1085.1.1 = {
+		holder = isaac_ben_eliezer_kalonymos
+	}
+
+	1103.1.1 = {
+		holder = kalonymos_ben_isaac_the_elder_kalonymos
+	}
+
+	1126.1.1 = {
+		holder = samuel_hasid_kalonymos
+	}
+
+	1149.1.1 = {
+		holder = judah_hasid_kalonymos
+	}
+
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1078.10.1 }
+		}
 	}
 }

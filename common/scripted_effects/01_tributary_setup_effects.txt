@@ -72,7 +72,7 @@ jip_867_tributary_setup_effect = {
 		}
 	}
 
-	character:163070 = { #Duke of tuscany
+	character:30228 = { # King of Italy
 		save_scope_as = suzerain
 		character:moses_i_kalonymos = {
 			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
@@ -99,7 +99,7 @@ jip_1066_tributary_setup_effect = {
 			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
-	character:20256 = { # Bishop of Mainz
+	character:1316 = { # HRE
 		save_scope_as = suzerain
 		character:moses_ben_kalonymos_kalonymos = {
 			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
