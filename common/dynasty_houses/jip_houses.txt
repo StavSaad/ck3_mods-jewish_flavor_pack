@@ -12,13 +12,3 @@ house_onias = {
 	name = "dynn_Onias"
 	dynasty = zadokite_dynasty
 }
-
-house_kalonymos_mainz = {
-	name = "dynn_Kalonymos"
-	dynasty = kalonymos_dynasty
-}
-
-house_kalonymos_speyer = {
-	name = "dynn_Kalonymos"
-	dynasty = kalonymos_dynasty
-}

@@ -219,7 +219,7 @@ moses_ben_kalonymos_kalonymos = {
 	culture = "ashkenazi"
 	father = kalonymos_iii_kalonymos
 	trait = education_learning_3
-	dynasty_house = house_kalonymos_mainz
+	dynasty = kalonymos_dynasty
 	1001.1.1 = {
 		birth = yes
 	}
@@ -234,7 +234,7 @@ kalonymos_iv_kalonymos = {
 	culture = "ashkenazi"
 	father = moses_ben_kalonymos_kalonymos
 	trait = education_learning_3
-	dynasty_house = house_kalonymos_mainz
+	dynasty = kalonymos_dynasty
 	1025.1.1 = {
 		birth = yes
 	}
@@ -248,7 +248,7 @@ hananel_ii_kalonymos = {
 	religion = "rabbinism"
 	culture = "ashkenazi"
 	father = moses_ben_kalonymos_kalonymos
-	dynasty_house = house_kalonymos_mainz
+	dynasty = kalonymos_dynasty
 	1027.1.1 = {
 		birth = yes
 	}
@@ -262,7 +262,7 @@ ithiel_ii_kalonymos = {
 	religion = "rabbinism"
 	culture = "ashkenazi"
 	father = moses_ben_kalonymos_kalonymos
-	dynasty_house = house_kalonymos_mainz
+	dynasty = kalonymos_dynasty
 	1028.1.1 = {
 		birth = yes
 	}
@@ -276,7 +276,7 @@ yekuthiel_of_speyer_kalonymos = {
 	religion = "rabbinism"
 	culture = "ashkenazi"
 	father = moses_ben_kalonymos_kalonymos
-	dynasty_house = house_kalonymos_speyer
+	dynasty = kalonymos_dynasty
 	1030.1.1 = {
 		birth = yes
 	}
@@ -290,7 +290,7 @@ moses_v_of_speyer_kalonymos = {
 	religion = "rabbinism"
 	culture = "ashkenazi"
 	father = yekuthiel_of_speyer_kalonymos
-	dynasty_house = house_kalonymos_speyer
+	dynasty = kalonymos_dynasty
 	1060.1.1 = {
 		birth = yes
 	}
@@ -305,7 +305,7 @@ moses_iv_kalonymos = {
 	religion = "rabbinism"
 	culture = "ashkenazi"
 	father = ithiel_ii_kalonymos
-	dynasty_house = house_kalonymos_mainz
+	dynasty = kalonymos_dynasty
 	1047.1.1 = {
 		birth = yes
 	}
@@ -319,7 +319,7 @@ meshullam_of_mainz_kalonymos = {
 	religion = "rabbinism"
 	culture = "ashkenazi"
 	father = ithiel_ii_kalonymos
-	dynasty_house = house_kalonymos_mainz
+	dynasty = kalonymos_dynasty
 	1070.1.1 = {
 		birth = yes
 	}
@@ -335,7 +335,7 @@ david_ben_meshulam_of_mainz_kalonymos = {
 	religion = "rabbinism"
 	culture = "ashkenazi"
 	father = meshullam_of_mainz_kalonymos
-	dynasty_house = house_kalonymos_mainz
+	dynasty = kalonymos_dynasty
 	1090.1.1 = {
 		birth = yes
 	}
@@ -349,7 +349,7 @@ eliezer_ben_meshulam_of_mainz_kalonymos = {
 	religion = "rabbinism"
 	culture = "ashkenazi"
 	father = meshullam_of_mainz_kalonymos
-	dynasty_house = house_kalonymos_mainz
+	dynasty = kalonymos_dynasty
 	1092.1.1 = {
 		birth = yes
 	}
