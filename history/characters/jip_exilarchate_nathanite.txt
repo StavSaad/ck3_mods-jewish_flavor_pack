@@ -1,0 +1,791 @@
+﻿rabbinic_exilarchate_shealtiel_i = {
+	name = "SheAltiEl"
+	religion = "kohanism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = king_yehoyachin_i
+	-559.1.1 = {
+		birth = yes
+	}
+	-462.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_zerubabel_i = {
+	name = "Zerubavel"
+	religion = "kohanism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_shealtiel_i
+	-478.1.1 = {
+		birth = yes
+	}
+	-383.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_meshulam_i = {
+	name = "Meshulam"
+	religion = "kohanism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_zerubabel_i
+	-399.1.1 = {
+		birth = yes
+	}
+	-308.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_chananiah_i = {
+	name = "Chananiah"
+	religion = "kohanism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_meshulam_i
+	-323.1.1 = {
+		birth = yes
+	}
+	-244.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_brachiah_i = {
+	name = "Brachiah"
+	religion = "kohanism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_chananiah_i
+	-250.1.1 = {
+		birth = yes
+	}
+	-162.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_chasdiah_i = {
+	name = "Chasdiah"
+	religion = "kohanism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_brachiah_i
+	-178.1.1 = {
+		birth = yes
+	}
+	-100.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_yishayah_i = {
+	name = "YeshaYahu"
+	religion = "kohanism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_chasdiah_i
+	-116.1.1 = {
+		birth = yes
+	}
+	-40.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_ovadiah_i = {
+	name = "Ovadyah"
+	religion = "kohanism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_yishayah_i
+	-73.1.1 = {
+		birth = yes
+	}
+	1.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_shechania_i = {
+	name = "Shechania"
+	religion = "kohanism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_ovadiah_i
+	-38.1.1 = {
+		birth = yes
+	}
+	40.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_shemaia_i = {
+	name = "ShemaYah"
+	religion = "kohanism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_shechania_i
+	-22.1.1 = {
+		birth = yes
+	}
+	70.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_hezekiah_i = {
+	name = "Chizqiyahu"
+	religion = "kohanism"
+	culture = "hebrew"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_shemaia_i
+	-6.1.1 = {
+		birth = yes
+	}
+	75.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_akkub_i = {
+	name = "Yaakov"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_hezekiah_i
+	11.1.1 = {
+		birth = yes
+	}
+	93.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_nachum_i = {
+	name = "Nachum"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_akkub_i
+	27.1.1 = {
+		birth = yes
+	}
+	105.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_yochanan_i = {
+	name = "Yehochanan"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_nachum_i
+	43.1.1 = {
+		birth = yes
+	}
+	119.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_shafat_i = {
+	name = "Shafat"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_yochanan_i
+	trait = education_learning_3
+	59.1.1 = {
+		birth = yes
+	}
+	125.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_anan_i = {
+	name = "Anan"
+	religion = "rabbinism"
+	culture = "bavlim"
+	father = rabbinic_exilarchate_shafat_i
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	75.1.1 = {
+		birth = yes
+	}
+	135.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_nathan_i = {
+	name = "Natan"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_anan_i
+	90.1.1 = {
+		birth = yes
+		give_nickname = nick_detzutzita
+	}
+	150.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_hunah_i = {
+	name = "Huna"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_nathan_i
+	130.1.1 = {
+		birth = yes
+	}
+	200.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_nathan_ii = {
+	name = "Natan"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_hunah_i
+	157.1.1 = {
+		birth = yes
+	}
+	220.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_nehemiah = {
+	name = "Nechemiah"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_nathan_ii
+	180.1.1 = {
+		birth = yes
+	}
+	240.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_ukba_i = {
+	name = "Ukba"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = davidite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_nehemiah
+	200.1.1 = {
+		birth = yes
+	}
+	270.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_ukban_dezuzita = {
+	name = "Nathan"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_ukba_i
+	250.1.1 = {
+		birth = yes
+		give_nickname = nick_detzutzita
+	}
+	300.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_aba_mari = {
+	name = "Abba"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_ukba_i
+	265.1.1 = {
+		birth = yes
+	}
+	320.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_ukba_ii = {
+	name = "Ukba"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_ukba_i
+	266.1.1 = {
+		birth = yes
+	}
+	340.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_hunah_ii = {
+	name = "Huna"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_ukban_dezuzita
+	295.1.1 = {
+		birth = yes
+	}
+	360.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_nathan_iii = {
+	name = "Natan"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_hunah_ii
+	330.1.1 = {
+		birth = yes
+	}
+	380.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_zutra_i = {
+	name = "Zutra"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_hunah_ii
+	335.1.1 = {
+		birth = yes
+	}
+	415.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_maremar = {
+	name = "Maremar"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_zutra_i
+	365.1.1 = {
+		birth = yes
+	}
+	435.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_yehudah_ben_maremar = {
+	name = "Yehudah"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_maremar
+	395.1.1 = {
+		birth = yes
+	}
+	470.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_kahana_i = {
+	name = "Kahana"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_zutra_i
+	370.1.1 = {
+		birth = yes
+	}
+	440.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_huna_iii = {
+	name = "Huna"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_nathan_iii
+	trait = education_learning_3
+	375.1.1 = {
+		birth = yes
+	}
+	445.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_zutra_ii = {
+	name = "Zutra"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	father = rabbinic_exilarchate_huna_iii
+	398.1.1 = {
+		birth = yes
+	}
+	455.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_kahana_ii = {
+	name = "Kahana"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_zutra_ii
+	trait = education_learning_3
+	429.1.1 = {
+		birth = yes
+	}
+	465.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_hunah_iv = {
+	name = "Huna"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_zutra_ii
+	trait = education_learning_3
+	432.1.1 = {
+		birth = yes
+	}
+	470.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_hunah_v = {
+	name = "Huna"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_huna_iii
+	trait = education_learning_3
+	440.1.1 = {
+		birth = yes
+	}
+	508.1.1 = {
+		death = {
+			death_reason = death_horrible_disease
+		}
+	}
+}
+
+rabbinic_exilarchate_zutra_iii = {
+	name = "Zutra"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_hunah_v
+	trait = education_learning_3
+	465.1.1 = {
+		birth = yes
+	}
+	518.1.1 = {
+		death = {
+			death_reason = death_crucified
+			killer = 180627
+		}
+	}
+}
+
+rabbinic_exilarchate_zutra_iv = {
+	name = "Zutra"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_zutra_iii
+	trait = education_learning_3
+	498.1.1 = {
+		birth = yes
+	}
+	572.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_guriya = {
+	name = "Guriya"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_zutra_iv
+	trait = education_learning_3
+	526.1.1 = {
+		birth = yes
+	}
+	601.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_zutra_v = {
+	name = "Zutra"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_guriya
+	trait = education_learning_3
+	561.1.1 = {
+		birth = yes
+	}
+	632.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_yaakov_ben_zutra = {
+	name = "Yaakov"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_zutra_v
+	trait = education_learning_3
+	597.1.1 = {
+		birth = yes
+	}
+	669.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_migam = {
+	name = "Chaninai"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_yaakov_ben_zutra
+	trait = education_learning_3
+	631.1.1 = {
+		birth = yes
+	}
+	702.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_nehemiah_ben_migam = {
+	name = "Nechemiah"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_migam
+	trait = education_learning_3
+	698.1.1 = {
+		birth = yes
+	}
+	770.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_abdimi = {
+	name = "Abdimi"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_nehemiah_ben_migam
+	trait = education_learning_3
+	730.1.1 = {
+		birth = yes
+	}
+	812.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_pinchas_ben_abdimi = {
+	name = "Pinchas"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_abdimi
+	trait = education_learning_3
+	810.1.1 = {
+		birth = yes
+	}
+	870.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_hatzub_ben_pinchas = {
+	name = "Yehudah"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_pinchas_ben_abdimi
+	trait = education_learning_3
+	860.1.1 = {
+		birth = yes
+		give_nickname = nick_hatzub
+	}
+	909.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_natan_ben_hatzub = {
+	name = "Natan"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_hatzub_ben_pinchas
+	trait = education_learning_3
+	878.1.1 = {
+		birth = yes
+	}
+	945.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_avraham_ben_natan = {
+	name = "Avraham"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_natan_ben_hatzub
+	trait = education_learning_3
+	896.1.1 = {
+		birth = yes
+	}
+	967.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_yaakov_ben_abdimi = {
+	name = "Yaakov"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_abdimi
+	trait = education_learning_3
+	742.1.1 = {
+		birth = yes
+	}
+	807.1.1 = {
+		death = yes
+	}
+}
+
+rabbinic_exilarchate_azariah_ben_abdimi = {
+	name = "Azariah"
+	religion = "rabbinism"
+	culture = "bavlim"
+	dynasty = nathanite_dynasty
+	trait = davidic_line
+	father = rabbinic_exilarchate_abdimi
+	trait = education_learning_3
+	755.1.1 = {
+		birth = yes
+	}
+	816.1.1 = {
+		death = yes
+	}
+}
