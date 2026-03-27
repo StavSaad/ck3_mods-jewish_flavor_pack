@@ -1,5 +1,5 @@
 ﻿4552 = {	# 4552 - SYRTE
-	culture = punic
+	culture = carthaginian
 	#culture = zanata
 	religion = ibadi
 	holding = castle_holding
