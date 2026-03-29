@@ -36,13 +36,14 @@ exilarch = {
 	gender = male
 	special = holder
 	tier = duchy
-	priority = 500
+	priority = 301
 	governments = { jewish_admin_family_government }
 	titles = { d_exilarchate d_karaite_exilarchate }
 
 	flavourization_rules = {
 		spouse_takes_title = no
 		ignore_top_liege_government = yes
+		top_liege = no
 	}
 }
 

@@ -342,7 +342,6 @@ rabbinic_exilarchate_ukban_dezuzita = {
 	dynasty = nathanite_dynasty
 	trait = davidic_line
 	trait = education_learning_3
-	father = rabbinic_exilarchate_ukba_i
 	250.1.1 = {
 		birth = yes
 		give_nickname = nick_detzutzita

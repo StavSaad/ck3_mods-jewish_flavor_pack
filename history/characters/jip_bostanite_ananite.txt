@@ -5,7 +5,6 @@ rabbinic_exilarchate_khafnai = {
 	culture = "bavlim"
 	dynasty = bostanite_dynasty
 	trait = davidic_line
-	father = rabbinic_exilarchate_hunah_v
 	trait = education_learning_3
 	503.1.1 = {
 		birth = yes
