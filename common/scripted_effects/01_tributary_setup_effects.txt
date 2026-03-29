@@ -108,7 +108,7 @@ jip_1066_tributary_setup_effect = {
 }
 
 jip_1178_tributary_setup_effect = {
-	character:227000 = { # Abbasid Sulta
+	character:227000 = { # Abbasid Sultan
 		save_scope_as = suzerain
 		character:rabbinic_exilarchate_shmuel_i = {
 			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
@@ -117,7 +117,7 @@ jip_1178_tributary_setup_effect = {
 			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
-	character:201500 = { # King Alfons II of Aragon
+	character:210500 = { # King Alfons II of Aragon
 		save_scope_as = suzerain
 		character:judah_bar_nathan = {
 			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
