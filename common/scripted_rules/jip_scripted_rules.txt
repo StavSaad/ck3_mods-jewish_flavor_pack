@@ -1,0 +1,102 @@
+﻿can_move_domicile = {
+	trigger_if = {
+		limit = { exists = county } #This will exclude sea provinces, impassable provinces, river provinces, etc
+		save_temporary_scope_as = province_temp
+		scope:owner = {
+			trigger_if = {
+				# Jews can migrate wherever as long as they dont have landed titles
+				limit = {
+					has_government = jewish_admin_family_government
+				}
+				# Jews can only migrate into cities
+				scope:province_temp = {
+					custom_tooltip = {
+						text = can_move_domicile_jewish_city_tt
+						has_holding_type = city_holding
+					}
+				}
+				# TODO: implement jewish expulsions
+				# custom_tooltip = {
+				# 	text = can_move_domicile_jewish_exile_tt
+				# 	NOT = {
+				# 		is_laamp_exiled_from_province_trigger = {
+				# 			PROVINCE = scope:province_temp
+				# 			LAAMP = scope:owner
+				# 		}
+				# 	}
+				# }
+				scope:owner = { has_raised_armies = no }
+			}
+		}
+		scope:owner.domicile ?= {
+			# Estate
+			trigger_if = {
+				limit = {
+					OR = {
+						is_domicile_type = estate
+						is_domicile_type = east_asian_estate
+						is_domicile_type = japanese_manor
+					}
+				}
+				trigger_if = {
+					limit = {
+						scope:owner = {
+							has_government = jewish_admin_family_government
+						}
+					}
+					scope:province_temp = {
+						custom_tooltip = {
+							text = can_move_domicile_jewish_city_tt
+							has_holding_type = city_holding
+						}
+					}
+				}
+				trigger_else = {
+					# Cannot move estate outside top_liege realm
+					scope:province_temp.county.holder.top_liege ?= {
+						custom_tooltip = {
+							text = can_move_domicile_estate_realm_tt
+							this = scope:owner.top_liege
+						}
+					}
+				}
+				# Cannot move estate during war impacting location or destination
+				custom_tooltip = {
+					text = can_move_domicile_estate_war_tt
+					scope:owner.domicile.domicile_location.county.holder ?= {
+						NOR = {
+							is_at_war = yes
+							any_liege_or_above = { is_at_war = yes }
+						}
+					}
+					scope:province_temp.county.holder ?= {
+						NOR = {
+							is_at_war = yes
+							any_liege_or_above = { is_at_war = yes }
+						}
+					}
+				}
+				# Cannot move estate to its current location
+				custom_tooltip = {
+					text = can_move_domicile_estate_same_location_tt
+					scope:owner.domicile.domicile_location != scope:province_temp
+				}
+			}
+			trigger_if = {
+				limit = { is_domicile_type = camp }
+				# Cannot move domicile to places you've been exiled from.
+				custom_tooltip = {
+					text = can_move_domicile_camp_exile.tt
+					NOT = {
+						is_laamp_exiled_from_province_trigger = {
+							PROVINCE = scope:province_temp
+							LAAMP = scope:owner
+						}
+					}
+				}
+				scope:owner = { has_raised_armies = no }
+			}
+		}
+	}
+	trigger_else = { exists = county } #This will exclude sea provinces, impassable provinces, river provinces, etc
+}

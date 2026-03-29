@@ -1,7 +1,8 @@
-c_jip_benveniste = house_benveniste
-c_jip_shealtiel = shealtiel_dynasty
-c_jip_nathanite = nathanite_dynasty
-c_jip_bostanite = bostanite_dynasty
-c_jip_ananite = house_ananite
+d_jip_benveniste = house_benveniste
+d_jip_shealtiel = shealtiel_dynasty
+d_jip_nathanite = nathanite_dynasty
+d_jip_bostanite = bostanite_dynasty
+d_jip_ananite = house_ananite
+d_jip_kalonymos = kalonymos_dynasty
 d_exilarchate = davidite_dynasty
 d_karaite_exilarchate = house_ananite

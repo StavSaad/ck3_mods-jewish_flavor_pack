@@ -6,8 +6,8 @@ every_islamic_loses_fervor = {
 	global = every_islamic_loses_fervor
 }
 
-reclaim_davidic_heritage_effect_desc = {
-	global = reclaim_davidic_heritage_effect_desc
+switch_house_effect_desc = {
+	global = switch_house_effect_desc
 }
 
 every_muslim_ruler_loses_opinion = {

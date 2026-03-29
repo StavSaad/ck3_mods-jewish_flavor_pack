@@ -104,46 +104,10 @@ k_phoenicia = {
 
 	colored_emblem={
 		color1=white
-		texture="ce_annulet.dds"
+		texture="ce_tanit.dds"
 		instance={
-			position={ 0.500000 0.320000 }
-			scale={ 0.290000 0.290000 }
-		}
-
-	}
-
-	colored_emblem={
-		color1=white
-		texture="ce_block_05.dds"
-		instance={
-			position={ 0.680000 0.360000 }
-			scale={ 1.000000 0.120000 }
+			scale={ 0.620000 0.620000 }
 			depth=1.010000
-			rotation=90
-		}
-
-		instance={
-			position={ 0.310000 0.360000 }
-			scale={ 1.000000 0.120000 }
-			depth=2.010000
-			rotation=90
-		}
-
-		instance={
-			position={ 0.500000 0.400000 }
-			scale={ 0.410000 1.000000 }
-			depth=3.010000
-		}
-
-	}
-
-	colored_emblem={
-		color1=white
-		texture="ce_african_ja_ir.dds"
-		instance={
-			position={ 0.500000 0.630000 }
-			scale={ 0.650000 0.650000 }
-			depth=4.010000
 		}
 
 	}
@@ -158,46 +122,10 @@ k_tyre = {
 
 	colored_emblem={
 		color1=white
-		texture="ce_annulet.dds"
+		texture="ce_tanit.dds"
 		instance={
-			position={ 0.500000 0.320000 }
-			scale={ 0.290000 0.290000 }
-		}
-
-	}
-
-	colored_emblem={
-		color1=white
-		texture="ce_block_05.dds"
-		instance={
-			position={ 0.680000 0.360000 }
-			scale={ 1.000000 0.120000 }
+			scale={ 0.620000 0.620000 }
 			depth=1.010000
-			rotation=90
-		}
-
-		instance={
-			position={ 0.310000 0.360000 }
-			scale={ 1.000000 0.120000 }
-			depth=2.010000
-			rotation=90
-		}
-
-		instance={
-			position={ 0.500000 0.400000 }
-			scale={ 0.410000 1.000000 }
-			depth=3.010000
-		}
-
-	}
-
-	colored_emblem={
-		color1=white
-		texture="ce_african_ja_ir.dds"
-		instance={
-			position={ 0.500000 0.630000 }
-			scale={ 0.650000 0.650000 }
-			depth=4.010000
 		}
 
 	}
@@ -212,46 +140,10 @@ k_sidon = {
 
 	colored_emblem={
 		color1=white
-		texture="ce_annulet.dds"
+		texture="ce_tanit.dds"
 		instance={
-			position={ 0.500000 0.320000 }
-			scale={ 0.290000 0.290000 }
-		}
-
-	}
-
-	colored_emblem={
-		color1=white
-		texture="ce_block_05.dds"
-		instance={
-			position={ 0.680000 0.360000 }
-			scale={ 1.000000 0.120000 }
+			scale={ 0.620000 0.620000 }
 			depth=1.010000
-			rotation=90
-		}
-
-		instance={
-			position={ 0.310000 0.360000 }
-			scale={ 1.000000 0.120000 }
-			depth=2.010000
-			rotation=90
-		}
-
-		instance={
-			position={ 0.500000 0.400000 }
-			scale={ 0.410000 1.000000 }
-			depth=3.010000
-		}
-
-	}
-
-	colored_emblem={
-		color1=white
-		texture="ce_african_ja_ir.dds"
-		instance={
-			position={ 0.500000 0.630000 }
-			scale={ 0.650000 0.650000 }
-			depth=4.010000
 		}
 
 	}
@@ -266,50 +158,13 @@ k_byblos = {
 
 	colored_emblem={
 		color1=white
-		texture="ce_annulet.dds"
+		texture="ce_tanit.dds"
 		instance={
-			position={ 0.500000 0.320000 }
-			scale={ 0.290000 0.290000 }
-		}
-
-	}
-
-	colored_emblem={
-		color1=white
-		texture="ce_block_05.dds"
-		instance={
-			position={ 0.680000 0.360000 }
-			scale={ 1.000000 0.120000 }
+			scale={ 0.620000 0.620000 }
 			depth=1.010000
-			rotation=90
-		}
-
-		instance={
-			position={ 0.310000 0.360000 }
-			scale={ 1.000000 0.120000 }
-			depth=2.010000
-			rotation=90
-		}
-
-		instance={
-			position={ 0.500000 0.400000 }
-			scale={ 0.410000 1.000000 }
-			depth=3.010000
 		}
 
 	}
-
-	colored_emblem={
-		color1=white
-		texture="ce_african_ja_ir.dds"
-		instance={
-			position={ 0.500000 0.630000 }
-			scale={ 0.650000 0.650000 }
-			depth=4.010000
-		}
-
-	}
-
 }
 
 c_tmutarakan = {
@@ -369,79 +224,6 @@ c_dembiya = {
 		texture="ce_boar_passant.dds"
 		instance={
 			scale={ 0.900000 0.900000 }
-		}
-
-	}
-
-}
-
-e_carthage = {
-	pattern="pattern__solid_designer.dds"
-	color1=white
-	color2=white
-	color3=red
-	colored_emblem={
-		color1=purple
-		texture="ce_annulet.dds"
-		instance={
-			position={ 0.500000 0.320000 }
-			scale={ 0.290000 0.290000 }
-		}
-
-	}
-
-	colored_emblem={
-		color1=brown
-		texture="ce_block_05.dds"
-		instance={
-			position={ 0.500000 0.830000 }
-			depth=5.010000
-		}
-
-	}
-
-	colored_emblem={
-		color1=purple
-		texture="ce_block_05.dds"
-		instance={
-			position={ 0.680000 0.360000 }
-			scale={ 1.000000 0.120000 }
-			depth=1.010000
-			rotation=90
-		}
-
-		instance={
-			position={ 0.310000 0.360000 }
-			scale={ 1.000000 0.120000 }
-			depth=2.010000
-			rotation=90
-		}
-
-		instance={
-			position={ 0.500000 0.400000 }
-			scale={ 0.410000 1.000000 }
-			depth=3.010000
-		}
-
-	}
-
-	colored_emblem={
-		color1=green
-		texture="ce_block_05.dds"
-		instance={
-			position={ 0.500000 0.140000 }
-			depth=6.010000
-		}
-
-	}
-
-	colored_emblem={
-		color1=purple
-		texture="ce_african_ja_ir.dds"
-		instance={
-			position={ 0.500000 0.630000 }
-			scale={ 0.650000 0.650000 }
-			depth=4.010000
 		}
 
 	}

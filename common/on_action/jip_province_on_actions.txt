@@ -1,0 +1,18 @@
+﻿on_building_completed = {
+	on_actions = {
+		jip_third_temple_on_action
+	}
+}
+
+# Third Temple
+jip_third_temple_on_action = {
+	trigger = {
+		has_building = temple_in_jerusalem_01
+	}
+
+	effect = {
+		scope:character = {
+			trigger_event = jip_hebrew.0040
+		}
+	}
+}

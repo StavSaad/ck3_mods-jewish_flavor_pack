@@ -78,10 +78,6 @@
 			name = unavailable_unique_decisions
 			target = flag:form_hebrew_decision
 		}
-		set_global_variable = {
-			name = form_hebrew_decision
-			value = scope:hebrew_former
-		}
 	}
 
 	cost = { prestige = { value = 2000 } }
@@ -131,11 +127,12 @@ reclaim_davidic_heritage = {
 	}
 
 	effect = {
+		save_scope_as = reclaimer
 		house = {
 			save_scope_as = reclaimer_house
 		}
 		show_as_tooltip = {
-			reclaim_davidic_heritage_effect = yes
+			davidic_reclamation_decision_effect = yes
 		}
 
 		#Events
@@ -403,7 +400,7 @@ create_e_canaan_decision = {
 	is_shown = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
-			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_phoenician }
 		}
 		OR = {
 			has_title = title:k_israel
@@ -425,7 +422,7 @@ create_e_canaan_decision = {
 		is_independent_ruler = yes 
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
-			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_phoenician }
 		}
 		highest_held_title_tier = tier_kingdom
 		custom_description = {
@@ -444,7 +441,7 @@ create_e_canaan_decision = {
 				limit = { has_title = title:k_israel }
 				has_title = title:k_israel
 			}
-			trigger_if = {
+			trigger_else_if = {
 				limit = {
 					title:k_phoenicia = {
 						any_de_jure_county = {
@@ -502,7 +499,7 @@ reestablish_canaanite_city_decision = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
 			culture = { has_cultural_pillar = heritage_syriac }
-			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_phoenician }
 		}
 		OR = {
 			has_title = title:c_acre
@@ -737,10 +734,6 @@ form_canaanite_decision = {
 			}
 			trigger_event = jip_hebrew.0021 #So they can convert
 		}
-		set_global_variable = {
-			name = form_canaanite_decision
-			value = scope:canaanite_former
-		}
 	}
 
 	cost = { prestige = { value = 3000 } }
@@ -763,7 +756,7 @@ expand_phoenicia_decision = {
 	decision_group_type = major
 
 	is_shown = {
-		culture = { has_cultural_pillar = heritage_canaanite }
+		culture = { has_cultural_pillar = heritage_phoenician }
 		OR = {
 			has_primary_title = title:k_phoenicia
 			has_primary_title = title:d_lebanon
@@ -869,7 +862,7 @@ expand_phoenicia_decision = {
 			has_primary_title = title:k_phoenicia
 			has_primary_title = title:d_lebanon
 		}
-		culture = { has_cultural_pillar = heritage_canaanite }
+		culture = { has_cultural_pillar = heritage_phoenician }
 		completely_controls = title:d_lebanon
 
 		OR = {
@@ -1007,7 +1000,7 @@ create_k_phoenicia_decision = {
 	is_shown = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
-			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_phoenician }
 		}
 		OR = {
 			has_title = title:d_lebanon
@@ -1029,7 +1022,7 @@ create_k_phoenicia_decision = {
 		is_independent_ruler = yes 
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
-			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_phoenician }
 		}
 		OR = {
 			has_primary_title = title:d_lebanon
@@ -1054,99 +1047,6 @@ create_k_phoenicia_decision = {
 			target = flag:create_k_phoenicia_decision
 		}
 		trigger_event = jip_hebrew.0020
-	}
-
-	cost = { gold = { value = 500 } }
-
-	ai_potential = {
-		always = yes
-	}
-
-	ai_will_do = {
-		base = 100
-	}
-}
-
-create_e_carthage_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	ai_check_interval = 60
-	desc = create_e_carthage_decision_desc
-	decision_group_type = major
-
-	is_shown = {
-		culture = { has_cultural_pillar = heritage_canaanite }
-		capital_province = { geographical_region = jip_region_carthage }
-		highest_held_title_tier = tier_kingdom
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:create_e_carthage_decision
-			}
-		}
-	}
-
-	is_valid = {
-		is_independent_ruler = yes 
-		culture = { has_cultural_pillar = heritage_canaanite }
-		highest_held_title_tier = tier_kingdom
-		completely_controls_region = jip_region_carthage
-		has_title = title:k_africa
-		title:c_tunis = {
-			title_province = {
-				culture = { has_cultural_pillar = heritage_canaanite }
-			}
-		}
-		prestige_level >= 4
-		trigger_if = {
-			limit = {
-				government_has_flag = government_is_nomadic
-			}
-			OR = {
-				sub_realm_size >= 60
-				AND = {
-					custom_description = {
-						text = found_empire_decision_three_kingdoms_held
-						any_held_title = {
-							count >= 2
-							tier = tier_kingdom
-						}
-					}
-					sub_realm_size >= 40
-				}
-			}
-		}
-		trigger_else = {
-			OR = {
-				sub_realm_size >= 120
-				AND = {
-					custom_description = {
-						text = found_empire_decision_three_kingdoms_held
-						any_held_title = {
-							count >= 3
-							tier = tier_kingdom
-						}
-					}
-					sub_realm_size >= 80
-				}
-			}
-		}
-	}
-
-	is_valid_showing_failures_only = {
-		is_landed = yes
-		is_capable_adult = yes
-		is_imprisoned = no
-		is_at_war = no
-	}
-
-	effect = {
-		add_to_global_variable_list = {
-			name = unavailable_unique_decisions
-			target = flag:create_e_carthage_decision
-		}
-		trigger_event = jip_hebrew.0030
 	}
 
 	cost = { gold = { value = 500 } }

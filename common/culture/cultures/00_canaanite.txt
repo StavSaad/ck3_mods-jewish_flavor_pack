@@ -2,7 +2,7 @@
 	color = canaanite
 
 	ethos = ethos_bureaucratic
-	heritage = heritage_canaanite
+	heritage = heritage_phoenician
 	language = language_canaanite
 	martial_custom = martial_custom_male_only	
 	head_determination = head_determination_domain
@@ -28,32 +28,33 @@
 	}
 }
 
-punic = {
+carthaginian = {
+	color = { 0.7 0.6 0.95 }
 	parents = { phoenician }
 	created = 52.1.1
-	history_loc_override = punic_history_loc
-	ethos = ethos_spiritual
-	heritage = heritage_canaanite
-	language = language_canaanite
+	history_loc_override = carthaginian_history_loc
+	ethos = ethos_bellicose
+	heritage = heritage_carthaginian
+	language = language_carthaginian
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
-	traditions = { # I'm pretty sure anything I put in here or do not put in here will spark a discussion or two
+	traditions = {
 		tradition_maritime_mercantilism
-		tradition_lords_of_the_elephant
+		tradition_swords_for_hire
+		tradition_eye_for_an_eye
 		tradition_seafaring
-		tradition_republican_legacy
+		tradition_ce1_ritual_washing
 	}
 
-	name_list = name_list_canaanite # The Radhanite namelist is near-exclusively biblical names
-
-	coa_gfx = { byzantine_group_coa_gfx }
-	building_gfx = { mediterranean_building_gfx }
-	clothing_gfx = { byzantine_clothing_gfx }
-	unit_gfx = { mena_unit_gfx }
-	house_coa_frame = house_frame_23
-	house_coa_mask_offset = { 0.0 0.03 }
-	house_coa_mask_scale = { 0.9 0.9 }
-
+	name_list = name_list_carthaginian
+	coa_gfx = { arabic_group_coa_gfx }
+	building_gfx = { arabic_group_building_gfx mena_building_gfx }
+	clothing_gfx = { byzantine_clothing_gfx }  
+	unit_gfx = { mena_unit_gfx } 	
+	house_coa_frame = house_frame_13
+	house_coa_mask_offset = { 0.0 -0.03 }
+	house_coa_mask_scale = { 0.95 0.95 }
+	
 	ethnicities = {
 		10 = mediterranean
 		10 = arab

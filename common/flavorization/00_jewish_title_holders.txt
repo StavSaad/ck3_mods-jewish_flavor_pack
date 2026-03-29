@@ -1,61 +1,178 @@
 ﻿
 #############################################
 
-# Special Titles
+emperor_male_jewish = {
+	type = character
+	gender = male
+	tier = empire
+	priority = 301
+	heritages = { heritage_israelite }
+}
+
+ emperor_female_jewish = {
+	type = character
+	gender = female
+	tier = empire
+	priority = 301
+	heritages = { heritage_israelite }
+}
+
+duke_jewish_landless_male = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	domicile_type = estate
+	priority = 25
+	governments = { jewish_admin_family_government }
+
+	flavourization_rules = {
+		spouse_takes_title = no
+	}
+}
+
 exilarch = {
 	type = character
 	gender = male
 	special = holder
-	domicile_type = camp
-	governments = { landless_adventurer_government }
-	priority = 1000
+	tier = duchy
+	priority = 500
+	governments = { jewish_admin_family_government }
 	titles = { d_exilarchate d_karaite_exilarchate }
+
+	flavourization_rules = {
+		spouse_takes_title = no
+		ignore_top_liege_government = yes
+	}
+}
+
+duke_jewish_landless_female = {
+	type = character
+	gender = female
+	special = holder
+	tier = duchy
+	domicile_type = estate
+	priority = 25
+	governments = { jewish_admin_family_government }
+
 	flavourization_rules = {
 		spouse_takes_title = no
 	}
 }
 
-duke_exilarchate = {
-	type = character
-	governments = {
-		landless_adventurer_government
-	}
-	priority = 5
-	titles = {
-		d_exilarchate
-		d_karaite_exilarchate
-	}
-}
-
-count_nasi_male = {
+spouse_jewish_landless_male = {
 	type = character
 	gender = male
-	special = holder
-	domicile_type = estate
-	tier = county
+	special = domicile
+    domicile_type = estate
+	priority = 25
 	governments = { jewish_admin_family_government }
-	priority = 5
-	flavourization_rules = {
-		spouse_takes_title = no
-	}
 }
 
-count_nasi_female = {
+spouse_jewish_landless_female = {
+	type = character
+	gender = female
+	special = domicile
+    domicile_type = estate
+	priority = 25
+	governments = { jewish_admin_family_government }
+}
+
+king_male_jewish = {
 	type = character
 	gender = male
-	special = holder
-	domicile_type = estate
-	tier = county
-	governments = { jewish_admin_family_government }
-	priority = 5
-	flavourization_rules = {
-		spouse_takes_title = no
-	}
+	tier = kingdom
+	priority = 301
+	heritages = { heritage_israelite }
 }
 
-count_nasi = {
+king_female_jewish = {
 	type = character
+	gender = female
+	tier = kingdom
+	priority = 301
+	heritages = { heritage_israelite }
+}
+
+duke_male_jewish = {
+	type = character
+	gender = male
+	tier = duchy
+	priority = 301
+	heritages = { heritage_israelite }
+}
+
+duke_female_jewish = {
+	type = character
+	gender = female
+	tier = duchy
+	priority = 301
+	heritages = { heritage_israelite }
+}
+
+count_male_jewish = {
+	type = character
+	gender = male
 	tier = county
-	governments = { jewish_admin_family_government }
-	priority = 5
+	priority = 301
+	heritages = { heritage_israelite }
+}
+
+count_female_jewish = {
+	type = character
+	gender = female
+	tier = county
+	priority = 301
+	heritages = { heritage_israelite }
+}
+
+baron_male_jewish = {
+	type = character
+	gender = male
+	tier = barony
+	priority = 301
+	heritages = { heritage_israelite }
+}
+
+baron_female_jewish = {
+	type = character
+	gender = female
+	tier = barony
+	priority = 301
+	heritages = { heritage_israelite }
+}
+
+empire_jewish = {
+	type = title
+	tier = empire
+	priority = 301
+	heritages = { heritage_israelite }
+}
+
+kingdom_jewish = {
+	type = title
+	tier = kingdom
+	priority = 301
+	heritages = { heritage_israelite }
+}
+
+duchy_jewish = {
+	type = title
+	tier = duchy
+	priority = 301
+	heritages = { heritage_israelite }
+}
+
+county_jewish = {
+	type = title
+	tier = county
+	priority = 301
+	heritages = { heritage_israelite }
+}
+
+barony_jewish = {
+	type = title
+	tier = barony
+	priority = 301
+	heritages = { heritage_israelite }
 }

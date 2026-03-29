@@ -30,7 +30,7 @@
 		type = male
 		birth = 823.1.1
 		title = "d_exilarchate"
-		government = landless_adventurer_government
+		government = jewish_admin_family_government
 		culture = bavlim
 		religion = rabbinism 
 		history_id = rabbinic_exilarchate_hasdai_ii 
@@ -65,12 +65,12 @@
 
 	character = {
 		name = "bookmark_jip_pinchas"
-		dynasty = davidite_dynasty
+		dynasty = nathanite_dynasty
 		dynasty_splendor_level = 7
 		type = male
 		birth = 810.1.1
-		title = "c_jip_nathanite"
-		government = landless_adventurer_government
+		title = "d_jip_nathanite"
+		government = jewish_admin_family_government
 		culture = bavlim
 		religion = rabbinism 
 		history_id = rabbinic_exilarchate_pinchas_ben_abdimi 
@@ -86,7 +86,7 @@
 		type = male
 		birth = 835.1.1
 		title = "d_karaite_exilarchate"
-		government = landless_adventurer_government
+		government = jewish_admin_family_government
 		culture = bavlim
 		religion = karaism 
 		history_id = karaite_exilarchate_boaz_i 

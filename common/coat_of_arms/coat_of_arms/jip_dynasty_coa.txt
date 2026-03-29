@@ -147,16 +147,9 @@ nathanite_dynasty = {
 	color3=green
 	colored_emblem={
 		color1=black
-		texture="ce_african_ja_ir.dds"
+		texture="ce_solomon_star_06.dds"
 		instance={
 			scale={ 0.770000 0.770000 }
-			rotation=180
-		}
-
-		instance={
-			position={ 0.500000 0.470000 }
-			scale={ 0.780000 0.780000 }
-			depth=1.010000
 		}
 
 	}
@@ -169,16 +162,9 @@ house_ananite = {
 	color3=green
 	colored_emblem={
 		color1=white
-		texture="ce_african_ja_ir.dds"
+		texture="ce_solomon_star_06.dds"
 		instance={
 			scale={ 0.770000 0.770000 }
-			rotation=180
-		}
-
-		instance={
-			position={ 0.500000 0.470000 }
-			scale={ 0.780000 0.780000 }
-			depth=1.010000
 		}
 
 	}
@@ -214,21 +200,37 @@ bostanite_dynasty = {
 
 	colored_emblem={
 		color1=white
-		texture="ce_african_ja_ir.dds"
+		texture="ce_solomon_star_06.dds"
 		instance={
 			position={ 0.500000 0.470000 }
 			scale={ 0.780000 0.780000 }
-			depth=1.010000
-		}
-
-		instance={
-			scale={ 0.770000 0.770000 }
-			depth=2.010000
-			rotation=180
 		}
 
 	}
 
+}
+
+kalonymos_dynasty = {
+	pattern = "pattern_vertical_split.dds"
+	color1 = "red"
+	color2 = "yellow"
+	colored_emblem = {
+		texture = "ce_tree.dds" # The Olive Tree of the Rhineland
+		color1 = "green"
+		color2 = "white"
+		instance = {
+			position = { 0.5 0.5 }
+			scale = { 0.9 0.9 }
+		}
+	}
+	colored_emblem = {
+		texture = "ce_star_07.dds" # Six-pointed star (Star of David motif)
+		color1 = "black"
+		instance = {
+			position = { 0.5 0.15 }
+			scale = { 0.2 0.2 }
+		}
+	}
 }
 
 davidite_dynasty = {
@@ -238,17 +240,9 @@ davidite_dynasty = {
 	color3=green
 	colored_emblem={
 		color1=blue_light
-		texture="ce_african_ja_ir.dds"
+		texture="ce_solomon_star_06.dds"
 		instance={
 			scale={ 0.770000 0.770000 }
-			rotation=180
 		}
-
-		instance={
-			position={ 0.500000 0.470000 }
-			scale={ 0.780000 0.780000 }
-			depth=1.010000
-		}
-
 	}
 }
