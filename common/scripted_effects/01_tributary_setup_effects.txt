@@ -126,4 +126,10 @@ jip_1178_tributary_setup_effect = {
 			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
 	}
+	character:212501 = { # HRE
+		save_scope_as = suzerain
+		character:judah_hasid_kalonymos = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+	}
 }
