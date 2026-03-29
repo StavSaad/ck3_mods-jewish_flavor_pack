@@ -30,7 +30,7 @@
 		type = male
 		birth = 823.1.1
 		title = "d_exilarchate"
-		government = landless_adventurer_government
+		government = jewish_admin_family_government
 		culture = bavlim
 		religion = rabbinism 
 		history_id = rabbinic_exilarchate_hasdai_ii 
@@ -86,7 +86,7 @@
 		type = male
 		birth = 835.1.1
 		title = "d_karaite_exilarchate"
-		government = landless_adventurer_government
+		government = jewish_admin_family_government
 		culture = bavlim
 		religion = karaism 
 		history_id = karaite_exilarchate_boaz_i 

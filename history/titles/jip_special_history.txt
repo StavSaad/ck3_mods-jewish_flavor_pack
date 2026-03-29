@@ -1,7 +1,7 @@
 ﻿d_exilarchate = {
 
 	-596.1.1 = {
-		government = landless_adventurer_government
+		government = jewish_admin_family_government
 		succession_laws = {
 			noble_family_succession_law
 			male_only_law
@@ -347,7 +347,7 @@
 d_karaite_exilarchate = {
 
 	760.9.1 = {
-		government = landless_adventurer_government
+		government = jewish_admin_family_government
 		succession_laws = {
 			noble_family_succession_law
 			male_only_law
