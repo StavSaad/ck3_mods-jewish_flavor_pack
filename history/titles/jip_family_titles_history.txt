@@ -1,5 +1,53 @@
 d_jip_nathanite = {
 
+	270.1.1 = {
+		holder = rabbinic_exilarchate_ukban_dezuzita
+	}
+
+	300.1.1 = {
+		holder = rabbinic_exilarchate_hunah_ii
+	}
+
+	360.1.1 = {
+		holder = rabbinic_exilarchate_nathan_iii
+	}
+
+	380.1.1 = {
+		holder = rabbinic_exilarchate_zutra_i
+	}
+
+	415.1.1 = {
+		holder = rabbinic_exilarchate_maremar
+	}
+
+	435.1.1 = {
+		holder = rabbinic_exilarchate_kahana_i
+	}
+
+	440.1.1 = {
+		holder = rabbinic_exilarchate_huna_iii
+	}
+
+	445.1.1 = {
+		holder = rabbinic_exilarchate_zutra_ii
+	}
+
+	455.1.1 = {
+		holder = rabbinic_exilarchate_kahana_ii
+	}
+
+	465.1.1 = {
+		holder = rabbinic_exilarchate_hunah_iv
+	}
+
+	470.1.1 = {
+		holder = rabbinic_exilarchate_hunah_v
+	}
+
+	508.1.1 = {
+		holder = rabbinic_exilarchate_zutra_iii
+	}
+
 	518.1.1 = {
 		holder = rabbinic_exilarchate_zutra_iv
 		government = jewish_admin_family_government
