@@ -1,12 +1,7 @@
 ﻿d_exilarchate = {
 
 	-596.1.1 = {
-		government = jewish_admin_family_government
-		succession_laws = {
-			noble_family_succession_law
-			male_only_law
-			same_faith_only_law
-		}
+		government = exilarchate_government
 		liege = e_persia
 	}
 
@@ -188,15 +183,6 @@
 	
 	651.1.1 = {
 		liege = e_arabia
-		effect = {
-			if = {
-				limit = {
-					exists = holder
-					holder = { has_government = administrative_government }
-				}
-				set_state_faith = faith:rabbinism
-			}
-		}
 	}
 
 	733.1.1 = {
@@ -347,12 +333,7 @@
 d_karaite_exilarchate = {
 
 	760.9.1 = {
-		government = jewish_admin_family_government
-		succession_laws = {
-			noble_family_succession_law
-			male_only_law
-			same_faith_only_law
-		}
+		government = exilarchate_government
 		liege = e_arabia
 		holder = karaite_exilarchate_anan_i
 		effect = {

@@ -37,7 +37,7 @@ exilarch = {
 	special = holder
 	tier = duchy
 	priority = 301
-	governments = { jewish_admin_family_government }
+	governments = { exilarchate_government }
 	titles = { d_exilarchate d_karaite_exilarchate }
 
 	flavourization_rules = {
