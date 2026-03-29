@@ -400,7 +400,7 @@ create_e_canaan_decision = {
 	is_shown = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
-			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_phoenician }
 		}
 		OR = {
 			has_title = title:k_israel
@@ -422,7 +422,7 @@ create_e_canaan_decision = {
 		is_independent_ruler = yes 
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
-			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_phoenician }
 		}
 		highest_held_title_tier = tier_kingdom
 		custom_description = {
@@ -499,7 +499,7 @@ reestablish_canaanite_city_decision = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
 			culture = { has_cultural_pillar = heritage_syriac }
-			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_phoenician }
 		}
 		OR = {
 			has_title = title:c_acre
@@ -756,7 +756,7 @@ expand_phoenicia_decision = {
 	decision_group_type = major
 
 	is_shown = {
-		culture = { has_cultural_pillar = heritage_canaanite }
+		culture = { has_cultural_pillar = heritage_phoenician }
 		OR = {
 			has_primary_title = title:k_phoenicia
 			has_primary_title = title:d_lebanon
@@ -862,7 +862,7 @@ expand_phoenicia_decision = {
 			has_primary_title = title:k_phoenicia
 			has_primary_title = title:d_lebanon
 		}
-		culture = { has_cultural_pillar = heritage_canaanite }
+		culture = { has_cultural_pillar = heritage_phoenician }
 		completely_controls = title:d_lebanon
 
 		OR = {
@@ -1000,7 +1000,7 @@ create_k_phoenicia_decision = {
 	is_shown = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
-			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_phoenician }
 		}
 		OR = {
 			has_title = title:d_lebanon
@@ -1022,7 +1022,7 @@ create_k_phoenicia_decision = {
 		is_independent_ruler = yes 
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
-			culture = { has_cultural_pillar = heritage_canaanite }
+			culture = { has_cultural_pillar = heritage_phoenician }
 		}
 		OR = {
 			has_primary_title = title:d_lebanon

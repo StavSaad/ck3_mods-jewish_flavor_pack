@@ -1691,7 +1691,7 @@ e_canaan = {
 		ai_primary_priority = {
 			if = {
 				limit = {
-					culture = { has_cultural_pillar = heritage_canaanite }
+					culture = { has_cultural_pillar = heritage_phoenician }
 				}
 				add = @correct_culture_primary_score
 			}
@@ -1709,7 +1709,7 @@ e_canaan = {
 		ai_primary_priority = {
 			if = {
 				limit = {
-					culture = { has_cultural_pillar = heritage_canaanite }
+					culture = { has_cultural_pillar = heritage_phoenician }
 				}
 				add = @correct_culture_primary_score
 			}
@@ -1734,7 +1734,7 @@ e_canaan = {
 		ai_primary_priority = {
 			if = {
 				limit = {
-					culture = { has_cultural_pillar = heritage_canaanite }
+					culture = { has_cultural_pillar = heritage_phoenician }
 				}
 				add = @correct_culture_primary_score
 			}
@@ -3768,7 +3768,7 @@ e_carthage = {
 		if = {
 			limit = {
 				OR = {
-					culture = { has_cultural_pillar = heritage_canaanite }
+					culture = { has_cultural_pillar = heritage_phoenician }
 				}
 			}
 			add = @correct_culture_primary_score

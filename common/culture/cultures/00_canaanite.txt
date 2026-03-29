@@ -2,7 +2,7 @@
 	color = canaanite
 
 	ethos = ethos_bureaucratic
-	heritage = heritage_canaanite
+	heritage = heritage_phoenician
 	language = language_canaanite
 	martial_custom = martial_custom_male_only	
 	head_determination = head_determination_domain
