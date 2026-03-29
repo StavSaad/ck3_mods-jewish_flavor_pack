@@ -354,7 +354,7 @@ rabbinic_exilarchate_bat_chasdai_i = {
 }
 
 rabbinic_exilarchate_chasdai_i = {
-	name = "Chisdai"
+	name = "Hasdai"
 	religion = "rabbinism"
 	culture = "bavlim"
 	father = rabbinic_exilarchate_bostanai_i
@@ -579,7 +579,7 @@ rabbinic_exilarchate_natronai_ii = {
 }
 
 rabbinic_exilarchate_hasdai_ii = {
-	name = "Chisdai"
+	name = "Hasdai"
 	religion = "rabbinism"
 	culture = "bavlim"
 	father = rabbinic_exilarchate_natronai_ii
@@ -1057,7 +1057,7 @@ rabbinic_exilarchate_david_v = {
 }
 
 rabbinic_exilarchate_chasdai_iii = {
-	name = "Chisdai"
+	name = "Hasdai"
 	religion = "rabbinism"
 	culture = "bavlim"
 	father = rabbinic_exilarchate_david_v
@@ -1313,7 +1313,7 @@ karaite_exilarchate_hezekiah_i = {
 }
 
 karaite_exilarchate_chasdai_i = {
-	name = "Chisdai"
+	name = "Hasdai"
 	religion = "karaism"
 	culture = "bavlim"
 	father = karaite_exilarchate_hezekiah_i
