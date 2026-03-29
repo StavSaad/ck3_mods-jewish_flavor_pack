@@ -1,7 +1,284 @@
+d_jip_bostanite = {
+	560.1.1 = {
+		government = jewish_admin_family_government
+		succession_laws = {
+			noble_family_succession_law
+			male_only_law
+			same_faith_only_law
+		}
+		holder = rabbinic_exilarchate_khafnai
+		effect = {
+			if = {
+				limit = {
+					exists = holder
+					holder = { has_government = administrative_government }
+				}
+				set_state_faith = faith:rabbinism
+			}
+		}
+	}
+
+	581.1.1 = {
+		holder = rabbinic_exilarchate_chaniani
+	}
+
+	589.6.1 = {
+		holder = 0
+	}
+
+	590.1.1 = {
+		holder = rabbinic_exilarchate_bostanai_i
+	}
+
+	670.1.1 = {
+		holder = rabbinic_exilarchate_baradawi
+	}
+
+	680.1.1 = {
+		holder = rabbinic_exilarchate_chasdai_i
+	}
+
+	733.1.1 = {
+		holder = rabbinic_exilarchate_solomon_i
+	}
+
+	760.1.1 = {
+		holder = rabbinic_exilarchate_yitzhak_iskawi_i
+	}
+
+	760.9.1 = {
+		holder = rabbinic_exilarchate_chananiah
+	}
+
+	771.1.1 = {
+		holder = rabbinic_exilarchate_mar_zakkai_i
+	}
+
+	773.1.1 = {
+		holder = rabbinic_exilarchate_makhir_ben_habibai
+	}
+
+	773.3.1 = {
+		holder = rabbinic_exilarchate_mar_zakkai_i
+	}
+
+	790.1.1 = {
+		holder = rabbinic_exilarchate_moshe
+	}
+
+	810.1.1 = {
+		holder = rabbinic_exilarchate_yitzhak_iskawi_ii
+	}
+
+	820.1.1 = {
+		holder = rabbinic_exilarchate_yehuda_i
+	}
+
+	827.1.1 = {
+		holder = rabbinic_exilarchate_david_i
+	}
+
+	840.1.1 = {
+		holder = rabbinic_exilarchate_yehudah_ii
+	}
+
+	857.1.1 = {
+		holder = rabbinic_exilarchate_natronai_ii
+	}
+
+	865.1.1 = {
+		holder = rabbinic_exilarchate_hasdai_ii
+	}
+
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+
+	870.1.1 = {
+		holder = rabbinic_exilarchate_yizthak_iii
+	}
+
+	890.1.1 = {
+		holder = rabbinic_exilarchate_zakkai_ii
+	}
+
+	890.11.1 = {
+		holder = rabbinic_exilarchate_okbah
+	}
+
+	919.1.1 = {
+		holder = rabbinic_exilarchate_david_ii
+	}
+
+	930.1.1 = {
+		holder = rabbinic_exilarchate_yehoshiyahu_i
+	}
+
+	933.1.1 = {
+		holder = rabbinic_exilarchate_david_ii
+	}
+
+	940.1.1 = {
+		holder = rabbinic_exilarchate_yehudah_iii
+	}
+
+	940.8.1 = {
+		holder = rabbinic_exilarchate_solomon_ii
+	}
+
+	967.1.1 = {
+		holder = rabbinic_exilarchate_azariah_i
+	}
+
+	989.1.1 = {
+		holder = rabbinic_exilarchate_david_iii
+	}
+
+	1021.1.1 = {
+		holder = rabbinic_exilarchate_chizkiyahu_ii
+	}
+
+	1058.1.1 = {
+		holder = rabbinic_exilarchate_david_iv
+	}
+
+	1066.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+
+	1081.1.1 = {
+		holder = rabbinic_exilarchate_chizkiyahu_iii
+	}
+
+	1097.1.1 = {
+		holder = rabbinic_exilarchate_david_v
+	}
+
+	1119.1.1 = {
+		holder = rabbinic_exilarchate_chasdai_iii
+	}
+	
+	1155.1.1 = {
+		holder = rabbinic_exilarchate_daniel_i
+	}
+
+	1175.1.1 = {
+		holder = rabbinic_exilarchate_shmuel_i
+	}
+
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
+d_jip_ananite = {
+	760.9.1 = {
+		government = jewish_admin_family_government
+		succession_laws = {
+			noble_family_succession_law
+			male_only_law
+			same_faith_only_law
+		}
+		holder = karaite_exilarchate_anan_i
+		effect = {
+			if = {
+				limit = {
+					exists = holder
+					holder = { has_government = administrative_government }
+				}
+				set_state_faith = faith:rabbinism
+			}
+		}
+	}
+
+	795.1.1 = {
+		holder = karaite_exilarchate_saul_i
+	}
+
+	798.1.1 = {
+		holder = karaite_exilarchate_josaiah_i
+	}
+
+	805.1.1 = {
+		holder = karaite_exilarchate_jehoshaphat_i
+	}
+
+	847.1.1 = {
+		holder = karaite_exilarchate_boaz_i
+	}
+
+	867.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
+		}
+	}
+
+	897.1.1 = {
+		holder = karaite_exilarchate_david_i
+	}
+
+	963.1.1 = {
+		holder = karaite_exilarchate_solomon_i
+	}
+
+	1011.1.1 = {
+		holder = karaite_exilarchate_hezekiah_i
+	}
+
+	1053.1.1 = {
+		holder = karaite_exilarchate_chasdai_i
+	}
+
+	1066.1.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
+		}
+	}
+
+	1109.1.1 = {
+		holder = karaite_exilarchate_solomon_ii
+	}
+
+	1157.1.1 = {
+		liege = k_mesopotamia
+	}
+
+	1159.1.1 = {
+		holder = karaite_exilarchate_david_ii
+	}
+
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+}
+
 d_jip_nathanite = {
 
 	270.1.1 = {
 		holder = rabbinic_exilarchate_ukban_dezuzita
+		government = jewish_admin_family_government
+		succession_laws = {
+			noble_family_succession_law
+			male_only_law
+			same_faith_only_law
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = holder
+					holder = { has_government = administrative_government }
+				}
+				set_state_faith = faith:rabbinism
+			}
+		}
 	}
 
 	300.1.1 = {
@@ -50,23 +327,6 @@ d_jip_nathanite = {
 
 	518.1.1 = {
 		holder = rabbinic_exilarchate_zutra_iv
-		government = jewish_admin_family_government
-		succession_laws = {
-			noble_family_succession_law
-			male_only_law
-			same_faith_only_law
-		}
-		effect = {
-			# set_variable = { name = is_jewish_family value = yes }
-			set_variable = { name = adventurer_creation_reason value = flag:historical }
-				if = {
-				limit = {
-					exists = holder
-					holder = { has_government = administrative_government }
-				}
-				set_state_faith = faith:rabbinism
-			}
-		}
 	}
 
 	572.1.1 = {
@@ -325,7 +585,7 @@ d_jip_kalonymos = {
 
 	1066.1.1 = {
 		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 1066.1.1 }
+			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
 		}
 	}
 
@@ -351,7 +611,7 @@ d_jip_kalonymos = {
 
 	1178.10.1 = {
 		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 1078.10.1 }
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
 		}
 	}
 }
