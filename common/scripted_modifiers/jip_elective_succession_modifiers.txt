@@ -108,10 +108,10 @@
 		this != scope:candidate
 		scope:candidate = { has_trait = davidic_line }
 		add = {
-			subtract = 25
+			value = 25
 			if = { #Religious gradients.
 				limit = { ai_zeal > 0 }
-				subtract = {
+				value = {
 					value = ai_zeal
 					multiply = 0.5
 				}

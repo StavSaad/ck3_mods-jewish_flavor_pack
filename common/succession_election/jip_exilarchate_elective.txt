@@ -61,15 +61,6 @@ exilarchate_elective = { #Witenagemot
 			faith = scope:holder.faith
 			is_adult = yes
 			is_male = yes
-			if = {
-				limit = {
-					is_ruler = yes
-				}
-				OR = {
-					has_government = jewish_admin_family_government
-					has_government = exilarchate_government
-				}
-			}
 		}
 	}
 
@@ -100,16 +91,22 @@ exilarchate_elective = { #Witenagemot
 	
 	#scope:candidate = Candidate, scope:title = Title, scope:holder_candidate = Candidate currently selected by ruler.
 	candidates = {
-		add = holder_dynasty
-		add = title_claimants
-		limit = {
-			religion = religion:judaism_religion
-			faith = scope:holder.faith
-			is_adult = yes
-			is_male = yes
-			if = {
-				limit = { is_ruler = yes }
-				has_government = jewish_admin_family_government
+		add = {
+			type = holder_dynasty
+			limit = {
+				religion = religion:judaism_religion
+				faith = scope:holder.faith
+				is_adult = yes
+				is_male = yes
+			}
+		}
+		add = {
+			type = title_claimants
+			limit = {
+				religion = religion:judaism_religion
+				faith = scope:holder.faith
+				is_adult = yes
+				is_male = yes
 			}
 		}
 	}
