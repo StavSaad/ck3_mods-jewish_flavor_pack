@@ -703,6 +703,9 @@ rabbinic_exilarchate_pinchas_ben_abdimi = {
 	810.1.1 = {
 		birth = yes
 	}
+	867.1.1 = {
+		add_unpressed_claim = title:d_exilarchate
+	}
 	870.1.1 = {
 		death = yes
 	}

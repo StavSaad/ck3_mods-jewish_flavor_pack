@@ -1,0 +1,25 @@
+﻿title_succession_laws = {
+	
+	exilarchate_elective_succession_law = {
+		can_title_have = {
+			OR = {
+				title:d_exilarchate = this
+				title:d_karaite_exilarchate = this
+			}
+		}
+		should_show_for_title = { # Never show this in the UI, just apply it through script
+			always = no
+		}
+		can_remove_from_title = {
+			always = no
+		}
+		succession = {
+			order_of_succession = election
+			election_type = exilarchate_elective
+			title_division = single_heir
+			faith = same_faith
+			gender_law = male_preference
+		}
+	}
+
+}

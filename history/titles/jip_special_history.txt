@@ -2,6 +2,9 @@
 
 	-596.1.1 = {
 		government = exilarchate_government
+		succession_laws = {
+			exilarchate_elective_succession_law
+		}
 		liege = e_persia
 	}
 
@@ -336,14 +339,8 @@ d_karaite_exilarchate = {
 		government = exilarchate_government
 		liege = e_arabia
 		holder = karaite_exilarchate_anan_i
-		effect = {
-			if = {
-				limit = {
-					exists = holder
-					holder = { has_government = administrative_government }
-				}
-				set_state_faith = faith:rabbinism
-			}
+		succession_laws = {
+			exilarchate_elective_succession_law
 		}
 	}
 
