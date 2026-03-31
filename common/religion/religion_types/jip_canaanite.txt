@@ -1,6 +1,6 @@
 ﻿canaanite_religion = {
 	family = rf_pagan
-	graphical_faith = "islamic_gfx"
+	graphical_faith = "pagan_gfx"
 
 	pagan_roots = yes
 
