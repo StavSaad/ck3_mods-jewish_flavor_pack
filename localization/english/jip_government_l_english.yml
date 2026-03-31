@@ -7,8 +7,3 @@
  jewish_admin_family_government_vassals_label: "[administrative|E] [obligations|E] are based on [GetPlayer.Custom('GetProvinceAdministrationConcept')]"
  jewish_admin_family_government_house_attribute_flavor_name: "[powerful_family_attribute|E]"
  jewish_admin_family_government_house_attribute_flavor_name_no_tooltip: "$game_concept_powerful_family_attribute$"
- exilarchate_government: "Exilarchate"
- exilarchate_government_with_icon: "@government_type_exilarchate! $exilarchate_government$"
- exilarchate_government_adjective: "Exilarchate"
- exilarchate_government_realm: "Exilarchate"
- exilarchate_government_desc: "\nA Special title of the head of the jewish community in Babylon.#!"
