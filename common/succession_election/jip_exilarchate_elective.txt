@@ -97,6 +97,12 @@ exilarchate_elective = { #Witenagemot
 				faith = scope:holder.faith
 				is_adult = yes
 				is_male = yes
+				OR = {
+					is_player_heir_of = scope:holder
+					scope_candidate = {
+					}
+					is_ruler = yes
+				}
 			}
 		}
 		add = {
