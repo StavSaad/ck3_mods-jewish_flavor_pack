@@ -37,10 +37,6 @@
 
 	character_modifier = {
 		levy_size = -0.5
-		feudal_government_tax_contribution_mult = -0.5
-		feudal_government_levy_contribution_mult = -0.5
-		clan_government_tax_contribution_mult = -0.5
-		clan_government_levy_contribution_mult = -0.5
 		men_at_arms_cap = -2
 		men_at_arms_limit = -2
 		knight_limit = -5
@@ -93,7 +89,7 @@ exilarchate_government = {
 		create_cadet_branches = yes
 		rulers_should_have_dynasty = yes
 		dynasty_named_realms = no
-		administrative = yes
+		administrative = no
 		legitimacy = yes
 		landless_playable = yes
 		use_as_base_on_landed = no
@@ -127,10 +123,6 @@ exilarchate_government = {
 
 	character_modifier = {
 		levy_size = -0.5
-		feudal_government_tax_contribution_mult = -0.5
-		feudal_government_levy_contribution_mult = -0.5
-		clan_government_tax_contribution_mult = -0.5
-		clan_government_levy_contribution_mult = -0.5
 		men_at_arms_cap = -2
 		men_at_arms_limit = -2
 		knight_limit = -5

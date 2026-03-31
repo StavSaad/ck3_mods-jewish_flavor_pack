@@ -46,11 +46,6 @@ exilarchate_elective = { #Witenagemot
 			}
 			has_trait = trait:davidic_line
 		}
-		modifier = { #Regent Influence
-			desc = tooltip_feudal_vote_strength_is_diarch
-			add = 1
-			is_diarch_of_target = scope:holder
-		}
 	}
 	
 	electors = {
@@ -74,7 +69,6 @@ exilarchate_elective = { #Witenagemot
 
 		##########################	Elector voting patterns (circumstances)	##########################
 		elector_voting_pattern_circumstances_feudal_elective_modifier = yes
-		elector_voting_pattern_circumstances_saxon_elective_modifier = yes
 
 		##########################	Elector voting patterns (prestige/piety)	##########################
 		elector_voting_pattern_prestige_piety_feudal_elective_modifier = yes
@@ -107,6 +101,7 @@ exilarchate_elective = { #Witenagemot
 				faith = scope:holder.faith
 				is_adult = yes
 				is_male = yes
+				is_ruler = yes
 			}
 		}
 	}

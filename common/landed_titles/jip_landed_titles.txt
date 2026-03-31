@@ -9,12 +9,14 @@ d_exilarchate = {
 	capital = c_baghdad
 
 	definite_form = yes
+	figurehead = yes
 	ruler_uses_title_name = no
-	no_automatic_claims = yes
-	always_follows_primary_heir = yes
-	destroy_if_invalid_heir = yes
+	# no_automatic_claims = yes
+	always_follows_primary_heir = no
+	destroy_if_invalid_heir = no
 	can_be_named_after_dynasty = no
 	can_use_nomadic_naming = no
+	de_jure_drift_disabled = yes
 
 	ai_primary_priority = { add = @exilarchate_primary_score }
 }
@@ -24,12 +26,14 @@ d_karaite_exilarchate = {
 	capital = c_baghdad
 
 	definite_form = yes
+	figurehead = yes
 	ruler_uses_title_name = no
-	no_automatic_claims = yes
-	always_follows_primary_heir = yes
-	destroy_if_invalid_heir = yes
+	# no_automatic_claims = yes
+	always_follows_primary_heir = no
+	destroy_if_invalid_heir = no
 	can_be_named_after_dynasty = no
 	can_use_nomadic_naming = no
+	de_jure_drift_disabled = yes
 
 	ai_primary_priority = { add = @exilarchate_primary_score }
 }
