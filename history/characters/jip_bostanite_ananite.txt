@@ -1,4 +1,4 @@
-
+﻿
 rabbinic_exilarchate_khafnai = {
 	name = "Kafnai"
 	religion = "rabbinism"

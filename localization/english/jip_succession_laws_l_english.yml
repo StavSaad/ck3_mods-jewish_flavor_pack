@@ -1,6 +1,6 @@
 ﻿l_english:
  exilarchate_elective_succession_law: "Exilarchate Elective"
- exilarchate_elective_succession_law_effects: "The [ruler|E] and all members of [ROOT.GetHerHis] [dynasty|E] can nominate a [title_heir|E] from among the members of the ruler's [dynasty|E] and other claimants to the title of the same [faith|E]."
+ exilarchate_elective_succession_law_effects: "The [ruler|E] and all members of their [dynasty|E], and other claimants to the title, can nominate a [title_heir|E] from among the members of the ruler's [dynasty|E] and other claimants to the title of the same [faith|E]."
  exilarchate_elective_candidates: "Dynasty Members And Claimants"
  exilarchate_elective_candidates_tooltip: "All legitimate adult members of the current ruler's [dynasty|E] who are not in line to inherit a Theocracy or Republic are valid candidates under Exilarchate Elective."
  exilarchate_elective_electors: "Dynasty Members And Claimants"

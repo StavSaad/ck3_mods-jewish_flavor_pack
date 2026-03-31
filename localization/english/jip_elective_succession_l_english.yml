@@ -1,3 +1,3 @@
 ﻿l_english:
  tooltip_exilarchate_elector_vote_strength_davidic_heir:0 "[ROOT.Char.GetSheHe|U] is a [GetTrait('davidic_line').GetName(GetNullCharacter)]: $VALUE|=+0$"
- tooltip_exilarchate_elector_vote_candidate_davidic_heir:0 "[candidate.GetShortUIName|U] is a [GetTrait('davidic_line').GetName]: $VALUE|=+0$"
+ tooltip_exilarchate_elector_vote_candidate_davidic_heir:0 "[candidate.GetShortUIName|U] is a [GetTrait('davidic_line').GetName(GetNullCharacter)]: $VALUE|=+0$"

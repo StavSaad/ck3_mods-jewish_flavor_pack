@@ -16,7 +16,6 @@
 		succession = {
 			order_of_succession = election
 			election_type = exilarchate_elective
-			title_division = single_heir
 			faith = same_faith
 			gender_law = male_preference
 		}

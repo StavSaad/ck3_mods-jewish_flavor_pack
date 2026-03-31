@@ -24,6 +24,11 @@ exilarchate_elective = { #Witenagemot
 			add = 1
 			highest_held_title_tier = 3
 		}
+		modifier = {
+			desc = tooltip_exilarchate_elector_vote_strength_current_exilarch
+			add = 1
+			has_title = scope:title
+		}
 		modifier = { #Powerful Vassal
 			desc = tooltip_feudal_vote_strength_powerful_vassal
 			add = {
