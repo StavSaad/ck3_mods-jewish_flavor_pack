@@ -1,4 +1,4 @@
-namespace = jip_claim_exilarchate
+﻿namespace = jip_claim_exilarchate
 
 jip_claim_exilarchate.001 = {
 	type = character_event
