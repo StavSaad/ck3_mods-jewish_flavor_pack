@@ -106,9 +106,12 @@
 		scope:owner = {
 			trigger_event = { id = jip_claim_exilarchate.001 days = 1 }
 		}
+		scope:scheme = {
+			end_scheme = yes
+		}
 		cap_schemes_and_fire_reminders_effect = yes
 	}
-	on_hud_click  = { claim_exilarchate_scheme_prep_effect = yes }
+	on_hud_click  = {  }
 	on_monthly = {
 	}
 	on_semiyearly = {

@@ -91,6 +91,95 @@
 	}
 }
 
+claim_exilarchate_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	ai_check_interval = 60
+	desc = claim_exilarchate_decision_desc
+	decision_group_type = major
+
+	is_shown = {
+		culture = { has_cultural_pillar = heritage_israelite }
+		trigger_if = {
+			limit = {
+				has_faith = faith:rabbinism
+			}
+			NOT = {
+				has_claim_on = title:d_exilarchate
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				has_faith = faith:karaism
+			}
+			NOT = {
+				has_claim_on = title:d_karaite_exilarchate
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	is_valid = {
+		is_independent_ruler = yes 		
+		culture = { has_cultural_pillar = heritage_israelite }
+		custom_tooltip = {
+			text = no_active_claim_exilarchate_scheme
+			NOT = {
+				any_scheme = {
+					type = claim_exilarchate
+				}
+			}
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				has_faith = faith:rabbinism
+			}
+			title:d_exilarchate = {
+				save_scope_as = target_title
+			}
+			begin_scheme_basic_effect = { 
+				SCHEME_TYPE = claim_exilarchate 
+				TARGET_TYPE = target_title 
+				TARGET_SCOPE = title:d_exilarchate
+			}
+			trigger_event = { id = jip_claim_exilarchate.003 }
+		}
+		else_if = {
+			limit = {
+				has_faith = faith:karaism
+			}
+			title:d_karaite_exilarchate = {
+				save_scope_as = target_title
+			}
+			begin_scheme_basic_effect = { 
+				SCHEME_TYPE = claim_exilarchate 
+				TARGET_TYPE = target_title 
+				TARGET_SCOPE = title:d_karaite_exilarchate
+			}
+			trigger_event = { id = jip_claim_exilarchate.003 }
+		}
+		else = {
+			# nothing
+		}
+	}
+
+	cost = { prestige = { value = 500 } }
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
 reclaim_davidic_heritage = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
