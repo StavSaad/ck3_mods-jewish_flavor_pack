@@ -2,20 +2,22 @@
 @better_than_the_alternatives_score = 50
 @always_primary_score = 1000
 @never_primary_score = -1000
-@exilarchate_primary_score = 1500
+@exilarchate_primary_score = 950
 
 d_exilarchate = {
 	color = { 100 100 100 }
 	capital = c_baghdad
 
 	definite_form = yes
-	landless = yes
-	always_follows_primary_heir = yes
-	no_automatic_claims = yes
-	noble_family = no
-	destroy_if_invalid_heir = yes
+	figurehead = yes
 	ruler_uses_title_name = no
-	ignore_titularity_for_title_weighting = yes
+	landless = yes
+	# no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = no
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+	de_jure_drift_disabled = yes
 
 	ai_primary_priority = { add = @exilarchate_primary_score }
 }
@@ -25,13 +27,15 @@ d_karaite_exilarchate = {
 	capital = c_baghdad
 
 	definite_form = yes
-	landless = yes
-	always_follows_primary_heir = yes
-	no_automatic_claims = yes
-	noble_family = no
-	destroy_if_invalid_heir = yes
+	figurehead = yes
 	ruler_uses_title_name = no
-	ignore_titularity_for_title_weighting = yes
+	landless = yes
+	# no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = no
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+	de_jure_drift_disabled = yes
 
 	ai_primary_priority = { add = @exilarchate_primary_score }
 }

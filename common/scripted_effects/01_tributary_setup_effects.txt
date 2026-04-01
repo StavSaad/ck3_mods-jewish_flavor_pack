@@ -64,12 +64,12 @@ jip_867_tributary_setup_effect = {
 		character:rabbinic_exilarchate_pinchas_ben_abdimi = {
 			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
 		}
-		# character:rabbinic_exilarchate_hasdai_ii = {
-		# 	break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
-		# }
-		# character:karaite_exilarchate_boaz_i = {
-		# 	break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
-		# }
+		character:rabbinic_exilarchate_hasdai_ii = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+		character:karaite_exilarchate_boaz_i = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
 	}
 
 	character:30228 = { # King of Italy
@@ -81,15 +81,15 @@ jip_867_tributary_setup_effect = {
 }
 
 jip_1066_tributary_setup_effect = {
-	# character:3040 = { # Seljuk Sultan
-	# 	save_scope_as = suzerain
-	# 	character:rabbinic_exilarchate_david_iv = {
-	# 		break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
-	# 	}
-	# 	character:karaite_exilarchate_chasdai_i = {
-	# 		break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
-	# 	}
-	# }
+	character:3040 = { # Seljuk Sultan
+		save_scope_as = suzerain
+		character:rabbinic_exilarchate_david_iv = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+		character:karaite_exilarchate_chasdai_i = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+	}
 	character:110520 = { # Duke Ramon Berenguer of Barcelona
 		save_scope_as = suzerain
 		character:solomon_bar_shealtiel = {
@@ -108,15 +108,15 @@ jip_1066_tributary_setup_effect = {
 }
 
 jip_1178_tributary_setup_effect = {
-	# character:227000 = { # Abbasid Sultan
-	# 	save_scope_as = suzerain
-	# 	character:rabbinic_exilarchate_shmuel_i = {
-	# 		break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
-	# 	}
-	# 	character:karaite_exilarchate_david_ii = {
-	# 		break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
-	# 	}
-	# }
+	character:227000 = { # Abbasid Sultan
+		save_scope_as = suzerain
+		character:rabbinic_exilarchate_shmuel_i = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+		character:karaite_exilarchate_david_ii = {
+			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:suzerain TRIBUTARY = this }
+		}
+	}
 	character:210500 = { # King Alfons II of Aragon
 		save_scope_as = suzerain
 		character:judah_bar_nathan = {

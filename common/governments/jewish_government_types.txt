@@ -37,10 +37,6 @@
 
 	character_modifier = {
 		levy_size = -0.5
-		feudal_government_tax_contribution_mult = -0.5
-		feudal_government_levy_contribution_mult = -0.5
-		clan_government_tax_contribution_mult = -0.5
-		clan_government_levy_contribution_mult = -0.5
 		men_at_arms_cap = -2
 		men_at_arms_limit = -2
 		knight_limit = -5
@@ -49,6 +45,7 @@
 		title_creation_cost_mult = -0.5
 		mercenary_hire_cost_mult = 2
 		men_at_arms_maintenance = 0.5
+		diplomatic_range_mult = 2
 	}
 
 	can_get_government = {
@@ -64,7 +61,7 @@
 		}
 	}
 
-	compatible_government_type_succession = { feudal_government }
+	# compatible_government_type_succession = { feudal_government }
 
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
 	flags = {

@@ -1,0 +1,128 @@
+﻿claim_exilarchate = {
+	# Basic Setup
+	skill = learning
+	desc = claim_exilarchate_desc_general
+	success_desc = "CLAIM_EXILARCHATE_SUCCESS_DESC"
+	discovery_desc = "CLAIM_EXILARCHATE_DISCOVERY_DESC"
+	icon = icon_scheme_claim_exilarchate
+	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
+	category = political
+	target_type = title
+	is_secret = no
+	is_basic = yes
+	uses_resistance = no
+	cooldown = { years = 10 }
+	
+	# Parameters
+	speed_per_skill_point = -2.5
+	spymaster_speed_per_skill_point = 0	
+	uses_resistance = no
+	base_progress_goal = 365
+	base_maximum_success = 95
+	minimum_success = 5
+
+	# Core Triggers
+	allow = {
+		is_adult = yes
+		is_imprisoned = no
+		is_landed = yes
+		highest_held_title_tier > tier_county
+		scope:target.holder = {
+			has_faith = scope:owner.faith
+		}
+		NOT = {
+			scope:owner = {
+				has_claim_on = scope:target
+			}
+		}
+	}
+	valid = {
+		is_incapable = no
+		scope:owner = {
+			NOT = {
+				has_title = scope:target_title
+			}
+		}
+		custom_description = {
+			text = already_has_strong_claim_on
+			object = scope:target
+			scope:owner = {
+				NOT = { has_claim_on = scope:target }
+			}
+		}
+	}
+
+	odds_prediction = {
+		add = hostile_scheme_base_odds_prediction_target_is_char_value
+		add = odds_skill_contribution_learning_value
+		add = agent_groups_owner_perspective_value
+		add = agent_groups_target_character_perspective_value
+		min = 0
+	}
+
+	# Base Chances
+	base_success_chance = {
+		base = 0
+		scheme_type_skill_success_chance_modifier = { SKILL = LEARNING }
+		
+		compare_modifier = {
+			desc = "SCHEME_MY_LEARNING"
+			value = scope:owner.learning
+			multiplier = 2
+		}
+
+		compare_modifier = {
+			desc = "SCHEME_MY_INTRIGUE"
+			value = scope:owner.intrigue
+		}
+
+		# house_head_request_interaction
+		## This scheme is hostile but doesn't use hostile_scheme_base_chance_modifier, so we add this value here
+		modifier = {
+			add = hostile_scheme_variable_list_value
+			scope:owner = {
+				has_variable_list = supporting_hostile_schemes
+			}
+			desc = HOUSE_HEAD_SCHEME_SUPPORT_DESC
+		}
+		modifier = {
+			add = -10
+			scope:owner = { has_character_modifier = hostile_schemes_distracted_modifier }
+			desc = hostile_schemes_distracted_modifier
+		}
+	}
+
+	# On Actions
+	on_start = {
+		set_variable = {
+			name = apply_countermeasures
+			value = flag:indirect
+		}
+		# Fallback agents — a balanced config if you start the scheme from script.
+	}
+	on_phase_completed = {
+		suppress_scheme_follow_up_event_till_input_given_effect = yes
+		## TODO: put this in the effect with event and some stuff
+		scope:owner = {
+			trigger_event = { id = jip_claim_exilarchate.001 days = 1 }
+		}
+		scope:scheme = {
+			end_scheme = yes
+		}
+		cap_schemes_and_fire_reminders_effect = yes
+	}
+	on_hud_click  = {  }
+	on_monthly = {
+	}
+	on_semiyearly = {
+	}
+	on_invalidated = {
+		if = {
+			limit = { exists = scheme_target_title }
+			scheme_target_title = { save_scope_as = target_title }
+		}
+		scope:owner = {
+			trigger_event = { id = jip_claim_exilarchate.002 days = 1 }
+		}
+	}	
+}

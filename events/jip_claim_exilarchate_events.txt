@@ -1,0 +1,59 @@
+namespace = jip_claim_exilarchate
+
+jip_claim_exilarchate.001 = {
+	type = character_event
+	title = jip_claim_exilarchate.001.title
+	window = scheme_successful_event
+	desc = jip_claim_exilarchate.001.desc
+	theme = diplomacy
+	left_portrait = {
+		character = scope:owner
+		scripted_animation = scheme_prep_pick_best_stance
+	}
+
+	immediate = {
+		scope:owner = {
+			add_unpressed_claim = scope:target_title
+		}
+	}
+
+	option = {
+		name = jip_claim_exilarchate.001.a
+	}
+}
+
+jip_claim_exilarchate.002 = {
+	type = character_event
+	title = jip_claim_exilarchate.002.title
+	window = scheme_failed_event
+	desc = jip_claim_exilarchate.002.desc
+	theme = diplomacy
+	left_portrait = {
+		character = scope:owner
+		scripted_animation = scheme_prep_pick_best_stance
+	}
+
+	option = {
+		name = jip_claim_exilarchate.002.a
+	}
+}
+
+jip_claim_exilarchate.003 = {
+	type = character_event
+	title = jip_claim_exilarchate.003.title
+	desc = jip_claim_exilarchate.003.desc
+	theme = diplomacy
+	left_portrait = {
+		character = root
+		scripted_animation = scheme_prep_pick_best_stance
+	}
+
+	lower_right_portrait = {
+		character = scope:target_title.holder
+		scripted_animation = scheme_prep_pick_best_stance
+	}
+
+	option = {
+		name = jip_claim_exilarchate.003.a
+	}
+}

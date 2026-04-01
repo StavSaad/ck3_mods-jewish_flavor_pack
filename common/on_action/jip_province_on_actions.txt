@@ -8,11 +8,21 @@
 jip_third_temple_on_action = {
 	trigger = {
 		has_building = temple_in_jerusalem_01
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_third_temple_on_action
+			}
+		}
 	}
 
 	effect = {
 		scope:character = {
 			trigger_event = jip_hebrew.0040
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:jip_third_temple_on_action
 		}
 	}
 }

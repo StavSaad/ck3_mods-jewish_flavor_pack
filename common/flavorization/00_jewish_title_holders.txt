@@ -31,13 +31,58 @@ duke_jewish_landless_male = {
 	}
 }
 
+kohen_gadol_male = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 301
+	titles = { d_kohen_gadol }
+	flavourization_rules = {
+		spouse_takes_title = no
+		ignore_top_liege_government = yes
+		# top_liege = no
+	}
+}
+
+kohen_gadol_female = {
+	type = character
+	gender = female
+	special = holder
+	tier = duchy
+	priority = 301
+	titles = { d_kohen_gadol }
+	flavourization_rules = {
+		spouse_takes_title = no
+		ignore_top_liege_government = yes
+		# top_liege = no
+	}
+}
+
+kohen_male = {
+	type = character
+	gender = male
+	special = councillor
+	priority = 299
+	council_position = councillor_court_chaplain
+	faiths = { kohanism }
+}
+
+kohen_female = {
+	type = character
+	gender = female
+	special = councillor
+	priority = 299
+	council_position = councillor_court_chaplain
+	faiths = { kohanism }
+}
+
 exilarch = {
 	type = character
 	gender = male
 	special = holder
 	tier = duchy
 	priority = 301
-	governments = { jewish_admin_family_government }
 	titles = { d_exilarchate d_karaite_exilarchate }
 
 	flavourization_rules = {

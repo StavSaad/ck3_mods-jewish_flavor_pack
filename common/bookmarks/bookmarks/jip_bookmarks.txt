@@ -29,7 +29,7 @@
 		dynasty_splendor_level = 7
 		type = male
 		birth = 823.1.1
-		title = "d_exilarchate"
+		title = "d_jip_bostanite"
 		government = jewish_admin_family_government
 		culture = bavlim
 		religion = rabbinism 
@@ -85,7 +85,7 @@
 		dynasty_splendor_level = 7
 		type = male
 		birth = 835.1.1
-		title = "d_karaite_exilarchate"
+		title = "d_jip_ananite"
 		government = jewish_admin_family_government
 		culture = bavlim
 		religion = karaism 

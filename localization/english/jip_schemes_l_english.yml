@@ -1,0 +1,13 @@
+﻿l_english:
+ claim_exilarchate: "Claim the Exilarchate"
+ claim_exilarchate_action: "Claim"
+ claim_exilarchate_desc: "Make a play to install yourself as the Exilarch. This will give you a claim on the title, and make you an [elector|E]."
+ jip_claim_exilarchate.001.title: "A Claim on the Exilarchate"
+ jip_claim_exilarchate.001.desc: "Through a lot of groundwork, I have created the framework for me to be considered as a viable candidate for the position of Exilarch. I have also gained the right to be an [elector|E] for the title."
+ jip_claim_exilarchate.001.a: "Now it is time to get elected..."
+ jip_claim_exilarchate.002.title: "$claim_exilarchate$ Scheme Invalidated"
+ jip_claim_exilarchate.002.desc: "Due to having gained a claim on [target_title.GetName] in other ways, the [scheme|E] have been invalidated."
+ jip_claim_exilarchate.002.a: "All is well"
+ jip_claim_exilarchate.003.title: "$claim_exilarchate$ Scheme Started"
+ jip_claim_exilarchate.003.desc: "I started to participate in the politics of the exilarchate, hoping to gain enough standing to be seen as a candidate for the title."
+ jip_claim_exilarchate.003.a: "I will rule"

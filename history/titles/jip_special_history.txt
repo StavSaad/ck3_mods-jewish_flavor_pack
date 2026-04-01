@@ -3,11 +3,8 @@
 	-596.1.1 = {
 		government = jewish_admin_family_government
 		succession_laws = {
-			noble_family_succession_law
-			male_only_law
-			same_faith_only_law
+			exilarchate_elective_succession_law
 		}
-		liege = e_persia
 	}
 
 	-597.4.1 = {
@@ -185,19 +182,6 @@
 	680.1.1 = {
 		holder = rabbinic_exilarchate_chasdai_i
 	}
-	
-	651.1.1 = {
-		liege = e_arabia
-		effect = {
-			if = {
-				limit = {
-					exists = holder
-					holder = { has_government = administrative_government }
-				}
-				set_state_faith = faith:rabbinism
-			}
-		}
-	}
 
 	733.1.1 = {
 		holder = rabbinic_exilarchate_solomon_i
@@ -307,16 +291,8 @@
 		holder = rabbinic_exilarchate_chizkiyahu_ii
 	}
 
-	1055.1.1 = {
-		liege = k_persia
-	}
-
 	1058.1.1 = {
 		holder = rabbinic_exilarchate_david_iv
-	}
-
-	1063.9.4 = {
-		liege = e_persia
 	}
 
 	1081.1.1 = {
@@ -335,10 +311,6 @@
 		holder = rabbinic_exilarchate_daniel_i
 	}
 
-	1157.1.1 = {
-		liege = k_mesopotamia
-	}
-
 	1175.1.1 = {
 		holder = rabbinic_exilarchate_shmuel_i
 	}
@@ -348,21 +320,9 @@ d_karaite_exilarchate = {
 
 	760.9.1 = {
 		government = jewish_admin_family_government
-		succession_laws = {
-			noble_family_succession_law
-			male_only_law
-			same_faith_only_law
-		}
-		liege = e_arabia
 		holder = karaite_exilarchate_anan_i
-		effect = {
-			if = {
-				limit = {
-					exists = holder
-					holder = { has_government = administrative_government }
-				}
-				set_state_faith = faith:rabbinism
-			}
+		succession_laws = {
+			exilarchate_elective_succession_law
 		}
 	}
 
@@ -396,14 +356,6 @@ d_karaite_exilarchate = {
 
 	1053.1.1 = {
 		holder = karaite_exilarchate_chasdai_i
-	}
-
-	1055.1.1 = {
-		liege = k_persia
-	}
-
-	1063.9.4 = {
-		liege = e_persia
 	}
 
 	1109.1.1 = {
