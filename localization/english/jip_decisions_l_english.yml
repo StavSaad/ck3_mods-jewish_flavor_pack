@@ -78,7 +78,7 @@
  reclaim_davidic_heritage_confirm: "Make it so!"
  switch_house_effect_desc: "You and all your descendants of the same [house|e] become members of [house|e] [GetScriptedCharacterByHistoryID('king_david_i').GetDynastyName]"
  claim_exilarchate_decision: "Participate in Exilarchate Politics"
- claim_exilarchate_decision_desc: ""
+ claim_exilarchate_decision_desc: "I will participiate in the politics of the Exilarchate in order to gain standing."
  claim_exilarchate_decision_tooltip: "Participate in Exilarchate Politics"
  claim_exilarchate_decision_confirm: "Do it"
  no_active_claim_exilarchate_scheme: "You are not currently scheming to claim the Exilarchate"

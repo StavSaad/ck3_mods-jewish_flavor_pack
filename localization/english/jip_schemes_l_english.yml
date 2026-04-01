@@ -8,3 +8,6 @@
  jip_claim_exilarchate.002.title: "$claim_exilarchate$ Scheme Invalidated"
  jip_claim_exilarchate.002.desc: "Due to having gained a claim on [target_title.GetName] in other ways, the [scheme|E] have been invalidated."
  jip_claim_exilarchate.002.a: "All is well"
+ jip_claim_exilarchate.003.title: "$claim_exilarchate$ Scheme Started"
+ jip_claim_exilarchate.003.desc: "I started to participate in the politics of the exilarchate, hoping to gain enough standing to be seen as a candidate for the title."
+ jip_claim_exilarchate.003.a: "I will rule"
