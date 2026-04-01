@@ -1,4 +1,4 @@
-# A title is inherited by a character
+﻿# A title is inherited by a character
 # root = the new holder
 # scope:title = the title that changes hands
 # scope:previous_holder = previous holder. Should be dead
