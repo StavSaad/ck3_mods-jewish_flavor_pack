@@ -99,8 +99,6 @@ exilarchate_elective = { #Witenagemot
 				is_male = yes
 				OR = {
 					is_player_heir_of = scope:holder
-					scope_candidate = {
-					}
 					is_ruler = yes
 				}
 			}

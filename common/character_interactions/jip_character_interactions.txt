@@ -1,0 +1,410 @@
+claim_exilarchate_interaction = {
+	icon = icon_scheme_claim_exilarchate
+	category = interaction_category_hostile
+
+	interface_priority = 90
+	scheme = claim_exilarchate
+
+	send_name = START_SCHEME
+	ignores_pending_interaction_block = no
+
+	ai_targets = {
+		ai_recipients = title:d_exilarchate.holder
+		ai_recipients = title:d_karaite_exilarchate.holder
+	}
+
+	ai_frequency_by_tier = {
+		barony = 0
+		county = 65
+		duchy = 90
+		kingdom = 0
+		empire = 0
+		hegemony = 0
+	}
+
+	is_shown = {
+		is_ruler = yes
+		is_adult = yes
+		scope:actor != scope:recipient
+		scope:actor = {
+			has_faith = scope:recipient.faith
+		}
+		trigger_if = {
+			limit = {
+				has_faith = faith:rabbinism
+			}
+			scope:actor = {
+				NOT = {
+					has_claim_on = title:d_exilarchate
+				}
+				NOT = {
+					has_title = title:d_exilarchate
+				}
+			}
+			scope:recipient = {
+				has_title = title:d_exilarchate
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				has_faith = faith:karaism
+			}
+			scope:actor = {
+				NOT = {
+					has_claim_on = title:d_karaite_exilarchate
+				}
+				NOT = {
+					has_title = title:d_karaite_exilarchate
+				}
+			}
+			scope:recipient = {
+				has_title = title:d_karaite_exilarchate
+			}
+		}
+		trigger_else = {
+			always = no
+		}
+	}
+
+	cost = {
+		prestige = {
+			value = 0
+		}
+	}
+
+	desc = {
+		triggered_desc = {
+			trigger = {
+				scope:actor = {
+					NOT = { is_at_war_with = scope:recipient }
+					trigger_if = {
+						limit = {
+							has_faith = faith:rabbinism
+						}
+						can_start_scheme = {
+							type = claim_exilarchate
+							target_title = title:d_exilarchate
+						}
+					}
+					trigger_else_if = {
+						limit = {
+							has_faith = faith:karaism
+						}
+						can_start_scheme = {
+							type = claim_exilarchate
+							target_title = title:d_karaite_exilarchate
+						}
+					}
+					trigger_else = {
+						always = no
+					}
+				}
+			}
+			desc = scheme_interaction_tt_claim_exilarchate_approved
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				scope:actor = {
+					has_faith = faith:rabbinism
+				}
+			}
+			title:d_exilarchate = {
+				save_scope_as = target_title
+			}
+		} 
+		else_if = {
+			limit = {
+				scope:actor = {
+					has_faith = faith:karaism
+				}
+			}
+			title:d_karaite_exilarchate = {
+				save_scope_as = target_title
+			}
+		}
+		else {
+			# error
+		}
+		scope:actor = {
+			send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = claim_exilarchate_interaction_notification
+
+				left_icon = scope:actor
+				right_icon = scope:recipient
+
+				begin_scheme_basic_effect = {
+					SCHEME_TYPE = claim_exilarchate
+					TARGET_TYPE = target_title
+					TARGET_SCOPE = scope:target_title
+				}
+			}
+		}
+	}
+
+	ai_potential = {
+		OR = {
+			has_perk = befriend_perk # Unlocked by the Befriend Perk
+			dynasty ?= {
+				has_dynasty_perk = fp1_adventure_legacy_5
+			}
+			culture = { has_cultural_parameter = automatic_befriend_access }
+			any_character_struggle = {
+				involvement = involved
+				has_struggle_phase_parameter = struggle_unlocks_befriend_schemes_for_everyone
+			}
+			house ?= { has_house_aspiration_parameter = aspect_of_serenity }
+		}
+		NOR = {
+			has_trait = shy
+			has_trait = callous
+			any_scheme = {
+				OR = {
+					scheme_type = befriend
+					#scheme_type = sway # We allow the AI to override Sway with Befriend
+					scheme_type = seduce
+					scheme_type = courting
+					scheme_type = elope
+					scheme_type = learn_language
+					scheme_type = teach_governor
+				}
+			}
+			AND = { # No one cares about City barons
+				is_lowborn = yes
+				primary_title.tier <= tier_barony
+			}
+		}
+	}
+
+	auto_accept = yes
+
+	ai_will_do = {
+		base = 50
+
+		modifier = { # Try to befriend those who you might want to vassalize
+			add = 30
+			scope:actor = {
+				top_liege = this
+				primary_title.tier >= tier_county
+				NOT = {
+					any_targeting_faction = {
+						exists = yes
+						OR = {
+							faction_is_type = liberty_faction
+							faction_is_type = claimant_faction
+							faction_is_type = independence_faction
+						}
+					}
+				}
+			}
+			scope:recipient = {
+				top_liege = this
+				is_playable_character = yes
+				primary_title.tier < scope:actor.primary_title.tier
+				OR = {
+					faith.religion = scope:actor.faith.religion
+					AND = {
+						faith = {
+							has_doctrine = doctrine_pluralism_pluralistic
+						}
+						scope:actor.faith = {
+							has_doctrine = doctrine_pluralism_pluralistic
+						}
+					}
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.1
+			scope:actor = {
+				opinion = {
+					target = scope:recipient
+					value < -50
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.1
+			scope:recipient = {
+				opinion = {
+					target = scope:actor
+					value > 50
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			scope:recipient = {
+				number_of_personality_traits_in_common = {
+					target = scope:actor
+					value < 2
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.1
+			scope:recipient = {
+				number_of_personality_traits_in_common = {
+					target = scope:actor
+					value < 1
+				}
+			}
+		}
+
+		# Struggle
+		modifier = {
+			scope:actor = {
+				any_character_struggle = {
+					involvement = involved
+					is_struggle_type = iberian_struggle
+					phase_has_catalyst = catalyst_became_friend_lover_with_character
+				}
+			}
+			scope:recipient = {
+				any_character_struggle = {
+					involvement = involved
+					is_struggle_type = iberian_struggle
+					phase_has_catalyst = catalyst_became_friend_lover_with_character
+				}
+			}
+			add = {
+				value = 0
+				if = {
+					limit = {
+						scope:actor = {
+							has_character_flag = agenda_towards_deescalation
+							trait_compatibility = {
+								target = scope:recipient
+								value >= low_positive_trait_compatibility
+							}
+						}
+						scope:recipient = {
+							has_character_flag = agenda_towards_deescalation
+						}
+					}
+					add = 200
+				}
+				else_if = {
+					limit = {
+						scope:actor = {
+							has_character_flag = agenda_towards_deescalation
+							trait_compatibility = {
+								target = scope:recipient
+								value >= low_positive_trait_compatibility
+							}
+						}
+					}
+					add = 50
+				}
+				else_if = {
+					limit = {
+						scope:actor = {
+							has_character_flag = agenda_towards_escalation
+						}
+					}
+					add = -200
+				}
+				else = {
+					add = 10
+				}
+			}
+		}
+
+		modifier = {
+			factor = 25
+			OR = {
+				has_focus = diplomacy_family_focus
+				house ?= { has_house_aspiration_parameter = aspect_of_serenity }
+			}	
+		}
+
+		modifier = {
+			factor = 2
+			scope:recipient.liege = scope:actor
+		}
+
+		modifier = {
+			factor = 0.5
+			scope:recipient.faith != scope:actor.faith
+		}
+
+		modifier = {
+			factor = 0.25
+			scope:actor = {
+				is_ruler = yes
+				tier_difference = {
+					target = scope:recipient
+					value > 2
+				}
+			}
+		}
+		modifier = {
+			factor = 0.35
+			scope:actor = {
+				has_personality_malicious_trigger = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			scope:actor = {
+				OR = {
+					has_trait = gregarious
+					has_trait = diplomat
+					has_trait = family_first
+					has_trait = august
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			scope:actor = {
+				num_of_relation_friend < 3
+			}
+		}
+		modifier = { #Better to Court rather than befriend.
+			factor = 0.25
+			scope:actor = {
+				is_spouse_of = scope:recipient
+			}
+		}
+		modifier = {
+			factor = 0.75
+			scope:recipient = {
+				is_child_of = scope:actor
+			}
+		}
+		modifier = {
+			factor = 2
+			scope:actor = {
+				is_child_of = scope:recipient
+			}
+		}
+		modifier = {
+			factor = 2
+			scope:actor = { #Friends of friends
+				any_relation = {
+					type = friend
+					any_relation = {
+						type = friend
+						this = scope:recipient
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.25
+			scope:recipient = {
+				any_claim = {
+					this = scope:actor.primary_title
+				}
+			}
+		}
+	}
+}
