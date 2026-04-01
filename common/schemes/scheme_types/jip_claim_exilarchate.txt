@@ -102,10 +102,9 @@
 	}
 	on_phase_completed = {
 		suppress_scheme_follow_up_event_till_input_given_effect = yes
-		claim_exilarchate_scheme_prep_effect = yes
-		## TODO: put this in the effect with event and som stuff
+		## TODO: put this in the effect with event and some stuff
 		scope:owner = {
-			add_unpressed_claim = scope:target_title
+			trigger_event = { id = jip_claim_exilarchate.001 days = 1 }
 		}
 		cap_schemes_and_fire_reminders_effect = yes
 	}
@@ -113,13 +112,6 @@
 	on_monthly = {
 	}
 	on_semiyearly = {
-		if = {
-			limit = {
-				scheme_owner = { is_ai = yes }
-			}
-			claim_exilarchate_scheme_prep_effect = yes
-			purge_ai_scheme_slots_effect = yes
-		}
 	}
 	on_invalidated = {
 		if = {
@@ -127,8 +119,7 @@
 			scheme_target_title = { save_scope_as = target_title }
 		}
 		scope:owner = {
-			# TODO: create nice invalidation event
-			# trigger_event = { id = claim_throne_outcome.9999 days = 1 }
+			trigger_event = { id = jip_claim_exilarchate.002 days = 1 }
 		}
 	}	
 }

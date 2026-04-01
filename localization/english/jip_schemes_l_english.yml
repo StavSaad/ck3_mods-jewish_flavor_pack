@@ -1,3 +1,4 @@
 ﻿l_english:
  claim_exilarchate: "Claim the Exilarchate"
- claim_exilarchate_action: "Fabricate Claim"
+ claim_exilarchate_action: "Claim"
+ claim_exilarchate_desc: "Make a play to install yourself as the Exilarch. This will give you a claim on the title, and make you an [elector|E]."

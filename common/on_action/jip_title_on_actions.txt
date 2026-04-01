@@ -1,0 +1,29 @@
+# A title is inherited by a character
+# root = the new holder
+# scope:title = the title that changes hands
+# scope:previous_holder = previous holder. Should be dead
+
+on_title_gain_inheritance = {
+	on_actions = {
+		exilarchate_inheritance_on_action
+	}
+}
+
+exilarchate_inheritance_on_action = {
+	trigger = {
+		OR = {
+			scope:title = title:d_exilarchate
+			scope:title = title:d_karaite_exilarchate
+		}
+		is_landless = yes
+	}
+
+	effect = {
+		scope:title = {
+			set_capital_county = root.primary_title.title_capital_county
+			holder.domicile ?= {
+				move_domicile = root.primary_title.title_capital_county.title_province
+			}
+		}
+	}
+}
