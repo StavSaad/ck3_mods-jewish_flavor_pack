@@ -17,7 +17,7 @@
 			order_of_succession = election
 			election_type = exilarchate_elective
 			faith = same_faith
-			gender_law = male_preference
+			gender_law = male_only
 		}
 	}
 
