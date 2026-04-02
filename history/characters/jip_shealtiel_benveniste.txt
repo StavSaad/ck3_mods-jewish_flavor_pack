@@ -376,7 +376,7 @@ solomon_ben_cidellus_shealtiel = {
 	1050.1.1 = {
 		birth = yes
 	}
-	1066.1.1 = {
+	1066.9.15 = {
 		employer = yosef_cidellus_shealtiel
 	}
 	1102.1.1 = {
@@ -394,7 +394,7 @@ meshulam_ben_cidellus_shealtiel = {
 	1055.1.1 = {
 		birth = yes
 	}
-	1066.1.1 = {
+	1066.9.15 = {
 		employer = yosef_cidellus_shealtiel
 	}
 	1108.1.1 = {
@@ -411,6 +411,8 @@ shealtiel_ben_cidellus_shealtiel = {
 	trait = davidic_line
 	1066.1.1 = {
 		birth = yes
+	}
+	1066.9.15 = {
 		employer = yosef_cidellus_shealtiel
 	}
 	1108.1.1 = {
@@ -429,7 +431,7 @@ joseph_barun_benveniste = {
 	1060.1.1 = {
 		birth = yes
 	}
-	1066.1.1 = {
+	1066.9.15 = {
 		employer = yosef_cidellus_shealtiel
 	}
 	1101.1.1 = {
