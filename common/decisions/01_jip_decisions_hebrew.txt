@@ -108,6 +108,9 @@ claim_exilarchate_decision = {
 			NOT = {
 				has_claim_on = title:d_exilarchate
 			}
+			NOT = {
+				has_title = title:d_exilarchate
+			}
 		}
 		trigger_else_if = {
 			limit = {
@@ -115,6 +118,9 @@ claim_exilarchate_decision = {
 			}
 			NOT = {
 				has_claim_on = title:d_karaite_exilarchate
+			}
+			NOT = {
+				has_title = title:d_karaite_exilarchate
 			}
 		}
 		else = {

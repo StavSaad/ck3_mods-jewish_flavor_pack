@@ -18,8 +18,8 @@
 	spymaster_speed_per_skill_point = 0	
 	uses_resistance = no
 	base_progress_goal = 365
-	base_maximum_success = 95
-	minimum_success = 5
+	base_maximum_success = 100
+	minimum_success = 100
 
 	# Core Triggers
 	allow = {
@@ -32,7 +32,7 @@
 		}
 		NOT = {
 			scope:owner = {
-				has_claim_on = scope:target
+				has_claim_on = scope:target_title
 			}
 		}
 	}

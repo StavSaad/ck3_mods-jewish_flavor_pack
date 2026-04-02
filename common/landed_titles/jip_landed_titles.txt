@@ -19,7 +19,6 @@ d_exilarchate = {
 	can_use_nomadic_naming = no
 	de_jure_drift_disabled = yes
 
-	ai_primary_priority = { add = @exilarchate_primary_score }
 }
 
 d_karaite_exilarchate = {
@@ -37,7 +36,6 @@ d_karaite_exilarchate = {
 	can_use_nomadic_naming = no
 	de_jure_drift_disabled = yes
 
-	ai_primary_priority = { add = @exilarchate_primary_score }
 }
 
 e_arabia = {
