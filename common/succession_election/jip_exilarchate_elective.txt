@@ -95,7 +95,6 @@ exilarchate_elective = { #Witenagemot
 			limit = {
 				religion = religion:judaism_religion
 				faith = scope:holder.faith
-				is_adult = yes
 				is_male = yes
 				OR = {
 					is_player_heir_of = scope:holder
@@ -108,7 +107,6 @@ exilarchate_elective = { #Witenagemot
 			limit = {
 				religion = religion:judaism_religion
 				faith = scope:holder.faith
-				is_adult = yes
 				is_male = yes
 				is_ruler = yes
 			}
