@@ -1,26 +1,4 @@
-﻿davidic_reclamation_decision_effect = {
-	root = {
-		save_scope_as = origin
-		house = {
-			save_scope_as = original_house
-		}
-	}
-	character:king_david_i = {
-		save_scope_as = destination
-		house = {
-			save_scope_as = destination_house
-		} 
-	}
-	hidden_effect = {
-		copy_all_dynasty_legacies_effect = yes
-	}
-	switch_house_effect = yes
-	scope:destination.house = {
-		set_house_head = scope:reclaimer
-	}
-}
-
-handle_maa_traditions_for_culture = {
+﻿handle_maa_traditions_for_culture = {
 	if = {
 		limit = {
 			scope:$CULTURE$_former.culture = {
