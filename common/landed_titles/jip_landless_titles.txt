@@ -93,7 +93,7 @@ d_jip_benveniste = {
 	ai_primary_priority = { add = @better_than_the_alternatives_score }
 }
 
-d_nasi_narbonne = {
+d_jip_makhirite = {
 	color = { 100 100 100 }
 	capital = c_carcassonne
 

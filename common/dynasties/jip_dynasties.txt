@@ -8,6 +8,11 @@ nathanite_dynasty = {
 	culture = "bavlim"
 }
 
+makhirite_dynasty = {
+	name = "dynn_Makhirite"
+	culture = "sephardi"
+}
+
 bostanite_dynasty = {
 	name = "dynn_Bostanite"
 	culture = "bavlim"

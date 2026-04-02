@@ -354,15 +354,34 @@ d_jip_nathanite = {
 	
 }
 
-d_nasi_narbonne = {
-	867.1.1 = {
-		liege = k_france
-		holder = 0
+d_jip_makhirite = {
+
+	770.1.1 = {
+		holder = makhirite_makhir_ben_habibai
 		government = jewish_admin_family_government
 		succession_laws = { noble_family_succession_law male_only_law same_faith_only_law }
+	}
+
+	790.1.1 = {
+		holder = makhirite_isaac_ben_makhir
+	}
+
+	840.1.1 = {
+		holder = makhirite_makhir_ben_isaac
+	}
+
+	867.1.1 = {
 		effect = {
 			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
 		}
+	}
+
+	880.1.1 = {
+		holder = makhirite_levi_ben_makhir
+	}
+
+	910.1.1 = {
+		holder = makhirite_todros_ben_levi
 	}
 	
 }

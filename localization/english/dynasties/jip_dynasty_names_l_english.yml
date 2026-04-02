@@ -58,3 +58,5 @@
  house_maimon:0 "Beit Maimon"
  kalonymos_dynasty:0 "Beit Kalonymos"
  dynn_Kalonymos:0 "$kalonymos_dynasty$" 
+ makhirite_dynasty:0 "Beit Makhir"
+ dynn_Makhirite:0 "$makhirite_dynasty$"

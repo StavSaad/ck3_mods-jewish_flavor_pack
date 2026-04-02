@@ -1,0 +1,76 @@
+makhirite_makhir_ben_habibai = {
+	name = "Machir"
+	religion = "rabbinism"
+	culture = "bavlim"
+	father = rabbinic_exilarchate_habibai_ben_natronai
+	dynasty = makhirite_dynasty
+	trait = davidic_line
+	trait = education_learning_3
+	731.1.1 = {
+		birth = yes
+	}
+	790.1.1 = {
+		death = yes
+	}
+}
+
+makhirite_isaac_ben_makhir = {
+	name = "Yitzchak"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = makhirite_makhir_ben_habibai
+	dynasty = makhirite_dynasty
+	trait = davidic_line
+	775.1.1 = {
+		birth = yes
+	}
+	840.1.1 = {
+		death = yes
+	}
+}
+
+makhirite_makhir_ben_isaac = {
+	name = "Machir"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = makhirite_isaac_ben_makhir
+	dynasty = makhirite_dynasty
+	trait = davidic_line
+	810.1.1 = {
+		birth = yes
+		add_pressed_claim = title:d_exilarchate
+	}
+	880.1.1 = {
+		death = yes
+	}
+}
+
+makhirite_levi_ben_makhir = {
+	name = "Levi"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = makhirite_makhir_ben_isaac
+	dynasty = makhirite_dynasty
+	trait = davidic_line
+	840.1.1 = {
+		birth = yes
+	}
+	910.1.1 = {
+		death = yes
+	}
+}
+
+makhirite_todros_ben_levi = {
+	name = "Todros"
+	religion = "rabbinism"
+	culture = "sephardi"
+	father = makhirite_levi_ben_makhir
+	dynasty = makhirite_dynasty
+	trait = davidic_line
+	863.1.1 = {
+		birth = yes
+	}
+	935.1.1 = {
+		death = yes
+	}
+}

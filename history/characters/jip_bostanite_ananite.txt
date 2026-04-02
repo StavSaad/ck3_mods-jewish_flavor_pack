@@ -292,22 +292,6 @@ rabbinic_exilarchate_habibai_ben_natronai = {
 	}
 }
 
-rabbinic_exilarchate_makhir_ben_habibai = {
-	name = "Machir"
-	religion = "rabbinism"
-	culture = "bavlim"
-	father = rabbinic_exilarchate_habibai_ben_natronai
-	dynasty = bostanite_dynasty
-	trait = davidic_line
-	trait = education_learning_3
-	731.1.1 = {
-		birth = yes
-	}
-	776.1.1 = {
-		death = yes
-	}
-}
-
 rabbinic_exilarchate_ahonai_father_of_yehudit = {
 	name = "Ahonai"
 	religion = "rabbinism"
@@ -1162,6 +1146,10 @@ karaite_exilarchate_asa_ben_semach = {
 	trait = education_learning_3
 	821.1.1 = {
 		birth = yes
+		add_pressed_claim = title:d_exilarchate
+	}
+	867.1.1 = {
+		employer = rabbinic_exilarchate_pinchas_ben_abdimi
 	}
 	885.1.1 = {
 		death = yes
@@ -1178,6 +1166,9 @@ karaite_exilarchate_semach_ben_asa = {
 	trait = education_learning_3
 	853.1.1 = {
 		birth = yes
+	}
+	867.1.1 = {
+		employer = rabbinic_exilarchate_pinchas_ben_abdimi
 	}
 	904.1.1 = {
 		death = yes

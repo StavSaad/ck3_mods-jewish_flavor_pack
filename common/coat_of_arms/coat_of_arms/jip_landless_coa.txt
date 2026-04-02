@@ -4,5 +4,6 @@ d_jip_nathanite = nathanite_dynasty
 d_jip_bostanite = bostanite_dynasty
 d_jip_ananite = house_ananite
 d_jip_kalonymos = kalonymos_dynasty
+d_jip_makhirite = makhirite_dynasty
 d_exilarchate = davidite_dynasty
 d_karaite_exilarchate = house_ananite
