@@ -567,3 +567,35 @@ d_jip_kalonymos = {
 		}
 	}
 }
+
+d_jip_maimon = {
+
+	1107.1.1 = {
+		holder = maimon_ben_yosef
+		government = jewish_admin_family_government
+		succession_laws = { noble_family_succession_law male_only_law same_faith_only_law }
+	}
+
+	1166.1.1 = {
+		holder = david_brother_of_maimonides
+	}
+
+	1169.1.1 = {
+		holder = maimonides_1
+	}
+
+	1178.10.1 = {
+		effect = {
+			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
+		}
+	}
+
+	1204.12.12 = {
+		holder = abraham_ben_maimonides
+	}
+
+	1237.1.1 = {
+		holder = david_ben_abraham_ben_maimonides
+	}
+
+}

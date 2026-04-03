@@ -93,6 +93,21 @@ d_jip_benveniste = {
 	ai_primary_priority = { add = @better_than_the_alternatives_score }
 }
 
+d_jip_maimon = {
+	color = { 100 100 100 }
+	capital = c_cairo
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @better_than_the_alternatives_score }
+}
+
 d_jip_makhirite = {
 	color = { 100 100 100 }
 	capital = c_carcassonne
