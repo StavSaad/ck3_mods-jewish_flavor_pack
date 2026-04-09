@@ -62,22 +62,176 @@
 
 }
 
-d_kohen_gadol = {
-	pattern="pattern_solid.dds"
+d_kohen_gadol={
+	pattern="pattern__solid_designer.dds"
 	color1=white
 	color2=white
 	color3=blue
 	colored_emblem={
-		color1=yellow_light
-		color2=orange
-		color3=green
-		texture="jip_kohen.dds"
+		color1=red
+		texture="ce_square_kaaba.dds"
 		instance={
-			scale={ 0.760000 0.760000 }
+			position={ 0.320000 0.300000 }
+			scale={ 0.310000 0.230000 }
+			depth=1.010000
 		}
 
 	}
+
+	colored_emblem={
+		color1=yellow
+		texture="ce_square_kaaba.dds"
+		instance={
+			scale={ 1.200000 1.200000 }
+			depth=13.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=green_light
+		texture="ce_square_kaaba.dds"
+		instance={
+			position={ 0.680000 0.300000 }
+			scale={ 0.310000 0.230000 }
+			depth=3.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=yellow_light
+		texture="ce_square_kaaba.dds"
+		instance={
+			position={ 0.500000 0.300000 }
+			scale={ 0.310000 0.230000 }
+			depth=2.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=white
+		texture="ce_square_kaaba.dds"
+		instance={
+			position={ 0.680000 0.430000 }
+			scale={ 0.310000 0.230000 }
+			depth=6.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=yellow
+		texture="ce_kamon_well_box.dds"
+		instance={
+			scale={ 0.730000 0.730000 }
+		}
+
+	}
+
+	colored_emblem={
+		color1=green
+		texture="ce_square_kaaba.dds"
+		instance={
+			position={ 0.320000 0.690000 }
+			scale={ 0.310000 0.230000 }
+			depth=10.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=blue_light
+		texture="ce_square_kaaba.dds"
+		instance={
+			position={ 0.320000 0.430000 }
+			scale={ 0.310000 0.230000 }
+			depth=4.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=blue
+		texture="ce_square_kaaba.dds"
+		instance={
+			position={ 0.500000 0.430000 }
+			scale={ 0.310000 0.230000 }
+			depth=5.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=grey
+		texture="ce_square_kaaba.dds"
+		instance={
+			position={ 0.500000 0.560000 }
+			scale={ 0.310000 0.230000 }
+			depth=8.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=purple
+		texture="ce_square_kaaba.dds"
+		instance={
+			position={ 0.680000 0.560000 }
+			scale={ 0.310000 0.230000 }
+			depth=9.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=red_dark
+		texture="ce_square_kaaba.dds"
+		instance={
+			position={ 0.680000 0.690000 }
+			scale={ 0.310000 0.230000 }
+			depth=12.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=orange
+		texture="ce_square_kaaba.dds"
+		instance={
+			position={ 0.320000 0.560000 }
+			scale={ 0.310000 0.230000 }
+			depth=7.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=yellow
+		texture="ce_runic_circle_frame.dds"
+		instance={
+			position={ 0.500000 0.000000 }
+			scale={ 0.590000 0.590000 }
+			depth=14.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=black
+		texture="ce_square_kaaba.dds"
+		instance={
+			position={ 0.500000 0.690000 }
+			scale={ 0.310000 0.230000 }
+			depth=11.010000
+		}
+
+	}
+
 }
+
+
 
 k_judah = {
 	pattern="pattern_solid.dds"
