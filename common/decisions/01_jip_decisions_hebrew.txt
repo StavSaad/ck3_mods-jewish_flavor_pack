@@ -990,7 +990,7 @@ clear_grounds_for_the_third_temple_decision = {
 		OR = {
 			has_primary_title = title:k_israel
 			primary_title = {
-				is_de_jure_liege_or_above_target = title:k_israel
+				is_de_facto_liege_or_above_target = title:k_israel
 			}
 		}
 		completely_controls = title:k_israel
