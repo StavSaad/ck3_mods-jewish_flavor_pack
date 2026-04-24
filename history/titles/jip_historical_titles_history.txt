@@ -75,6 +75,27 @@ k_edom = {
 		holder = king_shelomoh_i
 	}
 	-931.1.1 = {
+		holder = king_rehavam_i
+	}
+	-914.1.1 = {
+		holder = king_aviyah_i
+	}
+	-911.1.1 = {
+		holder = king_asa_i
+	}
+	-870.1.1 = {
+		holder = 0
+	}
+	-734.1.1 = {
+		holder = edom_qos_melek_i
+	}
+	-701.1.1 = {
+		holder = edom_aya_ramu_i
+	}
+	-680.1.1 = {
+		holder = edom_qos_geber_i
+	}
+	-640.1.1 = {
 		holder = 0
 	}
 }

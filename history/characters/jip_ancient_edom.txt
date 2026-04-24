@@ -147,3 +147,41 @@ edom_beor_i = {
 		death = yes
 	}
 }
+
+edom_qos_melek_i = {
+	name = "Qosmelech"
+	religion = "semitic_pagan"
+	culture = edomite
+	-764.1.1 = {
+		birth = yes
+	}
+	-701.1.1 = {
+		death = yes
+	}
+}
+
+edom_aya_ramu_i = {
+	name = "Ayaramu"
+	religion = "semitic_pagan"
+	culture = edomite
+	father = edom_qos_melek_i
+	-725.1.1 = {
+		birth = yes
+	}
+	-680.1.1 = {
+		death = yes
+	}
+}
+
+edom_qos_geber_i = {
+	name = "Qosgeber"
+	religion = "semitic_pagan"
+	culture = edomite
+	father = edom_aya_ramu_i
+	-705.1.1 = {
+		birth = yes
+	}
+	-640.1.1 = {
+		death = yes
+	}
+}
