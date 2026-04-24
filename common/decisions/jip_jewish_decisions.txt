@@ -1,0 +1,346 @@
+﻿claim_exilarchate_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	ai_check_interval = 60
+	desc = claim_exilarchate_decision_desc
+	decision_group_type = major
+
+	is_shown = {
+		culture = { has_cultural_pillar = heritage_israelite }
+		trigger_if = {
+			limit = {
+				has_faith = faith:rabbinism
+			}
+			NOT = {
+				has_claim_on = title:d_exilarchate
+			}
+			NOT = {
+				has_title = title:d_exilarchate
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				has_faith = faith:karaism
+			}
+			NOT = {
+				has_claim_on = title:d_karaite_exilarchate
+			}
+			NOT = {
+				has_title = title:d_karaite_exilarchate
+			}
+		}
+		trigger_else = {
+			always = no
+		}
+	}
+
+	is_valid = {
+		is_independent_ruler = yes 		
+		culture = { has_cultural_pillar = heritage_israelite }
+		custom_tooltip = {
+			text = no_active_claim_exilarchate_scheme
+			NOT = {
+				any_scheme = {
+					type = claim_exilarchate
+				}
+			}
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				has_faith = faith:rabbinism
+			}
+			title:d_exilarchate = {
+				save_scope_as = target_title
+			}
+			begin_scheme_basic_effect = { 
+				SCHEME_TYPE = claim_exilarchate 
+				TARGET_TYPE = target_title 
+				TARGET_SCOPE = title:d_exilarchate
+			}
+			trigger_event = { id = jip_claim_exilarchate.003 }
+		}
+		else_if = {
+			limit = {
+				has_faith = faith:karaism
+			}
+			title:d_karaite_exilarchate = {
+				save_scope_as = target_title
+			}
+			begin_scheme_basic_effect = { 
+				SCHEME_TYPE = claim_exilarchate 
+				TARGET_TYPE = target_title 
+				TARGET_SCOPE = title:d_karaite_exilarchate
+			}
+			trigger_event = { id = jip_claim_exilarchate.003 }
+		}
+		else = {
+			# nothing
+		}
+	}
+
+	cost = { prestige = { value = 500 } }
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+reestablish_canaanite_city_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	ai_check_interval = 60
+	desc = reestablish_canaanite_city_decision_desc
+	decision_group_type = major
+
+	is_shown = {
+		highest_held_title_tier >= tier_duchy
+		OR = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			culture = { has_cultural_pillar = heritage_syriac }
+			culture = { has_cultural_pillar = heritage_phoenician }
+		}
+		OR = {
+			has_title = title:c_acre
+			has_title = title:c_beirut
+			has_title = title:c_tripoli
+			has_title = title:c_antiocheia
+			has_title = title:c_famagusta
+			has_title = title:c_nicosia
+		}
+	}
+
+	is_valid = {
+		prestige_level >= high_prestige_level
+	}
+
+	widget = {
+		gui = "decision_view_widget_option_list_generic"
+		controller = decision_option_list_controller
+		decision_to_second_step_button = "CHOOSE_CITY"
+		show_from_start = yes
+
+		item = { # acre / tyre
+			value = acre
+			is_shown = {
+				has_title = title:c_acre
+			}
+			is_valid = {
+				has_title = title:c_acre
+				completely_controls = title:c_acre
+				NOT = {
+					capital_county = title:c_acre
+				}
+			}
+			current_description = canaanite_city_acre_desc
+			localization = canaanite_city_acre_desc
+			icon = "gfx/interface/icons/barony_crown.dds"
+			ai_chance = { value = 10 }
+		}
+		item = { # beirut / sidon
+			value = beirut
+			is_shown = {
+				has_title = title:c_beirut
+			}
+			is_valid = {
+				has_title = title:c_beirut
+				completely_controls = title:c_beirut
+				NOT = {
+					capital_county = title:c_beirut
+				}
+			}
+			current_description = canaanite_city_beirut_desc
+			localization = canaanite_city_beirut_desc
+			icon = "gfx/interface/icons/barony_crown.dds"
+			ai_chance = { value = 10 }
+		}
+		item = { # tripoli
+			value = tripoli
+			is_shown = {
+				has_title = title:c_tripoli
+			}
+			is_valid = {
+				has_title = title:c_tripoli
+				completely_controls = title:c_tripoli
+				NOT = {
+					capital_county = title:c_tripoli
+				}
+			}
+			current_description = canaanite_city_tripoli_desc
+			localization = canaanite_city_tripoli_desc
+			icon = "gfx/interface/icons/barony_crown.dds"
+			ai_chance = { value = 10 }
+		}
+		item = { # antioch
+			value = antiocheia
+			is_shown = {
+				has_title = title:c_antiocheia
+			}
+			is_valid = {
+				has_title = title:c_antiocheia
+				completely_controls = title:c_antiocheia
+				NOT = {
+					capital_county = title:c_antiocheia
+				}
+				custom_description = {	#The county must be developed or have at least one city
+					text = latakia_must_be_city
+					title:b_latakia.title_province = {
+						has_holding_type = city_holding
+					}
+				}
+			}
+			current_description = canaanite_city_antiocheia_desc
+			localization = canaanite_city_antiocheia_desc
+			icon = "gfx/interface/icons/barony_crown.dds"
+			ai_chance = { value = 10 }
+		}
+		item = { # famagusta
+			value = famagusta
+			is_shown = {
+				has_title = title:c_famagusta
+			}
+			is_valid = {
+				has_title = title:c_famagusta
+				completely_controls = title:c_famagusta
+				NOT = {
+					capital_county = title:c_famagusta
+				}
+			}
+			current_description = canaanite_city_famagusta_desc
+			localization = canaanite_city_famagusta_desc
+			icon = "gfx/interface/icons/barony_crown.dds"
+			ai_chance = { value = 10 }
+		}
+		item = { # nicosia
+			value = nicosia
+			is_shown = {
+				has_title = title:c_nicosia
+			}
+			is_valid = {
+				has_title = title:c_nicosia
+				completely_controls = title:c_nicosia
+				NOT = {
+					capital_county = title:c_nicosia
+				}
+			}
+			current_description = canaanite_city_nicosia_desc
+			localization = canaanite_city_nicosia_desc
+			icon = "gfx/interface/icons/barony_crown.dds"
+			ai_chance = { value = 10 }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	effect = {
+		if = {
+			limit = { scope:acre = yes }
+			reestablish_canaanite_city_effect = { COUNTY = c_acre BARONY = b_tyre }
+		}
+		if = {
+			limit = { scope:beirut = yes }
+			reestablish_canaanite_city_effect = { COUNTY = c_beirut BARONY = b_saida }
+		}
+		if = {
+			limit = { scope:tripoli = yes }
+			reestablish_canaanite_city_effect = { COUNTY = c_tripoli BARONY = b_syrtripolis }
+		}
+		if = {
+			limit = { scope:antiocheia = yes }
+			reestablish_canaanite_city_effect = { COUNTY = c_antiocheia BARONY = b_latakia }
+		}
+		if = {
+			limit = { scope:famagusta = yes }
+			reestablish_canaanite_city_effect = { COUNTY = c_famagusta BARONY = b_cerynia }
+		}
+		if = {
+			limit = { scope:nicosia = yes }
+			reestablish_canaanite_city_effect = { COUNTY = c_nicosia BARONY = b_limisol }
+		}
+	}
+
+	cost = { prestige = { value = 250 } }
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+
+}
+
+clear_grounds_for_the_third_temple_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	ai_check_interval = 60
+	desc = clear_grounds_for_the_third_temple_decision_desc
+	decision_group_type = major
+
+	is_shown = {
+		culture = { has_cultural_pillar = heritage_israelite }
+		has_religion = religion:judaism_religion
+		has_title = title:c_jerusalem
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:clear_grounds_for_the_third_temple_decision
+			}
+		}
+	}
+
+	is_valid = {
+		piety_level >= 4
+		is_independent_ruler = yes
+		capital_county.faith = {
+			religion = religion:judaism_religion
+		}
+		OR = {
+			has_primary_title = title:k_israel
+			primary_title = {
+				is_de_facto_liege_or_above_target = title:k_israel
+			}
+		}
+		completely_controls = title:k_israel
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	effect = {
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:clear_grounds_for_the_third_temple_decision
+		}
+		show_as_tooltip = {
+			rebuild_the_third_temple_effect = yes
+		}
+		trigger_event = jip_hebrew.0041
+	}
+
+	cost = { piety = { value = 500 } }
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+
+}

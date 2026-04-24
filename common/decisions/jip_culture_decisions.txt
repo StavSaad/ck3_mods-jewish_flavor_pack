@@ -1,0 +1,165 @@
+form_hebrew_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_culture.dds"
+	}
+	ai_check_interval = 60
+	desc = form_hebrew_decision_desc
+	decision_group_type = major
+
+	is_shown = {
+		culture = { has_cultural_pillar = heritage_israelite }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:form_hebrew_decision
+			}
+		}
+	}
+
+	is_valid = {
+		prestige_level >= high_prestige_level
+		is_independent_ruler = yes 
+		custom_description = {
+			text = "jerusalem_is_same_faith"
+			title:c_jerusalem.faith = root.faith
+		}
+		
+		culture = { has_cultural_pillar = heritage_israelite }
+
+		OR = { #Must be Jewish/Samaritan
+			faith.religion = religion:judaism_religion
+		}
+
+		trigger_if = {
+			limit = { title:d_palestine = { any_in_de_jure_hierarchy = { tier = tier_county } } } #Has de jure land
+			completely_controls = title:d_palestine
+		}
+		trigger_if = {
+			limit = { title:d_oultrejourdain = { any_in_de_jure_hierarchy = { tier = tier_county } } } #Has de jure land
+			completely_controls = title:d_oultrejourdain
+		}
+		trigger_if = {
+			limit = { title:d_urdunn = { any_in_de_jure_hierarchy = { tier = tier_county } } } #Has de jure land
+			completely_controls = title:d_urdunn
+		}
+	}
+
+	effect = {
+		save_scope_as = hebrew_former
+
+		show_as_tooltip = { form_hebrew_decision_effects = yes }
+
+		#Events
+		trigger_event = jip_hebrew.0001
+		every_player = {
+			limit = {
+				NOT = { this = scope:hebrew_former }
+				is_within_diplo_range = { CHARACTER = scope:hebrew_former }
+			}
+			trigger_event = jip_hebrew.0002
+		}
+		every_vassal_or_below = {
+			limit = {
+				is_ai = yes
+				exists = capital_province
+				capital_province = {
+					county = {
+						any_this_title_or_de_jure_above = {
+							this = title:k_israel
+						}
+					}
+				}	
+			}
+			trigger_event = jip_hebrew.0002 #So they can convert
+		}
+
+		#Can only happen once
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:form_hebrew_decision
+		}
+	}
+
+	cost = { prestige = { value = 2000 } }
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+form_canaanite_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_culture.dds"
+	}
+	ai_check_interval = 60
+	desc = form_canaanite_decision_desc
+	decision_group_type = major
+
+	is_shown = {
+		is_ruler = yes
+		OR = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			capital_province = { geographical_region = jip_region_phoenicia }
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:form_canaanite_decision
+			}
+			culture = culture:hebrew
+		}
+	}
+
+	is_valid = {
+		prestige_level >= very_high_prestige_level
+		culture = { has_cultural_pillar = heritage_israelite }
+		OR = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			capital_province = { geographical_region = jip_region_phoenicia }
+		}
+		OR = {
+			has_trait = lunatic
+			has_trait = scholar
+			has_trait = ambitious
+			has_trait = eccentric
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_independent_ruler = yes
+		is_available_adult = yes
+	}
+
+	effect = {
+		save_scope_as = canaanite_former
+
+		show_as_tooltip = { form_canaanite_decision_effects = yes }
+
+		#Events
+		trigger_event = jip_hebrew.0021
+		every_vassal_or_below = {
+			limit = {
+				is_ai = yes
+				exists = capital_province
+				capital_province ?= {
+					geographical_region = jip_region_phoenicia
+				}	
+			}
+			trigger_event = jip_hebrew.0021 #So they can convert
+		}
+	}
+
+	cost = { prestige = { value = 3000 } }
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 10
+	}
+}
