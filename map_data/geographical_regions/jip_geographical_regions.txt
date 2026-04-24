@@ -1,17 +1,23 @@
 ﻿jip_region_israel = {
 	counties = {
-		c_acre c_tiberias c_irbid c_jaffa c_ghazza c_jerusalem c_kerak c_negev
+		c_acre c_tiberias c_irbid c_jaffa c_ghazza c_jerusalem c_negev
 	}
 }
 
 jip_region_phoenicia = {
 	counties = {
-		c_acre c_beirut c_tripoli c_baalbek c_antiocheia
+		c_beirut c_tripoli c_baalbek c_antiocheia
+	}
+}
+
+jip_region_edom = {
+	counties = {
+		c_balqa c_maab c_jilat c_al_aqabah c_tabuk c_maan c_tayma c_sirhan
 	}
 }
 
 jip_region_canaan = {
 	regions = {
-		jip_region_israel jip_region_phoenicia
+		jip_region_israel jip_region_phoenicia jip_region_edom
 	}
 }

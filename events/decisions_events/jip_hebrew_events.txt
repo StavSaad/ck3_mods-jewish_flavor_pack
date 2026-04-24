@@ -538,3 +538,29 @@ jip_hebrew.0050 = {
 	}
 
 }
+
+# Edom
+jip_hebrew.0050 = {
+	type = character_event
+	title = jip_hebrew.0050.t #change
+	desc = {
+		desc = jip_hebrew.0050.desc
+	}
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = ecstasy
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_positive_effect"
+		create_edom_decision_effect = yes
+	}
+
+	option = {
+		name = jip_hebrew.0050.a
+		stress_impact = {
+			ambitious = major_stress_loss
+		}
+	}
+}
