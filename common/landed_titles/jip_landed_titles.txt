@@ -551,10 +551,10 @@ e_arabia = {
 			capital = c_kerak
 
 			cultural_names = {
-				name_list_canaanite = cn_negev
-				name_list_ashkenazi = cn_negev
-				name_list_sephardi = cn_negev
-				name_list_radhanite = cn_negev
+				name_list_canaanite = cn_edom
+				name_list_ashkenazi = cn_edom
+				name_list_sephardi = cn_edom
+				name_list_radhanite = cn_edom
 			}
 
 			c_kerak = { #Al-Karak
@@ -3770,21 +3770,6 @@ e_carthage = {
 
 	cultural_names = {
 		name_list_greek = cn_carthago
-	}
-
-	can_create = {
-		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
-	}
-
-	ai_primary_priority = {
-		if = {
-			limit = {
-				OR = {
-					culture = { has_cultural_pillar = heritage_phoenician }
-				}
-			}
-			add = @correct_culture_primary_score
-		}
 	}
 }
 
