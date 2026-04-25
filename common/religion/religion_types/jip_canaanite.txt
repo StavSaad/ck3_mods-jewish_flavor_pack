@@ -242,7 +242,7 @@
 			holy_site = tanas
 			holy_site = baalbek
 			holy_site = sufed
-			holy_site = cartagena # antioch
+			holy_site = cartagena
 
 			doctrine = tenet_ancestor_worship
            	doctrine = tenet_sanctity_of_nature
