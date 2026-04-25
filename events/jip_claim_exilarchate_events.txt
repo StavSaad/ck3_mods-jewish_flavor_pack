@@ -8,7 +8,7 @@ jip_claim_exilarchate.001 = {
 	theme = diplomacy
 	left_portrait = {
 		character = scope:owner
-		# scripted_animation = scheme_prep_pick_best_stance
+		animation = chancellor
 	}
 
 	immediate = {
@@ -30,7 +30,7 @@ jip_claim_exilarchate.002 = {
 	theme = diplomacy
 	left_portrait = {
 		character = scope:owner
-		# scripted_animation = scheme_prep_pick_best_stance
+		animation = chancellor
 	}
 
 	option = {
@@ -45,11 +45,12 @@ jip_claim_exilarchate.003 = {
 	theme = diplomacy
 	left_portrait = {
 		character = root
-		# scripted_animation = scheme_prep_pick_best_stance
+		animation = chancellor
 	}
 
 	lower_right_portrait = {
 		character = scope:target_title.holder
+		animation = disapproval
 	}
 
 	option = {
