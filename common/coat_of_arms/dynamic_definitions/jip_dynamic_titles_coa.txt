@@ -5,6 +5,9 @@ k_edom = {
 			NOT = {
 				faith.religion = religion:canaanite_religion
 			}
+			NOT = {
+				culture = culture:edomite
+			}
 		}
 		coat_of_arms = k_edom_jewish
 	}
