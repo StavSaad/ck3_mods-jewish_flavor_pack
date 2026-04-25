@@ -237,7 +237,7 @@ create_edom_decision_effect = {
 		set_de_jure_liege_title = title:d_amman
 	}
 	title:c_kerak = {
-		set_de_jure_liege_title = title:d_shammar
+		set_de_jure_liege_title = title:d_amman
 	}
 	title:c_negev = {
 		set_de_jure_liege_title = title:d_palestine
