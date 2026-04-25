@@ -31,7 +31,7 @@
 edomite = {
 	color = edomite
 	parents = {
-		phoenician bedouin
+		hebrew bedouin
 	}
 	ethos = ethos_bellicose
 	heritage = heritage_israelite

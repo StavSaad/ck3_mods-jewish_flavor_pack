@@ -1,4 +1,4 @@
-### Found Empire Of Beth Nahrain Decision ### Adapted for Israelites and phoniecians
+﻿### Found Empire Of Beth Nahrain Decision ### Adapted for Israelites and phoniecians
 found_empire_of_beth_nahrain_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
