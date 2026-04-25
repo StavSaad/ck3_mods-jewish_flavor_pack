@@ -273,7 +273,7 @@ k_edom_phoenician = {
 		color2=yellow
 		texture="ce_tanit.dds"
 		instance={
-			scale={ 0.940000 0.940000 }
+			scale={ 0.620000 0.620000 }
 		}
 
 	}
