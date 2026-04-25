@@ -118,11 +118,11 @@ form_edomite_decision = {
 
 	is_valid = {
 		prestige_level >= very_high_prestige_level
-		culture = { has_cultural_pillar = heritage_israelite }
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
-			capital_province = { geographical_region = jip_region_edom }
+			culture = { has_cultural_pillar = heritage_phoenician }
 		}
+		capital_province = { geographical_region = jip_region_edom }
 		OR = {
 			has_trait = lunatic
 			has_trait = scholar
@@ -193,10 +193,12 @@ form_canaanite_decision = {
 
 	is_valid = {
 		prestige_level >= very_high_prestige_level
-		culture = { has_cultural_pillar = heritage_israelite }
 		OR = {
-			culture = { has_cultural_pillar = heritage_israelite }
-			capital_province = { geographical_region = jip_region_phoenicia }
+			culture = { has_cultural_pillar = heritage_phoenician }
+			AND = {
+				culture = { has_cultural_pillar = heritage_israelite }
+				capital_province = { geographical_region = jip_region_phoenicia }
+			}
 		}
 		OR = {
 			has_trait = lunatic

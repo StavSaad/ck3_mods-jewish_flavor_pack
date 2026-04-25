@@ -1,4 +1,5 @@
 ﻿colors = {
 	canaanite = { 91 97 255 }
+	edomite = { 180 20 20 }
 	bavlim = { 0.6 0.3 0.7 }
 }
