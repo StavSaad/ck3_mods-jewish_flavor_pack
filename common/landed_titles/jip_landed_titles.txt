@@ -2576,9 +2576,9 @@ e_persia = {
 		cultural_names = {
 			name_list_canaanite = cn_babylonia
 			name_list_assyrian = cn_babylonia
-			name_list_ashkenazi = cn_babylonia
-			name_list_sephardi = cn_babylonia
-			name_list_radhanite = cn_babylonia
+			name_list_ashkenazi = cn_bavel
+			name_list_sephardi = cn_bavel
+			name_list_radhanite = cn_bavel
 		}
 		
 		d_samarra = {
@@ -2963,9 +2963,9 @@ e_persia = {
 			cultural_names = {
 				name_list_canaanite = cn_babylon
 				name_list_assyrian = cn_babylon
-				name_list_ashkenazi = cn_babylon
-				name_list_sephardi = cn_babylon
-				name_list_radhanite = cn_babylon
+				name_list_ashkenazi = cn_bavel
+				name_list_sephardi = cn_bavel
+				name_list_radhanite = cn_bavel
 			}
 
 			c_baghdad = {
@@ -2974,9 +2974,9 @@ e_persia = {
 				cultural_names = {
 					name_list_canaanite = cn_babylon
 					name_list_assyrian = cn_babylon
-					name_list_ashkenazi = cn_babylon
-					name_list_sephardi = cn_babylon
-					name_list_radhanite = cn_babylon
+					name_list_ashkenazi = cn_bavel
+					name_list_sephardi = cn_bavel
+					name_list_radhanite = cn_bavel
 				}
 
 				b_baghdad = {
@@ -2987,9 +2987,9 @@ e_persia = {
 					cultural_names = {
 						name_list_canaanite = cn_babylon
 						name_list_assyrian = cn_babylon
-						name_list_ashkenazi = cn_babylon
-						name_list_sephardi = cn_babylon
-						name_list_radhanite = cn_babylon
+						name_list_ashkenazi = cn_bavel
+						name_list_sephardi = cn_bavel
+						name_list_radhanite = cn_bavel
 					}
 				}
 				b_baquba = {
