@@ -49,7 +49,7 @@ found_empire_of_beth_nahrain_decision = {
 		is_independent_ruler = yes
 		OR = {
 			highest_held_title_tier = tier_kingdom
-			has_title = e_canaan
+			has_title = title:e_canaan
 		}
 		OR = {
 			culture = { has_cultural_pillar = heritage_syriac }
