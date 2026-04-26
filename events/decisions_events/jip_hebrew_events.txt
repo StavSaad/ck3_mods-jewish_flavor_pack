@@ -334,28 +334,99 @@ jip_hebrew.0022 = {
 	}
 }
 
-# Carthage
-jip_hebrew.0030 = {
+# become edomite
+jip_hebrew.0031 = {
 	type = character_event
-	title = jip_hebrew.0030.t #change
+	title = jip_hebrew.0031.t #change
 	desc = {
-		desc = jip_hebrew.0030.desc #change
+		desc = jip_hebrew.0031.start.desc #change
 	}
-	theme = realm
+	theme = culture_change
 	left_portrait = {
-		character = root
-		animation = ecstasy
+		character = scope:edomite_former
+		animation = personality_honorable
 	}
 
 	immediate = {
 		play_music_cue = "mx_cue_positive_effect"
-		create_carthage_decision_effect = yes
+	}
+	
+	option = {
+		name = jip_hebrew.0031.a
+		if = {
+			limit = {
+				NOT = {
+					is_target_in_global_variable_list = {
+						name = unavailable_unique_decisions
+						target = flag:form_edomite_decision
+					}
+				}
+			}
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:form_edomite_decision
+			}
+		}
+		form_edomite_decision_effects = yes #Title changes, prestige, culture swap
+		ai_chance = {
+			base = 50
+		}
 	}
 
 	option = {
-		name = jip_hebrew.0030.a
-		stress_impact = {
-			ambitious = major_stress_loss
+		name = jip_hebrew.0031.b
+		add_prestige = 3000
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+jip_hebrew.0032 = {
+	type = character_event
+	title = jip_hebrew.0032.t #change
+	desc = {
+		desc = jip_hebrew.0032.desc #change
+	}
+	theme = culture_change
+	left_portrait = {
+		character = root
+		animation = personality_cynical
+	}
+
+	right_portrait = {
+		character = scope:edomite_former
+		animation = personality_honorable
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_positive_effect"
+	}
+	
+	option = {
+		name = jip_hebrew.0032.a
+		set_culture = culture:edomite
+		scope:edomite_former = {
+			add_opinion = {
+				target = THIS
+				modifier = approving_opinion
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	option = {
+		name = jip_hebrew.0032.b
+		scope:edomite_former = {
+			add_opinion = {
+				target = THIS
+				modifier = disapproving_opinion
+			}
+		}
+		ai_chance = {
+			base = 50
 		}
 	}
 }
@@ -509,32 +580,28 @@ jip_hebrew.0041 = {
 
 }
 
-# Reclaim Davidic Heritage
+# Edom
 jip_hebrew.0050 = {
 	type = character_event
 	title = jip_hebrew.0050.t #change
 	desc = {
-		desc = jip_hebrew.0050.desc #change
+		desc = jip_hebrew.0050.desc
 	}
-	theme = dynasty
+	theme = realm
 	left_portrait = {
 		character = root
-		animation = personality_honorable
+		animation = ecstasy
 	}
 
 	immediate = {
-		davidic_reclamation_decision_effect = yes
+		play_music_cue = "mx_cue_positive_effect"
+		create_edom_decision_effect = yes
 	}
 
 	option = {
-		name = jip_hebrew.0050.a 
-		dynasty = {
-			add_dynasty_prestige = 1000
-		}
+		name = jip_hebrew.0050.a
 		stress_impact = {
-			zealous = medium_stress_loss
-			ambitious = minor_stress_loss
+			ambitious = major_stress_loss
 		}
 	}
-
 }

@@ -40,6 +40,66 @@ k_tyre = {
 	}
 }
 
+k_edom = {
+	-1180.1.1 = {
+		holder = bela_ben_beor
+	}
+	-1150.1.1 = {
+		holder = jobab_ben_zerah
+	}
+	-1130.1.1 = {
+		holder = edom_husam_i
+	}
+	-1110.1.1 = {
+		holder = edom_hadad_i
+	}
+	-1080.1.1 = {
+		holder = edom_samlah_i
+	}
+	-1060.1.1 = {
+		holder = edom_shaul_i
+	}
+	-1045.1.1 = {
+		holder = edom_baal_hanan_i
+	}
+	-1030.1.1 = {
+		holder = edom_hadad_ii
+	}
+	-1010.1.1 = {
+		holder = edom_beor_i
+	}
+	-997.1.1 = {
+		holder = king_david_i
+	}
+	-970.1.1 = {
+		holder = king_shelomoh_i
+	}
+	-931.1.1 = {
+		holder = king_rehavam_i
+	}
+	-914.1.1 = {
+		holder = king_aviyah_i
+	}
+	-911.1.1 = {
+		holder = king_asa_i
+	}
+	-870.1.1 = {
+		holder = 0
+	}
+	-734.1.1 = {
+		holder = edom_qos_melek_i
+	}
+	-701.1.1 = {
+		holder = edom_aya_ramu_i
+	}
+	-680.1.1 = {
+		holder = edom_qos_geber_i
+	}
+	-640.1.1 = {
+		holder = 0
+	}
+}
+
 e_carthage = {
 	-825.1.1 = {
 		holder = queen_dido

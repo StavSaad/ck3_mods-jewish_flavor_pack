@@ -10,3 +10,12 @@
 [] Expanded history for Maimonides, Made him playable
 [] Fixed many bugs
 [] Added new fancier CoA for the empire of Canaan
+
+== Version 0.10.0 ==
+[] Added Kingdom of Edom, with a decision to create it
+[] Added Edomite culture
+[] Reworked Dejure lines of Empire of Canaan
+[] Allowed formation of Beth Nahrain for Israelites and Canaanites
+[] Fixed a bug here tripoli was not selectable as a dejure capital for e_canaan
+[] Restored missing Punic Holy Site
+[] Added a decision to restore Edomite culture

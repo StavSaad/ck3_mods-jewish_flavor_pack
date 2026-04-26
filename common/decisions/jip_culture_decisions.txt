@@ -1,4 +1,4 @@
-form_hebrew_decision = {
+﻿form_hebrew_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_culture.dds"
 	}
@@ -91,6 +91,81 @@ form_hebrew_decision = {
 	}
 }
 
+form_edomite_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_culture.dds"
+	}
+	ai_check_interval = 60
+	desc = form_edomite_decision_desc
+	decision_group_type = major
+
+	is_shown = {
+		is_ruler = yes
+		OR = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			capital_province = { geographical_region = jip_region_edom }
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:form_edomite_decision
+			}
+		}
+		NOT = {
+			culture = culture:hebrew
+		}
+	}
+
+	is_valid = {
+		prestige_level >= very_high_prestige_level
+		OR = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			culture = { has_cultural_pillar = heritage_phoenician }
+		}
+		capital_province = { geographical_region = jip_region_edom }
+		OR = {
+			has_trait = lunatic
+			has_trait = scholar
+			has_trait = ambitious
+			has_trait = eccentric
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_independent_ruler = yes
+		is_available_adult = yes
+	}
+
+	effect = {
+		save_scope_as = edomite_former
+
+		show_as_tooltip = { form_edomite_decision_effects = yes }
+
+		#Events
+		trigger_event = jip_hebrew.0031
+		every_vassal_or_below = {
+			limit = {
+				is_ai = yes
+				exists = capital_province
+				capital_province ?= {
+					geographical_region = jip_region_edom
+				}	
+			}
+			trigger_event = jip_hebrew.0031 #So they can convert
+		}
+	}
+
+	cost = { prestige = { value = 3000 } }
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 10
+	}
+}
+
 form_canaanite_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_culture.dds"
@@ -110,16 +185,20 @@ form_canaanite_decision = {
 				name = unavailable_unique_decisions
 				target = flag:form_canaanite_decision
 			}
+		}
+		NOT = {
 			culture = culture:hebrew
 		}
 	}
 
 	is_valid = {
 		prestige_level >= very_high_prestige_level
-		culture = { has_cultural_pillar = heritage_israelite }
 		OR = {
-			culture = { has_cultural_pillar = heritage_israelite }
-			capital_province = { geographical_region = jip_region_phoenicia }
+			culture = { has_cultural_pillar = heritage_phoenician }
+			AND = {
+				culture = { has_cultural_pillar = heritage_israelite }
+				capital_province = { geographical_region = jip_region_phoenicia }
+			}
 		}
 		OR = {
 			has_trait = lunatic

@@ -1,0 +1,187 @@
+beor_father_of_bela = {
+	name = "Beor"
+	religion = "semitic_pagan"
+	culture = edomite
+	-1230.1.1 = {
+		birth = yes
+	}
+	-1190.1.1 = {
+		death = yes
+	}
+}
+
+bela_ben_beor = {
+	name = "Bela"
+	religion = "semitic_pagan"
+	culture = edomite
+	father = beor_father_of_bela
+	-1210.1.1 = {
+		birth = yes
+	}
+	-1150.1.1 = {
+		death = yes
+	}
+}
+
+zerah_father_of_jobab = {
+	name = "Zerah"
+	religion = "semitic_pagan"
+	culture = edomite
+	-1200.1.1 = {
+		birth = yes
+	}
+	-1150.1.1 = {
+		death = yes
+	}
+}
+
+jobab_ben_zerah = {
+	name = "Jobab"
+	religion = "semitic_pagan"
+	culture = edomite
+	father = zerah_father_of_jobab
+	-1180.1.1 = {
+		birth = yes
+	}
+	-1130.1.1 = {
+		death = yes
+	}
+}
+
+edom_husam_i = {
+	name = "Husham"
+	religion = "semitic_pagan"
+	culture = edomite
+	-1150.1.1 = {
+		birth = yes
+	}
+	-1110.1.1 = {
+		death = yes
+	}
+}
+
+edom_bedad_father_of_hadad_i = {
+	name = "Bedam"
+	religion = "semitic_pagan"
+	culture = edomite
+	-1155.1.1 = {
+		birth = yes
+	}
+	-1100.1.1 = {
+		death = yes
+	}
+}
+
+edom_hadad_i = {
+	name = "Hadad"
+	religion = "semitic_pagan"
+	culture = edomite
+	father = edom_bedad_father_of_hadad_i
+	-1135.1.1 = {
+		birth = yes
+	}
+	-1080.1.1 = {
+		death = yes
+	}
+}
+
+edom_samlah_i = {
+	name = "Samlah"
+	religion = "semitic_pagan"
+	culture = edomite
+	father = edom_hadad_i
+	-1100.1.1 = {
+		birth = yes
+	}
+	-1060.1.1 = {
+		death = yes
+	}
+}
+
+edom_shaul_i = {
+	name = "Shaul"
+	religion = "semitic_pagan"
+	culture = edomite
+	father = edom_samlah_i
+	-1080.1.1 = {
+		birth = yes
+	}
+	-1045.1.1 = {
+		death = yes
+	}
+}
+
+edom_baal_hanan_i = {
+	name = "Baal Hanan"
+	religion = "semitic_pagan"
+	culture = edomite
+	-1075.1.1 = {
+		birth = yes
+	}
+	-1030.1.1 = {
+		death = yes
+	}
+}
+
+edom_hadad_ii = {
+	name = "Hadad"
+	religion = "semitic_pagan"
+	culture = edomite
+	-1055.1.1 = {
+		birth = yes
+	}
+	-1010.1.1 = {
+		death = yes
+	}
+}
+
+edom_beor_i = {
+	name = "Beor"
+	religion = "semitic_pagan"
+	culture = edomite
+	father = edom_hadad_ii
+	-1030.1.1 = {
+		birth = yes
+	}
+	-997.1.1 = {
+		death = yes
+	}
+}
+
+edom_qos_melek_i = {
+	name = "Qosmelech"
+	religion = "semitic_pagan"
+	culture = edomite
+	-764.1.1 = {
+		birth = yes
+	}
+	-701.1.1 = {
+		death = yes
+	}
+}
+
+edom_aya_ramu_i = {
+	name = "Ayaramu"
+	religion = "semitic_pagan"
+	culture = edomite
+	father = edom_qos_melek_i
+	-725.1.1 = {
+		birth = yes
+	}
+	-680.1.1 = {
+		death = yes
+	}
+}
+
+edom_qos_geber_i = {
+	name = "Qosgeber"
+	religion = "semitic_pagan"
+	culture = edomite
+	father = edom_aya_ramu_i
+	-705.1.1 = {
+		birth = yes
+	}
+	-640.1.1 = {
+		death = yes
+	}
+}
