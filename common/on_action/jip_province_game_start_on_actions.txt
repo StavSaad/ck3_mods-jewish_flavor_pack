@@ -1,0 +1,34 @@
+on_game_start = {
+    on_actions = {
+		jip_867_effect_setup
+		jip_1066_effect_setup
+        jip_1178_effect_setup
+    }
+}
+
+jip_867_effect_setup = {
+    trigger = {
+        game_start_date = 867.1.1
+    }
+    effect = {
+        jip_867_setup_effect = yes
+    }
+}
+
+jip_1066_effect_setup = {
+    trigger = {
+        game_start_date = 1066.9.15
+    }
+    effect = {
+        jip_1066_setup_effect = yes
+    }
+}
+
+jip_1178_effect_setup = {
+    trigger = {
+        game_start_date = 1178.10.1
+    }
+    effect = {
+        jip_1178_setup_effect = yes
+    }
+}
