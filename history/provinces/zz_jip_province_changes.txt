@@ -1,45 +1,4 @@
-﻿# 4875 - DAUSAR
-4875 = {	# 4875 - Dausar
-	
-	# Misc
-	culture = syriac # For the Syrian Melkites
-	religion = orthodox
-	
-	# History
-	1120.1.1 = { culture = levantine }
-	1270.1.1 = { religion = ashari }
-
-}
-
-5915 = {	# 5915 - Shaizar
-	
-	# Misc
-	culture = syriac # For the Syrian Melkites
-	religion = orthodox
-	
-	# History
-	1120.1.1 = {
-		culture = levantine
-		religion = nizari
-	}
-	1271.1.1 = { religion = ashari }
-
-}
-
-# 5933 - QINNASRIN
-5933 = {	# 5933 - Qinnasrin
-	
-	# Misc
-	culture = syriac # For the Syrian Melkites
-	religion = orthodox
-	
-	# History
-	1120.1.1 = { culture = levantine }
-	1271.1.1 = { religion = ashari }
-
-}
-
-# 5972 - ARANDAL
+﻿# 5972 - ARANDAL
 5972 = {	# 5972 - Arandal
 	
 	# Misc
