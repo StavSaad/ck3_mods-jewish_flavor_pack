@@ -1,0 +1,36 @@
+﻿on_title_gain = {
+	on_actions = {
+		fix_kemet_title_gain_on_action
+	}
+}
+
+on_character_culture_change = {
+	on_actions = {
+		fix_kemet_title_culture_change_on_action
+	}
+}
+
+fix_kemet_title_culture_change_on_action = {
+	trigger = {
+		root = {
+			has_title = title:e_kemet
+		}
+	}
+	effect = {
+		fix_kemet_title = yes
+	}
+}
+
+fix_kemet_title_gain_on_action = {
+	trigger = {
+		AND = {
+			title:e_kemet = scope:title
+			NOT = {
+				root.culture = scope:previous_holder.culture
+			}
+		}
+	}
+	effect = {
+		fix_kemet_title = yes
+	}
+}
