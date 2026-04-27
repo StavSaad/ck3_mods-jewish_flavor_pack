@@ -1,24 +1,8 @@
-﻿4552 = {	# 4552 - SYRTE
-	culture = carthaginian
-	#culture = zanata
-	religion = ibadi
-	holding = castle_holding
-	
-	# History
-	1050.1.1 = { #Area conquered by tribals and turned into nomadic pastures
-		holding = tribal_holding
-	}
-	1055.1.1 = {
-		culture = maghrebi
-		religion = ashari
-	}
-}
-
-# 4875 - DAUSAR
+﻿# 4875 - DAUSAR
 4875 = {	# 4875 - Dausar
 	
 	# Misc
-	culture = aramean # For the Syrian Melkites
+	culture = syriac # For the Syrian Melkites
 	religion = orthodox
 	
 	# History
@@ -30,7 +14,7 @@
 5915 = {	# 5915 - Shaizar
 	
 	# Misc
-	culture = aramean # For the Syrian Melkites
+	culture = syriac # For the Syrian Melkites
 	religion = orthodox
 	
 	# History
@@ -46,7 +30,7 @@
 5933 = {	# 5933 - Qinnasrin
 	
 	# Misc
-	culture = aramean # For the Syrian Melkites
+	culture = syriac # For the Syrian Melkites
 	religion = orthodox
 	
 	# History
