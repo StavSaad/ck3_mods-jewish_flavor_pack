@@ -3141,6 +3141,8 @@ e_kemet = {
 		name_list_assyrian = cn_musri
 		name_list_nubian = cn_kush
 		name_list_ancient_egyptian = cn_kemet
+		name_list_greek = cn_aigyptos
+		name_list_roman = cn_aegyptus
 	}
 
 	can_create = {
