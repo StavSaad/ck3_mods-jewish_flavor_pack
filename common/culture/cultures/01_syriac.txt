@@ -30,8 +30,8 @@
 	}
 }
 
-aramean = {
-	color = { 0.5 0.2 0.32 }
+syriac = {
+	color = { 167 97 28 }
 	
 	ethos = ethos_bellicose
 	heritage = heritage_syriac
