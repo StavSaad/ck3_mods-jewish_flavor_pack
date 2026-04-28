@@ -3128,6 +3128,30 @@ e_persia = {
 	}
 }
 
+e_kemet = {
+	color = { 194 150 92 }
+
+	capital = c_giza
+
+	cultural_names = {
+		name_list_ashkenazi = cn_mitzraim
+		name_list_sephardi = cn_mitzraim
+		name_list_radhanite = cn_mitzraim
+		name_list_canaanite = cn_mitzraim
+		name_list_assyrian = cn_musri
+		name_list_nubian = cn_kush
+		name_list_ancient_egyptian = cn_kemet
+		name_list_greek = cn_aigyptos
+		name_list_roman = cn_aegyptus
+	}
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+		has_title = k_nubia
+		has_title = k_egypt
+	}
+}
+
 e_beth_nahrain = {
 	color = { 35 79 78 }
 	capital = c_damascus # Damascus

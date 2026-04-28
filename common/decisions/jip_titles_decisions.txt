@@ -224,6 +224,9 @@ create_k_phoenicia_decision = {
 			name = unavailable_unique_decisions
 			target = flag:create_k_phoenicia_decision
 		}
+		show_as_tooltip = {
+			create_phoenicia_decision_effect = yes
+		}
 		trigger_event = jip_hebrew.0020
 	}
 
@@ -272,6 +275,7 @@ create_k_edom_decision = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
 			culture = { has_cultural_pillar = heritage_phoenician }
+			
 		}
 		OR = {
 			has_primary_title = title:d_amman
@@ -294,6 +298,9 @@ create_k_edom_decision = {
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
 			target = flag:create_k_edom_decision
+		}
+		show_as_tooltip = {
+			create_edom_decision_effect = yes
 		}
 		trigger_event = jip_hebrew.0050
 	}
@@ -321,6 +328,8 @@ create_e_canaan_decision = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
 			culture = { has_cultural_pillar = heritage_phoenician }
+			culture = { has_cultural_pillar = heritage_egyptian }
+			culture = { has_cultural_pillar = heritage_syriac }
 		}
 		OR = {
 			has_title = title:k_israel
@@ -343,8 +352,14 @@ create_e_canaan_decision = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
 			culture = { has_cultural_pillar = heritage_phoenician }
+			culture = { has_cultural_pillar = heritage_egyptian }
+			culture = { has_cultural_pillar = heritage_syriac }
 		}
-		highest_held_title_tier = tier_kingdom
+		OR = {
+			highest_held_title_tier = tier_kingdom
+			has_title = title:e_kemet
+			has_title = title:e_beth_nahrain
+		}
 		custom_description = {
 			text = found_empire_decision_two_kingdoms_held
 			any_held_title = {
@@ -392,7 +407,95 @@ create_e_canaan_decision = {
 			name = unavailable_unique_decisions
 			target = flag:create_e_canaan_decision
 		}
+		show_as_tooltip = {
+			create_canaan_decision_effect = yes
+		}
 		trigger_event = jip_hebrew.0010
+	}
+
+	cost = { gold = { value = 500 } }
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+create_e_kemet_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	ai_check_interval = 60
+	desc = create_e_kemet_decision_desc
+	decision_group_type = major
+
+	is_shown = {
+		OR = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			culture = { has_cultural_pillar = heritage_phoenician }
+			culture = { has_cultural_pillar = heritage_egyptian }
+			culture = { has_cultural_pillar = heritage_syriac }
+			culture = culture:nubian
+		}
+		OR = {
+			has_title = title:k_egypt
+			has_title = title:k_nubia
+			has_title = title:k_blemmyia
+		}
+		highest_held_title_tier = tier_kingdom
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:create_e_kemet_decision
+			}
+		}
+	}
+
+	is_valid = {
+		prestige_level >= high_prestige_level
+		is_independent_ruler = yes 
+		OR = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			culture = { has_cultural_pillar = heritage_phoenician }
+			culture = { has_cultural_pillar = heritage_egyptian }
+			culture = { has_cultural_pillar = heritage_syriac }
+			culture = culture:nubian
+		}
+		OR = {
+			highest_held_title_tier = tier_kingdom
+			has_title = title:e_canaan
+			has_title = title:e_beth_nahrain
+		}
+		custom_description = {
+			text = found_empire_decision_two_kingdoms_held
+			any_held_title = {
+				count >= 2
+				tier = tier_kingdom
+			}
+		}
+		completely_controls_region = jip_region_kemet
+		
+	}
+
+	is_valid_showing_failures_only = {
+		is_landed = yes
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	effect = {
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:create_e_kemet_decision
+		}
+		show_as_tooltip = {
+			create_kemet_decision_effect = yes
+		}
+		trigger_event = jip_hebrew.0060
 	}
 
 	cost = { gold = { value = 500 } }

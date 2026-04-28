@@ -10,7 +10,7 @@
 		tradition_maritime_mercantilism
 		tradition_eye_for_an_eye
 		tradition_seafaring
-		tradition_fervent_temple_builders
+		tradition_city_keepers
 	}
 
 	name_list = name_list_canaanite

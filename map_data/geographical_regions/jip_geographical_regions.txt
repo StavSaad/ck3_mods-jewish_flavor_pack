@@ -21,3 +21,9 @@ jip_region_canaan = {
 		jip_region_israel jip_region_phoenicia jip_region_edom
 	}
 }
+
+jip_region_kemet = {
+	kingdoms = {
+		k_egypt k_nubia k_blemmyia
+	}
+}
