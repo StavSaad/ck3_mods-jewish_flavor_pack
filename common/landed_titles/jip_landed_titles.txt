@@ -3131,7 +3131,7 @@ e_persia = {
 e_kemet = {
 	color = { 194 150 92 }
 
-	capital = c_cairo
+	capital = c_giza
 
 	cultural_names = {
 		name_list_ashkenazi = cn_mitzraim

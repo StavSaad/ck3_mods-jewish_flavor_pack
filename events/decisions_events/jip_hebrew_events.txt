@@ -164,6 +164,7 @@ jip_hebrew.0010 = {
 		title:e_canaan = {
 			set_capital_county = title:c_jerusalem
 		}
+		set_realm_capital = title:c_jerusalem
 		stress_impact = {
 			ambitious = major_stress_loss
 		}
@@ -175,6 +176,7 @@ jip_hebrew.0010 = {
 		title:e_canaan = {
 			set_capital_county = title:c_tripoli
 		}
+		set_realm_capital = title:c_tripoli
 		stress_impact = {
 			ambitious = major_stress_loss
 		}
@@ -186,6 +188,7 @@ jip_hebrew.0010 = {
 		title:e_canaan = {
 			set_capital_county = title:c_antiocheia
 		}
+		set_realm_capital = title:c_antiocheia
 		stress_impact = {
 			ambitious = major_stress_loss
 		}
@@ -205,6 +208,7 @@ jip_hebrew.0010 = {
 		title:e_canaan = {
 			set_capital_county = title:c_palmyra
 		}
+		set_realm_capital = title:c_palmyra
 		stress_impact = {
 			ambitious = major_stress_loss
 		}
@@ -600,6 +604,82 @@ jip_hebrew.0050 = {
 
 	option = {
 		name = jip_hebrew.0050.a
+		stress_impact = {
+			ambitious = major_stress_loss
+		}
+	}
+}
+
+# Kemet it up
+jip_hebrew.0060 = {
+	type = character_event
+	title = jip_hebrew.0060.t #change
+	desc = {
+		desc = jip_hebrew.0060.start.desc #change
+		desc = jip_hebrew.0060.end.desc
+	}
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = ecstasy
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_positive_effect"
+		create_kemet_decision_effect = yes
+		# if = {
+		# 	limit = { is_male = yes }
+		# 	give_nickname = nick_the_rising_lion
+		# }
+		# if = {
+		# 	limit = { is_female = yes }
+		# 	give_nickname = nick_the_rising_lioness
+		# }
+	}
+
+	# Giza option
+	option = {
+		name = jip_hebrew.0060.a
+		title:e_kemet = {
+			set_capital_county = title:c_giza
+		}
+		set_realm_capital = title:c_giza
+		stress_impact = {
+			ambitious = major_stress_loss
+		}
+	}
+
+	# Alexandria option
+	option = {
+		name = jip_hebrew.0060.b
+		title:e_kemet = {
+			set_capital_county = title:c_alexandria
+		}
+		set_realm_capital = title:c_alexandria
+		stress_impact = {
+			ambitious = major_stress_loss
+		}
+	}
+
+	# Aswan option
+	option = {
+		name = jip_hebrew.0060.c
+		title:e_kemet = {
+			set_capital_county = title:c_aswan
+		}
+		set_realm_capital = title:c_aswan
+		stress_impact = {
+			ambitious = major_stress_loss
+		}
+	}
+
+	# Palmyra option
+	option = {
+		name = jip_hebrew.0060.d
+		title:e_kemet = {
+			set_capital_county = title:c_meroe
+		}
+		set_realm_capital = title:c_meroe
 		stress_impact = {
 			ambitious = major_stress_loss
 		}
