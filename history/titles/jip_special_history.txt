@@ -200,7 +200,7 @@
 	}
 
 	773.1.1 = {
-		holder = rabbinic_exilarchate_makhir_ben_habibai
+		holder = makhirite_makhir_ben_habibai
 	}
 
 	773.3.1 = {
