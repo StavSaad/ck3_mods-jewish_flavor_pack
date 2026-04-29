@@ -15,7 +15,9 @@ exilarchate_inheritance_on_action = {
 			scope:title = title:d_exilarchate
 			scope:title = title:d_karaite_exilarchate
 		}
-		is_landless = yes
+		scope:title = {
+			is_landless_type_title = yes
+		}
 	}
 
 	effect = {

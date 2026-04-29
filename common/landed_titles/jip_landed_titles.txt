@@ -1659,11 +1659,6 @@ e_canaan = {
 
 	can_create = {
 		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
-		OR = {
-			has_title = k_israel
-			has_title = k_jerusalem
-		}
-		has_title = k_phoenicia
 	}
 
 	ai_primary_priority = {
@@ -3147,8 +3142,6 @@ e_kemet = {
 
 	can_create = {
 		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
-		has_title = k_nubia
-		has_title = k_egypt
 	}
 }
 

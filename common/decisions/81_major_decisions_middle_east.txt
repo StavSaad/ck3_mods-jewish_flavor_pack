@@ -55,6 +55,7 @@ found_empire_of_beth_nahrain_decision = {
 			culture = { has_cultural_pillar = heritage_syriac }
 			culture = { has_cultural_pillar = heritage_israelite }
 			culture = { has_cultural_pillar = heritage_phoenician }
+			culture = { has_cultural_pillar = heritage_egyptian }
 		}
 		custom_tooltip = {
 			text = completely_controls_jazira_mesopotamia_tt

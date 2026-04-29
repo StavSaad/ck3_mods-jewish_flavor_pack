@@ -1,0 +1,32 @@
+﻿copt = {
+	color = { 0.8 0.64 0.3 }
+	created = 100.1.1
+	parents = { ancient_egyptian }
+	
+	ethos = ethos_communal
+	heritage = heritage_egyptian
+	language = language_coptic 
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		tradition_loyal_soldiers
+		tradition_monastic_communities
+		tradition_agrarian
+		tradition_zealous_people
+	}
+	
+	name_list = name_list_ancient_egyptian
+
+	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
+	building_gfx = { mediterranean_building_gfx }
+	clothing_gfx = { dde_abbasid_clothing_gfx mena_clothing_gfx } 
+	clothing_gfx = { byzantine_clothing_gfx }
+	building_gfx = { arabic_group_building_gfx mena_building_gfx }
+	unit_gfx = { mena_unit_gfx }
+	house_coa_frame = house_frame_16
+
+	ethnicities = {
+		50 = mediterranean
+		50 = arab
+	}
+}

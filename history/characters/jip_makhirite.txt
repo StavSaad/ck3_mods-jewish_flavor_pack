@@ -1,4 +1,4 @@
-makhirite_makhir_ben_habibai = {
+﻿makhirite_makhir_ben_habibai = {
 	name = "Machir"
 	religion = "rabbinism"
 	culture = "bavlim"

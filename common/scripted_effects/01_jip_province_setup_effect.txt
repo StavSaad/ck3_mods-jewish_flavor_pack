@@ -1,4 +1,4 @@
-##############################################
+﻿##############################################
 #
 # CULTURE
 #
@@ -20,106 +20,100 @@ jip_867_setup_effect = {
 	culture:syriac = {
 		get_all_innovations_from = scope:assyrian
 	}
-	# culture:ce_copt = {
-	# 	get_all_innovations_from = scope:egyptian
-	# }
-	# culture:ce_copt = {
-	# 	remove_culture_tradition = tradition_agrarian
-	# }
-	# culture:ce_copt = {
-	# 	add_culture_tradition = tradition_nile_agriculture
-	# }
+	culture:copt = {
+		get_all_innovations_from = scope:egyptian
+	}
 
-	# title:c_alexandria = {
-	# 	set_county_culture = culture:ce_copt
-	# }		
-	# title:c_fayyum = {
-	# 	set_county_culture = culture:ce_copt
-	# }		
-	# title:c_giza = {
-	# 	set_county_culture = culture:ce_copt
-	# }		
-	# title:c_al-buhaira = {
-	# 	set_county_culture = culture:ce_copt
-	# }		
-	# title:c_bahnasa = {
-	# 	set_county_culture = culture:ce_copt
-	# }
-	# title:c_ushmun = {
-	# 	set_county_culture = culture:ce_copt
-	# }
-	# title:c_asyut = {
-	# 	set_county_culture = culture:ce_copt
-	# }
-	# title:c_qus = {
-	# 	set_county_culture = culture:ce_copt
-	# }
-	# title:c_kharga = {
-	# 	set_county_culture = culture:ce_copt
-	# }
-	# title:c_dakhla = {
-	# 	set_county_culture = culture:ce_copt
-	# }
-	# title:c_aswan = {
-	# 	set_county_culture = culture:ce_copt
-	# }
-	# title:c_siwa = {
-	# 	set_county_culture = culture:ce_copt
-	# }
-	# title:c_al-gharbiya = {
-	# 	set_county_culture = culture:ce_copt
-	# }
-	# title:c_damietta = {
-	# 	set_county_culture = culture:ce_copt
-	# }
+	title:c_alexandria = {
+		set_county_culture = culture:copt
+	}		
+	title:c_fayyum = {
+		set_county_culture = culture:copt
+	}		
+	title:c_giza = {
+		set_county_culture = culture:copt
+	}		
+	title:c_al-buhaira = {
+		set_county_culture = culture:copt
+	}		
+	title:c_bahnasa = {
+		set_county_culture = culture:copt
+	}
+	title:c_ushmun = {
+		set_county_culture = culture:copt
+	}
+	title:c_asyut = {
+		set_county_culture = culture:copt
+	}
+	title:c_qus = {
+		set_county_culture = culture:copt
+	}
+	title:c_kharga = {
+		set_county_culture = culture:copt
+	}
+	title:c_dakhla = {
+		set_county_culture = culture:copt
+	}
+	title:c_aswan = {
+		set_county_culture = culture:copt
+	}
+	title:c_siwa = {
+		set_county_culture = culture:copt
+	}
+	title:c_al-gharbiya = {
+		set_county_culture = culture:copt
+	}
+	title:c_damietta = {
+		set_county_culture = culture:copt
+	}
 
 	#Coptic Popes
 
-	# character:161518 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161520 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161508 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161521 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161514 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161515 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161522 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# #character:151524 = {
-	# #	set_culture = culture:ce_copt
-	# #}
-	# character:161516 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161523 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161509 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161517 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161510 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:168592 = {
-	# 	set_culture = culture:ce_copt
-	# 	every_courtier_or_guest = {
-	# 		set_culture = culture:ce_copt
-	# 	}
-	# }
+	character:161518 = {
+		set_culture = culture:copt
+	}
+	character:161520 = {
+		set_culture = culture:copt
+	}
+	character:161508 = {
+		set_culture = culture:copt
+	}
+	character:161521 = {
+		set_culture = culture:copt
+	}
+	character:161514 = {
+		set_culture = culture:copt
+	}
+	character:161515 = {
+		set_culture = culture:copt
+	}
+	character:161522 = {
+		set_culture = culture:copt
+	}
+	#character:151524 = {
+	#	set_culture = culture:copt
+	#}
+	character:161516 = {
+		set_culture = culture:copt
+	}
+	character:161523 = {
+		set_culture = culture:copt
+	}
+	character:161509 = {
+		set_culture = culture:copt
+	}
+	character:161517 = {
+		set_culture = culture:copt
+	}
+	character:161510 = {
+		set_culture = culture:copt
+	}
+	character:168592 = {
+		set_culture = culture:copt
+		every_courtier_or_guest = {
+			set_culture = culture:copt
+		}
+	}
 
 	# County Culture Shifts
 	title:c_mosul = {
@@ -204,17 +198,6 @@ jip_1066_setup_effect = {
 	culture:syriac = {
 		get_all_innovations_from = scope:assyrian
 	}
-	# culture:ce_copt = {
-	# 	get_all_innovations_from = scope:egyptian
-	# }
-	
-	# Tradition Edits
-	# culture:ce_copt = {
-	# 	remove_culture_tradition = tradition_agrarian
-	# }
-	# culture:ce_copt = {
-	# 	add_culture_tradition = tradition_nile_agriculture
-	# }
 
 	title:c_samarra = {
 		set_county_faith = faith:nestorian
@@ -287,87 +270,87 @@ jip_1066_setup_effect = {
 		set_county_culture = culture:syriac
 	}
 
-	# title:c_alexandria = {
-	# 	set_county_culture = culture:ce_copt
-	# }		
-	# title:c_fayyum = {
-	# 	set_county_culture = culture:ce_copt
-	# }		
-	# title:c_giza = {
-	# 	set_county_culture = culture:ce_copt
-	# }		
-	# title:c_al-buhaira = {
-	# 	set_county_culture = culture:ce_copt
-	# }	
-	# title:c_asyut = {
-	# 	set_county_culture = culture:ce_copt
-	# }	
-	# title:c_qus = {
-	# 	set_county_culture = culture:ce_copt
-	# }
-	# title:c_aswan = {
-	# 	set_county_culture = culture:ce_copt
-	# }
+	title:c_alexandria = {
+		set_county_culture = culture:copt
+	}		
+	title:c_fayyum = {
+		set_county_culture = culture:copt
+	}		
+	title:c_giza = {
+		set_county_culture = culture:copt
+	}		
+	title:c_al-buhaira = {
+		set_county_culture = culture:copt
+	}	
+	title:c_asyut = {
+		set_county_culture = culture:copt
+	}	
+	title:c_qus = {
+		set_county_culture = culture:copt
+	}
+	title:c_aswan = {
+		set_county_culture = culture:copt
+	}
 	
 	# #Coptic Popes
 
-	# character:161518 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161520 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161508 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161521 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161514 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161515 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161522 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# #character:151524 = {
-	# #	set_culture = culture:ce_copt
-	# #}
-	# character:161516 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161523 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161509 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161517 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161510 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:168592 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161511 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161513 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161513 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:35001 = {
-	# 	set_culture = culture:ce_copt
-	# 	every_courtier_or_guest = {
-	# 		set_culture = culture:ce_copt
-	# 	}
-	# }
+	character:161518 = {
+		set_culture = culture:copt
+	}
+	character:161520 = {
+		set_culture = culture:copt
+	}
+	character:161508 = {
+		set_culture = culture:copt
+	}
+	character:161521 = {
+		set_culture = culture:copt
+	}
+	character:161514 = {
+		set_culture = culture:copt
+	}
+	character:161515 = {
+		set_culture = culture:copt
+	}
+	character:161522 = {
+		set_culture = culture:copt
+	}
+	#character:151524 = {
+	#	set_culture = culture:copt
+	#}
+	character:161516 = {
+		set_culture = culture:copt
+	}
+	character:161523 = {
+		set_culture = culture:copt
+	}
+	character:161509 = {
+		set_culture = culture:copt
+	}
+	character:161517 = {
+		set_culture = culture:copt
+	}
+	character:161510 = {
+		set_culture = culture:copt
+	}
+	character:168592 = {
+		set_culture = culture:copt
+	}
+	character:161511 = {
+		set_culture = culture:copt
+	}
+	character:161513 = {
+		set_culture = culture:copt
+	}
+	character:161513 = {
+		set_culture = culture:copt
+	}
+	character:35001 = {
+		set_culture = culture:copt
+		every_courtier_or_guest = {
+			set_culture = culture:copt
+		}
+	}
 }
 
 jip_1178_setup_effect = {	
@@ -380,18 +363,9 @@ jip_1178_setup_effect = {
 	culture:syriac = {
 		get_all_innovations_from = scope:assyrian
 	}
-	# culture:ce_copt = {
-	# 	get_all_innovations_from = scope:egyptian
-	# }
-	
-	# # Tradition Edits
-	# culture:ce_copt = {
-	# 	remove_culture_tradition = tradition_agrarian
-	# }
-	# culture:ce_copt = {
-	# 	add_culture_tradition = tradition_nile_agriculture
-	# }
-
+	culture:copt = {
+		get_all_innovations_from = scope:egyptian
+	}
 
 	# County Culture Shifts									
 
@@ -429,102 +403,102 @@ jip_1178_setup_effect = {
 		set_county_culture = culture:syriac
 		set_county_faith = faith:orthodox
 	}
-	# title:c_alexandria = {
-	# 	set_county_culture = culture:ce_copt
-	# }		
-	# title:c_fayyum = {
-	# 	set_county_culture = culture:ce_copt
-	# }					
-	# title:c_asyut = {
-	# 	set_county_culture = culture:ce_copt
-	# }
-	# title:c_qus = {
-	# 	set_county_culture = culture:ce_copt
-	# }
-	# title:c_aswan = {
-	# 	set_county_culture = culture:ce_copt
-	# }	
+	title:c_alexandria = {
+		set_county_culture = culture:copt
+	}		
+	title:c_fayyum = {
+		set_county_culture = culture:copt
+	}					
+	title:c_asyut = {
+		set_county_culture = culture:copt
+	}
+	title:c_qus = {
+		set_county_culture = culture:copt
+	}
+	title:c_aswan = {
+		set_county_culture = culture:copt
+	}	
 	# #Coptic Popes
 
-	# character:161518 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161520 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161508 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161521 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161514 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161515 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161522 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161524 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161516 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161523 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161509 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161517 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161510 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161519 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:168592 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161511 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161512 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161513 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:35001 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161491 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161492 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161493 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161494 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161495 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161496 = {
-	# 	set_culture = culture:ce_copt
-	# }
-	# character:161497 = {
-	# 	set_culture = culture:ce_copt
-	# 	every_courtier_or_guest = {
-	# 		set_culture = culture:ce_copt
-	# 	}
-	# }
+	character:161518 = {
+		set_culture = culture:copt
+	}
+	character:161520 = {
+		set_culture = culture:copt
+	}
+	character:161508 = {
+		set_culture = culture:copt
+	}
+	character:161521 = {
+		set_culture = culture:copt
+	}
+	character:161514 = {
+		set_culture = culture:copt
+	}
+	character:161515 = {
+		set_culture = culture:copt
+	}
+	character:161522 = {
+		set_culture = culture:copt
+	}
+	character:161524 = {
+		set_culture = culture:copt
+	}
+	character:161516 = {
+		set_culture = culture:copt
+	}
+	character:161523 = {
+		set_culture = culture:copt
+	}
+	character:161509 = {
+		set_culture = culture:copt
+	}
+	character:161517 = {
+		set_culture = culture:copt
+	}
+	character:161510 = {
+		set_culture = culture:copt
+	}
+	character:161519 = {
+		set_culture = culture:copt
+	}
+	character:168592 = {
+		set_culture = culture:copt
+	}
+	character:161511 = {
+		set_culture = culture:copt
+	}
+	character:161512 = {
+		set_culture = culture:copt
+	}
+	character:161513 = {
+		set_culture = culture:copt
+	}
+	character:35001 = {
+		set_culture = culture:copt
+	}
+	character:161491 = {
+		set_culture = culture:copt
+	}
+	character:161492 = {
+		set_culture = culture:copt
+	}
+	character:161493 = {
+		set_culture = culture:copt
+	}
+	character:161494 = {
+		set_culture = culture:copt
+	}
+	character:161495 = {
+		set_culture = culture:copt
+	}
+	character:161496 = {
+		set_culture = culture:copt
+	}
+	character:161497 = {
+		set_culture = culture:copt
+		every_courtier_or_guest = {
+			set_culture = culture:copt
+		}
+	}
 }
