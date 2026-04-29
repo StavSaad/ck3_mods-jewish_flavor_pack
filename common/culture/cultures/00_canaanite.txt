@@ -33,6 +33,7 @@ edomite = {
 	parents = {
 		hebrew bedouin
 	}
+	created = -1700.1.1
 	ethos = ethos_bellicose
 	heritage = heritage_israelite
 	language = language_arabic

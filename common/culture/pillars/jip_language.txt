@@ -27,7 +27,7 @@ language_coptic = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_coptic }
-			multiply = same_language_choice_factor
+			multiply = 2
 		}
 	}
 	
