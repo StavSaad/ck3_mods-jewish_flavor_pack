@@ -1,4 +1,4 @@
-copt = {
+﻿copt = {
 	color = { 0.8 0.64 0.3 }
 	created = 100.1.1
 	parents = { ancient_egyptian }
@@ -15,7 +15,7 @@ copt = {
 		tradition_zealous_people
 	}
 	
-	name_list = name_list_coptics
+	name_list = name_list_coptic
 
 	coa_gfx = { latin_group_coa_gfx western_coa_gfx }
 	building_gfx = { mediterranean_building_gfx }
