@@ -1,4 +1,4 @@
-beor_father_of_bela = {
+﻿beor_father_of_bela = {
 	name = "Beor"
 	religion = "semitic_pagan"
 	culture = edomite

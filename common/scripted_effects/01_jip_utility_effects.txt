@@ -21,13 +21,11 @@
 			}
 			title:e_kemet = {
 				set_definitive_form = no
-				definite_article = ""
 			}
 		}
 		else = {
 			title:e_kemet = {
 				set_definitive_form = yes 
-				definite_article = "the "
 			}
 		}
 		reset_title_name = yes
