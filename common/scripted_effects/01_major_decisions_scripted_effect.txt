@@ -1,4 +1,4 @@
-create_israel_scripted_effect = {
+﻿create_israel_scripted_effect = {
 	save_scope_as = scoped_ruler
 	create_title_and_vassal_change = {
 		type = created
