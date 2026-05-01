@@ -23,7 +23,15 @@ jip_region_canaan = {
 }
 
 jip_region_kemet = {
-	kingdoms = {
-		k_egypt k_nubia k_blemmyia
+	duchies = {
+		d_cyrenaica d_alexandria d_delta d_cairo d_al-wahat d_al-said d_eastern_desert
+		d_nobatia d_makuria d_shamir
+		d_naqis d_bazin
+	}
+}
+
+jip_fertile_crescent = {
+	regions = {
+		jip_region_canaan jip_region_kemet custom_beth_nahrain
 	}
 }
