@@ -300,12 +300,6 @@ create_kemet_decision_effect = {
 			set_title_name = k_lower_egypt
 			set_adjective = k_lower_egypt_adj
 		}
-		title:k_upper_egypt = {
-			change_title_holder = {
-				holder = root
-				change = scope:title_change
-			}
-		}
 	}
 	title:e_kemet = {
 		change_title_holder = {

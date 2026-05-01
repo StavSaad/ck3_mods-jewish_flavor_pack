@@ -34,8 +34,5 @@
 				set_de_jure_liege_title = title:k_israel
 			}
 		}
-		title:k_israel = {
-			set_de_jure_liege_title = title:e_canaan
-		}
 	}
 }
