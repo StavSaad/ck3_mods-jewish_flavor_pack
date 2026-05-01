@@ -220,6 +220,18 @@ create_canaan_decision_effect = {
 		title:k_jerusalem = { set_de_jure_liege_title = title:e_canaan }
 	}
 	if = {
+		limit = { has_title = title:k_israel }
+		title:k_israel = { set_de_jure_liege_title = title:e_canaan }
+	}
+	if = {
+		limit = { has_title = title:k_edom }
+		title:k_edom = { set_de_jure_liege_title = title:e_canaan }
+	}
+	if = {
+		limit = { has_title = title:k_phoenicia }
+		title:k_phoenicia = { set_de_jure_liege_title = title:e_canaan }
+	}
+	if = {
 		limit = { has_title = title:k_syria }
 		title:k_syria = { set_de_jure_liege_title = title:e_canaan }
 	}
@@ -229,13 +241,6 @@ create_canaan_decision_effect = {
 			completely_controls = title:k_cyprus
 		}
 		title:k_cyprus = { set_de_jure_liege_title = title:e_canaan }
-	}
-	if = {
-		limit = {
-			has_title = title:k_egypt
-			completely_controls = title:k_egypt
-		}
-		title:k_egypt = { set_de_jure_liege_title = title:e_canaan }
 	}
 	title:e_canaan = {
 		change_title_holder = {
