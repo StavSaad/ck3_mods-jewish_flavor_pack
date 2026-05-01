@@ -3908,6 +3908,16 @@ e_spain = {
 
 }
 
+h_fertile_crescent = {
+	capital = c_jerusalem
+	color = { 32 115 110 }
+	definite_form = yes
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+}
+
 e_france = {
 	color = { 11 22 170 }
 

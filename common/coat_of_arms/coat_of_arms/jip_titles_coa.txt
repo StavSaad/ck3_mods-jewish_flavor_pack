@@ -1,4 +1,52 @@
-﻿e_canaan = {
+﻿h_fertile_crescent = {
+	pattern="pattern_vertical_split_01.dds"
+	color1= { 32 115 110 }
+	color2={ 212 175 55 }
+	color3=red
+	colored_emblem={
+		color1=green
+		color2=red
+		texture="ce_pomegranate.dds"
+		instance={
+			scale={ 0.560000 0.560000 }
+		}
+
+	}
+
+	colored_emblem={
+		color1=blue_light
+		texture="ce_waves_04.dds"
+		instance={
+			position={ 0.500000 0.960000 }
+			depth=1.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=white
+		texture="ce_crescent_mask.dds"
+		instance={
+			position={ 0.440000 0.360000 }
+			depth=3.010000
+			rotation=146
+		}
+
+	}
+
+	colored_emblem={
+		color1=grey
+		texture="ce_waves_04.dds"
+		instance={
+			position={ 0.500000 0.900000 }
+			depth=2.010000
+		}
+
+	}
+
+}
+
+e_canaan = {
 	pattern="pattern_chevron_01.dds"
 	color1=rgb { 102 2 60 }
 	color2=rgb { 21 49 126 }
@@ -62,7 +110,6 @@
 
 }
 
-# TODO: PLACEHOLER
 e_kemet = {
 	pattern="pattern_checkers_02.dds"
 	color1=black
