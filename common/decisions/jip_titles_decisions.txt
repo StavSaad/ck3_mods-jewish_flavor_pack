@@ -445,7 +445,7 @@ create_e_kemet_decision = {
 			has_title = title:k_nubia
 			has_title = title:k_blemmyia
 		}
-		highest_held_title_tier = tier_kingdom
+		highest_held_title_tier >= tier_kingdom
 		NOT = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_decisions
@@ -465,7 +465,7 @@ create_e_kemet_decision = {
 			culture = culture:nubian
 		}
 		OR = {
-			highest_held_title_tier = tier_kingdom
+			highest_held_title_tier >= tier_kingdom
 			has_title = title:e_canaan
 			has_title = title:e_beth_nahrain
 		}
@@ -555,7 +555,7 @@ create_h_fertile_crescent_decision = {
 				tier = tier_empire
 			}
 		}
-		completely_controls_region = jip_region_fertile_crescent
+		completely_controls_region = jip_fertile_crescent
 		
 	}
 
