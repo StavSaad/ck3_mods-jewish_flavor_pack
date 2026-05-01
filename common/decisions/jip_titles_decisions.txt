@@ -179,6 +179,8 @@ create_k_phoenicia_decision = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
 			culture = { has_cultural_pillar = heritage_phoenician }
+			culture = { has_cultural_pillar = heritage_egyptian }
+			culture = { has_cultural_pillar = heritage_syriac }
 		}
 		OR = {
 			has_title = title:d_lebanon
@@ -253,6 +255,8 @@ create_k_edom_decision = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
 			culture = { has_cultural_pillar = heritage_phoenician }
+			culture = { has_cultural_pillar = heritage_egyptian }
+			culture = { has_cultural_pillar = heritage_syriac }
 		}
 		OR = {
 			has_title = title:d_amman
@@ -336,6 +340,7 @@ create_e_canaan_decision = {
 			has_title = title:k_syria
 			has_title = title:k_jerusalem
 			has_title = title:k_phoenicia
+			has_title = title:k_edom
 		}
 		highest_held_title_tier = tier_kingdom
 		NOT = {
