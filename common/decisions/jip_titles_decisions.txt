@@ -508,3 +508,86 @@ create_e_kemet_decision = {
 		base = 100
 	}
 }
+
+create_h_fertile_crescent_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	ai_check_interval = 60
+	desc = create_h_fertile_crescent_desc
+	decision_group_type = major
+
+	is_shown = {
+		OR = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			culture = { has_cultural_pillar = heritage_phoenician }
+			culture = { has_cultural_pillar = heritage_egyptian }
+			culture = { has_cultural_pillar = heritage_syriac }
+		}
+		OR = {
+			has_title = title:e_canaan
+			has_title = title:e_beth_nahrain
+			has_title = title:e_kemet
+		}
+		highest_held_title_tier = tier_empire
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:create_h_fertile_crescent_decision
+			}
+		}
+	}
+
+	is_valid = {
+		prestige_level >= high_prestige_level
+		is_independent_ruler = yes 
+		OR = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			culture = { has_cultural_pillar = heritage_phoenician }
+			culture = { has_cultural_pillar = heritage_egyptian }
+			culture = { has_cultural_pillar = heritage_syriac }
+		}
+		OR = {
+			highest_held_title_tier = tier_empire
+			has_title = title:e_canaan
+			has_title = title:e_beth_nahrain
+			has_title = title:e_kemet
+		}
+		custom_description = {
+			any_held_title = {
+				count >= 3
+				tier = tier_empire
+			}
+		}
+		completely_controls_region = jip_region_fertile_crescent
+		
+	}
+
+	is_valid_showing_failures_only = {
+		is_landed = yes
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	effect = {
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:create_h_fertile_crescent_decision
+		}
+		show_as_tooltip = {
+			create_fertile_crescent_decision_effect = yes
+		}
+		trigger_event = jip_hebrew.0070
+	}
+
+	cost = { gold = { value = 500 } }
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
