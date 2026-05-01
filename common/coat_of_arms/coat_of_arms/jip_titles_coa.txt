@@ -353,25 +353,32 @@ k_judah = {
 }
 
 k_upper_egypt={
-	pattern="pattern_vertical_split_01.dds"
-	color1=white
-	color2={ 165 40 45 } # Or your custom RGB 165 40 45
+	pattern="pattern_vertical_stripes_02.dds"
+	color1=rgb {165 40 45}
+	color2=white
+	color3=rgb {165 40 45}
 	colored_emblem={
 		color1=yellow
-		texture="ce_sun.dds"
+		color2=yellow_light
+		texture="ce_mena_sun.dds"
 		instance={
-			position={ 0.500000 0.500000 }
+			position={ 0.500000 0.680000 }
 			scale={ 0.650000 0.650000 }
+			depth=1.010000
 		}
+
 	}
+
 	colored_emblem={
-		color1=white
-		texture="ce_flower.dds" # Representing the Lotus
+		color1=rgb {0 70 140}
+		texture="ce_lotus_flower.dds"
 		instance={
 			position={ 0.500000 0.250000 }
-			scale={ 0.400000 0.400000 }
+			scale={ 0.730000 0.730000 }
 		}
+
 	}
+
 }
 
 k_phoenicia = {
