@@ -3144,6 +3144,11 @@ e_kemet = {
 	can_create = {
 		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
 	}
+
+	k_upper_egypt = {
+		capital = c_meroe
+		color = { 165 40 45 }
+	}
 }
 
 e_beth_nahrain = {

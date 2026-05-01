@@ -28,6 +28,8 @@
 				set_definitive_form = yes 
 			}
 		}
-		reset_title_name = yes
+		title:e_kemet = {
+			reset_title_name = yes
+		}
 	}
 }

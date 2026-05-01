@@ -260,9 +260,22 @@ create_kemet_decision_effect = {
 		save_scope_as = title_change
 		add_claim_on_loss = no
 	}
-	title:k_egypt = { set_de_jure_liege_title = title:e_kemet }
-	title:k_nubia = { set_de_jure_liege_title = title:e_kemet }
-	title:k_blemmyia = { set_de_jure_liege_title = title:e_kemet }
+	title:k_egypt = { 
+		set_de_jure_liege_title = title:e_kemet
+		set_title_name = k_lower_egypt
+		set_adjective = k_lower_egypt_adj
+	}
+	title:d_nobatia = { set_de_jure_liege_title = title:k_upper_egypt } 
+	title:d_makuria = { set_de_jure_liege_title = title:k_upper_egypt } 
+	title:d_shamir = { set_de_jure_liege_title = title:k_upper_egypt } 
+	title:d_naqis = { set_de_jure_liege_title = title:k_upper_egypt }  
+	title:d_bazin = { set_de_jure_liege_title = title:k_upper_egypt }
+	title:k_upper_egypt = {
+		change_title_holder = {
+			holder = root
+			change = scope:title_change
+		}
+	}
 	title:e_kemet = {
 		change_title_holder = {
 			holder = root

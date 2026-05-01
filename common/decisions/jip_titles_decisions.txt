@@ -469,12 +469,8 @@ create_e_kemet_decision = {
 			has_title = title:e_canaan
 			has_title = title:e_beth_nahrain
 		}
-		custom_description = {
-			text = found_empire_decision_two_kingdoms_held
-			any_held_title = {
-				count >= 2
-				tier = tier_kingdom
-			}
+		NOT = {
+			faith.religion = religion:islam_religion
 		}
 		completely_controls_region = jip_region_kemet
 		

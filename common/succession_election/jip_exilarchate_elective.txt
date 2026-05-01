@@ -12,17 +12,17 @@ exilarchate_elective = { #Witenagemot
 		modifier = { #Imperial Dignity
 			desc = tooltip_feudal_vote_strength_emperor_tier
 			add = 3
-			highest_held_title_tier >= empire
+			highest_held_title_tier >= tier_empire
 		}
 		modifier = { #Royal Dignity
 			desc = tooltip_feudal_vote_strength_king_tier
 			add = 2
-			highest_held_title_tier = kingdom
+			highest_held_title_tier = tier_kingdom
 		}
 		modifier = { #Princely Dignity
 			desc = tooltip_feudal_vote_strength_duke_tier
 			add = 1
-			highest_held_title_tier = duchy
+			highest_held_title_tier = tier_duchy
 		}
 		modifier = {
 			desc = tooltip_exilarchate_elector_vote_strength_current_exilarch
