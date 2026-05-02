@@ -57,3 +57,7 @@
  jip_hebrew.0060.b:0 "[GetTitleByKey('c_alexandria').GetName], where the Pharos used to be."
  jip_hebrew.0060.c:0 "[GetTitleByKey('c_aswan').GetName], where the temples lie."
  jip_hebrew.0060.d:0 "[GetTitleByKey('c_meroe').GetName], Where the Nubians erected a massive city."
+ jip_hebrew.0070.t:0 "The Fertile Crescent"
+ jip_hebrew.0070.start.desc:0 "A new era has come to the fertile crescent!"
+ jip_hebrew.0070.end.desc:0 "It has been a long time since a culture native to the lands of the fertile crescent ruled it all. [GetTitleByKey('k_mesopotamia').GetBaseNameNoTier], [GetTitleByKey('k_jazira').GetBaseNameNoTier], [GetTitleByKey('k_syria').GetBaseNameNoTier], [GetTitleByKey('k_phoenicia').GetBaseNameNoTier], [GetTitleByKey('k_israel').GetBaseNameNoTier], [GetTitleByKey('k_edom').GetBaseNameNoTier] and [GetTitleByKey('k_egypt').GetBaseNameNoTier] has rose up, threw the yoke of the muslim arab overlords, and other invading peoples, and reclaimed their lands. Now, it is time to unite these lands, to make sure it never happens again."
+ jip_hebrew.0070.a:0 "The cradle of civilization rises"

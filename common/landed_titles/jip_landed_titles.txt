@@ -65,6 +65,23 @@ e_arabia = {
 		}
 	}
 
+	k_phoenicia = {
+		color = { 135 20 255 }
+
+		capital = c_beirut
+	}
+
+	k_israel = {
+		color = { 20 138 255 }
+
+		capital = c_jerusalem
+	}
+
+	k_edom = {
+		color = { 180 20 20 }
+		capital = c_kerak
+	}
+
 	k_arabia = {
 		color = { 124 199 50 }
 
@@ -1670,18 +1687,6 @@ e_canaan = {
 		}
 	}
 
-	k_phoenicia = {
-		color = { 135 20 255 }
-
-		capital = c_beirut
-	}
-
-	k_israel = {
-		color = { 20 138 255 }
-
-		capital = c_jerusalem
-	}
-
 	k_tyre = {
 		color = { 97 41 255 }
 		capital = c_acre
@@ -1762,10 +1767,6 @@ e_canaan = {
 
 	}
 
-	k_edom = {
-		color = { 180 20 20 }
-		capital = c_kerak
-	}
 }
 
 e_byzantium = {
@@ -3143,6 +3144,11 @@ e_kemet = {
 	can_create = {
 		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
 	}
+
+	k_upper_egypt = {
+		capital = c_meroe
+		color = { 165 40 45 }
+	}
 }
 
 e_beth_nahrain = {
@@ -3906,6 +3912,16 @@ e_spain = {
 		}
 	}
 
+}
+
+h_fertile_crescent = {
+	capital = c_jerusalem
+	color = { 32 115 110 }
+	definite_form = yes
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_france = {
