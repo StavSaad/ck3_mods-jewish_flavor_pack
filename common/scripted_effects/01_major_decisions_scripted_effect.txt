@@ -35,4 +35,12 @@
 			}
 		}
 	}
+	start_situation = {
+		type = jip_third_temple
+		save_scope_as = situation
+	}
+	scope:situation ?= {
+		set_situation_center_province = title:b_jerusalem.title_province
+	}
+	add_manual_participant = scope:situation
 }

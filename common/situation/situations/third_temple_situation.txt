@@ -1,0 +1,372 @@
+﻿jip_third_temple = {
+	illustration = "gfx/interface/illustrations/event_story/fp4_holy_legend.dds"
+	situation_group_type = major
+
+	# Initial nomad assignment is done in two on_actions sections within game_start.txt, on_game_start and on_game_start_after_lobby
+	# Basic nomad govs are assigned in on_game_start so that realms that are nomadic correctly appear as such in the lobby
+	# Nomad titular titles, traits, domiciles are assigned in on_game_start_after_lobby, because read order made the game throw errors when these items were read pre-lobby-initialization
+
+	window = situation
+	gui_window_name = "window_situation"
+	gui_participation_window_name = "window_situation_participation"
+	map_mode = participant_groups
+	keep_full_history = yes
+
+	is_unique = yes # It can only exist once in the world
+	migration = no
+
+	##################################################
+	# Regions
+	##################################################
+	sub_regions = {
+		jerusalem = {
+			map_color = { 205 169 0 }
+			geographical_regions = { world_middle_east_jerusalem }
+		}
+	}
+
+	##################################################
+	# On Actions
+	##################################################
+
+	on_monthly = {
+		trigger_event = {
+			on_action = jip_third_temple_monthly_pulse
+		}
+	}
+	
+	on_yearly = {
+		trigger_event = {
+			on_action = jip_third_temple_yearly_pulse
+		}
+		trigger_event = {
+			on_action = jip_third_temple_region_yearly_pulse
+		}
+	}
+
+	##################################################
+	# Groups
+	##################################################
+	participant_groups = {
+		jewish_rulers = {
+			icon = "gfx/interface/icons/faith/judaism_custom.dds"
+			require_capital_in_sub_region = no
+			auto_add_landless_rulers = yes
+
+			is_character_valid = {
+				is_ruler = yes
+				faith.religion = religion:judaism_religion
+				highest_held_title_tier >= tier_county
+			}
+
+			on_join = {
+				if = {
+					limit = {
+						is_ai = no
+						NOT = { has_character_flag = mpo_the_great_steppe_events_0001_var }
+					}
+					trigger_event = mpo_the_great_steppe.0001
+				}
+			}
+
+			map_color = { 255 127 80 }
+		}
+
+		christian_rulers = {
+			icon = "gfx/interface/icons/faith/christianity_custom_1.dds"
+			require_capital_in_sub_region = yes
+			auto_add_landless_rulers = yes
+
+			is_character_valid = {
+				is_ruler = yes
+				faith.religion = religion:christianity_religion
+				highest_held_title_tier >= tier_county
+			}
+
+			on_join = {
+				if = {
+					limit = {
+						is_ai = no
+						NOT = { has_character_flag = mpo_the_great_steppe_events_0001_var }
+					}
+					trigger_event = mpo_the_great_steppe.0001
+				}
+			}
+
+			map_color = { 255 127 80 }
+		}
+		
+		muslim_rulers = {
+			icon = "gfx/interface/icons/faith/sunni_custom.dds"
+			require_capital_in_sub_region = no
+			require_realm_in_sub_region = yes
+			auto_add_landless_rulers = no
+
+			is_character_valid = {
+				is_ruler = yes
+				faith.religion = religion:islam_religion
+				highest_held_title_tier >= tier_duchy
+			}
+
+			on_join = {
+				if = {
+					limit = {
+						is_ai = no
+						NOT = { has_character_flag = mpo_the_great_steppe_events_0001_var }
+					}
+					trigger_event = mpo_the_great_steppe.0001
+				}
+			}
+
+			map_color = { 255 127 80 }
+		}
+
+	}
+
+	##################################################
+	# Phases
+	##################################################
+	start_phase = situation_third_temple_controlled_by_jewish
+
+	phases = {
+		situation_third_temple_controlled_by_jewish = {
+			icon = "gfx/interface/icons/faith/judaism_custom.dds"
+			illustration = "gfx/interface/illustrations/terrain_types/mpo_season_abudant_grazing.dds"
+			max_duration = { days = 3650 }
+			max_duration_next_phase = situation_third_temple_al_aqsa_destroyed
+
+			on_start = {
+				scope:situation_sub_region = {
+					save_scope_as = my_subregion
+					every_situation_sub_region_participant_group = {
+						limit = { participant_group_type = nomad_rulers_capital }
+						every_situation_group_participant = {
+							trigger_event = mpo_the_great_steppe.0002
+						}
+					}
+				}
+			}
+
+			future_phases = {
+				situation_third_temple_al_aqsa_destroyed = {
+				}
+				situation_third_temple_controlled_by_muslim = {
+				}
+				situation_third_temple_controlled_by_christian = {
+
+				}
+			}
+
+			modifier_sets = {				
+				situation_third_temple_military_effects = {
+					icon = "gfx/interface/icons/situations/situation_modifier_military.dds"
+					
+					jewish_rulers = {
+						character_modifier = {
+							men_at_arms_maintenance = -0.2
+						}
+					}
+				}
+				
+				situation_third_temple_personal_effects = {
+					icon = "gfx/interface/icons/situations/situation_modifier_character.dds"
+					
+					nomad_rulers_capital = {
+						parameters = {
+							the_great_steppe_cheaper_hunts = yes
+						}
+					}
+				}
+			}
+		}
+
+		situation_third_temple_controlled_by_christian = {
+			icon = "gfx/interface/icons/faith/christianity_custom_1.dds"
+			illustration = "gfx/interface/illustrations/terrain_types/mpo_season_abudant_grazing.dds"
+			max_duration = { days = 3650 }
+			max_duration_next_phase = situation_third_temple_controlled_by_christian
+
+			on_start = {
+				scope:situation_sub_region = {
+					save_scope_as = my_subregion
+					every_situation_sub_region_participant_group = {
+						limit = { participant_group_type = nomad_rulers_capital }
+						every_situation_group_participant = {
+							trigger_event = mpo_the_great_steppe.0002
+						}
+					}
+				}
+			}
+
+			future_phases = {
+				situation_third_temple_controlled_by_jewish = {
+				}
+				situation_third_temple_controlled_by_muslim = {
+				}
+			}
+
+			modifier_sets = {	
+				situation_third_temple_military_effects = {
+					icon = "gfx/interface/icons/situations/situation_modifier_military.dds"
+					
+					christian_rulers = {
+						character_modifier = {
+							men_at_arms_maintenance = -0.2
+						}
+					}
+				}
+				
+				situation_third_temple_personal_effects = {
+					icon = "gfx/interface/icons/situations/situation_modifier_character.dds"
+					
+					nomad_rulers_capital = {
+						parameters = {
+							the_great_steppe_cheaper_hunts = yes
+						}
+					}
+				}
+			}
+		}
+
+		situation_third_temple_controlled_by_muslim = {
+			icon = "gfx/interface/icons/faith/sunni_custom.dds"
+			illustration = "gfx/interface/illustrations/terrain_types/mpo_season_abudant_grazing.dds"
+			max_duration = { days = 3650 }
+			max_duration_next_phase = situation_third_temple_controlled_by_muslim
+
+			on_start = {
+				scope:situation_sub_region = {
+					save_scope_as = my_subregion
+					every_situation_sub_region_participant_group = {
+						limit = { participant_group_type = nomad_rulers_capital }
+						every_situation_group_participant = {
+							trigger_event = mpo_the_great_steppe.0002
+						}
+					}
+				}
+			}
+
+			future_phases = {
+				situation_third_temple_controlled_by_jewish = {
+				}
+				situation_third_temple_controlled_by_christian = {
+
+				}
+			}
+
+			modifier_sets = {			
+				situation_third_temple_military_effects = {
+					icon = "gfx/interface/icons/situations/situation_modifier_military.dds"
+					
+					nomad_rulers_capital = {
+						character_modifier = {
+							men_at_arms_maintenance = -0.2
+						}
+					}
+				}
+				
+				situation_third_temple_personal_effects = {
+					icon = "gfx/interface/icons/situations/situation_modifier_character.dds"
+					
+					nomad_rulers_capital = {
+						parameters = {
+							the_great_steppe_cheaper_hunts = yes
+						}
+					}
+				}
+			}
+		}
+
+		situation_third_temple_al_aqsa_destroyed = {
+			icon = "gfx/interface/icons/seasons/abudant_grazing.dds"
+			illustration = "gfx/interface/illustrations/terrain_types/mpo_season_abudant_grazing.dds"
+			max_duration = { days = 3650 }
+			max_duration_next_phase = situation_third_temple_under_construction
+
+			on_start = {
+				scope:situation_sub_region = {
+					save_scope_as = my_subregion
+					every_situation_sub_region_participant_group = {
+						limit = { participant_group_type = nomad_rulers_capital }
+						every_situation_group_participant = {
+							trigger_event = mpo_the_great_steppe.0002
+						}
+					}
+				}
+			}
+
+			future_phases = {
+				situation_third_temple_under_construction = {
+				}
+			}
+
+			modifier_sets = {		
+				situation_third_temple_military_effects = {
+					icon = "gfx/interface/icons/situations/situation_modifier_military.dds"
+					
+					muslim_rulers = {
+						character_modifier = {
+							men_at_arms_maintenance = -0.2
+						}
+					}
+				}
+				
+				situation_third_temple_personal_effects = {
+					icon = "gfx/interface/icons/situations/situation_modifier_character.dds"
+					
+					nomad_rulers_capital = {
+						parameters = {
+							the_great_steppe_cheaper_hunts = yes
+						}
+					}
+				}
+			}
+		}
+	
+		situation_third_temple_under_construction = {
+			icon = "gfx/interface/icons/seasons/abudant_grazing.dds"
+			illustration = "gfx/interface/illustrations/terrain_types/mpo_season_abudant_grazing.dds"
+			max_duration = { days = 3650 }
+
+			on_start = {
+				scope:situation_sub_region = {
+					save_scope_as = my_subregion
+					every_situation_sub_region_participant_group = {
+						limit = { participant_group_type = nomad_rulers_capital }
+						every_situation_group_participant = {
+							trigger_event = mpo_the_great_steppe.0002
+						}
+					}
+				}
+			}
+
+			max_duration_next_phase = random_non_takeover
+
+			future_phases = {
+				
+			}
+
+			modifier_sets = {
+				situation_third_temple_military_effects = {
+					icon = "gfx/interface/icons/situations/situation_modifier_military.dds"
+					
+					nomad_rulers_capital = {
+						character_modifier = {
+							men_at_arms_maintenance = -0.2
+						}
+					}
+				}
+				
+				situation_third_temple_personal_effects = {
+					icon = "gfx/interface/icons/situations/situation_modifier_character.dds"
+					
+					nomad_rulers_capital = {
+						parameters = {
+							the_great_steppe_cheaper_hunts = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}

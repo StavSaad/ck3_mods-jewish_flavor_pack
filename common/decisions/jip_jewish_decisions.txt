@@ -295,6 +295,11 @@ clear_grounds_for_the_third_temple_decision = {
 		has_religion = religion:judaism_religion
 		has_title = title:c_jerusalem
 		NOT = {
+			any_character_situation = {
+				situation_type = jip_third_temple
+			}
+		}
+		NOT = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_decisions
 				target = flag:clear_grounds_for_the_third_temple_decision
