@@ -169,7 +169,7 @@
 
 create_k_phoenicia_decision = {
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+		reference = "gfx/interface/illustrations/decisions/decision_found_kingdom.dds"
 	}
 	ai_check_interval = 60
 	desc = create_k_phoenicia_decision_desc
@@ -254,7 +254,7 @@ create_k_phoenicia_decision = {
 
 create_k_edom_decision = {
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+		reference = "gfx/interface/illustrations/decisions/decision_found_kingdom.dds"
 	}
 	ai_check_interval = 60
 	desc = create_k_edom_decision_desc
@@ -340,7 +340,7 @@ create_k_edom_decision = {
 
 create_e_canaan_decision = {
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
 	}
 	ai_check_interval = 60
 	desc = create_e_canaan_decision_desc
@@ -458,7 +458,7 @@ create_e_canaan_decision = {
 
 create_e_kemet_decision = {
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
 	}
 	ai_check_interval = 60
 	desc = create_e_kemet_decision_desc
@@ -548,7 +548,7 @@ create_e_kemet_decision = {
 
 create_h_fertile_crescent_decision = {
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
 	}
 	ai_check_interval = 60
 	desc = create_h_fertile_crescent_desc
