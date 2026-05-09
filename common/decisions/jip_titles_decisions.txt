@@ -551,7 +551,7 @@ create_h_fertile_crescent_decision = {
 		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
 	}
 	ai_check_interval = 60
-	desc = create_h_fertile_crescent_desc
+	desc = create_h_fertile_crescent_decision_desc
 	decision_group_type = major
 
 	ai_check_interval_by_tier = {
