@@ -117,17 +117,17 @@ temple_in_jerusalem_01 = {
 		knight_effectiveness_mult = 0.2
 		same_faith_opinion = 5
 	}
-	
+
 	county_modifier = {
 		tax_mult = 0.3
 		development_growth_factor = 0.3
 		development_growth = 0.3
 	}
-	
+
 	province_modifier = {
 		monthly_income = 3
 	}
-	
+
 	ai_value = {
 		base = 100
 		modifier = { # Fill all building slots before going for special buildings
@@ -135,8 +135,97 @@ temple_in_jerusalem_01 = {
 			free_building_slots > 0
 		}
 	}
-	
+
 	type = special
 
 	flag = travel_point_of_interest_religious
+}
+
+################
+#    Masada    #
+################
+
+masada_01 = {
+	next_building = masada_02
+
+	type_icon = "icon_structure_alamut_castle.dds"
+
+	can_construct_potential = {
+		building_requirement_tribal = no
+		barony = title:b_zughar
+	}
+
+	construction_time = slow_construction_time
+	cost_gold = 150
+
+	province_modifier = {
+		garrison_size = 200
+	}
+
+	county_modifier = {
+		fort_level = 1
+	}
+
+	ai_value = {
+		base = 50
+	}
+
+	type = special
+}
+
+masada_02 = {
+	next_building = masada_03
+
+	type_icon = "icon_structure_alamut_castle.dds"
+
+	can_construct_potential = {
+		building_requirement_tribal = no
+		barony = title:b_zughar
+	}
+
+	construction_time = slow_construction_time
+	cost_gold = 400
+
+	province_modifier = {
+		garrison_size = 500
+	}
+
+	county_modifier = {
+		fort_level = 2
+		levy_size = 0.05
+	}
+
+	ai_value = {
+		base = 75
+	}
+
+	type = special
+}
+
+masada_03 = {
+	type_icon = "icon_structure_alamut_castle.dds"
+
+	can_construct_potential = {
+		building_requirement_tribal = no
+		barony = title:b_zughar
+	}
+
+	construction_time = very_slow_construction_time
+	cost_gold = 1000
+
+	province_modifier = {
+		garrison_size = 1000
+	}
+
+	county_modifier = {
+		fort_level = 4
+		levy_size = 0.1
+		defender_bonus = 5
+	}
+
+	ai_value = {
+		base = 100
+	}
+
+	type = special
 }

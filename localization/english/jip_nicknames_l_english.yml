@@ -1,8 +1,8 @@
 ﻿l_english:
  nick_the_rising_lion: "the Rising Lion"
- nick_the_rising_lion_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharAreIs(CHARACTER)] admired throughout the land for leading the resurgance of the land of Canaan"
+ nick_the_rising_lion_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharAreIs(CHARACTER)] the founder of a reborn Empire of Canaan, rising from the ancient heartland of the Levant to unite the peoples of the coast and the river valleys under one crown"
  nick_the_rising_lioness: "the Rising Lioness"
- nick_the_rising_lioness_desc: "$nick_the_rising_lion_desc$"
+ nick_the_rising_lioness_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharAreIs(CHARACTER)] the founder of a reborn Empire of Canaan — a lioness reclaiming the ancient heartland of the Levant and uniting its peoples under one crown"
  nick_habibai: "Habibai"
  nick_habibai_desc: "$nick_habibai$"
  nick_detzutzita: "DeTzutzita"
@@ -51,3 +51,7 @@
  nick_oravad_desc: "The dynastic name of this person"
  nick_al_bargeloni: "Al-Bargeloni"
  nick_al_bargeloni_desc: "Meaning, from $c_barcelona$"
+ nick_lord_of_kemet: "the Lord of Kemet"
+ nick_lord_of_kemet_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharAreIs(CHARACTER)] renowned as the ruler who united the ancient land of Kemet under a new dynasty"
+ nick_lord_of_the_crescent: "Lord of the Crescent"
+ nick_lord_of_the_crescent_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharAreIs(CHARACTER)] the architect of a great hegemony spanning the Fertile Crescent, from the rivers of Mesopotamia to the shores of the Levant"

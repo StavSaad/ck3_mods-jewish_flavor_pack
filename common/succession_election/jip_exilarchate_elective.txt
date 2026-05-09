@@ -9,18 +9,18 @@
 exilarchate_elective = { #Witenagemot
 	elector_vote_strength = {
 		base = 1
-		modifier = { #Imperial Dignity
-			desc = tooltip_feudal_vote_strength_emperor_tier
+		modifier = { #Nasi — imperial authority
+			desc = tooltip_exilarchate_vote_strength_nasi_tier
 			add = 3
 			highest_held_title_tier >= tier_empire
 		}
-		modifier = { #Royal Dignity
-			desc = tooltip_feudal_vote_strength_king_tier
+		modifier = { #Melech — royal standing
+			desc = tooltip_exilarchate_vote_strength_melech_tier
 			add = 2
 			highest_held_title_tier = tier_kingdom
 		}
-		modifier = { #Princely Dignity
-			desc = tooltip_feudal_vote_strength_duke_tier
+		modifier = { #Nagid — regional leadership
+			desc = tooltip_exilarchate_vote_strength_nagid_tier
 			add = 1
 			highest_held_title_tier = tier_duchy
 		}

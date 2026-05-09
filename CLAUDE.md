@@ -1,6 +1,6 @@
 # Rising Lion — Canaanite Flavor Pack: Mod Analysis
 
-**Version:** 0.12.0  
+**Version:** 0.13.0  
 **Game:** Crusader Kings 3 (supported version 1.19.*)  
 **Workshop ID:** 3501948259  
 **Tags:** Religion, Culture, Decisions, Flavor
@@ -121,7 +121,7 @@ Unlocked when the dynasty dynast carries the `davidic_line` trait (or has alread
 
 ## Unique Buildings
 
-- **Masada** (3 tiers) — Fortress in the Judean desert; upgrades from ruins to grand fortifications housing 1,000 men
+- **Masada** (3 tiers) — Special building at b_zughar, capital of c_negev. Tiers: Ruins of Old Masada (150g, +200 garrison, +1 fort) → Restored Masadan Fortifications (400g, +500 garrison, +2 fort, +5% levy) → Grand Fortifications of Masada (1000g, +1000 garrison, +4 fort, +10% levy, +5 defender bonus)
 - **Temple in Jerusalem** — Special building slot on Temple Mount; rebuilding it causes major diplomatic fallout with Muslim rulers (-100 opinion, -15 Islamic fervor)
 
 ---
@@ -143,3 +143,4 @@ Unlocked when the dynasty dynast carries the `davidic_line` trait (or has alread
 | 0.10.1 | Cultures Expanded compatibility |
 | 0.11.0 | Empire of Kemet; Upper/Lower Egypt kingdoms; Copt culture; Aramean/Phoenician tradition changes |
 | 0.12.0 | Hegemony of the Fertile Crescent; performance improvements; Kemet region rework |
+| 0.13.0 | Masada 3-tier building; Kemet/Crescent/Beth Nahrain nickname grants; Mishpacha desc expansion; Jewish-flavored Exilarchate election tooltips |

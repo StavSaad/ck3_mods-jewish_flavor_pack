@@ -24,3 +24,5 @@ nick_cidellus = {}
 nick_shealtiel = {}
 nick_oravad = {}
 nick_al_bargeloni = {}
+nick_lord_of_kemet = {}
+nick_lord_of_the_crescent = {}

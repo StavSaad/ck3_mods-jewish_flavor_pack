@@ -639,14 +639,7 @@ jip_hebrew.0060 = {
 	immediate = {
 		play_music_cue = "mx_cue_positive_effect"
 		create_kemet_decision_effect = yes
-		# if = {
-		# 	limit = { is_male = yes }
-		# 	give_nickname = nick_the_rising_lion
-		# }
-		# if = {
-		# 	limit = { is_female = yes }
-		# 	give_nickname = nick_the_rising_lioness
-		# }
+		give_nickname = nick_lord_of_kemet
 	}
 
 	# Giza option
@@ -716,14 +709,7 @@ jip_hebrew.0070 = {
 	immediate = {
 		play_music_cue = "mx_cue_positive_effect"
 		create_fertile_crescent_decision_effect = yes
-		# if = {
-		# 	limit = { is_male = yes }
-		# 	give_nickname = nick_the_rising_lion
-		# }
-		# if = {
-		# 	limit = { is_female = yes }
-		# 	give_nickname = nick_the_rising_lioness
-		# }
+		give_nickname = nick_lord_of_the_crescent
 	}
 
 	option = {

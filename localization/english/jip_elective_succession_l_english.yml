@@ -1,3 +1,6 @@
 ﻿l_english:
  tooltip_exilarchate_elector_vote_strength_davidic_heir:0 "[ROOT.Char.GetSheHe|U] is a [GetTrait('davidic_line').GetName(GetNullCharacter)]: $VALUE|=+0$"
  tooltip_exilarchate_elector_vote_candidate_davidic_heir:0 "[candidate.GetShortUIName|U] is a [GetTrait('davidic_line').GetName(GetNullCharacter)]: $VALUE|=+0$"
+ tooltip_exilarchate_vote_strength_nasi_tier:0 "[ROOT.Char.GetSheHe|U] holds imperial authority, commanding the full weight of a Nasi: $VALUE|=+0$"
+ tooltip_exilarchate_vote_strength_melech_tier:0 "[ROOT.Char.GetSheHe|U] holds royal standing, the rank of a Melech (King): $VALUE|=+0$"
+ tooltip_exilarchate_vote_strength_nagid_tier:0 "[ROOT.Char.GetSheHe|U] holds regional leadership, the station of a Nagid: $VALUE|=+0$"
