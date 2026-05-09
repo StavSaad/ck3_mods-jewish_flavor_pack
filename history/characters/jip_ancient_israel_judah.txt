@@ -2,6 +2,7 @@
 	name = "Boaz"
 	religion = "kohanism"
 	culture = "hebrew"
+	father = shelomo_ben_nachshon
 	-1125.1.1 = {
 		birth = yes
 	}
@@ -17,6 +18,9 @@ ruth = {
 	female = yes
 	-1106.1.1 = {
 		birth = yes
+	}
+	-1091.1.1 = {
+		add_spouse = boaz_father_of_oved
 	}
 	-1063.1.1 = {
 		death = yes
