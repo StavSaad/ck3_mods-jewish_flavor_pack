@@ -44,7 +44,6 @@
 == Version 0.13.0
 [] Added Masada special building (3 tiers) at the capital of Negev: Ruins → Restored Fortifications → Grand Masada
 [] Added nicknames for Kemet and Fertile Crescent founders: "the Lord of Kemet" and "Lord of the Crescent"
-[] Fixed missing nickname localization for "of Beth Nahrain"
 [] Improved nickname descriptions for the Rising Lion/Lioness and Beth Nahrain
 [] Expanded Mishpacha government description with historical Nasi and Exilarchate context
 [] Jewish-flavored Exilarchate election vote tooltips (Nasi, Melech, Nagid) replacing generic feudal terms
