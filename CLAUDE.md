@@ -143,4 +143,4 @@ Unlocked when the dynasty dynast carries the `davidic_line` trait (or has alread
 | 0.10.1 | Cultures Expanded compatibility |
 | 0.11.0 | Empire of Kemet; Upper/Lower Egypt kingdoms; Copt culture; Aramean/Phoenician tradition changes |
 | 0.12.0 | Hegemony of the Fertile Crescent; performance improvements; Kemet region rework |
-| 0.13.0 | Masada 3-tier building; Kemet/Crescent/Beth Nahrain nickname grants; Mishpacha desc expansion; Jewish-flavored Exilarchate election tooltips |
+| 0.13.0 | Masada 3-tier building; Kemet/Crescent nickname grants; Mishpacha desc expansion; Jewish-flavored Exilarchate election tooltips |
