@@ -2,6 +2,7 @@
 5969 = {
 	1.1.1 = {
 		special_building_slot = masada_01
+		special_building = masada_01
 	}
 }
 

@@ -159,7 +159,7 @@ masada_01 = {
 	cost_gold = 150
 
 	province_modifier = {
-		garrison_size = 200
+		garrison_size = 1.25
 	}
 
 	county_modifier = {
@@ -187,7 +187,7 @@ masada_02 = {
 	cost_gold = 400
 
 	province_modifier = {
-		garrison_size = 500
+		garrison_size = 1.75
 	}
 
 	county_modifier = {
@@ -214,7 +214,7 @@ masada_03 = {
 	cost_gold = 1000
 
 	province_modifier = {
-		garrison_size = 1000
+		garrison_size = 2.5
 	}
 
 	county_modifier = {
