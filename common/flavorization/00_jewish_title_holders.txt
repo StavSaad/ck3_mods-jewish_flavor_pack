@@ -24,7 +24,7 @@ duke_jewish_landless_male = {
 	tier = duchy
 	domicile_type = estate
 	priority = 25
-	governments = { jewish_admin_family_government }
+	governments = { mishpacha_government }
 
 	flavourization_rules = {
 		spouse_takes_title = no
@@ -99,7 +99,7 @@ duke_jewish_landless_female = {
 	tier = duchy
 	domicile_type = estate
 	priority = 25
-	governments = { jewish_admin_family_government }
+	governments = { mishpacha_government }
 
 	flavourization_rules = {
 		spouse_takes_title = no
@@ -112,7 +112,7 @@ spouse_jewish_landless_male = {
 	special = domicile
     domicile_type = estate
 	priority = 25
-	governments = { jewish_admin_family_government }
+	governments = { mishpacha_government }
 }
 
 spouse_jewish_landless_female = {
@@ -121,7 +121,7 @@ spouse_jewish_landless_female = {
 	special = domicile
     domicile_type = estate
 	priority = 25
-	governments = { jewish_admin_family_government }
+	governments = { mishpacha_government }
 }
 
 king_male_jewish = {

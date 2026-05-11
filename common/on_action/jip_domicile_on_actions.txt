@@ -8,7 +8,7 @@ jewish_admin_migration_on_action = {
 	trigger = {
 		exists = scope:owner
 		scope:owner = {
-			has_government = jewish_admin_family_government
+			has_government = mishpacha_government
 		}
 		root.domicile_location.county.holder = {
 			trigger_if = {

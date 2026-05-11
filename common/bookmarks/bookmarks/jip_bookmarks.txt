@@ -30,7 +30,7 @@
 		type = male
 		birth = 823.1.1
 		title = "d_jip_bostanite"
-		government = jewish_admin_family_government
+		government = mishpacha_government
 		culture = bavlim
 		religion = rabbinism 
 		history_id = rabbinic_exilarchate_hasdai_ii 
@@ -70,7 +70,7 @@
 		type = male
 		birth = 810.1.1
 		title = "d_jip_nathanite"
-		government = jewish_admin_family_government
+		government = mishpacha_government
 		culture = bavlim
 		religion = rabbinism 
 		history_id = rabbinic_exilarchate_pinchas_ben_abdimi 
@@ -86,7 +86,7 @@
 		type = male
 		birth = 835.1.1
 		title = "d_jip_ananite"
-		government = jewish_admin_family_government
+		government = mishpacha_government
 		culture = bavlim
 		religion = karaism 
 		history_id = karaite_exilarchate_boaz_i 

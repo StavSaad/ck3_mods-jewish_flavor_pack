@@ -1,6 +1,6 @@
 d_jip_bostanite = {
 	560.1.1 = {
-		government = jewish_admin_family_government
+		government = mishpacha_government
 		succession_laws = {
 			noble_family_succession_law
 			male_only_law
@@ -170,7 +170,7 @@ d_jip_bostanite = {
 
 d_jip_ananite = {
 	760.9.1 = {
-		government = jewish_admin_family_government
+		government = mishpacha_government
 		succession_laws = {
 			noble_family_succession_law
 			male_only_law
@@ -246,7 +246,7 @@ d_jip_nathanite = {
 
 	270.1.1 = {
 		holder = rabbinic_exilarchate_ukban_dezuzita
-		government = jewish_admin_family_government
+		government = mishpacha_government
 		succession_laws = {
 			noble_family_succession_law
 			male_only_law
@@ -358,7 +358,7 @@ d_jip_makhirite = {
 
 	770.1.1 = {
 		holder = makhirite_makhir_ben_habibai
-		government = jewish_admin_family_government
+		government = mishpacha_government
 		succession_laws = { noble_family_succession_law male_only_law same_faith_only_law }
 	}
 
@@ -390,7 +390,7 @@ d_jip_shealtiel = {
 
 	1058.1.1 = {
 		holder = rabbinic_exilarchate_isaac_ben_chizqiyahu_ii
-		government = jewish_admin_family_government
+		government = mishpacha_government
 		succession_laws = { noble_family_succession_law same_faith_only_law }
 	}
 
@@ -434,7 +434,7 @@ d_jip_shealtiel = {
 
 d_jip_benveniste = {
 	1066.9.15 = {
-		government = jewish_admin_family_government
+		government = mishpacha_government
 		succession_laws = { noble_family_succession_law same_faith_only_law }
 		holder = yosef_cidellus_shealtiel
 		effect = {
@@ -471,7 +471,7 @@ d_jip_benveniste = {
 d_jip_kalonymos = {
 	738.1.1 = {
 		holder = meshullam_i_kalonymos
-		government = jewish_admin_family_government
+		government = mishpacha_government
 		succession_laws = {
 			noble_family_succession_law
 			male_only_law
@@ -572,7 +572,7 @@ d_jip_maimon = {
 
 	1107.1.1 = {
 		holder = maimon_ben_yosef
-		government = jewish_admin_family_government
+		government = mishpacha_government
 		succession_laws = { noble_family_succession_law male_only_law same_faith_only_law }
 	}
 

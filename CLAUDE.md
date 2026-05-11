@@ -47,7 +47,7 @@ Landless play is supported. Maimonides is playable. The 867 bookmark includes se
 
 ---
 
-## Government Type: Mishpacha (jewish_admin_family_government)
+## Government Type: Mishpacha (mishpacha_government)
 
 A custom administrative government type modeled on the historical Nasi. Key rules:
 - Landless playable

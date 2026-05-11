@@ -1,0 +1,9 @@
+texticon = {
+	icon = government_type_mishpacha
+	iconsize = {
+		texture = "gfx/interface/icons/government_types/mishpacha_government.dds"
+		size = { 28 28 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}

@@ -1,7 +1,7 @@
 ﻿d_exilarchate = {
 
 	-596.1.1 = {
-		government = jewish_admin_family_government
+		government = mishpacha_government
 		succession_laws = {
 			exilarchate_elective_succession_law
 		}
@@ -319,7 +319,7 @@
 d_karaite_exilarchate = {
 
 	760.9.1 = {
-		government = jewish_admin_family_government
+		government = mishpacha_government
 		holder = karaite_exilarchate_anan_i
 		succession_laws = {
 			exilarchate_elective_succession_law

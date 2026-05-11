@@ -6,7 +6,7 @@
 			trigger_if = {
 				# Jews can migrate wherever as long as they dont have landed titles
 				limit = {
-					has_government = jewish_admin_family_government
+					has_government = mishpacha_government
 				}
 				# Jews can only migrate into cities
 				scope:province_temp = {
@@ -41,7 +41,7 @@
 				trigger_if = {
 					limit = {
 						scope:owner = {
-							has_government = jewish_admin_family_government
+							has_government = mishpacha_government
 						}
 					}
 					scope:province_temp = {

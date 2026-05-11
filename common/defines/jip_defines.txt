@@ -18,6 +18,6 @@
 		"wanua_government"
 		"meritocratic_government"
 		"steppe_admin_government"
-		"jewish_admin_family_government"
+		"mishpacha_government"
 	}
 }
