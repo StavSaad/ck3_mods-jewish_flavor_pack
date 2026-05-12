@@ -3,4 +3,4 @@
  game_concept_mishpacha_governments: "Mishpacha Governments"
  game_concept_mishpacha: "Mishpacha"
  game_concept_mishpacha_i: "@government_type_mishpacha!"
- game_concept_mishpacha_desc: "$game_concept_mishpacha$ is a [government_bureaucratic_type|E] [government_form|E] that appoints [characters|E] as [governors|E], to manage and preside over land, called [provinces|E], on behalf of their [liege|E].\n\n$game_concept_administrative$ Characters have access to [influence|E] and some also have a personal [family_estate|E].\n\nOnly [independent|E] [rulers|E] of an $game_concept_administrative$ [realm|E] have [legitimacy|E], while [vassals|E] do not.\n\n$admin_cannot_declare_internal_wars$"
+ game_concept_mishpacha_desc: "$game_concept_mishpacha$ is a [government_form|E] where in the head of house of a jewish family manages their [estate|E], and is subject to the local ruler who acts as their [suzerain|E].\n\n$game_concept_mishpacha$ Characters have access to [influence|E] and some also have a personal [family_estate|E], which they can move to any [city|E] [holding|E]."
