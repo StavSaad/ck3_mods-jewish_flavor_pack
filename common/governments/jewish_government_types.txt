@@ -12,7 +12,7 @@
 		admin_allows_holding_multiple_primary_tier_titles = yes
 		sticky_government = yes
 		house_aspirations = yes
-		noble_families = yes
+		noble_families = no
 		deny_powerful_vassal = yes
 		uses_culture_and_house_head_named_realms = no
 	}
@@ -68,12 +68,12 @@
 		government_is_mishpacha
 		# These flags only exist for loc and in-game descriptions
 		government_has_influence
-		government_has_title_men_at_arms
-		government_has_powerful_families
+		# government_has_title_men_at_arms
+		# government_has_powerful_families
 		government_is_settled
 		government_uses_domicile_but_not_adventurer
 		# government_uses_domain_limit
-		government_uses_admin_province_obligations
+		# government_uses_admin_province_obligations
 	}
 
 	mechanic_type = mishpacha
