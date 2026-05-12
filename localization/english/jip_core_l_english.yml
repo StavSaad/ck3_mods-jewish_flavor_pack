@@ -1,0 +1,3 @@
+﻿l_english:
+ MISHPACHA: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON_MISHPACHA', '' )]"
+ GOVERNMENT_ADJECTIVE_ICON_MISHPACHA: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective] [mishpacha|E] - [Character.GetDomicile.GetFaith.GetAdjective] [Character.GetDomicile.GetCulture.GetCollectiveNoun]"
