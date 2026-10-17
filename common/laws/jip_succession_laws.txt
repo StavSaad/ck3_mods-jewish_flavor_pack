@@ -1,6 +1,7 @@
 ﻿exilarchate_elective_succession_law = {
 	law_group_type = title_succession_laws
 	index = 12
+	flag = elective_succession_law
 	can_title_have = {
 		OR = {
 			title:d_exilarchate = this
