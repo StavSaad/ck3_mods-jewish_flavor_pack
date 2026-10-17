@@ -1,4 +1,6 @@
 ﻿persian_struggle = {
+	illustration = "gfx/interface/illustrations/event_story/fp3_temper.dds"
+
 	# Use fp3_struggle.9982 for nav
 	#########################################################################
 	# Feature Ownership and Implementation by Hugo Cortell
@@ -21,7 +23,6 @@
 		brahui
 		sogdian
 		khwarezmian
-		bavlim
 
 		# Arabic
 		bedouin
@@ -30,14 +31,9 @@
 	}
 	faiths = {
 		# Islamic
-		ashari
-		zayidi
-		ismaili
-		azariqa
-		mutazila
-		maturidi
-		imami
-		alevi
+		sunni
+		shia
+		kharijite
 
 		# Zoroastrian
 		mazdayasna
@@ -46,14 +42,10 @@
 		afridunism
 
 		# Buddhist
-		mahayana
+		mahayana_faith
 
 		# Christian
 		nestorian
-
-		# Jewish
-		karaism
-		rabbinism
 	}
 	regions = {
 		world_persian_empire
@@ -135,7 +127,7 @@
 						}
 					}
 					AND = {
-						faith = { has_doctrine = muhammad_succession_sunni_doctrine }
+						rite = { rite_has_doctrine = muhammad_succession_sunni_doctrine }
 						exists = title:d_sunni.holder
 						opinion = {
 							target = title:d_sunni.holder
@@ -207,6 +199,9 @@
 						catalyst_forming_alliance_between_detractor_uninvolved_rulers = medium_struggle_catalyst_gain
 						catalyst_ruler_chooses_persian_faith = major_struggle_catalyst_gain
 						catalyst_became_detractor_fp3 = massive_struggle_catalyst_gain
+
+						# Activities
+						catalyst_coronation_event_unrest = minimal_struggle_catalyst_gain
 					}
 				}
 
@@ -239,6 +234,9 @@
 						catalyst_caliph_or_emperor_accepts_faction_demands = minor_struggle_catalyst_gain
 						catalyst_caliph_died_violently = massive_struggle_catalyst_gain
 						catalyst_caliph_died_naturally = major_struggle_catalyst_gain
+
+						# Activities
+						catalyst_coronation_event_concession = minimal_struggle_catalyst_gain
 					}
 				}
 			}
@@ -369,6 +367,9 @@
 
 						# chasing outsiders
 						catalyst_gain_struggle_titles_from_interlopers_uninvolved = medium_struggle_catalyst_gain
+
+						# Activities
+						catalyst_coronation_event_stabilization = minimal_struggle_catalyst_gain
 					}
 				}
 
@@ -401,6 +402,9 @@
 						catalyst_caliph_or_emperor_accepts_faction_demands = minor_struggle_catalyst_gain
 						catalyst_caliph_died_violently = massive_struggle_catalyst_gain
 						catalyst_caliph_died_naturally = major_struggle_catalyst_gain
+
+						# Activities
+						catalyst_coronation_event_concession = minimal_struggle_catalyst_gain
 					}
 				}
 			}

@@ -1,15 +1,4 @@
-﻿carthage = {
-	county = c_tunis
-	barony = b_tunis
-	
-	character_modifier = {
-		name = holy_site_carthage_effect_name
-		naval_movement_speed_mult = 0.25
-		embarkation_cost_mult = -0.2
-	}
-}
-
-tanas = {
+﻿tanas = {
 	county = c_nicosia
 	barony = b_limisol 
 

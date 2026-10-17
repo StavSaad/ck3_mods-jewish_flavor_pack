@@ -1,6 +1,6 @@
 ﻿mar_mencachem_bar_shealtiel = {
 	name = "Menachem"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = rabbinic_exilarchate_isaac_ben_chizqiyahu_ii
 	dynasty = shealtiel_dynasty
@@ -15,7 +15,7 @@
 
 judah_ben_menachem = {
 	name = "Yehudah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = mar_mencachem_bar_shealtiel
 	dynasty = shealtiel_dynasty
@@ -30,7 +30,7 @@ judah_ben_menachem = {
 
 nathan_ben_judah = {
 	name = "Nathan"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = judah_ben_menachem
 	dynasty = shealtiel_dynasty
@@ -45,7 +45,7 @@ nathan_ben_judah = {
 
 shlomon_ben_judah = {
 	name = "Shlomo"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = judah_ben_menachem
 	dynasty = shealtiel_dynasty
@@ -60,7 +60,7 @@ shlomon_ben_judah = {
 
 goig_bat_judah = {
 	name = "Goig"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	female = yes
 	father = judah_ben_menachem
@@ -76,7 +76,7 @@ goig_bat_judah = {
 
 isaac_ben_menachem = {
 	name = "Yitzchak"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = mar_mencachem_bar_shealtiel
 	dynasty = shealtiel_dynasty
@@ -91,7 +91,7 @@ isaac_ben_menachem = {
 
 david_ben_isaac = {
 	name = "David"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = isaac_ben_menachem
 	dynasty = shealtiel_dynasty
@@ -106,7 +106,7 @@ david_ben_isaac = {
 
 isaac_ben_david = {
 	name = "Yitzchak"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = david_ben_isaac
 	dynasty = shealtiel_dynasty
@@ -121,7 +121,7 @@ isaac_ben_david = {
 
 nathan_ben_david = {
 	name = "Nathan"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = david_ben_isaac
 	dynasty = shealtiel_dynasty
@@ -139,7 +139,7 @@ nathan_ben_david = {
 
 nathan_ben_isaac = {
 	name = "Nathan"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = isaac_ben_menachem
 	dynasty = shealtiel_dynasty
@@ -154,7 +154,7 @@ nathan_ben_isaac = {
 
 perciosa_bat_nathan = {
 	name = "Perciosa"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	female = yes
 	father = nathan_ben_isaac
@@ -170,7 +170,7 @@ perciosa_bat_nathan = {
 
 judah_bar_nathan = {
 	name = "Yehudah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = nathan_ben_isaac
 	dynasty = shealtiel_dynasty
@@ -185,7 +185,7 @@ judah_bar_nathan = {
 
 goig_bat_yuda = {
 	name = "Goig"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	female = yes
 	father = nathan_ben_isaac
@@ -201,7 +201,7 @@ goig_bat_yuda = {
 
 barzillai_ben_yosef = {
 	name = "Barzillai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = rabbinic_exilarchate_yosef_oroved_ben_chizqiyahu_ii
 	dynasty = bostanite_dynasty
@@ -223,7 +223,7 @@ barzillai_ben_yosef = {
 
 yehudah_al_bargeloni = {
 	name = "Yehudah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = barzillai_ben_yosef
 	mother = bonnadona_bat_shealtiel
@@ -241,7 +241,7 @@ yehudah_al_bargeloni = {
 
 solomon_bar_shealtiel = {
 	name = "Solomon" # Felez Perruz, Hapatish Ha-hazak
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = rabbinic_exilarchate_isaac_ben_chizqiyahu_ii
 	dynasty = shealtiel_dynasty
@@ -262,7 +262,7 @@ solomon_bar_shealtiel = {
 
 bonnadona_bat_shealtiel = {
 	name = "Bonadona"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	female = yes
 	father = solomon_bar_shealtiel
@@ -283,7 +283,7 @@ bonnadona_bat_shealtiel = {
 
 drora_bat_shealtiel = {
 	name = "Drora"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	female = yes
 	father = rabbinic_exilarchate_isaac_ben_chizqiyahu_ii
@@ -308,7 +308,7 @@ drora_bat_shealtiel = {
 
 gershom_baal_drora = {
 	name = "Gershom"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	trait = education_learning_3
 	1039.1.1 = {
@@ -324,7 +324,7 @@ gershom_baal_drora = {
 
 shmuel_shealtiel = {
 	name = "Shmuel"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = solomon_bar_shealtiel
 	dynasty = shealtiel_dynasty
@@ -343,7 +343,7 @@ shmuel_shealtiel = {
 
 yosef_cidellus_shealtiel = {
 	name = "Yosef" # Cidellus
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = solomon_bar_shealtiel
 	dynasty_house = house_benveniste
@@ -367,7 +367,7 @@ yosef_cidellus_shealtiel = {
 
 solomon_ben_cidellus_shealtiel = {
 	name = "Solomon"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = yosef_cidellus_shealtiel
 	dynasty_house = house_benveniste
@@ -386,7 +386,7 @@ solomon_ben_cidellus_shealtiel = {
 
 meshulam_ben_cidellus_shealtiel = {
 	name = "Meshulam"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = yosef_cidellus_shealtiel
 	dynasty_house = house_benveniste
@@ -404,7 +404,7 @@ meshulam_ben_cidellus_shealtiel = {
 
 shealtiel_ben_cidellus_shealtiel = {
 	name = "SheAltiEl"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = yosef_cidellus_shealtiel
 	dynasty_house = house_benveniste
@@ -422,7 +422,7 @@ shealtiel_ben_cidellus_shealtiel = {
 
 joseph_barun_benveniste = {
 	name = "Yosef"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = yosef_cidellus_shealtiel
 	dynasty_house = house_benveniste
@@ -441,7 +441,7 @@ joseph_barun_benveniste = {
 
 solomon_ben_joseph_benveniste = {
 	name = "Solomon"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = joseph_barun_benveniste
 	dynasty_house = house_benveniste
@@ -456,7 +456,7 @@ solomon_ben_joseph_benveniste = {
 
 isaac_ibn_barun_ben_joseph_benveniste = {
 	name = "Yitzchak"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = joseph_barun_benveniste
 	dynasty_house = house_benveniste
@@ -472,7 +472,7 @@ isaac_ibn_barun_ben_joseph_benveniste = {
 
 abraham_benveniste = {
 	name = "Abraham"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = isaac_ibn_barun_ben_joseph_benveniste
 	dynasty_house = house_benveniste
@@ -488,7 +488,7 @@ abraham_benveniste = {
 
 isaac_benveniste_nasi = {
 	name = "Yitzchak"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = abraham_benveniste
 	dynasty_house = house_benveniste
@@ -504,7 +504,7 @@ isaac_benveniste_nasi = {
 
 yosef_ben_isaac_benveniste = {
 	name = "Yosef"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = isaac_benveniste_nasi
 	dynasty_house = house_benveniste
@@ -523,7 +523,7 @@ yosef_ben_isaac_benveniste = {
 
 isaac_zag_ben_yosef_benveniste = {
 	name = "Yitzchak"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = yosef_ben_isaac_benveniste
 	dynasty_house = house_benveniste
@@ -545,7 +545,7 @@ isaac_zag_ben_yosef_benveniste = {
 
 don_abram_ben_yosef_benveniste = {
 	name = "Abraham"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = yosef_ben_isaac_benveniste
 	dynasty_house = house_benveniste
@@ -567,7 +567,7 @@ don_abram_ben_yosef_benveniste = {
 
 meshulam_ben_yosef_benveniste = {
 	name = "Meshulam"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = yosef_ben_isaac_benveniste
 	dynasty_house = house_benveniste
@@ -585,7 +585,7 @@ meshulam_ben_yosef_benveniste = {
 
 sheshet_benveniste_nasi = {
 	name = "Sheshet"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = isaac_benveniste_nasi
 	dynasty_house = house_benveniste
@@ -601,7 +601,7 @@ sheshet_benveniste_nasi = {
 
 mira_bat_sheshet_benveniste_nasi = {
 	name = "Mira"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = sheshet_benveniste_nasi
 	female = yes
@@ -620,7 +620,7 @@ mira_bat_sheshet_benveniste_nasi = {
 
 samuel_ben_sheshet_benveniste_nasi = {
 	name = "Shmuel"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = sheshet_benveniste_nasi
 	dynasty_house = house_benveniste
@@ -635,7 +635,7 @@ samuel_ben_sheshet_benveniste_nasi = {
 
 tolsana_bat_sheshet_benveniste_nasi = {
 	name = "Tolsana"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = sheshet_benveniste_nasi
 	female = yes

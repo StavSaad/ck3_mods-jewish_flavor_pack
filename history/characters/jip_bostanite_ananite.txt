@@ -1,7 +1,7 @@
 ﻿
 rabbinic_exilarchate_khafnai = {
 	name = "Kafnai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	dynasty = bostanite_dynasty
 	trait = davidic_line
@@ -16,7 +16,7 @@ rabbinic_exilarchate_khafnai = {
 
 rabbinic_exilarchate_chaniani = {
 	name = "Chaninai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_khafnai
 	dynasty = bostanite_dynasty
@@ -35,7 +35,7 @@ rabbinic_exilarchate_chaniani = {
 
 rabbinic_exilarchate_adai_wife_of_bostanai = {
 	name = "Adai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	female = yes
 	621.1.1 = {
@@ -48,7 +48,7 @@ rabbinic_exilarchate_adai_wife_of_bostanai = {
 
 rabbinic_exilarchate_bostanai_i = {
 	name = "Bustenai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_chaniani
 	dynasty = bostanite_dynasty
@@ -70,7 +70,7 @@ rabbinic_exilarchate_bostanai_i = {
 
 rabbinic_exilarchate_guranshah = {
 	name = "Guranshah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_bostanai_i
 	mother = 180639
@@ -87,7 +87,7 @@ rabbinic_exilarchate_guranshah = {
 
 rabbinic_exilarchate_shahariada = {
 	name = "Shahriyar"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_bostanai_i
 	mother = 180639
@@ -104,7 +104,7 @@ rabbinic_exilarchate_shahariada = {
 
 rabbinic_exilarchate_ruzbihan = {
 	name = "Ruzbihan"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_shahariada
 	dynasty = bostanite_dynasty
@@ -120,7 +120,7 @@ rabbinic_exilarchate_ruzbihan = {
 
 rabbinic_exilarchate_ahonai = {
 	name = "Ahonai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_ruzbihan
 	dynasty = bostanite_dynasty
@@ -136,7 +136,7 @@ rabbinic_exilarchate_ahonai = {
 
 rabbinic_exilarchate_baradawi = {
 	name = "Chaninai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_bostanai_i
 	mother = rabbinic_exilarchate_adai_wife_of_bostanai
@@ -153,7 +153,7 @@ rabbinic_exilarchate_baradawi = {
 
 rabbinic_exilarchate_nehemiah_son_of_baradawi = {
 	name = "Nechemiah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_baradawi
 	dynasty = bostanite_dynasty
@@ -172,7 +172,7 @@ rabbinic_exilarchate_nehemiah_son_of_baradawi = {
 
 rabbinic_exilarchate_yitzhak_son_of_nehemiah_son_of_baradawi = {
 	name = "Yitzchak"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_nehemiah_son_of_baradawi
 	mother = rabbinic_exilarchate_yehudit_bat_ahonai
@@ -189,7 +189,7 @@ rabbinic_exilarchate_yitzhak_son_of_nehemiah_son_of_baradawi = {
 
 rabbinic_exilarchate_judah_ben_isaac = {
 	name = "Yehudah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_yitzhak_son_of_nehemiah_son_of_baradawi
 	dynasty = bostanite_dynasty
@@ -205,7 +205,7 @@ rabbinic_exilarchate_judah_ben_isaac = {
 
 rabbinic_exilarchate_makhir_ben_judah = {
 	name = "Machir"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_judah_ben_isaac
 	dynasty = bostanite_dynasty
@@ -221,7 +221,7 @@ rabbinic_exilarchate_makhir_ben_judah = {
 
 rabbinic_exilarchate_haninai_son_of_nehemiah_son_of_baradawi = {
 	name = "Chaninai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_nehemiah_son_of_baradawi
 	mother = rabbinic_exilarchate_yehudit_bat_ahonai
@@ -238,7 +238,7 @@ rabbinic_exilarchate_haninai_son_of_nehemiah_son_of_baradawi = {
 
 rabbinic_exilarchate_makhir_ben_haninai = {
 	name = "Machir"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_haninai_son_of_nehemiah_son_of_baradawi
 	dynasty = bostanite_dynasty
@@ -254,7 +254,7 @@ rabbinic_exilarchate_makhir_ben_haninai = {
 
 rabbinic_exilarchate_natornai_son_of_nehemiah_son_of_baradawi = {
 	name = "Natronai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_nehemiah_son_of_baradawi
 	mother = rabbinic_exilarchate_yehudit_bat_ahonai
@@ -274,7 +274,7 @@ rabbinic_exilarchate_natornai_son_of_nehemiah_son_of_baradawi = {
 
 rabbinic_exilarchate_habibai_ben_natronai = {
 	name = "Chaninai" # Habibai, Father of the Machir of Narbonne
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_natornai_son_of_nehemiah_son_of_baradawi
 	mother = rabbinic_exilarchate_bat_chasdai_i
@@ -294,7 +294,7 @@ rabbinic_exilarchate_habibai_ben_natronai = {
 
 rabbinic_exilarchate_ahonai_father_of_yehudit = {
 	name = "Ahonai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	trait = education_learning_3
 	630.1.1 = {
@@ -307,7 +307,7 @@ rabbinic_exilarchate_ahonai_father_of_yehudit = {
 
 rabbinic_exilarchate_yehudit_bat_ahonai = {
 	name = "Yehudit"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	female = yes
 	father = rabbinic_exilarchate_ahonai_father_of_yehudit
@@ -322,7 +322,7 @@ rabbinic_exilarchate_yehudit_bat_ahonai = {
 
 rabbinic_exilarchate_bat_chasdai_i = {
 	name = "Yehudit"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	female = yes
 	father = rabbinic_exilarchate_shahariada
@@ -339,7 +339,7 @@ rabbinic_exilarchate_bat_chasdai_i = {
 
 rabbinic_exilarchate_chasdai_i = {
 	name = "Hasdai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_bostanai_i
 	mother = rabbinic_exilarchate_adai_wife_of_bostanai
@@ -356,7 +356,7 @@ rabbinic_exilarchate_chasdai_i = {
 
 rabbinic_exilarchate_solomon_i = {
 	name = "Shelomoh"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_chasdai_i
 	dynasty = bostanite_dynasty
@@ -372,7 +372,7 @@ rabbinic_exilarchate_solomon_i = {
 
 rabbinic_exilarchate_david_son_of_chasdai_ii = {
 	name = "David"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_chasdai_i
 	dynasty = bostanite_dynasty
@@ -388,7 +388,7 @@ rabbinic_exilarchate_david_son_of_chasdai_ii = {
 
 rabbinic_exilarchate_yitzhak_iskawi_i = {
 	name = "Yitzchak"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_solomon_i
 	dynasty = bostanite_dynasty
@@ -404,7 +404,7 @@ rabbinic_exilarchate_yitzhak_iskawi_i = {
 
 rabbinic_exilarchate_chananiah = {
 	name = "Chananiah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	dynasty = bostanite_dynasty
 	trait = davidic_line
@@ -420,7 +420,7 @@ rabbinic_exilarchate_chananiah = {
 
 rabbinic_exilarchate_mar_zakkai_i = {
 	name = "Zakkai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_ahonai
 	dynasty = bostanite_dynasty
@@ -436,7 +436,7 @@ rabbinic_exilarchate_mar_zakkai_i = {
 
 rabbinic_exilarchate_makhir_ben_zakkai = {
 	name = "Machir"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_mar_zakkai_i
 	dynasty = bostanite_dynasty
@@ -452,7 +452,7 @@ rabbinic_exilarchate_makhir_ben_zakkai = {
 
 rabbinic_exilarchate_moshe = {
 	name = "Moshe"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	dynasty = bostanite_dynasty
 	trait = davidic_line
@@ -468,7 +468,7 @@ rabbinic_exilarchate_moshe = {
 
 rabbinic_exilarchate_yitzhak_iskawi_ii = {
 	name = "Yitzchak"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_moshe
 	dynasty = bostanite_dynasty
@@ -484,7 +484,7 @@ rabbinic_exilarchate_yitzhak_iskawi_ii = {
 
 rabbinic_exilarchate_yehuda_i = {
 	name = "Yehudah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	dynasty = bostanite_dynasty
 	trait = davidic_line
@@ -500,7 +500,7 @@ rabbinic_exilarchate_yehuda_i = {
 
 rabbinic_exilarchate_david_i = {
 	name = "David"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_yehuda_i
 	dynasty = bostanite_dynasty
@@ -516,7 +516,7 @@ rabbinic_exilarchate_david_i = {
 
 rabbinic_exilarchate_yehudah_ii = {
 	name = "Yehudah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_david_i
 	dynasty = bostanite_dynasty
@@ -532,7 +532,7 @@ rabbinic_exilarchate_yehudah_ii = {
 
 rabbinic_exilarchate_hilai = {
 	name = "Hilai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	dynasty = bostanite_dynasty
 	trait = davidic_line
@@ -548,7 +548,7 @@ rabbinic_exilarchate_hilai = {
 
 rabbinic_exilarchate_natronai_ii = {
 	name = "Natronai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	dynasty = bostanite_dynasty
 	trait = davidic_line
@@ -564,7 +564,7 @@ rabbinic_exilarchate_natronai_ii = {
 
 rabbinic_exilarchate_hasdai_ii = {
 	name = "Hasdai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_natronai_ii
 	dynasty = bostanite_dynasty
@@ -580,7 +580,7 @@ rabbinic_exilarchate_hasdai_ii = {
 
 rabbinic_exilarchate_yizthak_iii = {
 	name = "Yitzchak"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_hasdai_ii
 	dynasty = bostanite_dynasty
@@ -596,7 +596,7 @@ rabbinic_exilarchate_yizthak_iii = {
 
 rabbinic_exilarchate_zakkai_ii = {
 	name = "Zakkai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_yehudah_ii
 	dynasty = bostanite_dynasty
@@ -612,7 +612,7 @@ rabbinic_exilarchate_zakkai_ii = {
 
 rabbinic_exilarchate_father_of_okbah = {
 	name = "Nissi"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_yehudah_ii
 	dynasty = bostanite_dynasty
@@ -628,7 +628,7 @@ rabbinic_exilarchate_father_of_okbah = {
 
 rabbinic_exilarchate_okbah = {
 	name = "Ukba"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_father_of_okbah
 	dynasty = bostanite_dynasty
@@ -644,7 +644,7 @@ rabbinic_exilarchate_okbah = {
 
 rabbinic_exilarchate_david_ii = {
 	name = "David"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_zakkai_ii
 	dynasty = bostanite_dynasty
@@ -660,7 +660,7 @@ rabbinic_exilarchate_david_ii = {
 
 rabbinic_exilarchate_yehoshiyahu_i = {
 	name = "Yehoshiyahu"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_zakkai_ii
 	dynasty = bostanite_dynasty
@@ -676,7 +676,7 @@ rabbinic_exilarchate_yehoshiyahu_i = {
 
 rabbinic_exilarchate_yehudah_iii = {
 	name = "Yehudah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_david_ii
 	dynasty = bostanite_dynasty
@@ -692,7 +692,7 @@ rabbinic_exilarchate_yehudah_iii = {
 
 rabbinic_exilarchate_solomon_ii = {
 	name = "Shelomoh"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_yehoshiyahu_i
 	dynasty = bostanite_dynasty
@@ -708,7 +708,7 @@ rabbinic_exilarchate_solomon_ii = {
 
 rabbinic_exilarchate_azariah_i = {
 	name = "Azariah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_solomon_ii
 	dynasty = bostanite_dynasty
@@ -724,7 +724,7 @@ rabbinic_exilarchate_azariah_i = {
 
 rabbinic_exilarchate_zakkai_ben_azariah = {
 	name = "Zakkai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_azariah_i
 	dynasty = bostanite_dynasty
@@ -740,7 +740,7 @@ rabbinic_exilarchate_zakkai_ben_azariah = {
 
 rabbinic_exilarchate_son_of_zakkai_ben_azariah = {
 	name = "Azariah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_zakkai_ben_azariah
 	dynasty = bostanite_dynasty
@@ -756,7 +756,7 @@ rabbinic_exilarchate_son_of_zakkai_ben_azariah = {
 
 rabbinic_exilarchate_father_of_david_vi = {
 	name = "Daniel"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_son_of_zakkai_ben_azariah
 	dynasty = bostanite_dynasty
@@ -772,7 +772,7 @@ rabbinic_exilarchate_father_of_david_vi = {
 
 rabbinic_exilarchate_david_vi = {
 	name = "David"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_father_of_david_vi
 	dynasty = bostanite_dynasty
@@ -788,7 +788,7 @@ rabbinic_exilarchate_david_vi = {
 
 rabbinic_exilarchate_daniel_ben_david_vi = {
 	name = "Daniel"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_david_vi
 	dynasty = bostanite_dynasty
@@ -804,7 +804,7 @@ rabbinic_exilarchate_daniel_ben_david_vi = {
 
 rabbinic_exilarchate_david_ben_daniel_ben_david_vi = {
 	name = "David"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_daniel_ben_david_vi
 	dynasty = bostanite_dynasty
@@ -820,7 +820,7 @@ rabbinic_exilarchate_david_ben_daniel_ben_david_vi = {
 
 rabbinic_exilarchate_father_of_shmuel_i = {
 	name = "Zakkai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_son_of_zakkai_ben_azariah
 	dynasty = bostanite_dynasty
@@ -836,7 +836,7 @@ rabbinic_exilarchate_father_of_shmuel_i = {
 
 rabbinic_exilarchate_shmuel_i = {
 	name = "Shmuel"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_father_of_shmuel_i
 	dynasty = bostanite_dynasty
@@ -852,7 +852,7 @@ rabbinic_exilarchate_shmuel_i = {
 
 rabbinic_exilarchate_daniel_ben_azariah = {
 	name = "Daniel"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_azariah_i
 	dynasty = bostanite_dynasty
@@ -871,7 +871,7 @@ rabbinic_exilarchate_daniel_ben_azariah = {
 
 rabbinic_exilarchate_shlomo_ben_azariah = {
 	name = "Shelomoh"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_azariah_i
 	dynasty = bostanite_dynasty
@@ -887,7 +887,7 @@ rabbinic_exilarchate_shlomo_ben_azariah = {
 
 rabbinic_exilarchate_chizkiyahu_i = {
 	name = "Chizkiyah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_yehudah_iii
 	dynasty = bostanite_dynasty
@@ -903,7 +903,7 @@ rabbinic_exilarchate_chizkiyahu_i = {
 
 rabbinic_exilarchate_david_iii = {
 	name = "David"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_chizkiyahu_i
 	dynasty = bostanite_dynasty
@@ -919,7 +919,7 @@ rabbinic_exilarchate_david_iii = {
 
 rabbinic_exilarchate_chizkiyahu_ii = {
 	name = "Chizkiyah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_david_iii
 	dynasty = bostanite_dynasty
@@ -941,7 +941,7 @@ rabbinic_exilarchate_chizkiyahu_ii = {
 
 rabbinic_exilarchate_isaac_ben_chizqiyahu_ii = {
 	name = "Yitzchak"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = rabbinic_exilarchate_chizkiyahu_ii
 	dynasty = shealtiel_dynasty
@@ -960,7 +960,7 @@ rabbinic_exilarchate_isaac_ben_chizqiyahu_ii = {
 
 rabbinic_exilarchate_yosef_oroved_ben_chizqiyahu_ii = {
 	name = "Yosef" # Oroved?
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = rabbinic_exilarchate_chizkiyahu_ii
 	dynasty = bostanite_dynasty
@@ -978,7 +978,7 @@ rabbinic_exilarchate_yosef_oroved_ben_chizqiyahu_ii = {
 rabbinic_exilarchate_reyna_bat_chizqiyahu_ii = {
 	name = "Reyna"
 	female = yes
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = rabbinic_exilarchate_chizkiyahu_ii
 	dynasty = bostanite_dynasty
@@ -994,7 +994,7 @@ rabbinic_exilarchate_reyna_bat_chizqiyahu_ii = {
 
 rabbinic_exilarchate_david_iv = {
 	name = "David"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_chizkiyahu_ii
 	dynasty = bostanite_dynasty
@@ -1010,7 +1010,7 @@ rabbinic_exilarchate_david_iv = {
 
 rabbinic_exilarchate_chizkiyahu_iii = {
 	name = "Chizkiyah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_david_iv
 	dynasty = bostanite_dynasty
@@ -1026,7 +1026,7 @@ rabbinic_exilarchate_chizkiyahu_iii = {
 
 rabbinic_exilarchate_david_v = {
 	name = "David"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_chizkiyahu_iii
 	dynasty = bostanite_dynasty
@@ -1042,7 +1042,7 @@ rabbinic_exilarchate_david_v = {
 
 rabbinic_exilarchate_chasdai_iii = {
 	name = "Hasdai"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_david_v
 	dynasty = bostanite_dynasty
@@ -1058,7 +1058,7 @@ rabbinic_exilarchate_chasdai_iii = {
 
 rabbinic_exilarchate_daniel_i = {
 	name = "Daniel"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_chasdai_iii
 	dynasty = bostanite_dynasty
@@ -1074,7 +1074,7 @@ rabbinic_exilarchate_daniel_i = {
 
 karaite_exilarchate_anan_i = {
 	name = "Anan"
-	religion = "karaism"
+	rite = karaism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_david_son_of_chasdai_ii
 	dynasty_house = house_ananite
@@ -1090,7 +1090,7 @@ karaite_exilarchate_anan_i = {
 
 karaite_exilarchate_saul_i = {
 	name = "ShaUl"
-	religion = "karaism"
+	rite = karaism
 	culture = "bavlim"
 	father = karaite_exilarchate_anan_i
 	dynasty_house = house_ananite
@@ -1106,7 +1106,7 @@ karaite_exilarchate_saul_i = {
 
 karaite_exilarchate_josaiah_i = {
 	name = "Yehoshiyahu"
-	religion = "karaism"
+	rite = karaism
 	culture = "bavlim"
 	father = karaite_exilarchate_saul_i
 	dynasty_house = house_ananite
@@ -1122,7 +1122,7 @@ karaite_exilarchate_josaiah_i = {
 
 karaite_exilarchate_semach_son_of_josaiah = {
 	name = "Tzemach"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = karaite_exilarchate_josaiah_i
 	dynasty_house = house_ananite
@@ -1138,7 +1138,7 @@ karaite_exilarchate_semach_son_of_josaiah = {
 
 karaite_exilarchate_asa_ben_semach = {
 	name = "Asa"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = karaite_exilarchate_semach_son_of_josaiah
 	dynasty_house = house_ananite
@@ -1158,7 +1158,7 @@ karaite_exilarchate_asa_ben_semach = {
 
 karaite_exilarchate_semach_ben_asa = {
 	name = "Tzemach"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = karaite_exilarchate_asa_ben_semach
 	dynasty_house = house_ananite
@@ -1177,7 +1177,7 @@ karaite_exilarchate_semach_ben_asa = {
 
 karaite_exilarchate_david_ben_semach = {
 	name = "David"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = karaite_exilarchate_semach_ben_asa
 	dynasty_house = house_ananite
@@ -1193,7 +1193,7 @@ karaite_exilarchate_david_ben_semach = {
 
 karaite_exilarchate_jehoshaphat_i = {
 	name = "Yehoshafat"
-	religion = "karaism"
+	rite = karaism
 	culture = "bavlim"
 	father = karaite_exilarchate_josaiah_i
 	dynasty_house = house_ananite
@@ -1209,7 +1209,7 @@ karaite_exilarchate_jehoshaphat_i = {
 
 karaite_exilarchate_boaz_i = {
 	name = "Boaz"
-	religion = "karaism"
+	rite = karaism
 	culture = "bavlim"
 	father = karaite_exilarchate_jehoshaphat_i
 	dynasty_house = house_ananite
@@ -1225,7 +1225,7 @@ karaite_exilarchate_boaz_i = {
 
 karaite_exilarchate_josaiah_son_of_boaz = {
 	name = "Yehoshiyahu"
-	religion = "karaism"
+	rite = karaism
 	culture = "bavlim"
 	father = karaite_exilarchate_boaz_i
 	dynasty_house = house_ananite
@@ -1241,7 +1241,7 @@ karaite_exilarchate_josaiah_son_of_boaz = {
 
 karaite_exilarchate_david_i = {
 	name = "David"
-	religion = "karaism"
+	rite = karaism
 	culture = "bavlim"
 	father = karaite_exilarchate_boaz_i
 	dynasty_house = house_ananite
@@ -1257,7 +1257,7 @@ karaite_exilarchate_david_i = {
 
 karaite_exilarchate_solomon_i = {
 	name = "Shelomoh"
-	religion = "karaism"
+	rite = karaism
 	culture = "bavlim"
 	father = karaite_exilarchate_david_i
 	dynasty_house = house_ananite
@@ -1273,7 +1273,7 @@ karaite_exilarchate_solomon_i = {
 
 karaite_exilarchate_josaiah_ben_shlomo = {
 	name = "Yehoshiyahu"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = karaite_exilarchate_solomon_i
 	dynasty_house = house_ananite
@@ -1289,7 +1289,7 @@ karaite_exilarchate_josaiah_ben_shlomo = {
 
 karaite_exilarchate_hezekiah_i = {
 	name = "Chizkiyah"
-	religion = "karaism"
+	rite = karaism
 	culture = "bavlim"
 	father = karaite_exilarchate_solomon_i
 	dynasty_house = house_ananite
@@ -1305,7 +1305,7 @@ karaite_exilarchate_hezekiah_i = {
 
 karaite_exilarchate_chasdai_i = {
 	name = "Hasdai"
-	religion = "karaism"
+	rite = karaism
 	culture = "bavlim"
 	father = karaite_exilarchate_hezekiah_i
 	dynasty_house = house_ananite
@@ -1321,7 +1321,7 @@ karaite_exilarchate_chasdai_i = {
 
 karaite_exilarchate_solomon_ii = {
 	name = "Shelomoh"
-	religion = "karaism"
+	rite = karaism
 	culture = "bavlim"
 	father = karaite_exilarchate_chasdai_i
 	dynasty_house = house_ananite
@@ -1337,7 +1337,7 @@ karaite_exilarchate_solomon_ii = {
 
 karaite_exilarchate_david_ii = {
 	name = "David"
-	religion = "karaism"
+	rite = karaism
 	culture = "bavlim"
 	father = karaite_exilarchate_solomon_ii
 	dynasty_house = house_ananite
@@ -1353,7 +1353,7 @@ karaite_exilarchate_david_ii = {
 
 karaite_exilarchate_solomon_iii = {
 	name = "Shelomoh"
-	religion = "karaism"
+	rite = karaism
 	culture = "bavlim"
 	father = karaite_exilarchate_david_ii
 	dynasty_house = house_ananite

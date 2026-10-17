@@ -25,7 +25,7 @@ found_empire_of_beth_nahrain_decision = {
 
 		any_sub_realm_county = {
 			OR = {
-				faith = faith:nestorian
+				rite.faith = faith:nestorian
 				culture = {
 					OR = {
 						this = culture:assyrian
@@ -164,7 +164,7 @@ found_empire_of_beth_nahrain_decision = {
 				100 = {
 					show_chance = no
 					trigger = {
-						faith = faith:nestorian
+						rite.faith = faith:nestorian
 					}
 					desc = middle_east_major_decisions.1020.nestorian.desc
 					nestorian_faith_beth_nahrain_scripted_effect = yes
@@ -173,7 +173,7 @@ found_empire_of_beth_nahrain_decision = {
 					show_chance = no
 					trigger = {
 						NOT = {
-							faith = faith:nestorian
+							rite.faith = faith:nestorian
 						}
 					}
 					desc = middle_east_major_decisions.1020.no_faith.desc
@@ -217,7 +217,7 @@ create_israel_kingdom_decision = {
 	is_shown = {
 		is_ruler = yes
 		is_playable_character = yes
-		faith.religion = faith:rabbinism.religion
+		rite.faith.religion = religion:judaism_religion
 		NOT = {
 			exists = title:k_israel.holder
 		}
@@ -237,7 +237,7 @@ create_israel_kingdom_decision = {
 		completely_controls = title:d_oultrejourdain
 		custom_description = {
 			text = "jerusalem_is_same_faith"
-			title:c_jerusalem.faith = root.faith
+			title:c_jerusalem.rite.faith = root.rite.faith
 		}
 	}
 

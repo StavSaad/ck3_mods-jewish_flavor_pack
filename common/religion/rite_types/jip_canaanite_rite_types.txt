@@ -1,0 +1,28 @@
+﻿semitic_pagan = {
+	faith = semitic_pagan
+
+	color = { 125 28 125 }
+
+	tenets = {
+		tenet_ancestor_worship
+		tenet_sanctity_of_nature
+		tenet_jewish_syncretism
+	}
+
+	doctrines = {
+		doctrine_polygamy
+	}
+}
+
+carthage_pagan = {
+	faith = semitic_pagan
+
+	color = { 125 28 58 }
+	icon = punic
+
+	tenets = {
+		tenet_ancestor_worship
+		tenet_sanctity_of_nature
+		tenet_adaptive
+	}
+}

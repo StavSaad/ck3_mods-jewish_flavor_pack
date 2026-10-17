@@ -1,6 +1,6 @@
 ﻿meshullam_i_kalonymos = {
 	name = "Meshulam"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	trait = education_learning_3
 	dynasty = kalonymos_dynasty
@@ -14,7 +14,7 @@
 
 ithiel_i_kalonymos = {
 	name = "Ithiel"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = meshullam_i_kalonymos
 	trait = education_learning_3
@@ -29,7 +29,7 @@ ithiel_i_kalonymos = {
 
 meshullam_ii_kalonymos = {
 	name = "Meshulam"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = ithiel_i_kalonymos
 	trait = education_learning_3
@@ -44,7 +44,7 @@ meshullam_ii_kalonymos = {
 
 moses_i_kalonymos = {
 	name = "Moshe"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = meshullam_ii_kalonymos
 	trait = education_learning_3
@@ -59,7 +59,7 @@ moses_i_kalonymos = {
 
 yekuthiel_i_kalonymos = {
 	name = "Yekuthiel"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = moses_i_kalonymos
 	trait = education_learning_3
@@ -74,7 +74,7 @@ yekuthiel_i_kalonymos = {
 
 kalonymos_i_kalonymos = {
 	name = "Kalonymos"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = yekuthiel_i_kalonymos
 	trait = education_learning_3
@@ -89,7 +89,7 @@ kalonymos_i_kalonymos = {
 
 moses_ii_kalonymos = {
 	name = "Moshe"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = kalonymos_i_kalonymos
 	trait = education_learning_3
@@ -107,7 +107,7 @@ moses_ii_kalonymos = {
 
 yekuthiel_ii_kalonymos = {
 	name = "Yekuthiel"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = moses_ii_kalonymos
 	trait = education_learning_3
@@ -122,7 +122,7 @@ yekuthiel_ii_kalonymos = {
 
 kalonymos_ii_kalonymos = {
 	name = "Kalonymos"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = moses_ii_kalonymos
 	trait = education_learning_3
@@ -137,7 +137,7 @@ kalonymos_ii_kalonymos = {
 
 meshullam_iii_the_great_kalonymos = {
 	name = "Meshulam"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = kalonymos_ii_kalonymos
 	trait = education_learning_3
@@ -155,7 +155,7 @@ meshullam_iii_the_great_kalonymos = {
 
 kalonymos_iii_kalonymos = {
 	name = "Kalonymos"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = meshullam_iii_the_great_kalonymos
 	trait = education_learning_3
@@ -170,7 +170,7 @@ kalonymos_iii_kalonymos = {
 
 hananel_ben_moses_the_elder_kalonymos = {
 	name = "HananEl"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = moses_ii_kalonymos
 	trait = education_learning_3
@@ -185,7 +185,7 @@ hananel_ben_moses_the_elder_kalonymos = {
 
 ithiel_ben_moses_the_elder_kalonymos = {
 	name = "Ithiel"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = moses_ii_kalonymos
 	trait = education_learning_3
@@ -200,7 +200,7 @@ ithiel_ben_moses_the_elder_kalonymos = {
 
 hananel_i_kalonymos = {
 	name = "HananEl"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = kalonymos_iii_kalonymos
 	trait = education_learning_3
@@ -215,7 +215,7 @@ hananel_i_kalonymos = {
 
 moses_ben_kalonymos_kalonymos = {
 	name = "Moshe"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = kalonymos_iii_kalonymos
 	trait = education_learning_3
@@ -230,7 +230,7 @@ moses_ben_kalonymos_kalonymos = {
 
 kalonymos_iv_kalonymos = {
 	name = "Kalonymos"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = moses_ben_kalonymos_kalonymos
 	trait = education_learning_3
@@ -245,7 +245,7 @@ kalonymos_iv_kalonymos = {
 
 hananel_ii_kalonymos = {
 	name = "HananEl"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = moses_ben_kalonymos_kalonymos
 	dynasty = kalonymos_dynasty
@@ -259,7 +259,7 @@ hananel_ii_kalonymos = {
 
 ithiel_ii_kalonymos = {
 	name = "Ithiel"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = moses_ben_kalonymos_kalonymos
 	dynasty = kalonymos_dynasty
@@ -273,7 +273,7 @@ ithiel_ii_kalonymos = {
 
 yekuthiel_of_speyer_kalonymos = {
 	name = "Yekuthiel"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = moses_ben_kalonymos_kalonymos
 	dynasty = kalonymos_dynasty
@@ -290,7 +290,7 @@ yekuthiel_of_speyer_kalonymos = {
 
 moses_v_of_speyer_kalonymos = {
 	name = "Moshe"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = yekuthiel_of_speyer_kalonymos
 	dynasty = kalonymos_dynasty
@@ -308,7 +308,7 @@ moses_v_of_speyer_kalonymos = {
 
 moses_iv_kalonymos = {
 	name = "Moshe"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = ithiel_ii_kalonymos
 	dynasty = kalonymos_dynasty
@@ -322,7 +322,7 @@ moses_iv_kalonymos = {
 
 meshullam_of_mainz_kalonymos = {
 	name = "Meshulam"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = ithiel_ii_kalonymos
 	dynasty = kalonymos_dynasty
@@ -338,7 +338,7 @@ meshullam_of_mainz_kalonymos = {
 
 david_ben_meshulam_of_mainz_kalonymos = {
 	name = "David"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = meshullam_of_mainz_kalonymos
 	dynasty = kalonymos_dynasty
@@ -352,7 +352,7 @@ david_ben_meshulam_of_mainz_kalonymos = {
 
 eliezer_ben_meshulam_of_mainz_kalonymos = {
 	name = "EliEzer"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = meshullam_of_mainz_kalonymos
 	dynasty = kalonymos_dynasty
@@ -366,7 +366,7 @@ eliezer_ben_meshulam_of_mainz_kalonymos = {
 
 abun_the_great_kalonymos = {
 	name = "Abun"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = meshullam_iii_the_great_kalonymos
 	dynasty = kalonymos_dynasty
@@ -383,7 +383,7 @@ abun_the_great_kalonymos = {
 
 joshua_hasid_kalonymos = {
 	name = "Yehoshua"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = abun_the_great_kalonymos
 	dynasty = kalonymos_dynasty
@@ -397,7 +397,7 @@ joshua_hasid_kalonymos = {
 
 isaac_hasid_kalonymos = {
 	name = "Yitzchak"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = joshua_hasid_kalonymos
 	dynasty = kalonymos_dynasty
@@ -411,7 +411,7 @@ isaac_hasid_kalonymos = {
 
 eliezer_the_great_kalonymos = {
 	name = "Eliezer"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = isaac_hasid_kalonymos
 	dynasty = kalonymos_dynasty
@@ -428,7 +428,7 @@ eliezer_the_great_kalonymos = {
 
 isaac_ben_eliezer_kalonymos = {
 	name = "Yitzchak"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = eliezer_the_great_kalonymos
 	dynasty = kalonymos_dynasty
@@ -442,7 +442,7 @@ isaac_ben_eliezer_kalonymos = {
 
 kalonymos_ben_isaac_the_elder_kalonymos = {
 	name = "Kalonymos"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = isaac_ben_eliezer_kalonymos
 	dynasty = kalonymos_dynasty
@@ -459,7 +459,7 @@ kalonymos_ben_isaac_the_elder_kalonymos = {
 
 judah_ben_kalonymos_kalonymos = {
 	name = "Yehudah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = kalonymos_ben_isaac_the_elder_kalonymos
 	dynasty = kalonymos_dynasty
@@ -473,7 +473,7 @@ judah_ben_kalonymos_kalonymos = {
 
 samuel_hasid_kalonymos = {
 	name = "Shmuel"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = kalonymos_ben_isaac_the_elder_kalonymos
 	dynasty = kalonymos_dynasty
@@ -487,7 +487,7 @@ samuel_hasid_kalonymos = {
 
 golde_kalonymos = {
 	name = "Golde"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	female = yes
 	father = samuel_hasid_kalonymos
@@ -502,7 +502,7 @@ golde_kalonymos = {
 
 abraham_kalonymos = {
 	name = "Abraham"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = samuel_hasid_kalonymos
 	dynasty = kalonymos_dynasty
@@ -516,7 +516,7 @@ abraham_kalonymos = {
 
 judah_hasid_kalonymos = {
 	name = "Yehudah"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = samuel_hasid_kalonymos
 	dynasty = kalonymos_dynasty
@@ -530,7 +530,7 @@ judah_hasid_kalonymos = {
 
 samuel_harar_kalonymos = {
 	name = "Shmuel"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "ashkenazi"
 	father = judah_hasid_kalonymos
 	dynasty = kalonymos_dynasty

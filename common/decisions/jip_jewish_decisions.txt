@@ -10,7 +10,7 @@
 		culture = { has_cultural_pillar = heritage_israelite }
 		trigger_if = {
 			limit = {
-				has_faith = faith:rabbinism
+				has_faith = faith:rabbinic_faith
 			}
 			NOT = {
 				has_claim_on = title:d_exilarchate
@@ -51,7 +51,7 @@
 	effect = {
 		if = {
 			limit = {
-				has_faith = faith:rabbinism
+				has_faith = faith:rabbinic_faith
 			}
 			title:d_exilarchate = {
 				save_scope_as = target_title
@@ -305,7 +305,7 @@ clear_grounds_for_the_third_temple_decision = {
 	is_valid = {
 		piety_level >= 4
 		is_independent_ruler = yes
-		capital_county.faith = {
+		capital_county.rite.faith = {
 			religion = religion:judaism_religion
 		}
 		OR = {

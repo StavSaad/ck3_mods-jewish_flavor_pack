@@ -1,6 +1,6 @@
 ﻿yosef_grandfather_of_maimonides = {
 	name = "Yosef"
-	religion = rabbinism
+	rite = rabbinism
 	culture = sephardi
 	1061.1.1 = {
 		birth = yes
@@ -12,7 +12,7 @@
 
 maimon_ben_yosef = {
 	name = "Maimon"
-	religion = rabbinism
+	rite = rabbinism
 	culture = sephardi
 	father = yosef_grandfather_of_maimonides
 	dynasty = ben_maimon
@@ -26,7 +26,7 @@ maimon_ben_yosef = {
 
 david_brother_of_maimonides = {
 	name = "David"
-	religion = rabbinism
+	rite = rabbinism
 	culture = sephardi
 	father = maimon_ben_yosef
 	dynasty = ben_maimon
@@ -40,7 +40,7 @@ david_brother_of_maimonides = {
 
 maimonides_1 = {
 	name = "Moshe"
-	religion = rabbinism
+	rite = rabbinism
 	culture = sephardi
 	father = maimon_ben_yosef
 	dynasty = ben_maimon
@@ -81,7 +81,7 @@ maimonides_1 = {
 
 abraham_ben_maimonides = {
 	name = "Abraham"
-	religion = rabbinism
+	rite = rabbinism
 	culture = sephardi
 	father = maimonides_1
 	dynasty = ben_maimon
@@ -95,7 +95,7 @@ abraham_ben_maimonides = {
 
 david_ben_abraham_ben_maimonides = {
 	name = "David"
-	religion = rabbinism
+	rite = rabbinism
 	culture = sephardi
 	father = abraham_ben_maimonides
 	dynasty = ben_maimon

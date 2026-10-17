@@ -1,6 +1,6 @@
 yaakov_ben_isaac = {
 	name = "Yaakov"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	-1399.1.1 = {
 		birth = yes
@@ -18,7 +18,7 @@ yaakov_ben_isaac = {
 
 zilpa = {
 	name = "Zilpa"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	female = yes
 	-1399.1.1 = {
@@ -31,7 +31,7 @@ zilpa = {
 
 bilha = {
 	name = "Bilha"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	female = yes
 	-1399.1.1 = {
@@ -44,7 +44,7 @@ bilha = {
 
 rachel_bat_lavan = {
 	name = "Rachel"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	female = yes
 	-1401.1.1 = {
@@ -57,7 +57,7 @@ rachel_bat_lavan = {
 
 leah_bat_lavan = {
 	name = "Leah"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	female = yes
 	-1401.1.1 = {
@@ -70,7 +70,7 @@ leah_bat_lavan = {
 
 dan_ben_yaakob = {
 	name = "Dan"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = yaakov_ben_isaac
 	mother = bilha
@@ -84,7 +84,7 @@ dan_ben_yaakob = {
 
 gad_ben_yaakob = {
 	name = "Gad"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = yaakov_ben_isaac
 	mother = zilpa
@@ -98,7 +98,7 @@ gad_ben_yaakob = {
 
 asher_ben_yaakob = {
 	name = "Asher"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = yaakov_ben_isaac
 	mother = zilpa
@@ -112,7 +112,7 @@ asher_ben_yaakob = {
 
 naftali_ben_yaakob = {
 	name = "Naftali"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = yaakov_ben_isaac
 	mother = bilha
@@ -126,7 +126,7 @@ naftali_ben_yaakob = {
 
 reuven_ben_yaakob = {
 	name = "Re'uven"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = yaakov_ben_isaac
 	mother = leah_bat_lavan
@@ -140,7 +140,7 @@ reuven_ben_yaakob = {
 
 shimon_ben_yaakob = {
 	name = "ShimOn"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = yaakov_ben_isaac
 	mother = leah_bat_lavan
@@ -154,7 +154,7 @@ shimon_ben_yaakob = {
 
 levi_ben_yaakob = {
 	name = "Levi"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = yaakov_ben_isaac
 	mother = leah_bat_lavan
@@ -168,7 +168,7 @@ levi_ben_yaakob = {
 
 issachar_ben_yaakob = {
 	name = "Issachar"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = yaakov_ben_isaac
 	mother = leah_bat_lavan
@@ -182,7 +182,7 @@ issachar_ben_yaakob = {
 
 zebulun_ben_yaakob = {
 	name = "Zevulun"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = yaakov_ben_isaac
 	mother = leah_bat_lavan
@@ -196,7 +196,7 @@ zebulun_ben_yaakob = {
 
 dina_bat_yaakob = {
 	name = "Dina"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	female = yes
 	father = yaakov_ben_isaac
@@ -211,7 +211,7 @@ dina_bat_yaakob = {
 
 yehudah_ben_yaakov = {
 	name = "Yehudah"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = yaakov_ben_isaac
 	mother = leah_bat_lavan
@@ -228,7 +228,7 @@ yehudah_ben_yaakov = {
 
 tamar_wife_of_yehudah = {
 	name = "Tamar"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	female = yes
 	-1300.1.1 = {
@@ -241,7 +241,7 @@ tamar_wife_of_yehudah = {
 
 zerah_ben_yehudah = {
 	name = "Zerach"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = yehudah_ben_yaakov
 	mother = tamar_wife_of_yehudah
@@ -255,7 +255,7 @@ zerah_ben_yehudah = {
 
 perez_ben_yehudah = {
 	name = "Peretz"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = yehudah_ben_yaakov
 	mother = tamar_wife_of_yehudah
@@ -269,7 +269,7 @@ perez_ben_yehudah = {
 
 hezron_ben_perez = {
 	name = "Hezron"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = perez_ben_yehudah
 	-1250.1.1 = {
@@ -282,7 +282,7 @@ hezron_ben_perez = {
 
 ram_ben_hezron = {
 	name = "Ram"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = hezron_ben_perez
 	-1230.1.1 = {
@@ -295,7 +295,7 @@ ram_ben_hezron = {
 
 aminadav_ben_ram = {
 	name = "Aminadav"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = ram_ben_hezron
 	-1205.1.1 = {
@@ -308,7 +308,7 @@ aminadav_ben_ram = {
 
 nachshon_ben_aminadav = {
 	name = "Nachshon"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = aminadav_ben_ram
 	-1185.1.1 = {
@@ -321,7 +321,7 @@ nachshon_ben_aminadav = {
 
 shelomo_ben_nachshon = {
 	name = "Shelomo"
-	religion = "kohanism"
+	rite = kohanism
 	culture = "hebrew"
 	father = nachshon_ben_aminadav
 	-1155.1.1 = {

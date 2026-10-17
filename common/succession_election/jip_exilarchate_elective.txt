@@ -54,13 +54,20 @@ exilarchate_elective = { #Witenagemot
 	}
 	
 	electors = {
-		add = holder_dynasty
-		add = title_claimants
-		limit = {
-			religion = religion:judaism_religion
-			faith = scope:holder.faith
-			is_adult = yes
-			is_male = yes
+		max = 10
+		character_sets = {
+			exilarchate_electors_holder = {
+				type = holder
+			}
+			exilarchate_electors_claimants = {
+				type = title_claimants
+				limit = {
+					religion = religion:judaism_religion
+					faith = scope:holder.faith
+					is_adult = yes
+					is_male = yes	
+				}
+			}
 		}
 	}
 
@@ -90,25 +97,27 @@ exilarchate_elective = { #Witenagemot
 	
 	#scope:candidate = Candidate, scope:title = Title, scope:holder_candidate = Candidate currently selected by ruler.
 	candidates = {
-		add = {
-			type = holder_dynasty
-			limit = {
-				religion = religion:judaism_religion
-				faith = scope:holder.faith
-				is_male = yes
-				OR = {
-					is_player_heir_of = scope:holder
+		character_sets = {
+			exilarchate_elective_claimants = {
+				type = title_claimants
+				limit = {
+					religion = religion:judaism_religion
+					faith = scope:holder.faith
+					is_male = yes
 					is_ruler = yes
 				}
 			}
-		}
-		add = {
-			type = title_claimants
-			limit = {
-				religion = religion:judaism_religion
-				faith = scope:holder.faith
-				is_male = yes
-				is_ruler = yes
+			exilarchate_elective_family = {
+				type = holder_close_or_extended_family
+				limit = {
+					religion = religion:judaism_religion
+					faith = scope:holder.faith
+					is_male = yes
+					OR = {
+						is_player_heir_of = scope:holder
+						is_ruler = yes
+					}
+				}
 			}
 		}
 	}

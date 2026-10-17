@@ -8,7 +8,6 @@
 jip_hebrew.0001 = {
 	type = character_event
 	title = jip_hebrew.0001.t #change
-	is_triggered_only = yes
 	desc = {
 		desc = jip_hebrew.0001.start.desc #change
 		first_valid = {
@@ -52,7 +51,6 @@ scripted_trigger jip_hebrew_0002_is_in_israel_trigger = {
 jip_hebrew.0002 = {
 	type = character_event
 	title = jip_hebrew.0001.t
-	is_triggered_only = yes
 	desc = {
 		desc = jip_hebrew.0002.start.desc
 		first_valid = {
@@ -137,7 +135,6 @@ jip_hebrew.0002 = {
 jip_hebrew.0010 = {
 	type = character_event
 	title = jip_hebrew.0010.t #change
-	is_triggered_only = yes
 	desc = {
 		desc = jip_hebrew.0010.start.desc #change
 		desc = jip_hebrew.0010.end.desc
@@ -222,7 +219,6 @@ jip_hebrew.0010 = {
 jip_hebrew.0020 = {
 	type = character_event
 	title = jip_hebrew.0020.t #change
-	is_triggered_only = yes
 	desc = {
 		desc = jip_hebrew.0020.desc
 	}
@@ -249,7 +245,6 @@ jip_hebrew.0020 = {
 jip_hebrew.0021 = {
 	type = character_event
 	title = jip_hebrew.0021.t #change
-	is_triggered_only = yes
 	desc = {
 		desc = jip_hebrew.0021.start.desc #change
 	}
@@ -297,7 +292,6 @@ jip_hebrew.0021 = {
 jip_hebrew.0022 = {
 	type = character_event
 	title = jip_hebrew.0022.t #change
-	is_triggered_only = yes
 	desc = {
 		desc = jip_hebrew.0022.desc #change
 	}
@@ -348,7 +342,6 @@ jip_hebrew.0022 = {
 jip_hebrew.0031 = {
 	type = character_event
 	title = jip_hebrew.0031.t #change
-	is_triggered_only = yes
 	desc = {
 		desc = jip_hebrew.0031.start.desc #change
 	}
@@ -396,7 +389,6 @@ jip_hebrew.0031 = {
 jip_hebrew.0032 = {
 	type = character_event
 	title = jip_hebrew.0032.t #change
-	is_triggered_only = yes
 	desc = {
 		desc = jip_hebrew.0032.desc #change
 	}
@@ -447,7 +439,6 @@ jip_hebrew.0032 = {
 jip_hebrew.0040 = {
 	type = character_event
 	title = jip_hebrew.0040.t #change
-	is_triggered_only = yes
 	desc = {
 		desc = jip_hebrew.0040.desc #change
 	}
@@ -460,23 +451,20 @@ jip_hebrew.0040 = {
 	immediate = {
 		custom_description_no_bullet = {
 			text = judaism_hof_restored_effect
-			faith:rabbinism = {
-				remove_doctrine = special_doctrine_not_allowed_to_hof
+			faith:rabbinic_faith = {
+				remove_doctrine = special_doctrine_prophecy_of_malachi
 			}
 			faith:karaism = {
-				remove_doctrine = special_doctrine_not_allowed_to_hof
+				remove_doctrine = special_doctrine_prophecy_of_malachi
 			}
 			faith:kabarism = {
-				remove_doctrine = special_doctrine_not_allowed_to_hof
+				remove_doctrine = special_doctrine_prophecy_of_malachi
 			}
 			faith:malabarism = {
-				remove_doctrine = special_doctrine_not_allowed_to_hof
-			}
-			faith:haymanot = {
-				remove_doctrine = special_doctrine_not_allowed_to_hof
+				remove_doctrine = special_doctrine_prophecy_of_malachi
 			}
 			faith:kohanism = {
-				remove_doctrine = special_doctrine_not_allowed_to_hof
+				remove_doctrine = special_doctrine_prophecy_of_malachi
 			}
 		}
 	}
@@ -498,7 +486,7 @@ jip_hebrew.0040 = {
 		name = jip_hebrew.0040.b # Restore Kohen Gadol for Judaism
 		trigger = {
 			OR = {
-				faith = faith:rabbinism
+				faith = faith:rabbinic_faith
 				faith = faith:karaism
 				faith = faith:kabarism
 				faith = faith:malabarism
@@ -506,7 +494,7 @@ jip_hebrew.0040 = {
 				faith = faith:kohanism
 			}
 		}
-		faith:rabbinism = {
+		faith:rabbinic_faith = {
 			remove_doctrine = doctrine_no_head
 			add_doctrine = doctrine_spiritual_head
 			set_religious_head_title = faith:kohanism.religious_head_title
@@ -514,7 +502,7 @@ jip_hebrew.0040 = {
 		faith = {
 			save_scope_as = faith
 		}
-		create_head_of_faith_title_effect = yes
+		force_create_head_of_faith_title_effect = yes
 		stress_impact = { 
 			zealous = medium_stress_gain
 			diligent = medium_stress_loss
@@ -537,7 +525,7 @@ jip_hebrew.0040 = {
 		faith:kohanism = {
 			save_scope_as = faith
 		}
-		create_head_of_faith_title_effect = yes
+		force_create_head_of_faith_title_effect = yes
 		create_title_and_vassal_change = {
 			type = swear_fealty
 			save_scope_as = change
@@ -570,7 +558,6 @@ jip_hebrew.0040 = {
 jip_hebrew.0041 = {
 	type = character_event
 	title = jip_hebrew.0041.t #change
-	is_triggered_only = yes
 	desc = {
 		desc = jip_hebrew.0041.desc #change
 	}
@@ -598,7 +585,6 @@ jip_hebrew.0041 = {
 jip_hebrew.0050 = {
 	type = character_event
 	title = jip_hebrew.0050.t #change
-	is_triggered_only = yes
 	desc = {
 		desc = jip_hebrew.0050.desc
 	}
@@ -629,7 +615,6 @@ jip_hebrew.0060 = {
 		desc = jip_hebrew.0060.start.desc #change
 		desc = jip_hebrew.0060.end.desc
 	}
-	is_triggered_only = yes
 	theme = realm
 	left_portrait = {
 		character = root
@@ -695,7 +680,6 @@ jip_hebrew.0060 = {
 jip_hebrew.0070 = {
 	type = character_event
 	title = jip_hebrew.0070.t #change
-	is_triggered_only = yes
 	desc = {
 		desc = jip_hebrew.0070.start.desc #change
 		desc = jip_hebrew.0070.end.desc

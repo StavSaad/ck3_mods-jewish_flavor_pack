@@ -25,8 +25,6 @@
  holy_order_warriors_of_tammuz: "Warriors of Tammuz"
  holy_order_thunderbolts_of_jupiter: "Thunderbolts of Jupiter"
  holy_order_champions_of_the_stars: "Champions of the Stars"
- holy_site_carthage_name: "Carthago"
- holy_site_carthage_effect_name: "From [holy_site|E] #weak ($holy_site_carthage_name$)#!"
  holy_site_tanas_name: "Tanas"
  holy_site_tanas_effect_name: "From [holy_site|E] #weak ($holy_site_tanas_name$)#!"
  semitic_pagan: "Canaanism"

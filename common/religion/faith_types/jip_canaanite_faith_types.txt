@@ -1,0 +1,32 @@
+﻿semitic_pagan = {
+
+	main_rite = semitic_pagan
+
+	faith_details = {
+		religion = canaanite_religion
+		color = { 125 28 125 }
+		icon = canaanite
+	}
+
+	eminent_holy_sites = {
+		beirut
+		baalbek
+		antioch
+	}
+
+	holy_sites = {
+		jerusalem
+		carthage
+	}
+
+	tenets = {
+		tenet_ancestor_worships
+		tenet_sanctity_of_nature
+		tenet_jewish_syncretism
+	}
+
+	doctrines = {
+		doctrine_polygamy
+	}
+	
+}

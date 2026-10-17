@@ -56,7 +56,7 @@
 		culture = { has_cultural_pillar = heritage_israelite }
 
 		OR = { #Must be Jewish/Samaritan
-			faith.religion = religion:judaism_religion
+			rite.faith.religion = religion:judaism_religion
 		}
 
 		completely_controls = title:k_israel
@@ -511,7 +511,7 @@ create_e_kemet_decision = {
 			has_title = title:e_beth_nahrain
 		}
 		NOT = {
-			faith.religion = religion:islam_religion
+			rite.faith.religion = religion:islam_religion
 		}
 		completely_controls_region = jip_region_kemet
 		

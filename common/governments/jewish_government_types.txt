@@ -3,7 +3,6 @@
 		create_cadet_branches = yes
 		rulers_should_have_dynasty = yes
 		dynasty_named_realms = yes
-		administrative = yes
 		legitimacy = yes
 		landless_playable = yes
 		use_as_base_on_landed = yes
@@ -15,6 +14,7 @@
 		noble_families = no
 		deny_powerful_vassal = yes
 		uses_culture_and_house_head_named_realms = no
+		council = no
 	}
 
 	royal_court = any
@@ -24,8 +24,8 @@
 
 	court_generate_commanders = no
 
-	main_administrative_tier = county
-	min_appointment_tier = county
+	main_administrative_tier = duchy
+	min_appointment_tier = duchy
 	minimum_provincial_maa_tier = duchy
 
 	primary_holding = city_holding

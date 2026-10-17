@@ -1,6 +1,6 @@
 ﻿makhirite_makhir_ben_habibai = {
 	name = "Machir"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "bavlim"
 	father = rabbinic_exilarchate_habibai_ben_natronai
 	dynasty = makhirite_dynasty
@@ -16,7 +16,7 @@
 
 makhirite_isaac_ben_makhir = {
 	name = "Yitzchak"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = makhirite_makhir_ben_habibai
 	dynasty = makhirite_dynasty
@@ -31,7 +31,7 @@ makhirite_isaac_ben_makhir = {
 
 makhirite_makhir_ben_isaac = {
 	name = "Machir"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = makhirite_isaac_ben_makhir
 	dynasty = makhirite_dynasty
@@ -47,7 +47,7 @@ makhirite_makhir_ben_isaac = {
 
 makhirite_levi_ben_makhir = {
 	name = "Levi"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = makhirite_makhir_ben_isaac
 	dynasty = makhirite_dynasty
@@ -62,7 +62,7 @@ makhirite_levi_ben_makhir = {
 
 makhirite_todros_ben_levi = {
 	name = "Todros"
-	religion = "rabbinism"
+	rite = rabbinism
 	culture = "sephardi"
 	father = makhirite_levi_ben_makhir
 	dynasty = makhirite_dynasty

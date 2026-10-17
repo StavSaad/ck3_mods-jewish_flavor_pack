@@ -1,4 +1,4 @@
-mishpacha = {
+﻿mishpacha = {
 	texture = "gfx/interface/icons/government_types/mishpacha_government.dds"
 	parent = government
 	alias = { mishpacha_government mishpacha_governments mishpacha_i }

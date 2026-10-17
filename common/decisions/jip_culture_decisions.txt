@@ -21,13 +21,13 @@
 		is_independent_ruler = yes 
 		custom_description = {
 			text = "jerusalem_is_same_faith"
-			title:c_jerusalem.faith = root.faith
+			title:c_jerusalem.rite.faith = root.rite.faith
 		}
 		
 		culture = { has_cultural_pillar = heritage_israelite }
 
 		OR = { #Must be Jewish/Samaritan
-			faith.religion = religion:judaism_religion
+			rite.faith.religion = religion:judaism_religion
 		}
 
 		trigger_if = {

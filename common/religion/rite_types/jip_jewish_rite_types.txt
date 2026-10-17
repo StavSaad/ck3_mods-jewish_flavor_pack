@@ -1,0 +1,158 @@
+﻿### Jewish Rites ###
+
+rabbinism = {
+	name = rabbinism
+	desc = rabbinism_desc
+	faith = rabbinic_faith
+
+	color = { 0.1 0.7 1.0 }
+	icon = rabbinism
+
+	tenets = {
+		tenet_legalism
+		tenet_religious_legal_pronouncements
+		tenet_pursuit_of_knowledge
+	}
+
+	# TODO_PAM_DESIGN TIT-72804
+	cultures = { ashkenazi }
+}
+
+merkabah = {
+	name = merkabah
+	desc = merkabah_desc
+	faith = rabbinic_faith
+
+	color = { 0.5 0.1 0.7 }
+	icon = merkabah
+
+	tenets = {
+		tenet_esotericism
+		tenet_inner_journey
+		tenet_asceticism
+	}
+
+	doctrines = {
+		doctrine_pluralism_righteous
+	}
+}
+
+karaism = {
+	faith = karaism
+
+	color = { 0.1 0.3 0.7 }
+
+	tenets = {
+		tenet_communal_identity
+		tenet_literalism
+		tenet_legalism
+	}
+
+	doctrines = {
+		temple_authority_toric_doctrine
+		special_doctrine_prophecy_of_malachi
+		doctrine_spiritual_head
+		doctrine_no_anointment
+	}
+}
+
+haymanot = {
+	faith = haymanot
+
+	color = { 0.1 0.5 0.9 }
+
+	tenets = {
+		tenet_communal_identity
+		tenet_religious_legal_pronouncements
+		tenet_asceticism
+	}
+
+	doctrines = {
+		temple_authority_kohanim_doctrine
+		special_doctrine_prophecy_of_malachi
+		doctrine_polygamy
+		doctrine_spiritual_head
+		doctrine_no_anointment
+	}
+}
+
+malabarism = {
+	faith = malabarism
+
+	color = { 0.3 0.5 0.7 }
+
+	tenets = {
+		tenet_communal_identity
+		tenet_religious_legal_pronouncements
+		tenet_eastern_syncretism
+	}
+
+	doctrines = {
+		temple_authority_toric_doctrine
+		special_doctrine_prophecy_of_malachi
+		doctrine_theocracy_lay_clergy
+		doctrine_temporal_head
+		doctrine_no_anointment
+	}
+}
+
+samaritan = {
+	faith = samaritan
+
+	color = { 0.1 0.8 0.8 }
+
+	tenets = {
+		tenet_communal_identity
+		tenet_literalism
+		tenet_ritual_celebrations
+	}
+
+	doctrines = {
+		temple_authority_samaritan_torah_doctrine
+		doctrine_spiritual_head
+		doctrine_pluralism_righteous
+		doctrine_monogamy
+	}
+}
+
+kabarism = {
+	faith = kabarism
+
+	color = { 0.1 0.3 0.7 }
+
+	tenets = {
+		tenet_religious_legal_pronouncements
+		tenet_legalism
+		tenet_communal_identity
+	}
+
+	doctrines = {
+		unreformed_faith_doctrine
+		temple_authority_rabbinic_doctrine
+		special_doctrine_prophecy_of_malachi
+		doctrine_spiritual_head
+		doctrine_adultery_men_accepted
+		doctrine_no_anointment
+	}
+}
+
+kohanism = {
+	faith = kohanism
+	name = kohanism
+	desc = kohanism_desc
+	color = { 0.1 0.6 0.6 }
+	icon = kohanist
+
+	tenets = {
+		tenet_communal_identity
+		tenet_literalism
+		tenet_ritual_celebrations
+	}
+
+	doctrines = {
+		temple_authority_kohanim_doctrine
+		doctrine_temporal_head
+		doctrine_pluralism_righteous
+		doctrine_monogamy
+	}
+}

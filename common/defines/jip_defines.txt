@@ -18,6 +18,8 @@
 		"wanua_government"
 		"meritocratic_government"
 		"steppe_admin_government"
+		"monastic_holy_order_government"
+		"ecclesiastical_government"
 		"mishpacha_government"
 	}
 }
