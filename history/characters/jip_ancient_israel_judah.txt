@@ -444,7 +444,7 @@ tafat_bat_shlomo = {
 
 king_rehavam_i = {
 	name = "RehavAm"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = davidic_line
@@ -562,7 +562,7 @@ shlomit_bat_rehavam = {
 
 king_aviyah_i = {
 	name = "Aviyah"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = davidic_line
@@ -608,7 +608,7 @@ king_yehoshafat_i = {
 
 king_yehoram_i = {
 	name = "Yehoram"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = davidic_line
@@ -718,7 +718,7 @@ shefatyahu_ben_yehoshafat = {
 
 navat = {
 	name = "Navat"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	-999.1.1 = {
 		birth = yes
@@ -730,7 +730,7 @@ navat = {
 
 king_jeroboam = {
 	name = "YeravAm"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = jeroboam_dynasty
 	father = navat
@@ -744,7 +744,7 @@ king_jeroboam = {
 
 king_nadav = {
 	name = "Nadav"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	father = king_jeroboam
 	dynasty = jeroboam_dynasty
@@ -761,7 +761,7 @@ king_nadav = {
 
 king_baasha = {
 	name = "Baasha"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = baasha_dynasty
 	-930.1.1 = {
@@ -777,7 +777,7 @@ king_baasha = {
 
 king_ellah_ben_baash = {
 	name = "Alla"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	father = king_baasha
 	dynasty = baasha_dynasty
@@ -794,7 +794,7 @@ king_ellah_ben_baash = {
 
 king_zimri = {
 	name = "Zimri"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	trait = murderer
 	dynasty = zimri_dynasty
@@ -811,7 +811,7 @@ king_zimri = {
 
 king_omri = {
 	name = "Omri"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = omriid_dynasty
 	-925.1.1 = {
@@ -824,7 +824,7 @@ king_omri = {
 
 king_ahab = {
 	name = "Ahab"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = omriid_dynasty
 	father = king_omri
@@ -841,7 +841,7 @@ king_ahab = {
 
 king_ahaziyahu_ben_ahab = {
 	name = "AhaziYahu"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = omriid_dynasty
 	father = king_ahab
@@ -856,7 +856,7 @@ king_ahaziyahu_ben_ahab = {
 
 king_yehoram_ben_ahab = {
 	name = "Yehoram"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = omriid_dynasty
 	father = king_ahab
@@ -891,7 +891,7 @@ queen_athaliah_i = {
 
 nimshi = {
 	name = "Nimshi"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	-899.1.1 = {
 		birth = yes
@@ -903,7 +903,7 @@ nimshi = {
 
 king_yehu = {
 	name = "Yehu"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = yehu_dynasty
 	father = nimshi
@@ -917,7 +917,7 @@ king_yehu = {
 
 king_yehoahaz_ben_yehu = {
 	name = "YehoAhaz"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = yehu_dynasty
 	father = king_yehu
@@ -931,7 +931,7 @@ king_yehoahaz_ben_yehu = {
 
 king_yehoash_ben_yehoahaz = {
 	name = "YehoAsh"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = yehu_dynasty
 	father = king_yehoahaz_ben_yehu
@@ -945,7 +945,7 @@ king_yehoash_ben_yehoahaz = {
 
 king_jeroboam_ii = {
 	name = "YeravAm"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = yehu_dynasty
 	father = king_yehoash_ben_yehoahaz
@@ -959,7 +959,7 @@ king_jeroboam_ii = {
 
 king_zechariah = {
 	name = "Zachariah"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = yehu_dynasty
 	father = king_jeroboam_ii
@@ -976,7 +976,7 @@ king_zechariah = {
 
 yavesh = {
 	name = "Yavesh"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	-799.1.1 = {
 		birth = yes
@@ -988,7 +988,7 @@ yavesh = {
 
 king_shalom = {
 	name = "Shalom"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	father = yavesh
 	dynasty = shalom_dynasty
@@ -1002,7 +1002,7 @@ king_shalom = {
 
 gadi = {
 	name = "Gadi"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	-799.1.1 = {
 		birth = yes
@@ -1014,7 +1014,7 @@ gadi = {
 
 king_menachem = {
 	name = "Menachem"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	father = gadi
 	dynasty = menachem_dynasty
@@ -1028,7 +1028,7 @@ king_menachem = {
 
 king_pekahaiah = {
 	name = "Pikchiyah"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	father = king_menachem
 	dynasty = menachem_dynasty
@@ -1045,7 +1045,7 @@ king_pekahaiah = {
 
 remalyahu = {
 	name = "Remalyahu"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	-779.1.1 = {
 		birth = yes
@@ -1057,7 +1057,7 @@ remalyahu = {
 
 king_pekach = {
 	name = "Pekach"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	father = remalyahu
 	dynasty = pekach_dynasty
@@ -1074,7 +1074,7 @@ king_pekach = {
 
 alla = {
 	name = "Alla"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	-779.1.1 = {
 		birth = yes
@@ -1086,7 +1086,7 @@ alla = {
 
 king_hoshea = {
 	name = "Hoshea"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	father = alla
 	dynasty = hoshea_dynasty
@@ -1102,7 +1102,7 @@ king_hoshea = {
 
 king_ahaziah_i = {
 	name = "Ahaziah"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = davidic_line
@@ -1183,7 +1183,7 @@ king_yotam_i = {
 
 king_ahaz_i = {
 	name = "Ahaz"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = davidic_line
@@ -1216,7 +1216,7 @@ king_chizkiyahu_i = {
 
 king_menashe_i = {
 	name = "Menashe"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = davidic_line
@@ -1231,7 +1231,7 @@ king_menashe_i = {
 
 king_amon_i = {
 	name = "Amon"
-	rite = semetic_pagan
+	rite = semitic_pagan
 	culture = "hebrew"
 	dynasty = davidite_dynasty
 	trait = davidic_line

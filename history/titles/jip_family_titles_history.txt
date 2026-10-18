@@ -1,4 +1,4 @@
-d_jip_bostanite = {
+﻿d_jip_bostanite = {
 	560.1.1 = {
 		government = mishpacha_government
 		succession_laws = {
@@ -81,12 +81,6 @@ d_jip_bostanite = {
 		holder = rabbinic_exilarchate_hasdai_ii
 	}
 
-	867.1.1 = {
-		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
-		}
-	}
-
 	870.1.1 = {
 		holder = rabbinic_exilarchate_yizthak_iii
 	}
@@ -135,12 +129,6 @@ d_jip_bostanite = {
 		holder = rabbinic_exilarchate_david_iv
 	}
 
-	1066.1.1 = {
-		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
-		}
-	}
-
 	1081.1.1 = {
 		holder = rabbinic_exilarchate_chizkiyahu_iii
 	}
@@ -159,12 +147,6 @@ d_jip_bostanite = {
 
 	1175.1.1 = {
 		holder = rabbinic_exilarchate_shmuel_i
-	}
-
-	1178.10.1 = {
-		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
-		}
 	}
 }
 
@@ -195,12 +177,6 @@ d_jip_ananite = {
 		holder = karaite_exilarchate_boaz_i
 	}
 
-	867.1.1 = {
-		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
-		}
-	}
-
 	897.1.1 = {
 		holder = karaite_exilarchate_david_i
 	}
@@ -217,12 +193,6 @@ d_jip_ananite = {
 		holder = karaite_exilarchate_chasdai_i
 	}
 
-	1066.1.1 = {
-		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
-		}
-	}
-
 	1109.1.1 = {
 		holder = karaite_exilarchate_solomon_ii
 	}
@@ -233,12 +203,6 @@ d_jip_ananite = {
 
 	1159.1.1 = {
 		holder = karaite_exilarchate_david_ii
-	}
-
-	1178.10.1 = {
-		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
-		}
 	}
 }
 
@@ -329,12 +293,6 @@ d_jip_nathanite = {
 	812.1.1 = {
 		holder = rabbinic_exilarchate_pinchas_ben_abdimi
 	}
-	
-	867.1.1 = {
-		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
-		}
-	}
 
 	870.1.1 = {
 		holder = rabbinic_exilarchate_hatzub_ben_pinchas
@@ -370,12 +328,6 @@ d_jip_makhirite = {
 		holder = makhirite_makhir_ben_isaac
 	}
 
-	867.1.1 = {
-		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
-		}
-	}
-
 	880.1.1 = {
 		holder = makhirite_levi_ben_makhir
 	}
@@ -397,12 +349,6 @@ d_jip_shealtiel = {
 	1060.1.1 = {
 		holder = solomon_bar_shealtiel
 	}
-
-	1066.1.1 = {
-		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 1066.1.1 }
-		}
-	}
 	
 	1097.12.13 = {
 		holder = mar_mencachem_bar_shealtiel
@@ -420,12 +366,6 @@ d_jip_shealtiel = {
 		holder = judah_bar_nathan
 	}
 
-	1178.10.1 = {
-		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 1078.10.1 }
-		}
-	}
-
 	1190.1.1 = {
 		holder = 0
 	}
@@ -437,9 +377,6 @@ d_jip_benveniste = {
 		government = mishpacha_government
 		succession_laws = { noble_family_succession_law same_faith_only_law }
 		holder = yosef_cidellus_shealtiel
-		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
-		}
 	}
 
 	1085.1.1 = {
@@ -461,9 +398,6 @@ d_jip_benveniste = {
 
 	1178.10.1 = {
 		holder = sheshet_benveniste_nasi
-		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
-		}
 	}
 
 }
@@ -489,12 +423,6 @@ d_jip_kalonymos = {
 
 	850.1.1 = {
 		holder = moses_i_kalonymos
-	}
-
-	867.1.1 = {
-		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 867.1.1 }
-		}
 	}
 
 	876.1.1 = {
@@ -535,12 +463,6 @@ d_jip_kalonymos = {
 		}
 	}
 
-	1066.1.1 = {
-		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 1066.9.15 }
-		}
-	}
-
 	1070.1.1 = {
 		holder = eliezer_the_great_kalonymos
 	}
@@ -560,12 +482,6 @@ d_jip_kalonymos = {
 	1149.1.1 = {
 		holder = judah_hasid_kalonymos
 	}
-
-	1178.10.1 = {
-		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
-		}
-	}
 }
 
 d_jip_maimon = {
@@ -582,12 +498,6 @@ d_jip_maimon = {
 
 	1169.1.1 = {
 		holder = maimonides_1
-	}
-
-	1178.10.1 = {
-		effect = {
-			destroy_landless_title_no_dlc_effect = { DATE = 1178.10.1 }
-		}
 	}
 
 	1204.12.12 = {
