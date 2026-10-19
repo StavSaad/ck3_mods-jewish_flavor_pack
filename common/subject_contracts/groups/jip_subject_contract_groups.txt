@@ -1,0 +1,23 @@
+﻿# Landed Mishpacha vassals pay in coin, not soldiers
+mishpacha_vassal = {
+	contracts = {
+		mishpacha_vassal_obligations
+	}
+}
+
+# Tax in exchange for the suzerain's protection; no levies, prestige or war duty
+tributary_mishpacha = {
+	is_tributary = yes
+	is_valid_tributary_contract = {
+		has_government = mishpacha_government
+	}
+	suzerain_line_type = line_suzerain
+	tributary_line_type = line_tributary
+	should_show_as_suzerain_realm_name = yes
+	should_show_as_suzerain_realm_color = yes
+
+	contracts = {
+		default_tributary_taxes
+		suzerain_war_participation_guarantee
+	}
+}

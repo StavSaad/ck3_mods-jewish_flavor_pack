@@ -23,6 +23,6 @@ jewish_admin_migration_on_action = {
 		domicile.domicile_location.county.holder.top_liege = {
 			save_scope_as = recipient_liege
 		}
-		break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:recipient_liege TRIBUTARY = root }
+		jip_establish_mishpacha_tributary_effect = { SUZERAIN = scope:recipient_liege TRIBUTARY = root }
 	}
 }

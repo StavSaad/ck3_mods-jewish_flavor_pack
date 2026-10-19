@@ -28,7 +28,7 @@
 	valid_holdings = { city_holding }
 	required_county_holdings = { city_holding }
 
-	vassal_contract_group = admin_vassal
+	vassal_contract_group = mishpacha_vassal
 
 	character_modifier = {
 		levy_size = -0.5
@@ -36,9 +36,12 @@
 		men_at_arms_limit = -2
 		knight_limit = -5
 		title_creation_cost_mult = -0.5
-		mercenary_hire_cost_mult = 2
+		mercenary_hire_cost_mult = -0.25
 		men_at_arms_maintenance = 0.5
 		diplomatic_range_mult = 2
+		monthly_income_mult = 0.15
+		monthly_influence_mult = 0.1
+		monthly_learning_lifestyle_xp_gain_mult = 0.1
 	}
 
 	can_get_government = {

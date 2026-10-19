@@ -1,0 +1,9 @@
+﻿mishpacha_vassal_obligations = {
+	obligation_levels = {
+		mishpacha_vassal_obligations_default = {
+			default = yes
+			tax = 0.3
+			levies = 0
+		}
+	}
+}
