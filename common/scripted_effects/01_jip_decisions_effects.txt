@@ -433,26 +433,41 @@ reestablish_canaanite_city_effect = {
 }
 
 rebuild_the_third_temple_effect = {
-	title:c_jerusalem = { 
-		title_province = {
-			remove_building = dome_of_the_rock_01
-			custom_description = {
-				text = replace_temple_description
-				add_special_building = temple_in_jerusalem_01
-				remove_building = temple_in_jerusalem_01
-			}
-		} 
+	title:c_jerusalem.title_province = { 
+		remove_building = dome_of_the_rock_01
+		custom_description = {
+			text = replace_temple_description
+			add_special_building = temple_in_jerusalem_01
+			remove_building = temple_in_jerusalem_01
+		}
 	}
-	custom_description = {
-		text = every_islamic_loses_fervor
-		religion:islam_religion = {
-			every_faith = {
-				limit = {
+	religion:islam_religion = {
+		every_faith = {
+			limit = {
+				AND = {
+					NOT = {
+						has_tenet_status = {
+							tenet = tenet_jewish_syncretism
+							status = core
+						}
+					}
 					NOT = { this = faith:druze }
 				}
-				change_fervor = {
-					value = -15
-					desc = fervor_loss_third_temple
+			}
+			remove_holy_site = {
+				target = holy_site:jerusalem
+			}
+			change_fervor = {
+				value = -15
+				desc = fervor_loss_third_temple
+			}
+			every_ruler = {
+				limit = {
+					has_faith = this
+				}
+				add_opinion = {
+					target = ROOT
+					modifier = destroyed_dome_of_the_rock_opinion
 				}
 			}
 		}

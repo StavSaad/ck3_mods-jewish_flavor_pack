@@ -76,6 +76,7 @@
  THEY_HOLD_TWO_OR_MORE_KINGDOM_TITLES_TRIGGER: "[CHARACTER.GetShortUIName|U] holds 2 or more [kingdoms|E]"
  every_islamic_loses_fervor: "Every Muslim faith loses #N 15#! [fervor|E]"
  every_muslim_ruler_loses_opinion: "Every Muslim ruler loses #N 100#! [opinion|E] of [CHARACTER.GetName]"
+ every_muslim_ruler_loses_opinion_first_past: "Every Muslim ruler loses #N 100#! [opinion|E] of You"
  replace_temple_description: "Gains [GetBuilding('temple_in_jerusalem_01').GetName] [special_building|E] slot"
  switch_house_effect_desc: "You and all your descendants of the same [house|e] become members of [house|e] [GetScriptedCharacterByHistoryID('king_david_i').GetDynastyName]"
  claim_exilarchate_decision: "Participate in Exilarchate Politics"

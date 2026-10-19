@@ -1,5 +1,6 @@
 ﻿replace_temple_description = {
 	global = replace_temple_description
+	global_past = replace_temple_description
 }
 
 every_islamic_loses_fervor = {
@@ -12,6 +13,7 @@ switch_house_effect_desc = {
 
 every_muslim_ruler_loses_opinion = {
 	global = every_muslim_ruler_loses_opinion
+	first_past = every_muslim_ruler_loses_opinion_first_past
 }
 
 reestablish_canaanite_city_decision_effect = {
@@ -20,4 +22,5 @@ reestablish_canaanite_city_decision_effect = {
 
 judaism_hof_restored_effect = {
 	global = judaism_hof_restored_effect
+	first_past = judaism_hof_restored_effect
 }
