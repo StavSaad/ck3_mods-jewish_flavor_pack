@@ -1,7 +1,7 @@
 # Rising Lion — Canaanite Flavor Pack: Mod Analysis
 
-**Version:** 0.13.0  
-**Game:** Crusader Kings 3 (supported version 1.19.*)  
+**Version:** 0.13.1  
+**Game:** Crusader Kings 3 (supported version 1.20.*)  
 **Workshop ID:** 3501948259  
 **Tags:** Religion, Culture, Decisions, Flavor
 
