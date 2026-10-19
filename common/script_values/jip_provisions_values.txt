@@ -1,0 +1,14 @@
+﻿# Overrides vanilla's value in 07_ep3_values.txt. travel_laamps_provisions_on_action gates on it without checking
+# domicile_uses_provisions, so estates (which have no provisions) count as starving on every move.
+# A negative threshold keeps Mishpacha families out of the provisions events.
+# Some callers compare inside a domicile scope, so the government check goes through root, which is the
+# character in every vanilla use (the travel on_action and EP3 character events).
+provisions_privation_threshold_start = {
+	value = define:NCharacter|PROVISIONS_LOW_WARNING
+	if = {
+		limit = {
+			root = { government_has_flag = government_is_mishpacha }
+		}
+		value = -1
+	}
+}

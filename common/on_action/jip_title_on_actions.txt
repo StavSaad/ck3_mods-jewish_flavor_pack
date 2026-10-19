@@ -29,3 +29,25 @@ exilarchate_inheritance_on_action = {
 		}
 	}
 }
+
+# A title is transferred to a new character
+# root = the new holder
+# scope:title = the title that changes hands
+on_title_gain = {
+	on_actions = {
+		# Delayed so a granted title's new liege relation is in place first
+		delay = { days = 1 }
+		mishpacha_landed_government_switch_on_action
+	}
+}
+
+mishpacha_landed_government_switch_on_action = {
+	trigger = {
+		has_government = mishpacha_government
+		is_landed = yes
+	}
+
+	effect = {
+		jip_mishpacha_adopt_landed_government_effect = yes
+	}
+}

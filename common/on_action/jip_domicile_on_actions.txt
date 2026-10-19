@@ -26,3 +26,35 @@ jewish_admin_migration_on_action = {
 		jip_establish_mishpacha_tributary_effect = { SUZERAIN = scope:recipient_liege TRIBUTARY = root }
 	}
 }
+
+on_travel_plan_start = {
+	on_actions = {
+		mishpacha_block_camp_travel_events_on_action
+	}
+}
+
+# root = the travelling character
+# The EP3 "Laamp Travel Danger Events" (pack animals, provisions, camp raids) are written for adventurer camps.
+# Each one is gated on a cooldown variable on the traveller's primary title, so setting those keeps them away
+# from a moving Mishpacha estate without overriding vanilla's travel danger on_action.
+mishpacha_block_camp_travel_events_on_action = {
+	trigger = {
+		has_government = mishpacha_government
+		current_travel_plan ?= { is_travel_with_domicile = yes }
+		exists = primary_title
+	}
+
+	effect = {
+		primary_title = {
+			set_variable = { name = had_ep3_laamp_flavour_ewan_4001 value = yes years = 3 } # Bandits!
+			set_variable = { name = had_ep3_laamp_flavour_ewan_4021 value = yes years = 3 } # Parched
+			set_variable = { name = had_ep3_laamp_flavour_ewan_4031 value = yes years = 3 } # Sickness in the Herd
+			set_variable = { name = had_ep3_laamp_flavour_ewan_4041 value = yes years = 3 } # Worn Down
+			set_variable = { name = had_ep3_laamp_flavour_ewan_4051 value = yes years = 3 } # Supplies Unaccounted For
+			set_variable = { name = had_ep3_laamp_flavour_ewan_4061 value = yes years = 3 } # Eyes in the Night
+			set_variable = { name = had_ep3_laamp_flavour_ewan_4071 value = yes years = 3 } # Slavers
+			set_variable = { name = had_ep3_laamp_flavour_ewan_4081 value = yes years = 3 } # Born of Desperation
+			set_variable = { name = had_ep3_laamp_flavour_ewan_4091 value = yes years = 3 } # Night Attack
+		}
+	}
+}

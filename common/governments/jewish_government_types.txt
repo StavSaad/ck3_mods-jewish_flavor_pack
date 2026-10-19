@@ -39,6 +39,7 @@
 		mercenary_hire_cost_mult = -0.25
 		men_at_arms_maintenance = 0.5
 		diplomatic_range_mult = 2
+		domicile_travel_speed = -0.75 # Moving the estate means moving the whole family; matches the adventurer camp penalty
 		monthly_income_mult = 0.15
 		monthly_influence_mult = 0.1
 		monthly_learning_lifestyle_xp_gain_mult = 0.1
