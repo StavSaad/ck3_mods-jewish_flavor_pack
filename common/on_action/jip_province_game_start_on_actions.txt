@@ -3,7 +3,14 @@
 		jip_867_effect_setup
 		jip_1066_effect_setup
         jip_1178_effect_setup
+		jip_tributary_effect_setup
     }
+}
+
+jip_tributary_effect_setup = {
+	effect = {
+		jip_tributary_setup_effect = yes
+	}
 }
 
 jip_867_effect_setup = {

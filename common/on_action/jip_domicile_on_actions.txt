@@ -1,23 +1,28 @@
-﻿on_domicile_moved = {
+﻿# on_domicile_moved fires on every province along the route, so the suzerain swap
+# runs once on arrival instead, mirroring vanilla's domicile handling in on_travel_plan_complete.
+on_travel_plan_complete = {
 	on_actions = {
 		jewish_admin_migration_on_action
 	}
 }
 
+# root = the travelling character
 jewish_admin_migration_on_action = {
 	trigger = {
-		exists = scope:owner
-		scope:owner = {
-			has_government = mishpacha_government
+		has_government = mishpacha_government
+		is_landed = no
+		current_travel_plan ?= { is_travel_with_domicile = yes }
+		# Only switch when the estate actually lands in a different realm
+		domicile.domicile_location.county.holder.top_liege ?= {
+			this != root
+			NOT = { root.suzerain ?= this }
 		}
 	}
 
 	effect = {
-		domicile_location.county.holder.top_liege = {
+		domicile.domicile_location.county.holder.top_liege = {
 			save_scope_as = recipient_liege
 		}
-		scope:owner = {
-			break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:recipient_liege TRIBUTARY = this }
-		}
+		break_subject_contract_and_establish_tributary_effect = { SUZERAIN = scope:recipient_liege TRIBUTARY = root }
 	}
 }

@@ -8,10 +8,9 @@
 		use_as_base_on_landed = yes
 		use_as_base_on_rank_up = yes
 		inherit_from_dynastic_government = yes
-		admin_allows_holding_multiple_primary_tier_titles = yes
 		sticky_government = yes
 		house_aspirations = yes
-		noble_families = no
+		noble_families = yes
 		deny_powerful_vassal = yes
 		uses_culture_and_house_head_named_realms = no
 		council = no
@@ -23,10 +22,6 @@
 	domicile_type = estate
 
 	court_generate_commanders = no
-
-	main_administrative_tier = duchy
-	min_appointment_tier = duchy
-	minimum_provincial_maa_tier = duchy
 
 	primary_holding = city_holding
 	primary_heritages = { heritage_israelite }
@@ -40,7 +35,6 @@
 		men_at_arms_cap = -2
 		men_at_arms_limit = -2
 		knight_limit = -5
-		vassal_limit = 0
 		title_creation_cost_mult = -0.5
 		mercenary_hire_cost_mult = 2
 		men_at_arms_maintenance = 0.5

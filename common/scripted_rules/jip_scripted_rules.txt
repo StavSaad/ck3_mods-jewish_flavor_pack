@@ -2,46 +2,18 @@
 	trigger_if = {
 		limit = { exists = county } #This will exclude sea provinces, impassable provinces, river provinces, etc
 		save_temporary_scope_as = province_temp
-		scope:owner = {
-			trigger_if = {
-				# Jews can migrate wherever as long as they dont have landed titles
-				limit = {
-					has_government = mishpacha_government
-				}
-				# Jews can only migrate into cities
-				scope:province_temp = {
-					custom_tooltip = {
-						text = can_move_domicile_jewish_city_tt
-						has_holding_type = city_holding
-					}
-				}
-				# TODO: implement jewish expulsions
-				# custom_tooltip = {
-				# 	text = can_move_domicile_jewish_exile_tt
-				# 	NOT = {
-				# 		is_laamp_exiled_from_province_trigger = {
-				# 			PROVINCE = scope:province_temp
-				# 			LAAMP = scope:owner
-				# 		}
-				# 	}
-				# }
-				scope:owner = { has_raised_armies = no }
-			}
-		}
 		scope:owner.domicile ?= {
 			# Estate
 			trigger_if = {
 				limit = {
-					OR = {
-						is_domicile_type = estate
-						is_domicile_type = east_asian_estate
-						is_domicile_type = japanese_manor
-					}
+					domicile_is_estate_trigger = yes
 				}
+				# Landless Jewish families can migrate to any city, even outside their suzerain's realm
 				trigger_if = {
 					limit = {
 						scope:owner = {
 							has_government = mishpacha_government
+							is_landed = no
 						}
 					}
 					scope:province_temp = {
@@ -50,6 +22,17 @@
 							has_holding_type = city_holding
 						}
 					}
+					scope:owner = { is_available = yes }
+					# TODO: implement jewish expulsions
+					# custom_tooltip = {
+					# 	text = can_move_domicile_jewish_exile_tt
+					# 	NOT = {
+					# 		is_laamp_exiled_from_province_trigger = {
+					# 			PROVINCE = scope:province_temp
+					# 			LAAMP = scope:owner
+					# 		}
+					# 	}
+					# }
 				}
 				trigger_else = {
 					# Cannot move estate outside top_liege realm
@@ -94,7 +77,7 @@
 						}
 					}
 				}
-				scope:owner = { has_raised_armies = no }
+				scope:owner = { is_available = yes }
 			}
 		}
 	}
