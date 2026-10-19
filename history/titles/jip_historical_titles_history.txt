@@ -1,4 +1,4 @@
-k_tyre = {
+﻿k_tyre = {
 	-993.1.1 = {
 		holder = abibaal_i
 	}

@@ -23,6 +23,8 @@
 		brahui
 		sogdian
 		khwarezmian
+		assyrian
+		bavli
 
 		# Arabic
 		bedouin
@@ -46,6 +48,10 @@
 
 		# Christian
 		nestorian
+
+		#Jewish
+		rabbinic_faith
+		karaism
 	}
 	regions = {
 		world_persian_empire

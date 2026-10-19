@@ -1,4 +1,4 @@
-# Auto generated file, do not edit manually. Created using console command dump_bookmark_portrait_for
+﻿# Auto generated file, do not edit manually. Created using console command dump_bookmark_portrait_for
 # History database id:167708
 bookmark_jip_gideon_alt={
 	type=male

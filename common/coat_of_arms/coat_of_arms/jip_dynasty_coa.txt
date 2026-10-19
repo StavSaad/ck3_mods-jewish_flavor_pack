@@ -1,4 +1,4 @@
-shealtiel_dynasty = {
+﻿shealtiel_dynasty = {
 	pattern="pattern_solid.dds"
 	color1 = "blue"
 	color2 = "red"

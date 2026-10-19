@@ -1,4 +1,4 @@
-# Auto generated file, do not edit manually. Created using console command dump_bookmark_portrait_for
+﻿# Auto generated file, do not edit manually. Created using console command dump_bookmark_portrait_for
 # History database id:rabbinic_exilarchate_pinchas_ben_abdimi
 bookmark_jip_pinchas={
 	type=male

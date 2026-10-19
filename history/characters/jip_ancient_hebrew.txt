@@ -1,4 +1,4 @@
-yaakov_ben_isaac = {
+﻿yaakov_ben_isaac = {
 	name = "Yaakov"
 	rite = kohanism
 	culture = "hebrew"
