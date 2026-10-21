@@ -2,8 +2,7 @@
 	county = c_nicosia
 	barony = b_limisol 
 
-	character_modifier = {
-		name = holy_site_tanas_effect_name
+	faith_character_modifier = {
 		monthly_prestige_gain_mult = 0.1
 	}
 }

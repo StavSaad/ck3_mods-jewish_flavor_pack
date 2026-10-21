@@ -148,7 +148,11 @@ jip_seize_expelled_gold_effect = {
 			set_variable = { name = jip_expulsion_top_payer value = scope:jip_departing_jew }
 		}
 		if = {
-			limit = { is_ai = no }
+			limit = {
+				is_ai = no
+				# Also keeps the engine from flagging the variable as unused (localization reads don't count)
+				exists = scope:jip_departing_jew.var:jip_expulsion_seized_amount
+			}
 			send_interface_message = {
 				type = event_generic_good
 				title = jip_expulsion_departure_msg
@@ -256,6 +260,7 @@ jip_jewish_lord_lose_lands_effect = {
 		limit = { NOT = { has_government = mishpacha_government } }
 		change_government = mishpacha_government
 	}
+	jip_mishpacha_ensure_succession_law_effect = yes
 	jip_mishpacha_flee_expulsion_effect = { EXPELLER = scope:jip_dispossessor }
 }
 

@@ -13,3 +13,155 @@ jip_expulsion_half_expeller_strength_value = {
 	value = scope:jip_expeller.max_military_strength
 	multiply = 0.5
 }
+
+# Character scope: how hostile a Christian or Muslim ruler is toward the Jews, from personality, debt and religious tenets.
+# Drives the AI's wish to expel the Jews (jip_expel_the_jews_ai_modifier) and Jewish families' wish to leave the realm.
+jip_jewish_hostility_value = {
+	value = 0
+	# Personality
+	if = {
+		limit = { has_trait = greedy }
+		add = 15
+	}
+	if = {
+		limit = { has_trait = zealous }
+		add = 15
+	}
+	if = {
+		limit = { has_trait = callous }
+		add = 10
+	}
+	if = {
+		limit = { has_trait = paranoid }
+		add = 10
+	}
+	if = {
+		limit = { has_trait = arbitrary }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = vengeful }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = compassionate }
+		add = -20
+	}
+	if = {
+		limit = { has_trait = generous }
+		add = -15
+	}
+	if = {
+		limit = { has_trait = cynical }
+		add = -15
+	}
+	if = {
+		limit = { has_trait = just }
+		add = -10
+	}
+	if = {
+		limit = { has_trait = forgiving }
+		add = -10
+	}
+	if = {
+		limit = { has_trait = trusting }
+		add = -5
+	}
+	# Seizing their property pays debts
+	if = {
+		limit = { gold < 0 }
+		add = 10
+	}
+	# Religious tolerance
+	if = {
+		limit = { rite = { rite_has_doctrine = doctrine_pluralism_fundamentalist } }
+		add = 15
+	}
+	if = {
+		limit = { rite = { rite_has_doctrine = doctrine_pluralism_pluralistic } }
+		add = -15
+	}
+	# Zealous tenets, from the rite and from personal conviction
+	if = { # Unrelenting Faith
+		limit = { rite = { rite_has_tenet = tenet_unrelenting_faith } }
+		add = 10
+	}
+	if = {
+		limit = { has_personal_tenet = tenet_unrelenting_faith }
+		add = 15
+	}
+	if = { # Armed Pilgrimages
+		limit = { rite = { rite_has_tenet = tenet_armed_pilgrimages } }
+		add = 10
+	}
+	if = {
+		limit = { has_personal_tenet = tenet_armed_pilgrimages }
+		add = 15
+	}
+	if = { # Miles Christi
+		limit = { rite = { rite_has_tenet = tenet_miles_christi } }
+		add = 10
+	}
+	if = {
+		limit = { has_personal_tenet = tenet_miles_christi }
+		add = 15
+	}
+	if = { # Mendicant Preachers
+		limit = { rite = { rite_has_tenet = tenet_mendicant_preachers } }
+		add = 10
+	}
+	if = {
+		limit = { has_personal_tenet = tenet_mendicant_preachers }
+		add = 15
+	}
+	# Tolerant tenets
+	if = { # Love Thy Neighbour
+		limit = { rite = { rite_has_tenet = tenet_love_thy_neighbour } }
+		add = -10
+	}
+	if = {
+		limit = { has_personal_tenet = tenet_love_thy_neighbour }
+		add = -15
+	}
+	if = { # Philanthropia
+		limit = { rite = { rite_has_tenet = tenet_philanthropia } }
+		add = -10
+	}
+	if = {
+		limit = { has_personal_tenet = tenet_philanthropia }
+		add = -15
+	}
+	if = { # Ritual Hospitality
+		limit = { rite = { rite_has_tenet = tenet_ritual_hospitality } }
+		add = -10
+	}
+	if = {
+		limit = { has_personal_tenet = tenet_ritual_hospitality }
+		add = -15
+	}
+	if = { # Pursuit of Knowledge
+		limit = { rite = { rite_has_tenet = tenet_pursuit_of_knowledge } }
+		add = -10
+	}
+	if = {
+		limit = { has_personal_tenet = tenet_pursuit_of_knowledge }
+		add = -15
+	}
+	# Dhimmi taxes pay better than a one-time seizure
+	if = { # Tax Nonbelievers
+		limit = { rite = { rite_has_tenet = tenet_tax_nonbelievers } }
+		add = -15
+	}
+	if = {
+		limit = { has_personal_tenet = tenet_tax_nonbelievers }
+		add = -20
+	}
+	if = { # Jewish Syncretism
+		limit = { rite = { rite_has_tenet = tenet_jewish_syncretism } }
+		add = -30
+	}
+	if = {
+		limit = { has_personal_tenet = tenet_jewish_syncretism }
+		add = -40
+	}
+}

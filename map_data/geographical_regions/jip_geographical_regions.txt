@@ -30,8 +30,13 @@ jip_region_kemet = {
 	}
 }
 
+# Canaan is mostly inside Beth Nahrain already, so only its Edomite and Arabian counties are added separately
+# (listing jip_region_canaan here counted those provinces twice)
 jip_fertile_crescent = {
 	regions = {
-		jip_region_canaan jip_region_kemet custom_beth_nahrain
+		jip_region_kemet custom_beth_nahrain
+	}
+	counties = {
+		c_balqa c_maab c_jilat c_al_aqabah c_tabuk c_maan c_tayma c_sirhan
 	}
 }

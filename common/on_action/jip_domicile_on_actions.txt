@@ -24,6 +24,23 @@ jewish_admin_migration_on_action = {
 			save_scope_as = recipient_liege
 		}
 		jip_mishpacha_change_liege_effect = { LIEGE = scope:recipient_liege }
+		# A player liege hears that a family has settled in the realm
+		if = {
+			limit = {
+				liege ?= scope:recipient_liege
+				scope:recipient_liege = { is_ai = no }
+			}
+			save_scope_as = jip_arriving_family
+			domicile.domicile_location = { save_scope_as = jip_arrival_city }
+			scope:recipient_liege = {
+				send_interface_message = {
+					type = event_generic_good
+					title = jip_mishpacha_migration_arrival_msg
+					desc = jip_mishpacha_migration_arrival_msg_desc
+					left_icon = scope:jip_arriving_family
+				}
+			}
+		}
 	}
 }
 

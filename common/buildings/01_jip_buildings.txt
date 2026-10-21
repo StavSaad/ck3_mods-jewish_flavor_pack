@@ -220,7 +220,7 @@ masada_03 = {
 	county_modifier = {
 		fort_level = 4
 		levy_size = 0.1
-		defender_bonus = 5
+		defender_holding_advantage = 5
 	}
 
 	ai_value = {

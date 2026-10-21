@@ -1,7 +1,5 @@
 ﻿l_english:
  edomite_name: "Edomite"
- edomite_collective_noun: "Edomites"
- edomite_prefix: "Edomi"
  edomite_hybrid_name: "$edomite_name$"
  edomite_hybrid_collective_noun: "$edomite_collective_noun$"
  edomite_hybrid_prefix: "$edomite_prefix$"

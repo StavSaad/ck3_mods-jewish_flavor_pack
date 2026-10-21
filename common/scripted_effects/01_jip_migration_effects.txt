@@ -1,0 +1,133 @@
+﻿# An AI Mishpacha family weighs its current home against the best realm within reach, and moves its estate there
+# when that realm is better by more than jip_mishpacha_migration_threshold_value. Otherwise the family stays.
+# The liege change happens on arrival, in jewish_admin_migration_on_action. Call in the family head's scope.
+jip_mishpacha_ai_migration_effect = {
+	save_scope_as = jip_migrant
+	domicile.domicile_location = { save_scope_as = jip_migrant_origin }
+	# How well the family fares where it is: its liege's realm plus the city it lives in
+	if = {
+		limit = { is_independent_ruler = no }
+		top_liege = {
+			save_scope_value_as = {
+				name = jip_current_host_score
+				value = jip_mishpacha_host_score_value
+			}
+		}
+	}
+	else = {
+		save_scope_value_as = {
+			name = jip_current_host_score
+			value = jip_mishpacha_no_host_score_value
+		}
+	}
+	scope:jip_migrant_origin = {
+		save_scope_value_as = {
+			name = jip_current_city_score
+			value = jip_mishpacha_migration_city_score_value
+		}
+	}
+	# The most welcoming crown within reach, discounted by how far its capital is
+	ordered_independent_ruler = {
+		limit = {
+			NOT = { this = scope:jip_migrant.top_liege }
+			highest_held_title_tier >= tier_kingdom
+			is_at_war = no
+			jip_ruler_has_expelled_jews_trigger = no
+			scope:jip_migrant = { in_diplomatic_range = prev }
+			# At least one city whose count is within the family's reach
+			any_realm_province = {
+				has_holding_type = city_holding
+				county.holder ?= { in_diplomatic_range = scope:jip_migrant }
+			}
+		}
+		order_by = {
+			value = jip_mishpacha_host_score_value
+			capital_province ?= {
+				subtract = jip_mishpacha_migration_distance_value
+			}
+		}
+		save_scope_as = jip_new_host
+	}
+	if = {
+		limit = { exists = scope:jip_new_host }
+		# The best city in that realm
+		scope:jip_new_host = {
+			ordered_realm_province = {
+				limit = {
+					has_holding_type = city_holding
+					county.holder ?= {
+						# The city's count must be within the family's diplomatic range, not just the crown
+						in_diplomatic_range = scope:jip_migrant
+						NOR = {
+							is_at_war = yes
+							any_liege_or_above = { is_at_war = yes }
+						}
+					}
+				}
+				order_by = jip_mishpacha_migration_city_score_value
+				save_scope_as = jip_migration_target
+			}
+		}
+	}
+	if = {
+		limit = { exists = scope:jip_migration_target }
+		scope:jip_new_host = {
+			save_scope_value_as = {
+				name = jip_new_host_score
+				value = jip_mishpacha_host_score_value
+			}
+		}
+		scope:jip_migration_target = {
+			save_scope_value_as = {
+				name = jip_new_city_score
+				value = jip_mishpacha_migration_city_score_value
+			}
+		}
+		# Gain over staying, less the threshold: only a clearly better home is worth the move
+		save_scope_value_as = {
+			name = jip_migration_gain
+			value = {
+				value = scope:jip_new_host_score
+				add = scope:jip_new_city_score
+				subtract = scope:jip_current_host_score
+				subtract = scope:jip_current_city_score
+				subtract = jip_mishpacha_migration_threshold_value
+			}
+		}
+	}
+	if = {
+		limit = {
+			# Never moves a player's family, whoever calls this
+			is_ai = yes
+			exists = scope:jip_migration_gain
+			scope:jip_migration_gain > 0
+		}
+		set_variable = {
+			name = jip_mishpacha_migration_cooldown
+			value = yes
+			years = 20
+		}
+		# A player liege hears that the family is leaving
+		if = {
+			limit = {
+				is_independent_ruler = no
+				liege = { is_ai = no }
+			}
+			liege = {
+				send_interface_message = {
+					type = event_generic_neutral
+					title = jip_mishpacha_migration_departure_msg
+					desc = jip_mishpacha_migration_departure_msg_desc
+					left_icon = scope:jip_migrant
+					right_icon = scope:jip_new_host
+				}
+			}
+		}
+		start_travel_plan = {
+			destination = scope:jip_migration_target
+			travel_with_domicile = yes
+			return_trip = no
+			players_use_planner = no
+		}
+	}
+}

@@ -298,7 +298,6 @@ create_kemet_decision_effect = {
 		title:d_bazin = { set_de_jure_liege_title = title:k_upper_egypt }
 		title:k_egypt = { 
 			set_title_name = k_lower_egypt
-			set_adjective = k_lower_egypt_adj
 		}
 	}
 	title:e_kemet = {
@@ -446,10 +445,8 @@ rebuild_the_third_temple_effect = {
 			limit = {
 				AND = {
 					NOT = {
-						has_tenet_status = {
-							tenet = tenet_jewish_syncretism
-							status = core
-						}
+						# Tenets live on the rite since 1.20
+						main_rite ?= { rite_has_tenet = tenet_jewish_syncretism }
 					}
 					NOT = { this = faith:druze }
 				}

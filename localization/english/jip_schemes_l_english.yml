@@ -2,6 +2,7 @@
  claim_exilarchate: "Claim the Exilarchate"
  claim_exilarchate_action: "Claim"
  claim_exilarchate_desc: "Make a play to install yourself as the Exilarch. This will give you a claim on the title, and make you an [elector|E]."
+ claim_exilarchate_desc_general: "$claim_exilarchate_desc$"
  jip_claim_exilarchate.001.title: "A Claim on the Exilarchate"
  jip_claim_exilarchate.001.desc: "Through a lot of groundwork, I have created the framework for me to be considered as a viable candidate for the position of Exilarch. I have also gained the right to be an [elector|E] for the title."
  jip_claim_exilarchate.001.a: "Now it is time to get elected..."

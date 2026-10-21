@@ -21,3 +21,35 @@
 		gender_law = male_only
 	}
 }
+
+# Realm succession for Mishpacha families. No vanilla succession order law starts on this government,
+# and without one the engine can't build a succession for the family head ("unhandled succession order [invalid]").
+# The family title itself follows noble_family_succession_law; this covers the rest of the head's titles.
+mishpacha_succession_law = {
+	law_group_type = succession_order_laws
+	index = 30
+
+	can_keep = {
+		government_has_flag = government_is_mishpacha
+	}
+	can_have = {
+		government_has_flag = government_is_mishpacha
+	}
+	can_pass = {
+		government_has_flag = government_is_mishpacha
+	}
+	should_start_with = {
+		government_has_flag = government_is_mishpacha
+	}
+	succession = {
+		order_of_succession = inheritance
+		traversal_order = children
+		rank = oldest
+		title_division = single_heir
+	}
+	flag = can_designate_heirs
+
+	potential = {
+		government_has_flag = government_is_mishpacha
+	}
+}

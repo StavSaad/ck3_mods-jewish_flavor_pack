@@ -1,0 +1,80 @@
+﻿# Character scope: how good a home this ruler's realm is for the Mishpacha family scope:jip_migrant.
+# Used on independent rulers, both the family's current top liege and the realms it might move to.
+jip_mishpacha_host_score_value = {
+	value = 0
+	subtract = jip_jewish_hostility_value
+	# A Jewish crown, or how the ruler's faith views the family's
+	if = {
+		limit = { religion = religion:judaism_religion }
+		add = 60
+	}
+	else_if = {
+		limit = {
+			faith = {
+				faith_hostility_level = {
+					target = scope:jip_migrant.faith
+					value >= faith_evil_level
+				}
+			}
+		}
+		add = -20
+	}
+	else_if = {
+		limit = {
+			faith = {
+				faith_hostility_level = {
+					target = scope:jip_migrant.faith
+					value >= faith_hostile_level
+				}
+			}
+		}
+		add = -10
+	}
+	# What the ruler thinks of the family
+	add = {
+		value = "opinion(scope:jip_migrant)"
+		multiply = 0.5
+	}
+	# Existing Jewish communities
+	add = {
+		value = 0
+		every_realm_county = {
+			limit = { faith.religion = religion:judaism_religion }
+			add = 4
+		}
+		max = 40
+	}
+	# Large realms are safer and offer more trade
+	if = {
+		limit = { highest_held_title_tier >= tier_empire }
+		add = 10
+	}
+}
+
+# Province scope: how good a city this is for scope:jip_migrant's estate, coming from scope:jip_migrant_origin.
+# Families prefer nearby, developed cities with a Jewish community.
+jip_mishpacha_migration_city_score_value = {
+	value = 0
+	if = {
+		limit = { faith.religion = religion:judaism_religion }
+		add = 30
+	}
+	add = {
+		value = county.development_level
+		multiply = 0.5
+	}
+	subtract = jip_mishpacha_migration_distance_value
+}
+
+# Province scope: the cost of moving the estate here from scope:jip_migrant_origin.
+# Roughly 20 at 1000 map pixels and 80 at 2000, so families rarely cross the known world.
+jip_mishpacha_migration_distance_value = {
+	value = "squared_distance(scope:jip_migrant_origin)"
+	divide = 50000
+}
+
+# How much better a new home must be before a family uproots its estate. Below this, families stay put.
+jip_mishpacha_migration_threshold_value = 40
+
+# Current-home score of a family with no liege: they look for a crown to protect them
+jip_mishpacha_no_host_score_value = -25

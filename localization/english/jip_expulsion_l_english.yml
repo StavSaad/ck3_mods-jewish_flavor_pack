@@ -58,3 +58,9 @@
  jip_expulsion.0004.t: "The Edict Enforced"
  jip_expulsion.0004.desc: "A month has passed since the edict. [ROOT.Char.MakeScope.Var('jip_expulsion_departed_count').GetValue|0] Jews have left [ROOT.Char.GetPrimaryTitle.GetNameNoTier], and the crown's collectors have brought in @gold_icon! [ROOT.Char.MakeScope.Var('jip_expulsion_seized_gold').GetValue|0] [gold|E].\n\nThe richest of them, [jip_expulsion_top_payer.GetTitledFirstName], alone handed over @gold_icon! [ROOT.Char.MakeScope.Var('jip_expulsion_top_payer_gold').GetValue|0]. The treasury is fuller, the market quieter."
  jip_expulsion.0004.a: "The realm is better for it."
+
+ # AI migration
+ jip_mishpacha_migration_departure_msg: "A Jewish Family Leaves"
+ jip_mishpacha_migration_departure_msg_desc: "[jip_migrant.GetShortUIName|U] is moving [jip_migrant.GetHerHis] estate to [jip_migration_target.GetName], in the realm of [jip_new_host.GetShortUIName]"
+ jip_mishpacha_migration_arrival_msg: "A Jewish Family Settles"
+ jip_mishpacha_migration_arrival_msg_desc: "[jip_arriving_family.GetShortUIName|U] has settled [jip_arriving_family.GetHerHis] estate in [jip_arrival_city.GetName] and joined the realm"

@@ -12,3 +12,31 @@ jip_is_mishpacha_family_title_trigger = {
 		this = title:d_jip_shealtiel
 	}
 }
+
+# Character scope: an AI Mishpacha family that is free to consider moving its estate to another realm
+jip_mishpacha_ai_can_migrate_trigger = {
+	is_ai = yes
+	has_government = mishpacha_government
+	is_landed = no
+	is_adult = yes
+	is_available = yes
+	is_at_war = no
+	NOR = {
+		# Expelled families have their own journey
+		has_variable = jip_expelled_by
+		has_variable = jip_expulsion_refuge
+		has_variable = jip_mishpacha_migration_cooldown
+		# The Exilarchs keep their seat in Babylon
+		has_title = title:d_exilarchate
+		has_title = title:d_karaite_exilarchate
+	}
+	exists = domicile
+	location = domicile.domicile_location
+	# Same rule as moving the estate by hand: no moving out of a realm at war
+	domicile.domicile_location.county.holder ?= {
+		NOR = {
+			is_at_war = yes
+			any_liege_or_above = { is_at_war = yes }
+		}
+	}
+}

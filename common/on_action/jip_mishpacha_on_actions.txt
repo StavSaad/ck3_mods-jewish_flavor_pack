@@ -13,6 +13,8 @@ on_faith_conversion = {
 yearly_playable_pulse = {
 	on_actions = {
 		mishpacha_left_judaism_on_action
+		jip_mishpacha_ai_migration_on_action
+		jip_mishpacha_succession_law_on_action
 	}
 }
 
@@ -43,5 +45,31 @@ jip_expulsion_refuge_arrival_on_action = {
 on_travel_plan_abort = {
 	on_actions = {
 		jip_expulsion_refuge_arrival_on_action
+	}
+}
+
+# AI families now and then weigh moving their estate to a more welcoming realm (about every three years)
+# root = the family head
+jip_mishpacha_ai_migration_on_action = {
+	trigger = {
+		jip_mishpacha_ai_can_migrate_trigger = yes
+	}
+	effect = {
+		random = {
+			chance = 33
+			jip_mishpacha_ai_migration_effect = yes
+		}
+	}
+}
+
+# Safety net: a Mishpacha family head without a realm succession law can't have a succession built
+# root = the character
+jip_mishpacha_succession_law_on_action = {
+	trigger = {
+		has_government = mishpacha_government
+		NOT = { has_realm_law = mishpacha_succession_law }
+	}
+	effect = {
+		jip_mishpacha_ensure_succession_law_effect = yes
 	}
 }

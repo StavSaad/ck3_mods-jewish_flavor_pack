@@ -10,6 +10,10 @@
 jip_liege_effect_setup = {
 	effect = {
 		jip_liege_setup_effect = yes
+		every_ruler = {
+			limit = { has_government = mishpacha_government }
+			jip_mishpacha_ensure_succession_law_effect = yes
+		}
 	}
 }
 

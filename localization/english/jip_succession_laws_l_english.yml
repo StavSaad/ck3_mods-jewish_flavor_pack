@@ -5,3 +5,6 @@
  exilarchate_elective_candidates_tooltip: "All legitimate adult members of the current ruler's [dynasty|E] who are not in line to inherit a Theocracy or Republic are valid candidates under Exilarchate Elective."
  exilarchate_elective_electors: "Dynasty Members And Claimants"
  exilarchate_elective_electors_tooltip: "All legitimate adult members of the current ruler's [dynasty|E] who are not in line to inherit a Theocracy or Republic are valid [electors|E] under Exilarchate Elective."
+ mishpacha_succession_law: "Mishpacha Succession"
+ mishpacha_succession_law_subname: "Oldest Child Inherits"
+ mishpacha_succession_law_effects: "Under $mishpacha_succession_law$ your oldest [child|E] (or next closest relative) inherits all of your [titles|E]. The family title itself passes to the heir chosen by the family."
