@@ -49,3 +49,31 @@
 [] Jewish-flavored Exilarchate election vote tooltips (Nasi, Melech, Nagid) replacing generic feudal terms
 [] Added a new icon for Mishpacha Government, instead of administrative one.
 [] Moving the domicile of Mishpacha government now uses the travel system.
+
+== Version 0.14.0 ==
+[] Updated for Crusader Kings III 1.20 (faiths, rites and tenets moved to the new religion structure)
+[] Copts now speak the vanilla Egyptian language instead of a separate Coptic one
+[] Clearing the Temple grounds now removes Jerusalem as a holy site of the Islamic faiths
+[] Mishpacha: rebalanced the government. Mercenaries are 25% cheaper instead of more expensive, and families gain +15% income, +10% influence and +10% learning lifestyle experience
+[] Mishpacha: families are now vassals of the realm their estate lies in, under a new "Charter of Privileges" contract (communal taxes, religious rights, Beit Din rights, trade rights)
+[] Mishpacha: families under a Muslim liege who taxes nonbelievers start paying jizya
+[] Mishpacha: removed the title revocation protection option from the charter
+[] Mishpacha: moving the estate to another realm makes the family a vassal of that realm's ruler
+[] Mishpacha: the estate can be moved from the province view
+[] Mishpacha: moving the estate takes longer (the whole family travels), and camp provision and herd travel events no longer fire for it
+[] Mishpacha: a family that gains land adopts its liege's government, or feudal if there is none
+[] Mishpacha: a family head who leaves Judaism steps down in favor of the nearest Jewish man of their house
+[] Mishpacha: AI families now move to more welcoming realms on their own, when the new home is clearly better than staying
+[] Mishpacha: added Mishpacha Succession, fixing family heads and Exilarchs who had no working succession
+[] Added the "Expel the Jews" decision for Christian and Muslim rulers. Jewish families leave the realm, Jewish courtiers are dismissed, Jewish lords lose their lands, and half of every departing Jew's gold is seized
+[] Expelled Jews may resist in a single shared war; a lord who surrenders becomes a landless Mishpacha family
+[] Added the "Readmit the Jews" decision; edicts concerning the Jews have a 10-year cooldown
+[] The AI decides on expulsion and readmission based on traits, rite tenets and personal tenets
+[] Added notifications and a summary event for the ruler who expels the Jews
+[] Added the Court Financier court position for non-Jewish dukes and above: raises domain taxes and Jewish opinion, angers zealots, and brings debt-collection events
+[] Kohenism: replaced Communal Identity with the new Kehunah tenet (hereditary priesthood, tithes), with its own icon
+[] Kohenism: the faith and its rite now agree on doctrines (the Kohen Gadol is a spiritual head)
+[] Kohenism: new faith icon in the 1.20 style
+[] Fixed the Fertile Crescent region counting Levantine provinces twice
+[] Fixed the Persian Struggle not including the Bavlim culture
+[] Fixed many errors: Tanas holy site, Canaanite faith tenets, Lower Egypt adjective, Third Temple tenet check, Masada defense bonus, Maimonides' traits, Claim Exilarchate description, Semitic pagan religious head, and duplicate localization keys
