@@ -1,4 +1,4 @@
-﻿# on_domicile_moved fires on every province along the route, so the suzerain swap
+﻿# on_domicile_moved fires on every province along the route, so the liege change
 # runs once on arrival instead, mirroring vanilla's domicile handling in on_travel_plan_complete.
 on_travel_plan_complete = {
 	on_actions = {
@@ -15,7 +15,7 @@ jewish_admin_migration_on_action = {
 		# Only switch when the estate actually lands in a different realm
 		domicile.domicile_location.county.holder.top_liege ?= {
 			this != root
-			NOT = { root.suzerain ?= this }
+			NOT = { root.liege ?= this }
 		}
 	}
 
@@ -23,7 +23,7 @@ jewish_admin_migration_on_action = {
 		domicile.domicile_location.county.holder.top_liege = {
 			save_scope_as = recipient_liege
 		}
-		jip_establish_mishpacha_tributary_effect = { SUZERAIN = scope:recipient_liege TRIBUTARY = root }
+		jip_mishpacha_change_liege_effect = { LIEGE = scope:recipient_liege }
 	}
 }
 

@@ -8,10 +8,30 @@
  mishpacha_government_house_attribute_flavor_name: "[powerful_family_attribute|E]"
  mishpacha_government_house_attribute_flavor_name_no_tooltip: "$game_concept_powerful_family_attribute$"
  mishpacha_icon_concept: "[mishpacha_i|E]"
- mishpacha_vassal: "$mishpacha_government$"
  mishpacha_vassal_desc: "$game_concept_mishpacha_desc$"
- mishpacha_vassal_obligations: "Communal [taxes|E]"
- mishpacha_vassal_obligations_default: "Communal [taxes|E]"
- mishpacha_vassal_obligations_default_desc: "The family pays its dues in coin rather than soldiers."
- tributary_mishpacha: "Jewish Community Tributary"
- tributary_mishpacha_desc: "A Jewish Community [tributary|E] pays [taxes|E] to their [suzerain|E] in exchange for protection. They owe no [levies|E] and are not obliged to join their [suzerain|E]'s [wars|E]."
+ mishpacha_vassal: "Charter of Privileges"
+ mishpacha_communal_taxes: "Communal [taxes|E]"
+ mishpacha_tax_low: "Low Communal [taxes|E]"
+ mishpacha_tax_low_short: "Low"
+ mishpacha_tax_normal: "Normal Communal [taxes|E]"
+ mishpacha_tax_normal_short: "Normal"
+ mishpacha_tax_high: "High Communal [taxes|E]"
+ mishpacha_tax_high_short: "High"
+ mishpacha_beit_din_rights: "Beit Din"
+ mishpacha_beit_din_rights_none: "No Beit Din"
+ mishpacha_beit_din_rights_none_short: "None"
+ mishpacha_beit_din_rights_granted: "Beit Din Granted"
+ mishpacha_beit_din_rights_granted_short: "Granted"
+ mishpacha_beit_din_rights_granted_desc: "#emphasis #bold [vassal|E] Privilege:#!#!
+$EFFECT_LIST_BULLET$ The community judges its own under Jewish law
+
+#flavor Disputes between the family's people are settled by their own rabbinical court, not the [liege|E]'s.#!"
+ mishpacha_trade_rights: "Trade Rights"
+ mishpacha_trade_rights_none: "No Trade Rights"
+ mishpacha_trade_rights_none_short: "None"
+ mishpacha_trade_rights_granted: "Trade Rights Granted"
+ mishpacha_trade_rights_granted_short: "Granted"
+ mishpacha_trade_rights_granted_desc: "#emphasis #bold [vassal|E] Privilege:#!#!
+$EFFECT_LIST_BULLET$ The family may trade freely throughout the [realm|E]
+
+#flavor Markets, tolls and trade routes are open to the family, and the [liege|E] shares in the profits.#!"

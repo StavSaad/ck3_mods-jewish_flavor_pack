@@ -55,3 +55,93 @@ jip_mishpacha_adopt_landed_government_effect = {
 		change_government = feudal_government
 	}
 }
+
+
+# A Mishpacha family head who leaves Judaism steps down. Their titles pass to the nearest Jewish man of their house:
+# children first, then close family, extended family and the rest of the house, eldest first within each group.
+# With no such heir, the family title is destroyed and the convert becomes Administrative, keeping any other titles and their liege.
+jip_mishpacha_leave_faith_effect = {
+	save_scope_as = jip_convert
+	if = {
+		limit = { is_independent_ruler = no }
+		liege = { save_scope_as = jip_convert_liege }
+	}
+	domicile ?= { domicile_location = { save_scope_as = jip_convert_location } }
+	if = {
+		limit = {
+			house ?= {
+				any_house_member = {
+					this != scope:jip_convert
+					is_male = yes
+					religion = religion:judaism_religion
+				}
+			}
+		}
+		house = {
+			ordered_house_member = {
+				limit = {
+					this != scope:jip_convert
+					is_male = yes
+					religion = religion:judaism_religion
+				}
+				order_by = {
+					value = age
+					if = {
+						limit = { is_child_of = scope:jip_convert }
+						add = 3000
+					}
+					else_if = {
+						limit = { is_close_family_of = scope:jip_convert }
+						add = 2000
+					}
+					else_if = {
+						limit = { is_extended_family_of = scope:jip_convert }
+						add = 1000
+					}
+				}
+				save_scope_as = jip_new_head
+			}
+		}
+		create_title_and_vassal_change = {
+			type = stepped_down
+			save_scope_as = jip_convert_change
+			add_claim_on_loss = no
+		}
+		every_held_title = {
+			change_title_holder_include_vassals = {
+				holder = scope:jip_new_head
+				change = scope:jip_convert_change
+			}
+		}
+		resolve_title_and_vassal_change = scope:jip_convert_change
+		# A landed heir keeps their own government and realm, the family title just joins their other titles
+		scope:jip_new_head = {
+			if = {
+				limit = { is_landed = no }
+				if = {
+					limit = { NOT = { has_government = mishpacha_government } }
+					change_government = mishpacha_government
+				}
+				# Keep the family where it was and under the same liege
+				if = {
+					limit = { exists = scope:jip_convert_location }
+					domicile ?= { move_domicile = scope:jip_convert_location }
+				}
+				if = {
+					limit = {
+						exists = scope:jip_convert_liege
+						scope:jip_convert_liege != this
+					}
+					jip_mishpacha_change_liege_effect = { LIEGE = scope:jip_convert_liege }
+				}
+			}
+		}
+	}
+	else = {
+		every_held_title = {
+			limit = { is_noble_family_title = yes }
+			destroy_title = this
+		}
+		change_government = administrative_government
+	}
+}

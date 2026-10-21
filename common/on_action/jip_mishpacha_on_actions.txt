@@ -1,0 +1,28 @@
+﻿# Character converts faith through the convert window or the matching script effect
+# root = the converted character
+on_faith_conversion = {
+	on_actions = {
+		# Delayed so vanilla's faith_conversion.0003 has converted the family first, keeping them out of the heir pick
+		delay = { days = 1 }
+		mishpacha_left_judaism_on_action
+	}
+}
+
+# Yearly safety net for conversions that bypass on_faith_conversion, e.g. set_character_faith in events
+# root = the character
+yearly_playable_pulse = {
+	on_actions = {
+		mishpacha_left_judaism_on_action
+	}
+}
+
+mishpacha_left_judaism_on_action = {
+	trigger = {
+		has_government = mishpacha_government
+		NOT = { religion = religion:judaism_religion }
+	}
+
+	effect = {
+		jip_mishpacha_leave_faith_effect = yes
+	}
+}

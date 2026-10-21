@@ -25,7 +25,14 @@
 	allow = {
 		is_adult = yes
 		is_imprisoned = no
-		is_landed = yes
+		# Mishpacha families are landless by design, their family title makes them rulers
+		trigger_if = {
+			limit = { has_government = mishpacha_government }
+			is_ruler = yes
+		}
+		trigger_else = {
+			is_landed = yes
+		}
 		highest_held_title_tier > tier_county
 		scope:target.holder = {
 			has_faith = scope:owner.faith
