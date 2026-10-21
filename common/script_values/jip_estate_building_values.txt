@@ -1,0 +1,33 @@
+﻿# Values for the Mishpacha estate buildings in jip_mishpacha_estate_buildings.txt
+
+# How much more an AI family must gain before it leaves a Beit Knesset behind, per tier
+jip_beit_knesset_ties_1_value = 10
+jip_beit_knesset_ties_2_value = 20
+jip_beit_knesset_ties_3_value = 30
+
+# AI weight against expelling the Jews from a realm where a Mishpacha family keeps a Beit Knesset
+jip_beit_knesset_expulsion_ai_value = -20
+
+# Court Financier aptitude for members of a house whose head keeps a Counting House, at tiers 2, 4 and 6
+jip_counting_house_financier_aptitude_1_value = 5
+jip_counting_house_financier_aptitude_2_value = 10
+jip_counting_house_financier_aptitude_3_value = 15
+
+# Character scope: how strongly the family's Beit Knesset holds it to its city. Added to the migration threshold.
+jip_mishpacha_congregation_ties_value = {
+	value = 0
+	domicile ?= {
+		if = {
+			limit = { has_domicile_building_or_higher = jip_beit_knesset_06 }
+			add = jip_beit_knesset_ties_3_value
+		}
+		else_if = {
+			limit = { has_domicile_building_or_higher = jip_beit_knesset_05 }
+			add = jip_beit_knesset_ties_2_value
+		}
+		else_if = {
+			limit = { has_domicile_building_or_higher = jip_beit_knesset_04 }
+			add = jip_beit_knesset_ties_1_value
+		}
+	}
+}

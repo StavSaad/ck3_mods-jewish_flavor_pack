@@ -3,6 +3,14 @@ jip_expel_the_jews_ai_modifier = {
 	modifier = {
 		add = jip_jewish_hostility_value
 	}
+	# Tearing down a synagogue makes the edict harder to swallow
+	modifier = {
+		add = jip_beit_knesset_expulsion_ai_value
+		any_ruler = {
+			jip_mishpacha_in_realm_of_trigger = { RULER = root }
+			domicile ?= { has_domicile_building_or_higher = jip_beit_knesset_04 }
+		}
+	}
 }
 
 # AI weights for Readmit the Jews. Root = the ruler considering it.

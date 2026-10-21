@@ -92,6 +92,8 @@ jip_mishpacha_ai_migration_effect = {
 				subtract = scope:jip_current_host_score
 				subtract = scope:jip_current_city_score
 				subtract = jip_mishpacha_migration_threshold_value
+				# A congregation holds the family where it is
+				subtract = jip_mishpacha_congregation_ties_value
 			}
 		}
 	}

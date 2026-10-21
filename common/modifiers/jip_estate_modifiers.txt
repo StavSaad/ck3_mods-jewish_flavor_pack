@@ -1,0 +1,23 @@
+﻿# The Villa line (estate_main_01 to 05) gives influence, which Mishpacha families don't have.
+# A Mishpacha family head gets prestige in its place, one modifier per Villa tier (see jip_mishpacha_refresh_villa_modifier_effect).
+# Plain monthly_prestige, so it shows as its own line in the prestige breakdown rather than inside the domicile's income.
+jip_mishpacha_villa_1 = {
+	icon = estate_positive
+	monthly_prestige = 1
+}
+jip_mishpacha_villa_2 = {
+	icon = estate_positive
+	monthly_prestige = 1.5
+}
+jip_mishpacha_villa_3 = {
+	icon = estate_positive
+	monthly_prestige = 2
+}
+jip_mishpacha_villa_4 = {
+	icon = estate_positive
+	monthly_prestige = 2.5
+}
+jip_mishpacha_villa_5 = {
+	icon = estate_positive
+	monthly_prestige = 3
+}

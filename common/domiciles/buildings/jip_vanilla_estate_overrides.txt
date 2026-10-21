@@ -1,0 +1,557 @@
+﻿# Overrides of vanilla estate buildings from 00_estate_buildings.txt, unchanged except for can_construct_potential,
+# which hides them from Mishpacha families. Hiding a line's first tier (or the tier where a copy branches off)
+# hides the rest of it. Keep in sync with vanilla when the game updates.
+
+market_01 = {
+	construction_time = 730
+	allowed_domicile_types = { estate }
+
+	# Mishpacha families build the Counting House instead (jip_mishpacha_estate_buildings.txt)
+	can_construct_potential = {
+		NOT = { jip_can_build_mishpacha_estate_building_trigger = yes }
+	}
+
+	cost = {
+		gold = {
+			value = estate_external_building_high_cost_tier_1_value
+			if = {
+				limit = { has_character_modifier = raid_insight_market }
+				multiply = 0.75
+				desc = raid_insight_market
+			}
+		}
+	}
+	
+	parameters = {
+		estate_increase_powerful_family_rating = yes
+	}
+
+	character_modifier = {
+		domicile_monthly_gold_add = 0.1
+	}
+	
+	ai_value = {
+		value = 9
+		if = { # Let's make sure the AI builds at least one good income building
+			limit = {
+				NOR = {
+					has_domicile_building_or_higher = grain_field_01
+					has_domicile_building_or_higher = vineyard_01
+					has_domicile_building_or_higher = olive_01
+				}
+			}
+			add = 20
+		}
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_market.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_market_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_market_chinese_mask.png"
+		soundeffect = "event:/DLC/EP4/SFX/UI/domicile_buildings/tgp_ui_domicile_building_market_asian"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_market.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_market_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_market_mena_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_market"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_market.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_market_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_market_western_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_market"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_market.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_market_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_market_byzantine_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_market"
+	}
+}
+
+guest_room_01 = {
+	construction_time = 730
+	allowed_domicile_types = { estate }
+
+	# Mishpacha families build an influence-free copy instead (jip_hachnasat_orchim_01)
+	can_construct_potential = {
+		NOT = { jip_can_build_mishpacha_estate_building_trigger = yes }
+	}
+	slot_type = internal
+	previous_building = estate_main_01
+
+	cost = {
+		gold = {
+			value = estate_internal_building_high_cost_tier_1_value
+			if = {
+				limit = { has_character_modifier = raid_insight_guest_room }
+				multiply = 0.75
+				desc = raid_insight_guest_room
+			}
+		}
+	}
+
+	character_modifier = {
+		domicile_monthly_influence_mult = 0.02
+		courtier_and_guest_opinion = 2
+	}
+	
+	ai_value = {
+		value = 8
+		if = {
+			limit = {
+				scope:owner.culture ?= {
+					has_cultural_tradition = tradition_esteemed_hospitality
+				}
+			}
+			add = 2
+		}
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_guest.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_villa_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_byzantine_mask.png"
+	}
+}
+
+wine_cellar_01 = {
+	construction_time = 730
+	allowed_domicile_types = { estate }
+
+	# Its only use is influence at feasts, which Mishpacha families do not have
+	can_construct_potential = {
+		NOT = { jip_can_build_mishpacha_estate_building_trigger = yes }
+	}
+	slot_type = internal
+	previous_building = estate_main_01
+
+	cost = {
+		gold = {
+			value = estate_internal_building_high_cost_tier_1_value
+			if = {
+				limit = { has_character_modifier = raid_insight_wine_cellar }
+				multiply = 0.75
+			}
+		}
+	}
+	
+	parameters = {
+		estate_unlock_feast_influence_option_1 = yes
+	}
+	
+	ai_value = {
+		value = 8
+		if = {
+			limit = {
+				scope:owner.culture ?= {
+					OR = {
+						has_cultural_pillar = heritage_byzantine
+						has_cultural_tradition = tradition_culinary_art
+					}
+				}
+			}
+			add = 3
+		}
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_cellar.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_villa_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_byzantine_mask.png"
+	}
+}
+
+temple_small_01 = {
+	construction_time = 730
+	allowed_domicile_types = { estate }
+
+	# Mishpacha families build an influence-free copy instead (jip_temple_small_01)
+	can_construct_potential = {
+		NOT = { jip_can_build_mishpacha_estate_building_trigger = yes }
+	}
+
+	can_construct = {
+		NOT = {
+			government_has_flag = government_is_celestial
+		}
+	}
+
+	cost = {
+		gold = {
+			value = estate_external_building_normal_cost_tier_1_value
+			if = {
+				limit = { has_character_modifier = raid_insight_temple }
+				multiply = 0.75
+				desc = raid_insight_temple
+			}
+		}
+	}
+
+	character_modifier = {
+		domicile_monthly_piety_add = 0.1
+	}
+	parameters = {
+		influence_gain_from_hof_support_1 = yes
+	}
+	
+	ai_value = {
+		value = 9
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_shrine.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_ancestral_shrine_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_ancestral_shrine_chinese_mask.png"
+		soundeffect = "event:/DLC/EP4/SFX/UI/domicile_buildings/tgp_ui_domicile_building_ancestral_shrine_chinese"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+			owner = {
+				faith.religion = religion:islam_religion
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_shrine.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_temple_islamic.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_temple_islamic_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_temple_small"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_iranian_culture_group_trigger = yes
+					has_graphical_mena_culture_group_trigger = yes
+					has_graphical_steppe_culture_group_trigger = yes
+					has_graphical_african_culture_group_trigger = yes
+					has_graphical_india_culture_group_trigger = yes
+					has_graphical_iberian_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_shrine.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_temple_generic_mena.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_temple_generic_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_temple_small"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+			owner = {
+				faith.religion = religion:christianity_religion
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_shrine.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_temple_christian.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_temple_christian_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_temple_small"
+	}
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				OR = {
+					has_graphical_western_culture_group_trigger = yes
+					has_graphical_norse_culture_group_trigger = yes
+				}
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_shrine.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_temple_generic_western.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_temple_generic_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_temple_small"
+	}
+	asset = {
+		trigger = {
+			owner = {
+				faith.religion = religion:christianity_religion
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_shrine.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_temple_christian_orthodox.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_temple_christian_orthodox_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_temple_small"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_shrine.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_temple_christian_orthodox.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_temple_christian_orthodox_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/domicile_buildings/ep3_ui_domicile_buildings_temple_small"
+	}
+}
+
+prison_02 = {
+	construction_time = 730
+	allowed_domicile_types = { estate }
+
+	# Mishpacha families build an influence-free copy instead (jip_prison_02)
+	can_construct_potential = {
+		NOT = { jip_can_build_mishpacha_estate_building_trigger = yes }
+	}
+	slot_type = internal
+	previous_building = prison_01
+
+	cost = {
+		gold = {
+			value = estate_internal_building_normal_cost_tier_2_value
+			if = {
+				limit = { has_character_modifier = raid_insight_prison }
+				multiply = 0.75
+				desc = raid_insight_prison
+			}
+		}
+	}
+	
+	parameters = {
+		estate_torture_grants_influence = yes
+	}
+	
+	character_modifier = {
+		dread_gain_mult = 0.05
+		hostage_income_mult = 0.05
+	}
+	
+	ai_value = {
+		value = 6
+		if = {
+			limit = {
+				scope:owner = {
+					OR = {
+						has_trait = vengeful
+						has_trait = callous
+						has_trait = sadistic
+					}
+				}
+			}
+			add = 5
+		}
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_prison.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_villa_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_byzantine_mask.png"
+	}
+}
+
+trophy_room_03 = {
+	construction_time = 730
+	allowed_domicile_types = { estate }
+
+	# Mishpacha families build an influence-free copy instead (jip_trophy_room_03)
+	can_construct_potential = {
+		NOT = { jip_can_build_mishpacha_estate_building_trigger = yes }
+	}
+	slot_type = internal
+	previous_building = trophy_room_02
+
+	can_construct = {
+		domicile ?= { has_domicile_building_or_higher = estate_main_02 }
+	}
+
+	cost = {
+		gold = {
+			value = estate_internal_building_normal_cost_tier_3_value
+			if = {
+				limit = { has_character_modifier = raid_insight_trophy_room }
+				multiply = 0.75
+				desc = raid_insight_trophy_room
+			}
+		}
+	}
+
+	character_modifier = {
+		monthly_martial_lifestyle_xp_gain_mult = 0.05
+		advantage = 3
+	}
+
+	parameters = {
+		trophy_room_victory_influence = yes
+	}
+	
+	ai_value = {
+		value = 5
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_trophy.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_villa_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_byzantine_mask.png"
+	}
+}
+
+office_01 = {
+	construction_time = 730
+	allowed_domicile_types = { estate }
+
+	# Mishpacha families build a copy without the governor bonuses instead (jip_office_01)
+	can_construct_potential = {
+		NOT = { jip_can_build_mishpacha_estate_building_trigger = yes }
+	}
+	slot_type = internal
+	previous_building = estate_main_01
+
+	cost = {
+		gold = {
+			value = estate_internal_building_normal_cost_tier_1_value
+			if = {
+				limit = { has_character_modifier = raid_insight_office }
+				multiply = 0.75
+				desc = raid_insight_office
+			}
+		}
+	}
+	
+	parameters = {
+		estate_local_theme_cost_reduction = yes
+		estate_unlock_teach_governor_interaction = yes
+	}
+
+	character_modifier = {
+		monthly_stewardship_lifestyle_xp_gain_mult = 0.05
+	}
+	
+	ai_value = {
+		value = 7
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_office.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_villa_byzantine.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_villa_byzantine_mask.png"
+	}
+}
+
+silk_01 = {
+	construction_time = 730
+	allowed_domicile_types = { estate }
+
+	# Mishpacha families build an influence-free copy instead (jip_silk_01)
+	can_construct_potential = {
+		NOT = { jip_can_build_mishpacha_estate_building_trigger = yes }
+	}
+	
+	can_construct = {
+		custom_tooltip = {
+			text = has_unlocked_estate_silk
+			OR = {
+				house ?= { has_house_modifier = ep3_unlocked_silk }
+				culture = { has_cultural_parameter = unlocks_silk_buildings_parameter }
+			}
+		}
+	}
+
+	cost = {
+		gold = {
+			value = estate_external_building_normal_cost_tier_1_value
+			if = {
+				limit = { has_character_modifier = raid_insight_silk }
+				multiply = 0.75
+				desc = raid_insight_silk
+			}
+		}
+	}
+
+	character_modifier = {
+		domicile_monthly_gold_add = 0.1
+		domicile_monthly_influence_add = 0.05
+		owned_political_scheme_success_chance_add = 3
+	}
+
+	on_complete = {
+		if = {
+			limit = {
+				scope:owner = {
+					is_alive = yes
+				}
+				years_from_game_start >= 1
+			}
+			scope:owner = {
+				random = {
+					chance = 75
+					add_character_flag = {
+						flag = domicile_new_built_silk
+						months = 1
+					}
+					trigger_event = {
+						id = ep3_governor_yearly.3001
+						days = 5
+					}
+				}
+			}
+		}
+	}
+	
+	ai_value = {
+		value = 15
+		add = estate_building_ai_modifier_value
+	}
+	
+	asset = {
+		trigger = {
+			domicile_location.culture = {
+				has_graphical_east_asia_culture_group_trigger = yes
+			}
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_magnanery.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_market_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_market_chinese_mask.png"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_magnanery.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_magnanery.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_magnanery_mask.png"
+	}
+}

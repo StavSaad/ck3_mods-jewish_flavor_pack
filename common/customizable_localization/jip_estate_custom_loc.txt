@@ -1,0 +1,27 @@
+﻿# Appended to vanilla estate tooltip lines whose effect Mishpacha families don't have (influence, investment caps).
+# Keyed on the player, since modifier and parameter tooltips have no scope of their own.
+# Used in localization/replace/english/jip_estate_replace_l_english.yml
+JipMishpachaUnusedNote = {
+	type = character
+
+	text = {
+		trigger = { has_government = mishpacha_government }
+		localization_key = jip_mishpacha_unused_note
+	}
+	text = {
+		localization_key = jip_empty_loc
+	}
+}
+
+# The Villa's influence becomes prestige for Mishpacha families (jip_mishpacha_refresh_villa_modifier_effect)
+JipMishpachaInfluenceNote = {
+	type = character
+
+	text = {
+		trigger = { has_government = mishpacha_government }
+		localization_key = jip_mishpacha_influence_note
+	}
+	text = {
+		localization_key = jip_empty_loc
+	}
+}

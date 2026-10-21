@@ -15,6 +15,8 @@ yearly_playable_pulse = {
 		mishpacha_left_judaism_on_action
 		jip_mishpacha_ai_migration_on_action
 		jip_mishpacha_succession_law_on_action
+		jip_mishpacha_replace_estate_buildings_on_action
+		jip_mishpacha_villa_on_action
 	}
 }
 
@@ -71,5 +73,74 @@ jip_mishpacha_succession_law_on_action = {
 	}
 	effect = {
 		jip_mishpacha_ensure_succession_law_effect = yes
+	}
+}
+
+# Swaps vanilla estate buildings hidden from Mishpacha families for their replacements. Runs yearly, and a day after game start,
+# once vanilla has filled the estates (on_game_start_after_lobby)
+# root = the family head
+jip_mishpacha_replace_estate_buildings_on_action = {
+	trigger = {
+		has_government = mishpacha_government
+		domicile ?= { jip_domicile_has_vanilla_influence_building_trigger = yes }
+	}
+	effect = {
+		jip_mishpacha_replace_estate_buildings_effect = yes
+	}
+}
+
+on_game_start_after_lobby = {
+	on_actions = {
+		jip_mishpacha_game_start_after_lobby_on_action
+	}
+}
+
+jip_mishpacha_game_start_after_lobby_on_action = {
+	effect = {
+		every_ruler = {
+			limit = { has_government = mishpacha_government }
+			trigger_event = {
+				on_action = jip_mishpacha_replace_estate_buildings_on_action
+				days = 1
+			}
+			# The Villa exists from the start, so its prestige needs no delay
+			jip_mishpacha_refresh_villa_modifier_effect = yes
+		}
+	}
+}
+
+# Keeps the Villa prestige modifier in step with the Villa tier (jip_mishpacha_refresh_villa_modifier_effect).
+# Runs yearly, at game start, when an estate building is completed, and a day after a title is gained
+# (jip_title_on_actions.txt), so an heir gets it once the estate has passed to them.
+# root = the character
+jip_mishpacha_villa_on_action = {
+	trigger = {
+		OR = {
+			has_government = mishpacha_government
+			has_character_modifier = jip_mishpacha_villa_1
+			has_character_modifier = jip_mishpacha_villa_2
+			has_character_modifier = jip_mishpacha_villa_3
+			has_character_modifier = jip_mishpacha_villa_4
+			has_character_modifier = jip_mishpacha_villa_5
+		}
+	}
+	effect = {
+		jip_mishpacha_refresh_villa_modifier_effect = yes
+	}
+}
+
+# root = the domicile, scope:owner = its owner
+on_domicile_building_completed = {
+	on_actions = {
+		jip_mishpacha_domicile_building_completed_on_action
+	}
+}
+
+jip_mishpacha_domicile_building_completed_on_action = {
+	trigger = {
+		scope:owner ?= { has_government = mishpacha_government }
+	}
+	effect = {
+		scope:owner = { jip_mishpacha_refresh_villa_modifier_effect = yes }
 	}
 }
