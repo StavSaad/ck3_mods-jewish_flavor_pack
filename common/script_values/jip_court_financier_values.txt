@@ -1,0 +1,9 @@
+﻿# Character scope: the fine a Court Financier pays when accused of usury (a quarter of their savings)
+jip_court_financier_fine_value = {
+	value = 0
+	if = {
+		limit = { gold > 0 }
+		add = gold
+		multiply = 0.25
+	}
+}

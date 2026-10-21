@@ -1,0 +1,34 @@
+﻿l_english:
+ # Court position
+ jip_court_financier_court_position: "Court Financier"
+ jip_court_financier_court_position_desc: "The $jip_court_financier_court_position$ is a Jewish banker who manages the treasury, arranges loans to the crown and its vassals, and collects what is owed. A trusted financier fills the coffers and earns the goodwill of the Jewish communities, though zealots resent a Jew handling the crown's wealth."
+ court_position_jip_mishpacha_family: "Member of a Mishpacha family"
+
+ # A debtor defaults
+ jip_financier.0001.t: "A Debt Unpaid"
+ jip_financier.0001.desc: "[jip_financier.GetTitledFirstName] lays a ledger before me, a single line circled in red ink.\n\n\"[jip_debtor.GetTitledFirstName] borrowed against the crown's credit and has paid nothing back. They plead a poor harvest, but their table is as full as ever. How would you have me proceed?\""
+ jip_financier.0001.a: "Collect every coin."
+ jip_financier.0001.b: "Forgive the debt. Their goodwill is worth more."
+ jip_financier.0001.c: "Handle it quietly, [jip_financier.GetFirstName]."
+ jip_financier.0001.c.success: "The Debt Is Recovered, With Interest"
+ jip_financier.0001.c.failure: "The Debtor Pays Little and Resents Much"
+
+ # Murmurs of usury
+ jip_financier.0002.t: "Murmurs of Usury"
+ jip_financier.0002.desc: "[jip_accuser.GetTitledFirstName] has made no secret of it: in the halls and at prayer, [jip_accuser.GetSheHe] speaks of the [jip_financier.GetFaith.GetAdherentNamePlural] who bleed the realm with usury, and of a ruler who lets one of them keep the keys to the treasury.\n\n[jip_financier.GetTitledFirstName] has heard every word. [jip_financier.GetSheHe|U] waits to learn whether I will stand by [jip_financier.GetHerHim]."
+ jip_financier.0002.a: "[jip_financier.GetFirstName] serves me well, and that is the end of it."
+ jip_financier.0002.b: "A fine will quiet the talk."
+ jip_financier.0002.c: "Dismiss [jip_financier.GetHerHim] and seize [jip_financier.GetHerHis] wealth."
+
+ # Old debts recovered
+ jip_financier.0003.t: "Old Debts Recovered"
+ jip_financier.0003.desc: "[jip_financier.GetTitledFirstName] arrives smiling, followed by servants carrying a heavy chest.\n\n\"Loans my predecessors wrote off as lost,\" [jip_financier.GetSheHe] explains. \"I tracked down the heirs of the debtors and reminded them of their obligations. Most were surprisingly willing to settle.\""
+ jip_financier.0003.a: "Into the treasury it goes."
+ jip_financier.0003.b: "Take a share for yourself. You have earned it."
+
+ # Discrepancy in the ledgers
+ jip_financier.0004.t: "Discrepancy in the Ledgers"
+ jip_financier.0004.desc: "The numbers do not add up. A steward going over the accounts found small sums missing month after month, always where [jip_financier.GetTitledFirstName]'s hand kept the books.\n\nWhen I raise the matter, [jip_financier.GetSheHe] blanches, then insists it is a clerk's error."
+ jip_financier.0004.a: "Every coin will be paid back."
+ jip_financier.0004.b: "You are dismissed."
+ jip_financier.0004.c: "A good financier is worth a little loss."

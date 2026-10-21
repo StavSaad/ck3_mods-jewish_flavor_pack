@@ -1,0 +1,21 @@
+﻿yearly_playable_pulse = {
+	on_actions = {
+		jip_court_financier_events_on_action
+	}
+}
+
+# A ruler with a Court Financier has about one debt-collection event every four years
+# root = the employer
+jip_court_financier_events_on_action = {
+	trigger = {
+		employs_court_position = jip_court_financier_court_position
+		is_available = yes
+	}
+	random_events = {
+		chance_of_no_event = 75
+		100 = jip_financier.0001 # A debtor defaults
+		75 = jip_financier.0002 # Murmurs of usury
+		75 = jip_financier.0003 # Old debts recovered
+		100 = jip_financier.0004 # Discrepancy in the ledgers (greedy or deceitful financiers only)
+	}
+}

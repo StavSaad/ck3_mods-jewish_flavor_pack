@@ -1,0 +1,6 @@
+﻿# Character scope: can serve $EMPLOYER$ as Court Financier
+jip_court_financier_validity_trigger = {
+	base_court_position_validity_trigger = { EMPLOYER = $EMPLOYER$ }
+	is_adult = yes
+	religion = religion:judaism_religion
+}

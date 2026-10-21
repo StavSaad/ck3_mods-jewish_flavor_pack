@@ -1,0 +1,262 @@
+﻿# A Jewish financier who manages a non-Jewish ruler's treasury and lending, modeled on Hasdai ibn Shaprut and Samuel ha-Nagid.
+# Raises domain taxes and the ruler's standing among Jews; zealots resent it. Debt collection events live in jip_court_financier_events.txt.
+jip_court_financier_court_position = {
+	sort_order = 234
+	max_available_positions = 1
+	minimum_rank = duchy
+	skill = stewardship
+
+	court_position_asset = {
+		animation = writing
+		background = "gfx/interface/illustrations/event_scenes/fp1_steward_study.dds"
+	}
+
+	opinion = {
+		value = regular_court_position_opinion
+	}
+
+	# How high the aptitude has to be to reach the 5 different modifier levels
+	aptitude_level_breakpoints = { 20 40 60 80 }
+
+	# How good is this character in this position? root scope is the holder of the court position
+	aptitude = {
+		value = 1
+		add = {
+			value = stewardship
+			multiply = 2.5
+			max = 60
+			desc = court_position_skill_stewardship
+		}
+		if = {
+			limit = { has_trait = diligent }
+			add = {
+				value = 10
+				desc = court_position_diligent_trait
+			}
+		}
+		if = {
+			limit = { has_trait = just }
+			add = {
+				value = 10
+				desc = court_position_just_trait
+			}
+		}
+		if = {
+			limit = { has_trait = honest }
+			add = {
+				value = 10
+				desc = court_position_honest_trait
+			}
+		}
+		# A sharp eye for profit, though the ledgers may suffer for it (see jip_financier.0004)
+		if = {
+			limit = { has_trait = greedy }
+			add = {
+				value = 5
+				desc = court_position_greedy_trait
+			}
+		}
+		if = {
+			limit = { has_trait = lazy }
+			add = {
+				value = -10
+				desc = court_position_lazy_trait
+			}
+		}
+		if = {
+			limit = { has_trait = arbitrary }
+			add = {
+				value = -10
+				desc = court_position_arbitrary_trait
+			}
+		}
+		if = {
+			limit = { has_trait = deceitful }
+			add = {
+				value = -10
+				desc = court_position_deceitful_trait
+			}
+		}
+		# Raised in a family of merchants and court Jews
+		if = {
+			limit = {
+				house ?= {
+					any_house_member = { has_government = mishpacha_government }
+				}
+			}
+			add = {
+				value = 10
+				desc = court_position_jip_mishpacha_family
+			}
+		}
+
+		# Bonus from court.8311
+		if = {
+			limit = { var:bonus_aptitude_role ?= flag:jip_court_financier }
+			add = {
+				value = cp_bonus_aptitude_value
+				desc = cp_bonus_aptitude
+			}
+		}
+
+		add = court_position_aptitude_low_penalty_value
+		add = general_aptitude_bonus
+	}
+
+	# Is this an available position for this court? (root is court owner)
+	is_shown = {
+		is_landed_or_landless_administrative_or_theocratic = yes
+		NOT = { religion = religion:judaism_religion }
+		trigger_if = {
+			limit = {
+				is_ai = yes
+				highest_held_title_tier <= tier_county
+			}
+			always = no
+		}
+	}
+
+	valid_position = {
+		is_landed_or_landless_administrative_or_theocratic = yes
+		NOT = { religion = religion:judaism_religion }
+		highest_held_title_tier >= tier_duchy
+	}
+
+	is_shown_character = {
+		scope:employee = {
+			court_position_employee_shown_trigger = yes
+		}
+	}
+
+	valid_character = {
+		scope:employee = {
+			jip_court_financier_validity_trigger = { EMPLOYER = scope:liege }
+		}
+	}
+
+	revoke_cost = { # root is the liege, no other scopes are passed here!
+		prestige = {
+			value = major_court_position_prestige_revoke_cost
+			if = {
+				limit = { free_court_position_revoke_trigger = { POS = jip_court_financier } }
+				multiply = 0
+			}
+		}
+	}
+
+	salary = {
+		gold = {
+			value = 0
+			if = {
+				limit = {
+					scope:liege = { has_treasury = no }
+				}
+				add = minor_court_position_salary
+			}
+		}
+		treasury = {
+			value = 0
+			if = {
+				limit = {
+					scope:liege = { has_treasury = yes }
+				}
+				add = minor_court_position_salary
+			}
+		}
+		prestige = {
+			value = minor_court_position_prestige_salary
+		}
+		round = no
+	}
+
+	received_salary = {
+		gold = {
+			value = minor_court_position_salary
+		}
+		prestige = {
+			value = minor_court_position_prestige_salary
+		}
+		round = no
+	}
+
+	# Zealots resent a Jew managing the crown's money
+	base_employer_modifier = {
+		zealot_opinion = -5
+	}
+
+	scaling_employer_modifiers = {
+		terrible = {
+			domain_tax_mult = 0.02
+			judaism_religion_opinion = 5
+		}
+		poor = {
+			domain_tax_mult = 0.04
+			judaism_religion_opinion = 7
+		}
+		average = {
+			domain_tax_mult = 0.06
+			judaism_religion_opinion = 10
+		}
+		good = {
+			domain_tax_mult = 0.08
+			judaism_religion_opinion = 12
+		}
+		excellent = {
+			domain_tax_mult = 0.1
+			judaism_religion_opinion = 15
+		}
+	}
+
+	modifier = {
+		stewardship = 1
+		monthly_stewardship_lifestyle_xp_gain_mult = 0.1
+	}
+
+	on_court_position_received = {
+		basic_gained_court_position_effect = yes
+	}
+	on_court_position_revoked = {
+		basic_revoked_court_position_effect = yes
+	}
+	on_court_position_invalidated = {
+		basic_invalidated_court_position_effect = yes
+	}
+	on_court_position_vacated = {
+		court_position_vacated_event_effect = {
+			COURT_POSITION_TYPE = jip_court_financier_court_position
+		}
+	}
+
+	# Scripted value to determine whether an AI will hire/fire a position or not. Hires over 0, fires under -50.
+	ai_position_score = {
+		value = 50
+		scope:liege = {
+			if = {
+				limit = { has_trait = greedy }
+				add = 50
+			}
+			if = {
+				limit = { gold < 0 }
+				add = 50
+			}
+			# The more a ruler dislikes Jews, the less they want one handling their money
+			subtract = {
+				value = jip_jewish_hostility_value
+				multiply = 2
+			}
+		}
+		add = court_position_debt_considerations_value
+	}
+	ai_candidate_score = {
+		value = 50
+		add = scope:base_value
+		add = court_position_candidate_score_base_value
+		add = court_position_candidate_aptitude_value
+		if = { # To stop petitioned positions immediately being fired by the AI
+			limit = {
+				court_position_petition_ai_weight_trigger = { ROLE = jip_court_financier }
+			}
+			add = 1000
+		}
+	}
+}

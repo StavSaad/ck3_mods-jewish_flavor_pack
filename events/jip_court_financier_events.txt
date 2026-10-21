@@ -1,0 +1,486 @@
+﻿namespace = jip_financier
+
+# A debtor defaults
+# Root = the employer
+# scope:jip_financier = the Court Financier
+# scope:jip_debtor = a vassal behind on a crown-backed loan
+jip_financier.0001 = {
+	type = character_event
+	title = jip_financier.0001.t
+	desc = jip_financier.0001.desc
+	theme = stewardship_wealth_focus
+	left_portrait = {
+		character = scope:jip_financier
+		animation = steward
+	}
+	right_portrait = {
+		character = scope:jip_debtor
+		animation = worry
+	}
+
+	trigger = {
+		employs_court_position = jip_court_financier_court_position
+		any_vassal = { is_ai = yes }
+	}
+
+	immediate = {
+		random_court_position_holder = {
+			type = jip_court_financier_court_position
+			save_scope_as = jip_financier
+		}
+		random_vassal = {
+			limit = { is_ai = yes }
+			save_scope_as = jip_debtor
+		}
+	}
+
+	# Collect every coin
+	option = {
+		name = jip_financier.0001.a
+		add_gold = medium_gold_value
+		scope:jip_debtor = {
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -20
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				has_trait = greedy
+			}
+			modifier = {
+				add = 50
+				gold < 0
+			}
+		}
+	}
+
+	# Forgive the debt
+	option = {
+		name = jip_financier.0001.b
+		scope:jip_debtor = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 20
+			}
+		}
+		scope:jip_financier = {
+			add_opinion = {
+				target = root
+				modifier = disappointed_opinion
+				opinion = -10
+			}
+		}
+		stress_impact = {
+			greedy = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 25
+			modifier = {
+				add = 50
+				has_trait = generous
+			}
+			modifier = {
+				add = 25
+				has_trait = forgiving
+			}
+		}
+	}
+
+	# Let the financier handle it quietly; a skilled financier usually recovers more
+	option = {
+		name = jip_financier.0001.c
+		random_list = {
+			60 = {
+				desc = jip_financier.0001.c.success
+				modifier = {
+					add = 30
+					scope:jip_financier = {
+						aptitude = {
+							court_position = jip_court_financier_court_position
+							value >= 4
+						}
+					}
+				}
+				modifier = {
+					add = -30
+					scope:jip_financier = {
+						aptitude = {
+							court_position = jip_court_financier_court_position
+							value <= 2
+						}
+					}
+				}
+				send_interface_toast = {
+					title = jip_financier.0001.c.success
+					left_icon = scope:jip_financier
+					add_gold = major_gold_value
+					scope:jip_financier = { add_prestige = minor_prestige_value }
+				}
+			}
+			40 = {
+				desc = jip_financier.0001.c.failure
+				send_interface_toast = {
+					title = jip_financier.0001.c.failure
+					left_icon = scope:jip_debtor
+					add_gold = minor_gold_value
+					scope:jip_debtor = {
+						add_opinion = {
+							target = scope:jip_financier
+							modifier = angry_opinion
+							opinion = -30
+						}
+						add_opinion = {
+							target = root
+							modifier = angry_opinion
+							opinion = -10
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# Murmurs of usury
+# Root = the employer
+# scope:jip_financier = the Court Financier
+# scope:jip_accuser = a zealous vassal or courtier of the employer's faith
+jip_financier.0002 = {
+	type = character_event
+	title = jip_financier.0002.t
+	desc = jip_financier.0002.desc
+	theme = faith
+	left_portrait = {
+		character = scope:jip_accuser
+		animation = personality_zealous
+	}
+	right_portrait = {
+		character = scope:jip_financier
+		animation = worry
+	}
+
+	trigger = {
+		employs_court_position = jip_court_financier_court_position
+		OR = {
+			any_vassal = {
+				has_trait = zealous
+				faith = root.faith
+			}
+			any_courtier = {
+				has_trait = zealous
+				faith = root.faith
+				is_adult = yes
+			}
+		}
+	}
+
+	immediate = {
+		random_court_position_holder = {
+			type = jip_court_financier_court_position
+			save_scope_as = jip_financier
+		}
+		random_vassal = {
+			limit = {
+				has_trait = zealous
+				faith = root.faith
+			}
+			save_scope_as = jip_accuser
+		}
+		if = {
+			limit = { NOT = { exists = scope:jip_accuser } }
+			random_courtier = {
+				limit = {
+					has_trait = zealous
+					faith = root.faith
+					is_adult = yes
+				}
+				save_scope_as = jip_accuser
+			}
+		}
+	}
+
+	# Stand by the financier
+	option = {
+		name = jip_financier.0002.a
+		add_piety = {
+			value = minor_piety_value
+			multiply = -1
+		}
+		scope:jip_accuser = {
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -15
+			}
+		}
+		scope:jip_financier = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 25
+			}
+		}
+		stress_impact = {
+			zealous = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 40
+				has_trait = just
+			}
+			modifier = {
+				add = 20
+				has_trait = cynical
+			}
+			modifier = {
+				add = -30
+				has_trait = zealous
+			}
+		}
+	}
+
+	# Fine the financier to quiet the talk
+	option = {
+		name = jip_financier.0002.b
+		scope:jip_financier = {
+			save_scope_value_as = {
+				name = jip_financier_fine
+				value = jip_court_financier_fine_value
+			}
+			pay_short_term_gold = {
+				target = root
+				gold = scope:jip_financier_fine
+			}
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -15
+			}
+		}
+		scope:jip_accuser = {
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 10
+			}
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 30
+				has_trait = greedy
+			}
+		}
+	}
+
+	# Dismiss the financier and seize half their wealth
+	option = {
+		name = jip_financier.0002.c
+		scope:jip_financier = {
+			save_scope_value_as = {
+				name = jip_financier_seized
+				value = jip_expulsion_family_gold_loss_value
+			}
+			pay_short_term_gold = {
+				target = root
+				gold = scope:jip_financier_seized
+			}
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -40
+			}
+		}
+		revoke_court_position = {
+			recipient = scope:jip_financier
+			court_position = jip_court_financier_court_position
+		}
+		add_piety = minor_piety_value
+		scope:jip_accuser = {
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 20
+			}
+		}
+		stress_impact = {
+			just = medium_stress_impact_gain
+			compassionate = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = jip_jewish_hostility_value
+			}
+		}
+	}
+}
+
+# Old debts recovered
+# Root = the employer
+# scope:jip_financier = the Court Financier
+jip_financier.0003 = {
+	type = character_event
+	title = jip_financier.0003.t
+	desc = jip_financier.0003.desc
+	theme = stewardship_wealth_focus
+	left_portrait = {
+		character = scope:jip_financier
+		animation = happiness
+	}
+
+	trigger = {
+		employs_court_position = jip_court_financier_court_position
+	}
+
+	immediate = {
+		random_court_position_holder = {
+			type = jip_court_financier_court_position
+			save_scope_as = jip_financier
+		}
+	}
+
+	# Into the treasury
+	option = {
+		name = jip_financier.0003.a
+		add_gold = medium_gold_value
+		scope:jip_financier = { add_prestige = minor_prestige_value }
+		ai_chance = {
+			base = 60
+		}
+	}
+
+	# Share the windfall with the financier
+	option = {
+		name = jip_financier.0003.b
+		add_gold = minor_gold_value
+		scope:jip_financier = {
+			add_gold = minor_gold_value
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 20
+			}
+		}
+		stress_impact = {
+			greedy = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 40
+				has_trait = generous
+			}
+		}
+	}
+}
+
+# Discrepancy in the ledgers
+# Root = the employer
+# scope:jip_financier = a greedy or deceitful Court Financier who has been skimming
+jip_financier.0004 = {
+	type = character_event
+	title = jip_financier.0004.t
+	desc = jip_financier.0004.desc
+	theme = stewardship_wealth_focus
+	left_portrait = {
+		character = scope:jip_financier
+		animation = personality_greedy
+	}
+
+	trigger = {
+		any_court_position_holder = {
+			type = jip_court_financier_court_position
+			OR = {
+				has_trait = greedy
+				has_trait = deceitful
+			}
+		}
+	}
+
+	immediate = {
+		random_court_position_holder = {
+			type = jip_court_financier_court_position
+			save_scope_as = jip_financier
+		}
+	}
+
+	# Make them pay it back
+	option = {
+		name = jip_financier.0004.a
+		scope:jip_financier = {
+			save_scope_value_as = {
+				name = jip_financier_skimmed
+				value = jip_expulsion_family_gold_loss_value
+			}
+			pay_short_term_gold = {
+				target = root
+				gold = scope:jip_financier_skimmed
+			}
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -20
+			}
+		}
+		ai_chance = {
+			base = 60
+		}
+	}
+
+	# Dismiss them
+	option = {
+		name = jip_financier.0004.b
+		revoke_court_position = {
+			recipient = scope:jip_financier
+			court_position = jip_court_financier_court_position
+		}
+		scope:jip_financier = {
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -30
+			}
+		}
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 30
+				has_trait = just
+			}
+		}
+	}
+
+	# Look the other way; a good financier is worth a little loss
+	option = {
+		name = jip_financier.0004.c
+		remove_short_term_gold = minor_gold_value
+		scope:jip_financier = {
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 15
+			}
+		}
+		stress_impact = {
+			just = medium_stress_impact_gain
+			greedy = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 20
+				has_trait = lazy
+			}
+		}
+	}
+}
