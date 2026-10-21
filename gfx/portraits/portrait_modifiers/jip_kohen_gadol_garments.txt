@@ -1,0 +1,31 @@
+﻿# Historic High Priests keep the Kohen Gadol garments (vanilla's religious_jewish_head clothes and headgear) after death.
+# Same priority as vanilla's religious clothes and headgear; this file loads after them, so it takes precedence.
+jip_kohen_gadol_garments = {
+	usage = game
+	priority = 3
+	selection_behavior = max
+
+	jip_kohen_gadol_garments = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = clothes
+				template = religious_jewish_head_clothes
+				range = { 0 1 }
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = religious_jewish_head
+				range = { 0 1 }
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 150
+				jip_former_kohen_gadol_trigger = yes
+			}
+		}
+	}
+}

@@ -51,3 +51,21 @@ mishpacha_landed_government_switch_on_action = {
 		jip_mishpacha_adopt_landed_government_effect = yes
 	}
 }
+
+# A character is about to die, still holding their titles
+# root = the dying character
+on_death = {
+	on_actions = {
+		jip_kohen_gadol_death_on_action
+	}
+}
+
+# Marks a High Priest who dies in office, so their portrait keeps the Kohen Gadol garments (jip_former_kohen_gadol_trigger)
+jip_kohen_gadol_death_on_action = {
+	trigger = {
+		has_title = title:d_kohen_gadol
+	}
+	effect = {
+		set_variable = jip_was_kohen_gadol
+	}
+}

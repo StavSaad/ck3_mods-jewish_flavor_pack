@@ -1,0 +1,60 @@
+﻿# Character scope: a dead High Priest, either one who died in office during play (marked in jip_kohen_gadol_death_on_action)
+# or one who held d_kohen_gadol in the mod's history (history/titles/jip_historical_titles_history.txt).
+# Lets their portraits keep the Kohen Gadol garments, which vanilla only shows on a living head of faith.
+jip_former_kohen_gadol_trigger = {
+	exists = this
+	is_alive = no
+	OR = {
+		has_variable = jip_was_kohen_gadol
+		this = character:kohanism_seraiah
+		this = character:kohanism_yehozadak
+		this = character:kohanism_yeshua
+		this = character:kohanism_yehoyakim
+		this = character:kohanism_elyashiv
+		this = character:kohanism_yehoyada
+		this = character:kohanism_yochanan_ii
+		this = character:kohanism_yadoaa
+		this = character:kohanism_onias_i
+		this = character:kohanism_simon_i
+		this = character:kohanism_elazar
+		this = character:kohanism_menashe
+		this = character:kohanism_onias_ii
+		this = character:kohanism_simon_ii
+		this = character:kohanism_onias_iii
+		this = character:yehudah_macabee
+		this = character:yonatan_havafsi
+		this = character:simon_tassi
+		this = character:yochanan_hyrkanus_i
+		this = character:yehudah_aristobolos_i
+		this = character:alexander_yanai
+		this = character:yochanan_hyrkanus_ii
+		this = character:yehudah_aristobolos_ii
+		this = character:antigonos_ii
+		this = character:kohanism_ananleus
+		this = character:yehudah_aristobolos_iii
+		this = character:kohanism_joshua_ben_phabi
+		this = character:kohanism_simon_boethus
+		this = character:kohanism_mathatias_ben_theophilus
+		this = character:kohanism_yoazar_ben_simon_boethus
+		this = character:kohanism_elazar_ben_simon_boethus
+		this = character:kohanism_joshua_ben_sie
+		this = character:kohanism_chanan_ben_seth
+		this = character:kohanism_ishmael_ben_phabi
+		this = character:kohanism_elazar_ben_chanan
+		this = character:kohanism_simon_ben_camithos
+		this = character:kohanism_yosef_hakayaf
+		this = character:kohanism_yonatan_ben_hanan
+		this = character:kohanism_theophylus_ben_hanan
+		this = character:kohanism_simon_cantheras
+		this = character:kohanism_mattityahu_ben_hanan
+		this = character:kohanism_yosef_ben_camithus
+		this = character:kohanism_chananiah_ben_nadvai
+		this = character:kohanism_ishmael_phabi_ii
+		this = character:kohanism_yosef_cabi
+		this = character:kohanism_chanan_ben_chanan
+		this = character:kohanism_yeshua_ben_damneus
+		this = character:kohanism_joshua_ben_gamla
+		this = character:kohanism_mattityahu_ben_theophylus
+		this = character:kohanism_pinchas_ben_samuel
+	}
+}
