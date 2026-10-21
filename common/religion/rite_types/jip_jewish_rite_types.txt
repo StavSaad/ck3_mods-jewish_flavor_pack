@@ -144,14 +144,15 @@ kohanism = {
 	icon = kohanist
 
 	tenets = {
-		tenet_communal_identity
 		tenet_literalism
 		tenet_ritual_celebrations
+		tenet_kehunah
 	}
 
 	doctrines = {
 		temple_authority_kohanim_doctrine
-		doctrine_temporal_head
+		special_doctrine_prophecy_of_malachi
+		doctrine_spiritual_head
 		doctrine_pluralism_righteous
 		doctrine_monogamy
 	}

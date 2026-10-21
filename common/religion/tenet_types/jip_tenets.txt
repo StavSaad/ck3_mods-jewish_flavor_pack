@@ -1,0 +1,36 @@
+﻿# Kehunah: the hereditary priesthood of the sons of Aaron, who serve in the Temple and live from the tithes of Israel.
+tenet_kehunah = {
+	icon = tenet_kehunah # The High Priest's breastplate
+	piety_cost = {
+		value = faith_tenet_cost_mid
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_kehunah }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+	can_pick = {
+		OR = {
+			religion = religion:judaism_religion
+			has_tenet = tenet_kehunah # If you already have it
+		}
+	}
+	character_modifier = {
+		monthly_piety_gain_mult = 0.1
+		clergy_opinion = 10
+	}
+	# The tithes owed to the priests and Levites
+	county_modifier = {
+		tax_mult = 0.05
+	}
+	traits = {
+		virtues = {
+			chaste = { weight = 15 scale = 1 } # Laws of priestly purity
+			zealous = { weight = 15 scale = 1 }
+		}
+		sins = {
+			lustful = { weight = 15 scale = 1 }
+			cynical = { weight = 15 scale = 1 }
+		}
+	}
+}

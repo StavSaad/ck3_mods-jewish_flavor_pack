@@ -90,15 +90,6 @@ jip_court_financier_court_position = {
 			}
 		}
 
-		# Bonus from court.8311
-		if = {
-			limit = { var:bonus_aptitude_role ?= flag:jip_court_financier }
-			add = {
-				value = cp_bonus_aptitude_value
-				desc = cp_bonus_aptitude
-			}
-		}
-
 		add = court_position_aptitude_low_penalty_value
 		add = general_aptitude_bonus
 	}
