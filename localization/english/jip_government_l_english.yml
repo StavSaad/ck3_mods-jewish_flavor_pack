@@ -22,16 +22,10 @@
  mishpacha_beit_din_rights_none_short: "None"
  mishpacha_beit_din_rights_granted: "Beit Din Granted"
  mishpacha_beit_din_rights_granted_short: "Granted"
- mishpacha_beit_din_rights_granted_desc: "#emphasis #bold [vassal|E] Privilege:#!#!
-$EFFECT_LIST_BULLET$ The community judges its own under Jewish law
-
-#flavor Disputes between the family's people are settled by their own rabbinical court, not the [liege|E]'s.#!"
+ mishpacha_beit_din_rights_granted_desc: "#emphasis #bold [vassal|E] Privilege:#!#!\n$EFFECT_LIST_BULLET$ The community judges its own under Jewish law\n\n#flavor Disputes between the family's people are settled by their own rabbinical court, not the [liege|E]'s.#!"
  mishpacha_trade_rights: "Trade Rights"
  mishpacha_trade_rights_none: "No Trade Rights"
  mishpacha_trade_rights_none_short: "None"
  mishpacha_trade_rights_granted: "Trade Rights Granted"
  mishpacha_trade_rights_granted_short: "Granted"
- mishpacha_trade_rights_granted_desc: "#emphasis #bold [vassal|E] Privilege:#!#!
-$EFFECT_LIST_BULLET$ The family may trade freely throughout the [realm|E]
-
-#flavor Markets, tolls and trade routes are open to the family, and the [liege|E] shares in the profits.#!"
+ mishpacha_trade_rights_granted_desc: "#emphasis #bold [vassal|E] Privilege:#!#!\n$EFFECT_LIST_BULLET$ The family may trade freely throughout the [realm|E]\n\n#flavor Markets, tolls and trade routes are open to the family, and the [liege|E] shares in the profits.#!"

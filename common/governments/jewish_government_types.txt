@@ -10,7 +10,7 @@
 		inherit_from_dynastic_government = yes
 		sticky_government = yes
 		house_aspirations = no
-		noble_families = no
+		noble_families = yes # dispossessed Jewish lords get a dynamic noble family title; vanilla destroys those yearly otherwise
 		deny_powerful_vassal = yes
 		uses_culture_and_house_head_named_realms = no
 		council = no

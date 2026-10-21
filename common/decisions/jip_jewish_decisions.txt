@@ -344,3 +344,114 @@ clear_grounds_for_the_third_temple_decision = {
 	}
 
 }
+
+# A Christian or Muslim ruler expels the Jews from their realm, seizing half of every Jew's gold.
+# The edict is stored on the ruler's primary title and bars Jewish families from settling there.
+jip_expel_the_jews_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	ai_check_interval = 120
+	desc = jip_expel_the_jews_decision_desc
+	selection_tooltip = jip_expel_the_jews_decision_tooltip
+	decision_group_type = major
+
+	is_shown = {
+		is_independent_ruler = yes
+		is_landed = yes
+		OR = {
+			religion = religion:christianity_religion
+			religion = religion:islam_religion
+		}
+		primary_title = {
+			NOT = { has_variable = jip_jews_expelled }
+		}
+	}
+
+	is_valid = {
+		custom_tooltip = {
+			text = jip_jews_edict_cooldown_tt
+			primary_title = {
+				NOT = { has_variable = jip_jews_edict_cooldown }
+			}
+		}
+		custom_tooltip = {
+			text = jip_expel_the_jews_no_families_tt
+			OR = {
+				any_vassal_or_below = {
+					religion = religion:judaism_religion
+				}
+				# Families living in the realm without being its vassals
+				any_ruler = {
+					jip_mishpacha_in_realm_of_trigger = { RULER = root }
+				}
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	effect = {
+		jip_expel_the_jews_effect = yes
+	}
+
+	ai_potential = {
+		OR = {
+			religion = religion:christianity_religion
+			religion = religion:islam_religion
+		}
+	}
+
+	# Weighed by personality, debts, and the tenets of their rite and personal faith
+	ai_will_do = {
+		base = 0
+		jip_expel_the_jews_ai_modifier = yes
+	}
+}
+
+
+# A ruler whose realm has expelled the Jews lifts the edict, letting Jewish families settle there again.
+jip_readmit_the_jews_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	ai_check_interval = 120
+	desc = jip_readmit_the_jews_decision_desc
+	selection_tooltip = jip_readmit_the_jews_decision_tooltip
+	decision_group_type = major
+
+	is_shown = {
+		is_independent_ruler = yes
+		primary_title = { has_variable = jip_jews_expelled }
+		NOT = { religion = religion:judaism_religion }
+	}
+
+	is_valid = {
+		custom_tooltip = {
+			text = jip_jews_edict_cooldown_tt
+			primary_title = {
+				NOT = { has_variable = jip_jews_edict_cooldown }
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	effect = {
+		jip_readmit_the_jews_effect = yes
+	}
+
+	ai_potential = {
+		primary_title = { has_variable = jip_jews_expelled }
+	}
+
+	# Weighed by personality, debts, and the tenets of their rite and personal faith
+	ai_will_do = {
+		base = 0
+		jip_readmit_the_jews_ai_modifier = yes
+	}
+}

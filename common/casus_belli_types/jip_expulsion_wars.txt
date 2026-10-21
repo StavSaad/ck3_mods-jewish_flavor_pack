@@ -1,0 +1,139 @@
+﻿# Fought by the Jews of a realm against the ruler who expelled them: Mishpacha families and Jewish lords on one side.
+# Only started or joined through jip_join_expulsion_war_effect, from jip_expulsion.0001 and jip_expulsion.0003.
+jip_resist_expulsion_cb = {
+	icon = independence_faction_war
+	group = event
+
+	allow_hostages = no
+	allowed_for_character = {
+		has_variable = jip_expelled_by
+	}
+	allowed_against_character = {
+		scope:attacker.var:jip_expelled_by ?= scope:defender
+	}
+
+	valid_to_start = { always = no }
+
+	# The edict was lifted by decision: nothing left to fight for
+	should_invalidate = {
+		NOT = {
+			scope:defender.primary_title ?= { has_variable = jip_jews_expelled }
+		}
+	}
+	on_invalidated_desc = jip_resist_expulsion_cb_invalidated_desc
+	on_invalidated = {
+		war = {
+			every_war_attacker = {
+				limit = { has_variable = jip_expelled_by }
+				remove_variable = jip_expelled_by
+			}
+		}
+	}
+
+	cost = {}
+
+	on_declaration = {
+		on_declared_war = yes
+	}
+
+	on_victory_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:attacker = { is_local_player = yes } }
+				desc = jip_resist_expulsion_cb_victory_desc_attacker
+			}
+			desc = jip_resist_expulsion_cb_victory_desc
+		}
+	}
+
+	on_victory = {
+		# The edict is repealed: lords keep their lands, families keep their homes under a renewed charter
+		scope:defender.primary_title ?= {
+			remove_variable = jip_jews_expelled
+			set_variable = {
+				name = jip_jews_edict_cooldown
+				value = yes
+				years = 10
+			}
+		}
+		war = {
+			every_war_attacker = {
+				limit = { has_variable = jip_expelled_by }
+				remove_variable = jip_expelled_by
+				add_prestige_experience = major_prestige_value
+				# Families who stood alone are taken back under the expeller's charter
+				if = {
+					limit = {
+						has_government = mishpacha_government
+						is_landed = no
+						is_independent_ruler = yes
+					}
+					jip_mishpacha_change_liege_effect = { LIEGE = scope:defender }
+				}
+			}
+		}
+		add_truce_attacker_victory_effect = yes
+	}
+
+	on_white_peace_desc = jip_resist_expulsion_cb_white_peace_desc
+
+	on_white_peace = {
+		# The edict stands and is carried out
+		war = {
+			every_war_attacker = {
+				limit = { has_variable = jip_expelled_by }
+				add_prestige = {
+					value = minor_prestige_value
+					multiply = -1.0
+				}
+				jip_enforce_expulsion_on_resister_effect = { EXPELLER = scope:defender }
+			}
+		}
+		add_truce_white_peace_effect = yes
+	}
+
+	on_defeat_desc = jip_resist_expulsion_cb_defeat_desc
+
+	on_defeat = {
+		war = {
+			every_war_attacker = {
+				limit = { has_variable = jip_expelled_by }
+				pay_short_term_gold_reparations_effect = {
+					GOLD_VALUE = 5
+				}
+				add_prestige = {
+					value = major_prestige_value
+					multiply = -1.0
+				}
+				jip_enforce_expulsion_on_resister_effect = { EXPELLER = scope:defender }
+			}
+		}
+		scope:defender = {
+			add_prestige_war_defender_effect = {
+				PRESTIGE_VALUE = major_prestige_value
+			}
+		}
+		add_truce_attacker_defeat_effect = yes
+	}
+
+	transfer_behavior = transfer
+
+	on_primary_attacker_death = inherit
+	on_primary_defender_death = inherit
+
+	attacker_allies_inherit = yes
+	defender_allies_inherit = yes
+
+	war_name = "JIP_RESIST_EXPULSION_WAR_NAME"
+	war_name_base = "JIP_RESIST_EXPULSION_WAR_NAME_BASE"
+	cb_name = "JIP_RESIST_EXPULSION_CB_NAME"
+
+	interface_priority = 79
+
+	# Landless families cannot be occupied, so the expeller wins by outlasting the resistance unless it forces the issue
+	defender_ticking_warscore_delay = { months = 6 }
+	defender_ticking_warscore = 0.1
+	max_attacker_score_from_occupation = 100
+	max_defender_score_from_occupation = 100
+	defender_capital_gives_war_score = yes
+}

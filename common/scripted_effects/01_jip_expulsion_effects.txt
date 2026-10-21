@@ -1,0 +1,484 @@
+﻿# Root = the expelling top liege.
+# Bars Jews from the realm, orders every Mishpacha family out, strips Jewish lords of their lands unless they fight,
+# and dismisses Jewish courtiers. Gold is seized from those who leave, not from those who fight.
+jip_expel_the_jews_effect = {
+	save_scope_as = jip_expeller
+	# Gold seizure note for the decision window, and a fresh tally for the summary event
+	custom_tooltip = jip_expel_the_jews_projected_gold_tt
+	hidden_effect = {
+		set_variable = { name = jip_expulsion_seized_gold value = 0 }
+		set_variable = { name = jip_expulsion_departed_count value = 0 }
+		remove_variable = jip_expulsion_top_payer
+		remove_variable = jip_expulsion_top_payer_gold
+		trigger_event = {
+			id = jip_expulsion.0004
+			days = 30
+		}
+	}
+	primary_title = {
+		set_variable = {
+			name = jip_jews_expelled
+			value = scope:jip_expeller
+		}
+		set_variable = {
+			name = jip_jews_edict_cooldown
+			value = yes
+			years = 10
+		}
+	}
+	custom_tooltip = jip_expel_the_jews_no_return_tt
+	every_ruler = {
+		limit = {
+			jip_mishpacha_in_realm_of_trigger = { RULER = scope:jip_expeller }
+		}
+		custom = jip_expel_the_jews_every_family_tt
+		add_opinion = {
+			target = scope:jip_expeller
+			modifier = jip_expelled_my_family_opinion
+		}
+		set_variable = {
+			name = jip_expelled_by
+			value = scope:jip_expeller
+		}
+		add_to_list = jip_expelled_jews
+	}
+	# Jewish lords must give up their lands or fight; their gold is seized only if they lose them
+	every_vassal_or_below = {
+		limit = {
+			is_landed = yes
+			religion = religion:judaism_religion
+			NOT = { has_government = mishpacha_government }
+		}
+		custom = jip_expel_the_jews_every_lord_tt
+		add_opinion = {
+			target = scope:jip_expeller
+			modifier = jip_expelled_my_family_opinion
+		}
+		set_variable = {
+			name = jip_expelled_by
+			value = scope:jip_expeller
+		}
+		add_to_list = jip_expelled_jews
+	}
+	custom_tooltip = jip_expel_the_jews_resistance_tt
+	# Players answer the edict first and the AI follow their lead (see jip_expulsion_rally_effect);
+	# with no player among them, every family and lord decides at once
+	hidden_effect = {
+		if = {
+			limit = {
+				any_in_list = {
+					list = jip_expelled_jews
+					is_ai = no
+				}
+			}
+			every_in_list = {
+				list = jip_expelled_jews
+				limit = { is_ai = no }
+				jip_send_expulsion_edict_event_effect = yes
+			}
+		}
+		else = {
+			every_in_list = {
+				list = jip_expelled_jews
+				jip_send_expulsion_edict_event_effect = yes
+			}
+		}
+	}
+	# Jewish courtiers of the crown and of every vassal court are dismissed and their savings seized
+	custom_tooltip = jip_expel_the_jews_courtiers_tt
+	hidden_effect = {
+		add_to_list = jip_expelling_courts
+		every_vassal_or_below = {
+			limit = { NOT = { has_government = mishpacha_government } }
+			add_to_list = jip_expelling_courts
+		}
+		capital_province ?= { save_scope_as = jip_courtier_origin }
+		if = {
+			limit = { exists = scope:jip_courtier_origin }
+			jip_find_expulsion_refuge_effect = { EXPELLER = scope:jip_expeller ORIGIN = scope:jip_courtier_origin }
+		}
+		every_in_list = {
+			list = jip_expelling_courts
+			save_scope_as = jip_court_owner
+			every_courtier = {
+				limit = {
+					religion = religion:judaism_religion
+					is_imprisoned = no
+					NOR = {
+						is_spouse_of = scope:jip_court_owner
+						is_concubine_of = scope:jip_court_owner
+						is_close_family_of = scope:jip_court_owner
+					}
+				}
+				jip_expel_jewish_character_effect = { EXPELLER = scope:jip_expeller }
+			}
+		}
+	}
+}
+
+# A departing Jew hands half of their gold to $EXPELLER$. The expeller keeps a tally for the summary event
+# (jip_expulsion.0004), and a player expeller is told who left and what was taken. Call in the departing Jew's scope.
+jip_seize_expelled_gold_effect = {
+	save_scope_as = jip_departing_jew
+	save_scope_value_as = {
+		name = jip_seized_now
+		value = jip_expulsion_family_gold_loss_value
+	}
+	pay_short_term_gold = {
+		target = $EXPELLER$
+		gold = scope:jip_seized_now
+	}
+	# Saved scope values can't be read by localization, so the notification reads this variable
+	set_variable = {
+		name = jip_expulsion_seized_amount
+		value = scope:jip_seized_now
+		days = 1
+	}
+	$EXPELLER$ = {
+		change_variable = { name = jip_expulsion_seized_gold add = scope:jip_seized_now }
+		change_variable = { name = jip_expulsion_departed_count add = 1 }
+		if = {
+			limit = {
+				OR = {
+					NOT = { has_variable = jip_expulsion_top_payer_gold }
+					var:jip_expulsion_top_payer_gold < scope:jip_seized_now
+				}
+			}
+			set_variable = { name = jip_expulsion_top_payer_gold value = scope:jip_seized_now }
+			set_variable = { name = jip_expulsion_top_payer value = scope:jip_departing_jew }
+		}
+		if = {
+			limit = { is_ai = no }
+			send_interface_message = {
+				type = event_generic_good
+				title = jip_expulsion_departure_msg
+				desc = jip_expulsion_departure_msg_desc
+				left_icon = scope:jip_departing_jew
+			}
+		}
+	}
+}
+
+# A Jewish courtier or dispossessed lord leaves $EXPELLER$'s realm, handing over half of their gold.
+# Sent to scope:jip_refuge when one was found, otherwise to wherever the game picks. Call in the character's scope.
+jip_expel_jewish_character_effect = {
+	jip_seize_expelled_gold_effect = { EXPELLER = $EXPELLER$ }
+	add_opinion = {
+		target = $EXPELLER$
+		modifier = jip_expelled_my_family_opinion
+	}
+	if = {
+		limit = { exists = scope:jip_refuge }
+		move_to_pool_at = scope:jip_refuge
+	}
+	else = {
+		select_and_move_to_pool_effect = yes
+	}
+}
+
+# A Jewish lord loses their lands in $EXPELLER$'s realm to the expeller. They become the head of a Mishpacha family
+# with a family title and estate, keeping their household, and are expelled like any other family. Call in the lord's scope.
+jip_jewish_lord_lose_lands_effect = {
+	save_scope_as = jip_dispossessed_lord
+	$EXPELLER$ = { save_scope_as = jip_dispossessor }
+	capital_province ?= { save_scope_as = jip_lord_origin }
+	# Same order as vanilla's adventurer conversion (ep3_laamps.0030): land first, then the landless title,
+	# then the government, all in one effect so the character is never left without a title.
+	# 1. The land goes to the expeller. Capital baronies move with their county.
+	create_title_and_vassal_change = {
+		type = revoked
+		save_scope_as = jip_revoke_change
+		add_claim_on_loss = yes
+	}
+	every_held_title = {
+		limit = {
+			is_landless_type_title = no
+			is_noble_family_title = no
+			is_capital_barony = no
+		}
+		change_title_holder_include_vassals = {
+			holder = scope:jip_dispossessor
+			change = scope:jip_revoke_change
+		}
+	}
+	resolve_title_and_vassal_change = scope:jip_revoke_change
+	# 2. A Mishpacha family title with its estate, unless they already hold a landless title.
+	if = {
+		limit = {
+			NOT = {
+				any_held_title = {
+					OR = {
+						is_landless_type_title = yes
+						is_noble_family_title = yes
+					}
+				}
+			}
+		}
+		save_scope_as = jip_new_mishpacha_head
+		# The estate: create_domicile_title is the engine's effect for "titles with domiciles for modded government types"
+		create_domicile_title = {
+			name = jip_mishpacha_house_title_name
+			holder = scope:jip_dispossessed_lord
+			government = mishpacha_government
+			tier = duchy
+			save_scope_as = jip_domicile_title
+		}
+		# The title: only a noble family title can serve a liege while landless, and it keeps the estate allowed.
+		# Noble family titles belong to house heads, so a lord who is not one founds a cadet house.
+		if = {
+			limit = {
+				exists = house
+				NOT = { house.house_head ?= this }
+			}
+			create_cadet_house_with_name_effect = yes
+		}
+		give_noble_family_title = {
+			name = noble_family_name
+			tier = duchy
+			article = DEFAULT_TITLE_NAME_ARTICLE
+			government = mishpacha_government
+			save_scope_as = jip_new_family_title
+		}
+		destroy_title = scope:jip_domicile_title
+	}
+	# Join the refuge's realm before setting off, so the family title is held within a realm from the start
+	if = {
+		limit = { exists = scope:jip_lord_origin }
+		jip_find_expulsion_refuge_effect = { EXPELLER = scope:jip_dispossessor ORIGIN = scope:jip_lord_origin }
+	}
+	scope:jip_refuge.county.holder.top_liege ?= { save_scope_as = jip_refuge_liege }
+	if = {
+		limit = { exists = scope:jip_refuge_liege }
+		jip_mishpacha_change_liege_effect = { LIEGE = scope:jip_refuge_liege }
+	}
+	# 3. Mishpacha, in case they already held a landless title of another government
+	if = {
+		limit = { NOT = { has_government = mishpacha_government } }
+		change_government = mishpacha_government
+	}
+	jip_mishpacha_flee_expulsion_effect = { EXPELLER = scope:jip_dispossessor }
+}
+
+# Character scope: sends the edict event that fits this Jew: the family one for Mishpacha, the lord one for landed Jews
+jip_send_expulsion_edict_event_effect = {
+	if = {
+		limit = {
+			has_government = mishpacha_government
+			is_landed = no
+		}
+		trigger_event = {
+			id = jip_expulsion.0001
+			days = 1
+		}
+	}
+	else = {
+		trigger_event = {
+			id = jip_expulsion.0003
+			days = 1
+		}
+	}
+}
+
+# A player answered the edict. If they fight, every Jew of the realm still waiting on the edict fights with them;
+# otherwise the AI get their own edict event and decide for themselves. Call in the player's scope.
+jip_expulsion_rally_effect = {
+	save_scope_as = jip_rally_caller
+	$EXPELLER$ = { save_scope_as = jip_rally_expeller }
+	every_ruler = {
+		limit = {
+			is_ai = yes
+			jip_expulsion_awaiting_trigger = { EXPELLER = scope:jip_rally_expeller }
+		}
+		if = {
+			limit = { always = $FIGHT$ }
+			# A war started this tick cannot be found until the effect is done, so they join a day later
+			trigger_event = {
+				id = jip_expulsion.0010
+				days = 1
+			}
+		}
+		else = {
+			jip_send_expulsion_edict_event_effect = yes
+		}
+	}
+}
+
+# Joins the war against $EXPELLER$'s edict, or starts it if nobody has yet. Call in the resister's scope.
+jip_join_expulsion_war_effect = {
+	save_scope_as = jip_war_joiner
+	$EXPELLER$ = { save_scope_as = jip_war_expeller }
+	if = {
+		limit = {
+			scope:jip_war_expeller = {
+				any_character_war = {
+					using_cb = jip_resist_expulsion_cb
+					is_defender = scope:jip_war_expeller
+				}
+			}
+		}
+		scope:jip_war_expeller = {
+			random_character_war = {
+				limit = {
+					using_cb = jip_resist_expulsion_cb
+					is_defender = scope:jip_war_expeller
+				}
+				add_attacker = scope:jip_war_joiner
+			}
+		}
+	}
+	else = {
+		start_war = {
+			casus_belli = jip_resist_expulsion_cb
+			target = scope:jip_war_expeller
+		}
+	}
+}
+
+# The edict is enforced on a resister after the war is lost or ends in a stalemate. Call in the resister's scope.
+jip_enforce_expulsion_on_resister_effect = {
+	if = {
+		limit = { has_government = mishpacha_government is_landed = no }
+		jip_mishpacha_flee_expulsion_effect = { EXPELLER = $EXPELLER$ }
+	}
+	else_if = {
+		limit = { is_landed = yes }
+		jip_jewish_lord_lose_lands_effect = { EXPELLER = $EXPELLER$ }
+	}
+	else = {
+		remove_variable = jip_expelled_by
+	}
+}
+
+# Sends a Mishpacha family and its estate to the nearest city outside $EXPELLER$'s realm that still accepts Jews.
+# Call in the family head's scope.
+jip_mishpacha_flee_expulsion_effect = {
+	save_scope_as = jip_fleeing_family
+	$EXPELLER$ = { save_scope_as = jip_flee_from }
+	remove_variable = jip_expelled_by
+	# Half their gold is seized as they leave
+	jip_seize_expelled_gold_effect = { EXPELLER = scope:jip_flee_from }
+	if = {
+		limit = { exists = domicile }
+		domicile.domicile_location = { save_scope_as = jip_flee_origin }
+	}
+	else_if = {
+		limit = { exists = scope:jip_lord_origin }
+		scope:jip_lord_origin = { save_scope_as = jip_flee_origin }
+	}
+	else = {
+		location ?= { save_scope_as = jip_flee_origin }
+	}
+	if = {
+		limit = { exists = scope:jip_flee_origin }
+		jip_find_expulsion_refuge_effect = { EXPELLER = scope:jip_flee_from ORIGIN = scope:jip_flee_origin }
+		# The family travels to the refuge; jip_expulsion_refuge_arrival_on_action moves the estate there when they arrive
+		if = {
+			limit = { exists = scope:jip_refuge }
+			set_variable = {
+				name = jip_expulsion_refuge
+				value = scope:jip_refuge
+			}
+			start_travel_plan = {
+				destination = scope:jip_refuge
+				return_trip = no
+				players_use_planner = no
+				on_arrival_on_action = jip_expulsion_refuge_arrival_on_action
+				on_arrival_destinations = last
+			}
+		}
+	}
+}
+
+# Root = the ruler lifting the edict.
+# Jewish families may settle in the realm again; every Mishpacha family hears the news.
+jip_readmit_the_jews_effect = {
+	save_scope_as = jip_readmitting_ruler
+	primary_title = {
+		remove_variable = jip_jews_expelled		set_variable = {
+			name = jip_jews_edict_cooldown
+			value = yes
+			years = 10
+		}
+	}
+	custom_tooltip = jip_readmit_the_jews_return_tt
+	hidden_effect = {
+		every_ruler = {
+			limit = { has_government = mishpacha_government }
+			trigger_event = jip_expulsion.0002
+		}
+	}
+}
+
+# Settles a fleeing family's estate in the refuge stored on them and puts them under the local ruler. Call in the family head's scope.
+jip_mishpacha_settle_refuge_effect = {
+	var:jip_expulsion_refuge ?= { save_scope_as = jip_settle_refuge }
+	remove_variable = jip_expulsion_refuge
+	if = {
+		limit = { exists = scope:jip_settle_refuge }
+		domicile ?= { move_domicile = scope:jip_settle_refuge }
+		scope:jip_settle_refuge.county.holder.top_liege ?= { save_scope_as = jip_settle_liege }
+		if = {
+			limit = { exists = scope:jip_settle_liege }
+			jip_mishpacha_change_liege_effect = { LIEGE = scope:jip_settle_liege }
+		}
+	}
+}
+
+# Finds the nearest city outside $EXPELLER$'s realm that still accepts Jews, measured from $ORIGIN$ (a province).
+# Saves it as scope:jip_refuge; leaves it unset when nowhere will take them.
+jip_find_expulsion_refuge_effect = {
+	$EXPELLER$ = { save_scope_as = jip_refuge_expeller }
+	$ORIGIN$ = { save_scope_as = jip_refuge_origin }
+	# Cities in the neighbouring realms, nearest first
+	scope:jip_refuge_expeller = {
+		every_neighboring_and_across_water_top_liege_realm_owner = {
+			limit = { jip_ruler_has_expelled_jews_trigger = no }
+			every_realm_county = {
+				every_county_province = {
+					limit = {
+						jip_valid_expulsion_refuge_trigger = { EXPELLER = scope:jip_refuge_expeller }
+					}
+					add_to_list = jip_refuge_provinces
+				}
+			}
+		}
+	}
+	ordered_in_list = {
+		list = jip_refuge_provinces
+		order_by = {
+			value = "squared_distance(scope:jip_refuge_origin)"
+			multiply = -1
+		}
+		save_scope_as = jip_refuge
+	}
+	# No neighbour takes them in: look for the nearest empire that will
+	if = {
+		limit = { NOT = { exists = scope:jip_refuge } }
+		ordered_empire = {
+			limit = {
+				any_de_jure_county = {
+					any_county_province = {
+						jip_valid_expulsion_refuge_trigger = { EXPELLER = scope:jip_refuge_expeller }
+					}
+				}
+			}
+			order_by = {
+				title_capital_county = { add = "squared_distance(scope:jip_refuge_origin)" }
+				multiply = -1
+			}
+			random_de_jure_county = {
+				limit = {
+					any_county_province = {
+						jip_valid_expulsion_refuge_trigger = { EXPELLER = scope:jip_refuge_expeller }
+					}
+				}
+				random_county_province = {
+					limit = {
+						jip_valid_expulsion_refuge_trigger = { EXPELLER = scope:jip_refuge_expeller }
+					}
+					save_scope_as = jip_refuge
+				}
+			}
+		}
+	}
+}

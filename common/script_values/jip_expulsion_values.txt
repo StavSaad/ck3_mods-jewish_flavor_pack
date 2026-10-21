@@ -1,0 +1,15 @@
+﻿# Character scope: gold an expelled family or courtier loses to the expeller (half their savings)
+jip_expulsion_family_gold_loss_value = {
+	value = 0
+	if = {
+		limit = { gold > 0 }
+		add = gold
+		multiply = 0.5
+	}
+}
+
+# Half of the expeller's military strength: a Jewish lord at least this strong thinks resistance has a chance
+jip_expulsion_half_expeller_strength_value = {
+	value = scope:jip_expeller.max_military_strength
+	multiply = 0.5
+}

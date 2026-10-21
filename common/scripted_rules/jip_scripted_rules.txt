@@ -23,16 +23,13 @@
 						}
 					}
 					scope:owner = { is_available = yes }
-					# TODO: implement jewish expulsions
-					# custom_tooltip = {
-					# 	text = can_move_domicile_jewish_exile_tt
-					# 	NOT = {
-					# 		is_laamp_exiled_from_province_trigger = {
-					# 			PROVINCE = scope:province_temp
-					# 			LAAMP = scope:owner
-					# 		}
-					# 	}
-					# }
+					# Cannot settle in a realm that has expelled the Jews
+					custom_tooltip = {
+						text = can_move_domicile_jewish_expelled_tt
+						NOT = {
+							jip_province_expels_jews_trigger = { PROVINCE = scope:province_temp }
+						}
+					}
 				}
 				trigger_else = {
 					# Cannot move estate outside top_liege realm

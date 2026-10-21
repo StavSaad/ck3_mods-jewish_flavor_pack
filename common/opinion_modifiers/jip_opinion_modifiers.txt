@@ -3,3 +3,9 @@
 	decaying = no
 	imprisonment_reason = yes
 }
+
+jip_expelled_my_family_opinion = {
+	opinion = -60
+	monthly_change = 0.02
+	decaying = yes
+}

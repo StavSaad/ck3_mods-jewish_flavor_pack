@@ -26,3 +26,22 @@ mishpacha_left_judaism_on_action = {
 		jip_mishpacha_leave_faith_effect = yes
 	}
 }
+
+# An expelled family reaches its refuge
+# root = the family head
+jip_expulsion_refuge_arrival_on_action = {
+	trigger = {
+		has_variable = jip_expulsion_refuge
+	}
+	effect = {
+		jip_mishpacha_settle_refuge_effect = yes
+	}
+}
+
+# A fleeing family's journey was cut short (captured, killed, cancelled): their estate is still moved out
+# root = the travelling character
+on_travel_plan_abort = {
+	on_actions = {
+		jip_expulsion_refuge_arrival_on_action
+	}
+}

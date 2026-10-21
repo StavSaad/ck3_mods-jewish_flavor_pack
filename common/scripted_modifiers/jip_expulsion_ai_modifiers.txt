@@ -1,0 +1,303 @@
+﻿# AI weights for Expel the Jews. Root = the ruler considering it.
+jip_expel_the_jews_ai_modifier = {
+	# Personality
+	modifier = {
+		add = 15
+		has_trait = greedy
+	}
+	modifier = {
+		add = 15
+		has_trait = zealous
+	}
+	modifier = {
+		add = 10
+		has_trait = callous
+	}
+	modifier = {
+		add = 10
+		has_trait = paranoid
+	}
+	modifier = {
+		add = 5
+		has_trait = arbitrary
+	}
+	modifier = {
+		add = 5
+		has_trait = vengeful
+	}
+	modifier = {
+		add = -20
+		has_trait = compassionate
+	}
+	modifier = {
+		add = -15
+		has_trait = generous
+	}
+	modifier = {
+		add = -15
+		has_trait = cynical
+	}
+	modifier = {
+		add = -10
+		has_trait = just
+	}
+	modifier = {
+		add = -10
+		has_trait = forgiving
+	}
+	modifier = {
+		add = -5
+		has_trait = trusting
+	}
+	# Seizing their property pays debts
+	modifier = {
+		add = 10
+		gold < 0
+	}
+	# Religious tolerance
+	modifier = {
+		add = 15
+		rite = { rite_has_doctrine = doctrine_pluralism_fundamentalist }
+	}
+	modifier = {
+		add = -15
+		rite = { rite_has_doctrine = doctrine_pluralism_pluralistic }
+	}
+	# Zealous tenets, from the rite and from personal conviction
+	modifier = { # Unrelenting Faith
+		add = 10
+		rite = { rite_has_tenet = tenet_unrelenting_faith }
+	}
+	modifier = {
+		add = 15
+		has_personal_tenet = tenet_unrelenting_faith
+	}
+	modifier = { # Armed Pilgrimages
+		add = 10
+		rite = { rite_has_tenet = tenet_armed_pilgrimages }
+	}
+	modifier = {
+		add = 15
+		has_personal_tenet = tenet_armed_pilgrimages
+	}
+	modifier = { # Miles Christi
+		add = 10
+		rite = { rite_has_tenet = tenet_miles_christi }
+	}
+	modifier = {
+		add = 15
+		has_personal_tenet = tenet_miles_christi
+	}
+	modifier = { # Mendicant Preachers
+		add = 10
+		rite = { rite_has_tenet = tenet_mendicant_preachers }
+	}
+	modifier = {
+		add = 15
+		has_personal_tenet = tenet_mendicant_preachers
+	}
+	# Tolerant tenets
+	modifier = { # Love Thy Neighbour
+		add = -10
+		rite = { rite_has_tenet = tenet_love_thy_neighbour }
+	}
+	modifier = {
+		add = -15
+		has_personal_tenet = tenet_love_thy_neighbour
+	}
+	modifier = { # Philanthropia
+		add = -10
+		rite = { rite_has_tenet = tenet_philanthropia }
+	}
+	modifier = {
+		add = -15
+		has_personal_tenet = tenet_philanthropia
+	}
+	modifier = { # Ritual Hospitality
+		add = -10
+		rite = { rite_has_tenet = tenet_ritual_hospitality }
+	}
+	modifier = {
+		add = -15
+		has_personal_tenet = tenet_ritual_hospitality
+	}
+	modifier = { # Pursuit of Knowledge
+		add = -10
+		rite = { rite_has_tenet = tenet_pursuit_of_knowledge }
+	}
+	modifier = {
+		add = -15
+		has_personal_tenet = tenet_pursuit_of_knowledge
+	}
+	# Dhimmi taxes pay better than a one-time seizure
+	modifier = { # Tax Nonbelievers
+		add = -15
+		rite = { rite_has_tenet = tenet_tax_nonbelievers }
+	}
+	modifier = {
+		add = -20
+		has_personal_tenet = tenet_tax_nonbelievers
+	}
+	modifier = { # Jewish Syncretism
+		add = -30
+		rite = { rite_has_tenet = tenet_jewish_syncretism }
+	}
+	modifier = {
+		add = -40
+		has_personal_tenet = tenet_jewish_syncretism
+	}
+}
+
+# AI weights for Readmit the Jews. Root = the ruler considering it.
+jip_readmit_the_jews_ai_modifier = {
+	# Personality
+	modifier = {
+		add = 15
+		has_trait = compassionate
+	}
+	modifier = {
+		add = 10
+		has_trait = generous
+	}
+	modifier = {
+		add = 10
+		has_trait = cynical
+	}
+	modifier = {
+		add = 10
+		has_trait = just
+	}
+	modifier = {
+		add = 10
+		has_trait = forgiving
+	}
+	modifier = {
+		add = 5
+		has_trait = trusting
+	}
+	modifier = {
+		add = 5
+		has_trait = greedy
+	}
+	modifier = {
+		add = -20
+		has_trait = zealous
+	}
+	modifier = {
+		add = -10
+		has_trait = paranoid
+	}
+	modifier = {
+		add = -10
+		has_trait = callous
+	}
+	modifier = {
+		add = -10
+		has_trait = vengeful
+	}
+	modifier = {
+		add = -10
+		has_trait = stubborn
+	}
+	# The Jews bring back trade and taxes
+	modifier = {
+		add = 10
+		gold < 0
+	}
+	# Religious tolerance
+	modifier = {
+		add = 15
+		rite = { rite_has_doctrine = doctrine_pluralism_pluralistic }
+	}
+	modifier = {
+		add = -20
+		rite = { rite_has_doctrine = doctrine_pluralism_fundamentalist }
+	}
+	# Tolerant tenets, from the rite and from personal conviction
+	modifier = { # Love Thy Neighbour
+		add = 10
+		rite = { rite_has_tenet = tenet_love_thy_neighbour }
+	}
+	modifier = {
+		add = 15
+		has_personal_tenet = tenet_love_thy_neighbour
+	}
+	modifier = { # Philanthropia
+		add = 10
+		rite = { rite_has_tenet = tenet_philanthropia }
+	}
+	modifier = {
+		add = 15
+		has_personal_tenet = tenet_philanthropia
+	}
+	modifier = { # Ritual Hospitality
+		add = 10
+		rite = { rite_has_tenet = tenet_ritual_hospitality }
+	}
+	modifier = {
+		add = 15
+		has_personal_tenet = tenet_ritual_hospitality
+	}
+	modifier = { # Pursuit of Knowledge
+		add = 10
+		rite = { rite_has_tenet = tenet_pursuit_of_knowledge }
+	}
+	modifier = {
+		add = 15
+		has_personal_tenet = tenet_pursuit_of_knowledge
+	}
+	modifier = { # Tax Nonbelievers
+		add = 10
+		rite = { rite_has_tenet = tenet_tax_nonbelievers }
+	}
+	modifier = {
+		add = 15
+		has_personal_tenet = tenet_tax_nonbelievers
+	}
+	modifier = { # Jewish Syncretism
+		add = 20
+		rite = { rite_has_tenet = tenet_jewish_syncretism }
+	}
+	modifier = {
+		add = 30
+		has_personal_tenet = tenet_jewish_syncretism
+	}
+	# Zealous tenets
+	modifier = { # Unrelenting Faith
+		add = -10
+		rite = { rite_has_tenet = tenet_unrelenting_faith }
+	}
+	modifier = {
+		add = -15
+		has_personal_tenet = tenet_unrelenting_faith
+	}
+	modifier = { # Armed Pilgrimages
+		add = -10
+		rite = { rite_has_tenet = tenet_armed_pilgrimages }
+	}
+	modifier = {
+		add = -15
+		has_personal_tenet = tenet_armed_pilgrimages
+	}
+	modifier = { # Miles Christi
+		add = -10
+		rite = { rite_has_tenet = tenet_miles_christi }
+	}
+	modifier = {
+		add = -15
+		has_personal_tenet = tenet_miles_christi
+	}
+	modifier = { # Mendicant Preachers
+		add = -10
+		rite = { rite_has_tenet = tenet_mendicant_preachers }
+	}
+	modifier = {
+		add = -15
+		has_personal_tenet = tenet_mendicant_preachers
+	}
+	# Reluctant to reverse their own edict
+	modifier = {
+		add = -20
+		primary_title.var:jip_jews_expelled ?= root
+	}
+}

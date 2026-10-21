@@ -1,0 +1,211 @@
+﻿namespace = jip_expulsion
+
+# Root = an expelled Mishpacha family head
+# scope:jip_expeller = the ruler who expelled them
+jip_expulsion.0001 = {
+	type = character_event
+	title = jip_expulsion.0001.t
+	desc = jip_expulsion.0001.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	right_portrait = {
+		character = scope:jip_expeller
+		animation = dismissal
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { exists = scope:jip_expeller } }
+			var:jip_expelled_by ?= { save_scope_as = jip_expeller }
+		}
+	}
+
+	# Gather what is left and go
+	option = {
+		name = jip_expulsion.0001.a
+		jip_mishpacha_flee_expulsion_effect = { EXPELLER = scope:jip_expeller }
+		if = {
+			limit = { is_ai = no }
+			jip_expulsion_rally_effect = { EXPELLER = scope:jip_expeller FIGHT = no }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	# Take up arms against the edict
+	option = {
+		name = jip_expulsion.0001.b
+		trigger = { is_ai = no }
+		custom_tooltip = jip_expulsion.0001.b.tt
+		jip_join_expulsion_war_effect = { EXPELLER = scope:jip_expeller }
+		jip_expulsion_rally_effect = { EXPELLER = scope:jip_expeller FIGHT = yes }
+		stress_impact = {
+			craven = major_stress_impact_gain
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+# Root = a Mishpacha family head
+# scope:jip_readmitting_ruler = the ruler who lifted the expulsion
+jip_expulsion.0002 = {
+	type = character_event
+	title = jip_expulsion.0002.t
+	desc = jip_expulsion.0002.desc
+	theme = realm
+	left_portrait = {
+		character = scope:jip_readmitting_ruler
+		animation = personality_honorable
+	}
+
+	option = {
+		name = jip_expulsion.0002.a
+	}
+}
+
+# Root = a landed Jewish lord in the expelling realm
+# scope:jip_expeller = the ruler who expelled the Jews
+jip_expulsion.0003 = {
+	type = character_event
+	title = jip_expulsion.0003.t
+	desc = jip_expulsion.0003.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+	right_portrait = {
+		character = scope:jip_expeller
+		animation = dismissal
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { exists = scope:jip_expeller } }
+			var:jip_expelled_by ?= { save_scope_as = jip_expeller }
+		}
+	}
+
+	# Give up the lands and leave
+	option = {
+		name = jip_expulsion.0003.a
+		custom_tooltip = jip_expulsion.0003.a.tt
+		hidden_effect = {
+			jip_jewish_lord_lose_lands_effect = { EXPELLER = scope:jip_expeller }
+		}
+		if = {
+			limit = { is_ai = no }
+			jip_expulsion_rally_effect = { EXPELLER = scope:jip_expeller FIGHT = no }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	# Fight alongside the rest of the Jews of the realm
+	option = {
+		name = jip_expulsion.0003.b
+		custom_tooltip = jip_expulsion.0003.b.tt
+		jip_join_expulsion_war_effect = { EXPELLER = scope:jip_expeller }
+		if = {
+			limit = { is_ai = no }
+			jip_expulsion_rally_effect = { EXPELLER = scope:jip_expeller FIGHT = yes }
+		}
+		stress_impact = {
+			craven = major_stress_impact_gain
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 60
+				max_military_strength >= jip_expulsion_half_expeller_strength_value
+			}
+			modifier = {
+				add = 30
+				scope:jip_expeller = {
+					any_character_war = {
+						using_cb = jip_resist_expulsion_cb
+						is_defender = scope:jip_expeller
+					}
+				}
+			}
+			modifier = {
+				add = 20
+				has_trait = brave
+			}
+			modifier = {
+				add = 10
+				OR = {
+					has_trait = wrathful
+					has_trait = stubborn
+				}
+			}
+			modifier = {
+				factor = 0.25
+				has_trait = craven
+			}
+		}
+	}
+}
+
+# Hidden. Root = an AI Jew of the realm rallying to a player who took up arms against the edict
+jip_expulsion.0010 = {
+	type = character_event
+	hidden = yes
+
+	# Still under the edict and not yet in the war
+	trigger = {
+		has_variable = jip_expelled_by
+		NOT = {
+			any_character_war = { using_cb = jip_resist_expulsion_cb }
+		}
+	}
+
+	immediate = {
+		var:jip_expelled_by = { save_scope_as = jip_expeller }
+		jip_join_expulsion_war_effect = { EXPELLER = scope:jip_expeller }
+	}
+}
+
+# Root = a player who expelled the Jews, a month after the edict
+jip_expulsion.0004 = {
+	type = character_event
+	title = jip_expulsion.0004.t
+	desc = jip_expulsion.0004.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		trigger = { exists = scope:jip_expulsion_top_payer }
+		character = scope:jip_expulsion_top_payer
+		animation = worry
+	}
+
+	trigger = {
+		is_ai = no
+		has_variable = jip_expulsion_departed_count
+		var:jip_expulsion_departed_count > 0
+	}
+
+	immediate = {
+		var:jip_expulsion_top_payer ?= { save_scope_as = jip_expulsion_top_payer }
+	}
+
+	option = {
+		name = jip_expulsion.0004.a
+		hidden_effect = {
+			remove_variable = jip_expulsion_seized_gold
+			remove_variable = jip_expulsion_departed_count
+			remove_variable = jip_expulsion_top_payer
+			remove_variable = jip_expulsion_top_payer_gold
+		}
+	}
+}

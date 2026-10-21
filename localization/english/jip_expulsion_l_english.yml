@@ -1,0 +1,60 @@
+﻿l_english:
+ # Decision
+ jip_expel_the_jews_decision: "Expel the Jews"
+ jip_expel_the_jews_decision_desc: "The Jewish families of my realm grow rich on its trade and lend at interest to my lords. Their houses and their coin would serve the crown better than they serve them."
+ jip_expel_the_jews_decision_tooltip: "Banish every Jewish family from your [realm|E] and seize half of every Jew's [gold|E]"
+ jip_expel_the_jews_decision_confirm: "Let the edict be proclaimed"
+ jip_expel_the_jews_no_families_tt: "A Jewish [vassal|E] or [mishpacha|E] family lives in your [realm|E]"
+ jip_expel_the_jews_no_return_tt: "No Jewish family may settle in your [realm|E] again"
+ jip_expel_the_jews_every_family_tt: "Every [mishpacha|E] family in your [realm|E]"
+
+ # Domicile
+ can_move_domicile_jewish_expelled_tt: "The Jews have been expelled from this [realm|E]"
+
+ # Opinion
+ jip_expelled_my_family_opinion: "Expelled the Jews"
+
+ # Event
+ jip_expulsion.0001.t: "Edict of Expulsion"
+ jip_expulsion.0001.desc: "Heralds read it in every market square: by order of [jip_expeller.GetTitledFirstName], every Jew is to quit [jip_expeller.GetPrimaryTitle.GetNameNoTier] and never return. Our houses and our goods are forfeit to the crown.\n\nThe neighbours who bought from us yesterday will not meet our eyes today. We can gather what remains and go, or we can refuse to be driven out like cattle."
+ jip_expulsion.0001.a: "We have wandered before. We will wander again."
+ jip_expulsion.0001.b: "We will not go quietly!"
+ jip_expulsion.0001.b.tt: "Fight [jip_expeller.GetShortUIName] to have the edict repealed. The other Jews of the realm who have not yet answered the edict will fight at your side, and you keep your gold unless you are driven out"
+
+ # Casus belli
+ JIP_RESIST_EXPULSION_CB_NAME: "Resist Expulsion"
+ jip_resist_expulsion_cb: "$JIP_RESIST_EXPULSION_CB_NAME$"
+ JIP_RESIST_EXPULSION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')]War against the Expulsion from [DEFENDER.GetPrimaryTitle.GetNameNoTier]"
+ JIP_RESIST_EXPULSION_WAR_NAME_BASE: "War against the Expulsion"
+ jip_resist_expulsion_cb_victory_desc: "[defender.GetShortUIName|U] repeals the expulsion, and [attacker.GetShortUIName] keeps [attacker.GetHerHis] home"
+ jip_resist_expulsion_cb_victory_desc_attacker: "[defender.GetShortUIName|U] repeals the expulsion, and you keep your home"
+ jip_resist_expulsion_cb_white_peace_desc: "The expulsion stands, and [attacker.GetShortUIName] leaves [defender.GetPrimaryTitle.GetNameNoTier]"
+ jip_resist_expulsion_cb_defeat_desc: "The expulsion stands, and [attacker.GetShortUIName] is driven out of [defender.GetPrimaryTitle.GetNameNoTier]"
+
+ # Readmission
+ jip_readmit_the_jews_decision: "Readmit the Jews"
+ jip_readmit_the_jews_decision_desc: "The edict of expulsion has emptied our markets and our moneylenders' houses. Let the Jews return, and their trade with them."
+ jip_readmit_the_jews_decision_tooltip: "Lift the expulsion and allow Jewish families to settle in your [realm|E] again"
+ jip_readmit_the_jews_decision_confirm: "Open the gates"
+ jip_readmit_the_jews_return_tt: "Jewish families may settle in your [realm|E] again"
+ jip_resist_expulsion_cb_invalidated_desc: "[defender.GetShortUIName|U] has lifted the expulsion"
+ jip_expulsion.0002.t: "The Gates Reopen"
+ jip_expulsion.0002.desc: "Word travels quickly along the roads our people walk: [jip_readmitting_ruler.GetTitledFirstName] has lifted the edict of expulsion. Jewish families may once again settle in [jip_readmitting_ruler.GetPrimaryTitle.GetNameNoTier]."
+ jip_expulsion.0002.a: "Blessed is the One who opens the gates."
+ jip_jews_edict_cooldown_tt: "The edict concerning the Jews was changed less than 10 years ago"
+ jip_expel_the_jews_courtiers_tt: "Every Jewish [courtier|E] in your [realm|E] is dismissed, and half their [gold|E] is seized"
+ jip_expel_the_jews_every_lord_tt: "Every Jewish lord in your [realm|E] must surrender their lands or fight"
+ jip_expulsion.0003.t: "Edict of Expulsion"
+ jip_expulsion.0003.desc: "The decree arrived under [jip_expeller.GetTitledFirstName]'s seal: no Jew may hold land in [jip_expeller.GetPrimaryTitle.GetNameNoTier]. My lands are to pass to the crown, and my household and I are to leave the realm with what the crown's collectors leave us.\n\nMy household looks to me. We can yield what our fathers held, or we can make the crown pay for every field."
+ jip_expulsion.0003.a: "Our lands are not worth our lives."
+ jip_expulsion.0003.b: "Let them come and take it!"
+ jip_expulsion.0003.b.tt: "Fight [jip_expeller.GetShortUIName] to have the edict repealed. The other Jews of the realm who have not yet answered the edict will fight at your side. If the edict stands, your lands are revoked"
+ jip_expel_the_jews_resistance_tt: "#X The Jews of your realm may take up arms against the edict. If they win, the edict is repealed#!"
+ jip_expulsion.0003.a.tt: "Your lands pass to [jip_expeller.GetShortUIName]. Your house becomes a [mishpacha|E] family and leaves the realm with half of your [gold|E] seized"
+ jip_mishpacha_house_title_name: "[jip_new_mishpacha_head.GetHouse.GetBaseNameNoTooltip]"
+ jip_expel_the_jews_projected_gold_tt: "Half of every departing Jew's @gold_icon! [gold|E] will be seized"
+ jip_expulsion_departure_msg: "A Jew Leaves the Realm"
+ jip_expulsion_departure_msg_desc: "[jip_departing_jew.GetShortUIName|U] has left the realm. @gold_icon! [jip_departing_jew.MakeScope.Var('jip_expulsion_seized_amount').GetValue|0] [gold|E] seized"
+ jip_expulsion.0004.t: "The Edict Enforced"
+ jip_expulsion.0004.desc: "A month has passed since the edict. [ROOT.Char.MakeScope.Var('jip_expulsion_departed_count').GetValue|0] Jews have left [ROOT.Char.GetPrimaryTitle.GetNameNoTier], and the crown's collectors have brought in @gold_icon! [ROOT.Char.MakeScope.Var('jip_expulsion_seized_gold').GetValue|0] [gold|E].\n\nThe richest of them, [jip_expulsion_top_payer.GetTitledFirstName], alone handed over @gold_icon! [ROOT.Char.MakeScope.Var('jip_expulsion_top_payer_gold').GetValue|0]. The treasury is fuller, the market quieter."
+ jip_expulsion.0004.a: "The realm is better for it."

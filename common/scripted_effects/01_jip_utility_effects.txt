@@ -139,8 +139,8 @@ jip_mishpacha_leave_faith_effect = {
 	}
 	else = {
 		every_held_title = {
-			limit = { is_noble_family_title = yes }
-			destroy_title = this
+			limit = { jip_is_mishpacha_family_title_trigger = yes }
+			scope:jip_convert = { destroy_title = prev }
 		}
 		change_government = administrative_government
 	}

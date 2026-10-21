@@ -1,0 +1,38 @@
+﻿# The Jews have been expelled from the realm this character's top liege rules.
+# Expulsion is stored on the top liege's primary title, so it stays with the crown.
+jip_ruler_has_expelled_jews_trigger = {
+	top_liege.primary_title ?= { has_variable = jip_jews_expelled }
+}
+
+# $PROVINCE$ lies in a realm that has expelled the Jews
+jip_province_expels_jews_trigger = {
+	$PROVINCE$.county.holder ?= { jip_ruler_has_expelled_jews_trigger = yes }
+}
+
+# Province scope: a city outside $EXPELLER$'s realm, under a king or emperor, where an expelled family can settle
+jip_valid_expulsion_refuge_trigger = {
+	has_holding_type = city_holding
+	county.holder ?= {
+		NOT = { top_liege = $EXPELLER$ }
+		jip_ruler_has_expelled_jews_trigger = no
+		# Only a king or emperor can take a family in as vassals, and an independent family's title would be lost
+		top_liege.highest_held_title_tier >= tier_kingdom
+	}
+}
+
+# Character scope: a landless Mishpacha family whose estate lies in $RULER$'s realm
+jip_mishpacha_in_realm_of_trigger = {
+	has_government = mishpacha_government
+	is_landed = no
+	domicile ?= {
+		domicile_location.county.holder.top_liege ?= $RULER$
+	}
+}
+
+# Character scope: expelled by $EXPELLER$ and has neither left, surrendered nor joined the war yet
+jip_expulsion_awaiting_trigger = {
+	var:jip_expelled_by ?= $EXPELLER$
+	NOT = {
+		any_character_war = { using_cb = jip_resist_expulsion_cb }
+	}
+}

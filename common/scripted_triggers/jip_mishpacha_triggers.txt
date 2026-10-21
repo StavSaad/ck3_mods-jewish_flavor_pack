@@ -1,0 +1,14 @@
+﻿# Title scope: a Jewish family title: one of the historical d_jip_* titles, or a noble family title given to a dispossessed lord
+jip_is_mishpacha_family_title_trigger = {
+	OR = {
+		is_noble_family_title = yes
+		this = title:d_jip_ananite
+		this = title:d_jip_benveniste
+		this = title:d_jip_bostanite
+		this = title:d_jip_kalonymos
+		this = title:d_jip_maimon
+		this = title:d_jip_makhirite
+		this = title:d_jip_nathanite
+		this = title:d_jip_shealtiel
+	}
+}
