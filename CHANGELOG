@@ -66,6 +66,8 @@
 [] Mishpacha: AI families now move to more welcoming realms on their own, when the new home is clearly better than staying
 [] Mishpacha: added Mishpacha Succession, fixing family heads and Exilarchs who had no working succession
 [] Mishpacha: new estate building branches. Yeshiva (library), Beit Din (office), Beit Knesset (replaces the Church and Monastery branches of the temple; protects against expulsion and roots the family), Counting House (replaces the market, trading its influence for gold; trains Court Financiers) and the Guest Room, which gives piety instead of influence (welcoming guests is a mitzvah). The Wine Cellar, which only gives influence, is hidden. Mishpacha families have no influence, so the Temple, Crypt, Prison, Trophy Room and Silk Farm lines are replaced with copies that lack it. The Office line loses its governor bonuses the same way, and the Villa's influence becomes prestige (+1 to +3 per month by Villa tier); estate tooltips note which bonuses Mishpacha families don't get
+[] Mishpacha: family heads are now titled Mar/Geveret whatever their liege (they were shown as the liege's Duke or High Chief); spouses are Geveret/Mar, and estates are "the X Household"
+[] Fixed the Mishpacha family titles having no tier name, which flooded the error log
 [] Added the "Expel the Jews" decision for Christian and Muslim rulers. Jewish families leave the realm, Jewish courtiers are dismissed, Jewish lords lose their lands, and half of every departing Jew's gold is seized
 [] Expelled Jews may resist in a single shared war; a lord who surrenders becomes a landless Mishpacha family
 [] Added the "Readmit the Jews" decision; edicts concerning the Jews have a 10-year cooldown

@@ -17,17 +17,20 @@ emperor_male_jewish = {
 	heritages = { heritage_israelite }
 }
 
+# Mar/Geveret for Mishpacha family heads. top_liege = no checks the family head rather than their non-Jewish
+# top liege, and the priority beats the liege's titles and the Israelite tier titles (Nasi)
 duke_jewish_landless_male = {
 	type = character
 	gender = male
 	special = holder
 	tier = duchy
 	domicile_type = estate
-	priority = 25
+	priority = 302
 	governments = { mishpacha_government }
 
 	flavourization_rules = {
 		spouse_takes_title = no
+		top_liege = no
 	}
 }
 
@@ -36,7 +39,7 @@ kohen_gadol_male = {
 	gender = male
 	special = holder
 	tier = duchy
-	priority = 301
+	priority = 310 # Above the Mishpacha Mar/Geveret titles
 	titles = { d_kohen_gadol }
 	flavourization_rules = {
 		spouse_takes_title = no
@@ -50,7 +53,7 @@ kohen_gadol_female = {
 	gender = female
 	special = holder
 	tier = duchy
-	priority = 301
+	priority = 310 # Above the Mishpacha Mar/Geveret titles
 	titles = { d_kohen_gadol }
 	flavourization_rules = {
 		spouse_takes_title = no
@@ -82,7 +85,7 @@ exilarch = {
 	gender = male
 	special = holder
 	tier = duchy
-	priority = 301
+	priority = 310 # Above the Mishpacha Mar/Geveret titles
 	titles = { d_exilarchate d_karaite_exilarchate }
 
 	flavourization_rules = {
@@ -92,36 +95,51 @@ exilarch = {
 	}
 }
 
+# Mar/Geveret for Mishpacha family heads. top_liege = no checks the family head rather than their non-Jewish
+# top liege, and the priority beats the liege's titles and the Israelite tier titles (Nasi)
 duke_jewish_landless_female = {
 	type = character
 	gender = female
 	special = holder
 	tier = duchy
 	domicile_type = estate
-	priority = 25
+	priority = 302
 	governments = { mishpacha_government }
 
 	flavourization_rules = {
 		spouse_takes_title = no
+		top_liege = no
 	}
 }
 
+# Spouses of Mishpacha family heads. Duchy tier only, so a Mishpacha king's spouse keeps Malcha/Melech
 spouse_jewish_landless_male = {
 	type = character
 	gender = male
 	special = domicile
-    domicile_type = estate
-	priority = 25
+	domicile_type = estate
+	tier = duchy
+	priority = 302
 	governments = { mishpacha_government }
+
+	flavourization_rules = {
+		top_liege = no
+	}
 }
 
+# Spouses of Mishpacha family heads. Duchy tier only, so a Mishpacha king's spouse keeps Malcha/Melech
 spouse_jewish_landless_female = {
 	type = character
 	gender = female
 	special = domicile
-    domicile_type = estate
-	priority = 25
+	domicile_type = estate
+	tier = duchy
+	priority = 302
 	governments = { mishpacha_government }
+
+	flavourization_rules = {
+		top_liege = no
+	}
 }
 
 king_male_jewish = {
@@ -221,4 +239,43 @@ barony_jewish = {
 	tier = barony
 	priority = 301
 	heritages = { heritage_israelite }
+}
+
+# Tier name for Mishpacha family titles. Without it the landless family titles found no title flavourization
+# ("Failed to find any valid flavorization for title d_jip_..."); vanilla gives its landless titles a government entry
+# the same way (duchy_landless_adventurer_camp, duchy_administrative).
+duchy_mishpacha = {
+	type = title
+	tier = duchy
+	priority = 302
+	governments = { mishpacha_government }
+
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+# The same tier name for the mod's historical family titles when their holder is dead, and so has no government
+# for duchy_mishpacha to check (e.g. a dead father's title in the family tree)
+duchy_mishpacha_historical_families = {
+	type = title
+	tier = duchy
+	priority = 300
+	titles = { d_jip_kalonymos d_jip_nathanite d_jip_bostanite d_jip_ananite d_jip_shealtiel d_jip_benveniste d_jip_maimon d_jip_makhirite }
+
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+# "the X Household" for Mishpacha estates, in place of vanilla's "the X Estate"
+domicile_estate_mishpacha = {
+	type = domicile
+	domicile_type = estate
+	priority = 27
+	governments = { mishpacha_government }
+
+	flavourization_rules = {
+		top_liege = no
+	}
 }

@@ -23,3 +23,6 @@
  duke_jewish_landless_female: "Geveret"
  spouse_jewish_landless_male: "Mar"
  spouse_jewish_landless_female: "Geveret"
+ duchy_mishpacha: "Mishpacha"
+ duchy_mishpacha_historical_families: "$duchy_mishpacha$"
+ domicile_estate_mishpacha: "the [CHARACTER.GetHouse.GetNameNoTooltip] Household"

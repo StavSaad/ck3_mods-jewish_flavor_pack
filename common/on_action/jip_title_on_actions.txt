@@ -67,6 +67,10 @@ jip_kohen_gadol_death_on_action = {
 		has_title = title:d_kohen_gadol
 	}
 	effect = {
-		set_variable = jip_was_kohen_gadol
+		# A global list, since dead characters can't hold variables
+		add_to_global_variable_list = {
+			name = jip_former_kohen_gadols
+			target = this
+		}
 	}
 }

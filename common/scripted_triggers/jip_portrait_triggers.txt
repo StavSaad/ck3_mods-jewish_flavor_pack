@@ -5,7 +5,10 @@ jip_former_kohen_gadol_trigger = {
 	exists = this
 	is_alive = no
 	OR = {
-		has_variable = jip_was_kohen_gadol
+		is_target_in_global_variable_list = {
+			name = jip_former_kohen_gadols
+			target = this
+		}
 		this = character:kohanism_seraiah
 		this = character:kohanism_yehozadak
 		this = character:kohanism_yeshua
