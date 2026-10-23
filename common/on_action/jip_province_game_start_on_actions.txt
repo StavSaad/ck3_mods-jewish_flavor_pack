@@ -4,7 +4,20 @@
 		jip_1066_effect_setup
         jip_1178_effect_setup
 		jip_liege_effect_setup
+		jip_jewish_families_game_start_on_action
     }
+}
+
+# New Mishpacha families across Europe, the Middle East and North Africa (jip_spawn_jewish_families_effect).
+# Before the lobby, so they can be played; the after-lobby setup gives them courtiers and contracts like any family.
+jip_jewish_families_game_start_on_action = {
+	trigger = {
+		# Estates are Roads to Power
+		has_ep3_dlc_trigger = yes
+	}
+	effect = {
+		jip_spawn_jewish_families_effect = yes
+	}
 }
 
 jip_liege_effect_setup = {

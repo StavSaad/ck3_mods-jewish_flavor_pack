@@ -1,0 +1,18 @@
+﻿# County scope: a home for a new Jewish family at game start (jip_spawn_jewish_families_effect): a city under a
+# Christian, Muslim or Jewish king or emperor who has not expelled the Jews, with no family estate there yet.
+# Only a king or emperor can take a family in as vassals (jip_mishpacha_change_liege_effect).
+jip_jewish_family_home_county_trigger = {
+	NOT = { is_in_list = jip_family_counties }
+	any_county_province = { has_holding_type = city_holding }
+	holder ?= {
+		jip_ruler_has_expelled_jews_trigger = no
+		top_liege = {
+			highest_held_title_tier >= tier_kingdom
+			OR = {
+				religion = religion:christianity_religion
+				religion = religion:islam_religion
+				religion = religion:judaism_religion
+			}
+		}
+	}
+}

@@ -1,0 +1,51 @@
+﻿# Heads of the Jewish families created at game start (jip_spawn_jewish_families_effect): merchants, scholars and
+# go-betweens in their prime. Culture, faith, rite and location come from create_character.
+# Runs in on_game_start, where root is empty: nothing here may use root.
+
+jip_jewish_family_head_template = {
+	age = { 20 40 }
+	gender_female_chance = 0
+	dynasty = generate
+
+	random_traits = no
+	random_traits_list = {
+		count = 1
+		education_stewardship_2 = {}
+		education_stewardship_3 = {}
+		education_stewardship_4 = {}
+		education_learning_2 = {}
+		education_learning_3 = {}
+		education_diplomacy_2 = {}
+		education_diplomacy_3 = {}
+		education_intrigue_2 = {}
+	}
+	random_traits_list = {
+		count = 3
+		diligent = {}
+		ambitious = {}
+		patient = {}
+		honest = {}
+		just = {}
+		gregarious = {}
+		calm = {}
+		greedy = {}
+		temperate = {}
+		compassionate = {}
+		zealous = {}
+		stubborn = {}
+	}
+	random_traits_list = {
+		count = { 0 1 }
+		administrator = {}
+		diplomat = {}
+		lifestyle_traveler = {}
+		erudite = {}
+	}
+
+	stewardship = { 8 14 }
+	diplomacy = { 6 12 }
+	learning = { 6 12 }
+	intrigue = { 4 9 }
+	martial = { 2 6 }
+	prowess = { 3 8 }
+}

@@ -1,0 +1,198 @@
+﻿# Game start: up to 60 new Mishpacha families across Europe, the Middle East and North Africa, so the Jewish world has
+# more houses to trade, marry and compete with. Each region gets a share; a region with fewer welcoming cities than its
+# share (jip_jewish_family_home_county_trigger) gets fewer families. One family per county.
+# Courtiers, contracts and estate fixes come from the after-lobby setup like any other family.
+# Runs in on_game_start, where root is empty: nothing here may use root.
+jip_spawn_jewish_families_effect = {
+	# Counties that already hold a family estate are taken
+	every_ruler = {
+		limit = { has_government = mishpacha_government }
+		domicile ?= {
+			domicile_location.county = { add_to_list = jip_family_counties }
+		}
+	}
+	# 60 in all
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_west_iberia COUNT = 8 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_west_francia COUNT = 5 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_west_germania COUNT = 5 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_south_italy COUNT = 6 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_east COUNT = 2 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_south_east COUNT = 3 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_asia_minor COUNT = 3 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_steppe_west COUNT = 2 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_middle_east_jerusalem COUNT = 6 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_middle_east_arabia COUNT = 6 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_middle_east_persia COUNT = 4 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_africa_north_west COUNT = 5 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_africa_north_east COUNT = 5 }
+}
+
+# Up to $COUNT$ new families in $REGION$, each in a different county, weighted by jip_jewish_family_county_weight_value
+jip_spawn_jewish_families_in_region_effect = {
+	every_county_in_region = {
+		region = $REGION$
+		limit = { jip_jewish_family_home_county_trigger = yes }
+		add_to_list = jip_family_candidates_$REGION$
+	}
+	while = {
+		count = $COUNT$
+		if = {
+			limit = {
+				any_in_list = {
+					list = jip_family_candidates_$REGION$
+					NOT = { is_in_list = jip_family_counties }
+				}
+			}
+			random_in_list = {
+				list = jip_family_candidates_$REGION$
+				limit = {
+					NOT = { is_in_list = jip_family_counties }
+				}
+				weight = {
+					base = 1
+					modifier = {
+						add = jip_jewish_family_county_weight_value
+					}
+				}
+				add_to_list = jip_family_counties
+				random_county_province = {
+					limit = { has_holding_type = city_holding }
+					save_scope_as = jip_new_family_home
+				}
+			}
+			jip_create_jewish_family_effect = yes
+		}
+	}
+}
+
+# A new Mishpacha family in the city scope:jip_new_family_home: a head aged 20 to 40, a family title and estate, the
+# vassalage of the local crown, a spouse and children
+jip_create_jewish_family_effect = {
+	scope:jip_new_family_home = {
+		jip_jewish_family_culture_effect = yes
+		jip_jewish_family_faith_effect = yes
+		county.holder.top_liege = { save_scope_as = jip_new_family_liege }
+	}
+	create_character = {
+		template = jip_jewish_family_head_template
+		location = scope:jip_new_family_home
+		culture = scope:jip_new_family_culture
+		faith = scope:jip_new_family_faith
+		rite = scope:jip_new_family_rite
+		# Also the name jip_mishpacha_house_title_name reads
+		save_scope_as = jip_new_mishpacha_head
+	}
+	scope:jip_new_mishpacha_head = {
+		# Same steps as a dispossessed lord (jip_jewish_lord_lose_lands_effect): the estate comes with a domicile title,
+		# then the noble family title takes its place
+		create_domicile_title = {
+			name = jip_mishpacha_house_title_name
+			holder = scope:jip_new_mishpacha_head
+			government = mishpacha_government
+			tier = duchy
+			save_scope_as = jip_domicile_title
+		}
+		give_noble_family_title = {
+			name = noble_family_name
+			tier = duchy
+			article = DEFAULT_TITLE_NAME_ARTICLE
+			government = mishpacha_government
+			save_scope_as = jip_new_family_title
+		}
+		destroy_title = scope:jip_domicile_title
+		domicile ?= {
+			move_domicile = scope:jip_new_family_home
+			add_random_internal_estate_building = yes
+		}
+		jip_mishpacha_change_liege_effect = { LIEGE = scope:jip_new_family_liege }
+		if = {
+			limit = { NOT = { has_government = mishpacha_government } }
+			change_government = mishpacha_government
+		}
+		jip_mishpacha_ensure_succession_law_effect = yes
+		add_gold = jip_jewish_family_starting_gold_value
+		# Vanilla's generated families: a spouse of the same age and up to three children, by the mother's age
+		game_rule_create_spouse_and_children = { CHARACTER = this LOCATION = this }
+	}
+}
+
+# Province scope: the Jewish culture of the community a new family joins, saved as scope:jip_new_family_culture.
+# Iberia and the Maghreb are Sephardi, Latin Europe Ashkenazi, the Khazar steppe Radhanite, and the lands of the
+# Caliphate and Byzantium Bavlim. Eastern Europe and Persia, on the Radhanite routes, mix in Radhanites.
+jip_jewish_family_culture_effect = {
+	if = {
+		limit = {
+			OR = {
+				geographical_region = world_europe_west_iberia
+				geographical_region = world_africa_north_west
+			}
+		}
+		culture:sephardi = { save_scope_as = jip_new_family_culture }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				geographical_region = world_europe_west
+				geographical_region = world_europe_south_italy
+			}
+		}
+		culture:ashkenazi = { save_scope_as = jip_new_family_culture }
+	}
+	else_if = {
+		limit = { geographical_region = world_steppe_west }
+		culture:radhanite = { save_scope_as = jip_new_family_culture }
+	}
+	else_if = {
+		limit = { geographical_region = world_europe_east }
+		random_list = {
+			60 = { culture:ashkenazi = { save_scope_as = jip_new_family_culture } }
+			40 = { culture:radhanite = { save_scope_as = jip_new_family_culture } }
+		}
+	}
+	else_if = {
+		limit = { geographical_region = world_middle_east_persia }
+		random_list = {
+			70 = { culture:bavlim = { save_scope_as = jip_new_family_culture } }
+			30 = { culture:radhanite = { save_scope_as = jip_new_family_culture } }
+		}
+	}
+	else = {
+		culture:bavlim = { save_scope_as = jip_new_family_culture }
+	}
+}
+
+# Province scope: the faith and rite of a new family, saved as scope:jip_new_family_faith and scope:jip_new_family_rite.
+# Mostly Rabbinic, a few of them Merkabah mystics; Karaites where their communities were strong: Egypt, the Caliphate,
+# Byzantium and the Khazar lands
+jip_jewish_family_faith_effect = {
+	random_list = {
+		85 = {
+			faith:rabbinic_faith = { save_scope_as = jip_new_family_faith }
+			rite:rabbinism = { save_scope_as = jip_new_family_rite }
+		}
+		5 = {
+			faith:rabbinic_faith = { save_scope_as = jip_new_family_faith }
+			rite:merkabah = { save_scope_as = jip_new_family_rite }
+		}
+		0 = {
+			modifier = {
+				add = 15
+				OR = {
+					geographical_region = world_middle_east
+					geographical_region = world_europe_south_east
+					geographical_region = world_asia_minor
+				}
+			}
+			modifier = {
+				add = 25
+				geographical_region = world_africa_north_east
+			}
+			modifier = {
+				add = 35
+				geographical_region = world_steppe_west
+			}
+			faith:karaism = { save_scope_as = jip_new_family_faith }
+			rite:karaism = { save_scope_as = jip_new_family_rite }
+		}
+	}
+}

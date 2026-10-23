@@ -1,0 +1,22 @@
+﻿# County scope: how strongly a county draws a new Jewish family at game start (jip_spawn_jewish_families_effect).
+# Rich cities draw them, a royal seat twice as much, and a Jewish county most of all.
+jip_jewish_family_county_weight_value = {
+	value = 10
+	add = development_level
+	if = {
+		limit = { this = holder.top_liege.capital_county }
+		multiply = 2
+	}
+	if = {
+		limit = { faith.religion = religion:judaism_religion }
+		multiply = 3
+	}
+}
+
+# A new family's purse
+jip_jewish_family_starting_gold_value = {
+	integer_range = {
+		min = 100
+		max = 300
+	}
+}
