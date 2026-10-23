@@ -31,18 +31,16 @@
 	vassal_contract_group = mishpacha_vassal
 
 	character_modifier = {
-		levy_size = -0.5
-		men_at_arms_cap = -2
-		men_at_arms_limit = -2
-		knight_limit = -5
 		title_creation_cost_mult = -0.5
 		mercenary_hire_cost_mult = -0.25
 		men_at_arms_maintenance = 0.5
 		diplomatic_range_mult = 2
 		domicile_travel_speed = -0.75 # Moving the estate means moving the whole family; matches the adventurer camp penalty
 		monthly_income_mult = 0.15
-		monthly_influence_mult = 0.1
 		monthly_learning_lifestyle_xp_gain_mult = 0.1
+		monthly_stewardship_lifestyle_xp_gain_mult = 0.1 # Financiers as much as scholars
+		character_travel_safety = 10 # Trade networks and the hospitality of other Jewish communities on the road
+		courtier_and_guest_opinion = 5 # The household is kin and dependants
 	}
 
 	can_get_government = {

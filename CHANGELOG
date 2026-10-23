@@ -54,7 +54,8 @@
 [] Updated for Crusader Kings III 1.20 (faiths, rites and tenets moved to the new religion structure)
 [] Copts now speak the vanilla Egyptian language instead of a separate Coptic one
 [] Clearing the Temple grounds now removes Jerusalem as a holy site of the Islamic faiths
-[] Mishpacha: rebalanced the government. Mercenaries are 25% cheaper instead of more expensive, and families gain +15% income, +10% influence and +10% learning lifestyle experience
+[] Mishpacha: rebalanced the government. Mercenaries are 25% cheaper instead of more expensive, and families gain +15% income and +10% learning lifestyle experience
+[] Mishpacha: removed the government's levy, knight and men-at-arms regiment and size penalties. Families gain +10% stewardship lifestyle experience, +10 travel safety and +5 opinion from courtiers and guests
 [] Mishpacha: families are now vassals of the realm their estate lies in, under a new "Charter of Privileges" contract (communal taxes, religious rights, Beit Din rights, trade rights)
 [] Mishpacha: families under a Muslim liege who taxes nonbelievers start paying jizya
 [] Mishpacha: removed the title revocation protection option from the charter

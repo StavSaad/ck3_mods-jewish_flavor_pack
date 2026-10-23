@@ -56,7 +56,7 @@ A custom government for landless Jewish families, modeled on the historical Nasi
 - City holdings only; a family that gains land adopts its liege's government (or feudal)
 - `mechanic_type = mishpacha`, not administrative: landless heads fail vanilla's `is_landed_or_landless_administrative_or_theocratic`, so most vanilla court positions, events and admin perks are closed to them. Gate Mishpacha content with `government_has_flag = government_is_mishpacha`
 - No council and no influence (the influence flag is off); legitimacy and noble families are on
-- Reduced levies and MaA, cheaper mercenaries, doubled diplomatic range, +15% income, +10% learning XP
+- Dearer MaA upkeep (no levy, knight, MaA regiment or size penalty), cheaper mercenaries, doubled diplomatic range, +15% income, +10% learning and stewardship XP, +10 travel safety, +5 courtier and guest opinion
 - Primary heritage: Israelite
 
 ### Realm and migration
