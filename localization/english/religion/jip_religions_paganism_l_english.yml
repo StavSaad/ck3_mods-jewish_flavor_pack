@@ -111,3 +111,4 @@
  fervor_loss_third_temple: "The Al-Aqsa Mosque was destroyed to rebuild the Jewish Temple"
  tenet_kehunah_name: "Kehunah"
  tenet_kehunah_desc: "The sons of Aaron are set apart from birth to serve before the Lord. Their purity must be guarded, their lineage kept unbroken, and the tithes of Israel given to sustain them, for through the Kohanim the blessing of the Temple flows to all the people."
+ jip_tenet_kehunah_jewish_trigger: "The [faith|E] is Jewish, or has the $tenet_jewish_syncretism_name$ [tenet|E]"

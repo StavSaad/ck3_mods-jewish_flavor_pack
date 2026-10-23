@@ -9,10 +9,22 @@ tenet_kehunah = {
 			multiply = faith_unchanged_doctrine_cost_mult
 		}
 	}
+	# Only for Jewish faiths, and faiths that take in Jewish ways through Jewish Syncretism
 	can_pick = {
-		OR = {
-			religion = religion:judaism_religion
-			has_tenet = tenet_kehunah # If you already have it
+		custom_description = {
+			text = jip_tenet_kehunah_jewish_trigger
+			OR = {
+				religion = religion:judaism_religion
+				tenet:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+	can_pick_as_personal_tenet = {
+		faith = {
+			OR = {
+				religion = religion:judaism_religion
+				has_doctrine = tenet_jewish_syncretism
+			}
 		}
 	}
 	character_modifier = {
