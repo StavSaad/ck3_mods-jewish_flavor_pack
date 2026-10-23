@@ -1,6 +1,6 @@
 ﻿l_english:
  # Vanilla keys, overridden to note that Mishpacha families don't have these (see jip_estate_custom_loc.txt)
- MOD_DOMICILE_MONTHLY_INFLUENCE_ADD: "[domicile|E] [influence|E][GetPlayer.Custom('JipMishpachaInfluenceNote')]"
+ MOD_DOMICILE_MONTHLY_INFLUENCE_ADD: "[domicile|E] [influence|E][SelectLocalization( GetPlayer.IsValid, 'jip_mishpacha_influence_note_ingame', 'jip_empty_loc' )]"
  domicile_building_parameter_estate_increase_house_member_investment_cap_1: "Every [house|E] member's [investment_cap|E]: #P +10#![GetPlayer.Custom('JipMishpachaUnusedNote')]"
  domicile_building_parameter_estate_increase_house_member_investment_cap_2: "Every [house|E] member's [investment_cap|E]: #P +20#![GetPlayer.Custom('JipMishpachaUnusedNote')]"
  domicile_building_parameter_estate_increase_house_member_investment_cap_3: "Every [house|E] member's [investment_cap|E]: #P +30#![GetPlayer.Custom('JipMishpachaUnusedNote')]"

@@ -80,4 +80,6 @@
  # Note on vanilla estate tooltip lines that do nothing for Mishpacha families (JipMishpachaUnusedNote)
  jip_mishpacha_unused_note: " #weak (none for Mishpacha families)#!"
  jip_mishpacha_influence_note: " #weak (becomes [prestige|E] for Mishpacha families)#!"
+ # Modifier names are also drawn at load, before there is a player, so the note is only looked up in game
+ jip_mishpacha_influence_note_ingame: "[GetPlayer.Custom('JipMishpachaInfluenceNote')]"
  jip_empty_loc: ""
