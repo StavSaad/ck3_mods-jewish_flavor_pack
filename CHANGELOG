@@ -84,6 +84,7 @@
 [] Kohenism: new faith icon in the 1.20 style
 [] Kohenism: High Priests keep the Kohen Gadol garments in their portraits after death, both historic ones and those who die in office during play
 [] New stained-glass art for "The Jewish World" bookmark: a menorah between two lions of Judah on its tab, and a new start button
+[] Jewish cultures now start with the same innovations as the people they lived among at every start date: Ashkenazi as the Rhineland Germans, Sephardi as the Castilians, Bavli, Radhanite and Hebrew as the Mashriqi, Kochinim as the Tamils, and Edomite as the Bedouin (Edomites were missing almost all innovations)
 [] Fixed the Fertile Crescent region counting Levantine provinces twice
 [] Fixed the Persian Struggle not including the Bavlim culture
 [] Fixed many errors: Tanas holy site, Canaanite faith tenets, Lower Egypt adjective, Third Temple tenet check, Masada defense bonus, Maimonides' traits, Claim Exilarchate description, Semitic pagan religious head, and duplicate localization keys
