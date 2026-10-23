@@ -32,7 +32,7 @@ jip_mishpacha_ai_can_migrate_trigger = {
 	}
 	exists = domicile
 	location = domicile.domicile_location
-	# Same rule as moving the estate by hand: no moving out of a realm at war
+	# AI families wait out a war before moving, though a player family may leave during one (jip_scripted_rules.txt)
 	domicile.domicile_location.county.holder ?= {
 		NOR = {
 			is_at_war = yes

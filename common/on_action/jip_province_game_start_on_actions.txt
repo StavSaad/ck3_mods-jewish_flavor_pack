@@ -26,6 +26,20 @@ jip_liege_effect_setup = {
 		every_ruler = {
 			limit = { has_government = mishpacha_government }
 			jip_mishpacha_ensure_succession_law_effect = yes
+			# A family whose estate lies under a duke or lesser ruler leaves any other liege and pays them tribute
+			save_scope_as = jip_family_head
+			if = {
+				limit = {
+					is_landed = no
+					domicile.domicile_location.county.holder.top_liege ?= {
+						this != scope:jip_family_head
+						highest_held_title_tier <= tier_duchy
+						NOT = { scope:jip_family_head.suzerain ?= this }
+					}
+				}
+				domicile.domicile_location.county.holder.top_liege = { save_scope_as = jip_estate_ruler }
+				jip_mishpacha_change_liege_effect = { LIEGE = scope:jip_estate_ruler }
+			}
 		}
 	}
 }

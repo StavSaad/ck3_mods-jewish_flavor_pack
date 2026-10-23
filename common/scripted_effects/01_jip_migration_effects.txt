@@ -4,10 +4,19 @@
 jip_mishpacha_ai_migration_effect = {
 	save_scope_as = jip_migrant
 	domicile.domicile_location = { save_scope_as = jip_migrant_origin }
-	# How well the family fares where it is: its liege's realm plus the city it lives in
+	# How well the family fares where it is: its liege's (or suzerain's) realm plus the city it lives in
 	if = {
 		limit = { is_independent_ruler = no }
 		top_liege = {
+			save_scope_value_as = {
+				name = jip_current_host_score
+				value = jip_mishpacha_host_score_value
+			}
+		}
+	}
+	else_if = {
+		limit = { is_tributary = yes }
+		suzerain = {
 			save_scope_value_as = {
 				name = jip_current_host_score
 				value = jip_mishpacha_host_score_value
@@ -109,7 +118,7 @@ jip_mishpacha_ai_migration_effect = {
 			value = yes
 			years = 20
 		}
-		# A player liege hears that the family is leaving
+		# A player liege or suzerain hears that the family is leaving
 		if = {
 			limit = {
 				is_independent_ruler = no
@@ -125,11 +134,105 @@ jip_mishpacha_ai_migration_effect = {
 				}
 			}
 		}
+		else_if = {
+			limit = {
+				suzerain ?= { is_ai = no }
+			}
+			suzerain = {
+				send_interface_message = {
+					type = event_generic_neutral
+					title = jip_mishpacha_migration_departure_msg
+					desc = jip_mishpacha_migration_departure_msg_desc
+					left_icon = scope:jip_migrant
+					right_icon = scope:jip_new_host
+				}
+			}
+		}
 		start_travel_plan = {
 			destination = scope:jip_migration_target
 			travel_with_domicile = yes
 			return_trip = no
 			players_use_planner = no
+		}
+	}
+}
+
+# The estate travels with the family, but the engine only sets it down where can_move_domicile allows it (a city, see
+# common/scripted_rules/jip_scripted_rules.txt), so a trip that ended anywhere else left it behind in the old realm.
+# On arrival the estate settles in the city the family reached, or else the nearest city of that realm, unless the
+# realm has expelled the Jews. Used by jewish_admin_migration_on_action. Call in the family head's scope.
+jip_mishpacha_settle_estate_on_arrival_effect = {
+	location ?= { save_scope_as = jip_arrival_location }
+	if = {
+		limit = {
+			exists = scope:jip_arrival_location
+			NOT = { domicile.domicile_location ?= scope:jip_arrival_location }
+		}
+		if = {
+			limit = {
+				scope:jip_arrival_location = { has_holding_type = city_holding }
+			}
+			scope:jip_arrival_location = { save_scope_as = jip_estate_target }
+		}
+		else = {
+			scope:jip_arrival_location.county.holder.top_liege ?= {
+				ordered_realm_province = {
+					limit = { has_holding_type = city_holding }
+					order_by = {
+						value = "squared_distance(scope:jip_arrival_location)"
+						multiply = -1
+					}
+					save_scope_as = jip_estate_target
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:jip_estate_target
+				NOT = {
+					jip_province_expels_jews_trigger = { PROVINCE = scope:jip_estate_target }
+				}
+			}
+			domicile = { move_domicile = scope:jip_estate_target }
+		}
+	}
+}
+
+# The family joins the realm its estate now lies in, and a player liege or suzerain hears of it.
+# Used by jewish_admin_migration_on_action. Call in the family head's scope.
+jip_mishpacha_join_estate_realm_effect = {
+	domicile.domicile_location.county.holder.top_liege = {
+		save_scope_as = recipient_liege
+	}
+	jip_mishpacha_change_liege_effect = { LIEGE = scope:recipient_liege }
+	if = {
+		limit = {
+			OR = {
+				liege ?= scope:recipient_liege
+				suzerain ?= scope:recipient_liege
+			}
+			scope:recipient_liege = { is_ai = no }
+		}
+		save_scope_as = jip_arriving_family
+		domicile.domicile_location = { save_scope_as = jip_arrival_city }
+		scope:recipient_liege = {
+			if = {
+				limit = { scope:jip_arriving_family.suzerain ?= this }
+				send_interface_message = {
+					type = event_generic_good
+					title = jip_mishpacha_migration_arrival_msg
+					desc = jip_mishpacha_migration_arrival_tributary_msg_desc
+					left_icon = scope:jip_arriving_family
+				}
+			}
+			else = {
+				send_interface_message = {
+					type = event_generic_good
+					title = jip_mishpacha_migration_arrival_msg
+					desc = jip_mishpacha_migration_arrival_msg_desc
+					left_icon = scope:jip_arriving_family
+				}
+			}
 		}
 	}
 }

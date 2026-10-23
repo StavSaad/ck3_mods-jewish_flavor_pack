@@ -66,7 +66,7 @@ jip_spawn_jewish_families_in_region_effect = {
 }
 
 # A new Mishpacha family in the city scope:jip_new_family_home: a head aged 20 to 40, a family title and estate, the
-# vassalage of the local crown, a spouse and children
+# local ruler as liege or suzerain, a spouse and children
 jip_create_jewish_family_effect = {
 	scope:jip_new_family_home = {
 		jip_jewish_family_culture_effect = yes

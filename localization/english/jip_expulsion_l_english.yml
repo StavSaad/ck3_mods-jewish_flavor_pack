@@ -64,3 +64,4 @@
  jip_mishpacha_migration_departure_msg_desc: "[jip_migrant.GetShortUIName|U] is moving [jip_migrant.GetHerHis] estate to [jip_migration_target.GetName], in the realm of [jip_new_host.GetShortUIName]"
  jip_mishpacha_migration_arrival_msg: "A Jewish Family Settles"
  jip_mishpacha_migration_arrival_msg_desc: "[jip_arriving_family.GetShortUIName|U] has settled [jip_arriving_family.GetHerHis] estate in [jip_arrival_city.GetName] and joined the realm"
+ jip_mishpacha_migration_arrival_tributary_msg_desc: "[jip_arriving_family.GetShortUIName|U] has settled [jip_arriving_family.GetHerHis] estate in [jip_arrival_city.GetName] and now pays you [tribute|E]"

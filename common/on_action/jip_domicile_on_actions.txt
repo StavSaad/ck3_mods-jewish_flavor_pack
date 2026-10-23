@@ -8,39 +8,28 @@ on_travel_plan_complete = {
 }
 
 # root = the travelling character
+# The estate is first set down where the family stopped, if the engine left it behind (jip_mishpacha_settle_estate_on_arrival_effect).
 jewish_admin_migration_on_action = {
 	trigger = {
 		has_government = mishpacha_government
 		is_landed = no
 		current_travel_plan ?= { is_travel_with_domicile = yes }
-		# Only switch when the estate actually lands in a different realm
-		domicile.domicile_location.county.holder.top_liege ?= {
-			this != root
-			NOT = { root.liege ?= this }
-		}
+		exists = domicile
 	}
 
 	effect = {
-		domicile.domicile_location.county.holder.top_liege = {
-			save_scope_as = recipient_liege
-		}
-		jip_mishpacha_change_liege_effect = { LIEGE = scope:recipient_liege }
-		# A player liege hears that a family has settled in the realm
+		jip_mishpacha_settle_estate_on_arrival_effect = yes
+		# Only switch when the estate actually lands in a different realm: the family leaves its old liege or
+		# suzerain and becomes the vassal, or under a duke or lesser ruler the tributary, of the new one
 		if = {
 			limit = {
-				liege ?= scope:recipient_liege
-				scope:recipient_liege = { is_ai = no }
-			}
-			save_scope_as = jip_arriving_family
-			domicile.domicile_location = { save_scope_as = jip_arrival_city }
-			scope:recipient_liege = {
-				send_interface_message = {
-					type = event_generic_good
-					title = jip_mishpacha_migration_arrival_msg
-					desc = jip_mishpacha_migration_arrival_msg_desc
-					left_icon = scope:jip_arriving_family
+				domicile.domicile_location.county.holder.top_liege ?= {
+					this != root
+					NOT = { root.liege ?= this }
+					NOT = { root.suzerain ?= this }
 				}
 			}
+			jip_mishpacha_join_estate_realm_effect = yes
 		}
 	}
 }
@@ -88,3 +77,4 @@ jip_mishpacha_contracts_estate_arrival_on_action = {
 		trigger_event = { on_action = jip_mishpacha_contracts_new_area_on_action }
 	}
 }
+

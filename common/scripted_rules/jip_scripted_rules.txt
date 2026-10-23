@@ -40,19 +40,30 @@
 						}
 					}
 				}
-				# Cannot move estate during war impacting location or destination
-				custom_tooltip = {
-					text = can_move_domicile_estate_war_tt
-					scope:owner.domicile.domicile_location.county.holder ?= {
-						NOR = {
-							is_at_war = yes
-							any_liege_or_above = { is_at_war = yes }
+				# Cannot move estate during war impacting location or destination. Not for Mishpacha families, who
+				# aren't party to their realm's wars and may well leave because of one
+				trigger_if = {
+					limit = {
+						NOT = {
+							scope:owner = {
+								has_government = mishpacha_government
+								is_landed = no
+							}
 						}
 					}
-					scope:province_temp.county.holder ?= {
-						NOR = {
-							is_at_war = yes
-							any_liege_or_above = { is_at_war = yes }
+					custom_tooltip = {
+						text = can_move_domicile_estate_war_tt
+						scope:owner.domicile.domicile_location.county.holder ?= {
+							NOR = {
+								is_at_war = yes
+								any_liege_or_above = { is_at_war = yes }
+							}
+						}
+						scope:province_temp.county.holder ?= {
+							NOR = {
+								is_at_war = yes
+								any_liege_or_above = { is_at_war = yes }
+							}
 						}
 					}
 				}
