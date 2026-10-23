@@ -85,6 +85,10 @@ jip_mishpacha_contract.0011 = {
 				trigger = { jip_contract_approach_is_trigger = { APPROACH = goods } }
 				desc = jip_mishpacha_contract.0011.goods
 			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = pressure } }
+				desc = jip_mishpacha_contract.0011.pressure
+			}
 			desc = jip_mishpacha_contract.0011.pressure
 		}
 		first_valid = {
@@ -211,6 +215,10 @@ jip_mishpacha_contract.0021 = {
 			triggered_desc = {
 				trigger = { jip_contract_approach_is_trigger = { APPROACH = lenient } }
 				desc = jip_mishpacha_contract.0021.lenient
+			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = books } }
+				desc = jip_mishpacha_contract.0021.books
 			}
 			desc = jip_mishpacha_contract.0021.books
 		}
@@ -467,6 +475,10 @@ jip_mishpacha_contract.0033 = {
 				trigger = { jip_contract_approach_is_trigger = { APPROACH = desert } }
 				desc = jip_mishpacha_contract.0031.desert
 			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = radhanite } }
+				desc = jip_mishpacha_contract.0031.radhanite
+			}
 			desc = jip_mishpacha_contract.0031.radhanite
 		}
 		first_valid = {
@@ -532,6 +544,10 @@ jip_mishpacha_contract.0034 = {
 			triggered_desc = {
 				trigger = { jip_contract_approach_is_trigger = { APPROACH = desert } }
 				desc = jip_mishpacha_contract.0031.desert
+			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = radhanite } }
+				desc = jip_mishpacha_contract.0031.radhanite
 			}
 			desc = jip_mishpacha_contract.0031.radhanite
 		}
@@ -760,6 +776,10 @@ jip_mishpacha_contract.0043 = {
 				trigger = { jip_contract_approach_is_trigger = { APPROACH = gifts } }
 				desc = jip_mishpacha_contract.0041.gifts
 			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = leverage } }
+				desc = jip_mishpacha_contract.0041.leverage
+			}
 			desc = jip_mishpacha_contract.0041.leverage
 		}
 		first_valid = {
@@ -828,6 +848,10 @@ jip_mishpacha_contract.0044 = {
 			triggered_desc = {
 				trigger = { jip_contract_approach_is_trigger = { APPROACH = gifts } }
 				desc = jip_mishpacha_contract.0041.gifts
+			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = leverage } }
+				desc = jip_mishpacha_contract.0041.leverage
 			}
 			desc = jip_mishpacha_contract.0041.leverage
 		}
@@ -985,6 +1009,10 @@ jip_mishpacha_contract.0053 = {
 				trigger = { jip_contract_approach_is_trigger = { APPROACH = haggle } }
 				desc = jip_mishpacha_contract.0051.haggle
 			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = mercy } }
+				desc = jip_mishpacha_contract.0051.mercy
+			}
 			desc = jip_mishpacha_contract.0051.mercy
 		}
 		first_valid = {
@@ -1045,6 +1073,10 @@ jip_mishpacha_contract.0054 = {
 			triggered_desc = {
 				trigger = { jip_contract_approach_is_trigger = { APPROACH = haggle } }
 				desc = jip_mishpacha_contract.0051.haggle
+			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = mercy } }
+				desc = jip_mishpacha_contract.0051.mercy
 			}
 			desc = jip_mishpacha_contract.0051.mercy
 		}
@@ -1152,6 +1184,10 @@ jip_mishpacha_contract.0061 = {
 			triggered_desc = {
 				trigger = { jip_contract_approach_is_trigger = { APPROACH = bold } }
 				desc = jip_mishpacha_contract.0061.bold
+			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = own_hand } }
+				desc = jip_mishpacha_contract.0061.own_hand
 			}
 			desc = jip_mishpacha_contract.0061.own_hand
 		}
@@ -1409,6 +1445,10 @@ jip_mishpacha_contract.0073 = {
 				trigger = { jip_contract_approach_is_trigger = { APPROACH = commentary } }
 				desc = jip_mishpacha_contract.0071.commentary
 			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = language } }
+				desc = jip_mishpacha_contract.0071.language
+			}
 			desc = jip_mishpacha_contract.0071.language
 		}
 		first_valid = {
@@ -1474,6 +1514,10 @@ jip_mishpacha_contract.0074 = {
 			triggered_desc = {
 				trigger = { jip_contract_approach_is_trigger = { APPROACH = commentary } }
 				desc = jip_mishpacha_contract.0071.commentary
+			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = language } }
+				desc = jip_mishpacha_contract.0071.language
 			}
 			desc = jip_mishpacha_contract.0071.language
 		}
@@ -1564,6 +1608,10 @@ jip_mishpacha_contract.0081 = {
 			triggered_desc = {
 				trigger = { jip_contract_approach_is_trigger = { APPROACH = lenient } }
 				desc = jip_mishpacha_contract.0081.lenient
+			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = beit_din } }
+				desc = jip_mishpacha_contract.0081.beit_din
 			}
 			desc = jip_mishpacha_contract.0081.beit_din
 		}
@@ -1794,6 +1842,10 @@ jip_mishpacha_contract.0093 = {
 				trigger = { jip_contract_approach_is_trigger = { APPROACH = communities } }
 				desc = jip_mishpacha_contract.0091.communities
 			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = clerk } }
+				desc = jip_mishpacha_contract.0091.clerk
+			}
 			desc = jip_mishpacha_contract.0091.clerk
 		}
 		first_valid = {
@@ -1858,6 +1910,10 @@ jip_mishpacha_contract.0094 = {
 			triggered_desc = {
 				trigger = { jip_contract_approach_is_trigger = { APPROACH = communities } }
 				desc = jip_mishpacha_contract.0091.communities
+			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = clerk } }
+				desc = jip_mishpacha_contract.0091.clerk
 			}
 			desc = jip_mishpacha_contract.0091.clerk
 		}

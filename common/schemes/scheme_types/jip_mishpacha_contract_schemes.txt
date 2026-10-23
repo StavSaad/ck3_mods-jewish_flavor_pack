@@ -5,7 +5,7 @@
 # Fitting Out the Caravan, by stewardship
 jip_contract_caravan_stewardship_scheme = {
 	skill = stewardship
-	desc = jip_contract_caravan_scheme_desc_general
+	desc = jip_contract_caravan_stewardship_scheme_desc_general
 	success_desc = jip_contract_scheme_desc_success
 	icon = stewardship
 	illustration = "gfx/interface/illustrations/event_scenes/ep2_travel_desert.dds"
@@ -51,7 +51,7 @@ jip_contract_caravan_stewardship_scheme = {
 # Fitting Out the Caravan, by diplomacy
 jip_contract_caravan_diplomacy_scheme = {
 	skill = diplomacy
-	desc = jip_contract_caravan_scheme_desc_general
+	desc = jip_contract_caravan_diplomacy_scheme_desc_general
 	success_desc = jip_contract_scheme_desc_success
 	icon = diplomacy
 	illustration = "gfx/interface/illustrations/event_scenes/ep2_travel_desert.dds"
@@ -97,7 +97,7 @@ jip_contract_caravan_diplomacy_scheme = {
 # Carrying the Terms, by diplomacy
 jip_contract_envoy_diplomacy_scheme = {
 	skill = diplomacy
-	desc = jip_contract_envoy_scheme_desc_general
+	desc = jip_contract_envoy_diplomacy_scheme_desc_general
 	success_desc = jip_contract_scheme_desc_success
 	icon = diplomacy
 	illustration = "gfx/interface/illustrations/event_scenes/councilchamber.dds"
@@ -143,7 +143,7 @@ jip_contract_envoy_diplomacy_scheme = {
 # Carrying the Terms, by learning
 jip_contract_envoy_learning_scheme = {
 	skill = learning
-	desc = jip_contract_envoy_scheme_desc_general
+	desc = jip_contract_envoy_learning_scheme_desc_general
 	success_desc = jip_contract_scheme_desc_success
 	icon = learning
 	illustration = "gfx/interface/illustrations/event_scenes/councilchamber.dds"
@@ -189,7 +189,7 @@ jip_contract_envoy_learning_scheme = {
 # Carrying the Terms, by intrigue
 jip_contract_envoy_intrigue_scheme = {
 	skill = intrigue
-	desc = jip_contract_envoy_scheme_desc_general
+	desc = jip_contract_envoy_intrigue_scheme_desc_general
 	success_desc = jip_contract_scheme_desc_success
 	icon = intrigue
 	illustration = "gfx/interface/illustrations/event_scenes/councilchamber.dds"
@@ -235,7 +235,7 @@ jip_contract_envoy_intrigue_scheme = {
 # The Price of a Captive, by diplomacy
 jip_contract_ransom_diplomacy_scheme = {
 	skill = diplomacy
-	desc = jip_contract_ransom_scheme_desc_general
+	desc = jip_contract_ransom_diplomacy_scheme_desc_general
 	success_desc = jip_contract_scheme_desc_success
 	icon = diplomacy
 	illustration = "gfx/interface/illustrations/event_scenes/dungeon.dds"
@@ -281,7 +281,7 @@ jip_contract_ransom_diplomacy_scheme = {
 # The Price of a Captive, by learning
 jip_contract_ransom_learning_scheme = {
 	skill = learning
-	desc = jip_contract_ransom_scheme_desc_general
+	desc = jip_contract_ransom_learning_scheme_desc_general
 	success_desc = jip_contract_scheme_desc_success
 	icon = learning
 	illustration = "gfx/interface/illustrations/event_scenes/dungeon.dds"
@@ -327,7 +327,7 @@ jip_contract_ransom_learning_scheme = {
 # A Book to Render, by learning
 jip_contract_translate_learning_scheme = {
 	skill = learning
-	desc = jip_contract_translate_scheme_desc_general
+	desc = jip_contract_translate_learning_scheme_desc_general
 	success_desc = jip_contract_scheme_desc_success
 	icon = learning
 	illustration = "gfx/interface/illustrations/event_scenes/study.dds"
@@ -373,7 +373,7 @@ jip_contract_translate_learning_scheme = {
 # A Book to Render, by diplomacy
 jip_contract_translate_diplomacy_scheme = {
 	skill = diplomacy
-	desc = jip_contract_translate_scheme_desc_general
+	desc = jip_contract_translate_diplomacy_scheme_desc_general
 	success_desc = jip_contract_scheme_desc_success
 	icon = diplomacy
 	illustration = "gfx/interface/illustrations/event_scenes/study.dds"
@@ -419,7 +419,7 @@ jip_contract_translate_diplomacy_scheme = {
 # Whom to Ask, by stewardship
 jip_contract_news_stewardship_scheme = {
 	skill = stewardship
-	desc = jip_contract_news_scheme_desc_general
+	desc = jip_contract_news_stewardship_scheme_desc_general
 	success_desc = jip_contract_scheme_desc_success
 	icon = stewardship
 	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
@@ -465,7 +465,7 @@ jip_contract_news_stewardship_scheme = {
 # Whom to Ask, by diplomacy
 jip_contract_news_diplomacy_scheme = {
 	skill = diplomacy
-	desc = jip_contract_news_scheme_desc_general
+	desc = jip_contract_news_diplomacy_scheme_desc_general
 	success_desc = jip_contract_scheme_desc_success
 	icon = diplomacy
 	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
@@ -511,7 +511,7 @@ jip_contract_news_diplomacy_scheme = {
 # Whom to Ask, by intrigue
 jip_contract_news_intrigue_scheme = {
 	skill = intrigue
-	desc = jip_contract_news_scheme_desc_general
+	desc = jip_contract_news_intrigue_scheme_desc_general
 	success_desc = jip_contract_scheme_desc_success
 	icon = intrigue
 	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"

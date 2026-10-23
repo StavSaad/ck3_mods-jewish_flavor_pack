@@ -571,7 +571,7 @@ jip_mishpacha_add_jewish_courtier_effect = {
 jip_mishpacha_create_jewish_courtier_effect = {
 	create_character = {
 		template = $TEMPLATE$
-		location = root.location
+		# No location: the employer places them at court, and create_character refuses both
 		culture = root.culture
 		faith = root.faith
 		rite = root.rite
