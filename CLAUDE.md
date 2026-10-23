@@ -1,6 +1,6 @@
 # Rising Lion — Canaanite Flavor Pack: Mod Analysis
 
-**Version:** 0.13.1  
+**Version:** 0.13.1 (0.14.0 in development)  
 **Game:** Crusader Kings 3 (supported version 1.20.*)  
 **Workshop ID:** 3501948259  
 **Tags:** Religion, Culture, Decisions, Flavor
@@ -49,15 +49,45 @@ Landless play is supported. Maimonides is playable. The 867 bookmark includes se
 
 ## Government Type: Mishpacha (mishpacha_government)
 
-A custom administrative government type modeled on the historical Nasi. Key rules:
-- Landless playable
-- Administrative mechanic (city holdings as primary)
-- Supports noble families, house aspirations, legitimacy
-- Reduced levy/MaA capacity, increased diplomatic range
+A custom government for landless Jewish families, modeled on the historical Nasi. Key rules:
+- Landless playable; families hold a duchy-tier noble family title (`d_jip_*` in `common/landed_titles/jip_landless_titles.txt`) and an estate
+- City holdings only; a family that gains land adopts its liege's government (or feudal)
+- `mechanic_type = mishpacha`, not administrative: landless heads fail vanilla's `is_landed_or_landless_administrative_or_theocratic`, so most vanilla court positions, events and admin perks are closed to them. Gate Mishpacha content with `government_has_flag = government_is_mishpacha`
+- No council and no influence (the influence flag is off); legitimacy and noble families are on
+- Reduced levies and MaA, cheaper mercenaries, doubled diplomatic range, +15% income, +10% learning XP
 - Primary heritage: Israelite
 
-Title flavorizations include: Emperor, King, Duke (landless), Exilarch, Kohen Gadol, Kohen (chaplain position).
+### Realm and migration
+- Families are vassals of the realm their estate lies in, under the "Charter of Privileges" contract (communal taxes, religious rights, Beit Din and trade rights); Muslim lieges may levy jizya
+- Moving the estate to another realm switches liege; AI families migrate to more welcoming realms on their own
+- A head who leaves Judaism steps down for the nearest Jewish man of the house; Mishpacha Succession covers family titles and Exilarchs
 
+### Titles
+- Family heads are **Mar/Geveret** and their spouses Geveret/Mar, whatever the liege (`top_liege = no`, priority 302); estates are "the X Household"
+- Family titles use the `duchy_mishpacha` tier name ("Mishpacha"); without it the landless titles log "Failed to find any valid flavorization"
+- Exilarch and Kohen Gadol (priority 310) outrank Mar
+- Title flavorization `flag` checks did not work for a Davidic "Nasi" variant; it was dropped
+
+### Estate buildings (`common/domiciles/buildings/jip_mishpacha_estate_buildings.txt`)
+- New branches with custom icons: **Yeshiva** (library), **Beit Din** (office), **Beit Knesset** (temple; slows migration, discourages expulsion)
+- **Counting House** replaces the market line; **Hachnasat Orchim** replaces the Guest Room (piety instead of influence); both keep vanilla names/icons
+- Influence-free copies replace vanilla Temple/Crypt/Prison/Trophy Room/Silk/Office lines; the vanilla versions are hidden in `jip_vanilla_estate_overrides.txt`, and existing estates are swapped by `jip_mishpacha_replace_estate_buildings_effect`
+- The Villa's influence becomes prestige (`jip_mishpacha_villa_1..5` modifiers)
+
+### Court positions (`common/court_positions/types/jip_jewish_court_positions.txt`, generated)
+- Mishpacha heads can appoint all eight: **Rosh Yeshiva, Av Beit Din, Paytan, Chazan, Gabbai Tzedakah, Shaliach, Sofer, Parnas**
+- Landed Jewish rulers (duke and above) only get **Av Beit Din** and **Shaliach**, which no vanilla position covers for them; the rest duplicate vanilla positions they already have
+- Holders must be adult Jews; the Yeshiva, Beit Din, Beit Knesset and Counting House raise the matching position's aptitude, shown as building parameters
+- `minimum_rank` is a hard engine gate: positions above county also check `highest_held_title_tier` in `valid_position`, or appointments silently fail
+
+Title flavorizations also include: Emperor, King, Duke (Israelite heritage), Exilarch, Kohen Gadol, Kohen (chaplain position).
+
+---
+
+## Jews in Gentile Realms
+
+- **Expel the Jews / Readmit the Jews** decisions for Christian and Muslim rulers, with AI weighting from traits and tenets; expelled lords may resist in one shared war and become Mishpacha families if they lose
+- **Court Financier** court position for non-Jewish dukes and above: domain taxes and Jewish opinion, angers zealots, debt-collection events
 ---
 
 ## The Exilarchate
@@ -144,3 +174,4 @@ Unlocked when the dynasty dynast carries the `davidic_line` trait (or has alread
 | 0.11.0 | Empire of Kemet; Upper/Lower Egypt kingdoms; Copt culture; Aramean/Phoenician tradition changes |
 | 0.12.0 | Hegemony of the Fertile Crescent; performance improvements; Kemet region rework |
 | 0.13.0 | Masada 3-tier building; Kemet/Crescent nickname grants; Mishpacha desc expansion; Jewish-flavored Exilarchate election tooltips |
+| 0.14.0 (in development) | CK3 1.20 update; Mishpacha charter, migration, succession, estate buildings, Mar/Geveret titles and court positions; Expel/Readmit the Jews; Court Financier; Kehunah tenet for Kohenism |

@@ -1,6 +1,29 @@
 ﻿# Character scope: can serve $EMPLOYER$ as Court Financier
 jip_court_financier_validity_trigger = {
+	jip_jewish_court_position_validity_trigger = { EMPLOYER = $EMPLOYER$ }
+}
+
+# Character scope: can serve $EMPLOYER$ in a Jewish court position (jip_jewish_court_positions.txt) or as Court Financier
+jip_jewish_court_position_validity_trigger = {
 	base_court_position_validity_trigger = { EMPLOYER = $EMPLOYER$ }
 	is_adult = yes
-	religion = religion:judaism_religion
+	has_religion = religion:judaism_religion
+}
+
+# Character scope: can appoint all the Jewish court positions. Mishpacha family heads can appoint almost none of the
+# vanilla positions (they fail is_landed_or_landless_administrative_or_theocratic) and have no council.
+jip_can_have_mishpacha_court_positions_trigger = {
+	government_has_flag = government_is_mishpacha
+}
+
+# Character scope: can appoint the Jewish court positions that no vanilla position covers for a landed Jewish ruler
+# (Av Beit Din, Shaliach)
+jip_can_have_jewish_court_positions_trigger = {
+	OR = {
+		jip_can_have_mishpacha_court_positions_trigger = yes
+		AND = {
+			is_landed = yes
+			has_religion = religion:judaism_religion
+		}
+	}
 }

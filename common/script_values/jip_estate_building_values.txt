@@ -13,6 +13,18 @@ jip_counting_house_financier_aptitude_1_value = 5
 jip_counting_house_financier_aptitude_2_value = 10
 jip_counting_house_financier_aptitude_3_value = 15
 
+# Aptitude for the family's own court positions (jip_jewish_court_positions.txt) from the matching building in the
+# employer's estate, by tier. Shown as building parameters in the estate view.
+jip_yeshiva_rosh_yeshiva_aptitude_1_value = 10 # Yeshiva
+jip_yeshiva_rosh_yeshiva_aptitude_2_value = 15 # Great Yeshiva
+jip_beit_din_av_beit_din_aptitude_1_value = 10 # Beit Din
+jip_beit_din_av_beit_din_aptitude_2_value = 15 # Great Beit Din
+jip_beit_knesset_chazan_aptitude_1_value = 5 # Beit Knesset
+jip_beit_knesset_chazan_aptitude_2_value = 10 # Great Beit Knesset
+jip_beit_knesset_chazan_aptitude_3_value = 15 # Splendid Beit Knesset
+jip_counting_house_parnas_aptitude_1_value = 5 # Counting Room and Counting House
+jip_counting_house_parnas_aptitude_2_value = 10 # Banking House and up
+
 # Character scope: how strongly the family's Beit Knesset holds it to its city. Added to the migration threshold.
 jip_mishpacha_congregation_ties_value = {
 	value = 0

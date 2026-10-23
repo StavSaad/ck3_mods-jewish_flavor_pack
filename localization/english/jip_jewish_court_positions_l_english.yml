@@ -1,0 +1,25 @@
+﻿l_english:
+ # Jewish court positions (jip_jewish_court_positions.txt)
+ jip_rosh_yeshiva_court_position: "Rosh Yeshiva"
+ jip_rosh_yeshiva_court_position_desc: "The $jip_rosh_yeshiva_court_position$ heads the family's academy, where the young of the house and its dependants study the Torah and the Talmud, and from which its scholars and judges come."
+ jip_av_beit_din_court_position: "Av Beit Din"
+ jip_av_beit_din_court_position_desc: "The $jip_av_beit_din_court_position$ presides over the rabbinic court, judging disputes between Jews by the halakha and lending the authority of the law to the one who appointed them."
+ jip_paytan_court_position: "Paytan"
+ jip_paytan_court_position_desc: "The $jip_paytan_court_position$ writes piyyutim, the Hebrew liturgical poems sung in the synagogue, and verses in praise of their patron, in the tradition of Ibn Gabirol and Yehuda Halevi."
+ jip_chazan_court_position: "Chazan"
+ jip_chazan_court_position_desc: "The $jip_chazan_court_position$ leads the family and its congregation in prayer, chanting the liturgy on the Sabbath and the festivals."
+ jip_gabbai_tzedakah_court_position: "Gabbai Tzedakah"
+ jip_gabbai_tzedakah_court_position_desc: "The $jip_gabbai_tzedakah_court_position$ collects the family's charity and hands it out to the poor, the sick, and captives awaiting ransom, as the law requires."
+ jip_shaliach_court_position: "Shaliach"
+ jip_shaliach_court_position_desc: "The $jip_shaliach_court_position$ travels between the Jewish communities, carrying letters, funds and news, and binding them to the house they serve."
+ jip_sofer_court_position: "Sofer"
+ jip_sofer_court_position_desc: "The $jip_sofer_court_position$ keeps the family's letters, contracts and accounts, drawing up its deeds and its dealings with the courts of the gentiles."
+ jip_parnas_court_position: "Parnas"
+ jip_parnas_court_position_desc: "The $jip_parnas_court_position$ leads the community where the family's estate lies, apportioning its taxes and collecting its dues."
+
+ # Aptitude reasons
+ court_position_jip_yeshiva: "The family's $jip_yeshiva_03_domicile_building$"
+ court_position_jip_beit_din: "The family's $jip_beit_din_03_domicile_building$"
+ court_position_jip_beit_knesset: "The family's $jip_beit_knesset_04_domicile_building$"
+ court_position_jip_employer_counting_house: "The family's $jip_counting_house_03_domicile_building$"
+ court_position_jip_cynical_trait: "[GetTrait('cynical').GetName( ROOT.Char )]"
