@@ -1,13 +1,44 @@
 ﻿# Character scope: can serve $EMPLOYER$ as Court Financier
 jip_court_financier_validity_trigger = {
-	jip_jewish_court_position_validity_trigger = { EMPLOYER = $EMPLOYER$ }
+	jip_jewish_court_position_validity_trigger = {
+		EMPLOYER = $EMPLOYER$
+		POS = jip_court_financier_court_position
+	}
 }
 
-# Character scope: can serve $EMPLOYER$ in a Jewish court position (jip_jewish_court_positions.txt) or as Court Financier
+# Character scope: can serve $EMPLOYER$ as $POS$, one of the Jewish court positions (jip_jewish_court_positions.txt) or the
+# Court Financier. All of them are full-time jobs, as most vanilla positions are: someone who already holds another of
+# them, or a vanilla full-time position, can't take it. The current holder is not checked, like in vanilla.
 jip_jewish_court_position_validity_trigger = {
 	base_court_position_validity_trigger = { EMPLOYER = $EMPLOYER$ }
 	is_adult = yes
 	has_religion = religion:judaism_religion
+	custom_tooltip = {
+		text = none_does_not_have_a_full_time_job
+		trigger_if = {
+			limit = {
+				NOT = { has_court_position = $POS$ }
+			}
+			court_position_does_not_already_have_a_job_trigger = yes
+			jip_has_no_jewish_court_position_trigger = yes
+		}
+	}
+}
+
+# Character scope: holds none of the Jewish court positions. Vanilla's court_position_does_not_already_have_a_job_trigger
+# doesn't know them, so the full-time check above needs both.
+jip_has_no_jewish_court_position_trigger = {
+	NOR = {
+		has_court_position = jip_rosh_yeshiva_court_position
+		has_court_position = jip_av_beit_din_court_position
+		has_court_position = jip_paytan_court_position
+		has_court_position = jip_chazan_court_position
+		has_court_position = jip_gabbai_tzedakah_court_position
+		has_court_position = jip_shaliach_court_position
+		has_court_position = jip_sofer_court_position
+		has_court_position = jip_parnas_court_position
+		has_court_position = jip_court_financier_court_position
+	}
 }
 
 # Character scope: can appoint all the Jewish court positions. Mishpacha family heads can appoint almost none of the
@@ -26,4 +57,12 @@ jip_can_have_jewish_court_positions_trigger = {
 			has_religion = religion:judaism_religion
 		}
 	}
+}
+
+# Character scope: a Jewish prisoner whom a Gabbai Tzedakah can ransom (jip_gabbai_tzedakah_ransom_captives). Rulers are
+# left out, since their release can decide wars.
+jip_ransomable_captive_trigger = {
+	is_imprisoned = yes
+	is_ruler = no
+	has_religion = religion:judaism_religion
 }

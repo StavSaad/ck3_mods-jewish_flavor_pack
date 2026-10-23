@@ -69,6 +69,8 @@
 [] Mishpacha: family heads are now titled Mar/Geveret whatever their liege (they were shown as the liege's Duke or High Chief); spouses are Geveret/Mar, and estates are "the X Household"
 [] Fixed the Mishpacha family titles having no tier name, which flooded the error log
 [] Added Jewish court positions. Mishpacha families can appoint a Rosh Yeshiva, Av Beit Din, Paytan, Chazan, Gabbai Tzedakah, Shaliach, Sofer and Parnas, whose aptitude the matching estate buildings raise (shown in the estate view); landed Jewish rulers get the Av Beit Din and Shaliach, which no vanilla position covers for them
+[] Jewish court positions have tasks. They share vanilla tasks with their counterparts (Teach Court, Write Poetry, Bolster Legitimacy, Divine Charity, the Chronicler's legend tasks, and for landed rulers Lead Public Sadaqah and Appease Zealots), and add Train Disciples, Judge the Community, Issue Responsa, Ransom Captives, Gather Donations, Bind the Communities, Keep the Estate's Affairs, Collect Dues and Petition the Authorities. Tasks from DLC content need that DLC. The Sofer is now a Seneschal and Chronicler in one
+[] The Jewish court positions and the Court Financier are full-time jobs: a character can hold only one of them, and not alongside a vanilla full-time position
 [] Added the "Expel the Jews" decision for Christian and Muslim rulers. Jewish families leave the realm, Jewish courtiers are dismissed, Jewish lords lose their lands, and half of every departing Jew's gold is seized
 [] Expelled Jews may resist in a single shared war; a lord who surrenders becomes a landless Mishpacha family
 [] Added the "Readmit the Jews" decision; edicts concerning the Jews have a 10-year cooldown

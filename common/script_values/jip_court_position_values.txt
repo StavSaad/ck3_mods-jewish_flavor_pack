@@ -1,0 +1,4 @@
+﻿# Values for the Jewish court positions and their tasks (common/court_positions/)
+
+# AI weight against expelling the Jews from a realm where a Mishpacha family's Parnas is petitioning the authorities
+jip_parnas_petition_expulsion_ai_value = -15

@@ -112,7 +112,7 @@ jip_rosh_yeshiva_court_position = {
 
 	valid_character = {
 		scope:employee = {
-			jip_jewish_court_position_validity_trigger = { EMPLOYER = scope:liege }
+			jip_jewish_court_position_validity_trigger = { EMPLOYER = scope:liege POS = jip_rosh_yeshiva_court_position }
 		}
 	}
 
@@ -342,7 +342,7 @@ jip_av_beit_din_court_position = {
 
 	valid_character = {
 		scope:employee = {
-			jip_jewish_court_position_validity_trigger = { EMPLOYER = scope:liege }
+			jip_jewish_court_position_validity_trigger = { EMPLOYER = scope:liege POS = jip_av_beit_din_court_position }
 		}
 	}
 
@@ -538,7 +538,7 @@ jip_paytan_court_position = {
 
 	valid_character = {
 		scope:employee = {
-			jip_jewish_court_position_validity_trigger = { EMPLOYER = scope:liege }
+			jip_jewish_court_position_validity_trigger = { EMPLOYER = scope:liege POS = jip_paytan_court_position }
 		}
 	}
 
@@ -755,7 +755,7 @@ jip_chazan_court_position = {
 
 	valid_character = {
 		scope:employee = {
-			jip_jewish_court_position_validity_trigger = { EMPLOYER = scope:liege }
+			jip_jewish_court_position_validity_trigger = { EMPLOYER = scope:liege POS = jip_chazan_court_position }
 		}
 	}
 
@@ -956,7 +956,7 @@ jip_gabbai_tzedakah_court_position = {
 
 	valid_character = {
 		scope:employee = {
-			jip_jewish_court_position_validity_trigger = { EMPLOYER = scope:liege }
+			jip_jewish_court_position_validity_trigger = { EMPLOYER = scope:liege POS = jip_gabbai_tzedakah_court_position }
 		}
 	}
 
@@ -1161,7 +1161,7 @@ jip_shaliach_court_position = {
 
 	valid_character = {
 		scope:employee = {
-			jip_jewish_court_position_validity_trigger = { EMPLOYER = scope:liege }
+			jip_jewish_court_position_validity_trigger = { EMPLOYER = scope:liege POS = jip_shaliach_court_position }
 		}
 	}
 
@@ -1274,8 +1274,9 @@ jip_shaliach_court_position = {
 	}
 }
 
-# Scribe who keeps the family's letters, contracts and accounts, in place of the council Mishpacha families lack.
-# Mishpacha families only; landed Jewish rulers have the council and the vanilla Seneschal.
+# Scribe who keeps the family's letters, contracts, accounts and chronicles: a Seneschal and a Chronicler in one,
+# in place of the council Mishpacha families lack. Each side is a little weaker than its vanilla counterpart. Mishpacha
+# families only; landed Jewish rulers have the council, the vanilla Seneschal and the Chronicler.
 jip_sofer_court_position = {
 	sort_order = 241
 	max_available_positions = 1
@@ -1298,9 +1299,15 @@ jip_sofer_court_position = {
 		value = 1
 		add = {
 			value = stewardship
-			multiply = 2.5
-			max = 60
+			multiply = 1.5
+			max = 40
 			desc = court_position_skill_stewardship
+		}
+		add = {
+			value = diplomacy
+			multiply = 1
+			max = 25
+			desc = court_position_skill_diplomacy
 		}
 		if = {
 			limit = { has_trait = administrator }
@@ -1314,6 +1321,13 @@ jip_sofer_court_position = {
 			add = {
 				value = 10
 				desc = court_position_diligent_trait
+			}
+		}
+		if = {
+			limit = { has_trait = lifestyle_scholar }
+			add = {
+				value = 10
+				desc = court_position_scholar_trait
 			}
 		}
 		if = {
@@ -1358,7 +1372,7 @@ jip_sofer_court_position = {
 
 	valid_character = {
 		scope:employee = {
-			jip_jewish_court_position_validity_trigger = { EMPLOYER = scope:liege }
+			jip_jewish_court_position_validity_trigger = { EMPLOYER = scope:liege POS = jip_sofer_court_position }
 		}
 	}
 
@@ -1411,26 +1425,35 @@ jip_sofer_court_position = {
 	scaling_employer_modifiers = {
 		terrible = {
 			monthly_stewardship_lifestyle_xp_gain_mult = 0.04
+			legitimacy_loss_mult = -0.05
 		}
 		poor = {
 			monthly_stewardship_lifestyle_xp_gain_mult = 0.08
+			legitimacy_loss_mult = -0.1
 		}
 		average = {
 			monthly_stewardship_lifestyle_xp_gain_mult = 0.12
 			stewardship = 1
+			legitimacy_loss_mult = -0.15
+			monthly_dynasty_prestige = 0.02
 		}
 		good = {
 			monthly_stewardship_lifestyle_xp_gain_mult = 0.16
 			stewardship = 2
+			legitimacy_loss_mult = -0.2
+			monthly_dynasty_prestige = 0.04
 		}
 		excellent = {
 			monthly_stewardship_lifestyle_xp_gain_mult = 0.2
 			stewardship = 3
+			legitimacy_loss_mult = -0.25
+			monthly_dynasty_prestige = 0.07
 		}
 	}
 
 	modifier = {
 		stewardship = 1
+		monthly_prestige = 0.25
 	}
 
 	on_court_position_received = {
@@ -1557,7 +1580,7 @@ jip_parnas_court_position = {
 
 	valid_character = {
 		scope:employee = {
-			jip_jewish_court_position_validity_trigger = { EMPLOYER = scope:liege }
+			jip_jewish_court_position_validity_trigger = { EMPLOYER = scope:liege POS = jip_parnas_court_position }
 		}
 	}
 

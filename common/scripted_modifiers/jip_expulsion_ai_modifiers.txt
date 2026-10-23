@@ -11,6 +11,14 @@ jip_expel_the_jews_ai_modifier = {
 			domicile ?= { has_domicile_building_or_higher = jip_beit_knesset_04 }
 		}
 	}
+	# A Parnas petitioning on the community's behalf (jip_parnas_petition_authorities)
+	modifier = {
+		add = jip_parnas_petition_expulsion_ai_value
+		any_ruler = {
+			jip_mishpacha_in_realm_of_trigger = { RULER = root }
+			court_position:jip_parnas_court_position ?= { has_variable = jip_parnas_petitioning }
+		}
+	}
 }
 
 # AI weights for Readmit the Jews. Root = the ruler considering it.

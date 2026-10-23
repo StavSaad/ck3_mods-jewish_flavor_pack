@@ -79,6 +79,10 @@ A custom government for landless Jewish families, modeled on the historical Nasi
 - Landed Jewish rulers (duke and above) only get **Av Beit Din** and **Shaliach**, which no vanilla position covers for them; the rest duplicate vanilla positions they already have
 - Holders must be adult Jews; the Yeshiva, Beit Din, Beit Knesset and Counting House raise the matching position's aptitude, shown as building parameters
 - `minimum_rank` is a hard engine gate: positions above county also check `highest_held_title_tier` in `valid_position`, or appointments silently fail
+- Tasks: positions with a vanilla counterpart share its tasks through `common/court_positions/tasks/jip_vanilla_task_overrides.txt` (exact vanilla copies with our positions added to `court_position_types` and the vanilla position's DLC added to `is_shown`; keep in sync with vanilla). New tasks are in `jip_jewish_court_position_tasks.txt`. Both files are generated
+- Vanilla tasks that look up their own position by name (Educate Children, Organize Court) can't be shared: they would show but do nothing
+- All eight and the Court Financier are full-time jobs (`jip_jewish_court_position_validity_trigger`): one per character, and not alongside a vanilla full-time position. Vanilla positions don't check ours, so a landed ruler's Av Beit Din or Shaliach could still take a vanilla job
+- The Sofer combines the Seneschal and Chronicler (stewardship and diplomacy aptitude; the Chronicler's legend tasks plus Keep the Estate's Affairs)
 
 Title flavorizations also include: Emperor, King, Duke (Israelite heritage), Exilarch, Kohen Gadol, Kohen (chaplain position).
 
