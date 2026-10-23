@@ -1,0 +1,853 @@
+﻿##################################################
+# MISHPACHA CONTRACTS
+#
+# Work a Jewish family takes on from its estate: finance, diplomacy, scholarship and medicine, never war or the sword.
+# Offered to player family heads only, through jip_mishpacha_refresh_contracts_effect (yearly, on arriving somewhere
+# new, on a new head, at game start); AI families get jip_mishpacha_ai_contract_effect instead.
+# The long ones (caravan, envoy, ransom, translate, news) run as contract schemes, started with the approach chosen when
+# they are taken; the rest resolve in an event a few months on, where the head picks an approach
+# (events/jip_mishpacha_contract_events.txt). The matching skill, estate building and court position decide the odds.
+#
+# jip_contract_loan			Extend a Loan				stewardship
+# jip_contract_tolls		Farm the Tolls				stewardship
+# jip_contract_caravan		Finance a Caravan			stewardship
+# jip_contract_envoy		Act as Envoy				diplomacy
+# jip_contract_ransom		Redeem the Captives			diplomacy
+# jip_contract_physician	Serve as Court Physician	learning
+# jip_contract_translate	Translate Texts				learning
+# jip_contract_responsum	Answer a Responsum			learning
+# jip_contract_news			Gather News from Correspondents	intrigue
+##################################################
+
+# Extend a Loan
+jip_contract_loan = {
+	group = jip_mishpacha_contracts_group
+	icon = "gfx/interface/icons/character_interactions/request_funding_interaction.dds"
+	travel = no
+	use_diplomatic_range = yes
+
+	weight = {
+		value = task_contract_weight_default_value
+		add = {
+			value = stewardship
+			multiply = 5
+		}
+		scope:employer = { multiply = task_contract_weight_by_tier_value }
+	}
+
+	valid_to_create = {
+		jip_mishpacha_contract_create_trigger = yes
+		scope:employer = { jip_contract_loan_employer_trigger = yes }
+	}
+	valid_to_accept = {
+		jip_mishpacha_contract_accept_trigger = yes
+		custom_tooltip = {
+			text = jip_contract_loan_gold_tt
+			gold >= jip_contract_stake_value
+		}
+	}
+	valid_to_keep = {
+		jip_mishpacha_contract_keep_trigger = yes
+	}
+	valid_to_continue = {
+		jip_mishpacha_contract_continue_trigger = yes
+	}
+
+	on_create = {
+		jip_mishpacha_contract_on_create_effect = yes
+	}
+	on_accepted = {
+		jip_mishpacha_contract_on_accepted_effect = { EVENT = jip_mishpacha_contract.0010 }
+		jip_mishpacha_contract_pay_stake_effect = yes
+	}
+	on_invalidated = {
+		jip_mishpacha_contract_on_invalidated_effect = yes
+	}
+
+	task_contract_reward = {
+		success_critical = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_return_stake_effect = { SHARE = 1.5 }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_excelled_reward_value TYPE = critically_succeeded_task_contract_opinion }
+				jip_contract_add_contact_effect = { HOOK = yes }
+			}
+		}
+		success_standard = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_return_stake_effect = { SHARE = 1.25 }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_reward_value TYPE = succeeded_task_contract_opinion }
+				jip_contract_add_contact_effect = { HOOK = no }
+			}
+		}
+		failure_standard = {
+			positive = no
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = failure }
+				jip_contract_return_stake_effect = { SHARE = 0.5 }
+				scope:taker ?= { add_prestige = minor_prestige_loss }
+			}
+		}
+		# Debt forgiven for a favour (an event choice)
+		jip_contract_loan_forgiven = {
+			visible = no
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_reward_value TYPE = grateful_opinion }
+				scope:taker ?= {
+					add_hook_if_possible_default_length_effect = {
+						TARGET = scope:employer
+						TYPE = favor_hook
+					}
+				}
+			}
+		}
+	}
+}
+
+# Farm the Tolls
+jip_contract_tolls = {
+	group = jip_mishpacha_contracts_group
+	icon = "gfx/interface/icons/message_feed/money.dds"
+	travel = no
+	use_diplomatic_range = yes
+
+	weight = {
+		value = task_contract_weight_default_value
+		add = {
+			value = stewardship
+			multiply = 5
+		}
+		scope:employer = { multiply = task_contract_weight_by_tier_value }
+	}
+
+	valid_to_create = {
+		jip_mishpacha_contract_create_trigger = yes
+		scope:employer = { jip_contract_tolls_employer_trigger = yes }
+	}
+	valid_to_accept = {
+		jip_mishpacha_contract_accept_trigger = yes
+	}
+	valid_to_keep = {
+		jip_mishpacha_contract_keep_trigger = yes
+	}
+	valid_to_continue = {
+		jip_mishpacha_contract_continue_trigger = yes
+	}
+
+	on_create = {
+		jip_mishpacha_contract_on_create_effect = yes
+	}
+	on_accepted = {
+		jip_mishpacha_contract_on_accepted_effect = { EVENT = jip_mishpacha_contract.0020 }
+	}
+	on_invalidated = {
+		jip_mishpacha_contract_on_invalidated_effect = yes
+	}
+
+	task_contract_reward = {
+		success_critical = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_pay_gold_effect = { SHARE = 1.5 }
+				scope:taker ?= { add_prestige = minor_prestige_gain }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_excelled_reward_value TYPE = critically_succeeded_task_contract_opinion }
+				jip_contract_add_contact_effect = { HOOK = yes }
+			}
+		}
+		success_standard = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_pay_gold_effect = { SHARE = 1 }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_reward_value TYPE = succeeded_task_contract_opinion }
+			}
+		}
+		failure_standard = {
+			positive = no
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = failure }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_failure_value TYPE = failed_task_contract_opinion }
+				scope:taker ?= { add_prestige = minor_prestige_loss }
+			}
+		}
+	}
+}
+
+# Finance a Caravan
+jip_contract_caravan = {
+	group = jip_mishpacha_contracts_group
+	icon = "gfx/interface/icons/message_feed/stewardship.dds"
+	travel = no
+	use_diplomatic_range = yes
+
+	weight = {
+		value = task_contract_weight_default_value
+		add = {
+			value = stewardship
+			multiply = 5
+		}
+		# The Radhanites ran the caravan routes
+		if = {
+			limit = { culture = culture:radhanite }
+			add = task_contract_weight_slight_bonus_value
+		}
+		scope:employer = { multiply = task_contract_weight_by_tier_value }
+	}
+
+	valid_to_create = {
+		jip_mishpacha_contract_create_trigger = yes
+		scope:employer = { jip_contract_caravan_employer_trigger = yes }
+	}
+	valid_to_accept = {
+		jip_mishpacha_contract_accept_trigger = yes
+		custom_tooltip = {
+			text = jip_contract_caravan_gold_tt
+			gold >= jip_contract_stake_value
+		}
+	}
+	valid_to_keep = {
+		jip_mishpacha_contract_keep_trigger = yes
+	}
+	valid_to_continue = {
+		jip_mishpacha_contract_continue_trigger = yes
+	}
+
+	on_create = {
+		jip_mishpacha_contract_on_create_effect = yes
+	}
+	on_accepted = {
+		jip_mishpacha_contract_on_accepted_scheme_effect = { EVENT = jip_mishpacha_contract.0030 }
+		jip_mishpacha_contract_pay_stake_effect = yes
+	}
+	on_invalidated = {
+		jip_mishpacha_contract_on_invalidated_effect = yes
+	}
+
+	task_contract_reward = {
+		success_critical = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_return_stake_effect = { SHARE = 2 }
+				scope:taker ?= { add_prestige = minor_prestige_gain }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_excelled_reward_value TYPE = critically_succeeded_task_contract_opinion }
+				jip_contract_add_contact_effect = { HOOK = no }
+			}
+		}
+		success_standard = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_return_stake_effect = { SHARE = 1.4 }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_reward_value TYPE = succeeded_task_contract_opinion }
+			}
+		}
+		failure_standard = {
+			positive = no
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = failure }
+				jip_contract_return_stake_effect = { SHARE = 0.25 }
+			}
+		}
+	}
+}
+
+# Act as Envoy
+jip_contract_envoy = {
+	group = jip_mishpacha_contracts_group
+	icon = "gfx/interface/icons/scheme_types/diplomacy.dds"
+	travel = no
+	use_diplomatic_range = yes
+
+	weight = {
+		value = task_contract_weight_default_value
+		add = {
+			value = diplomacy
+			multiply = 5
+		}
+		scope:employer = { multiply = task_contract_weight_by_tier_value }
+	}
+
+	valid_to_create = {
+		jip_mishpacha_contract_create_trigger = yes
+		scope:employer = { jip_contract_envoy_employer_trigger = yes }
+	}
+	valid_to_accept = {
+		jip_mishpacha_contract_accept_trigger = yes
+	}
+	valid_to_keep = {
+		jip_mishpacha_contract_keep_trigger = yes
+		jip_mishpacha_contract_target_alive_trigger = yes
+	}
+	valid_to_continue = {
+		jip_mishpacha_contract_continue_trigger = yes
+		jip_mishpacha_contract_target_alive_trigger = yes
+	}
+
+	on_create = {
+		jip_mishpacha_contract_on_create_effect = yes
+		# The ruler across the border the terms go to
+		scope:employer = {
+			random_neighboring_top_liege_realm_owner = {
+				limit = { jip_contract_envoy_counterpart_trigger = { EMPLOYER = scope:employer } }
+				save_scope_as = jip_contract_target
+			}
+		}
+		scope:contract = {
+			set_variable = {
+				name = jip_contract_target
+				value = scope:jip_contract_target
+			}
+		}
+	}
+	on_accepted = {
+		jip_mishpacha_contract_on_accepted_scheme_effect = { EVENT = jip_mishpacha_contract.0040 }
+	}
+	on_invalidated = {
+		jip_mishpacha_contract_on_invalidated_effect = yes
+	}
+
+	task_contract_reward = {
+		success_critical = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_pay_gold_effect = { SHARE = 1.5 }
+				scope:taker ?= { add_prestige = medium_prestige_gain }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_excelled_reward_value TYPE = critically_succeeded_task_contract_opinion }
+				jip_contract_add_contact_effect = { HOOK = yes }
+				scope:task_contract.var:jip_contract_target ?= {
+					add_opinion = {
+						target = scope:taker
+						modifier = grateful_opinion
+						opinion = 30
+					}
+				}
+			}
+		}
+		success_standard = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_pay_gold_effect = { SHARE = 1 }
+				scope:taker ?= { add_prestige = minor_prestige_gain }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_reward_value TYPE = succeeded_task_contract_opinion }
+				scope:task_contract.var:jip_contract_target ?= {
+					add_opinion = {
+						target = scope:taker
+						modifier = grateful_opinion
+						opinion = 15
+					}
+				}
+			}
+		}
+		failure_standard = {
+			positive = no
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = failure }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_failure_value TYPE = failed_task_contract_opinion }
+				scope:taker ?= { add_prestige = minor_prestige_loss }
+			}
+		}
+	}
+}
+
+# Redeem the Captives (pidyon shevuyim)
+jip_contract_ransom = {
+	group = jip_mishpacha_contracts_group
+	icon = "gfx/interface/icons/character_interactions/religious.dds"
+	travel = no
+	use_diplomatic_range = yes
+
+	weight = {
+		value = task_contract_weight_default_value
+		add = {
+			value = diplomacy
+			multiply = 5
+		}
+		# A mitzvah that outweighs most others, and only comes up now and then
+		add = task_contract_weight_interesting_somewhat_rare_value
+	}
+
+	valid_to_create = {
+		jip_mishpacha_contract_create_trigger = yes
+		scope:employer = { jip_contract_ransom_employer_trigger = yes }
+	}
+	valid_to_accept = {
+		jip_mishpacha_contract_accept_trigger = yes
+		custom_tooltip = {
+			text = jip_contract_ransom_gold_tt
+			gold >= {
+				value = jip_contract_stake_value
+				multiply = 0.5
+			}
+		}
+	}
+	valid_to_keep = {
+		jip_mishpacha_contract_keep_trigger = yes
+		jip_contract_ransom_captive_held_trigger = yes
+	}
+	valid_to_continue = {
+		jip_mishpacha_contract_continue_trigger = yes
+		jip_contract_ransom_captive_held_trigger = yes
+	}
+
+	on_create = {
+		jip_mishpacha_contract_on_create_effect = yes
+		scope:employer = {
+			random_prisoner = {
+				limit = { jip_ransomable_captive_trigger = yes }
+				save_scope_as = jip_contract_target
+			}
+		}
+		scope:contract = {
+			set_variable = {
+				name = jip_contract_target
+				value = scope:jip_contract_target
+			}
+		}
+	}
+	on_accepted = {
+		jip_mishpacha_contract_on_accepted_scheme_effect = { EVENT = jip_mishpacha_contract.0050 }
+	}
+	on_invalidated = {
+		jip_mishpacha_contract_on_invalidated_effect = yes
+	}
+
+	task_contract_reward = {
+		# Talked down to nothing; the captive comes to live under the family's roof
+		success_critical = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_ransom_release_effect = yes
+				scope:taker ?= {
+					add_piety = major_piety_gain
+					add_legitimacy = 20
+				}
+				scope:task_contract.var:jip_contract_target ?= {
+					if = {
+						limit = { is_landed = no }
+						scope:taker = { add_courtier = prev }
+					}
+				}
+			}
+		}
+		# Talked down to half the price
+		success_standard = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				scope:taker ?= {
+					remove_short_term_gold = {
+						value = scope:task_contract.var:jip_contract_stake
+						multiply = 0.5
+					}
+				}
+				jip_contract_ransom_release_effect = yes
+				scope:taker ?= {
+					add_piety = medium_piety_gain
+					add_legitimacy = 10
+				}
+			}
+		}
+		failure_standard = {
+			positive = no
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = failure }
+				scope:taker ?= { add_piety = minor_piety_loss }
+			}
+		}
+		# The full price paid (an event choice)
+		jip_contract_ransom_paid = {
+			visible = no
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				scope:taker ?= { remove_short_term_gold = scope:task_contract.var:jip_contract_stake }
+				jip_contract_ransom_release_effect = yes
+				scope:taker ?= {
+					add_piety = medium_piety_gain
+					add_legitimacy = 10
+				}
+			}
+		}
+	}
+}
+
+# Serve as Court Physician
+jip_contract_physician = {
+	group = jip_mishpacha_contracts_group
+	icon = "gfx/interface/icons/court_position_types/court_physician_court_position.dds"
+	travel = no
+	use_diplomatic_range = yes
+
+	weight = {
+		value = task_contract_weight_default_value
+		add = {
+			value = learning
+			multiply = 5
+		}
+		if = {
+			limit = { has_trait = lifestyle_physician }
+			add = task_contract_weight_standard_bonus_value
+		}
+		add = task_contract_weight_interesting_almost_rare_value
+		scope:employer = { multiply = task_contract_weight_by_tier_value }
+	}
+
+	valid_to_create = {
+		jip_mishpacha_contract_create_trigger = yes
+		scope:employer = { jip_contract_physician_employer_trigger = yes }
+	}
+	valid_to_accept = {
+		jip_mishpacha_contract_accept_trigger = yes
+	}
+	valid_to_keep = {
+		jip_mishpacha_contract_keep_trigger = yes
+		jip_mishpacha_contract_target_alive_trigger = yes
+	}
+	valid_to_continue = {
+		jip_mishpacha_contract_continue_trigger = yes
+		jip_mishpacha_contract_target_alive_trigger = yes
+	}
+
+	on_create = {
+		jip_mishpacha_contract_on_create_effect = yes
+		scope:employer = {
+			if = {
+				limit = { jip_contract_physician_patient_trigger = yes }
+				save_scope_as = jip_contract_target
+			}
+			else = {
+				random_close_family_member = {
+					limit = { jip_contract_physician_patient_trigger = yes }
+					save_scope_as = jip_contract_target
+				}
+			}
+		}
+		scope:contract = {
+			set_variable = {
+				name = jip_contract_target
+				value = scope:jip_contract_target
+			}
+		}
+	}
+	on_accepted = {
+		jip_mishpacha_contract_on_accepted_effect = { EVENT = jip_mishpacha_contract.0060 }
+	}
+	on_invalidated = {
+		jip_mishpacha_contract_on_invalidated_effect = yes
+	}
+
+	task_contract_reward = {
+		success_critical = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				scope:task_contract.var:jip_contract_target ?= {
+					add_character_modifier = {
+						modifier = risky_disease_treatment_success_high_modifier
+						years = 1
+					}
+				}
+				jip_contract_pay_gold_effect = { SHARE = 1.5 }
+				scope:taker ?= { add_prestige = medium_prestige_gain }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_excelled_reward_value TYPE = critically_succeeded_task_contract_opinion }
+				jip_contract_add_contact_effect = { HOOK = yes }
+			}
+		}
+		success_standard = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				scope:task_contract.var:jip_contract_target ?= {
+					add_character_modifier = {
+						modifier = safe_disease_treatment_success_high_modifier
+						years = 1
+					}
+				}
+				jip_contract_pay_gold_effect = { SHARE = 1 }
+				scope:taker ?= { add_prestige = minor_prestige_gain }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_reward_value TYPE = succeeded_task_contract_opinion }
+			}
+		}
+		failure_standard = {
+			positive = no
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = failure }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_failure_value TYPE = failed_task_contract_opinion }
+				scope:taker ?= { add_prestige = minor_prestige_loss }
+			}
+		}
+	}
+}
+
+# Translate Texts
+jip_contract_translate = {
+	group = jip_mishpacha_contracts_group
+	icon = "gfx/interface/icons/scheme_types/learning.dds"
+	travel = no
+	use_diplomatic_range = yes
+
+	weight = {
+		value = task_contract_weight_default_value
+		add = {
+			value = learning
+			multiply = 5
+		}
+		scope:employer = { multiply = task_contract_weight_by_tier_value }
+	}
+
+	valid_to_create = {
+		jip_mishpacha_contract_create_trigger = yes
+		scope:employer = { jip_contract_translate_employer_trigger = { OWNER = root } }
+	}
+	valid_to_accept = {
+		jip_mishpacha_contract_accept_trigger = yes
+	}
+	valid_to_keep = {
+		jip_mishpacha_contract_keep_trigger = yes
+	}
+	valid_to_continue = {
+		jip_mishpacha_contract_continue_trigger = yes
+	}
+
+	on_create = {
+		jip_mishpacha_contract_on_create_effect = yes
+	}
+	on_accepted = {
+		jip_mishpacha_contract_on_accepted_scheme_effect = { EVENT = jip_mishpacha_contract.0070 }
+	}
+	on_invalidated = {
+		jip_mishpacha_contract_on_invalidated_effect = yes
+	}
+
+	task_contract_reward = {
+		success_critical = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_pay_gold_effect = { SHARE = 1.5 }
+				scope:taker ?= { add_prestige = medium_prestige_gain }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_excelled_reward_value TYPE = critically_succeeded_task_contract_opinion }
+				jip_contract_add_contact_effect = { HOOK = no }
+			}
+		}
+		success_standard = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_pay_gold_effect = { SHARE = 1 }
+				scope:taker ?= { add_prestige = minor_prestige_gain }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_reward_value TYPE = succeeded_task_contract_opinion }
+			}
+		}
+		failure_standard = {
+			positive = no
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = failure }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_failure_value TYPE = failed_task_contract_opinion }
+			}
+		}
+	}
+}
+
+# Answer a Responsum (she'elot u-teshuvot)
+jip_contract_responsum = {
+	group = jip_mishpacha_contracts_group
+	icon = "gfx/interface/icons/scheme_types/icon_scheme_study_scriptures.dds"
+	travel = no
+	use_diplomatic_range = yes
+
+	# Communities ask whoever is learned, so the asker's rank doesn't matter
+	weight = {
+		value = task_contract_weight_default_value
+		add = {
+			value = learning
+			multiply = 5
+		}
+		if = {
+			limit = {
+				domicile ?= {
+					OR = {
+						has_domicile_parameter = jip_estate_beit_din_1
+						has_domicile_parameter = jip_estate_beit_din_2
+					}
+				}
+			}
+			add = task_contract_weight_slight_bonus_value
+		}
+	}
+
+	valid_to_create = {
+		jip_mishpacha_contract_create_trigger = yes
+		scope:employer = { jip_contract_responsum_employer_trigger = { OWNER = root } }
+	}
+	valid_to_accept = {
+		jip_mishpacha_contract_accept_trigger = yes
+	}
+	valid_to_keep = {
+		jip_mishpacha_contract_keep_trigger = yes
+	}
+	valid_to_continue = {
+		jip_mishpacha_contract_continue_trigger = yes
+	}
+
+	on_create = {
+		jip_mishpacha_contract_on_create_effect = yes
+	}
+	on_accepted = {
+		jip_mishpacha_contract_on_accepted_effect = { EVENT = jip_mishpacha_contract.0080 }
+	}
+	on_invalidated = {
+		jip_mishpacha_contract_on_invalidated_effect = yes
+	}
+
+	task_contract_reward = {
+		success_critical = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_pay_gold_effect = { SHARE = 0.5 }
+				scope:taker ?= {
+					add_piety = major_piety_gain
+					dynasty ?= { add_dynasty_prestige = medium_dynasty_prestige_gain }
+				}
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_excelled_reward_value TYPE = critically_succeeded_task_contract_opinion }
+				jip_contract_add_contact_effect = { HOOK = no }
+			}
+		}
+		success_standard = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_pay_gold_effect = { SHARE = 0.5 }
+				scope:taker ?= {
+					add_piety = medium_piety_gain
+					dynasty ?= { add_dynasty_prestige = minor_dynasty_prestige_gain }
+				}
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_reward_value TYPE = succeeded_task_contract_opinion }
+			}
+		}
+		failure_standard = {
+			positive = no
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = failure }
+				scope:taker ?= { add_piety = minor_piety_loss }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_failure_value TYPE = failed_task_contract_opinion }
+			}
+		}
+	}
+}
+
+# Gather News from Correspondents
+jip_contract_news = {
+	group = jip_mishpacha_contracts_group
+	icon = "gfx/interface/icons/scheme_types/intrigue.dds"
+	travel = no
+	use_diplomatic_range = yes
+
+	weight = {
+		value = task_contract_weight_default_value
+		add = {
+			value = intrigue
+			multiply = 5
+		}
+		scope:employer = { multiply = task_contract_weight_by_tier_value }
+	}
+
+	valid_to_create = {
+		jip_mishpacha_contract_create_trigger = yes
+		scope:employer = { jip_contract_news_employer_trigger = { OWNER = root } }
+	}
+	valid_to_accept = {
+		jip_mishpacha_contract_accept_trigger = yes
+	}
+	valid_to_keep = {
+		jip_mishpacha_contract_keep_trigger = yes
+		jip_mishpacha_contract_target_alive_trigger = yes
+	}
+	valid_to_continue = {
+		jip_mishpacha_contract_continue_trigger = yes
+		jip_mishpacha_contract_target_alive_trigger = yes
+	}
+
+	on_create = {
+		jip_mishpacha_contract_on_create_effect = yes
+		scope:employer = {
+			random_relation = {
+				type = rival
+				limit = { jip_contract_news_target_trigger = { OWNER = root } }
+				save_scope_as = jip_contract_target
+			}
+		}
+		scope:contract = {
+			set_variable = {
+				name = jip_contract_target
+				value = scope:jip_contract_target
+			}
+		}
+	}
+	on_accepted = {
+		jip_mishpacha_contract_on_accepted_scheme_effect = { EVENT = jip_mishpacha_contract.0090 }
+	}
+	on_invalidated = {
+		jip_mishpacha_contract_on_invalidated_effect = yes
+	}
+
+	task_contract_reward = {
+		# The letters turn up something worth keeping for the family too
+		success_critical = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_pay_gold_effect = { SHARE = 1.5 }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_excelled_reward_value TYPE = critically_succeeded_task_contract_opinion }
+				jip_contract_add_contact_effect = { HOOK = no }
+				scope:task_contract.var:jip_contract_target ?= {
+					if = {
+						limit = {
+							any_secret = { NOT = { is_known_by = scope:taker } }
+						}
+						random_secret = {
+							limit = { NOT = { is_known_by = scope:taker } }
+							reveal_to = scope:taker
+						}
+					}
+				}
+			}
+		}
+		success_standard = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_pay_gold_effect = { SHARE = 1 }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_reward_value TYPE = succeeded_task_contract_opinion }
+			}
+		}
+		# Whether the rival finds out who was asking depends on the approach (jip_contract_news_approach_effect)
+		failure_standard = {
+			positive = no
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = failure }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_failure_value TYPE = failed_task_contract_opinion }
+			}
+		}
+	}
+}

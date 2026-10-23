@@ -17,6 +17,7 @@ yearly_playable_pulse = {
 		jip_mishpacha_succession_law_on_action
 		jip_mishpacha_replace_estate_buildings_on_action
 		jip_mishpacha_villa_on_action
+		jip_mishpacha_contracts_on_action
 	}
 }
 
@@ -105,6 +106,11 @@ jip_mishpacha_game_start_after_lobby_on_action = {
 			}
 			# The Villa exists from the start, so its prestige needs no delay
 			jip_mishpacha_refresh_villa_modifier_effect = yes
+			trigger_event = { on_action = jip_mishpacha_game_start_courtiers_on_action }
+			trigger_event = {
+				on_action = jip_mishpacha_contracts_new_area_on_action
+				days = 1
+			}
 		}
 	}
 }
@@ -142,5 +148,52 @@ jip_mishpacha_domicile_building_completed_on_action = {
 	}
 	effect = {
 		scope:owner = { jip_mishpacha_refresh_villa_modifier_effect = yes }
+	}
+}
+
+# Mishpacha contracts (common/task_contracts/jip_mishpacha_contracts.txt): player families get a fresh batch of offers each
+# year, AI families a hidden roll in their place
+# root = the family head
+jip_mishpacha_contracts_on_action = {
+	trigger = {
+		has_government = mishpacha_government
+	}
+	effect = {
+		if = {
+			limit = { is_ai = yes }
+			jip_mishpacha_ai_contract_effect = yes
+		}
+		else = {
+			jip_mishpacha_refresh_contracts_effect = yes
+		}
+	}
+}
+
+# New offers when the estate settles somewhere new or a new head takes over; the variable keeps an inheritance of several
+# titles to one batch
+# root = the family head
+jip_mishpacha_contracts_new_area_on_action = {
+	trigger = {
+		jip_mishpacha_contract_owner_trigger = yes
+		NOT = { has_variable = jip_mishpacha_contracts_refreshed }
+	}
+	effect = {
+		set_variable = {
+			name = jip_mishpacha_contracts_refreshed
+			value = yes
+			days = 30
+		}
+		jip_mishpacha_refresh_contracts_effect = yes
+	}
+}
+
+# Game start: Jewish courtiers for the families, so their court positions and contract schemes have people to fill them
+# root = the family head
+jip_mishpacha_game_start_courtiers_on_action = {
+	trigger = {
+		has_government = mishpacha_government
+	}
+	effect = {
+		jip_mishpacha_generate_courtiers_effect = yes
 	}
 }

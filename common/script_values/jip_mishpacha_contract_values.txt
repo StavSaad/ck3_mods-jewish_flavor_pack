@@ -1,0 +1,126 @@
+﻿# Mishpacha contracts (common/task_contracts/jip_mishpacha_contracts.txt)
+
+# Gold paid on success, scaled by the employer's tier like vanilla contracts (counts x1, dukes x3, kings and emperors x4, courtiers x0.5)
+# scope:employer = the employer
+jip_contract_gold_value = {
+	value = 50
+	multiply = scope:employer.task_contract_employer_tier_gold_multiplier_value
+}
+
+# Gold the family puts up front for a loan or a caravan, and pays as a ransom
+# scope:employer = the employer
+jip_contract_stake_value = {
+	value = 60
+	multiply = scope:employer.task_contract_employer_tier_gold_multiplier_value
+}
+
+# Contracts added by each refresh: three, and one more brought in by a Shaliach
+# root = the family head
+jip_contract_refresh_amount_value = {
+	value = 3
+	if = {
+		limit = { employs_court_position = jip_shaliach_court_position }
+		add = 1
+	}
+}
+
+# Chance in percent that an approach succeeds, before the approach's own bonus (jip_contract_resolve_effect).
+# The matching estate building and court position help. root = the contract taker
+jip_contract_stewardship_chance_value = {
+	value = 20
+	add = {
+		value = stewardship
+		multiply = 3
+	}
+	if = {
+		limit = { domicile ?= { has_domicile_parameter = jip_estate_counting_house_3 } }
+		add = 15
+	}
+	else_if = {
+		limit = { domicile ?= { has_domicile_parameter = jip_estate_counting_house_2 } }
+		add = 10
+	}
+	else_if = {
+		limit = { domicile ?= { has_domicile_parameter = jip_estate_counting_house_1 } }
+		add = 5
+	}
+	if = {
+		limit = { employs_court_position = jip_parnas_court_position }
+		add = 10
+	}
+}
+
+jip_contract_diplomacy_chance_value = {
+	value = 20
+	add = {
+		value = diplomacy
+		multiply = 3
+	}
+	if = {
+		limit = { domicile ?= { has_domicile_building_or_higher = jip_hachnasat_orchim_05 } }
+		add = 15
+	}
+	else_if = {
+		limit = { domicile ?= { has_domicile_building_or_higher = jip_hachnasat_orchim_03 } }
+		add = 10
+	}
+	else_if = {
+		limit = { domicile ?= { has_domicile_building_or_higher = jip_hachnasat_orchim_01 } }
+		add = 5
+	}
+	if = {
+		limit = { employs_court_position = jip_shaliach_court_position }
+		add = 10
+	}
+}
+
+jip_contract_learning_chance_value = {
+	value = 20
+	add = {
+		value = learning
+		multiply = 3
+	}
+	if = {
+		limit = { domicile ?= { has_domicile_parameter = jip_estate_yeshiva_2 } }
+		add = 15
+	}
+	else_if = {
+		limit = { domicile ?= { has_domicile_parameter = jip_estate_yeshiva_1 } }
+		add = 10
+	}
+	if = {
+		limit = { employs_court_position = jip_rosh_yeshiva_court_position }
+		add = 10
+	}
+}
+
+jip_contract_intrigue_chance_value = {
+	value = 20
+	add = {
+		value = intrigue
+		multiply = 3
+	}
+	if = {
+		limit = { employs_court_position = jip_sofer_court_position }
+		add = 5
+	}
+}
+
+# AI families: chance in percent that the yearly business roll pays off, and what it pays (jip_mishpacha_ai_contract_effect)
+# root = the family head, scope:jip_ai_skill = the skill value used
+jip_contract_ai_chance_value = {
+	value = 20
+	add = {
+		value = scope:jip_ai_skill
+		multiply = 3
+	}
+	max = 90
+}
+
+jip_contract_ai_gold_value = {
+	value = 30
+	add = {
+		value = scope:jip_ai_skill
+		multiply = 3
+	}
+}

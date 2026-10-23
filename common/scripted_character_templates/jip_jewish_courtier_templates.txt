@@ -1,0 +1,123 @@
+﻿# Jewish courtiers given to Mishpacha families at game start (jip_mishpacha_generate_courtiers_effect), shaped for the
+# Jewish court positions: their skills and traits are the ones the positions' aptitude looks for.
+# Culture, faith, rite, location and employer come from create_character; root = the family head.
+
+# A scholar: Rosh Yeshiva, Av Beit Din
+jip_jewish_scholar_courtier_template = {
+	age = { 25 55 }
+	gender_female_chance = root_faith_dominant_gender_female_chance
+	dynasty = none
+
+	random_traits = no
+	random_traits_list = {
+		count = 1
+		education_learning_2 = {}
+		education_learning_3 = {}
+		education_learning_4 = {}
+	}
+	random_traits_list = {
+		count = 1
+		erudite = {}
+		theologian = {}
+		lifestyle_scholar = {}
+	}
+	random_traits_list = {
+		count = 2
+		diligent = {}
+		just = {}
+		honest = {}
+		temperate = {}
+		patient = {}
+		zealous = {}
+	}
+
+	learning = { 10 15 }
+	diplomacy = { 4 8 }
+	stewardship = { 3 7 }
+}
+
+# A man of business: Sofer, Parnas
+jip_jewish_steward_courtier_template = {
+	age = { 25 50 }
+	gender_female_chance = root_faith_dominant_gender_female_chance
+	dynasty = none
+
+	random_traits = no
+	random_traits_list = {
+		count = 1
+		education_stewardship_2 = {}
+		education_stewardship_3 = {}
+		education_stewardship_4 = {}
+	}
+	trait = administrator
+	random_traits_list = {
+		count = 2
+		diligent = {}
+		honest = {}
+		just = {}
+		greedy = {}
+		temperate = {}
+	}
+
+	stewardship = { 10 15 }
+	diplomacy = { 5 8 }
+	learning = { 4 7 }
+}
+
+# A go-between: Shaliach, Gabbai Tzedakah
+jip_jewish_envoy_courtier_template = {
+	age = { 25 50 }
+	gender_female_chance = root_faith_dominant_gender_female_chance
+	dynasty = none
+
+	random_traits = no
+	random_traits_list = {
+		count = 1
+		education_diplomacy_2 = {}
+		education_diplomacy_3 = {}
+		education_diplomacy_4 = {}
+	}
+	random_traits_list = {
+		count = 1
+		diplomat = {}
+		lifestyle_traveler = {}
+	}
+	random_traits_list = {
+		count = 2
+		gregarious = {}
+		honest = {}
+		generous = {}
+		compassionate = {}
+		just = {}
+	}
+
+	diplomacy = { 10 15 }
+	learning = { 5 8 }
+	stewardship = { 4 7 }
+}
+
+# A cantor and poet: Chazan, Paytan
+jip_jewish_cantor_courtier_template = {
+	age = { 20 45 }
+	gender_female_chance = root_faith_dominant_gender_female_chance
+	dynasty = none
+
+	random_traits = no
+	random_traits_list = {
+		count = 1
+		education_learning_2 = {}
+		education_diplomacy_2 = {}
+		education_learning_3 = {}
+	}
+	trait = lifestyle_poet
+	random_traits_list = {
+		count = 2
+		gregarious = {}
+		zealous = {}
+		calm = {}
+		compassionate = {}
+	}
+
+	diplomacy = { 7 11 }
+	learning = { 7 11 }
+}

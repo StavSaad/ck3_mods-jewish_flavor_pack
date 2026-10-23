@@ -1,0 +1,661 @@
+﻿# Mishpacha contracts (common/task_contracts/jip_mishpacha_contracts.txt)
+
+# Adds fresh contracts around the estate; offers not taken drop off after about a year (jip_mishpacha_contract_keep_trigger).
+# Runs yearly, when the estate arrives somewhere new, when a new head takes over and at game start.
+# root = the family head
+jip_mishpacha_refresh_contracts_effect = {
+	if = {
+		limit = {
+			jip_mishpacha_contract_owner_trigger = yes
+			NOT = {
+				any_character_task_contract = { count >= 6 }
+			}
+		}
+		domicile.domicile_location = { save_scope_as = jip_contract_area }
+		hidden_effect = {
+			populate_task_contracts_for_area = {
+				location = scope:jip_contract_area
+				amount = jip_contract_refresh_amount_value
+				group = { jip_mishpacha_contracts_group }
+			}
+		}
+	}
+}
+
+# AI family heads: a yearly hidden roll in place of contracts. The work goes by their non-martial skills, and the better
+# the skill, the better the odds and the pay. root = the family head
+jip_mishpacha_ai_contract_effect = {
+	random = {
+		chance = 50
+		random_list = {
+			1 = {
+				modifier = { add = stewardship }
+				save_scope_value_as = { name = jip_ai_skill value = stewardship }
+			}
+			1 = {
+				modifier = { add = diplomacy }
+				save_scope_value_as = { name = jip_ai_skill value = diplomacy }
+			}
+			1 = {
+				modifier = { add = learning }
+				save_scope_value_as = { name = jip_ai_skill value = learning }
+			}
+			1 = {
+				modifier = { add = intrigue }
+				save_scope_value_as = { name = jip_ai_skill value = intrigue }
+			}
+		}
+		random = {
+			chance = jip_contract_ai_chance_value
+			add_gold = jip_contract_ai_gold_value
+			add_prestige = minor_prestige_gain
+		}
+	}
+}
+
+# Shared contract on_create: root = the family head, scope:contract = the new contract
+jip_mishpacha_contract_on_create_effect = {
+	scope:contract = {
+		save_scope_as = task_contract
+		task_contract_employer = { save_scope_as = employer }
+		set_variable = {
+			name = jip_contract_fresh
+			value = yes
+			days = 395
+		}
+		set_variable = {
+			name = jip_contract_gold
+			value = jip_contract_gold_value
+		}
+		set_variable = {
+			name = jip_contract_stake
+			value = jip_contract_stake_value
+		}
+	}
+}
+
+# Shared contract on_accepted: the work is done from home through letters and agents, and comes to a head a few months on
+# root = the contract, $EVENT$ = the event that resolves it
+jip_mishpacha_contract_on_accepted_effect = {
+	task_contract_taker = { play_sound_effect = "event:/DLC/EP3/SFX/UI/Contracts/ep3_ui_contracts_accept_contract" }
+	save_scope_as = task_contract
+	task_contract_taker ?= {
+		trigger_event = {
+			id = $EVENT$
+			months = { 2 4 }
+		}
+	}
+}
+
+# Scheme contracts start at once: the approach event (.00X0) starts the contract scheme
+# root = the contract, $EVENT$ = the approach event
+jip_mishpacha_contract_on_accepted_scheme_effect = {
+	task_contract_taker = { play_sound_effect = "event:/DLC/EP3/SFX/UI/Contracts/ep3_ui_contracts_accept_contract" }
+	save_scope_as = task_contract
+	task_contract_taker ?= { trigger_event = $EVENT$ }
+}
+
+# Pays the stake out of the family's purse when a loan or caravan contract is taken. root = the contract
+jip_mishpacha_contract_pay_stake_effect = {
+	task_contract_taker ?= {
+		remove_short_term_gold = scope:task_contract.var:jip_contract_stake
+	}
+	set_variable = {
+		name = jip_contract_stake_paid
+		value = yes
+	}
+}
+
+# Shared contract on_invalidated: tells the taker, and hands back a stake that was paid. root = the contract
+jip_mishpacha_contract_on_invalidated_effect = {
+	save_scope_as = task_contract
+	scheme ?= { end_scheme = yes }
+	task_contract_taker ?= {
+		if = {
+			limit = { exists = scope:task_contract.var:jip_contract_stake_paid }
+			add_gold = scope:task_contract.var:jip_contract_stake
+		}
+		send_interface_message = {
+			type = event_generic_bad_with_text
+			title = jip_mishpacha_contract_invalidated_title
+			desc = jip_mishpacha_contract_invalidated_desc
+			left_icon = this
+		}
+	}
+}
+
+# Saves the scopes the contract events use. root = the family head, scope:task_contract = the contract
+jip_mishpacha_contract_event_scopes_effect = {
+	scope:task_contract = {
+		task_contract_employer ?= { save_scope_as = employer }
+		var:jip_contract_target ?= { save_scope_as = jip_contract_target }
+	}
+}
+
+# The family head picks an approach: rolls its outcome in secret and sends the result event a few days on, where the
+# contract is completed. The tooltip shows the skill tested and the odds of each outcome.
+# $SKILL$ = the skill tested (jip_contract_<skill>_chance_value), $BONUS$ = the approach's own bonus or malus to it,
+# $APPROACH$ = flag for the result event and jip_contract_<contract>_approach_effect, $EVENT$ = the result event
+# root = the family head, scope:task_contract = the contract
+jip_contract_choose_approach_effect = {
+	save_scope_value_as = {
+		name = jip_contract_chance
+		value = {
+			value = jip_contract_$SKILL$_chance_value
+			add = $BONUS$
+			min = 5
+			max = 95
+		}
+	}
+	custom_tooltip = jip_contract_tests_$SKILL$_tt
+	scope:task_contract = {
+		set_variable = {
+			name = jip_contract_approach
+			value = flag:$APPROACH$
+		}
+	}
+	random_list = {
+		0 = {
+			modifier = {
+				add = {
+					value = scope:jip_contract_chance
+					multiply = 0.3
+				}
+			}
+			desc = jip_contract_outcome_critical_tt
+			hidden_effect = { jip_contract_set_outcome_effect = { OUTCOME = critical } }
+		}
+		0 = {
+			modifier = {
+				add = {
+					value = scope:jip_contract_chance
+					multiply = 0.7
+				}
+			}
+			desc = jip_contract_outcome_success_tt
+			hidden_effect = { jip_contract_set_outcome_effect = { OUTCOME = success } }
+		}
+		0 = {
+			modifier = {
+				add = {
+					value = 100
+					subtract = scope:jip_contract_chance
+				}
+			}
+			desc = jip_contract_outcome_failure_tt
+			hidden_effect = { jip_contract_set_outcome_effect = { OUTCOME = failure } }
+		}
+	}
+	hidden_effect = {
+		trigger_event = {
+			id = $EVENT$
+			days = { 3 7 }
+		}
+	}
+}
+
+### Contract schemes (common/schemes/scheme_types/jip_mishpacha_contract_schemes.txt), following vanilla's laamp contract schemes
+
+# A phase is done, or the scheme is clicked in the HUD: vanilla's preparations window, which executes into $EVENT$
+# this = the scheme
+jip_contract_scheme_prep_effect = {
+	save_scope_as = scheme
+	scope:scheme.task_contract ?= { save_scope_as = task_contract }
+	save_scope_value_as = {
+		name = follow_up_event
+		value = event_id:$EVENT$
+	}
+	if = {
+		limit = {
+			NOT = { exists = scope:suppress_next_event }
+		}
+		scheme_owner = { trigger_event = scheme_critical_moments.0002 }
+	}
+}
+
+# The scheme can't go on: the contract falls through with it (which refunds a stake). this = the scheme
+jip_contract_scheme_invalidated_effect = {
+	save_scope_as = scheme
+	scheme_owner = {
+		send_interface_message = {
+			title = scheme_invalidated_title
+			type = diplo_contract_scheme_invalidated_message
+			right_icon = scope:scheme.scheme_target_character
+			show_as_tooltip = {
+				scope:scheme = { end_scheme = yes }
+			}
+		}
+	}
+	scope:scheme.task_contract ?= { invalidate_contract = yes }
+}
+
+# The scheme is executed: its success chance decides, and a success is exceptional one time in three, as in vanilla's
+# roll_scheme_success_or_failure_effect. root = the family head
+jip_contract_roll_scheme_effect = {
+	random = {
+		chance = scope:scheme.scheme_success_chance
+		save_scope_value_as = {
+			name = jip_scheme_successful
+			value = yes
+		}
+	}
+	if = {
+		limit = { exists = scope:jip_scheme_successful }
+		random_list = {
+			67 = { jip_contract_set_outcome_effect = { OUTCOME = success } }
+			33 = { jip_contract_set_outcome_effect = { OUTCOME = critical } }
+		}
+		trigger_event = $SUCCESS_EVENT$
+	}
+	else = {
+		jip_contract_set_outcome_effect = { OUTCOME = failure }
+		trigger_event = $FAILURE_EVENT$
+	}
+}
+
+
+jip_contract_set_outcome_effect = {
+	scope:task_contract = {
+		set_variable = {
+			name = jip_contract_outcome
+			value = flag:$OUTCOME$
+		}
+	}
+}
+
+# The result event's choice: the approach's own consequences, then the contract's reward for the outcome rolled.
+# $CONTRACT$ = the contract key without jip_contract_ (its jip_contract_<contract>_approach_effect), root = the family head
+jip_contract_finish_effect = {
+	jip_contract_$CONTRACT$_approach_effect = yes
+	if = {
+		limit = { jip_contract_outcome_is_trigger = { OUTCOME = critical } }
+		scope:task_contract = { complete_task_contract = success_critical }
+	}
+	else_if = {
+		limit = { jip_contract_outcome_is_trigger = { OUTCOME = success } }
+		scope:task_contract = { complete_task_contract = success_standard }
+	}
+	else = {
+		scope:task_contract = { complete_task_contract = failure_standard }
+	}
+}
+
+### Approach consequences, on top of the contract's reward (root = the family head)
+
+# Extra gold: $SHARE$ times the contract's gold, or of its stake
+jip_contract_extra_gold_effect = {
+	add_gold = {
+		value = scope:task_contract.var:jip_contract_gold
+		multiply = $SHARE$
+	}
+}
+
+jip_contract_extra_stake_effect = {
+	add_gold = {
+		value = scope:task_contract.var:jip_contract_stake
+		multiply = $SHARE$
+	}
+}
+
+# Less gold: $SHARE$ (positive) times the contract's gold, or of its stake, is held back from the reward
+jip_contract_less_gold_effect = {
+	remove_short_term_gold = {
+		value = scope:task_contract.var:jip_contract_gold
+		multiply = $SHARE$
+	}
+}
+
+jip_contract_less_stake_effect = {
+	remove_short_term_gold = {
+		value = scope:task_contract.var:jip_contract_stake
+		multiply = $SHARE$
+	}
+}
+
+# $WHO$'s opinion of the family head changes by $OPINION$ with the $TYPE$ modifier
+jip_contract_extra_opinion_effect = {
+	$WHO$ ?= {
+		add_opinion = {
+			target = root
+			modifier = $TYPE$
+			opinion = $OPINION$
+		}
+	}
+}
+
+jip_contract_loan_approach_effect = {
+	# Courtesy: the friendship outlives the debt, paid or not
+	if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = courtesy } }
+		jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = grateful_opinion OPINION = 15 }
+	}
+	# Rents and goods: sold on at a profit, but the debtor resents what was taken from him
+	else_if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = goods } }
+		if = {
+			limit = { jip_contract_succeeded_trigger = yes }
+			jip_contract_extra_stake_effect = { SHARE = 0.25 }
+		}
+		jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = disappointed_opinion OPINION = -15 }
+	}
+	# Calling in his other debts: a hold over him if it works, an enemy if it doesn't
+	else_if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = pressure } }
+		if = {
+			limit = { jip_contract_succeeded_trigger = yes }
+			add_hook_if_possible_default_length_effect = {
+				TARGET = scope:employer
+				TYPE = contact_list_weak_hook
+			}
+		}
+		else = {
+			jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = disappointed_opinion OPINION = -30 }
+		}
+	}
+}
+
+jip_contract_tolls_approach_effect = {
+	# Strict ledgers: every coin counted
+	if = {
+		limit = {
+			jip_contract_approach_is_trigger = { APPROACH = strict }
+			jip_contract_succeeded_trigger = yes
+		}
+		jip_contract_extra_gold_effect = { SHARE = 0.5 }
+	}
+	# Going easy: a smaller take, but the merchants and the ruler remember it
+	else_if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = lenient } }
+		if = {
+			limit = { jip_contract_succeeded_trigger = yes }
+			jip_contract_less_gold_effect = { SHARE = 0.5 }
+		}
+		add_prestige = minor_prestige_gain
+		jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = grateful_opinion OPINION = 20 }
+	}
+	# Creative books: a fat skim, or a scandal
+	else_if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = books } }
+		if = {
+			limit = { jip_contract_succeeded_trigger = yes }
+			jip_contract_extra_gold_effect = { SHARE = 1 }
+		}
+		else = {
+			add_prestige = medium_prestige_loss
+			jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = disappointed_opinion OPINION = -40 }
+		}
+	}
+}
+
+jip_contract_caravan_approach_effect = {
+	# Spreading the cargo: little lost, little gained
+	if = {
+		limit = {
+			jip_contract_approach_is_trigger = { APPROACH = spread }
+			jip_contract_succeeded_trigger = yes
+		}
+		jip_contract_less_stake_effect = { SHARE = 0.3 }
+	}
+	# The communities on the road: they shelter the caravan, and the family is thanked for its trade
+	else_if = {
+		limit = {
+			jip_contract_approach_is_trigger = { APPROACH = communities }
+			jip_contract_succeeded_trigger = yes
+		}
+		add_piety = minor_piety_gain
+	}
+	# The desert road: half the time to market, twice the danger
+	else_if = {
+		limit = {
+			jip_contract_approach_is_trigger = { APPROACH = desert }
+			jip_contract_succeeded_trigger = yes
+		}
+		jip_contract_extra_stake_effect = { SHARE = 0.6 }
+	}
+}
+
+jip_contract_envoy_approach_effect = {
+	# The law of nations: learned arguments impress, or condescend
+	if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = law } }
+		if = {
+			limit = { jip_contract_succeeded_trigger = yes }
+			add_prestige = minor_prestige_gain
+		}
+		else = {
+			jip_contract_extra_opinion_effect = { WHO = scope:jip_contract_target TYPE = disappointed_opinion OPINION = -15 }
+		}
+	}
+	# What each side hides: a hold over the other ruler, or two courts that distrust the family
+	else_if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = leverage } }
+		if = {
+			limit = { jip_contract_succeeded_trigger = yes }
+			add_hook_if_possible_default_length_effect = {
+				TARGET = scope:jip_contract_target
+				TYPE = contact_list_weak_hook
+			}
+		}
+		else = {
+			jip_contract_extra_opinion_effect = { WHO = scope:jip_contract_target TYPE = disappointed_opinion OPINION = -20 }
+			jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = disappointed_opinion OPINION = -20 }
+		}
+	}
+}
+
+jip_contract_ransom_approach_effect = {
+	# Mercy and scripture: a deed of piety if the captor relents, an insult if he does not
+	if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = mercy } }
+		if = {
+			limit = { jip_contract_succeeded_trigger = yes }
+			add_piety = minor_piety_gain
+		}
+		else = {
+			jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = disappointed_opinion OPINION = -15 }
+		}
+	}
+}
+
+jip_contract_physician_approach_effect = {
+	# Diet and rest: gentle, and the fee is gentle too
+	if = {
+		limit = {
+			jip_contract_approach_is_trigger = { APPROACH = regimen }
+			jip_contract_succeeded_trigger = yes
+		}
+		jip_contract_less_gold_effect = { SHARE = 0.5 }
+	}
+	# A bold remedy: a famous cure, or a patient made worse
+	else_if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = bold } }
+		if = {
+			limit = { jip_contract_succeeded_trigger = yes }
+			jip_contract_extra_gold_effect = { SHARE = 0.75 }
+			add_prestige = minor_prestige_gain
+		}
+		else = {
+			scope:jip_contract_target ?= {
+				add_character_modifier = {
+					modifier = risky_disease_treatment_failure_modifier
+					years = 1
+				}
+			}
+			jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = disappointed_opinion OPINION = -20 }
+		}
+	}
+}
+
+jip_contract_translate_approach_effect = {
+	# Word for word: a faithful text
+	if = {
+		limit = {
+			jip_contract_approach_is_trigger = { APPROACH = literal }
+			jip_contract_succeeded_trigger = yes
+		}
+		add_piety = minor_piety_gain
+	}
+	# For the court's ear: the patron is delighted
+	else_if = {
+		limit = {
+			jip_contract_approach_is_trigger = { APPROACH = courtly }
+			jip_contract_succeeded_trigger = yes
+		}
+		jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = grateful_opinion OPINION = 15 }
+	}
+	# A commentary of the family's own: a name made, or a presumption mocked
+	else_if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = commentary } }
+		if = {
+			limit = { jip_contract_succeeded_trigger = yes }
+			add_prestige = medium_prestige_gain
+			dynasty ?= { add_dynasty_prestige = minor_dynasty_prestige_gain }
+		}
+		else = {
+			add_prestige = minor_prestige_loss
+		}
+	}
+}
+
+jip_contract_responsum_approach_effect = {
+	# Strictly: the law upheld, the asker displeased
+	if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = strict } }
+		if = {
+			limit = { jip_contract_succeeded_trigger = yes }
+			add_piety = minor_piety_gain
+		}
+		jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = disappointed_opinion OPINION = -10 }
+	}
+	# Leniently: the asker grateful, the purists less so
+	else_if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = lenient } }
+		if = {
+			limit = { jip_contract_succeeded_trigger = yes }
+			jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = grateful_opinion OPINION = 20 }
+		}
+		add_piety = miniscule_piety_loss
+	}
+	# The Beit Din: a ruling with the weight of a court behind it
+	else_if = {
+		limit = {
+			jip_contract_approach_is_trigger = { APPROACH = beit_din }
+			jip_contract_succeeded_trigger = yes
+		}
+		dynasty ?= { add_dynasty_prestige = minor_dynasty_prestige_gain }
+	}
+}
+
+jip_contract_news_approach_effect = {
+	# The merchants: they sell what they hear, and talk about who asked
+	if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = merchants } }
+		if = {
+			limit = { jip_contract_succeeded_trigger = yes }
+			jip_contract_extra_gold_effect = { SHARE = 0.25 }
+		}
+		else = {
+			scope:jip_contract_target ?= {
+				add_opinion = {
+					target = root
+					modifier = spied_on_me_opinion
+				}
+			}
+		}
+	}
+	# A bribed clerk: the best letters, and the worst scandal if he is caught
+	else_if = {
+		limit = {
+			jip_contract_approach_is_trigger = { APPROACH = clerk }
+			jip_contract_succeeded_trigger = no
+		}
+		scope:jip_contract_target ?= {
+				add_opinion = {
+					target = root
+					modifier = spied_on_me_opinion
+				}
+			}
+		add_prestige = minor_prestige_loss
+	}
+	# The Jews of the rival's realm never give the family away, whatever they find
+}
+
+### Rewards (this = the contract; root is whoever completed it, so the contract is reached through scope:task_contract)
+
+# Saves scope:taker and scope:employer and plays the outcome sound. $SOUND$ = success or failure
+jip_contract_reward_scopes_effect = {
+	save_scope_as = task_contract
+	task_contract_employer ?= { save_scope_as = employer }
+	task_contract_taker ?= {
+		save_scope_as = taker
+		jip_contract_$SOUND$_sound_effect = yes
+	}
+}
+
+jip_contract_success_sound_effect = {
+	play_sound_effect = "event:/DLC/EP3/SFX/UI/Contracts/ep3_ui_contracts_success_on_contract"
+}
+
+jip_contract_failure_sound_effect = {
+	play_sound_effect = "event:/DLC/EP3/SFX/UI/Contracts/ep3_ui_contracts_failure_on_contract"
+}
+
+# $SHARE$ times the contract's gold
+jip_contract_pay_gold_effect = {
+	scope:taker ?= {
+		add_gold = {
+			value = scope:task_contract.var:jip_contract_gold
+			multiply = $SHARE$
+		}
+	}
+}
+
+# $SHARE$ times the stake comes back
+jip_contract_return_stake_effect = {
+	scope:taker ?= {
+		add_gold = {
+			value = scope:task_contract.var:jip_contract_stake
+			multiply = $SHARE$
+		}
+	}
+}
+
+# The employer's opinion of the family head: $OPINION$ with the $TYPE$ modifier
+jip_contract_employer_opinion_effect = {
+	scope:employer ?= {
+		add_opinion = {
+			target = scope:taker
+			modifier = $TYPE$
+			opinion = $OPINION$
+		}
+	}
+}
+
+# Redeem the Captives: the captive goes free and is grateful to the family head
+jip_contract_ransom_release_effect = {
+	scope:task_contract.var:jip_contract_target ?= {
+		if = {
+			limit = { is_imprisoned = yes }
+			release_from_prison = yes
+		}
+		add_opinion = {
+			target = scope:taker
+			modifier = grateful_opinion
+			opinion = 40
+		}
+	}
+}
+
+# The employer joins the family head's contacts; $HOOK$ = yes adds a weak hook as well, like vanilla's best contract outcomes
+jip_contract_add_contact_effect = {
+	scope:taker ?= {
+		add_contact = scope:employer
+		if = {
+			limit = { always = $HOOK$ }
+			add_hook_if_possible_default_length_effect = {
+				TARGET = scope:employer
+				TYPE = contact_list_weak_hook
+			}
+		}
+	}
+}

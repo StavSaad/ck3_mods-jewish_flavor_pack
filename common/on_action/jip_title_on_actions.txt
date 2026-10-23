@@ -39,6 +39,7 @@ on_title_gain = {
 		delay = { days = 1 }
 		mishpacha_landed_government_switch_on_action
 		jip_mishpacha_villa_on_action # Villa prestige for a family head who inherits the estate
+		jip_mishpacha_contracts_new_area_on_action # Offers for a new family head
 	}
 }
 

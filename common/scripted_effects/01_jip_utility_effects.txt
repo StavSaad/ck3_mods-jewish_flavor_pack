@@ -529,3 +529,52 @@ jip_mishpacha_replace_estate_buildings_effect = {
 		}
 	}
 }
+
+# Gives a Mishpacha family the Jewish courtiers its court lacks: a scholar, a man of business and a go-between when no
+# adult Jew at court is good at learning, stewardship or diplomacy, and a cantor if that still leaves fewer than four.
+# Templates in common/scripted_character_templates/jip_jewish_courtier_templates.txt. Used at game start.
+# root = the family head
+jip_mishpacha_generate_courtiers_effect = {
+	jip_mishpacha_add_jewish_courtier_effect = { SKILL = learning TEMPLATE = jip_jewish_scholar_courtier_template }
+	jip_mishpacha_add_jewish_courtier_effect = { SKILL = stewardship TEMPLATE = jip_jewish_steward_courtier_template }
+	jip_mishpacha_add_jewish_courtier_effect = { SKILL = diplomacy TEMPLATE = jip_jewish_envoy_courtier_template }
+	if = {
+		limit = {
+			NOT = {
+				any_courtier = {
+					count >= 4
+					has_religion = religion:judaism_religion
+					is_adult = yes
+				}
+			}
+		}
+		jip_mishpacha_create_jewish_courtier_effect = { TEMPLATE = jip_jewish_cantor_courtier_template }
+	}
+}
+
+# A Jewish courtier from $TEMPLATE$, unless an adult Jew at court already has 10 or more $SKILL$
+jip_mishpacha_add_jewish_courtier_effect = {
+	if = {
+		limit = {
+			NOT = {
+				any_courtier = {
+					has_religion = religion:judaism_religion
+					is_adult = yes
+					$SKILL$ >= 10
+				}
+			}
+		}
+		jip_mishpacha_create_jewish_courtier_effect = { TEMPLATE = $TEMPLATE$ }
+	}
+}
+
+jip_mishpacha_create_jewish_courtier_effect = {
+	create_character = {
+		template = $TEMPLATE$
+		location = root.location
+		culture = root.culture
+		faith = root.faith
+		rite = root.rite
+		employer = root
+	}
+}

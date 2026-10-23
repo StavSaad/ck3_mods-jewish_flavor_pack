@@ -1,0 +1,81 @@
+﻿# Success chance from the estate and the court for Mishpacha contract schemes (jip_mishpacha_contract_schemes.txt),
+# matching the odds of the event contracts (jip_contract_<skill>_chance_value)
+# scope:owner = the family head
+
+jip_contract_scheme_stewardship_success_modifier = {
+	first_valid = {
+		modifier = {
+			add = 15
+			desc = jip_contract_scheme_counting_house_tt
+			scope:owner.domicile ?= { has_domicile_parameter = jip_estate_counting_house_3 }
+		}
+		modifier = {
+			add = 10
+			desc = jip_contract_scheme_counting_house_tt
+			scope:owner.domicile ?= { has_domicile_parameter = jip_estate_counting_house_2 }
+		}
+		modifier = {
+			add = 5
+			desc = jip_contract_scheme_counting_house_tt
+			scope:owner.domicile ?= { has_domicile_parameter = jip_estate_counting_house_1 }
+		}
+	}
+	modifier = {
+		add = 10
+		desc = jip_contract_scheme_parnas_tt
+		scope:owner = { employs_court_position = jip_parnas_court_position }
+	}
+}
+
+jip_contract_scheme_diplomacy_success_modifier = {
+	first_valid = {
+		modifier = {
+			add = 15
+			desc = jip_contract_scheme_guest_room_tt
+			scope:owner.domicile ?= { has_domicile_building_or_higher = jip_hachnasat_orchim_05 }
+		}
+		modifier = {
+			add = 10
+			desc = jip_contract_scheme_guest_room_tt
+			scope:owner.domicile ?= { has_domicile_building_or_higher = jip_hachnasat_orchim_03 }
+		}
+		modifier = {
+			add = 5
+			desc = jip_contract_scheme_guest_room_tt
+			scope:owner.domicile ?= { has_domicile_building_or_higher = jip_hachnasat_orchim_01 }
+		}
+	}
+	modifier = {
+		add = 10
+		desc = jip_contract_scheme_shaliach_tt
+		scope:owner = { employs_court_position = jip_shaliach_court_position }
+	}
+}
+
+jip_contract_scheme_learning_success_modifier = {
+	first_valid = {
+		modifier = {
+			add = 15
+			desc = jip_contract_scheme_yeshiva_tt
+			scope:owner.domicile ?= { has_domicile_parameter = jip_estate_yeshiva_2 }
+		}
+		modifier = {
+			add = 10
+			desc = jip_contract_scheme_yeshiva_tt
+			scope:owner.domicile ?= { has_domicile_parameter = jip_estate_yeshiva_1 }
+		}
+	}
+	modifier = {
+		add = 10
+		desc = jip_contract_scheme_rosh_yeshiva_tt
+		scope:owner = { employs_court_position = jip_rosh_yeshiva_court_position }
+	}
+}
+
+jip_contract_scheme_intrigue_success_modifier = {
+	modifier = {
+		add = 5
+		desc = jip_contract_scheme_sofer_tt
+		scope:owner = { employs_court_position = jip_sofer_court_position }
+	}
+}
