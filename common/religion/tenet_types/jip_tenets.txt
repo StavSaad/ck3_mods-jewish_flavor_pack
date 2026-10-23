@@ -20,11 +20,9 @@ tenet_kehunah = {
 		}
 	}
 	can_pick_as_personal_tenet = {
-		faith = {
-			OR = {
-				religion = religion:judaism_religion
-				has_doctrine = tenet_jewish_syncretism
-			}
+		OR = {
+			has_religion = religion:judaism_religion
+			rite = { rite_has_tenet = tenet_jewish_syncretism }
 		}
 	}
 	character_modifier = {
