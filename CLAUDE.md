@@ -1,6 +1,6 @@
 # Rising Lion — Canaanite Flavor Pack: Mod Analysis
 
-**Version:** 0.13.1 (0.14.0 in development)  
+**Version:** 0.14.0  
 **Game:** Crusader Kings 3 (supported version 1.20.*)  
 **Workshop ID:** 3501948259  
 **Tags:** Religion, Culture, Decisions, Flavor
@@ -219,4 +219,4 @@ A mod can't be a DLC or an event's `content_source`, so:
 | 0.11.0 | Empire of Kemet; Upper/Lower Egypt kingdoms; Copt culture; Aramean/Phoenician tradition changes |
 | 0.12.0 | Hegemony of the Fertile Crescent; performance improvements; Kemet region rework |
 | 0.13.0 | Masada 3-tier building; Kemet/Crescent nickname grants; Mishpacha desc expansion; Jewish-flavored Exilarchate election tooltips |
-| 0.14.0 (in development) | CK3 1.20 update; Mishpacha charter, migration, succession, estate buildings, Mar/Geveret titles, court positions and contracts; Expel/Readmit the Jews; Court Financier; Kehunah tenet for Kohenism |
+| 0.14.0 | CK3 1.20 update; Mishpacha charter, migration, succession, estate buildings, Mar/Geveret titles, court positions and contracts; Expel/Readmit the Jews; Court Financier; Kehunah tenet for Kohenism |
