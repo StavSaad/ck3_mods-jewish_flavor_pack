@@ -1,0 +1,11 @@
+﻿# Realm CoA decoration, gui/shared/coat_of_arms.gui: a Mishpacha head who is an Exilarch wears the Keter Shem Tov
+# (jip_exilarch_topframe_<size>.dds), the others a kippah (jip_mishpacha_topframe_<size>.dds)
+jip_coa_is_exilarch = {
+	scope = character
+	is_shown = {
+		OR = {
+			has_title = title:d_exilarchate
+			has_title = title:d_karaite_exilarchate
+		}
+	}
+}

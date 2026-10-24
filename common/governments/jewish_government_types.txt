@@ -80,6 +80,7 @@
 	is_mechanic_type_default = no
 
 	color = { 230 230 200 }
-	realm_mask_offset = { 0.0 0.01 }
-	realm_mask_scale = { 1 1 }
+	# Realm CoA: a banner with a Torah-mantle hem (gfx/interface/icons/realm_frames/mishpacha_government_*); the arms are kept clear of its scalloped corners
+	realm_mask_offset = { 0.0 0.02 }
+	realm_mask_scale = { 0.96 0.96 }
 }

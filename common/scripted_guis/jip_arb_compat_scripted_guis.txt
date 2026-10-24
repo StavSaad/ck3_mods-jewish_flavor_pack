@@ -1,0 +1,73 @@
+﻿# Compatibility with Aligned Realm Banners (workshop 3823433423, its arb_scripted_guis.txt): gui/shared/coat_of_arms.gui is built
+# on that mod's copy, so its march/palatinate/castellan banner decorations keep working when Rising Lion loads after it.
+# These are the same checks under our own names, so the GUI never asks for a scripted GUI that doesn't exist without ARB;
+# the GUI only shows the decorations when ARB is installed (its localization is found), and ARB's game rule is not read
+# here, since it doesn't exist without ARB.
+# A character may briefly hold two of the flags (vanilla passes margrave_flag to an heir for a day), so each decor gives way
+# to the contract actually held, and otherwise march > palatinate > castellan.
+
+jip_arb_march_decor = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = margrave_flag
+		OR = {
+			vassal_contract_has_flag = has_march_contract
+			NOR = {
+				vassal_contract_has_flag = has_palatinate_contract
+				vassal_contract_has_flag = has_castellan_contract
+			}
+		}
+	}
+}
+
+jip_arb_palatinate_decor = {
+	scope = character
+
+	is_shown = {
+		OR = {
+			has_character_flag = county_palatinate_flag
+			has_character_flag = duchy_palatinate_flag
+		}
+		OR = {
+			vassal_contract_has_flag = has_palatinate_contract
+			NOR = {
+				vassal_contract_has_flag = has_march_contract
+				vassal_contract_has_flag = has_castellan_contract
+				has_character_flag = margrave_flag
+			}
+		}
+	}
+}
+
+jip_arb_castellan_decor = {
+	scope = character
+
+	is_shown = {
+		has_character_flag = castellan_flag
+		OR = {
+			vassal_contract_has_flag = has_castellan_contract
+			NOR = {
+				vassal_contract_has_flag = has_march_contract
+				vassal_contract_has_flag = has_palatinate_contract
+				has_character_flag = margrave_flag
+				has_character_flag = county_palatinate_flag
+				has_character_flag = duchy_palatinate_flag
+			}
+		}
+	}
+}
+
+# Any of the three: hides the rank crown in the _crown variants, where the decor takes its place
+jip_arb_contract_decor = {
+	scope = character
+
+	is_shown = {
+		OR = {
+			has_character_flag = margrave_flag
+			has_character_flag = county_palatinate_flag
+			has_character_flag = duchy_palatinate_flag
+			has_character_flag = castellan_flag
+		}
+	}
+}

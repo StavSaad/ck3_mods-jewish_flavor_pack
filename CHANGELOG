@@ -57,6 +57,7 @@
 [] Copts now speak the vanilla Egyptian language instead of a separate Coptic one
 [] Clearing the Temple grounds now removes Jerusalem as a holy site of the Islamic faiths
 [] New stained-glass art for "The Jewish World" bookmark: a menorah between two lions of Judah on its tab, and a new start button
+[] Compatible with Aligned Realm Banners: load Rising Lion after it to keep both mods' banner decorations
 
 -- Mishpacha: government --
 [] Rebalanced the government: mercenaries are 25% cheaper instead of more expensive, and families gain +15% income, +10% learning and stewardship lifestyle experience, +10 travel safety and +5 opinion from courtiers and guests
@@ -65,6 +66,7 @@
 [] Family heads are now titled Mar/Geveret whatever their liege (they were shown as the liege's Duke or High Chief); spouses are Geveret/Mar, and estates are "the X Household"
 [] A family that gains land adopts its liege's government, or feudal if there is none
 [] A family head who leaves Judaism steps down in favor of the nearest Jewish man of their house
+[] Family heads have their own coat of arms shape, a banner hemmed like a Torah mantle, topped with a kippah instead of a rank crown; an Exilarch's is crowned with the Keter Shem Tov (the crown of a good name)
 
 -- Mishpacha: realm and migration --
 [] Families are now vassals of the realm their estate lies in, under a new "Charter of Privileges" contract (communal taxes, religious rights, Beit Din rights, trade rights); the title revocation protection option was removed
