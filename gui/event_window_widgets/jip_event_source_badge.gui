@@ -1,0 +1,20 @@
+﻿# The mod's banner in the event window's top right, where a DLC's event decoration goes (a mod can't be an event's
+# content_source). Events add it with
+#	widgets = { widget = { gui = "jip_event_source_badge" container = "foreground_shader_vfx_container" } }
+# That container is the window's illustration area (the window less a 40x20 margin), so the banner sits 18 px past its top
+# right corner to land where vanilla's does (character_event.gui: position { -22 20 } of the window, size { 263 64 }).
+widget = {
+	name = "jip_event_source_badge"
+	size = { 100% 100% }
+	alwaystransparent = yes
+
+	icon = {
+		name = "jip_source_icon"
+		parentanchor = top|right
+		position = { 18 0 }
+		size = { 263 64 }
+		texture = "gfx/interface/illustrations/jip_event_source_banner.dds"
+		tooltip = "JIP_EVENT_CONTENT_SOURCE_TT"
+		alwaystransparent = no
+	}
+}

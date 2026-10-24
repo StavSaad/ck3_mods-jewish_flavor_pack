@@ -9,6 +9,12 @@ jip_financier.0001 = {
 	title = jip_financier.0001.t
 	desc = jip_financier.0001.desc
 	theme = stewardship_wealth_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = scope:jip_financier
 		animation = steward
@@ -158,6 +164,12 @@ jip_financier.0002 = {
 	title = jip_financier.0002.t
 	desc = jip_financier.0002.desc
 	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = scope:jip_accuser
 		animation = personality_zealous
@@ -333,6 +345,12 @@ jip_financier.0003 = {
 	title = jip_financier.0003.t
 	desc = jip_financier.0003.desc
 	theme = stewardship_wealth_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = scope:jip_financier
 		animation = happiness
@@ -392,6 +410,12 @@ jip_financier.0004 = {
 	title = jip_financier.0004.t
 	desc = jip_financier.0004.desc
 	theme = stewardship_wealth_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = scope:jip_financier
 		animation = personality_greedy

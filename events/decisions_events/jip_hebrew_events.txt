@@ -21,6 +21,12 @@ jip_hebrew.0001 = {
 		desc = jip_hebrew.0001.end.desc
 	}
 	theme = culture_change
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = scope:hebrew_former
 		animation = personality_honorable
@@ -65,6 +71,12 @@ jip_hebrew.0002 = {
 		desc = jip_hebrew.0002.end.desc		
 	}
 	theme = culture_change
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = scope:hebrew_former
 		animation = admiration
@@ -140,6 +152,12 @@ jip_hebrew.0010 = {
 		desc = jip_hebrew.0010.end.desc
 	}
 	theme = realm
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = ecstasy
@@ -223,6 +241,12 @@ jip_hebrew.0020 = {
 		desc = jip_hebrew.0020.desc
 	}
 	theme = realm
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = ecstasy
@@ -249,6 +273,12 @@ jip_hebrew.0021 = {
 		desc = jip_hebrew.0021.start.desc #change
 	}
 	theme = culture_change
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = scope:canaanite_former
 		animation = personality_honorable
@@ -296,6 +326,12 @@ jip_hebrew.0022 = {
 		desc = jip_hebrew.0022.desc #change
 	}
 	theme = culture_change
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = personality_cynical
@@ -346,6 +382,12 @@ jip_hebrew.0031 = {
 		desc = jip_hebrew.0031.start.desc #change
 	}
 	theme = culture_change
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = scope:edomite_former
 		animation = personality_honorable
@@ -393,6 +435,12 @@ jip_hebrew.0032 = {
 		desc = jip_hebrew.0032.desc #change
 	}
 	theme = culture_change
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = personality_cynical
@@ -443,6 +491,12 @@ jip_hebrew.0040 = {
 		desc = jip_hebrew.0040.desc #change
 	}
 	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = personality_zealous
@@ -562,6 +616,12 @@ jip_hebrew.0041 = {
 		desc = jip_hebrew.0041.desc #change
 	}
 	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = personality_zealous
@@ -589,6 +649,12 @@ jip_hebrew.0050 = {
 		desc = jip_hebrew.0050.desc
 	}
 	theme = realm
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = ecstasy
@@ -616,6 +682,12 @@ jip_hebrew.0060 = {
 		desc = jip_hebrew.0060.end.desc
 	}
 	theme = realm
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = ecstasy
@@ -685,6 +757,12 @@ jip_hebrew.0070 = {
 		desc = jip_hebrew.0070.end.desc
 	}
 	theme = realm
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = ecstasy

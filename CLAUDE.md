@@ -179,6 +179,25 @@ Unlocked when the dynasty dynast carries the `davidic_line` trait (or has alread
 
 ---
 
+## Mod branding (DLC-style icon and event banner)
+
+**When creating events for this mod, always add the DLC banner** to every event that opens a window, right after its `theme` line:
+```
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+```
+(Skip hidden events and events with `window = scheme_*_event`. Generators that write events must emit it.)
+
+A mod can't be a DLC or an event's `content_source`, so:
+- **Icon** `gfx/interface/icons/dlc/jip_rising_lion.dds` (120x120): a Gemini painting in vanilla's flavour-pack frame (Northern Lords, Fate of Iberia, Legacy of Persia share it), made by `make_dlc_icon.py <painting> <x0> <y0> <size>`; used as the texticon `@rising_lion_icon!`. It is deliberately not in the DLC rows of the main menu, bookmark screen or lobby: reaching them means copying vanilla GUI (all of `frontend_main.gui`, or the `button_show_dlc_list` type) that would need updating with every game patch
+- **Event banner** `gfx/interface/illustrations/jip_event_source_banner.dds` (526x128, shown at 263x64): a Gemini painting in place of the art of vanilla's `dlc_009` event decoration, keeping its fade, ledge and shadow (`make_dlc_banner.py <painting> <y0>`). Every visible event adds `widgets = { widget = { gui = "jip_event_source_badge" container = "foreground_shader_vfx_container" } }` (`gui/event_window_widgets/jip_event_source_badge.gui`); new events need it too (`add_event_source_badge.py` adds it to all of them; `make_contract_events.py` emits it). The scheme outcome windows (`window = scheme_*_event`) and letter events have no such container
+
+---
+
 ## Compatibility
 
 - Compatible with **Cultures Expanded** mod (v0.10.1+)

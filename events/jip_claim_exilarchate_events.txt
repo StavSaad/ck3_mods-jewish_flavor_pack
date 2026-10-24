@@ -43,6 +43,12 @@ jip_claim_exilarchate.003 = {
 	title = jip_claim_exilarchate.003.title
 	desc = jip_claim_exilarchate.003.desc
 	theme = diplomacy
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = chancellor

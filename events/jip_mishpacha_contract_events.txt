@@ -21,6 +21,12 @@ jip_mishpacha_contract.0010 = {
 	title = jip_mishpacha_contract.0010.t
 	desc = jip_mishpacha_contract.0010.desc
 	theme = stewardship_wealth_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = steward
@@ -104,6 +110,12 @@ jip_mishpacha_contract.0011 = {
 		}
 	}
 	theme = stewardship_wealth_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		triggered_animation = {
@@ -158,6 +170,12 @@ jip_mishpacha_contract.0020 = {
 	title = jip_mishpacha_contract.0020.t
 	desc = jip_mishpacha_contract.0020.desc
 	theme = stewardship_domain_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = steward
@@ -235,6 +253,12 @@ jip_mishpacha_contract.0021 = {
 		}
 	}
 	theme = stewardship_domain_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		triggered_animation = {
@@ -289,6 +313,12 @@ jip_mishpacha_contract.0030 = {
 	title = jip_mishpacha_contract.0030.t
 	desc = jip_mishpacha_contract.0030.desc
 	theme = silk_road
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = thinking
@@ -580,6 +610,12 @@ jip_mishpacha_contract.0040 = {
 	title = jip_mishpacha_contract.0040.t
 	desc = jip_mishpacha_contract.0040.desc
 	theme = diplomacy_foreign_affairs_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = personality_rational
@@ -887,6 +923,12 @@ jip_mishpacha_contract.0050 = {
 	title = jip_mishpacha_contract.0050.t
 	desc = jip_mishpacha_contract.0050.desc
 	theme = prison
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = personality_compassionate
@@ -1112,6 +1154,12 @@ jip_mishpacha_contract.0060 = {
 	title = jip_mishpacha_contract.0060.t
 	desc = jip_mishpacha_contract.0060.desc
 	theme = learning_medicine_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = physician
@@ -1204,6 +1252,12 @@ jip_mishpacha_contract.0061 = {
 		}
 	}
 	theme = learning_medicine_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		triggered_animation = {
@@ -1262,6 +1316,12 @@ jip_mishpacha_contract.0070 = {
 	title = jip_mishpacha_contract.0070.t
 	desc = jip_mishpacha_contract.0070.desc
 	theme = learning_scholarship_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = writing
@@ -1550,6 +1610,12 @@ jip_mishpacha_contract.0080 = {
 	title = jip_mishpacha_contract.0080.t
 	desc = jip_mishpacha_contract.0080.desc
 	theme = learning_theology_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = page_flipping
@@ -1628,6 +1694,12 @@ jip_mishpacha_contract.0081 = {
 		}
 	}
 	theme = learning_theology_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		triggered_animation = {
@@ -1682,6 +1754,12 @@ jip_mishpacha_contract.0090 = {
 	title = jip_mishpacha_contract.0090.t
 	desc = jip_mishpacha_contract.0090.desc
 	theme = intrigue_skulduggery_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = scheme

@@ -7,6 +7,12 @@ jip_expulsion.0001 = {
 	title = jip_expulsion.0001.t
 	desc = jip_expulsion.0001.desc
 	theme = realm
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = worry
@@ -59,6 +65,12 @@ jip_expulsion.0002 = {
 	title = jip_expulsion.0002.t
 	desc = jip_expulsion.0002.desc
 	theme = realm
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = scope:jip_readmitting_ruler
 		animation = personality_honorable
@@ -76,6 +88,12 @@ jip_expulsion.0003 = {
 	title = jip_expulsion.0003.t
 	desc = jip_expulsion.0003.desc
 	theme = realm
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = anger
@@ -179,6 +197,12 @@ jip_expulsion.0004 = {
 	title = jip_expulsion.0004.t
 	desc = jip_expulsion.0004.desc
 	theme = realm
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
 	left_portrait = {
 		character = root
 		animation = happiness

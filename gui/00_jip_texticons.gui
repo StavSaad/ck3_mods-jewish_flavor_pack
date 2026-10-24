@@ -7,3 +7,13 @@
 		fontsize = 16
 	}
 }
+# The mod's "DLC" icon, as vanilla's DLC texticons (@rising_lion_icon!)
+texticon = {
+	icon = rising_lion_icon
+	iconsize = {
+		texture = "gfx/interface/icons/dlc/jip_rising_lion.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
