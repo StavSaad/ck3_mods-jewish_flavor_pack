@@ -119,6 +119,7 @@
 
 -- Fixes --
 [] Fixed the Mishpacha family titles having no tier name, which flooded the error log
+[] Fixed most faiths' rites being defined twice since CK3 1.20.1 renamed vanilla's file, which also brought back vanilla's rites for the Jewish faiths alongside the mod's
 [] Fixed the Fertile Crescent region counting Levantine provinces twice
 [] Fixed the Persian Struggle not including the Bavlim culture
 [] Fixed many errors: Tanas holy site, Canaanite faith tenets, Lower Egypt adjective, Third Temple tenet check, Masada defense bonus, Maimonides' traits, Claim Exilarchate description, Semitic pagan religious head, and duplicate localization keys
