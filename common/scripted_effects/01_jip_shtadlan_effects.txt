@@ -1,0 +1,83 @@
+# Shtadlanut (intercession) interactions, common/character_interactions/jip_shtadlan_interactions.txt.
+# Called from the interactions' on_accept, with scope:actor (the family head) and scope:recipient (the ruler).
+
+# The sweeteners the family offered: the gift of gold, the prestige staked, the hook called in, the favour owed. The ruler is then warier of
+# the next request for a while (jip_shtadlan_ai_accept_modifier)
+jip_shtadlan_pay_effect = {
+	scope:recipient = {
+		set_variable = {
+			name = jip_shtadlan_granted
+			value = yes
+			years = jip_shtadlan_granted_years_value
+		}
+	}
+	scope:actor = {
+		if = {
+			limit = { scope:gold = yes }
+			pay_short_term_gold = {
+				target = scope:recipient
+				gold = jip_shtadlan_gift_gold_value
+			}
+		}
+		if = {
+			limit = { scope:prestige = yes }
+			add_prestige = {
+				value = jip_shtadlan_prestige_value
+				multiply = -1
+			}
+		}
+		if = {
+			limit = { scope:hook = yes }
+			use_hook = scope:recipient
+		}
+	}
+	if = {
+		limit = { scope:offer_hook = yes }
+		scope:recipient = {
+			add_hook = {
+				type = favor_hook
+				target = scope:actor
+			}
+		}
+	}
+}
+
+# Tells a player family head that the ruler granted the request. $TEXT$ = what was granted
+jip_shtadlan_accepted_message_effect = {
+	scope:actor = {
+		if = {
+			limit = { is_ai = no }
+			send_interface_message = {
+				type = event_generic_good
+				title = jip_shtadlan_accepted_msg
+				desc = $TEXT$
+				left_icon = scope:recipient
+			}
+		}
+	}
+}
+
+jip_shtadlan_declined_message_effect = {
+	scope:actor = {
+		if = {
+			limit = { is_ai = no }
+			send_interface_message = {
+				type = event_generic_bad
+				title = jip_shtadlan_declined_msg
+				desc = jip_shtadlan_declined_msg_desc
+				left_icon = scope:recipient
+			}
+		}
+	}
+}
+
+# The Jewish prisoner a release request frees: the family's own kin first, then the highest-ranking (jip_shtadlan_prisoner_priority_value)
+jip_shtadlan_find_prisoner_effect = {
+	scope:recipient = {
+		ordered_prisoner = {
+			limit = { religion = religion:judaism_religion }
+			order_by = jip_shtadlan_prisoner_priority_value
+			save_scope_as = jip_shtadlan_prisoner
+		}
+	}
+}

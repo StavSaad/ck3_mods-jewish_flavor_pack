@@ -375,6 +375,11 @@ jip_expel_the_jews_decision = {
 				NOT = { has_variable = jip_jews_edict_cooldown }
 			}
 		}
+		# A letter of protection granted to a Jewish intercessor (jip_shtadlan_protection_interaction)
+		custom_tooltip = {
+			text = jip_expel_the_jews_protected_tt
+			jip_ruler_protects_jews_trigger = no
+		}
 		custom_tooltip = {
 			text = jip_expel_the_jews_no_families_tt
 			OR = {

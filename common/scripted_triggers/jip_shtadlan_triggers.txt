@@ -1,0 +1,27 @@
+# Shtadlanut (intercession) interactions, common/character_interactions/jip_shtadlan_interactions.txt
+
+# scope:actor can intercede: the head of a landless Mishpacha family, free to act, with scope:recipient in reach
+jip_shtadlan_can_intercede_trigger = {
+	scope:actor = {
+		government_has_flag = government_is_mishpacha
+		is_landed = no
+	}
+	scope:recipient = {
+		is_ruler = yes
+		is_landed = yes
+		this != scope:actor
+	}
+}
+
+jip_shtadlan_valid_trigger = {
+	scope:actor = {
+		is_available_adult = yes
+		in_diplomatic_range = scope:recipient
+	}
+	scope:recipient = { is_available = yes }
+}
+
+# Character scope: the crown has granted the Jews a letter of protection (jip_shtadlan_protection_interaction)
+jip_ruler_protects_jews_trigger = {
+	primary_title ?= { has_variable = jip_jews_protected }
+}

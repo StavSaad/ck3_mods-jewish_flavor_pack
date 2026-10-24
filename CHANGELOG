@@ -105,6 +105,7 @@
 [] Added the "Readmit the Jews" decision; edicts concerning the Jews have a 10-year cooldown
 [] The AI decides on expulsion and readmission based on traits, rite tenets and personal tenets
 [] Added notifications and a summary event for the ruler who expels the Jews
+[] Added Shtadlanut: a Mishpacha family head can intercede with a ruler to readmit the Jews, grant a 15-year letter of protection against expulsion, free a Jewish prisoner, or (their own liege) waive jizya or lower communal taxes. A gift of gold, the family's prestige, a hook on the ruler, or owing them a favour (if they hold no hook on the family yet) make the ruler likelier to agree, against how hard the request is, their opinion of the family, how they feel about the Jews and how their faith views Judaism. Kings and emperors, rulers the family doesn't live under and rulers who granted a favour in the last 10 years are harder to win over; a Jewish Court Financier at their court and a petitioning Parnas help. Protected realms draw migrating families
 [] Added the Court Financier court position for non-Jewish dukes and above: raises domain taxes and Jewish opinion, angers zealots, and brings debt-collection events
 
 -- Kohenism --

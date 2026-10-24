@@ -3,3 +3,8 @@
 	parent = government
 	alias = { mishpacha_government mishpacha_governments mishpacha_i }
 }
+
+# Shtadlanut interactions (common/character_interactions/jip_shtadlan_interactions.txt)
+shtadlan = {
+	parent = mishpacha
+}

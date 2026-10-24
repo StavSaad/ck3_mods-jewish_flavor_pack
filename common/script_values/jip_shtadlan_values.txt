@@ -1,0 +1,51 @@
+# Shtadlanut (intercession) interactions, common/character_interactions/jip_shtadlan_interactions.txt
+
+# The gift of gold that sweetens a request: half a year of the ruler's income, as vanilla's medium gift
+jip_shtadlan_gift_gold_value = {
+	value = scope:recipient.medium_gold_value
+}
+
+# The prestige the family stakes on a request, more before a greater ruler
+jip_shtadlan_prestige_value = {
+	value = scope:recipient.highest_held_title_tier
+	multiply = 50
+	min = 100
+}
+
+# How hard each request is to grant, before the ruler's feelings and the family's sweeteners
+jip_shtadlan_readmit_difficulty_value = -60
+jip_shtadlan_protection_difficulty_value = -45
+jip_shtadlan_release_difficulty_value = -30
+jip_shtadlan_charter_difficulty_value = -45
+
+# Character scope (the ruler asked): a great ruler stoops less readily to a Jewish petitioner
+jip_shtadlan_rank_value = {
+	value = 0
+	if = {
+		limit = { highest_held_title_tier >= tier_empire }
+		add = -20
+	}
+	else_if = {
+		limit = { highest_held_title_tier >= tier_kingdom }
+		add = -10
+	}
+}
+
+# How long a ruler who granted a request is warier of the next one
+jip_shtadlan_granted_years_value = 10
+
+# How long a letter of protection lasts
+jip_shtadlan_protection_years_value = 15
+
+# Character scope: which Jewish prisoner a release request frees first: the family's own kin, then the highest-ranking
+jip_shtadlan_prisoner_priority_value = {
+	value = highest_held_title_tier
+	if = {
+		limit = { house ?= scope:actor.house }
+		add = 100
+	}
+	if = {
+		limit = { is_close_or_extended_family_of = scope:actor }
+		add = 50
+	}
+}

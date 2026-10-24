@@ -1,0 +1,129 @@
+# AI acceptance of a Shtadlanut (intercession) request, common/character_interactions/jip_shtadlan_interactions.txt.
+# $DIFFICULTY$ = how hard the request is to grant (jip_shtadlan_<request>_difficulty_value)
+jip_shtadlan_ai_accept_modifier = {
+	modifier = {
+		desc = JIP_SHTADLAN_REQUEST_REASON
+		add = $DIFFICULTY$
+	}
+	# How the ruler feels about the Jews: the weights behind Expel the Jews (jip_jewish_hostility_value), turned around
+	modifier = {
+		desc = JIP_SHTADLAN_HOSTILITY_REASON
+		add = {
+			value = scope:recipient.jip_jewish_hostility_value
+			multiply = -1
+		}
+	}
+	opinion_modifier = {
+		who = scope:recipient
+		opinion_target = scope:actor
+		multiplier = 0.5
+		desc = AI_OPINION_REASON
+	}
+	# How the ruler's faith views Judaism
+	modifier = {
+		desc = JIP_SHTADLAN_FAITH_EVIL_REASON
+		add = -30
+		scope:recipient.faith = {
+			faith_hostility_level = {
+				target = scope:actor.faith
+				value >= faith_evil_level
+			}
+		}
+	}
+	modifier = {
+		desc = JIP_SHTADLAN_FAITH_HOSTILE_REASON
+		add = -15
+		scope:recipient.faith = {
+			faith_hostility_level = {
+				target = scope:actor.faith
+				value = faith_hostile_level
+			}
+		}
+	}
+	modifier = {
+		desc = JIP_SHTADLAN_FAITH_ASTRAY_REASON
+		add = -5
+		scope:recipient.faith = {
+			faith_hostility_level = {
+				target = scope:actor.faith
+				value = faith_astray_level
+			}
+		}
+	}
+	# A great ruler stoops less readily to a Jewish petitioner
+	modifier = {
+		desc = JIP_SHTADLAN_RANK_REASON
+		add = scope:recipient.jip_shtadlan_rank_value
+		scope:recipient.highest_held_title_tier >= tier_kingdom
+	}
+	# A family that doesn't live under them has no claim on their favour
+	modifier = {
+		desc = JIP_SHTADLAN_STRANGER_REASON
+		add = -15
+		scope:actor = {
+			NOR = {
+				liege ?= scope:recipient
+				suzerain ?= scope:recipient
+			}
+		}
+	}
+	# They granted the Jews a favour not long ago (jip_shtadlan_pay_effect)
+	modifier = {
+		desc = JIP_SHTADLAN_RECENT_REASON
+		add = -25
+		scope:recipient = { has_variable = jip_shtadlan_granted }
+	}
+	# A Jewish Court Financier speaks for the community at court
+	modifier = {
+		desc = JIP_SHTADLAN_FINANCIER_REASON
+		add = 15
+		scope:recipient = {
+			court_position:jip_court_financier_court_position ?= { religion = religion:judaism_religion }
+		}
+	}
+	# The family's Parnas has been petitioning the authorities (jip_parnas_petition_authorities)
+	modifier = {
+		desc = JIP_SHTADLAN_PARNAS_REASON
+		add = 10
+		scope:actor = {
+			court_position:jip_parnas_court_position ?= { has_variable = jip_parnas_petitioning }
+		}
+	}
+	# Sweeteners
+	modifier = {
+		desc = JIP_SHTADLAN_GOLD_REASON
+		add = 20
+		scope:gold = yes
+	}
+	modifier = {
+		desc = JIP_SHTADLAN_GREEDY_REASON
+		add = 10
+		scope:gold = yes
+		scope:recipient = { has_trait = greedy }
+	}
+	modifier = {
+		desc = JIP_SHTADLAN_PRESTIGE_REASON
+		add = 15
+		scope:prestige = yes
+	}
+	# A favour owed: the ruler gains a weak hook on the family
+	modifier = {
+		desc = JIP_SHTADLAN_OFFER_HOOK_REASON
+		add = 25
+		scope:offer_hook = yes
+	}
+	modifier = {
+		desc = SCHEME_WEAK_HOOK_USED
+		add = 30
+		scope:hook = yes
+		scope:actor = {
+			NOT = { has_strong_hook = scope:recipient }
+		}
+	}
+	modifier = {
+		desc = SCHEME_STRONG_HOOK_USED
+		add = 1000
+		scope:hook = yes
+		scope:actor = { has_strong_hook = scope:recipient }
+	}
+}

@@ -49,6 +49,11 @@ jip_mishpacha_host_score_value = {
 		limit = { highest_held_title_tier >= tier_empire }
 		add = 10
 	}
+	# A letter of protection (jip_shtadlan_protection_interaction)
+	if = {
+		limit = { jip_ruler_protects_jews_trigger = yes }
+		add = 20
+	}
 }
 
 # Province scope: how good a city this is for scope:jip_migrant's estate, coming from scope:jip_migrant_origin.
