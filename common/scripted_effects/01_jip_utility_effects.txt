@@ -13,6 +13,8 @@
 					root.culture = { has_name_list = name_list_radhanite }
 					root.culture = { has_name_list = name_list_canaanite }
 					root.culture = { has_name_list = name_list_assyrian }
+					root.culture = { has_name_list = name_list_aramean }
+					root.culture = { has_name_list = name_list_nabati }
 					root.culture = { has_name_list = name_list_nubian }
 					root.culture = { has_name_list = name_list_ancient_egyptian }
 					root.culture = { has_name_list = name_list_greek }

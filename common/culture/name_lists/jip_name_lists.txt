@@ -261,3 +261,104 @@ name_list_canaanite = {
 	always_use_patronym = yes
 	
 }
+
+# Nabati: Aramaic, Mandaic and Harranian names, and the Arabic names the Nabat took under the caliphs
+name_list_nabati = {
+
+	cadet_dynasty_names = {
+		"dynn_Wahshiyya"
+		"dynn_Badniya"
+		"dynn_Buraniya"
+		"dynn_Harithiya"
+		"dynn_Karaya"
+		"dynn_Danqa"
+		"dynn_Kuthani"
+		"dynn_Surani"
+		"dynn_Kaskari"
+		"dynn_Tibi"
+	}
+
+	dynasty_names = {
+		"dynn_Wahshiyya"
+		"dynn_Badniya"
+		"dynn_Buraniya"
+		"dynn_Harithiya"
+		"dynn_Karaya"
+		"dynn_Danqa"
+		"dynn_Kuthani"
+		"dynn_Surani"
+		"dynn_Kaskari"
+		"dynn_Tibi"
+	}
+
+	male_names = {
+		Abba Adam Anush Bihram Danqa Hibil Karaya Mari Mhatam Nahir Narsai Nur Qutama Ram Sam Shitil Yuhana Zakia Zihrun
+		Hilal Ibrahim Ishaq Jabir Marinus Muhassin Sinan Thabit
+		Abdul-Karim Ahmad Ali Hasan Hussayn Isa Ja_far Mihran Mukhtar Musa Sabur Sulayman Yahya
+	}
+	female_names = {
+		Anhar Duvsha Hanna Hawa Hayuta Kitra Marta Maryam Nura Sabah Sharat Simat Talia
+		Amina Fatima Khadija Layla Rabiya Shirin Zaynab
+	}
+
+	dynasty_of_location_prefix = "dynnp_of"
+
+	patronym_prefix_male = "dynnpat_pre_Bar"
+	patronym_prefix_female = "dynnpat_pre_Barta"
+}
+
+# Aramean (the syriac culture): the Syriac Christian names of vanilla's name_list_assyrian (00_byzantine.txt),
+# copied so the Arameans get place names of their own (tools/make_aramaic_place_names.py). Keep in sync with vanilla
+name_list_aramean = {
+
+	cadet_dynasty_names = {
+		"dynn_Bukhtishu"
+		"dynn_Qatwa"
+		"dynn_Nimreh"
+		"dynn_Gazarta"
+		"dynn_Salamas"
+		"dynn_Zakho"
+		"dynn_Arbilaya"
+	}
+
+	dynasty_names = {
+		"dynn_Bukhtishu"
+		"dynn_Qatwa"
+		"dynn_Nimreh"
+		"dynn_Gazarta"
+		"dynn_Salamas"
+		"dynn_Zakho"
+		"dynn_Arbilaya"
+	}
+
+	male_names = {
+		Aba Abahu Abaya Abaye Abayi Abba Abdima Abdisho Abgar Abimalek Abraham Abris Abrisius Acacius Achan Achina Addai
+		Adlai Aggai Ahai Ahadabui Ahha Akha_d_abuh Akh_es_Samain Aqib_Alaha Asa Ashur Avahu Avda Avdima Avdimi Avina Avira Azai
+		Babaeus Babai Babowai Babwahi Bar Bar_Abba Barba_shimin Bar_Nabha Bar_Talmai Bar_Timai Bar_Tolmai Bustan
+		Caiaphas Cephas Cephus Chadlai Chama Chanin Chanina Chaninai Chinena Chozai Chuma Chunya Clopas
+		Dadisho Denha Dikla Diklah Dimi Dinkha Dunanu Elisha Eliya Emmanuel Enosh Ezekiel Farbokht Foma Giwargis Grwgari
+		Hanina Hnanisho Hozai Idan Idra Ila Isaac Isho Isho_yahb Israel Kaiapha Karna Katsiu Kelaya
+		Laszio Lazar Lazare Lazaro Lazaros Lazarus Lazarz Lazer Lebbaeus Maadai Macabee Maccabee Magna Makkikha Maluch Ma_na Marabokht Maremmeh Mari Mikha_il Moqli Muna
+		Nahir Nahor Nahur Narsai Nazuk Nechunya Nehor Nehorai Niv Nun Nur Oran Pappa Paul Pethion Petros Petuel Qaligh Qayyoma Raca Rachim Rahim Raka Raz Raziel Rubil
+		Saad Saba Sabah Sabba_e Sabrisho Sabr_Ishu Salu Samal Sami Samiy Sagi Sargis Sava Sawma Shafer Shahdost
+		Shahlufa Shai Shalmai Shama Shamir Shammai Shemaiah Shem_on Sheraga Shila Shovai Shraga Sima Sliba-zkha Surin
+		Tabbai Taddai Talia Taliah Talmai Talya Tam Tam_as Ta_mhas Targhal Tauma Tavi Tavish Tevis Th_amhais Thoma Timai Tiv Toba Todos Tolmai Tomarsa Tamuza Tulmay
+		Ukba Yahballaha Yanai Ya_qob Yeshua Yohannan Yosip Yousef Yunanis Zerika
+	}
+	
+	female_names = {
+		Adva Alya Anena Anina Bustan Chanina Chasina Chayuta China Chiyuta
+		Dikla Diklah Diklit Duvsha Hanina Hasna Hayuta Hina Ketina Kitra
+		Magdala Mahalia Mahalie Marfa Mariam Marta Marte Martha Marthe Marti
+		Martita Mehalia Meiriona Meirona Morta Nahara Nura Raz Reuma
+		Saba Sabah Samantha Sameah Samee Sameea Samiya Samiyah Samiyya Samya Sava Shapira Sima
+		Tabatha Tabby Tabetha Tabitha Tadea Talia Taliah Talya Talitha
+		Tam Tamasin Tami Tammy Tamsin Tamsyn Tamzin Thaddea Thomasa
+		Zeita Zeta
+	}
+
+	dynasty_of_location_prefix = "dynnp_of"
+	
+	patronym_prefix_male = "dynnpat_pre_Bar"
+	patronym_prefix_female = "dynnpat_pre_Barta"
+}

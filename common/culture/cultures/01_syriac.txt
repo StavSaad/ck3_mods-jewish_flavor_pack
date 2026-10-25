@@ -45,7 +45,7 @@ syriac = {
 		tradition_city_keepers
 	}
 	
-	name_list = name_list_assyrian
+	name_list = name_list_aramean
 	name_list = name_list_canaanite
 
 	coa_gfx = { byzantine_group_coa_gfx }

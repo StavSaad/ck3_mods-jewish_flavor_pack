@@ -1,4 +1,4 @@
-# Shtadlanut (intercession) interactions, common/character_interactions/jip_shtadlan_interactions.txt.
+﻿# Shtadlanut (intercession) interactions, common/character_interactions/jip_shtadlan_interactions.txt.
 # Called from the interactions' on_accept, with scope:actor (the family head) and scope:recipient (the ruler).
 
 # The sweeteners the family offered: the gift of gold, the prestige staked, the hook called in, the favour owed. The ruler is then warier of

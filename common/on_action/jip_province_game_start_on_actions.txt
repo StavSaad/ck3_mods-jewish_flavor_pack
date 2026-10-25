@@ -5,7 +5,15 @@
         jip_1178_effect_setup
 		jip_liege_effect_setup
 		jip_jewish_families_game_start_on_action
+		jip_rish_amma_game_start_on_action
     }
+}
+
+# The Mandaeans' head of faith, at every start date (jip_rish_amma_setup_effect)
+jip_rish_amma_game_start_on_action = {
+	effect = {
+		jip_rish_amma_setup_effect = yes
+	}
 }
 
 # New Mishpacha families across Europe, the Middle East and North Africa (jip_spawn_jewish_families_effect).

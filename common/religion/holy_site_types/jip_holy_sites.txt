@@ -6,3 +6,100 @@
 		monthly_prestige_gain_mult = 0.1
 	}
 }
+
+# Mandaean and Sabian (mandaean_faith, jip_gnostic_faith_types.txt)
+
+tib = { # A Mandaean centre of priests and scribes in the marshes north of Basra
+	county = c_tib
+
+	county_holder_character_modifier = {
+		learning = 1
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		development_growth_factor = 0.01
+		county_opinion_add = 1
+	}
+
+	faith_character_modifier = {
+		monthly_piety_gain_mult = 0.1
+		clergy_opinion = 5
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		monthly_lifestyle_xp_gain_mult = 0.01
+	}
+}
+
+batiha = { # The Great Marsh, home of the "Sabians of the marshes" and their baptisms in living water
+	county = c_batiha
+
+	county_holder_character_modifier = {
+		floodplains_advantage = 5
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		development_growth_factor = 0.01
+		hostile_raid_time = 0.02
+	}
+
+	faith_character_modifier = {
+		same_faith_opinion = 5
+		stress_loss_mult = 0.1
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		floodplains_advantage = 0.5
+	}
+}
+
+harran = { # The Sabian city of the moon god, its scholars and astronomers
+	county = c_harran
+
+	county_holder_character_modifier = {
+		learning = 1
+		stewardship = 1
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		development_growth_factor = 0.01
+		tax_mult = 0.01
+	}
+
+	faith_character_modifier = {
+		learning = 1
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		monthly_lifestyle_xp_gain_mult = 0.01
+	}
+}
+
+shushtar = { # The Mandaeans of Khuzestan, by the great weir of Shushtar
+	county = c_tustar
+
+	county_holder_character_modifier = {
+		stewardship = 1
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		development_growth_factor = 0.01
+		tax_mult = 0.01
+	}
+
+	faith_character_modifier = {
+		stewardship = 1
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		monthly_county_control_growth_factor = 0.01
+	}
+}

@@ -1,4 +1,4 @@
-# Shtadlanut (intercession) interactions, common/character_interactions/jip_shtadlan_interactions.txt
+﻿# Shtadlanut (intercession) interactions, common/character_interactions/jip_shtadlan_interactions.txt
 
 # The gift of gold that sweetens a request: half a year of the ruler's income, as vanilla's medium gift
 jip_shtadlan_gift_gold_value = {

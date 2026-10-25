@@ -1,0 +1,32 @@
+﻿# Mandaeans and Sabians (mandaean_faith)
+
+# Gives the Rish Amma (d_rish_amma), head of faith of the Mandaeans, a holder at game start, at any start date, unless
+# history or the engine already has one. On death the engine picks the next head, as for other heads of faith.
+# Runs in on_game_start: root is empty
+jip_rish_amma_setup_effect = {
+	if = {
+		limit = {
+			NOT = { exists = title:d_rish_amma.holder }
+		}
+		create_character = {
+			template = jip_rish_amma_template
+			location = title:c_tib.title_province
+			culture = culture:nabati
+			faith = faith:mandaean_faith
+			rite = rite:mandeaism
+			save_scope_as = jip_new_rish_amma
+		}
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		title:d_rish_amma = {
+			change_title_holder = {
+				holder = scope:jip_new_rish_amma
+				change = scope:change
+			}
+		}
+		resolve_title_and_vassal_change = scope:change
+	}
+}

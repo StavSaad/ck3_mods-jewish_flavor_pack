@@ -123,3 +123,13 @@
 [] Fixed the Fertile Crescent region counting Levantine provinces twice
 [] Fixed the Persian Struggle not including the Bavlim culture
 [] Fixed many errors: Tanas holy site, Canaanite faith tenets, Lower Egypt adjective, Third Temple tenet check, Masada defense bonus, Maimonides' traits, Claim Exilarchate description, Semitic pagan religious head, and duplicate localization keys
+
+== Version 0.15.0 ==
+[] Mandaeans: the Rish Amma (Headship of the People) is now the head of the Mandaean faith, at every start date
+[] Mandaeans: new holy sites of their own: Tib and the Marshes (eminent), Harran, Basra and Shushtar, in place of Farz, Baghdad, Damascus and Jerusalem
+[] 867: Harran is Sabian, and Tib and the Marshes are Mandaean
+[] Added the Nabati culture, the Aramaic-speaking peasants of the Sawad (Communal; Agrarian, Philosopher Culture, Language Scholars, Parochialism), with its own names and Aramaic place names in southern Iraq
+[] 867: Wasit, Tib, the Marshes, Badaraya, Iskaf and Ubulla are Nabati, and the Rish Amma is Nabati
+[] Arameans, Assyrians and Nabati now have place names of their own across Syria, the Jazira and Mesopotamia: Iron-Age Aramaic and Syriac names for Arameans and Nabati (Arpad, Mabbug, Urhay, Aram Naharaim, Ninwe, Arbel, Beth Aramaye, Beth Huzaye), Neo-Assyrian ones for Assyrians (Bit Agusi, Nappigu, Ninua, Arbail, Karduniash, Elam), about 70 of them new, from Syria to Khuzestan
+[] Fixed Raqqa being named Mari, Aleppo Ebla and Baghdad Babylon for Assyrians and Arameans, and Assyrians using Punic names in Tunisia
+[] Fixed log errors from the Shtadlanut files (encoding, unused AI frequency)

@@ -1,0 +1,41 @@
+﻿# Mandaean and Sabian characters (mandaean_faith). Culture, faith, rite and location come from create_character.
+
+# The Rish Amma (d_rish_amma), when no one holds the title at game start (jip_rish_amma_setup_effect): an elderly
+# priest, risen from ganzibra to head of the people
+jip_rish_amma_template = {
+	age = { 45 65 }
+	gender_female_chance = 0
+	dynasty = none
+
+	random_traits = no
+	random_traits_list = {
+		count = 1
+		education_learning_3 = {}
+		education_learning_4 = {}
+	}
+	random_traits_list = {
+		count = 3
+		zealous = {}
+		humble = {}
+		patient = {}
+		honest = {}
+		just = {}
+		calm = {}
+		content = {}
+		temperate = {}
+		chaste = {}
+		stubborn = {}
+	}
+	random_traits_list = {
+		count = 1
+		theologian = {}
+		lifestyle_mystic = {}
+	}
+
+	learning = { 12 18 }
+	diplomacy = { 6 10 }
+	stewardship = { 4 8 }
+	intrigue = { 3 7 }
+	martial = { 1 4 }
+	prowess = { 1 5 }
+}

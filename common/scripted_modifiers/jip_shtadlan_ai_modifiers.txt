@@ -1,4 +1,4 @@
-# AI acceptance of a Shtadlanut (intercession) request, common/character_interactions/jip_shtadlan_interactions.txt.
+﻿# AI acceptance of a Shtadlanut (intercession) request, common/character_interactions/jip_shtadlan_interactions.txt.
 # $DIFFICULTY$ = how hard the request is to grant (jip_shtadlan_<request>_difficulty_value)
 jip_shtadlan_ai_accept_modifier = {
 	modifier = {

@@ -1,0 +1,13 @@
+﻿l_english:
+ # mandaean_faith (jip_gnostic_faith_types.txt)
+ jip_mandaean_religious_head_title:0 "Rish Amma"
+ jip_mandaean_religious_head_title_name:0 "Headship of the People"
+
+ holy_site_tib_name:0 "Tib"
+ holy_site_tib_effect_name:0 "From [holy_site|E] #weak ($holy_site_tib_name$)#!"
+ holy_site_batiha_name:0 "The Marshes"
+ holy_site_batiha_effect_name:0 "From [holy_site|E] #weak ($holy_site_batiha_name$)#!"
+ holy_site_harran_name:0 "Harran"
+ holy_site_harran_effect_name:0 "From [holy_site|E] #weak ($holy_site_harran_name$)#!"
+ holy_site_shushtar_name:0 "Shushtar"
+ holy_site_shushtar_effect_name:0 "From [holy_site|E] #weak ($holy_site_shushtar_name$)#!"

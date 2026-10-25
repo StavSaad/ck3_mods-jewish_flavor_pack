@@ -1,4 +1,4 @@
-# Shtadlanut (intercession) interactions, common/character_interactions/jip_shtadlan_interactions.txt
+﻿# Shtadlanut (intercession) interactions, common/character_interactions/jip_shtadlan_interactions.txt
 
 # scope:actor can intercede: the head of a landless Mishpacha family, free to act, with scope:recipient in reach
 jip_shtadlan_can_intercede_trigger = {

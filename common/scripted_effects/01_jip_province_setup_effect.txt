@@ -155,6 +155,30 @@ jip_867_setup_effect = {
 	}
 	title:c_harran = {
 		set_county_culture = culture:syriac
+		# The Sabians of Harran, star-worshippers who passed as the Qur'an's Sabians (vanilla: Armenian rite)
+		set_county_rite = rite:sabianism
+	}
+	# The Nabat, the Aramaic peasants of the Sawad and the marshes (vanilla: Levantine and Bedouin). Among them the
+	# Mandaeans, the "Sabians of the marshes"
+	title:c_tib = {
+		set_county_culture = culture:nabati
+		set_county_rite = rite:mandeaism
+	}
+	title:c_batiha = {
+		set_county_culture = culture:nabati
+		set_county_rite = rite:mandeaism
+	}
+	title:c_wasit = {
+		set_county_culture = culture:nabati
+	}
+	title:c_badaraya = {
+		set_county_culture = culture:nabati
+	}
+	title:c_iskaf = {
+		set_county_culture = culture:nabati
+	}
+	title:c_ubulla = {
+		set_county_culture = culture:nabati
 	}
 	title:c_tripoli = {
 		set_county_culture = culture:syriac

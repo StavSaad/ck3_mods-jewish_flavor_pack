@@ -88,8 +88,7 @@ jip_shtadlan_readmit_interaction = {
 		base = 0
 		jip_shtadlan_ai_accept_modifier = { DIFFICULTY = jip_shtadlan_readmit_difficulty_value }
 	}
-
-	ai_frequency = 0
+	# No ai_targets or ai_frequency: the AI never sends these (a frequency without targets logs an error)
 }
 
 # A Christian or Muslim ruler grants a letter of protection: no expulsion for jip_shtadlan_protection_years_value years
@@ -196,8 +195,7 @@ jip_shtadlan_protection_interaction = {
 		base = 0
 		jip_shtadlan_ai_accept_modifier = { DIFFICULTY = jip_shtadlan_protection_difficulty_value }
 	}
-
-	ai_frequency = 0
+	# No ai_targets or ai_frequency: the AI never sends these (a frequency without targets logs an error)
 }
 
 # A ruler frees a Jew they hold prisoner: the family's own kin first, then the highest-ranking
@@ -285,8 +283,7 @@ jip_shtadlan_release_interaction = {
 		base = 0
 		jip_shtadlan_ai_accept_modifier = { DIFFICULTY = jip_shtadlan_release_difficulty_value }
 	}
-
-	ai_frequency = 0
+	# No ai_targets or ai_frequency: the AI never sends these (a frequency without targets logs an error)
 }
 
 # The family's liege eases the charter: jizya is waived, or else communal taxes drop a level
@@ -391,6 +388,5 @@ jip_shtadlan_charter_interaction = {
 		base = 0
 		jip_shtadlan_ai_accept_modifier = { DIFFICULTY = jip_shtadlan_charter_difficulty_value }
 	}
-
-	ai_frequency = 0
+	# No ai_targets or ai_frequency: the AI never sends these (a frequency without targets logs an error)
 }
