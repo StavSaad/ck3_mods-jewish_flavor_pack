@@ -11,6 +11,8 @@
 
 Rising Lion is a CK3 mod focused on bringing deep historical and cultural flavor to the Levant, Near East, and surrounding regions. It centers on Jewish/Israelite heritage and the ancient civilizations of the area, adding new cultures, faiths, playable dynasties, decisions, buildings, and government types.
 
+Plans for the next versions are in `.docs/` (the only tracked files there; the rest of `.docs` is gitignored): `v0.15_beth_aramaye.md` (Arameans, Assyrians, Sabians, Mandaeans) and `v0.16_exilarchs_and_maccabees.md` (the Jewish features). Add new plans to the matching version file.
+
 ---
 
 ## Cultures
