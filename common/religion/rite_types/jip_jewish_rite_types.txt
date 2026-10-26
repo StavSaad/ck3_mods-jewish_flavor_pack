@@ -142,6 +142,8 @@ kohanism = {
 	desc = kohanism_desc
 	color = { 0.1 0.6 0.6 }
 	icon = kohanist
+	# No conversion until the Third Temple is built (jip_third_temple_on_action) (set_can_convert_to_rite)
+	convert = no
 
 	tenets = {
 		tenet_literalism

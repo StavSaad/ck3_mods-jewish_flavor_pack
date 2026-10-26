@@ -17,6 +17,7 @@ jip_third_temple_on_action = {
 	}
 
 	effect = {
+		jip_unlock_kohanism_conversion_effect = yes
 		scope:character = {
 			trigger_event = jip_hebrew.0040
 		}

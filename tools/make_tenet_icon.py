@@ -1,7 +1,13 @@
+# Builds a vanilla-style tenet icon (260x400, uncompressed DDS like tenet_simony.dds): a painted object, already cut
+# out to a transparent PNG, over a fan of white brush strokes falling from above.
+# Usage: make_tenet_icon.py <cut.png> <tenet_key> [<compare.png>]
+# Writes gfx/interface/icons/faith_tenets/<tenet_key>.dds; the optional sheet compares it with vanilla's icons.
 import numpy as np, os, sys
 from PIL import Image
 from scipy import ndimage
-S='C:/Users/stavs/AppData/Local/Temp/claude/C--Users-stavs-OneDrive-Documents-Paradox-Interactive-Crusader-Kings-III-mod-jewitup/9a1fcd87-a917-4402-9557-05177f03dafd/'
+MOD='C:/Users/stavs/OneDrive/Documents/Paradox Interactive/Crusader Kings III/mod/jewitup/'
+src,key=sys.argv[1],sys.argv[2]
+compare=sys.argv[3] if len(sys.argv)>3 else None
 T='C:/Program Files (x86)/Steam/steamapps/common/Crusader Kings III/game/gfx/interface/icons/faith_tenets/'
 W,H=260,400
 rng=np.random.default_rng(7)
@@ -38,14 +44,15 @@ def down(im,size):
     p=np.asarray(Image.fromarray((pm*255).astype(np.uint8),'RGBA').resize(size,Image.LANCZOS)).astype(np.float32)/255
     al=p[...,3:4]; rgb=np.where(al>0,p[...,:3]/np.maximum(al,1e-6),0)
     return Image.fromarray((np.dstack([rgb,al]).clip(0,1)*255).astype(np.uint8),'RGBA')
-obj=Image.open(S+'scratchpad/kehunah_cut.png')
+obj=Image.open(src).convert('RGBA')
 ow,oh=obj.size; sc=min(195/ow,235/oh); nw,nh=round(ow*sc),round(oh*sc)
 icon=halo.copy(); icon.alpha_composite(down(obj,(nw,nh)),(cx-nw//2,325-nh))
-out='gfx/interface/icons/faith_tenets/tenet_kehunah.dds'
+out=MOD+f'gfx/interface/icons/faith_tenets/{key}.dds'
 hdr=open(T+'tenet_simony.dds','rb').read(128)
 open(out,'wb').write(hdr+np.asarray(icon)[...,[2,1,0,3]].tobytes())
 print(os.path.getsize(out),os.path.getsize(T+'tenet_simony.dds'))
-ims=[Image.open(T+f+'.dds').convert('RGBA') for f in ['tenet_simony','tenet_apostolic_succession']]+[Image.open(out).convert('RGBA'),halo]
-sheet=Image.new('RGBA',(W*4,H),(45,40,38,255))
-for i,im in enumerate(ims): sheet.alpha_composite(im,(i*W,0))
-sheet.save(S+'scratchpad/kehunah_compare.png')
+if compare:
+    ims=[Image.open(T+f+'.dds').convert('RGBA') for f in ['tenet_simony','tenet_apostolic_succession']]+[Image.open(out).convert('RGBA'),halo]
+    sheet=Image.new('RGBA',(W*4,H),(45,40,38,255))
+    for i,im in enumerate(ims): sheet.alpha_composite(im,(i*W,0))
+    sheet.save(compare)

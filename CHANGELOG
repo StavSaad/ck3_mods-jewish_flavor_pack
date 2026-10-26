@@ -133,3 +133,8 @@
 [] Arameans, Assyrians and Nabati now have place names of their own across Syria, the Jazira and Mesopotamia: Iron-Age Aramaic and Syriac names for Arameans and Nabati (Arpad, Mabbug, Urhay, Aram Naharaim, Ninwe, Arbel, Beth Aramaye, Beth Huzaye), Neo-Assyrian ones for Assyrians (Bit Agusi, Nappigu, Ninua, Arbail, Karduniash, Elam), about 70 of them new, from Syria to Khuzestan
 [] Fixed Raqqa being named Mari, Aleppo Ebla and Baghdad Babylon for Assyrians and Arameans, and Assyrians using Punic names in Tunisia
 [] Fixed log errors from the Shtadlanut files (encoding, unused AI frequency)
+[] Added Mesopotamianism, the old gods of Assyria and the Aramean cities: a reformed pagan faith with an Assyrian rite (Ashur, Marduk, Ishtar; the new Vicegerent of Ashur tenet, Warmonger, Ritual Celebrations) and a Harranian rite (Sin of Harran, Hadad, Atargatis; Astrology, Esotericism, Sanctity of Nature), and holy sites at Harran, Nineveh, Arbela, Manbij, Damascus and Palmyra
+[] The Semitic pagan religion is now called Levantine
+[] New icons for Mesopotamianism (the winged disc of Ashur) and its Harranian rite (the crescent standard of Sin)
+[] New sign of Tanit icons for Canaanism (gold) and Punism (silver), and six more colours each of the Tanit, the Mesopotamian winged disc and the Harranian crescent standard for custom Levantine faiths
+[] Kohenism, Canaanism and Mesopotamianism can no longer be converted to until they are restored: Kohenism when the Third Temple is built, Canaanism when Phoenicia or Carthage is restored, Mesopotamianism by a decision still to come

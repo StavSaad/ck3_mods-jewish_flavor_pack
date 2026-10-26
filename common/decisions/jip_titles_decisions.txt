@@ -237,6 +237,7 @@ create_k_phoenicia_decision = {
 		show_as_tooltip = {
 			create_phoenicia_decision_effect = yes
 		}
+		jip_unlock_canaanite_conversion_effect = yes
 		trigger_event = jip_hebrew.0020
 	}
 

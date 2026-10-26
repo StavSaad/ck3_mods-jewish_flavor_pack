@@ -103,3 +103,105 @@ shushtar = { # The Mandaeans of Khuzestan, by the great weir of Shushtar
 		monthly_county_control_growth_factor = 0.01
 	}
 }
+
+# Mesopotamianism (mesopotamian_pagan, jip_canaanite_faith_types.txt); it also holds Harran (above) and Damascus
+
+nineveh = { # The Assyrian royal city, home of Ishtar of Nineveh and Ashurbanipal's library
+	county = c_ninive
+	barony = b_ninawa
+
+	county_holder_character_modifier = {
+		monthly_prestige_gain_mult = 0.1
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		development_growth_factor = 0.01
+		county_opinion_add = 1
+	}
+
+	faith_character_modifier = {
+		monthly_prestige_gain_mult = 0.1
+		learning = 1
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		monthly_lifestyle_xp_gain_mult = 0.01
+	}
+}
+
+arbela = { # The temple of Ishtar of Arbela, whose prophetesses spoke to the Assyrian kings
+	county = c_irbil
+	barony = b_irbil
+
+	county_holder_character_modifier = {
+		monthly_piety_gain_mult = 0.05
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		development_growth_factor = 0.01
+		levy_size = 0.02
+	}
+
+	faith_character_modifier = {
+		prowess = 1
+		fertility = 0.05
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		monthly_piety_gain_mult = 0.01
+	}
+}
+
+manbij = { # Hierapolis, the temple of Atargatis and her sacred fish pools
+	county = c_aleppo
+	barony = b_manbij
+
+	county_holder_character_modifier = {
+		health = 0.1
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		development_growth_factor = 0.01
+		county_opinion_add = 1
+	}
+
+	faith_character_modifier = {
+		fertility = 0.05
+		stress_loss_mult = 0.1
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		monthly_piety_gain_mult = 0.01
+	}
+}
+
+palmyra = { # Tadmor, the caravan city and its temple of Bel
+	county = c_palmyra
+	barony = b_tadmur
+
+	county_holder_character_modifier = {
+		stewardship = 1
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		tax_mult = 0.01
+		supply_limit_mult = 0.02
+	}
+
+	faith_character_modifier = {
+		stewardship = 1
+		character_travel_safety_mult = 0.1
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		character_travel_safety_mult = 0.01
+	}
+}

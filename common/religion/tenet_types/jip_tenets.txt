@@ -44,3 +44,41 @@ tenet_kehunah = {
 		}
 	}
 }
+
+# Vicegerent of Ashur: the king rules as the god's steward and high priest (the Assyrian ishshiak Ashur); the
+# kingship is the god's gift, renewed each Akitu. Assyrian rite of Mesopotamianism
+tenet_jip_vicegerent_of_ashur = {
+	icon = tenet_jip_vicegerent_of_ashur # The king's crown, with the rod and ring the gods hand him
+	piety_cost = {
+		value = faith_tenet_cost_mid
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_jip_vicegerent_of_ashur }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+	# Only for the Levantine pagan faiths
+	can_pick = {
+		custom_description = {
+			text = jip_tenet_vicegerent_of_ashur_trigger
+			religion = religion:canaanite_religion
+		}
+	}
+	can_pick_as_personal_tenet = {
+		has_religion = religion:canaanite_religion
+	}
+	character_modifier = {
+		legitimacy_gain_mult = 0.15
+		clergy_opinion = 10
+		monthly_piety_gain_mult = 0.1
+	}
+	traits = {
+		virtues = {
+			zealous = { weight = 15 scale = 1 }
+			just = { weight = 10 scale = 1 }
+		}
+		sins = {
+			cynical = { weight = 15 scale = 1 }
+		}
+	}
+}

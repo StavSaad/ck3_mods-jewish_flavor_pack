@@ -40,6 +40,17 @@ on_title_gain = {
 		mishpacha_landed_government_switch_on_action
 		jip_mishpacha_villa_on_action # Villa prestige for a family head who inherits the estate
 		jip_mishpacha_contracts_new_area_on_action # Offers for a new family head
+		jip_carthage_restored_on_action
+	}
+}
+
+# Canaanism can be converted to once Carthage is restored: only vanilla's Restore Carthage hands out k_carthage
+jip_carthage_restored_on_action = {
+	trigger = {
+		scope:title = title:k_carthage
+	}
+	effect = {
+		jip_unlock_canaanite_conversion_effect = yes
 	}
 }
 

@@ -1,0 +1,9 @@
+﻿# Rising Lion faith history (see vanilla history/faiths/_faith_history.info)
+
+mesopotamian_pagan = {
+	867.1.1 = {
+		# No character or county follows it at any start date (the Sabians are meant to restore it). Without created
+		# the game reads it as a faith not yet founded, and the faith list hides it, as vanilla notes for Karaism
+		created = yes
+	}
+}
