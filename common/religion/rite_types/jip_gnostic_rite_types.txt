@@ -1,0 +1,17 @@
+﻿# Rising Lion: vanilla's mandeaism rite (common/religion/rite_types/00_rite_types.txt), redefined so it replaces
+# vanilla's. Only change: its own icon, the drabsha. Keep the rest in sync with vanilla's block after game updates.
+
+mandeaism = {
+	name = mandeaism
+	desc = mandeaism_desc
+	faith = mandaean_faith
+
+	color = { 0.5 0.75 0.3 }
+	icon = mandaean # The drabsha (tools/make_faith_icon.py); vanilla: dualism
+
+	tenets = {
+		tenet_pacifism
+		tenet_esotericism
+		tenet_christian_syncretism
+	}
+}

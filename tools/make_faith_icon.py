@@ -1,5 +1,5 @@
 # Builds a vanilla-style faith or rite icon (100x100, uncompressed DDS like vanilla's germanic_reformed.dds) from a
-# Gemini emblem painted on flat green (#00FF00), and optionally its reformed version: the same emblem over the soft
+# Gemini emblem painted on flat green (#00FF00), or any other flat colour read from the corners, and optionally its reformed version: the same emblem over the soft
 # cream glow with faint rays that vanilla's reformed icons have (measured on achamanism_reformed.dds).
 # Usage: make_faith_icon.py <image> <icon_name> [--reformed] [--palette <shadow>,<mid>,<highlight>] [--preview <png>]
 # Writes gfx/interface/icons/faith/<icon_name>.dds (and <icon_name>_reformed.dds); faiths and rites use it as
@@ -44,21 +44,34 @@ def recolour(rgba, pal, region=None):
     return np.dstack([out, rgba[..., 3:4].astype(np.float32)]).clip(0, 255).astype(np.uint8)
 
 
-def key_green(im):
-    """Alpha from how much green outweighs red and blue; green spill on the edges is pulled back."""
-    rgb = im[..., :3].astype(np.float32)
-    r, g, b = rgb[..., 0], rgb[..., 1], rgb[..., 2]
-    spill = g - np.maximum(r, b)
-    alpha = np.clip(1 - (spill - 20) / 90, 0, 1)
-    # Drop specks: keep every opaque piece of at least 1% of the largest (an emblem can have separate parts,
-    # like a disc inside a ring)
+def drop_specks(alpha):
+    """Keep every opaque piece of at least 1% of the largest (an emblem can have separate parts, like a disc inside
+    a ring)."""
     solid = alpha > 0.5
     lab, n = ndimage.label(solid)
     if n > 1:
         sizes = ndimage.sum(solid, lab, range(1, n + 1))
         keep = np.isin(lab, 1 + np.where(sizes >= 0.01 * sizes.max())[0])
         alpha = alpha * ndimage.binary_dilation(keep, iterations=3)
+    return alpha
+
+
+def key_green(im):
+    """Alpha from how much green outweighs red and blue; green spill on the edges is pulled back."""
+    rgb = im[..., :3].astype(np.float32)
+    r, g, b = rgb[..., 0], rgb[..., 1], rgb[..., 2]
+    spill = g - np.maximum(r, b)
+    alpha = drop_specks(np.clip(1 - (spill - 20) / 90, 0, 1))
     rgb[..., 1] = np.where(spill > 0, np.maximum(r, b) + np.minimum(spill, 0) , g)
+    return np.dstack([rgb, alpha * 255]).clip(0, 255).astype(np.uint8)
+
+
+def key_flat(im, bg):
+    """For an emblem on another flat colour (Gemini doesn't always paint green): alpha from the distance to the
+    background colour, everywhere, so pockets of background inside the emblem go too."""
+    rgb = im[..., :3].astype(np.float32)
+    dist = np.abs(rgb - bg).max(2)
+    alpha = drop_specks(np.clip((dist - 10) / 22, 0, 1))
     return np.dstack([rgb, alpha * 255]).clip(0, 255).astype(np.uint8)
 
 
@@ -78,7 +91,9 @@ def write_dds(rgba, path):
 
 
 im = np.asarray(Image.open(src).convert('RGBA'))
-cut = key_green(im)
+corners = np.concatenate([im[:24, :24, :3].reshape(-1, 3), im[-24:, -24:, :3].reshape(-1, 3)]).astype(np.float32)
+bg = np.median(corners, 0)
+cut = key_green(im) if bg[1] - max(bg[0], bg[2]) > 60 else key_flat(im, bg)
 ys, xs = np.where(cut[..., 3] > 8)
 cut = cut[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
 if inlay:

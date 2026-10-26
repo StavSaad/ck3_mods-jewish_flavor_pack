@@ -1,5 +1,6 @@
 ﻿# Rising Lion: vanilla's mandaean_faith (common/religion/faith_types/00_faith_types.txt), redefined so it replaces
-# vanilla's. Changes: the Rish Amma (d_rish_amma) as head of faith, and holy sites of its own (jip_holy_sites.txt).
+# vanilla's. Changes: the Rish Amma (d_rish_amma) as head of faith, holy sites of its own (jip_holy_sites.txt), and
+# its own icon (the drabsha).
 # Keep the rest in sync with vanilla's block after game updates.
 
 mandaean_faith = {
@@ -10,7 +11,7 @@ mandaean_faith = {
 	faith_details = {
 		religion = dualism_religion
 		color = { 0.5 0.75 0.3 }
-		icon = dualism
+		icon = mandaean # The drabsha; vanilla: dualism
 		religious_head = d_rish_amma
 		graphical_faith = "orthodox_gfx"
 	}

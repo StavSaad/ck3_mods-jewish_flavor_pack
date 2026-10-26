@@ -126,6 +126,7 @@
 
 == Version 0.15.0 ==
 [] Mandaeans: the Rish Amma (Headship of the People) is now the head of the Mandaean faith, at every start date
+[] Mandaeans: a new icon, the drabsha, for the faith and its Mandaean rite
 [] Mandaeans: new holy sites of their own: Tib and the Marshes (eminent), Harran, Basra and Shushtar, in place of Farz, Baghdad, Damascus and Jerusalem
 [] 867: Harran is Sabian, and Tib and the Marshes are Mandaean
 [] Added the Nabati culture, the Aramaic-speaking peasants of the Sawad (Communal; Agrarian, Philosopher Culture, Language Scholars, Parochialism), with its own names and Aramaic place names in southern Iraq
@@ -138,3 +139,4 @@
 [] New icons for Mesopotamianism (the winged disc of Ashur) and its Harranian rite (the crescent standard of Sin)
 [] New sign of Tanit icons for Canaanism (gold) and Punism (silver), and six more colours each of the Tanit, the Mesopotamian winged disc and the Harranian crescent standard for custom Levantine faiths
 [] Kohenism, Canaanism and Mesopotamianism can no longer be converted to until they are restored: Kohenism when the Third Temple is built, Canaanism when Phoenicia or Carthage is restored, Mesopotamianism by a decision still to come
+[] Fixed the Levantine religion missing the doctrines CK3 1.20 added: polytheism, anointment of kings, no monasticism or sacraments, and written myths

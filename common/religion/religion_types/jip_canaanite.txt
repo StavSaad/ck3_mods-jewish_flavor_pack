@@ -10,6 +10,7 @@
 	doctrine = pagan_hostility_doctrine
 
 	#Main Group
+	doctrine = doctrine_polytheist
 	doctrine = doctrine_no_head
 	doctrine = doctrine_gender_male_dominated
 	doctrine = doctrine_pluralism_pluralistic
@@ -34,12 +35,20 @@
 	doctrine = doctrine_clerical_gender_either
 	doctrine = doctrine_clerical_marriage_allowed
 	doctrine = doctrine_clerical_succession_temporal_appointment
+	doctrine = doctrine_monasticism_absent
+	doctrine = doctrine_sacraments_absent
 
 	#Allow pilgrimages
 	doctrine = doctrine_pilgrimage_encouraged
 
 	#Funeral tradition
 	doctrine = doctrine_funeral_stoic
+
+	#Coronation tradition: kings anointed, or invested by the gods at the Akitu
+	doctrine = doctrine_anointment_permitted
+
+	#Preservation: the written myths of Ugarit and the Enuma Elish
+	doctrine = doctrine_mythic_literary
 
 	traits = {
 		virtues = { just content humble education_learning_3 education_learning_4 }
