@@ -1,0 +1,22 @@
+﻿yearly_playable_pulse = {
+	on_actions = {
+		jip_akitu_neglect_on_action
+	}
+}
+
+# A Mesopotamian ruler who lets Akitu lapse (jip_akitu_neglect_effect)
+jip_akitu_neglect_on_action = {
+	effect = {
+		jip_akitu_neglect_effect = yes
+	}
+}
+
+# The festivals' pulse events for guests, each checking its variant
+feast_default_event_selection = {
+	random_events = {
+		100 = jip_feast.1101 # Akitu: a priest of Nabu reads your fate
+		100 = jip_feast.2101 # Nisan: an astrologer casts your horoscope
+		100 = jip_feast.3101 # Parwanaya: you are invited into the river
+		100 = jip_feast.4101 # Dehwa Rabba: tales in the night of seclusion
+	}
+}

@@ -1,0 +1,151 @@
+﻿# The Mandaean calendar has 365 days and no leap day, so its feasts fall a day earlier every four years. Counted back
+# from 2024 (Dehwa Rabba 16 July, Parwanaya 13 March, Gregorian), in 867 Dehwa Rabba falls on 19 April and Parwanaya on
+# 15 December (Julian); by 1453 they have moved to late November and late July. CK3's calendar has no leap days, so the
+# day of the year is computed from the year: the 867 day, less a day for every four years since, wrapped into 1-365.
+# The feast variants (tools/make_feast_override.py) are shown in the month that day falls in
+
+jip_dehwa_rabba_raw_day_value = {
+	value = 109 # 19 April 867
+	subtract = {
+		value = current_year
+		subtract = 867
+		divide = 4
+		floor = yes
+	}
+}
+
+jip_dehwa_rabba_day_value = {
+	value = jip_dehwa_rabba_raw_day_value
+	if = {
+		limit = { jip_dehwa_rabba_raw_day_value < 1 }
+		add = 365
+	}
+	else_if = {
+		limit = { jip_dehwa_rabba_raw_day_value > 365 }
+		subtract = 365
+	}
+}
+
+jip_dehwa_rabba_month_value = {
+	value = 1
+	if = {
+		limit = { jip_dehwa_rabba_day_value >= 32 }
+		value = 2
+	}
+	if = {
+		limit = { jip_dehwa_rabba_day_value >= 60 }
+		value = 3
+	}
+	if = {
+		limit = { jip_dehwa_rabba_day_value >= 91 }
+		value = 4
+	}
+	if = {
+		limit = { jip_dehwa_rabba_day_value >= 121 }
+		value = 5
+	}
+	if = {
+		limit = { jip_dehwa_rabba_day_value >= 152 }
+		value = 6
+	}
+	if = {
+		limit = { jip_dehwa_rabba_day_value >= 182 }
+		value = 7
+	}
+	if = {
+		limit = { jip_dehwa_rabba_day_value >= 213 }
+		value = 8
+	}
+	if = {
+		limit = { jip_dehwa_rabba_day_value >= 244 }
+		value = 9
+	}
+	if = {
+		limit = { jip_dehwa_rabba_day_value >= 274 }
+		value = 10
+	}
+	if = {
+		limit = { jip_dehwa_rabba_day_value >= 305 }
+		value = 11
+	}
+	if = {
+		limit = { jip_dehwa_rabba_day_value >= 335 }
+		value = 12
+	}
+}
+
+jip_parwanaya_raw_day_value = {
+	value = 349 # 15 December, the first of its five days 867
+	subtract = {
+		value = current_year
+		subtract = 867
+		divide = 4
+		floor = yes
+	}
+}
+
+jip_parwanaya_day_value = {
+	value = jip_parwanaya_raw_day_value
+	if = {
+		limit = { jip_parwanaya_raw_day_value < 1 }
+		add = 365
+	}
+	else_if = {
+		limit = { jip_parwanaya_raw_day_value > 365 }
+		subtract = 365
+	}
+}
+
+jip_parwanaya_month_value = {
+	value = 1
+	if = {
+		limit = { jip_parwanaya_day_value >= 32 }
+		value = 2
+	}
+	if = {
+		limit = { jip_parwanaya_day_value >= 60 }
+		value = 3
+	}
+	if = {
+		limit = { jip_parwanaya_day_value >= 91 }
+		value = 4
+	}
+	if = {
+		limit = { jip_parwanaya_day_value >= 121 }
+		value = 5
+	}
+	if = {
+		limit = { jip_parwanaya_day_value >= 152 }
+		value = 6
+	}
+	if = {
+		limit = { jip_parwanaya_day_value >= 182 }
+		value = 7
+	}
+	if = {
+		limit = { jip_parwanaya_day_value >= 213 }
+		value = 8
+	}
+	if = {
+		limit = { jip_parwanaya_day_value >= 244 }
+		value = 9
+	}
+	if = {
+		limit = { jip_parwanaya_day_value >= 274 }
+		value = 10
+	}
+	if = {
+		limit = { jip_parwanaya_day_value >= 305 }
+		value = 11
+	}
+	if = {
+		limit = { jip_parwanaya_day_value >= 335 }
+		value = 12
+	}
+}
+
+# Years since the last Akitu (jip_akitu_last_year, set when one is held, or when a ruler first comes under the rule)
+jip_years_since_akitu_value = {
+	value = current_year
+	subtract = var:jip_akitu_last_year
+}

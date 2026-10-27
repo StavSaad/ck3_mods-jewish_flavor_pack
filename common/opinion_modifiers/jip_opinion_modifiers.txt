@@ -9,3 +9,16 @@ jip_expelled_my_family_opinion = {
 	monthly_change = 0.02
 	decaying = yes
 }
+
+# The festivals (events/jip_feast_events.txt)
+jip_akitu_reinvested_opinion = {
+	opinion = 10
+	years = 5
+	decaying = yes
+}
+
+jip_festival_guest_opinion = {
+	opinion = 10
+	years = 5
+	decaying = yes
+}

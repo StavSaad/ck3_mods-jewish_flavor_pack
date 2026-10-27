@@ -1,0 +1,73 @@
+﻿# The festivals' outcomes (events/jip_feast_events.txt), one year each, chosen by the year's omen
+
+jip_akitu_fates_good = {
+	icon = legitimacy_positive
+	legitimacy_gain_mult = 0.15
+	vassal_opinion = 5
+	monthly_piety_gain_mult = 0.1
+}
+jip_akitu_fates_neutral = {
+	icon = legitimacy_positive
+	vassal_opinion = 3
+}
+jip_akitu_fates_bad = {
+	icon = legitimacy_negative
+	vassal_opinion = -5
+	stress_gain_mult = 0.1
+}
+
+# Silver scattered to the crowds on the processional way (jip_feast.1003), on the capital county
+jip_akitu_largesse_modifier = {
+	icon = county_modifier_opinion_positive
+	county_opinion_add = 10
+}
+
+# Letting Akitu lapse (jip_akitu_neglect_effect); removed when the ruler holds one
+jip_akitu_neglected_1 = {
+	icon = legitimacy_negative
+	legitimacy_gain_mult = -0.15
+	monthly_piety_gain_mult = -0.1
+	clergy_opinion = -5
+}
+jip_akitu_neglected_2 = {
+	icon = legitimacy_negative
+	legitimacy_gain_mult = -0.3
+	monthly_piety_gain_mult = -0.2
+	clergy_opinion = -10
+	vassal_opinion = -5
+}
+
+jip_nisan_omen_good = {
+	icon = learning_positive
+	learning = 1
+	monthly_piety_gain_mult = 0.15
+}
+jip_nisan_omen_neutral = {
+	icon = piety_positive
+	monthly_piety_gain_mult = 0.05
+}
+jip_nisan_omen_bad = {
+	icon = learning_negative
+	learning = -1
+	stress_gain_mult = 0.1
+}
+
+jip_parwanaya_purified = {
+	icon = health_positive
+	health = 0.15
+	stress_gain_mult = -0.1
+}
+
+jip_dehwa_rabba_good = {
+	icon = piety_positive
+	monthly_piety_gain_mult = 0.15
+	stress_gain_mult = -0.1
+}
+jip_dehwa_rabba_neutral = {
+	icon = piety_positive
+	monthly_piety_gain_mult = 0.05
+}
+jip_dehwa_rabba_bad = {
+	icon = stress_negative
+	stress_gain_mult = 0.15
+}

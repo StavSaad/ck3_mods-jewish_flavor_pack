@@ -1,0 +1,171 @@
+﻿# The mod's festivals (feast variants, tools/make_feast_override.py). Events in events/jip_feast_events.txt
+
+# The festival's scopes for its events: scope:activity, scope:host, and the host's chaplain as scope:jip_feast_priest
+jip_feast_save_scopes_effect = {
+	involved_activity ?= { save_scope_as = activity }
+	scope:activity.activity_host ?= { save_scope_as = host }
+	scope:host.cp:councillor_court_chaplain ?= { save_scope_as = jip_feast_priest }
+}
+
+# Called by the feast override in the meal phase, for the host (root = scope:host): sets the variant's cooldown and
+# starts its chain
+jip_feast_meal_phase_effect = {
+	remove_variable = jip_feast_omen
+	if = {
+		limit = { jip_is_akitu = yes }
+		set_variable = {
+			name = jip_recent_akitu_feast_var
+			years = 5
+		}
+		trigger_event = {
+			id = jip_feast.1001
+			days = 2
+		}
+	}
+	else_if = {
+		limit = { jip_is_nisan = yes }
+		set_variable = {
+			name = jip_recent_nisan_feast_var
+			years = 5
+		}
+		trigger_event = {
+			id = jip_feast.2001
+			days = 2
+		}
+	}
+	else_if = {
+		limit = { jip_is_parwanaya = yes }
+		set_variable = {
+			name = jip_recent_parwanaya_feast_var
+			years = 5
+		}
+		trigger_event = {
+			id = jip_feast.3001
+			days = 2
+		}
+	}
+	else_if = {
+		limit = { jip_is_dehwa_rabba = yes }
+		set_variable = {
+			name = jip_recent_dehwa_rabba_feast_var
+			years = 5
+		}
+		trigger_event = {
+			id = jip_feast.4001
+			days = 2
+		}
+	}
+}
+
+# Called by the feast override in the toast phase, for every participant: the host's summary, the guests' farewell
+jip_feast_toast_phase_effect = {
+	if = {
+		limit = { jip_is_akitu = yes }
+		if = {
+			limit = { this = scope:host }
+			trigger_event = jip_feast.1004
+		}
+		else = {
+			trigger_event = jip_feast.1010
+		}
+	}
+	else_if = {
+		limit = { jip_is_nisan = yes }
+		if = {
+			limit = { this = scope:host }
+			trigger_event = jip_feast.2004
+		}
+		else = {
+			trigger_event = jip_feast.2010
+		}
+	}
+	else_if = {
+		limit = { jip_is_parwanaya = yes }
+		if = {
+			limit = { this = scope:host }
+			trigger_event = jip_feast.3004
+		}
+		else = {
+			trigger_event = jip_feast.3010
+		}
+	}
+	else_if = {
+		limit = { jip_is_dehwa_rabba = yes }
+		if = {
+			limit = { this = scope:host }
+			trigger_event = jip_feast.4004
+		}
+		else = {
+			trigger_event = jip_feast.4010
+		}
+	}
+}
+
+# The year's omen (var:jip_feast_omen, set by the chain's events) as a one-year modifier, $NAME$_good/_neutral/_bad
+jip_feast_omen_modifier_effect = {
+	if = {
+		limit = { var:jip_feast_omen ?= flag:good }
+		add_character_modifier = {
+			modifier = $NAME$_good
+			years = 1
+		}
+	}
+	else_if = {
+		limit = { var:jip_feast_omen ?= flag:bad }
+		add_character_modifier = {
+			modifier = $NAME$_bad
+			years = 1
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = $NAME$_neutral
+			years = 1
+		}
+	}
+	remove_variable = jip_feast_omen
+}
+
+# Akitu neglect (yearly, root = a playable character). Babylon's priests blamed Nabonidus for letting the festival lapse.
+# A Mesopotamian duke or above who hasn't held Akitu loses legitimacy and piety from the 8th year (the feast cooldown is
+# 5), more from the 12th. The count starts when the ruler first comes under the rule
+jip_akitu_neglect_effect = {
+	if = {
+		limit = { jip_akitu_keeper_trigger = yes }
+		if = {
+			limit = { NOT = { has_variable = jip_akitu_last_year } }
+			set_variable = {
+				name = jip_akitu_last_year
+				value = current_year
+			}
+		}
+		if = {
+			limit = { jip_years_since_akitu_value >= 12 }
+			remove_character_modifier = jip_akitu_neglected_1
+			if = {
+				limit = { NOT = { has_character_modifier = jip_akitu_neglected_2 } }
+				add_character_modifier = jip_akitu_neglected_2
+			}
+		}
+		else_if = {
+			limit = { jip_years_since_akitu_value >= 8 }
+			if = {
+				limit = { NOT = { has_character_modifier = jip_akitu_neglected_1 } }
+				add_character_modifier = jip_akitu_neglected_1
+				trigger_event = jip_feast.1020 # The priests' warning
+			}
+		}
+		else = {
+			jip_akitu_clear_neglect_effect = yes
+		}
+	}
+	else = {
+		jip_akitu_clear_neglect_effect = yes
+		remove_variable = jip_akitu_last_year
+	}
+}
+
+jip_akitu_clear_neglect_effect = {
+	remove_character_modifier = jip_akitu_neglected_1
+	remove_character_modifier = jip_akitu_neglected_2
+}

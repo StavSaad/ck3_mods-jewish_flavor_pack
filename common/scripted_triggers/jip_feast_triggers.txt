@@ -1,0 +1,67 @@
+﻿# The mod's festivals: feast variants added by tools/make_feast_override.py (0.15 plan, sections 7 and 9)
+
+# Who may host a feast: vanilla's rule, plus landless Mishpacha heads, who hold it at their estate
+jip_can_host_feast_trigger = {
+	OR = {
+		is_landed_or_landless_administrative_or_theocratic = yes
+		government_has_flag = government_is_mishpacha
+	}
+}
+
+# Which variant scope:activity is, like vanilla's is_tsagaan_sar
+jip_is_akitu = {
+	scope:activity = {
+		has_activity_option = {
+			category = special_type
+			option = jip_feast_type_akitu
+		}
+	}
+}
+jip_is_nisan = {
+	scope:activity = {
+		has_activity_option = {
+			category = special_type
+			option = jip_feast_type_nisan
+		}
+	}
+}
+jip_is_parwanaya = {
+	scope:activity = {
+		has_activity_option = {
+			category = special_type
+			option = jip_feast_type_parwanaya
+		}
+	}
+}
+jip_is_dehwa_rabba = {
+	scope:activity = {
+		has_activity_option = {
+			category = special_type
+			option = jip_feast_type_dehwa_rabba
+		}
+	}
+}
+
+jip_is_festival = {
+	OR = {
+		jip_is_akitu = yes
+		jip_is_nisan = yes
+		jip_is_parwanaya = yes
+		jip_is_dehwa_rabba = yes
+	}
+}
+
+# The festival is held at a holy site of the host's faith (Harran, Nineveh, Arbela for Akitu)
+jip_feast_at_holy_site_trigger = {
+	scope:activity.activity_location = {
+		barony = { is_holy_site_of = scope:host.faith }
+	}
+}
+
+# A Mesopotamian ruler expected to keep Akitu: a duke or above
+jip_akitu_keeper_trigger = {
+	is_ruler = yes
+	is_landed = yes
+	highest_held_title_tier >= tier_duchy
+	faith = faith:mesopotamian_pagan
+}
