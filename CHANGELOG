@@ -131,8 +131,11 @@
 [] 867: Harran is Sabian, and Tib and the Marshes are Mandaean
 [] Added the Nabati culture, the Aramaic-speaking peasants of the Sawad (Communal; Agrarian, Philosopher Culture, Language Scholars, Parochialism), with its own names and Aramaic place names in southern Iraq
 [] 867: Wasit, Tib, the Marshes, Badaraya, Iskaf and Ubulla are Nabati, and the Rish Amma is Nabati
-[] Arameans, Assyrians and Nabati now have place names of their own across Syria, the Jazira and Mesopotamia: Iron-Age Aramaic and Syriac names for Arameans and Nabati (Arpad, Mabbug, Urhay, Aram Naharaim, Ninwe, Arbel, Beth Aramaye, Beth Huzaye), Neo-Assyrian ones for Assyrians (Bit Agusi, Nappigu, Ninua, Arbail, Karduniash, Elam), about 70 of them new, from Syria to Khuzestan
+[] Arameans, Assyrians and Nabati now have place names of their own across Syria, the Jazira and Mesopotamia: Iron-Age Aramaic and Syriac names for Arameans and Nabati (Arpad, Mabbug, Urhay, Ninwe, Arbel, Beth Aramaye, Beth Huzaye), Neo-Assyrian ones for Assyrians (Bit Agusi, Nappigu, Ninua, Arbail, Karduniash, Elam), about 70 of them new, from Syria to Khuzestan
 [] Fixed Raqqa being named Mari, Aleppo Ebla and Baghdad Babylon for Assyrians and Arameans, and Assyrians using Punic names in Tunisia
+[] More Aramean and Assyrian place names (about 35): Tur Abdin / Kashiyari, the city of Ashur, Kalhu, Til Barsip, Serugh, Tella, Mari, Nippur, Uruk, Der, Unqi, Lebanon and others
+[] Jews now call Aleppo Aram Zobah (it was Ebla), and Canaanites call it Halab; Carchemish moved from Aintab to Jarabulus, Mari from Raqqa to the middle Euphrates, and Antioch is no longer Ramitha (Latakia's name) for Canaanites
+[] The Jazira is now Aram Naharaim for Jews and Ashur for Arameans, and Mesopotamia is Babylon for Canaanites; Diyar Rabia is Ashur for Jews (was Naharaim) and Diyar Mudar is Balihu for Assyrians (was Padan Aram)
 [] Fixed log errors from the Shtadlanut files (encoding, unused AI frequency)
 [] Added Mesopotamianism, the old gods of Assyria and the Aramean cities: a reformed pagan faith with an Assyrian rite (Ashur, Marduk, Ishtar; the new Vicegerent of Ashur tenet, Warmonger, Ritual Celebrations) and a Harranian rite (Sin of Harran, Hadad, Atargatis; Astrology, Esotericism, Sanctity of Nature), and holy sites at Harran, Nineveh, Arbela, Manbij, Damascus and Palmyra
 [] The Semitic pagan religion is now called Levantine

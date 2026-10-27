@@ -20,16 +20,22 @@ NAMES = {
     'd_aleppo': ('bit_agusi', 'arpad'),               # the Aramean kingdom of Aleppo: Bit Agusi / Arpad (Sefire)
     'c_aleppo': ('halab', 'halab'),
     'b_azaz': ('hazazu', 'hazaz'),
+    'b_tall_afrin': ('arpaddu', 'arpad'),             # the city of Arpad, Tell Rifaat
     'b_manbij': ('nappigu', 'mabbug'),
+    'c_syrrusafa': ('rasappa', 'resafa'),             # Rasappa / Rezeph, Syriac Rsafa (Sergiopolis)
+    'b_ar-rusafa': ('rasappa', 'resafa'),
     'c_qinnasrin': ('qennesrin', 'qennesrin'),
     'b_qinnasrin': ('qennesrin', 'qennesrin'),
     'd_edessa': ('carchemish', 'osroene'),
     'c_edessa': ('adme', 'urhay'),                    # Adma in Assyrian texts; Syriac Urhay
     'b_edessa': ('adme', 'urhay'),
+    'b_al-bira': (None, 'birtha'),                    # Birecik, Syriac Birtha
     'c_samosata': ('kummuh', 'shmishat'),             # Kummuh, Commagene
+    'b_samosata': ('kummuh', 'shmishat'),
     'c_marash': ('marqasi', None),                    # Marqas(i), capital of Gurgum
+    'b_marash': ('marqasi', None),
     'c_aintab': ('carchemish', 'carchemish'),
-    'b_aintab': ('carchemish', 'carchemish'),
+    'b_jarabulus': ('carchemish', 'carchemish'),       # the site of Carchemish (not Aintab)
     'd_homs': ('subat', 'zobah'),                     # Subat, the Assyrian province of Zobah (location debated)
     'c_homs': ('subat', 'hems'),
     'b_hims': ('subat', 'hems'),
@@ -41,11 +47,16 @@ NAMES = {
     'b_salamiya': ('luhuti', 'luash'),                # Lu'ash of the Zakkur stele, Luhuti to the Assyrians
     'b_kafartab': ('kfartav', 'kfartav'),
     'b_latakia': ('ramitha', 'ramitha'),
+    'd_antioch': ('unqi', 'umq'),                     # the kingdom of the Amuq plain (Patina), 'mq on the Zakkur stele
+    'b_antartus': ('arwada', 'arwad'),                # Antaradus, facing the island of Arwad
+    'd_lebanon': ('labnanu', 'lebnan'),
+    'b_saida': ('sidunu', None),                      # Sidon in Sennacherib's annals
     'd_damascus': ('sha_imerishu', None),             # Sha-imerishu, the Assyrian name of the kingdom of Damascus
     'c_damascus': ('dimashqa', 'darmsuq'),
     'b_damascus': ('dimashqa', 'darmsuq'),
     'b_nawa': ('neve', 'neve'),
     'b_zurra': ('geshur', 'geshur'),
+    'c_hauran': ('hauranu', None),                    # Mount Hauran of Shalmaneser III
     'b_anjar': ('iturea', 'iturea'),
     'b_sarkhad': ('salcah', 'salcah'),
     'b_as-suwaida-hauran': ('canatha', 'canatha'),
@@ -55,39 +66,58 @@ NAMES = {
     'c_qaryatan': ('qiryatain', 'qiryatain'),
     'b_al-qaryatan': ('qiryatain', 'qiryatain'),
     # Jazira
-    'k_jazira': ('ashur', 'aram_naharaim'),           # not Beth Nahrain: a decision creates e_beth_nahrain
+    'k_jazira': ('ashur', 'ashur'),                   # Ashur in the Aramaic inscriptions; Aram Naharaim (Hebrew) is the Jewish lists'
     'd_diyarrabia': ('hanigalbat', 'beth_arbaye'),
     'c_mosul': ('athor', 'athor'),                    # the Church of the East's see of Athor
     'b_mosul': ('athor', 'athor'),
+    'b_ain_al-qayyara': ('ashur', 'ashur'),           # the city of Ashur, Qal'at Sherqat
+    'b_juhaina': ('kalhu', None),                     # Kalhu, Nimrud
     'b_al-hadr': ('hatra', 'hatra'),
     'c_ninive': ('ninua', 'ninwe'),
     'b_ninawa': ('ninua', 'ninwe'),
+    'b_bartulla': (None, 'bartelli'),
     'c_sinjar': ('shingar', 'shingar'),
     'b_sinjar': ('shingar', 'shingar'),
     'c_nasibin': ('nasibina', 'nisibin'),
     'b_nasibin': ('nasibina', 'nisibin'),
     'b_gazirat_ibn_umar': ('gazarta', 'gazarta'),
     'c_khabur': ('habor', 'habor'),
+    'b_araban': ('shadikanni', None),                 # Tell Ajaja
     'c_upper_khabur': ('bit_bahiani', 'upperhabor'),  # the Aramean kingdom of Guzana
     'b_ras_al-ain': ('guzana', 'gozan'),
     'b_mardin': ('merde', 'merde'),
     'b_kafartutha': ('kfartut', 'kfartut'),
-    'd_diyarmudar': ('padanaram', 'padanaram'),
+    'b_tall_mauzan': (None, 'tella'),                 # Tella d-Mawzlat, Viransehir
+    'd_diyarmudar': ('balihu', 'padanaram'),          # the Balikh towns of Shalmaneser III; Paddan Aram (Peshitta)
     'c_harran': ('harranu', None),
     'b_harran': ('harranu', None),
+    'b_saruj': ('sarugi', 'serugh'),
     'c_raqqa': ('tuttul', 'qalliniqos'),              # Raqqa is Tuttul (Tell Bi'a), Callinicum; Mari is downstream
     'b_raqqa': ('tuttul', 'qalliniqos'),
     'c_dausar': ('bit_adini', 'bethadini'),
+    'b_tall_ammar': ('kar_shalmaneser', 'til_barsip'),  # Tell Ahmar, capital of Bit Adini
     'd_diyarbakr': ('bit_zamani', 'beth_zamani'),     # the Aramean kingdom of Amida
     'c_amida': ('amedi', 'amid'),
     'b_amid': ('amedi', 'amid'),
     'b_hisn_kaifa': ('hesna_d_kifa', 'hesna_d_kifa'),
+    'c_tall_basma': ('kashiyari', 'tur_abdin'),       # the Tur Abdin plateau (Midyat, Hasankeyf)
+    'b_baqirda': (None, 'qardu'),                     # Bet Qardu, Gordyene
+    'b_saird': (None, 'seert'),
+    'c_mayyafariqin': (None, 'maipherqat'),           # Martyropolis
+    'b_mayyafariqin': (None, 'maipherqat'),
+    'b_arzan': (None, 'arzon'),
     'd_euphrates': ('suhu', None),                    # the land of Suhu on the middle Euphrates
+    'c_rahba': ('laqe', None),                        # the Aramean land of Laqe, above Suhu
+    'b_ad-daliya': ('mari', 'mari'),                  # Mari, Tell Hariri by Abu Kamal
     'c_hadithat-ana': ('anat', 'anat'),
     'b_hadithat-ana': ('anat', 'anat'),
     'd_kurdistan': ('hadyab', 'hadyab'),              # Adiabene
     'c_irbil': ('arbail', 'arbel'),
     'b_irbil': ('arbail', 'arbel'),
+    'b_al-haditha': (None, 'hdatta'),                 # the Church of the East's see of Hdatta
+    'b_as-sinn': (None, 'shenna'),                    # Shenna d-Beth Ramman
+    'c_shahrazur': ('mazamua', None),                 # the Assyrian province of the Shahrizor plain
+    'b_shahrazur': ('mazamua', None),
     # Mesopotamia
     'k_mesopotamia': ('karduniash', 'beth_aramaye'),
     'd_samarra': ('beth_garmai', 'beth_garmai'),
@@ -103,11 +133,15 @@ NAMES = {
     'd_kufa': ('hirta', 'hirta'),
     'c_kufa': ('hirta', 'hirta'),
     'b_al-hila': ('babili', 'babel'),                 # the ruins of Babylon by Hilla
+    'b_niffar': ('nibru', 'nippur'),
+    'c_akhadid': ('uruk', None),                      # Uruk and Ur
+    'b_al-akhadid': ('uruk', None),
     'd_baghdad': ('akkad', None),
     'c_anbar': ('piroz_shabur', 'piroz_shabur'),      # Pumbedita stays on the Jewish lists
     'b_al-anbar': ('piroz_shabur', 'piroz_shabur'),
-    'c_badaraya': ('bethdaraye', 'bethdaraye'),
-    'b_badaraya': ('bethdaraye', 'bethdaraye'),
+    'c_badaraya': ('der', 'bethdaraye'),              # Der (Tell Aqar by Badra); Beth Daraye keeps its name
+    'b_badaraya': ('der', 'bethdaraye'),
+    'b_hit': ('id', None),                            # Id, the bitumen town
     'd_basra': ('bit_yakin', 'maishan'),              # Bit Yakin of the Sealand; Mesene
     'c_ubulla': ('perat_d_maishan', 'perat_d_maishan'),
     'b_al-ubulla': ('perat_d_maishan', 'perat_d_maishan'),
