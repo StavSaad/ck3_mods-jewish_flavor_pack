@@ -1,0 +1,153 @@
+# The mod's cultural men-at-arms (0.15 plan, section 12), unlocked by the traditions in
+# common/culture/traditions/jip_maa_traditions.txt. Balanced against vanilla's cultural units. Kemi and Ancient
+# Egyptian use vanilla's archers_of_the_nile, so they have no unit here.
+# The @ values are local to each file, so vanilla's are repeated here.
+
+@cultural_maa_extra_ai_score = 80
+@provisions_cost_infantry_moderate = 7
+@provisions_cost_infantry_expensive = 12
+@provisions_cost_cavalry_bankrupting = 30
+
+jip_palmyrene_archers = { # The Nile Archers' build, moved from the river into the desert
+	type = archers
+
+	damage = 30
+	toughness = 12
+	pursuit = 5
+	screen = 10
+
+	terrain_bonus = {
+		desert = { damage = 15 toughness = 10 }
+		drylands = { damage = 10 }
+		oasis = { damage = 10 }
+		floodplains = { damage = -10 }
+		wetlands = { damage = -10 }
+	}
+
+	counters = {
+		skirmishers = 1
+	}
+
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_jip_palmyrene_archers }
+	}
+
+	buy_cost = { gold = jip_palmyrene_archers_recruitment_cost }
+	low_maintenance_cost = { gold = jip_palmyrene_archers_low_maint_cost }
+	high_maintenance_cost = { gold = jip_palmyrene_archers_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_moderate
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = bowmen
+}
+
+jip_clibanarii = { # Tougher than cataphracts, but they hit less hard
+	type = heavy_cavalry
+
+	damage = 110
+	toughness = 42
+	pursuit = 10
+	screen = 0
+
+	terrain_bonus = {
+		plains = { damage = 25 }
+		drylands = { damage = 25 }
+		hills = { damage = -15 }
+		mountains = { damage = -50 }
+		desert_mountains = { damage = -50 }
+		wetlands = { damage = -80 toughness = -15 pursuit = -10 }
+	}
+
+	counters = {
+		archers = 1
+		gunpowder = 1
+	}
+
+	winter_bonus = {
+		normal_winter = { damage = -15 toughness = -5 }
+		harsh_winter = { damage = -30 toughness = -10 }
+	}
+
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_jip_clibanarii }
+		NOT = {
+			culture = { has_cultural_parameter = strength_in_numbers_heavy_maa_ban }
+		}
+	}
+
+	buy_cost = { gold = jip_clibanarii_recruitment_cost }
+	low_maintenance_cost = { gold = jip_clibanarii_low_maint_cost }
+	high_maintenance_cost = { gold = jip_clibanarii_high_maint_cost }
+	provision_cost = @provisions_cost_cavalry_bankrupting
+
+	stack = 50
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = cataphracts
+}
+
+jip_seir_bowmen = { # Edom's archers: at home in the desert mountains of Seir, where few units fight well
+	type = archers
+
+	damage = 26
+	toughness = 12
+	pursuit = 5
+	screen = 10
+
+	terrain_bonus = {
+		desert_mountains = { damage = 20 toughness = 10 }
+		hills = { damage = 10 }
+		mountains = { damage = 10 }
+		desert = { damage = 5 }
+		plains = { damage = -5 }
+		wetlands = { damage = -10 }
+	}
+
+	counters = {
+		skirmishers = 1
+	}
+
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_jip_seir_bowmen }
+	}
+
+	buy_cost = { gold = jip_seir_bowmen_recruitment_cost }
+	low_maintenance_cost = { gold = jip_seir_bowmen_low_maint_cost }
+	high_maintenance_cost = { gold = jip_seir_bowmen_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_moderate
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = bowmen
+}
+
+jip_sacred_band = { # Carthage's citizen elite: between vanilla's ayyar and mubarizun
+	type = heavy_infantry
+
+	damage = 40
+	toughness = 30
+	pursuit = 5
+	screen = 0
+
+	counters = {
+		pikemen = 1
+		heavy_infantry = 1
+		peasant_militia = 2
+	}
+
+	can_recruit = {
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_jip_sacred_band }
+		NOT = {
+			culture = { has_cultural_parameter = strength_in_numbers_heavy_maa_ban }
+		}
+	}
+
+	buy_cost = { gold = jip_sacred_band_recruitment_cost }
+	low_maintenance_cost = { gold = jip_sacred_band_low_maint_cost }
+	high_maintenance_cost = { gold = jip_sacred_band_high_maint_cost }
+	provision_cost = @provisions_cost_infantry_expensive
+
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = heavy_infantry
+}

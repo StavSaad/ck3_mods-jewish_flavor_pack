@@ -1,0 +1,18 @@
+# Costs of the mod's cultural men-at-arms (common/men_at_arms_types/jip_cultural_maa_types.txt), as multiples of
+# vanilla's base costs (00_men_at_arms_values.txt), like vanilla's cultural units
+
+jip_palmyrene_archers_recruitment_cost = { value = bowmen_recruitment_cost multiply = 1.1 }
+jip_palmyrene_archers_low_maint_cost = { value = bowmen_low_maint_cost multiply = 1.1 }
+jip_palmyrene_archers_high_maint_cost = { value = bowmen_high_maint_cost multiply = 1.1 }
+
+jip_clibanarii_recruitment_cost = { value = heavy_cavalry_recruitment_cost multiply = 1.3 }
+jip_clibanarii_low_maint_cost = { value = heavy_cavalry_low_maint_cost multiply = 1.3 }
+jip_clibanarii_high_maint_cost = { value = heavy_cavalry_high_maint_cost multiply = 1.3 }
+
+jip_seir_bowmen_recruitment_cost = { value = bowmen_recruitment_cost multiply = 1.1 }
+jip_seir_bowmen_low_maint_cost = { value = bowmen_low_maint_cost multiply = 1.1 }
+jip_seir_bowmen_high_maint_cost = { value = bowmen_high_maint_cost multiply = 1.1 }
+
+jip_sacred_band_recruitment_cost = { value = heavy_infantry_recruitment_cost multiply = 1.25 }
+jip_sacred_band_low_maint_cost = { value = heavy_infantry_low_maint_cost multiply = 1.25 }
+jip_sacred_band_high_maint_cost = { value = heavy_infantry_high_maint_cost multiply = 1.25 }

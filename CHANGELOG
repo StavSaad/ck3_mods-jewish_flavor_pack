@@ -143,3 +143,6 @@
 [] New sign of Tanit icons for Canaanism (gold) and Punism (silver), and six more colours each of the Tanit, the Mesopotamian winged disc and the Harranian crescent standard for custom Levantine faiths
 [] Kohenism, Canaanism and Mesopotamianism can no longer be converted to until they are restored: Kohenism when the Third Temple is built, Canaanism when Phoenicia or Carthage is restored, Mesopotamianism by a decision still to come
 [] Fixed the Levantine religion missing the doctrines CK3 1.20 added: polytheism, anointment of kings, no monasticism or sacraments, and written myths
+[] Added two cultural men-at-arms: Palmyrene Archers for Arameans (desert archers, from the new Archers of Tadmor tradition) and Clibanarii for Assyrians (armoured cavalry, from the new Armoured Horse of Adiabene tradition); any Syriac culture can adopt either tradition
+[] Added more cultural men-at-arms: Bowmen of Seir for Edomites (desert-mountain archers, in place of Desert Ribat), the Sacred Band for Phoenicians and Carthaginians (elite heavy infantry), and the Nile Archers for Kemi and Ancient Egyptians (through the new Archers of the Two Lands tradition)
+[] Forming Hebrew keeps the mod's new men-at-arms traditions

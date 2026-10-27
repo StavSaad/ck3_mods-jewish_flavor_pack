@@ -78,6 +78,7 @@ ancient_egyptian = {
 		tradition_agrarian
 		tradition_zealous_people
 		tradition_hereditary_hierarchy
+		tradition_jip_two_lands_archery
 	}
 	
 	name_list = name_list_ancient_egyptian
@@ -198,6 +199,7 @@ carthaginian = {
 		tradition_eye_for_an_eye
 		tradition_seafaring
 		tradition_ce1_ritual_washing
+		tradition_jip_sacred_band
 	}
 
 	name_list = name_list_carthaginian

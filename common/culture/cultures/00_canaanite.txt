@@ -11,6 +11,7 @@
 		tradition_eye_for_an_eye
 		tradition_seafaring
 		tradition_city_keepers
+		tradition_jip_sacred_band
 	}
 
 	name_list = name_list_canaanite
@@ -41,7 +42,7 @@ edomite = {
 	history_loc_override = edomite_history_loc
 	head_determination = head_determination_domain
 	traditions = { # I'm pretty sure anything I put in here or do not put in here will spark a discussion or two
-		tradition_desert_ribat
+		tradition_jip_seir_bowmen
 		tradition_eye_for_an_eye
 		tradition_warriors_of_the_dry
 		tradition_fervent_temple_builders

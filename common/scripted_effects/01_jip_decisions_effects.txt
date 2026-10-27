@@ -53,6 +53,11 @@ form_hebrew_decision_effects = {
 			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = mpo_wolves_of_the_deep_steppe }
 			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = devoted_horsemanship }
 			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = mpo_northern_tribes }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = jip_seir_bowmen }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = jip_sacred_band }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = jip_two_lands_archery }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = jip_palmyrene_archery }
+			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = jip_clibanarii }
 		}
 		set_culture = culture:hebrew
 

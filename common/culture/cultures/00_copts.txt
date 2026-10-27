@@ -13,6 +13,7 @@
 		tradition_monastic_communities
 		tradition_agrarian
 		tradition_zealous_people
+		tradition_jip_two_lands_archery
 	}
 	
 	name_list = name_list_ancient_egyptian

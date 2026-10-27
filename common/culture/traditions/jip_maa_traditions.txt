@@ -1,0 +1,484 @@
+# Traditions that unlock the mod's cultural men-at-arms (common/men_at_arms_types/jip_cultural_maa_types.txt), built
+# like vanilla's in 00_maa_traditions.txt, each open to one heritage:
+# - Syriac: Aramean (syriac) starts with the Palmyrene archers, Assyrian with the clibanarii. Neither costs extra for a
+#   Bellicose (Aramean) or Communal (Assyrian) culture
+# - Israelite: Edomite starts with the Bowmen of Seir (in place of vanilla's Desert Ribat)
+# - Phoenician: Phoenician and Carthaginian start with the Sacred Band
+# - Egyptian: Kemi (copt) and Ancient Egyptian start with Archers of the Two Lands, vanilla's Nile Archers
+# Forming Hebrew keeps them (handle_maa_traditions_for_culture in 01_jip_decisions_effects.txt)
+
+tradition_jip_palmyrene_archery = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mena
+		4 = desert.dds
+	}
+
+	is_shown = {
+		has_cultural_pillar = heritage_syriac
+	}
+	can_pick = {
+		has_cultural_pillar = heritage_syriac
+	}
+
+	parameters = {
+		unlock_maa_jip_palmyrene_archers = yes
+	}
+	character_modifier = {
+		archers_damage_mult = 0.1
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+						culture_pillar:ethos_communal = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_or_communal_desc
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						scope:character = {
+							number_maa_soldiers_of_base_type = {
+								type = archers
+								value >= 800
+							}
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = culture_head_archers_desc
+				}
+			}
+
+			if = {
+				limit = {
+					culture_tradition_reduction_trigger = { TRADITION = tradition_jip_palmyrene_archery }
+				}
+				multiply = {
+					value = 0.5
+					desc = inspired_by_culture_desc
+				}
+			}
+
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 400
+		if = {
+			limit = {
+				NOT = {
+					scope:character = {
+						any_sub_realm_county = {
+							culture = scope:character.culture
+							county_has_province_with_terrain = {
+								terrain = drylands
+								terrain = desert
+							}
+						}
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
+}
+
+tradition_jip_clibanarii = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mena
+		4 = horses.dds
+	}
+
+	is_shown = {
+		has_cultural_pillar = heritage_syriac
+	}
+	can_pick = {
+		has_cultural_pillar = heritage_syriac
+	}
+
+	parameters = {
+		unlock_maa_jip_clibanarii = yes
+	}
+	character_modifier = {
+		heavy_cavalry_toughness_mult = 0.1
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+						culture_pillar:ethos_communal = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_or_communal_desc
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						scope:character = {
+							number_maa_soldiers_of_base_type = {
+								type = heavy_cavalry
+								value >= 400
+							}
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = culture_head_heavy_cavalry_desc
+				}
+			}
+
+			if = {
+				limit = {
+					culture_tradition_reduction_trigger = { TRADITION = tradition_jip_clibanarii }
+				}
+				multiply = {
+					value = 0.5
+					desc = inspired_by_culture_desc
+				}
+			}
+
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 200
+		if = {
+			limit = {
+				NOT = {
+					scope:character = {
+						any_sub_realm_county = {
+							culture = scope:character.culture
+							county_has_province_with_terrain = {
+								terrain = plains
+								terrain = drylands
+							}
+						}
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
+}
+
+tradition_jip_seir_bowmen = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mena
+		4 = desert_mountains.dds
+	}
+
+	is_shown = {
+		has_cultural_pillar = heritage_israelite
+	}
+	can_pick = {
+		has_cultural_pillar = heritage_israelite
+		culture_not_pacifistic_trigger = yes
+	}
+
+	parameters = {
+		unlock_maa_jip_seir_bowmen = yes
+		hunting_archery_building_bonuses = yes
+	}
+	character_modifier = {
+		desert_mountains_advantage = 5
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_desc
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						scope:character = {
+							number_maa_soldiers_of_base_type = {
+								type = archers
+								value >= 800
+							}
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = culture_head_archers_desc
+				}
+			}
+
+			if = {
+				limit = {
+					culture_tradition_reduction_trigger = { TRADITION = tradition_jip_seir_bowmen }
+				}
+				multiply = {
+					value = 0.5
+					desc = inspired_by_culture_desc
+				}
+			}
+
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 400
+		if = {
+			limit = {
+				NOT = {
+					scope:character = {
+						any_sub_realm_county = {
+							culture = scope:character.culture
+							county_has_province_with_terrain = {
+								terrain = desert_mountains
+								terrain = hills
+								terrain = mountains
+							}
+						}
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
+}
+
+tradition_jip_sacred_band = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mena
+		4 = soldiers2.dds
+	}
+
+	is_shown = {
+		has_cultural_pillar = heritage_phoenician
+	}
+	can_pick = {
+		has_cultural_pillar = heritage_phoenician
+	}
+
+	parameters = {
+		unlock_maa_jip_sacred_band = yes
+	}
+	character_modifier = {
+		heavy_infantry_damage_mult = 0.1
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_or_bureaucratic_desc
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						scope:character = {
+							number_maa_soldiers_of_base_type = {
+								type = heavy_infantry
+								value >= 800
+							}
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = jip_culture_head_heavy_infantry_desc
+				}
+			}
+
+			if = {
+				limit = {
+					culture_tradition_reduction_trigger = { TRADITION = tradition_jip_sacred_band }
+				}
+				multiply = {
+					value = 0.5
+					desc = inspired_by_culture_desc
+				}
+			}
+
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 300
+		if = {
+			limit = {
+				NOT = {
+					scope:character = {
+						any_sub_realm_county = {
+							culture = scope:character.culture
+							county_has_province_with_terrain = {
+								terrain = plains
+								terrain = drylands
+								terrain = farmlands
+								terrain = hills
+							}
+						}
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
+}
+
+tradition_jip_two_lands_archery = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mena
+		4 = bow.dds
+	}
+
+	is_shown = {
+		has_cultural_pillar = heritage_egyptian
+	}
+	can_pick = {
+		has_cultural_pillar = heritage_egyptian
+	}
+
+	parameters = {
+		unlock_maa_archers_of_the_nile = yes
+	}
+	county_modifier = {
+		floodplains_levy_size = 0.1
+	}
+	character_modifier = {
+		archers_damage_mult = 0.1
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_communal = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_spiritual_or_communal_desc
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						scope:character = {
+							number_maa_soldiers_of_base_type = {
+								type = archers
+								value >= 800
+							}
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = culture_head_archers_desc
+				}
+			}
+
+			if = {
+				limit = {
+					culture_tradition_reduction_trigger = { TRADITION = tradition_jip_two_lands_archery }
+				}
+				multiply = {
+					value = 0.5
+					desc = inspired_by_culture_desc
+				}
+			}
+
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 400
+		if = {
+			limit = {
+				NOT = {
+					scope:character = {
+						any_sub_realm_county = {
+							culture = scope:character.culture
+							county_has_province_with_terrain = {
+								terrain = floodplains
+							}
+						}
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
+}

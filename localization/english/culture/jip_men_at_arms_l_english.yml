@@ -1,0 +1,27 @@
+﻿l_english:
+ # Men-at-arms (common/men_at_arms_types/jip_cultural_maa_types.txt); Kemi use vanilla's Nile Archers
+ jip_palmyrene_archers:0 "Palmyrene Archers"
+ jip_palmyrene_archers_flavor:0 "#F The bowmen of Tadmor once guarded Rome's frontiers from Dacia to the edge of the Sahara. Raised among the desert caravans, they shoot best where other armies wilt in the heat.#!"
+ jip_clibanarii:0 "Clibanarii"
+ jip_seir_bowmen:0 "Bowmen of Seir"
+ jip_seir_bowmen_flavor:0 "#F “Esau was a cunning hunter, a man of the field.” His sons hold the red mountains of Seir, where an archer on the heights can stop an army in the passes below.#!"
+ jip_sacred_band:0 "Sacred Band"
+ jip_sacred_band_flavor:0 "#F Carthage's citizen elite, sons of the great houses, armoured at their own cost and sworn to the city's gods. They were the last to leave any field.#!"
+ jip_clibanarii_flavor:0 "#F Horse and rider sealed in mail and scale. The kings of Adiabene rode out with such horsemen in the Parthian line of battle, and the lords of the Assyrian plain still keep the custom.#!"
+
+ # Traditions (common/culture/traditions/jip_maa_traditions.txt)
+ tradition_jip_palmyrene_archery_name:0 "Archers of Tadmor"
+ tradition_jip_palmyrene_archery_desc:0 "Palmyra's archers served Rome on every frontier, and her caravans crossed the desert under their bows. The [culture|E] still teaches its sons to shoot in the desert's glare."
+ tradition_jip_clibanarii_name:0 "Armoured Horse of Adiabene"
+ tradition_jip_clibanarii_desc:0 "From Arbela and Hatra, mailed horsemen once rode in the Parthian line against Rome. The [culture|E]'s nobles still go to war armoured like their forebears."
+ culture_parameter_unlock_maa_jip_palmyrene_archers:0 "Can recruit [GetMaA('jip_palmyrene_archers').GetName] as [men_at_arms|E]"
+ culture_parameter_unlock_maa_jip_clibanarii:0 "Can recruit [GetMaA('jip_clibanarii').GetName] as [men_at_arms|E]"
+ tradition_jip_seir_bowmen_name:0 "Bowmen of Seir"
+ tradition_jip_seir_bowmen_desc:0 "Since the days of Esau the hunter, the mountains of Seir have bred archers. The [culture|E] still guards its high passes with the bow."
+ tradition_jip_sacred_band_name:0 "The Sacred Band"
+ tradition_jip_sacred_band_desc:0 "Carthage's richest families sent their sons to fight in the Sacred Band, an armoured elite sworn to the city's gods. The [culture|E] still looks to its great houses for its finest soldiers."
+ tradition_jip_two_lands_archery_name:0 "Archers of the Two Lands"
+ tradition_jip_two_lands_archery_desc:0 "Since the pharaohs, the bow has been the weapon of Upper and Lower Egypt. The [culture|E] still draws its archers from the villages of the Nile valley."
+ culture_parameter_unlock_maa_jip_seir_bowmen:0 "Can recruit [GetMaA('jip_seir_bowmen').GetName] as [men_at_arms|E]"
+ culture_parameter_unlock_maa_jip_sacred_band:0 "Can recruit [GetMaA('jip_sacred_band').GetName] as [men_at_arms|E]"
+ jip_culture_head_heavy_infantry_desc:0 "You do not have #V 800#! [heavy_infantry|E]"
