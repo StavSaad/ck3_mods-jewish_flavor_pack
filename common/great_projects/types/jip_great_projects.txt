@@ -3,8 +3,8 @@
 #	jip_gp_temple_of_sin - Restore the House of Rejoicing: the Ehulhul, Sin's temple at Harran (0.15 plan, sections 2 and 4)
 #################
 
-@jip_temple_of_sin_icon = "gfx/interface/icons/great_projects/_default.dds"
-@jip_temple_of_sin_illustration = "gfx/interface/illustrations/event_scenes/fp3_temple.dds"
+@jip_temple_of_sin_icon = "gfx/interface/icons/great_projects/jip_temple_of_sin.dds" # tools/make_great_project_art.py
+@jip_temple_of_sin_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_sin.dds" # --y 0.42
 
 # An independent Sabian ruler who holds Harran rebuilds the temple Nabonidus once restored. Its completion opens the
 # Mesopotamian pagan faith to conversion and offers the founder the choice to proclaim the old gods (jip_sabian.0001).
