@@ -1,0 +1,75 @@
+﻿namespace = jip_sabian
+
+# The Sabians of Harran and the return of the old gods (0.15 plan, sections 2, 4 and 10)
+#  0001 The House of Rejoicing restored (the owner of jip_gp_temple_of_sin, on completion): proclaim the old gods, or
+#       remain a Sabian
+
+# The House of Rejoicing restored
+# Root = the project's owner (scope:jip_temple_builder)
+jip_sabian.0001 = {
+	type = character_event
+	title = jip_sabian.0001.t
+	desc = jip_sabian.0001.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = temple }
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+	right_portrait = {
+		trigger = { exists = scope:jip_sabian_priest }
+		character = scope:jip_sabian_priest
+		animation = prayer
+	}
+
+	immediate = {
+		cp:councillor_court_chaplain ?= { save_scope_as = jip_sabian_priest }
+	}
+
+	# Proclaim the old gods
+	option = {
+		name = jip_sabian.0001.a
+		trigger = { NOT = { faith = faith:mesopotamian_pagan } }
+		jip_proclaim_old_gods_effect = yes
+		add_piety = major_piety_gain
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				has_trait = zealous
+			}
+			modifier = {
+				add = 25
+				learning >= 12
+			}
+		}
+	}
+
+	# Remain a Sabian: the temple serves the Moon all the same
+	option = {
+		name = jip_sabian.0001.b
+		trigger = { rite = rite:sabianism }
+		add_piety = medium_piety_gain
+		add_prestige = medium_prestige_gain
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				has_trait = content
+			}
+		}
+	}
+
+	# Already of the old faith
+	option = {
+		name = jip_sabian.0001.c
+		trigger = { faith = faith:mesopotamian_pagan }
+		add_piety = major_piety_gain
+	}
+}

@@ -1,0 +1,3 @@
+﻿# The mod's colored CoA emblems (tools/make_coa_emblem.py), listed for the CoA designer like vanilla's
+# 50_coa_designer_emblems.txt
+ce_jip_drabsha.dds = { colors = 3 category = faiths }

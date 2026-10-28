@@ -1,0 +1,355 @@
+﻿#################
+#	Rising Lion great projects (vanilla's system: _great_project_types.info; modelled on pam_cathedral_01)
+#	jip_gp_temple_of_sin - Restore the House of Rejoicing: the Ehulhul, Sin's temple at Harran (0.15 plan, sections 2 and 4)
+#################
+
+@jip_temple_of_sin_icon = "gfx/interface/icons/great_projects/_default.dds"
+@jip_temple_of_sin_illustration = "gfx/interface/illustrations/event_scenes/fp3_temple.dds"
+
+# An independent Sabian ruler who holds Harran rebuilds the temple Nabonidus once restored. Its completion opens the
+# Mesopotamian pagan faith to conversion and offers the founder the choice to proclaim the old gods (jip_sabian.0001).
+# Independent only: a project belongs to the top liege of its province, so under the caliph the caliph would own it
+jip_gp_temple_of_sin = {
+	icon = { reference = @jip_temple_of_sin_icon }
+	illustration = { reference = @jip_temple_of_sin_illustration }
+
+	name = {
+		desc = great_project_type_jip_gp_temple_of_sin
+	}
+
+	is_shown = {
+		OR = {
+			rite = rite:sabianism
+			faith = faith:mesopotamian_pagan
+		}
+		is_independent_ruler = yes
+		NOT = { is_planning_great_project = jip_gp_temple_of_sin }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_sin
+			}
+		}
+	}
+
+	province_filter = holy_sites
+
+	is_location_valid = {
+		scope:province = {
+			custom_tooltip = {
+				text = jip_gp_temple_of_sin_location_tt
+				this = title:b_harran.title_province
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_of_sin_held_tt
+				barony.holder ?= { target_is_same_character_or_above = root }
+			}
+			NOT = { has_building_with_flag = jip_temple_of_sin_building }
+		}
+	}
+
+	can_start_planning = {
+		custom_tooltip = {
+			text = jip_gp_temple_of_sin_harran_tt
+			title:c_harran.holder ?= { target_is_same_character_or_above = root }
+		}
+		piety_level >= 3
+		is_at_war = no
+	}
+
+	owner = founder_primary_title_owner
+
+	is_valid = {
+		scope:founder = {
+			OR = {
+				rite = rite:sabianism
+				faith = faith:mesopotamian_pagan
+			}
+		}
+		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = great_project_base_starting_cost
+		}
+		piety = {
+			value = 500
+		}
+	}
+
+	construction_time = 1825 # 5 years
+
+	allowed_contributor_filter = {
+		owner = yes
+		founder = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+		duchy = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:founder ?= {
+			add_piety = medium_piety_gain
+		}
+	}
+
+	on_complete = {
+		scope:province = {
+			custom_tooltip = jip_gp_temple_of_sin_building_tt
+			hidden_effect = {
+				set_great_building = jip_temple_of_sin_01
+			}
+		}
+		jip_unlock_mesopotamian_conversion_effect = yes
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_sin
+			}
+		}
+		scope:owner ?= {
+			add_piety = major_piety_gain
+			add_prestige = major_prestige_gain
+			save_scope_as = jip_temple_builder
+			trigger_event = jip_sabian.0001
+		}
+	}
+
+	project_contributions = {
+		# Required: Nabonidus roofed the Ehulhul with cedars of Lebanon
+		cedars = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+
+		# Required: Nabonidus dug for the founding inscriptions of the kings before him; a scholar must read them
+		foundation = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_temple_of_sin_scholar_tt
+					learning >= 12
+				}
+			}
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_learning_lifestyle_xp = major_lifestyle_xp
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+
+		# Required: the priests of Sin, from the Sabian clergy
+		priests = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_temple_of_sin_faithful_tt
+					OR = {
+						rite = rite:sabianism
+						faith = faith:mesopotamian_pagan
+					}
+				}
+			}
+			cost = {
+				piety = {
+					value = 300
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = minor_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+
+		# Optional: the silver crescent standard of the Lord of the Moon
+		crescent = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.75
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+
+		# Optional: the seven shrines of the planets, the Sabians' temples of Harran
+		shrines = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_piety = medium_piety_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+
+		# Optional: a terrace on the roof for the star-readers
+		terrace = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_temple_of_sin_scholar_tt
+					learning >= 12
+				}
+			}
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_learning_lifestyle_xp = major_lifestyle_xp
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		rank = county
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 5
+		duchy = 2
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+
+	ai_will_do = {
+		value = 100 # An independent Sabian ruler of Harran is rare; if one exists, they rebuild
+	}
+
+	group = major_project
+	is_important = yes
+	target_title_tier = barony
+}

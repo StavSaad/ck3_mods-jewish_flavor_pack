@@ -24,7 +24,7 @@
  jip_akitu_largesse_modifier:0 "Akitu Largesse"
  jip_akitu_largesse_modifier_desc:0 "The ruler scattered silver along the processional way at Akitu."
  jip_akitu_neglected_1:0 "Akitu Neglected"
- jip_akitu_neglected_1_desc:0 "This ruler has not held Akitu for years. The priests remember how Nabonidus let the festival lapse."
+ jip_akitu_neglected_1_desc:0 "This ruler has not kept the New Year for years, neither Akitu nor, for Harranians, the Feast of Nisan. The priests remember how Nabonidus let the festival lapse."
  jip_akitu_neglected_2:0 "Akitu Long Neglected"
  jip_akitu_neglected_2_desc:0 "The gods have not gone out to the akitu house in this ruler's reign for many years, and the priests say openly that the god has turned away."
  jip_nisan_omen_good:0 "Favour of the Moon"
@@ -87,6 +87,7 @@
  jip_feast.1020.desc:0 "For years the gods have not gone out to the akitu house in your reign. The priests have begun to remind anyone who will listen of Nabonidus, the last king of Babylon, who stayed away from the festival for ten years, and how the god gave his city to the Persians."
  jip_feast.1020.a:0 "I will hold Akitu when I can."
  jip_feast.1020.a_tt:0 "Hold Akitu, a [GetActivityType('activity_feast').GetName] in Nisannu (March or April), to end the neglect. It grows worse after 12 years"
+ jip_feast.1020.a_tt_harranian:0 "Hold Akitu or the Feast of Nisan, a [GetActivityType('activity_feast').GetName] in March or April, to end the neglect. It grows worse after 12 years"
 
  jip_feast.1101.t:0 "The Tablet of Destinies"
  jip_feast.1101.desc:0 "A priest of Nabu, the scribe of the gods, makes his way between the guests. Nabu writes the fates on the tablet of destinies, he says, and he will tell you what is written there for you."
@@ -118,6 +119,7 @@
  jip_feast.2004.desc_neutral:0 "The priests declare the Lord of the Moon honoured for another year."
  jip_feast.2004.desc_holy_site:0 "\n\nThe feast was kept in a holy city of the faith, as it was when the Temple of Sin still stood in all its glory."
  jip_feast.2004.a:0 "Glory to the Lord of the Moon."
+ jip_feast.2004.new_year_tt:0 "The New Year is kept, as at Akitu: the gods will not count it as neglected"
 
  jip_feast.2010.t:0 "The Feast of Nisan Ends"
  jip_feast.2010.desc:0 "The fast is broken, the sacrifices are burned and the year of Harran has begun. [scope:host.GetTitledFirstName] kept the feast in the old way."

@@ -448,7 +448,13 @@ jip_feast.1020 = {
 
 	option = {
 		name = jip_feast.1020.a
-		custom_tooltip = jip_feast.1020.a_tt
+		if = {
+			limit = { rite = rite:harranian_pagan }
+			custom_tooltip = jip_feast.1020.a_tt_harranian
+		}
+		else = {
+			custom_tooltip = jip_feast.1020.a_tt
+		}
 	}
 }
 
@@ -750,6 +756,18 @@ jip_feast.2004 = {
 			add_prestige = minor_prestige_gain
 		}
 		jip_feast_omen_modifier_effect = { NAME = jip_nisan_omen }
+		# For the Harranian rite this is the spring New Year, so it keeps Akitu's obligation too (jip_akitu_neglect_effect)
+		if = {
+			limit = { faith = faith:mesopotamian_pagan }
+			custom_tooltip = jip_feast.2004.new_year_tt
+			hidden_effect = {
+				set_variable = {
+					name = jip_akitu_last_year
+					value = current_year
+				}
+			}
+			jip_akitu_clear_neglect_effect = yes
+		}
 	}
 }
 

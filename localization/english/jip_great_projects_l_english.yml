@@ -1,0 +1,40 @@
+﻿l_english:
+ ### Restore the House of Rejoicing: the Temple of Sin at Harran (common/great_projects/types/jip_great_projects.txt)
+ great_project_type_jip_gp_temple_of_sin:0 "Restore the House of Rejoicing"
+ great_project_type_jip_gp_temple_of_sin_possessive:0 "the House of Rejoicing's"
+ great_project_type_jip_gp_temple_of_sin_desc:0 "$great_project_type_tooltip_jip_gp_temple_of_sin$"
+ great_project_type_tooltip_jip_gp_temple_of_sin:0 "Rebuild the Ehulhul, the House of Rejoicing, the temple of Sin, Lord of the Moon, at Harran. Nabonidus, last king of Babylon, raised it from its ruins; the Sabians have kept its rites in secret ever since.\n\nWhen it stands, the old gods of Assyria and Harran may be worshipped openly again, and you may proclaim them."
+ jip_gp_temple_of_sin_location_tt:0 "Only at Harran, where the Ehulhul stood"
+ jip_gp_temple_of_sin_held_tt:0 "Harran is in your realm"
+ jip_gp_temple_of_sin_harran_tt:0 "You hold the county of Harran, or your vassal does"
+ jip_gp_temple_of_sin_building_tt:0 "The Temple of Sin rises at Harran"
+ jip_gp_temple_of_sin_scholar_tt:0 "The contributor has at least #V 12#! [learning|E]"
+ jip_gp_temple_of_sin_faithful_tt:0 "The contributor is a Sabian or follows the old gods"
+
+ great_project_type_jip_gp_temple_of_sin_contribution_cedars:0 "Cedars for the Roof"
+ great_project_type_jip_gp_temple_of_sin_contribution_cedars_desc:0 "Nabonidus roofed the Ehulhul with beams of cedar from the mountains of Lebanon, and so must its restorer."
+ great_project_type_jip_gp_temple_of_sin_contribution_foundation:0 "The Old Foundation Stone"
+ great_project_type_jip_gp_temple_of_sin_contribution_foundation_desc:0 "Before he built, Nabonidus dug down to the foundation inscription of the kings before him, so that the temple would rise on its true ground. A scholar must find and read it."
+ great_project_type_jip_gp_temple_of_sin_contribution_priests:0 "The Priests of Sin"
+ great_project_type_jip_gp_temple_of_sin_contribution_priests_desc:0 "The Sabians who kept the Moon's rites in secret come forward to serve in the new temple."
+ great_project_type_jip_gp_temple_of_sin_contribution_crescent:0 "The Silver Crescent"
+ great_project_type_jip_gp_temple_of_sin_contribution_crescent_desc:0 "A crescent standard of silver for the Lord of the Moon, to be carried at the head of his processions."
+ great_project_type_jip_gp_temple_of_sin_contribution_shrines:0 "The Seven Shrines"
+ great_project_type_jip_gp_temple_of_sin_contribution_shrines_desc:0 "Chapels for the seven planets around the great temple, each built in its planet's shape and colour, as the Sabians of Harran remember them."
+ great_project_type_jip_gp_temple_of_sin_contribution_terrace:0 "The Star-Readers' Terrace"
+ great_project_type_jip_gp_temple_of_sin_contribution_terrace_desc:0 "A terrace on the temple roof where the astrologers of Harran can watch the Moon and the planets."
+
+ # The building (common/buildings/01_jip_buildings.txt)
+ building_type_jip_temple_of_sin_01:0 "Temple of Sin"
+ building_type_jip_temple_of_sin_01_desc:0 "The Ehulhul, the House of Rejoicing, temple of Sin, Lord of the Moon, at Harran."
+ building_jip_temple_of_sin_01:0 "Temple of Sin"
+ building_jip_temple_of_sin_01_desc:0 "The Ehulhul stands again at Harran. Cedar beams hold its roof, a silver crescent crowns its gate, and at night the star-readers climb to its terrace to watch the Moon."
+ jip_temple_of_sin_enabled_trigger:0 "The holder is a Sabian or follows the old gods"
+ jip_unlock_mesopotamian_conversion_tt:0 "The old gods are honoured again at Harran: characters may now convert to $mesopotamian_pagan$"
+
+ # The temple completed (events/jip_sabian_events.txt)
+ jip_sabian.0001.t:0 "The House of Rejoicing"
+ jip_sabian.0001.desc:0 "The scaffolding has come down, and the Ehulhul stands again on its old foundations. The priests carry the silver crescent through the gate, and at nightfall the whole city climbs onto the roofs to watch the Moon rise over the temple.\n\nFor centuries the Sabians kept the Moon's rites in secret, calling themselves by a name the Qur'an protects. Now the temple is built. Your priests ask whether the old gods may be called by their own names again."
+ jip_sabian.0001.a:0 "Let the old gods be proclaimed."
+ jip_sabian.0001.b:0 "We remain Sabians. The temple serves the Moon all the same."
+ jip_sabian.0001.c:0 "The Lord of the Moon has his house again."

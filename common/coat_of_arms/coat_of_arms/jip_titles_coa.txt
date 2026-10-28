@@ -514,3 +514,27 @@ c_dembiya = {
 	}
 
 }
+
+# The Rish Amma (d_rish_amma), head of the Mandaeans: the drabsha (the Mandaean banner: a staff draped with white silk and
+# crowned with myrtle; tools/make_coa_emblem.py) planted in living water, on the blue of the world of light
+d_rish_amma = {
+	pattern = "pattern_solid.dds"
+	color1 = blue
+	colored_emblem = {
+		texture = "ce_jip_drabsha.dds"
+		color1 = white
+		color2 = yellow
+		color3 = green
+		instance = {
+			position = { 0.5 0.5 }
+			scale = { 0.85 0.85 }
+		}
+	}
+	colored_emblem = {
+		texture = "ce_waves_04.dds"
+		color1 = white
+		instance = {
+			position = { 0.5 0.96 }
+		}
+	}
+}

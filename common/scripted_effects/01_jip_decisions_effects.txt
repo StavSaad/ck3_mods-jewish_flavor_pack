@@ -504,6 +504,49 @@ jip_unlock_canaanite_conversion_effect = {
 	}
 }
 
+# Mesopotamianism: once the Temple of Sin stands at Harran (jip_gp_temple_of_sin)
+jip_unlock_mesopotamian_conversion_effect = {
+	if = {
+		limit = {
+			rite:assyrian_pagan = { can_convert_to_rite = no }
+		}
+		custom_tooltip = jip_unlock_mesopotamian_conversion_tt
+		hidden_effect = {
+			rite:assyrian_pagan = { set_can_convert_to_rite = yes }
+			rite:harranian_pagan = { set_can_convert_to_rite = yes }
+		}
+	}
+}
+
+# The old gods proclaimed (jip_sabian.0001): the ruler, their capital and Harran take the rite of their culture:
+# Assyrian and Nabati the Assyrian rite, everyone else (Arameans first) the Harranian rite of Sin
+jip_proclaim_old_gods_effect = {
+	if = {
+		limit = {
+			OR = {
+				culture = culture:assyrian
+				culture = culture:nabati
+			}
+		}
+		rite:assyrian_pagan = { save_scope_as = jip_old_gods_rite }
+	}
+	else = {
+		rite:harranian_pagan = { save_scope_as = jip_old_gods_rite }
+	}
+	set_character_rite = scope:jip_old_gods_rite
+	capital_county ?= {
+		set_county_rite = scope:jip_old_gods_rite
+	}
+	title:c_harran = {
+		if = {
+			limit = {
+				holder ?= { target_is_same_character_or_above = root }
+			}
+			set_county_rite = scope:jip_old_gods_rite
+		}
+	}
+}
+
 # Kohanism: once the Third Temple stands (jip_third_temple_on_action)
 jip_unlock_kohanism_conversion_effect = {
 	if = {
