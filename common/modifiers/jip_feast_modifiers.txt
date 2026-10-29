@@ -71,3 +71,16 @@ jip_dehwa_rabba_bad = {
 	icon = stress_negative
 	stress_gain_mult = 0.15
 }
+
+# Pesach (jip_feast.5005), one year: "Next year in Jerusalem", or "this year" for a host who holds the city
+jip_pesach_next_year_in_jerusalem = {
+	icon = piety_positive
+	monthly_piety_gain_mult = 0.15
+	stress_loss_mult = 0.1
+}
+jip_pesach_this_year_in_jerusalem = {
+	icon = prestige_positive
+	monthly_piety_gain_mult = 0.1
+	monthly_prestige_gain_mult = 0.15
+	legitimacy_gain_mult = 0.15
+}

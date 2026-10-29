@@ -32,6 +32,16 @@
 #  4004 Host: the year begins (summary)
 #  4010 Guest: farewell
 #  4101 Guest pulse: tales in the night
+# 5000s Pesach (every Jewish faith; 0.16 plan, section 1)
+#  5001 Host: Kiddush and the four cups
+#  5002 Host: the questions (the youngest child, scope:jip_seder_child, or the host)
+#  5003 Host: the afikoman ransomed (Haggadah faiths, with a child)
+#  5004 Host: Elijah's cup and the open door (Haggadah faiths)
+#  5006 Host: eaten in haste (Karaites, Samaritans, Beta Israel)
+#  5005 Host: "Next year in Jerusalem" (summary; the Exilarch's seder, the Korban Pesach, Gerizim)
+#  5010 Guest: farewell
+#  5020 The household seder (yearly in April, for Jewish playable characters who sat at no grand seder)
+#  5101 Guest pulse: Dayenu
 
 ##################################################
 # AKITU
@@ -1435,5 +1445,744 @@ jip_feast.4101 = {
 		trigger = { has_trait = impatient }
 		add_stress = minor_stress_gain
 		add_prestige = miniscule_prestige_gain
+	}
+}
+
+##################################################
+# PESACH
+##################################################
+
+# Kiddush and the four cups
+jip_feast.5001 = {
+	type = activity_event
+	title = jip_feast.5001.t
+	desc = {
+		desc = jip_feast.5001.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { jip_temple_stands_trigger = yes }
+				desc = jip_feast.5001.desc_temple
+			}
+			triggered_desc = {
+				trigger = { faith = faith:samaritan }
+				desc = jip_feast.5001.desc_samaritan
+			}
+			triggered_desc = {
+				trigger = { faith = faith:haymanot }
+				desc = jip_feast.5001.desc_haymanot
+			}
+			triggered_desc = {
+				trigger = { faith = faith:karaism }
+				desc = jip_feast.5001.desc_karaite
+			}
+			desc = jip_feast.5001.desc_haggadah
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = prayer
+	}
+
+	immediate = {
+		jip_feast_save_scopes_effect = yes
+		jip_pesach_find_child_effect = yes
+	}
+
+	# The cups, in their order
+	option = {
+		name = jip_feast.5001.a
+		add_piety = minor_piety_gain
+		add_stress = minor_stress_loss
+		if = {
+			limit = {
+				scope:activity = {
+					OR = {
+						has_activity_option = {
+							category = feast_option_wine
+							option = feast_wine_normal
+						}
+						has_activity_option = {
+							category = feast_option_wine
+							option = feast_wine_extensive
+						}
+					}
+				}
+			}
+			add_stress = minor_stress_loss
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# Watered wine and a clear head for the telling
+	option = {
+		name = jip_feast.5001.b
+		trigger = {
+			OR = {
+				has_trait = zealous
+				has_trait = temperate
+			}
+		}
+		add_piety = medium_piety_gain
+		ai_chance = {
+			base = 70
+		}
+	}
+
+	# A fifth cup, and a sixth
+	option = {
+		name = jip_feast.5001.c
+		trigger = {
+			OR = {
+				has_trait = drunkard
+				has_trait = gluttonous
+			}
+		}
+		add_stress = medium_stress_loss
+		add_prestige = minor_prestige_loss
+		ai_chance = {
+			base = 70
+		}
+	}
+
+	after = {
+		trigger_event = {
+			id = jip_feast.5002
+			days = 2
+		}
+	}
+}
+
+# The questions
+jip_feast.5002 = {
+	type = activity_event
+	title = jip_feast.5002.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					exists = scope:jip_seder_child
+					jip_pesach_haggadah_trigger = yes
+				}
+				desc = jip_feast.5002.desc_child_haggadah
+			}
+			triggered_desc = {
+				trigger = { exists = scope:jip_seder_child }
+				desc = jip_feast.5002.desc_child_torah
+			}
+			desc = jip_feast.5002.desc_alone
+		}
+		triggered_desc = {
+			trigger = { jip_is_exilarch_trigger = yes }
+			desc = jip_feast.5002.desc_exilarch
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+	right_portrait = {
+		trigger = { exists = scope:jip_seder_child }
+		character = scope:jip_seder_child
+		animation = interested
+	}
+
+	# "You shall tell your child on that day"
+	option = {
+		name = jip_feast.5002.a
+		trigger = { exists = scope:jip_seder_child }
+		add_piety = minor_piety_gain
+		scope:jip_seder_child = {
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 15
+			}
+			random = {
+				chance = 30
+				add_learning_skill = 1
+			}
+		}
+		ai_chance = {
+			base = 60
+		}
+	}
+
+	# Let the sages at the table expound it
+	option = {
+		name = jip_feast.5002.b
+		add_learning_lifestyle_xp = medium_lifestyle_xp
+		if = {
+			limit = { jip_is_exilarch_trigger = yes }
+			add_prestige = minor_prestige_gain
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 30
+				learning >= 12
+			}
+		}
+	}
+
+	# No child at the table: the host asks the questions
+	option = {
+		name = jip_feast.5002.c
+		trigger = { NOT = { exists = scope:jip_seder_child } }
+		add_piety = minor_piety_gain
+		add_learning_lifestyle_xp = minor_lifestyle_xp
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				jip_pesach_haggadah_trigger = yes
+				exists = scope:jip_seder_child
+			}
+			trigger_event = {
+				id = jip_feast.5003
+				days = 2
+			}
+		}
+		else_if = {
+			limit = { jip_pesach_haggadah_trigger = yes }
+			trigger_event = {
+				id = jip_feast.5004
+				days = 2
+			}
+		}
+		else = {
+			trigger_event = {
+				id = jip_feast.5006
+				days = 2
+			}
+		}
+	}
+}
+
+# The afikoman ransomed
+jip_feast.5003 = {
+	type = activity_event
+	title = jip_feast.5003.t
+	desc = jip_feast.5003.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		character = scope:jip_seder_child
+		animation = scheme
+	}
+
+	trigger = {
+		scope:jip_seder_child ?= { is_alive = yes }
+	}
+
+	# Pay the ransom
+	option = {
+		name = jip_feast.5003.a
+		pay_short_term_gold = {
+			target = scope:jip_seder_child
+			gold = tiny_gold_value
+		}
+		scope:jip_seder_child = {
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 20
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 30
+				has_trait = generous
+			}
+		}
+	}
+
+	# Haggle
+	option = {
+		name = jip_feast.5003.b
+		add_stewardship_lifestyle_xp = minor_lifestyle_xp
+		scope:jip_seder_child = {
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 10
+			}
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 40
+				has_trait = greedy
+			}
+		}
+	}
+
+	# Find it yourself
+	option = {
+		name = jip_feast.5003.c
+		random_list = {
+			50 = {
+				desc = jip_feast.5003.c_found
+				add_prestige = miniscule_prestige_gain
+			}
+			50 = {
+				desc = jip_feast.5003.c_not_found
+				add_stress = minor_stress_gain
+				scope:jip_seder_child = {
+					add_opinion = {
+						target = root
+						modifier = pleased_opinion
+						opinion = 10
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 30
+				has_trait = stubborn
+			}
+		}
+	}
+
+	after = {
+		trigger_event = {
+			id = jip_feast.5004
+			days = 2
+		}
+	}
+}
+
+# Elijah's cup and the open door
+jip_feast.5004 = {
+	type = activity_event
+	title = jip_feast.5004.t
+	desc = jip_feast.5004.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = admiration
+	}
+
+	# Open the door for Elijah
+	option = {
+		name = jip_feast.5004.a
+		add_piety = minor_piety_gain
+		random_list = {
+			85 = {
+				desc = jip_feast.5004.a_empty
+			}
+			15 = {
+				desc = jip_feast.5004.a_stranger
+				create_character = {
+					template = jip_jewish_scholar_courtier_template
+					culture = root.culture
+					faith = root.faith
+					rite = root.rite
+					employer = root
+					save_scope_as = jip_seder_guest
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = jip_feast.5004.stranger_toast
+					left_icon = scope:jip_seder_guest
+					custom_tooltip = jip_feast.5004.stranger_tt
+				}
+			}
+		}
+		ai_chance = {
+			base = 80
+		}
+	}
+
+	# Open it a crack, and keep a hand on the bolt
+	option = {
+		name = jip_feast.5004.b
+		trigger = { has_trait = paranoid }
+		add_stress = minor_stress_loss
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# Eaten in haste (the Karaites, the Samaritans, the Beta Israel)
+jip_feast.5006 = {
+	type = activity_event
+	title = jip_feast.5006.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { jip_pesach_paschal_lamb_trigger = yes }
+				desc = jip_feast.5006.desc_lamb
+			}
+			desc = jip_feast.5006.desc_karaite
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+
+	# By the letter of the Torah
+	option = {
+		name = jip_feast.5006.a
+		add_piety = medium_piety_gain
+		stress_impact = {
+			lazy = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 40
+				has_trait = zealous
+			}
+		}
+	}
+
+	# The meaning, not the letter
+	option = {
+		name = jip_feast.5006.b
+		add_piety = minor_piety_gain
+		add_stress = minor_stress_loss
+		ai_chance = {
+			base = 40
+		}
+	}
+}
+
+# "Next year in Jerusalem" (host summary, toast phase)
+jip_feast.5005 = {
+	type = activity_event
+	title = jip_feast.5005.t
+	desc = {
+		desc = jip_feast.5005.desc
+		triggered_desc = {
+			trigger = { jip_temple_stands_trigger = yes }
+			desc = jip_feast.5005.desc_temple
+		}
+		triggered_desc = {
+			trigger = {
+				faith = faith:samaritan
+				jip_feast_at_holy_site_trigger = yes
+			}
+			desc = jip_feast.5005.desc_gerizim
+		}
+		triggered_desc = {
+			trigger = { jip_is_exilarch_trigger = yes }
+			desc = jip_feast.5005.desc_exilarch
+		}
+		first_valid = {
+			triggered_desc = {
+				trigger = { jip_pesach_host_holds_jerusalem_trigger = yes }
+				desc = jip_feast.5005.desc_this_year
+			}
+			desc = jip_feast.5005.desc_next_year
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+
+	option = {
+		name = {
+			trigger = { jip_pesach_host_holds_jerusalem_trigger = yes }
+			text = jip_feast.5005.a_this_year
+		}
+		name = {
+			trigger = { NOT = { jip_pesach_host_holds_jerusalem_trigger = yes } }
+			text = jip_feast.5005.a
+		}
+		add_piety = medium_piety_gain
+		if = {
+			limit = { jip_pesach_host_holds_jerusalem_trigger = yes }
+			add_prestige = medium_prestige_gain
+			add_legitimacy = minor_legitimacy_gain
+			add_character_modifier = {
+				modifier = jip_pesach_this_year_in_jerusalem
+				years = 1
+			}
+		}
+		else = {
+			add_character_modifier = {
+				modifier = jip_pesach_next_year_in_jerusalem
+				years = 1
+			}
+		}
+		# The Korban Pesach at the Temple
+		if = {
+			limit = { jip_temple_stands_trigger = yes }
+			add_piety = medium_piety_gain
+		}
+		# The Samaritans' lamb on Mount Gerizim
+		if = {
+			limit = {
+				faith = faith:samaritan
+				jip_feast_at_holy_site_trigger = yes
+			}
+			add_piety = medium_piety_gain
+		}
+		# The Exilarch's seder, with the heads of the academies
+		if = {
+			limit = { jip_is_exilarch_trigger = yes }
+			add_legitimacy = medium_legitimacy_gain
+		}
+	}
+}
+
+# Guest farewell
+jip_feast.5010 = {
+	type = activity_event
+	title = jip_feast.5010.t
+	desc = jip_feast.5010.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = admiration
+	}
+	right_portrait = {
+		character = scope:host
+		animation = personality_honorable
+	}
+
+	trigger = {
+		is_alive = yes
+		is_imprisoned = no
+	}
+
+	option = {
+		name = jip_feast.5010.a
+		add_opinion = {
+			target = scope:host
+			modifier = jip_festival_guest_opinion
+		}
+		if = {
+			limit = { religion = scope:host.religion }
+			add_piety = minor_piety_gain
+		}
+	}
+}
+
+# The household seder
+jip_feast.5020 = {
+	type = character_event
+	title = jip_feast.5020.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { jip_pesach_paschal_lamb_trigger = yes }
+				desc = jip_feast.5020.desc_lamb
+			}
+			triggered_desc = {
+				trigger = { faith = faith:karaism }
+				desc = jip_feast.5020.desc_karaite
+			}
+			desc = jip_feast.5020.desc
+		}
+		first_valid = {
+			triggered_desc = {
+				trigger = { exists = scope:jip_seder_child }
+				desc = jip_feast.5020.desc_child
+			}
+			desc = jip_feast.5020.desc_no_child
+		}
+	}
+	theme = family
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = bp1_relaxing_room_mena }
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		trigger = { exists = scope:jip_seder_child }
+		character = scope:jip_seder_child
+		animation = interested
+	}
+
+	trigger = {
+		is_alive = yes
+		religion = religion:judaism_religion
+		is_imprisoned = no
+		NOT = { has_character_flag = jip_kept_pesach }
+	}
+
+	immediate = {
+		jip_pesach_find_child_effect = yes
+	}
+
+	# Gather the household
+	option = {
+		name = jip_feast.5020.a
+		add_piety = minor_piety_gain
+		add_stress = minor_stress_loss
+		every_close_family_member = {
+			limit = {
+				is_alive = yes
+				is_courtier_of = root
+			}
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 10
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# Let the youngest ask
+	option = {
+		name = jip_feast.5020.b
+		trigger = { exists = scope:jip_seder_child }
+		add_piety = minor_piety_gain
+		scope:jip_seder_child = {
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 15
+			}
+			random = {
+				chance = 30
+				add_learning_skill = 1
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# A quiet seder, and early to bed
+	option = {
+		name = jip_feast.5020.c
+		trigger = {
+			OR = {
+				has_trait = shy
+				has_trait = lazy
+				has_trait = cynical
+			}
+		}
+		add_stress = medium_stress_loss
+		ai_chance = {
+			base = 40
+		}
+	}
+}
+
+# Guest pulse: Dayenu
+jip_feast.5101 = {
+	type = activity_event
+	title = jip_feast.5101.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { religion = religion:judaism_religion }
+				desc = jip_feast.5101.desc
+			}
+			desc = jip_feast.5101.desc_gentile
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	trigger = {
+		exists = scope:activity
+		jip_is_pesach = yes
+		NOT = { this = scope:activity.activity_host }
+		NOT = { has_character_flag = jip_feast_pulse_seen }
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = jip_feast_pulse_seen
+			months = 2
+		}
+	}
+
+	# Sing along
+	option = {
+		name = jip_feast.5101.a
+		trigger = { religion = religion:judaism_religion }
+		add_stress = minor_stress_loss
+		add_piety = miniscule_piety_gain
+	}
+
+	# A foreign guest listens
+	option = {
+		name = jip_feast.5101.b
+		trigger = { NOT = { religion = religion:judaism_religion } }
+		add_learning_lifestyle_xp = minor_lifestyle_xp
 	}
 }

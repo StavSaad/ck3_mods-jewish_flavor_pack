@@ -42,12 +42,22 @@ jip_is_dehwa_rabba = {
 	}
 }
 
+jip_is_pesach = {
+	scope:activity = {
+		has_activity_option = {
+			category = special_type
+			option = jip_feast_type_pesach
+		}
+	}
+}
+
 jip_is_festival = {
 	OR = {
 		jip_is_akitu = yes
 		jip_is_nisan = yes
 		jip_is_parwanaya = yes
 		jip_is_dehwa_rabba = yes
+		jip_is_pesach = yes
 	}
 }
 
@@ -64,4 +74,42 @@ jip_akitu_keeper_trigger = {
 	is_landed = yes
 	highest_held_title_tier >= tier_duchy
 	faith = faith:mesopotamian_pagan
+}
+
+# Pesach (0.16 plan, section 1). Character scope: keeps the seder of the rabbinic Haggadah (the four questions, the
+# afikoman, Elijah's cup). The Karaites read the Exodus from the Torah alone, and the Samaritans and the Beta Israel
+# still sacrifice the paschal lamb
+jip_pesach_haggadah_trigger = {
+	religion = religion:judaism_religion
+	NOR = {
+		faith = faith:karaism
+		faith = faith:samaritan
+		faith = faith:haymanot
+	}
+}
+
+# Character scope: still sacrifices the paschal lamb (the Samaritans on Mount Gerizim, the Beta Israel)
+jip_pesach_paschal_lamb_trigger = {
+	OR = {
+		faith = faith:samaritan
+		faith = faith:haymanot
+	}
+}
+
+# The Temple in Jerusalem stands again (temple_in_jerusalem_01, rebuild_the_third_temple_effect): the Korban Pesach
+jip_temple_stands_trigger = {
+	title:c_jerusalem.title_province = { has_building = temple_in_jerusalem_01 }
+}
+
+# scope:host holds Jerusalem, directly or through a vassal: "this year in Jerusalem"
+jip_pesach_host_holds_jerusalem_trigger = {
+	title:c_jerusalem.holder ?= { target_is_same_character_or_above = scope:host }
+}
+
+# Character scope: an Exilarch of either line
+jip_is_exilarch_trigger = {
+	OR = {
+		has_title = title:d_exilarchate
+		has_title = title:d_karaite_exilarchate
+	}
 }

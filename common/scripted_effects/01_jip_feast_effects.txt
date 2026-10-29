@@ -55,6 +55,17 @@ jip_feast_meal_phase_effect = {
 			days = 2
 		}
 	}
+	else_if = {
+		limit = { jip_is_pesach = yes }
+		set_variable = {
+			name = jip_recent_pesach_feast_var
+			years = 5
+		}
+		trigger_event = {
+			id = jip_feast.5001
+			days = 2
+		}
+	}
 }
 
 # Called by the feast override in the toast phase, for every participant: the host's summary, the guests' farewell
@@ -97,6 +108,21 @@ jip_feast_toast_phase_effect = {
 		}
 		else = {
 			trigger_event = jip_feast.4010
+		}
+	}
+	else_if = {
+		limit = { jip_is_pesach = yes }
+		# Whoever sat at the grand seder skips this year's household seder (jip_feast.5020)
+		add_character_flag = {
+			flag = jip_kept_pesach
+			months = 10
+		}
+		if = {
+			limit = { this = scope:host }
+			trigger_event = jip_feast.5005
+		}
+		else = {
+			trigger_event = jip_feast.5010
 		}
 	}
 }
@@ -169,4 +195,22 @@ jip_akitu_neglect_effect = {
 jip_akitu_clear_neglect_effect = {
 	remove_character_modifier = jip_akitu_neglected_1
 	remove_character_modifier = jip_akitu_neglected_2
+}
+
+# Pesach: the youngest child of root at root's court, aged 3 to 15, as scope:jip_seder_child, who asks the questions
+# and steals the afikoman (jip_feast.5002, .5003, .5020)
+jip_pesach_find_child_effect = {
+	ordered_child = {
+		limit = {
+			is_alive = yes
+			age >= 3
+			age <= 15
+			is_courtier_of = root
+		}
+		order_by = {
+			value = 100
+			subtract = age
+		}
+		save_scope_as = jip_seder_child
+	}
 }

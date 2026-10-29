@@ -1,6 +1,7 @@
 ﻿yearly_playable_pulse = {
 	on_actions = {
 		jip_akitu_neglect_on_action
+		jip_household_seder_on_action
 	}
 }
 
@@ -18,5 +19,20 @@ feast_default_event_selection = {
 		100 = jip_feast.2101 # Nisan: an astrologer casts your horoscope
 		100 = jip_feast.3101 # Parwanaya: you are invited into the river
 		100 = jip_feast.4101 # Dehwa Rabba: tales in the night of seclusion
+		100 = jip_feast.5101 # Pesach: Dayenu
+	}
+}
+
+# Every Jewish playable character keeps a household seder each Pesach (jip_feast.5020), sent to land in April; it is
+# skipped by whoever sat at a grand seder that spring (jip_kept_pesach)
+jip_household_seder_on_action = {
+	trigger = {
+		religion = religion:judaism_religion
+	}
+	effect = {
+		trigger_event = {
+			id = jip_feast.5020
+			days = { jip_days_to_pesach_value jip_days_to_pesach_late_value }
+		}
 	}
 }

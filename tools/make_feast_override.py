@@ -7,7 +7,7 @@
 # - the meal phase calls jip_feast_meal_phase_effect for the host and the toast phase jip_feast_toast_phase_effect for
 #   everyone (common/scripted_effects/01_jip_feast_effects.txt), which start each variant's events
 # Each variant is shown only to its faith and in its season (the 0.15 plan's visibility rule); is_valid holds only its
-# cooldown. Add 0.16's Jewish feasts to VARIANTS and BACKGROUNDS. Their art for the planning window is made by
+# cooldown. Pesach is the first of 0.16's Jewish feasts; add the others to VARIANTS and BACKGROUNDS. Their art for the planning window is made by
 # make_feast_type_art.py. Rerun after every vanilla update.
 import os
 
@@ -34,6 +34,10 @@ VARIANTS = {
     # The Mandaean New Year and its night of seclusion
     'jip_feast_type_dehwa_rabba': (1, '''rite = rite:mandeaism
 					current_month = jip_dehwa_rabba_month_value''', 'jip_recent_dehwa_rabba_feast_var'),
+    # Pesach, the seder of 15 Nisan (0.16 plan, section 1), for every Jewish faith
+    'jip_feast_type_pesach': (1.5, '''religion = religion:judaism_religion
+					current_month >= 3
+					current_month <= 4''', 'jip_recent_pesach_feast_var'),
 }
 
 
@@ -147,6 +151,8 @@ BACKGROUNDS = [  # (trigger, texture, environment, ambience)
     ('jip_is_parwanaya = yes', 'bp3_riverside', 'environment_bp3_riverside',
      'event:/DLC/EP2/SFX/Events/Grand_Activities/Hunts/ep2_event_grand_hunt_waterbank'),
     ('jip_is_dehwa_rabba = yes', 'ep2_feast_mena', 'environment_mena_feast', 'event:/SFX/Events/Backgrounds/feasthall'),
+    ('jip_is_pesach = yes', 'bp1_relaxing_room_mena', 'environment_event_bp1_relaxing_room_mena',
+     'event:/SFX/Events/Backgrounds/feasthall'),
 ]
 old = '''	background = {
 		trigger = {
