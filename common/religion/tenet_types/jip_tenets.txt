@@ -46,7 +46,7 @@ tenet_kehunah = {
 }
 
 # Vicegerent of Ashur: the king rules as the god's steward and high priest (the Assyrian ishshiak Ashur); the
-# kingship is the god's gift, renewed each Akitu. Assyrian rite of Mesopotamianism
+# kingship is the god's gift, renewed each Akitu. Ashurism, the main rite of Mesopotamianism
 tenet_jip_vicegerent_of_ashur = {
 	icon = tenet_jip_vicegerent_of_ashur # The king's crown, with the rod and ring the gods hand him
 	piety_cost = {

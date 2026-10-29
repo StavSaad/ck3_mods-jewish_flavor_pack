@@ -24,7 +24,7 @@ VARIANTS = {
     # The Harranian New Year in Nisan: the Moon's fast ends, Sin and the seven planets get their sacrifices
     'jip_feast_type_nisan': (1.5, '''OR = {
 						rite = rite:sabianism
-						rite = rite:harranian_pagan
+						rite = rite:sinism
 					}
 					current_month >= 3
 					current_month <= 4''', 'jip_recent_nisan_feast_var'),

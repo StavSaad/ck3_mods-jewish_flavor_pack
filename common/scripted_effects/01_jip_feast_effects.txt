@@ -129,7 +129,7 @@ jip_feast_omen_modifier_effect = {
 # Akitu neglect (yearly, root = a playable character). Babylon's priests blamed Nabonidus for letting the festival lapse.
 # A Mesopotamian duke or above who hasn't held Akitu loses legitimacy and piety from the 8th year (the feast cooldown is
 # 5), more from the 12th. The count starts when the ruler first comes under the rule. Holding Akitu (jip_feast.1004) or,
-# for the Harranian rite, the Feast of Nisan (jip_feast.2004) restarts it
+# for Sinism, the Feast of Nisan (jip_feast.2004) restarts it
 jip_akitu_neglect_effect = {
 	if = {
 		limit = { jip_akitu_keeper_trigger = yes }

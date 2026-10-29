@@ -1,0 +1,98 @@
+﻿# The Sabian Court Astrologer (jip_sabian_astrologer_court_position, events/jip_astrologer_events.txt)
+
+# Character scope (the newborn): their ruling star for life, the one scope:jip_star names (jip_astrologer.0002)
+jip_astrologer_birth_star_effect = {
+	if = {
+		limit = { scope:jip_star = flag:sun }
+		add_character_modifier = jip_star_sun
+	}
+	else_if = {
+		limit = { scope:jip_star = flag:moon }
+		add_character_modifier = jip_star_moon
+	}
+	else_if = {
+		limit = { scope:jip_star = flag:mercury }
+		add_character_modifier = jip_star_mercury
+	}
+	else_if = {
+		limit = { scope:jip_star = flag:venus }
+		add_character_modifier = jip_star_venus
+	}
+	else_if = {
+		limit = { scope:jip_star = flag:mars }
+		add_character_modifier = jip_star_mars
+	}
+	else_if = {
+		limit = { scope:jip_star = flag:jupiter }
+		add_character_modifier = jip_star_jupiter
+	}
+	else = {
+		add_character_modifier = jip_star_saturn
+	}
+}
+
+# Character scope (the employer): take $CANDIDATE$ into the court as Sabian Court Astrologer for $COST$ gold, replacing
+# the current one (jip_astrologer.0010; as vanilla's mpo_decisions_events.0070)
+jip_hire_sabian_astrologer_effect = {
+	pay_short_term_gold = {
+		target = $CANDIDATE$
+		gold = $COST$
+	}
+	add_courtier = $CANDIDATE$
+	if = {
+		limit = {
+			can_employ_court_position_type = jip_sabian_astrologer_court_position
+		}
+		appoint_court_position = {
+			recipient = $CANDIDATE$
+			court_position = jip_sabian_astrologer_court_position
+		}
+	}
+	else_if = {
+		limit = {
+			employs_court_position = jip_sabian_astrologer_court_position
+		}
+		random_court_position_holder = {
+			type = jip_sabian_astrologer_court_position
+			save_scope_as = jip_current_astrologer
+		}
+		replace_court_position = {
+			recipient = $CANDIDATE$
+			holder = scope:jip_current_astrologer
+			court_position = jip_sabian_astrologer_court_position
+		}
+	}
+}
+
+# Character scope (the employer): a Sabian of Harran, created at the capital as a candidate for the post
+# (jip_astrologer.0010), saved as $SCOPE$: a learning education from $MIN_EDUCATION$ to $MAX_EDUCATION$, learning from
+# $MIN_SKILL$ to $MAX_SKILL$ (template skill values)
+jip_create_sabian_astrologer_candidate_effect = {
+	create_character = {
+		location = root.capital_province
+		gender_female_chance = 10
+		culture = culture:syriac
+		faith = faith:mandaean_faith
+		dynasty = none
+		random_traits = yes
+		random_traits_list = {
+			count = 1
+			education_learning_$MIN_EDUCATION$ = {}
+			education_learning_$MAX_EDUCATION$ = {}
+		}
+		age = { 25 60 }
+		learning = {
+			$MIN_SKILL$
+			$MAX_SKILL$
+		}
+		save_scope_as = $SCOPE$
+	}
+	scope:$SCOPE$ = {
+		set_character_rite = rite:sabianism
+		random_list = {
+			60 = {}
+			20 = { add_trait = erudite }
+			20 = { add_trait = lifestyle_mystic }
+		}
+	}
+}

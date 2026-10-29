@@ -3434,7 +3434,7 @@ activity_feast = {
 				is_shown = {
 					OR = {
 						rite = rite:sabianism
-						rite = rite:harranian_pagan
+						rite = rite:sinism
 					}
 					current_month >= 3
 					current_month <= 4

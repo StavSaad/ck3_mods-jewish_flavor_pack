@@ -1,0 +1,705 @@
+﻿namespace = jip_astrologer
+
+# The Sabian Court Astrologer (jip_sabian_astrologer_court_position; 0.15 plan, section 13). Root = the employer.
+#  0001 The stars of the campaign (on_war_started, both war leaders)
+#  0002 A newborn's nativity (on_birth_child, the parent): the child's ruling star, one of the seven planets
+#  0003 The couple's stars (on_marriage, a spouse or a spouse's parent)
+#  0004 A zealot denounces the astrologer (yearly, Muslim employers)
+#  0010 A Sabian of Harran comes to court (the Recruit for a Court Position decision's option)
+# Readings succeed with jip_astrologer_reading_chance_value (30 plus 12 per aptitude level).
+
+# The stars of the campaign
+jip_astrologer.0001 = {
+	type = character_event
+	title = jip_astrologer.0001.t
+	desc = {
+		desc = jip_astrologer.0001.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { exists = scope:jip_auspicious }
+				desc = jip_astrologer.0001.desc_auspicious
+			}
+			desc = jip_astrologer.0001.desc_ill
+		}
+	}
+	theme = war
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = fp3_courtyard_night }
+	left_portrait = {
+		character = scope:jip_astrologer
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = root
+		triggered_animation = {
+			trigger = { exists = scope:jip_auspicious }
+			animation = happiness
+		}
+		animation = worry
+	}
+
+	trigger = {
+		employs_court_position = jip_sabian_astrologer_court_position
+		is_at_war = yes
+	}
+
+	immediate = {
+		random_court_position_holder = {
+			type = jip_sabian_astrologer_court_position
+			save_scope_as = jip_astrologer
+		}
+		random = {
+			chance = {
+				value = jip_astrologer_reading_chance_value
+			}
+			save_scope_value_as = {
+				name = jip_auspicious
+				value = yes
+			}
+		}
+	}
+
+	# A fortunate star
+	option = {
+		name = jip_astrologer.0001.a
+		trigger = { exists = scope:jip_auspicious }
+		add_character_modifier = {
+			modifier = jip_horoscope_war_auspicious
+			years = 2
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	# An ill omen: pay for a better hour to begin the campaign
+	option = {
+		name = jip_astrologer.0001.b
+		trigger = { NOT = { exists = scope:jip_auspicious } }
+		pay_short_term_gold = {
+			target = scope:jip_astrologer
+			gold = minor_gold_value
+		}
+		custom_tooltip = jip_astrologer.0001.b.tt
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 25
+				has_trait = paranoid
+			}
+			modifier = {
+				factor = 0
+				short_term_gold < minor_gold_value
+			}
+		}
+	}
+
+	# An ill omen: march anyway, and let the men hear of it
+	option = {
+		name = jip_astrologer.0001.c
+		trigger = { NOT = { exists = scope:jip_auspicious } }
+		add_character_modifier = {
+			modifier = jip_horoscope_war_ill
+			years = 2
+		}
+		stress_impact = {
+			craven = minor_stress_impact_gain
+			paranoid = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 25
+			modifier = {
+				add = 50
+				OR = {
+					has_trait = brave
+					has_trait = arrogant
+				}
+			}
+		}
+	}
+}
+
+# A newborn's nativity
+# scope:jip_newborn = the child
+jip_astrologer.0002 = {
+	type = character_event
+	title = jip_astrologer.0002.t
+	desc = {
+		desc = jip_astrologer.0002.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:jip_star = flag:sun }
+				desc = jip_astrologer.0002.desc_sun
+			}
+			triggered_desc = {
+				trigger = { scope:jip_star = flag:moon }
+				desc = jip_astrologer.0002.desc_moon
+			}
+			triggered_desc = {
+				trigger = { scope:jip_star = flag:mercury }
+				desc = jip_astrologer.0002.desc_mercury
+			}
+			triggered_desc = {
+				trigger = { scope:jip_star = flag:venus }
+				desc = jip_astrologer.0002.desc_venus
+			}
+			triggered_desc = {
+				trigger = { scope:jip_star = flag:mars }
+				desc = jip_astrologer.0002.desc_mars
+			}
+			triggered_desc = {
+				trigger = { scope:jip_star = flag:jupiter }
+				desc = jip_astrologer.0002.desc_jupiter
+			}
+			desc = jip_astrologer.0002.desc_saturn
+		}
+	}
+	theme = learning
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = bedchamber }
+	left_portrait = {
+		character = scope:jip_astrologer
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:jip_newborn
+	}
+
+	trigger = {
+		employs_court_position = jip_sabian_astrologer_court_position
+		scope:jip_newborn ?= { is_alive = yes }
+	}
+
+	immediate = {
+		random_court_position_holder = {
+			type = jip_sabian_astrologer_court_position
+			save_scope_as = jip_astrologer
+		}
+		random_list = {
+			15 = {
+				save_scope_value_as = {
+					name = jip_star
+					value = flag:sun
+				}
+			}
+			15 = {
+				save_scope_value_as = {
+					name = jip_star
+					value = flag:moon
+				}
+			}
+			15 = {
+				save_scope_value_as = {
+					name = jip_star
+					value = flag:mercury
+				}
+			}
+			15 = {
+				save_scope_value_as = {
+					name = jip_star
+					value = flag:venus
+				}
+			}
+			15 = {
+				save_scope_value_as = {
+					name = jip_star
+					value = flag:mars
+				}
+			}
+			15 = {
+				save_scope_value_as = {
+					name = jip_star
+					value = flag:jupiter
+				}
+			}
+			10 = {
+				save_scope_value_as = {
+					name = jip_star
+					value = flag:saturn
+				}
+			}
+		}
+	}
+
+	# So it is written
+	option = {
+		name = jip_astrologer.0002.a
+		scope:jip_newborn = {
+			jip_astrologer_birth_star_effect = yes
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# Saturn: have the chart cast again at a kinder hour
+	option = {
+		name = jip_astrologer.0002.b
+		trigger = { scope:jip_star = flag:saturn }
+		pay_short_term_gold = {
+			target = scope:jip_astrologer
+			gold = minor_gold_value
+		}
+		random_list = {
+			0 = {
+				modifier = {
+					add = jip_astrologer_reading_chance_value
+				}
+				desc = jip_astrologer.0002.b.success
+				scope:jip_newborn = {
+					add_character_modifier = jip_star_jupiter
+				}
+			}
+			0 = {
+				modifier = {
+					add = {
+						value = 100
+						subtract = jip_astrologer_reading_chance_value
+					}
+				}
+				desc = jip_astrologer.0002.b.failure
+				scope:jip_newborn = {
+					add_character_modifier = jip_star_saturn
+				}
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				short_term_gold < minor_gold_value
+			}
+		}
+	}
+}
+
+# The couple's stars
+# scope:jip_bride_a, scope:jip_bride_b = the spouses
+jip_astrologer.0003 = {
+	type = character_event
+	title = jip_astrologer.0003.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					OR = {
+						this = scope:jip_bride_a
+						this = scope:jip_bride_b
+					}
+				}
+				desc = jip_astrologer.0003.desc_own
+			}
+			desc = jip_astrologer.0003.desc_family
+		}
+		first_valid = {
+			triggered_desc = {
+				trigger = { exists = scope:jip_auspicious }
+				desc = jip_astrologer.0003.desc_auspicious
+			}
+			desc = jip_astrologer.0003.desc_ill
+		}
+	}
+	theme = marriage
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = fp3_courtyard_night }
+	left_portrait = {
+		character = scope:jip_astrologer
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:jip_bride_a
+		triggered_animation = {
+			trigger = { exists = scope:jip_auspicious }
+			animation = love
+		}
+		animation = worry
+	}
+	lower_right_portrait = scope:jip_bride_b
+
+	trigger = {
+		employs_court_position = jip_sabian_astrologer_court_position
+		scope:jip_bride_a ?= {
+			is_alive = yes
+			is_married = yes
+		}
+		scope:jip_bride_b ?= { is_alive = yes }
+	}
+
+	immediate = {
+		random_court_position_holder = {
+			type = jip_sabian_astrologer_court_position
+			save_scope_as = jip_astrologer
+		}
+		random = {
+			chance = {
+				value = jip_astrologer_reading_chance_value
+			}
+			save_scope_value_as = {
+				name = jip_auspicious
+				value = yes
+			}
+		}
+	}
+
+	# Well matched
+	option = {
+		name = jip_astrologer.0003.a
+		trigger = { exists = scope:jip_auspicious }
+		scope:jip_bride_a = {
+			add_character_modifier = {
+				modifier = jip_horoscope_wedding_auspicious
+				years = 10
+			}
+		}
+		scope:jip_bride_b = {
+			add_character_modifier = {
+				modifier = jip_horoscope_wedding_auspicious
+				years = 10
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	# At odds: offerings to turn the stars
+	option = {
+		name = jip_astrologer.0003.b
+		trigger = { NOT = { exists = scope:jip_auspicious } }
+		pay_short_term_gold = {
+			target = scope:jip_astrologer
+			gold = minor_gold_value
+		}
+		custom_tooltip = jip_astrologer.0003.b.tt
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				short_term_gold < minor_gold_value
+			}
+		}
+	}
+
+	# At odds: let it be
+	option = {
+		name = jip_astrologer.0003.c
+		trigger = { NOT = { exists = scope:jip_auspicious } }
+		scope:jip_bride_a = {
+			add_character_modifier = {
+				modifier = jip_horoscope_wedding_ill
+				years = 5
+			}
+		}
+		scope:jip_bride_b = {
+			add_character_modifier = {
+				modifier = jip_horoscope_wedding_ill
+				years = 5
+			}
+		}
+		ai_chance = {
+			base = 25
+			modifier = {
+				add = 25
+				has_trait = greedy
+			}
+		}
+	}
+}
+
+# A zealot denounces the astrologer
+jip_astrologer.0004 = {
+	type = character_event
+	title = jip_astrologer.0004.t
+	desc = jip_astrologer.0004.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = throne_room }
+	left_portrait = {
+		character = scope:jip_accuser
+		animation = personality_zealous
+	}
+	right_portrait = {
+		character = scope:jip_astrologer
+		animation = worry
+	}
+
+	trigger = {
+		employs_court_position = jip_sabian_astrologer_court_position
+		OR = {
+			any_vassal = {
+				has_trait = zealous
+				faith = root.faith
+			}
+			any_courtier = {
+				has_trait = zealous
+				faith = root.faith
+				is_adult = yes
+			}
+		}
+	}
+
+	immediate = {
+		random_court_position_holder = {
+			type = jip_sabian_astrologer_court_position
+			save_scope_as = jip_astrologer
+		}
+		random_vassal = {
+			limit = {
+				has_trait = zealous
+				faith = root.faith
+			}
+			save_scope_as = jip_accuser
+		}
+		if = {
+			limit = { NOT = { exists = scope:jip_accuser } }
+			random_courtier = {
+				limit = {
+					has_trait = zealous
+					faith = root.faith
+					is_adult = yes
+				}
+				save_scope_as = jip_accuser
+			}
+		}
+	}
+
+	# Stand by the astrologer: the stars are God's own signs
+	option = {
+		name = jip_astrologer.0004.a
+		add_piety = {
+			value = minor_piety_value
+			multiply = -1
+		}
+		scope:jip_accuser = {
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -15
+			}
+		}
+		scope:jip_astrologer = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 25
+			}
+		}
+		stress_impact = {
+			zealous = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 30
+				has_trait = cynical
+			}
+			modifier = {
+				add = -30
+				has_trait = zealous
+			}
+		}
+	}
+
+	# Have the astrologer cast the accuser's own horoscope
+	option = {
+		name = jip_astrologer.0004.b
+		random_list = {
+			0 = {
+				modifier = {
+					add = jip_astrologer_reading_chance_value
+				}
+				desc = jip_astrologer.0004.b.success
+				scope:jip_accuser = {
+					add_opinion = {
+						target = root
+						modifier = pleased_opinion
+						opinion = 15
+					}
+				}
+			}
+			0 = {
+				modifier = {
+					add = {
+						value = 100
+						subtract = jip_astrologer_reading_chance_value
+					}
+				}
+				desc = jip_astrologer.0004.b.failure
+				scope:jip_accuser = {
+					add_opinion = {
+						target = root
+						modifier = angry_opinion
+						opinion = -25
+					}
+				}
+				add_piety = {
+					value = minor_piety_value
+					multiply = -1
+				}
+			}
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 20
+				has_trait = deceitful
+			}
+		}
+	}
+
+	# Dismiss the astrologer
+	option = {
+		name = jip_astrologer.0004.c
+		revoke_court_position = {
+			recipient = scope:jip_astrologer
+			court_position = jip_sabian_astrologer_court_position
+		}
+		scope:jip_astrologer = {
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -30
+			}
+		}
+		add_piety = minor_piety_value
+		scope:jip_accuser = {
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 15
+			}
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 40
+				has_trait = zealous
+			}
+		}
+	}
+}
+
+# A Sabian of Harran comes to court
+jip_astrologer.0010 = {
+	type = character_event
+	title = jip_astrologer.0010.t
+	desc = jip_astrologer.0010.desc
+	theme = learning
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = fp3_courtyard_night }
+	left_portrait = {
+		character = scope:jip_great_astrologer
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:jip_good_astrologer
+		animation = personality_honorable
+	}
+
+	trigger = {
+		exists = capital_province
+	}
+
+	immediate = {
+		jip_create_sabian_astrologer_candidate_effect = {
+			SCOPE = jip_good_astrologer
+			MIN_EDUCATION = 1
+			MAX_EDUCATION = 2
+			MIN_SKILL = min_template_medium_skill
+			MAX_SKILL = max_template_decent_skill
+		}
+		jip_create_sabian_astrologer_candidate_effect = {
+			SCOPE = jip_great_astrologer
+			MIN_EDUCATION = 3
+			MAX_EDUCATION = 4
+			MIN_SKILL = min_template_high_skill
+			MAX_SKILL = max_template_high_skill
+		}
+	}
+
+	# The renowned astronomer
+	option = {
+		name = jip_astrologer.0010.a
+		jip_hire_sabian_astrologer_effect = {
+			CANDIDATE = scope:jip_great_astrologer
+			COST = high_skill_court_astrologer_cost
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				short_term_gold < high_skill_court_astrologer_cost
+			}
+		}
+	}
+
+	# The young star-reader
+	option = {
+		name = jip_astrologer.0010.b
+		jip_hire_sabian_astrologer_effect = {
+			CANDIDATE = scope:jip_good_astrologer
+			COST = low_skill_court_astrologer_cost
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# Neither
+	option = {
+		name = jip_astrologer.0010.c
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = scope:jip_good_astrologer
+				NOT = {
+					scope:jip_good_astrologer = { is_courtier_of = root }
+				}
+			}
+			scope:jip_good_astrologer = {
+				silent_disappearance_effect = yes
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:jip_great_astrologer
+				NOT = {
+					scope:jip_great_astrologer = { is_courtier_of = root }
+				}
+			}
+			scope:jip_great_astrologer = {
+				silent_disappearance_effect = yes
+			}
+		}
+	}
+}

@@ -33,7 +33,7 @@ carthage_pagan = {
 }
 
 # Mesopotamianism (mesopotamian_pagan). The faith's localization holds the Assyrian gods
-assyrian_pagan = {
+ashurism = {
 	faith = mesopotamian_pagan
 
 	color = { 0.2 0.35 0.7 }
@@ -52,7 +52,7 @@ assyrian_pagan = {
 
 # The cults of the Aramean cities: Sin of Harran, Hadad, Atargatis of Manbij, Bel of Palmyra. Astrology and
 # Esotericism are the Sabian rite's tenets too, the bridge the restoration crosses
-harranian_pagan = {
+sinism = {
 	faith = mesopotamian_pagan
 
 	color = { 0.5 0.55 0.75 }
@@ -70,90 +70,90 @@ harranian_pagan = {
 
 	localization = {
 		#HighGod
-		HighGodName = harranian_pagan_high_god_name
-		HighGodName2 = harranian_pagan_high_god_name_2
-		HighGodNamePossessive = harranian_pagan_high_god_name_possessive
+		HighGodName = sinism_high_god_name
+		HighGodName2 = sinism_high_god_name_2
+		HighGodNamePossessive = sinism_high_god_name_possessive
 		HighGodNameSheHe = CHARACTER_SHEHE_HE
 		HighGodHerselfHimself = CHARACTER_HIMSELF
 		HighGodHerHis = CHARACTER_HERHIS_HIS
-		HighGodNameAlternate = harranian_pagan_high_god_name_alternate
-		HighGodNameAlternatePossessive = harranian_pagan_high_god_name_alternate_possessive
+		HighGodNameAlternate = sinism_high_god_name_alternate
+		HighGodNameAlternatePossessive = sinism_high_god_name_alternate_possessive
 
 		#Creator
-		CreatorName = harranian_pagan_creator_god_name
-		CreatorNamePossessive = harranian_pagan_creator_god_name_possessive
+		CreatorName = sinism_creator_god_name
+		CreatorNamePossessive = sinism_creator_god_name_possessive
 		CreatorSheHe = CHARACTER_SHEHE_HE
 		CreatorHerHis = CHARACTER_HERHIS_HIS
 		CreatorHerHim = CHARACTER_HERHIM_HIM
 
 		#HealthGod
-		HealthGodName = harranian_pagan_health_god_name
-		HealthGodNamePossessive = harranian_pagan_health_god_name_possessive
+		HealthGodName = sinism_health_god_name
+		HealthGodNamePossessive = sinism_health_god_name_possessive
 		HealthGodSheHe = CHARACTER_SHEHE_SHE
 		HealthGodHerHis = CHARACTER_HERHIS_HER
 		HealthGodHerHim = CHARACTER_HERHIM_HER
 
 		#FertilityGod
-		FertilityGodName = harranian_pagan_fertility_god_name
-		FertilityGodNamePossessive = harranian_pagan_fertility_god_name_possessive
+		FertilityGodName = sinism_fertility_god_name
+		FertilityGodNamePossessive = sinism_fertility_god_name_possessive
 		FertilityGodSheHe = CHARACTER_SHEHE_SHE
 		FertilityGodHerHis = CHARACTER_HERHIS_HER
 		FertilityGodHerHim = CHARACTER_HERHIM_HER
 
 		#WealthGod
-		WealthGodName = harranian_pagan_wealth_god_name
-		WealthGodNamePossessive = harranian_pagan_wealth_god_name_possessive
+		WealthGodName = sinism_wealth_god_name
+		WealthGodNamePossessive = sinism_wealth_god_name_possessive
 		WealthGodSheHe = CHARACTER_SHEHE_HE
 		WealthGodHerHis = CHARACTER_HERHIS_HIS
 		WealthGodHerHim = CHARACTER_HERHIM_HIM
 
 		#HouseholdGod
-		HouseholdGodName = harranian_pagan_household_god_name
-		HouseholdGodNamePossessive = harranian_pagan_household_god_name_possessive
+		HouseholdGodName = sinism_household_god_name
+		HouseholdGodNamePossessive = sinism_household_god_name_possessive
 		HouseholdGodSheHe = CHARACTER_SHEHE_HE
 		HouseholdGodHerHis = CHARACTER_HERHIS_HIS
 		HouseholdGodHerHim = CHARACTER_HERHIM_HIM
 
 		#FateGod
-		FateGodName = harranian_pagan_fate_god_name
-		FateGodNamePossessive = harranian_pagan_fate_god_name_possessive
+		FateGodName = sinism_fate_god_name
+		FateGodNamePossessive = sinism_fate_god_name_possessive
 		FateGodSheHe = CHARACTER_SHEHE_HE
 		FateGodHerHis = CHARACTER_HERHIS_HIS
 		FateGodHerHim = CHARACTER_HERHIM_HIM
 
 		#KnowledgeGod
-		KnowledgeGodName = harranian_pagan_knowledge_god_name
-		KnowledgeGodNamePossessive = harranian_pagan_knowledge_god_name_possessive
+		KnowledgeGodName = sinism_knowledge_god_name
+		KnowledgeGodNamePossessive = sinism_knowledge_god_name_possessive
 		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
 		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
 		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
 
 		#WarGod
-		WarGodName = harranian_pagan_war_god_name
-		WarGodNamePossessive = harranian_pagan_war_god_name_possessive
+		WarGodName = sinism_war_god_name
+		WarGodNamePossessive = sinism_war_god_name_possessive
 		WarGodSheHe = CHARACTER_SHEHE_HE
 		WarGodHerHis = CHARACTER_HERHIS_HIS
 		WarGodHerHim = CHARACTER_HERHIM_HIM
 
 		#NightGod
-		NightGodName = harranian_pagan_night_god_name
-		NightGodNamePossessive = harranian_pagan_night_god_name_possessive
+		NightGodName = sinism_night_god_name
+		NightGodNamePossessive = sinism_night_god_name_possessive
 		NightGodSheHe = CHARACTER_SHEHE_HE
 		NightGodHerHis = CHARACTER_HERHIS_HIS
 		NightGodHerHim = CHARACTER_HERHIM_HIM
 
 		GoodGodNames = {
-			harranian_pagan_high_god_name
-			harranian_pagan_creator_god_name
-			harranian_pagan_fertility_god_name
-			harranian_pagan_war_god_name
-			harranian_pagan_fate_god_name
+			sinism_high_god_name
+			sinism_creator_god_name
+			sinism_fertility_god_name
+			sinism_war_god_name
+			sinism_fate_god_name
 		}
-		ReligiousSymbol = harranian_pagan_religious_symbol
-		ReligiousSymbol2 = harranian_pagan_religious_symbol
-		ReligiousSymbol3 = harranian_pagan_religious_symbol
-		ReligiousText = harranian_pagan_religious_text
-		ReligiousText2 = harranian_pagan_religious_text
-		ReligiousText3 = harranian_pagan_religious_text
+		ReligiousSymbol = sinism_religious_symbol
+		ReligiousSymbol2 = sinism_religious_symbol
+		ReligiousSymbol3 = sinism_religious_symbol
+		ReligiousText = sinism_religious_text
+		ReligiousText2 = sinism_religious_text
+		ReligiousText3 = sinism_religious_text
 	}
 }

@@ -25,7 +25,7 @@ jip_jewish_court_position_validity_trigger = {
 	}
 }
 
-# Character scope: holds none of the Jewish court positions. Vanilla's court_position_does_not_already_have_a_job_trigger
+# Character scope: holds none of the Jewish court positions (nor the Sabian Court Astrologer). Vanilla's court_position_does_not_already_have_a_job_trigger
 # doesn't know them, so the full-time check above needs both.
 jip_has_no_jewish_court_position_trigger = {
 	NOR = {
@@ -38,6 +38,7 @@ jip_has_no_jewish_court_position_trigger = {
 		has_court_position = jip_sofer_court_position
 		has_court_position = jip_parnas_court_position
 		has_court_position = jip_court_financier_court_position
+		has_court_position = jip_sabian_astrologer_court_position
 	}
 }
 
@@ -65,4 +66,48 @@ jip_ransomable_captive_trigger = {
 	is_imprisoned = yes
 	is_ruler = no
 	has_religion = religion:judaism_religion
+}
+
+# Character scope: can employ a Sabian Court Astrologer (jip_sabian_astrologer_court_position): a settled ruler of the
+# lands where Sabian astrologers served (the Middle East, Anatolia), or a Muslim, Sabian or Mesopotamian pagan one
+# anywhere. Nomads have vanilla's Stargazer; the Mandaeans curse the planets as evil powers.
+jip_can_employ_sabian_astrologer_trigger = {
+	is_landed_or_landless_administrative_or_theocratic = yes
+	NOT = { government_has_flag = government_is_nomadic }
+	NOT = { rite = rite:mandeaism }
+	OR = {
+		religion = religion:islam_religion
+		rite = rite:sabianism
+		faith = faith:mesopotamian_pagan
+		capital_province ?= {
+			OR = {
+				geographical_region = world_middle_east
+				geographical_region = world_asia_minor
+			}
+		}
+	}
+}
+
+# Character scope: can serve $EMPLOYER$ as Sabian Court Astrologer: an adult Sabian, or, once the old gods are
+# restored, a Mesopotamian pagan. A full-time job, like the Jewish positions
+jip_sabian_astrologer_validity_trigger = {
+	base_court_position_validity_trigger = { EMPLOYER = $EMPLOYER$ }
+	is_adult = yes
+	custom_tooltip = {
+		text = jip_sabian_astrologer_faith_tt
+		OR = {
+			rite = rite:sabianism
+			faith = faith:mesopotamian_pagan
+		}
+	}
+	custom_tooltip = {
+		text = none_does_not_have_a_full_time_job
+		trigger_if = {
+			limit = {
+				NOT = { has_court_position = jip_sabian_astrologer_court_position }
+			}
+			court_position_does_not_already_have_a_job_trigger = yes
+			jip_has_no_jewish_court_position_trigger = yes
+		}
+	}
 }

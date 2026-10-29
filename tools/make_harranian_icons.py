@@ -1,4 +1,4 @@
-# Builds the Harranian rite's crescent-standard icons from its silver-and-gold Gemini painting on flat green, through
+# Builds Sinism's crescent-standard icons from its silver-and-gold Gemini painting on flat green, through
 # make_faith_icon.py: the rite's own (as painted) and colour variants for custom faiths (harranian_01..06, listed in
 # the Levantine religion's custom_faith_icons). The silver and the gold accents (disc, tassel caps) are recoloured
 # apart (--palette, --inlay with --accent warm).

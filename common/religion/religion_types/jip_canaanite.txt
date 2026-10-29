@@ -57,7 +57,7 @@
 
 	custom_faith_icons = {
 		# Ours: the sign of Tanit (Canaanism gold, Punism silver, and six colours for custom faiths; tools/make_tanit_icons.py)
-		# and Mesopotamianism's winged disc (six more colours; tools/make_mesopotamian_icons.py) and the Harranian crescent standard (six more;
+		# and Mesopotamianism's winged disc (six more colours; tools/make_mesopotamian_icons.py) and the Sinite crescent standard (six more;
 		# tools/make_harranian_icons.py)
 		canaanite punic canaanite_01 canaanite_02 canaanite_03 canaanite_04 canaanite_05 canaanite_06 mesopotamian mesopotamian_01 mesopotamian_02 mesopotamian_03 mesopotamian_04 mesopotamian_05 mesopotamian_06 harranian harranian_01 harranian_02 harranian_03 harranian_04 harranian_05 harranian_06
 		germanic germanic_01 germanic_02 germanic_03 germanic_04 germanic_05 custom_faith_fp1_fenrir custom_faith_fp1_irminsul custom_faith_fp1_jormungandr custom_faith_fp1_odins_ravens custom_faith_fp1_runestone_moon custom_faith_fp1_thors_hammer custom_faith_fp1_valknut

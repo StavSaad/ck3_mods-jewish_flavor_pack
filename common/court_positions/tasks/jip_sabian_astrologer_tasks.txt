@@ -1,0 +1,120 @@
+﻿# Tasks of the Sabian Court Astrologer (jip_sabian_astrologer_court_position, jip_court_positions.txt). Vanilla's
+# Stargazer tasks are for the steppe (herders, the weather), so none are shared. Written by hand, not generated.
+# root = the holder, scope:liege = the employer
+
+# Compile a zij, the astronomical tables of the caliphs' astronomers: the capital's surveyors and engineers work by them
+jip_sabian_astrologer_compile_zij = {
+	court_position_types = { jip_sabian_astrologer_court_position }
+
+	cost = {
+		round = no
+		prestige = {
+			add = {
+				value = monthly_court_position_task_cost
+				desc = COURT_POSITION_TASK_COST_BREAKDOWN_BASE
+				format = "BASE_VALUE_FORMAT_DECIMALS_PLUS_NEGATIVE"
+			}
+		}
+	}
+
+	employee_modifier = {
+		monthly_learning_lifestyle_xp_gain_mult = 0.1
+	}
+
+	scaling_employer_modifiers = {
+		terrible = {
+			character_capital_county_monthly_development_growth_add = 0.05
+		}
+		poor = {
+			character_capital_county_monthly_development_growth_add = 0.1
+		}
+		average = {
+			character_capital_county_monthly_development_growth_add = 0.15
+		}
+		good = {
+			character_capital_county_monthly_development_growth_add = 0.2
+		}
+		excellent = {
+			character_capital_county_monthly_development_growth_add = 0.3
+		}
+	}
+
+	is_shown = {
+	}
+	is_valid_showing_failures_only = {
+	}
+
+	on_start = {
+		custom_tooltip = jip_sabian_astrologer_compile_zij_tt
+	}
+	on_end = {
+	}
+
+	ai_will_do = {
+		value = 50
+	}
+}
+
+# Cast horoscopes for the court: courtiers and guests come to the ruler for a reading of their stars
+jip_sabian_astrologer_cast_horoscopes = {
+	court_position_types = { jip_sabian_astrologer_court_position }
+
+	cost = {
+		round = no
+		prestige = {
+			add = {
+				value = monthly_court_position_task_cost
+				desc = COURT_POSITION_TASK_COST_BREAKDOWN_BASE
+				format = "BASE_VALUE_FORMAT_DECIMALS_PLUS_NEGATIVE"
+			}
+		}
+	}
+
+	employee_modifier = {
+		diplomacy = 1
+	}
+
+	scaling_employer_modifiers = {
+		terrible = {
+			courtier_and_guest_opinion = 2
+			monthly_prestige = 0.1
+		}
+		poor = {
+			courtier_and_guest_opinion = 4
+			monthly_prestige = 0.2
+		}
+		average = {
+			courtier_and_guest_opinion = 6
+			monthly_prestige = 0.3
+		}
+		good = {
+			courtier_and_guest_opinion = 8
+			monthly_prestige = 0.4
+		}
+		excellent = {
+			courtier_and_guest_opinion = 10
+			monthly_prestige = 0.5
+		}
+	}
+
+	is_shown = {
+	}
+	is_valid_showing_failures_only = {
+	}
+
+	on_start = {
+		custom_tooltip = jip_sabian_astrologer_cast_horoscopes_tt
+	}
+	on_end = {
+	}
+
+	ai_will_do = {
+		value = 25
+		scope:liege = {
+			if = {
+				limit = { has_trait = gregarious }
+				add = 25
+			}
+		}
+	}
+}

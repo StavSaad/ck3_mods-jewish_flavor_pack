@@ -1,0 +1,209 @@
+﻿# The Sabian Court Astrologer's horoscopes (events/jip_astrologer_events.txt)
+
+on_war_started = {
+	on_actions = {
+		jip_astrologer_war_on_action
+	}
+}
+
+on_birth_child = {
+	on_actions = {
+		jip_astrologer_birth_on_action
+	}
+}
+
+on_marriage = {
+	on_actions = {
+		jip_astrologer_marriage_on_action
+	}
+}
+
+yearly_playable_pulse = {
+	on_actions = {
+		jip_astrologer_yearly_on_action
+		jip_astrologer_ai_recruit_on_action
+	}
+}
+
+# Both war leaders with an astrologer have the campaign's stars read
+# scope:attacker, scope:defender, scope:war
+jip_astrologer_war_on_action = {
+	effect = {
+		scope:attacker = {
+			if = {
+				limit = { employs_court_position = jip_sabian_astrologer_court_position }
+				trigger_event = {
+					id = jip_astrologer.0001
+					days = { 2 5 }
+				}
+			}
+		}
+		scope:defender = {
+			if = {
+				limit = { employs_court_position = jip_sabian_astrologer_court_position }
+				trigger_event = {
+					id = jip_astrologer.0001
+					days = { 2 5 }
+				}
+			}
+		}
+	}
+}
+
+# A ruler with an astrologer has their newborn's nativity cast
+# root = the child, scope:mother, scope:father
+jip_astrologer_birth_on_action = {
+	effect = {
+		save_scope_as = jip_newborn
+		if = {
+			limit = {
+				scope:father ?= { employs_court_position = jip_sabian_astrologer_court_position }
+			}
+			scope:father = {
+				trigger_event = {
+					id = jip_astrologer.0002
+					days = { 3 10 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				scope:mother ?= { employs_court_position = jip_sabian_astrologer_court_position }
+			}
+			scope:mother = {
+				trigger_event = {
+					id = jip_astrologer.0002
+					days = { 3 10 }
+				}
+			}
+		}
+	}
+}
+
+# The astrologer of one of the spouses, or of a spouse's parent, reads the couple's stars
+# root = the major partner, scope:spouse = the minor partner
+jip_astrologer_marriage_on_action = {
+	effect = {
+		save_scope_as = jip_bride_a
+		scope:spouse = { save_scope_as = jip_bride_b }
+		if = {
+			limit = { employs_court_position = jip_sabian_astrologer_court_position }
+			trigger_event = {
+				id = jip_astrologer.0003
+				days = { 3 10 }
+			}
+		}
+		else_if = {
+			limit = {
+				scope:spouse = { employs_court_position = jip_sabian_astrologer_court_position }
+			}
+			scope:spouse = {
+				trigger_event = {
+					id = jip_astrologer.0003
+					days = { 3 10 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				father ?= { employs_court_position = jip_sabian_astrologer_court_position }
+			}
+			father = {
+				trigger_event = {
+					id = jip_astrologer.0003
+					days = { 3 10 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				mother ?= { employs_court_position = jip_sabian_astrologer_court_position }
+			}
+			mother = {
+				trigger_event = {
+					id = jip_astrologer.0003
+					days = { 3 10 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				scope:spouse.father ?= { employs_court_position = jip_sabian_astrologer_court_position }
+			}
+			scope:spouse.father = {
+				trigger_event = {
+					id = jip_astrologer.0003
+					days = { 3 10 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				scope:spouse.mother ?= { employs_court_position = jip_sabian_astrologer_court_position }
+			}
+			scope:spouse.mother = {
+				trigger_event = {
+					id = jip_astrologer.0003
+					days = { 3 10 }
+				}
+			}
+		}
+	}
+}
+
+# A Muslim ruler with an astrologer hears a zealot's objection about once every seven years
+# root = the employer
+jip_astrologer_yearly_on_action = {
+	trigger = {
+		employs_court_position = jip_sabian_astrologer_court_position
+		religion = religion:islam_religion
+		is_available = yes
+	}
+	random_events = {
+		chance_of_no_event = 85
+		100 = jip_astrologer.0004 # A zealot denounces the astrologer
+	}
+}
+
+# The AI can't use the recruit decision (vanilla's is player-only), so an AI ruler who could employ a Sabian astrologer
+# sometimes sends to Harran for one: 5% a year, 25% for Sabian and Mesopotamian pagan rulers
+# root = the ruler
+jip_astrologer_ai_recruit_on_action = {
+	trigger = {
+		is_ai = yes
+		highest_held_title_tier >= tier_duchy
+		can_employ_court_position_type = jip_sabian_astrologer_court_position
+		NOT = { employs_court_position = jip_sabian_astrologer_court_position }
+		exists = capital_province
+		is_at_war = no
+		NOT = { has_trait = zealous }
+		short_term_gold > low_skill_court_astrologer_cost
+	}
+	effect = {
+		random = {
+			chance = {
+				value = 5
+				if = {
+					limit = {
+						OR = {
+							rite = rite:sabianism
+							faith = faith:mesopotamian_pagan
+						}
+					}
+					add = 20
+				}
+			}
+			jip_create_sabian_astrologer_candidate_effect = {
+				SCOPE = jip_good_astrologer
+				MIN_EDUCATION = 1
+				MAX_EDUCATION = 2
+				MIN_SKILL = min_template_medium_skill
+				MAX_SKILL = max_template_decent_skill
+			}
+			jip_hire_sabian_astrologer_effect = {
+				CANDIDATE = scope:jip_good_astrologer
+				COST = low_skill_court_astrologer_cost
+			}
+		}
+	}
+}

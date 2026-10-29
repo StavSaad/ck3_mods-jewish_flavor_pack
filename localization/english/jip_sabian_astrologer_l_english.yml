@@ -1,0 +1,95 @@
+﻿l_english:
+ # Court position (common/court_positions/types/jip_court_positions.txt)
+ jip_sabian_astrologer_court_position: "Court Astrologer"
+ jip_sabian_astrologer_court_position_desc: "The $jip_sabian_astrologer_court_position$ is a Sabian of Harran, heir to the star-readers of Babylon, who keeps the court's astronomical tables and casts horoscopes before wars, births and marriages. Caliphs and emirs have long employed them, though zealots call astrology a branch of sorcery."
+ jip_sabian_astrologer_employer_custom_effect_description: "$BULLET$Casts horoscopes before your wars, your children's births and your family's marriages"
+ jip_sabian_astrologer_faith_tt: "Is a Sabian, or follows the old gods of Mesopotamia"
+
+ # Tasks (common/court_positions/tasks/jip_sabian_astrologer_tasks.txt)
+ jip_sabian_astrologer_compile_zij: "Compile a Zij"
+ jip_sabian_astrologer_compile_zij_desc: "This character is compiling a zij, tables of the motions of the Sun, the Moon and the planets, by which your surveyors measure fields and your engineers lay out canals."
+ jip_sabian_astrologer_compile_zij_tt: "Your [capital|E] [county|E] gains [development|E] faster, the more so the better the [aptitude|E]"
+ jip_sabian_astrologer_cast_horoscopes: "Cast Horoscopes"
+ jip_sabian_astrologer_cast_horoscopes_desc: "This character reads the stars for your courtiers and guests, who are grateful to the ruler who lends them such a seer."
+ jip_sabian_astrologer_cast_horoscopes_tt: "Your courtiers and guests think better of you, and your [prestige|E] grows, the more so the better the [aptitude|E]"
+
+ # Option of vanilla's Recruit for a Court Position decision (common/decisions/jip_recruit_court_position_decision.txt)
+ jip_invite_sabian_astrologer_decision: "Send to Harran for a $jip_sabian_astrologer_court_position$"
+ jip_invite_sabian_astrologer_decision_desc: "The Sabians of Harran have read the stars since the days of the Assyrian kings. A letter and a purse will bring one of them to court."
+ jip_recruit_sabian_astrologer_cooldown_tt: "You have sent to Harran within the last year"
+
+ # The stars of the campaign
+ jip_astrologer.0001.t: "The Stars of the Campaign"
+ jip_astrologer.0001.desc: "[jip_astrologer.GetTitledFirstName] spent the night on the roof with an astrolabe, and comes down at dawn with ink on [jip_astrologer.GetHerHis] fingers.\n\n"
+ jip_astrologer.0001.desc_auspicious: "\"Mars rises in a house of fortune, and the Moon is waxing. Whoever marches under this sky marches with the heavens behind him.\""
+ jip_astrologer.0001.desc_ill: "\"I will not hide it from you. Saturn stands over the hour you chose, and Mars is in his fall. If the army begins the campaign under these stars, the men will know it.\""
+ jip_astrologer.0001.a: "Let the army hear of it."
+ jip_astrologer.0001.b: "Then find me a better hour."
+ jip_astrologer.0001.b.tt: "[jip_astrologer.GetFirstName] chooses a fortunate hour, and the ill omen passes"
+ jip_astrologer.0001.c: "We march. Let the stars keep up."
+
+ # A newborn's nativity
+ jip_astrologer.0002.t: "A Nativity"
+ jip_astrologer.0002.desc: "[jip_astrologer.GetTitledFirstName] noted the very hour of [jip_newborn.GetFirstName]'s birth, and has spent the days since over [jip_astrologer.GetHerHis] tables. Now [jip_astrologer.GetSheHe] unrolls the chart of the heavens at that hour.\n\n"
+ jip_astrologer.0002.desc_sun: "\"The Sun, Shamash who sees all, was rising. The child will be honoured wherever [jip_newborn.GetSheHe] goes.\""
+ jip_astrologer.0002.desc_moon: "\"The Moon, Sin, Lord of Harran, ruled the hour. The child will be wise, and the gods will listen to [jip_newborn.GetHerHim].\""
+ jip_astrologer.0002.desc_mercury: "\"Mercury, the star of Nabu the scribe, ruled the hour. The child will keep accounts better than any steward.\""
+ jip_astrologer.0002.desc_venus: "\"Venus, the star of Ishtar, ruled the hour. The child will be beautiful, and loved, and will have many children.\""
+ jip_astrologer.0002.desc_mars: "\"Mars, the red star of Nergal, ruled the hour. The child will be a warrior.\""
+ jip_astrologer.0002.desc_jupiter: "\"Jupiter, the star of Marduk, king of the gods, ruled the hour. The child is born to rule, and others will follow [jip_newborn.GetHerHim].\""
+ jip_astrologer.0002.desc_saturn: "[jip_astrologer.GetSheHe|U] hesitates before speaking. \"Saturn, the slow star, ruled the hour. The child will be clever, but sorrows will weigh on [jip_newborn.GetHerHim]. Unless... the hour of birth is never quite certain. I could cast the chart again.\""
+ jip_astrologer.0002.a: "So it is written."
+ jip_astrologer.0002.b: "Cast it again, at a kinder hour."
+ jip_astrologer.0002.b.success: "Jupiter, Not Saturn"
+ jip_astrologer.0002.b.failure: "Saturn All the Same"
+
+ # The couple's stars
+ jip_astrologer.0003.t: "Stars of the Wedding"
+ jip_astrologer.0003.desc_own: "[jip_astrologer.GetTitledFirstName] has compared the nativities of [jip_bride_a.GetFirstName] and [jip_bride_b.GetFirstName], and comes to me with what the stars say of my marriage.\n\n"
+ jip_astrologer.0003.desc_family: "[jip_astrologer.GetTitledFirstName] has compared the nativities of [jip_bride_a.GetTitledFirstName] and [jip_bride_b.GetTitledFirstName], who have just been married, and comes to me with what the stars say.\n\n"
+ jip_astrologer.0003.desc_auspicious: "\"Venus was in her exaltation on the wedding day, and their stars stand in trine. It is a good match: they will love each other, and the house will have children.\""
+ jip_astrologer.0003.desc_ill: "\"Their stars stand in opposition, and Saturn looked on the wedding. Such marriages are cold and barren, unless offerings are made to turn the stars.\""
+ jip_astrologer.0003.a: "A good match, then."
+ jip_astrologer.0003.b: "Make the offerings."
+ jip_astrologer.0003.b.tt: "[jip_astrologer.GetFirstName] makes the offerings, and the stars turn"
+ jip_astrologer.0003.c: "The marriage is made. Let them make the best of it."
+
+ # A zealot denounces the astrologer
+ jip_astrologer.0004.t: "A Branch of Sorcery"
+ jip_astrologer.0004.desc: "[jip_accuser.GetTitledFirstName] stood up in the hall today and quoted the hadith for all to hear: whoever learns astrology learns a branch of sorcery. Then [jip_accuser.GetSheHe] pointed at [jip_astrologer.GetTitledFirstName].\n\n\"This star-worshipper from Harran tells you when to march and when to marry, as if God's decree were written in the planets. Send [jip_astrologer.GetHerHim] away.\""
+ jip_astrologer.0004.a: "The stars are God's own signs. [jip_astrologer.GetFirstName] stays."
+ jip_astrologer.0004.b: "Let [jip_astrologer.GetFirstName] cast your horoscope, and judge for yourself."
+ jip_astrologer.0004.b.success: "The Accuser Is Flattered"
+ jip_astrologer.0004.b.failure: "The Accuser Is Insulted"
+ jip_astrologer.0004.c: "You are right. [jip_astrologer.GetFirstName], you are dismissed."
+
+ # A Sabian of Harran comes to court
+ jip_astrologer.0010.t: "Star-Readers of Harran"
+ jip_astrologer.0010.desc: "Two Sabians have answered my letter to Harran.\n\n[jip_great_astrologer.GetFirstName] is famous, the author of a zij that the astronomers of Baghdad study, and asks a fee to match.\n\n[jip_good_astrologer.GetFirstName] is younger and cheaper, and has brought only an astrolabe and a letter from [jip_good_astrologer.GetHerHis] teacher."
+ jip_astrologer.0010.a: "[jip_great_astrologer.GetFirstName] is worth the fee."
+ jip_astrologer.0010.b: "[jip_good_astrologer.GetFirstName] will do."
+ jip_astrologer.0010.c: "I need neither of them."
+
+ # Modifiers (common/modifiers/jip_astrologer_modifiers.txt)
+ jip_horoscope_war_auspicious: "Under a Fortunate Star"
+ jip_horoscope_war_auspicious_desc: "The court astrologer found the stars favourable to this campaign, and the army knows it."
+ jip_horoscope_war_ill: "Under an Ill Star"
+ jip_horoscope_war_ill_desc: "The court astrologer read ill omens for this campaign, and the army knows it."
+ jip_horoscope_wedding_auspicious: "Well-Matched Stars"
+ jip_horoscope_wedding_auspicious_desc: "The court astrologer found this couple's stars in harmony."
+ jip_horoscope_wedding_ill: "Stars in Opposition"
+ jip_horoscope_wedding_ill_desc: "The court astrologer found this couple's stars at odds."
+ jip_star_sun: "Born under the Sun"
+ jip_star_sun_desc: "The Sun, the star of Shamash, ruled the hour of this character's birth."
+ jip_star_moon: "Born under the Moon"
+ jip_star_moon_desc: "The Moon, the star of Sin, ruled the hour of this character's birth."
+ jip_star_mercury: "Born under Mercury"
+ jip_star_mercury_desc: "Mercury, the star of Nabu, ruled the hour of this character's birth."
+ jip_star_venus: "Born under Venus"
+ jip_star_venus_desc: "Venus, the star of Ishtar, ruled the hour of this character's birth."
+ jip_star_mars: "Born under Mars"
+ jip_star_mars_desc: "Mars, the star of Nergal, ruled the hour of this character's birth."
+ jip_star_jupiter: "Born under Jupiter"
+ jip_star_jupiter_desc: "Jupiter, the star of Marduk, ruled the hour of this character's birth."
+ jip_star_saturn: "Born under Saturn"
+ jip_star_saturn_desc: "Saturn, the slow star of Ninurta, ruled the hour of this character's birth."

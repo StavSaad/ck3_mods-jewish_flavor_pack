@@ -508,18 +508,18 @@ jip_unlock_canaanite_conversion_effect = {
 jip_unlock_mesopotamian_conversion_effect = {
 	if = {
 		limit = {
-			rite:assyrian_pagan = { can_convert_to_rite = no }
+			rite:ashurism = { can_convert_to_rite = no }
 		}
 		custom_tooltip = jip_unlock_mesopotamian_conversion_tt
 		hidden_effect = {
-			rite:assyrian_pagan = { set_can_convert_to_rite = yes }
-			rite:harranian_pagan = { set_can_convert_to_rite = yes }
+			rite:ashurism = { set_can_convert_to_rite = yes }
+			rite:sinism = { set_can_convert_to_rite = yes }
 		}
 	}
 }
 
 # The old gods proclaimed (jip_sabian.0001): the ruler, their capital and Harran take the rite of their culture:
-# Assyrian and Nabati the Assyrian rite, everyone else (Arameans first) the Harranian rite of Sin
+# Assyrian and Nabati Ashurism, everyone else (Arameans first) Sinism, the rite of Sin of Harran
 jip_proclaim_old_gods_effect = {
 	if = {
 		limit = {
@@ -528,10 +528,10 @@ jip_proclaim_old_gods_effect = {
 				culture = culture:nabati
 			}
 		}
-		rite:assyrian_pagan = { save_scope_as = jip_old_gods_rite }
+		rite:ashurism = { save_scope_as = jip_old_gods_rite }
 	}
 	else = {
-		rite:harranian_pagan = { save_scope_as = jip_old_gods_rite }
+		rite:sinism = { save_scope_as = jip_old_gods_rite }
 	}
 	set_character_rite = scope:jip_old_gods_rite
 	capital_county ?= {

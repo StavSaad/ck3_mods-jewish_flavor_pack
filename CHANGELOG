@@ -137,10 +137,10 @@
 [] Jews now call Aleppo Aram Zobah (it was Ebla), and Canaanites call it Halab; Carchemish moved from Aintab to Jarabulus, Mari from Raqqa to the middle Euphrates, and Antioch is no longer Ramitha (Latakia's name) for Canaanites
 [] The Jazira is now Aram Naharaim for Jews and Ashur for Arameans, and Mesopotamia is Babylon for Canaanites; Diyar Rabia is Ashur for Jews (was Naharaim) and Diyar Mudar is Balihu for Assyrians (was Padan Aram)
 [] Fixed log errors from the Shtadlanut files (encoding, unused AI frequency)
-[] Added Mesopotamianism, the old gods of Assyria and the Aramean cities: a reformed pagan faith with an Assyrian rite (Ashur, Marduk, Ishtar; the new Vicegerent of Ashur tenet, Warmonger, Ritual Celebrations) and a Harranian rite (Sin of Harran, Hadad, Atargatis; Astrology, Esotericism, Sanctity of Nature), and holy sites at Harran, Nineveh, Arbela, Manbij, Damascus and Palmyra
+[] Added Mesopotamianism, the old gods of Assyria and the Aramean cities: a reformed pagan faith with two rites, Ashurism (Ashur, Marduk, Ishtar; the new Vicegerent of Ashur tenet, Warmonger, Ritual Celebrations) and Sinism (Sin of Harran, Hadad, Atargatis; Astrology, Esotericism, Sanctity of Nature), and holy sites at Harran, Nineveh, Arbela, Manbij, Damascus and Palmyra
 [] The Semitic pagan religion is now called Levantine
-[] New icons for Mesopotamianism (the winged disc of Ashur) and its Harranian rite (the crescent standard of Sin)
-[] New sign of Tanit icons for Canaanism (gold) and Punism (silver), and six more colours each of the Tanit, the Mesopotamian winged disc and the Harranian crescent standard for custom Levantine faiths
+[] New icons for Mesopotamianism (the winged disc of Ashur) and its rite Sinism (the crescent standard of Sin)
+[] New sign of Tanit icons for Canaanism (gold) and Punism (silver), and six more colours each of the Tanit, the Mesopotamian winged disc and the Sinite crescent standard for custom Levantine faiths
 [] Kohenism, Canaanism and Mesopotamianism can no longer be converted to until they are restored: Kohenism when the Third Temple is built, Canaanism when Phoenicia or Carthage is restored, Mesopotamianism by a decision still to come
 [] Fixed the Levantine religion missing the doctrines CK3 1.20 added: polytheism, anointment of kings, no monasticism or sacraments, and written myths
 [] Added two cultural men-at-arms: Palmyrene Archers for Arameans (desert archers, from the new Archers of Tadmor tradition) and Clibanarii for Assyrians (armoured cavalry, from the new Armoured Horse of Adiabene tradition); any Syriac culture can adopt either tradition
@@ -148,7 +148,8 @@
 [] Forming Hebrew keeps the mod's new men-at-arms traditions
 [] Added festivals as new kinds of feast, each shown only to its faith and in its season: Akitu for Mesopotamian pagans in March and April (the purification, the king humbled before the god, the procession to the akitu house, the fates fixed for the year), the Feast of Nisan for Sabians and Harranians (the Moon's fast broken, the sacrifice to Sin, the mystery of the North), and Parwanaya and Dehwa Rabba for Mandaeans
 [] The Mandaean feasts follow the Mandaean calendar, which has no leap days: in 867 Dehwa Rabba falls in April and Parwanaya in December, and both move a day earlier every four years
-[] Mesopotamian rulers who let Akitu lapse for 8 years lose legitimacy and piety; for Harranians the Feast of Nisan keeps the New Year too
+[] Mesopotamian rulers who let Akitu lapse for 8 years lose legitimacy and piety; for Sinites the Feast of Nisan keeps the New Year too
 [] Mishpacha family heads can now hold feasts at their estate
 [] The Rish Amma, head of the Mandaeans, has a coat of arms: the drabsha planted in living water
-[] Added a great project, Restore the House of Rejoicing: an independent Sabian ruler of Harran rebuilds the Temple of Sin, which opens the old gods to conversion and lets its builder proclaim them
+[] Added a great project, Restore the House of Rejoicing: an independent Sabian ruler of Harran rebuilds the Temple of Sin, which opens the old gods to conversion and lets its builder proclaim them; the temple stands on the map at Harran
+[] Added the Court Astrologer, a Sabian of Harran who reads the stars for Muslim, Sabian and Middle Eastern courts (duke and above): horoscopes before wars, the births of children (each born under one of the seven planets) and marriages, tasks to compile astronomical tables or cast horoscopes for the court, and a new option in Recruit for a Court Position to send to Harran for one. Muslim zealots dislike it

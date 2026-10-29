@@ -14,7 +14,7 @@
 #  1010 Guest: farewell
 #  1020 A ruler who let Akitu lapse: the priests' warning
 #  1101 Guest pulse: a priest of Nabu reads your fate
-# 2000s Feast of Nisan (Sabians, Harranian rite)
+# 2000s Feast of Nisan (Sabians, Sinism)
 #  2001 Host: the Moon's fast ends
 #  2002 Host: the sacrifice to Sin and the seven (the omen)
 #  2004 Host: the mystery of the North (summary)
@@ -449,7 +449,7 @@ jip_feast.1020 = {
 	option = {
 		name = jip_feast.1020.a
 		if = {
-			limit = { rite = rite:harranian_pagan }
+			limit = { rite = rite:sinism }
 			custom_tooltip = jip_feast.1020.a_tt_harranian
 		}
 		else = {
@@ -756,7 +756,7 @@ jip_feast.2004 = {
 			add_prestige = minor_prestige_gain
 		}
 		jip_feast_omen_modifier_effect = { NAME = jip_nisan_omen }
-		# For the Harranian rite this is the spring New Year, so it keeps Akitu's obligation too (jip_akitu_neglect_effect)
+		# For Sinism this is the spring New Year, so it keeps Akitu's obligation too (jip_akitu_neglect_effect)
 		if = {
 			limit = { faith = faith:mesopotamian_pagan }
 			custom_tooltip = jip_feast.2004.new_year_tt

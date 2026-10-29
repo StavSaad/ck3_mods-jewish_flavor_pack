@@ -1,0 +1,15 @@
+﻿# Character scope (the employer): the chance, out of 100, that the Sabian Court Astrologer's reading is favourable or
+# their remedy works (events/jip_astrologer_events.txt): 30, plus 12 for each aptitude level (1-5)
+jip_astrologer_reading_chance_value = {
+	value = 30
+	if = {
+		limit = { employs_court_position = jip_sabian_astrologer_court_position }
+		court_position:jip_sabian_astrologer_court_position = {
+			add = {
+				value = "aptitude(jip_sabian_astrologer_court_position)"
+				multiply = 12
+			}
+		}
+	}
+	max = 95
+}

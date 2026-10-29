@@ -274,3 +274,255 @@ jip_court_financier_court_position = {
 		# No petition bonus: courtiers can't petition for this position, and the vanilla check warns about an unset flag
 	}
 }
+
+# A Sabian of Harran who reads the stars for a settled court, as Sabian astrologers and astronomers served the caliphs
+# (0.15 plan, section 13). Vanilla's Stargazer is for nomads only. Horoscopes before wars, births and marriages and a
+# zealot's objection are in jip_astrologer_events.txt; the tasks in jip_sabian_astrologer_tasks.txt; rulers find one
+# through vanilla's Recruit for a Court Position decision (jip_recruit_court_position_decision.txt) and the AI
+# through jip_astrologer_ai_recruit_on_action.
+jip_sabian_astrologer_court_position = {
+	sort_order = 233
+	max_available_positions = 1
+	minimum_rank = duchy
+	skill = learning
+
+	court_position_asset = {
+		animation = reading
+		background = "gfx/interface/illustrations/event_scenes/fp3_courtyard_night.dds"
+	}
+
+	opinion = {
+		value = regular_court_position_opinion
+	}
+
+	# How high the aptitude has to be to reach the 5 different modifier levels
+	aptitude_level_breakpoints = { 20 40 60 80 }
+
+	# How good is this character in this position? root scope is the holder of the court position. As vanilla's
+	# Stargazer (learning, Mystic, education), plus Erudite
+	aptitude = {
+		value = 1
+		add = {
+			value = learning
+			multiply = 1.75
+			max = 50
+			desc = court_position_skill_learning
+		}
+		if = {
+			limit = { has_trait = lifestyle_mystic }
+			add = {
+				value = 15
+				if = {
+					limit = {
+						has_trait_xp = { trait = lifestyle_mystic value >= 50 }
+					}
+					add = 5
+				}
+				if = {
+					limit = {
+						has_trait_xp = { trait = lifestyle_mystic value >= 100 }
+					}
+					add = 5
+				}
+				desc = court_position_mystic_1_trait
+			}
+		}
+		if = {
+			limit = { has_trait = erudite }
+			add = {
+				value = 10
+				desc = court_position_erudite_trait
+			}
+		}
+		if = {
+			limit = { has_trait = education_learning }
+			add = {
+				value = 4
+				if = {
+					limit = { has_trait = education_learning_2 }
+					add = 4
+				}
+				else_if = {
+					limit = { has_trait = education_learning_3 }
+					add = 8
+				}
+				else_if = {
+					limit = { has_trait = education_learning_4 }
+					add = 12
+				}
+				else_if = {
+					limit = { has_trait = education_learning_5 }
+					add = 22
+				}
+				desc = education_learning
+			}
+		}
+
+		add = court_position_aptitude_low_penalty_value
+		add = general_aptitude_bonus
+	}
+
+	is_shown = {
+		jip_can_employ_sabian_astrologer_trigger = yes
+		trigger_if = {
+			limit = {
+				is_ai = yes
+				highest_held_title_tier <= tier_county
+			}
+			always = no
+		}
+	}
+
+	valid_position = {
+		jip_can_employ_sabian_astrologer_trigger = yes
+		highest_held_title_tier >= tier_duchy
+	}
+
+	is_shown_character = {
+		scope:employee = {
+			court_position_employee_shown_trigger = yes
+		}
+	}
+
+	valid_character = {
+		scope:employee = {
+			jip_sabian_astrologer_validity_trigger = { EMPLOYER = scope:liege }
+		}
+	}
+
+	revoke_cost = { # root is the liege, no other scopes are passed here!
+		prestige = {
+			value = major_court_position_prestige_revoke_cost
+			if = {
+				limit = { free_court_position_revoke_trigger = { POS = jip_sabian_astrologer } }
+				multiply = 0
+			}
+		}
+	}
+
+	salary = {
+		gold = {
+			value = 0
+			if = {
+				limit = {
+					scope:liege = { has_treasury = no }
+				}
+				add = minor_court_position_salary
+			}
+		}
+		treasury = {
+			value = 0
+			if = {
+				limit = {
+					scope:liege = { has_treasury = yes }
+				}
+				add = minor_court_position_salary
+			}
+		}
+		prestige = {
+			value = minor_court_position_prestige_salary
+		}
+		round = no
+	}
+
+	received_salary = {
+		gold = {
+			value = minor_court_position_salary
+		}
+		prestige = {
+			value = minor_court_position_prestige_salary
+		}
+		round = no
+	}
+
+	# Zealots call astrology a branch of sorcery
+	base_employer_modifier = {
+		zealot_opinion = -5
+	}
+
+	# The stars reassure the ruler, and the astronomical tables (the zij) teach
+	scaling_employer_modifiers = {
+		terrible = {
+			stress_loss_mult = 0.05
+			monthly_learning_lifestyle_xp_gain_mult = 0.04
+		}
+		poor = {
+			stress_loss_mult = 0.08
+			monthly_learning_lifestyle_xp_gain_mult = 0.08
+		}
+		average = {
+			stress_loss_mult = 0.1
+			monthly_learning_lifestyle_xp_gain_mult = 0.12
+		}
+		good = {
+			stress_loss_mult = 0.12
+			monthly_learning_lifestyle_xp_gain_mult = 0.16
+		}
+		excellent = {
+			stress_loss_mult = 0.15
+			monthly_learning_lifestyle_xp_gain_mult = 0.2
+			learning = 1
+		}
+	}
+
+	custom_employer_modifier_description = jip_sabian_astrologer_employer_custom_effect_description
+
+	modifier = {
+		learning = 1
+		monthly_learning_lifestyle_xp_gain_mult = 0.1
+	}
+
+	on_court_position_received = {
+		basic_gained_court_position_effect = yes
+	}
+	on_court_position_revoked = {
+		basic_revoked_court_position_effect = yes
+	}
+	on_court_position_invalidated = {
+		basic_invalidated_court_position_effect = yes
+	}
+	on_court_position_vacated = {
+		court_position_vacated_event_effect = {
+			COURT_POSITION_TYPE = jip_sabian_astrologer_court_position
+		}
+	}
+
+	# Scripted value to determine whether an AI will hire/fire a position or not. Hires over 0, fires under -50.
+	ai_position_score = {
+		value = 25
+		scope:liege = {
+			if = {
+				limit = {
+					OR = {
+						rite = rite:sabianism
+						faith = faith:mesopotamian_pagan
+					}
+				}
+				add = 75
+			}
+			if = {
+				limit = {
+					OR = {
+						has_trait = lifestyle_mystic
+						has_trait = lifestyle_scholar
+						has_trait = erudite
+						has_trait = education_learning
+					}
+				}
+				add = 25
+			}
+			if = {
+				limit = { has_trait = zealous }
+				add = -50
+			}
+		}
+		add = court_position_debt_considerations_value
+	}
+	ai_candidate_score = {
+		value = 50
+		add = scope:base_value
+		add = court_position_candidate_score_base_value
+		add = court_position_candidate_aptitude_value
+		# No petition bonus: courtiers can't petition for this position, and the vanilla check warns about an unset flag
+	}
+}

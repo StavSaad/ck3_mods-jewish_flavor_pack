@@ -237,7 +237,14 @@ masada_03 = {
 # The Ehulhul at Harran, raised by the great project jip_gp_temple_of_sin (common/great_projects/types/jip_great_projects.txt)
 # Works only for a holder who follows Sin: the Sabians or the old gods
 jip_temple_of_sin_01 = {
-	type_icon = "icon_structure_cathedral_pagan.dds"
+	# Vanilla has no ziggurat: the Tomb of Cyrus's stepped base and shrine stand in for one, on Harran's map
+	# locator (province 4870)
+	asset = {
+		type = pdxmesh
+		name = "fp3_building_special_tomb_of_cyrus_01_a_mesh"
+	}
+
+	type_icon = "icon_structure_tomb_of_cyrus.dds"
 
 	can_construct_potential = {
 		always = no # Built only by the great project
