@@ -15,6 +15,7 @@
 
  # Option of vanilla's Recruit for a Court Position decision (common/decisions/jip_recruit_court_position_decision.txt)
  jip_invite_sabian_astrologer_decision: "Send to Harran for a $jip_sabian_astrologer_court_position$"
+ jip_invite_sabian_astrologer_decision_tooltip: "A letter will go to Harran, and Sabian astrologers will come forward as candidates for the position of [GetCourtPositionType('jip_sabian_astrologer_court_position').GetName()]"
  jip_invite_sabian_astrologer_decision_desc: "The Sabians of Harran have read the stars since the days of the Assyrian kings. A letter and a purse will bring one of them to court."
  jip_recruit_sabian_astrologer_cooldown_tt: "You have sent to Harran within the last year"
 
