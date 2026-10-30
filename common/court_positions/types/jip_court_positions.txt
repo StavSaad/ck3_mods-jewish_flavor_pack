@@ -81,7 +81,7 @@ jip_court_financier_court_position = {
 		if = {
 			limit = {
 				house ?= {
-					any_house_member = { has_government = mishpacha_government }
+					any_house_member = { has_government = familial_government }
 				}
 			}
 			add = {

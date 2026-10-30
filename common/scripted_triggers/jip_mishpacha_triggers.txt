@@ -5,6 +5,7 @@ jip_is_mishpacha_family_title_trigger = {
 		this = title:d_jip_ananite
 		this = title:d_jip_benveniste
 		this = title:d_jip_bostanite
+		this = title:d_jip_harrani
 		this = title:d_jip_kalonymos
 		this = title:d_jip_maimon
 		this = title:d_jip_makhirite
@@ -16,7 +17,8 @@ jip_is_mishpacha_family_title_trigger = {
 # Character scope: an AI Mishpacha family that is free to consider moving its estate to another realm
 jip_mishpacha_ai_can_migrate_trigger = {
 	is_ai = yes
-	has_government = mishpacha_government
+	# The host score weighs how a realm treats Jews
+	jip_is_jewish_family_trigger = yes
 	is_landed = no
 	is_adult = yes
 	is_available = yes
@@ -41,9 +43,44 @@ jip_mishpacha_ai_can_migrate_trigger = {
 	}
 }
 
-# Character scope: may build the Mishpacha branches of the estate chains (jip_mishpacha_estate_buildings.txt)
+# Character scope: may build the Familial replacements of vanilla's estate chains (jip_mishpacha_estate_buildings.txt):
+# every Familial family, whatever its faith
 jip_can_build_mishpacha_estate_building_trigger = {
-	government_has_flag = government_is_mishpacha
+	government_has_flag = government_is_familial
+}
+
+# Character scope: the head of a Jewish Familial family (a Mishpacha). The Jewish flavour of the government (court positions,
+# Shtadlanut, the Yeshiva, Beit Din and Beit Knesset, the kippah) is gated by this, the shared mechanics by the government flag
+jip_is_jewish_family_trigger = {
+	government_has_flag = government_is_familial
+	religion = religion:judaism_religion
+}
+
+# Character scope: may build the Jewish branches of the estate chains (Yeshiva, Beit Din, Beit Knesset)
+jip_can_build_jewish_estate_building_trigger = {
+	jip_is_jewish_family_trigger = yes
+}
+
+# Character scope: the head of a Sabian or a Mandaean Familial family. Their flavour (court positions, estate branches,
+# the crescent or the klila over the CoA) is gated by these, like the Jewish one by jip_is_jewish_family_trigger
+jip_is_sabian_family_trigger = {
+	government_has_flag = government_is_familial
+	rite = rite:sabianism
+}
+
+jip_is_mandaean_family_trigger = {
+	government_has_flag = government_is_familial
+	rite = rite:mandeaism
+}
+
+# Character scope: may build the Sabian branches (Diwan, Haykal) or the Mandaean ones (Scriptorium, Mandi)
+# (jip_gnostic_estate_buildings.txt)
+jip_can_build_sabian_estate_building_trigger = {
+	jip_is_sabian_family_trigger = yes
+}
+
+jip_can_build_mandaean_estate_building_trigger = {
+	jip_is_mandaean_family_trigger = yes
 }
 
 # Domicile scope: has a vanilla estate building that is hidden from Mishpacha families and must be swapped

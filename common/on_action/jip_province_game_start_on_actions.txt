@@ -16,7 +16,8 @@ jip_rish_amma_game_start_on_action = {
 	}
 }
 
-# New Mishpacha families across Europe, the Middle East and North Africa (jip_spawn_jewish_families_effect).
+# New Mishpacha families across Europe, the Middle East and North Africa (jip_spawn_jewish_families_effect), then a few
+# Sabian and Mandaean families (jip_spawn_gnostic_families_effect).
 # Before the lobby, so they can be played; the after-lobby setup gives them courtiers and contracts like any family.
 jip_jewish_families_game_start_on_action = {
 	trigger = {
@@ -25,6 +26,7 @@ jip_jewish_families_game_start_on_action = {
 	}
 	effect = {
 		jip_spawn_jewish_families_effect = yes
+		jip_spawn_gnostic_families_effect = yes
 	}
 }
 
@@ -32,8 +34,9 @@ jip_liege_effect_setup = {
 	effect = {
 		jip_liege_setup_effect = yes
 		every_ruler = {
-			limit = { has_government = mishpacha_government }
+			limit = { has_government = familial_government }
 			jip_mishpacha_ensure_succession_law_effect = yes
+			jip_familial_record_religion_effect = yes
 			# A family whose estate lies under a duke or lesser ruler leaves any other liege and pays them tribute
 			save_scope_as = jip_family_head
 			if = {

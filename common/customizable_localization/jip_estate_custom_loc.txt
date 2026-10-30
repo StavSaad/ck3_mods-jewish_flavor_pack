@@ -5,7 +5,7 @@ JipMishpachaUnusedNote = {
 	type = character
 
 	text = {
-		trigger = { has_government = mishpacha_government }
+		trigger = { has_government = familial_government }
 		localization_key = jip_mishpacha_unused_note
 	}
 	text = {
@@ -18,7 +18,7 @@ JipMishpachaInfluenceNote = {
 	type = character
 
 	text = {
-		trigger = { has_government = mishpacha_government }
+		trigger = { has_government = familial_government }
 		localization_key = jip_mishpacha_influence_note
 	}
 	text = {

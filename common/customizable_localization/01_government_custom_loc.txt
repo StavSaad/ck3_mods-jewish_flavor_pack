@@ -29,13 +29,13 @@
 		trigger = {
 			trigger_if = {
 				limit = { is_ruler = yes }
-				has_government = mishpacha_government
+				has_government = familial_government
 			}
 			trigger_else = {
-				liege ?= { has_government = mishpacha_government }
+				liege ?= { has_government = familial_government }
 			}
 		}
-		localization_key = MISHPACHA
+		localization_key = FAMILIAL
 	}
 	text = {
 		trigger = {
@@ -389,25 +389,46 @@ GetGovernmentIcon = {
 		}
 		localization_key = administrative_icon_concept
 	}
-	text = { # Admin
+	text = { # Familial, Jewish (Mishpacha)
 		trigger = {
 			trigger_if = {
 				limit = {
 					is_alive = no
 				}
-				has_government = mishpacha_government
+				has_government = familial_government
+				religion = religion:judaism_religion
 			}
 			trigger_else = {
 				trigger_if = {
 					limit = { is_ruler = yes }
-					government_has_flag = government_is_mishpacha
+					jip_is_jewish_family_trigger = yes
 				}
 				trigger_else = {
-					liege ?= { government_has_flag = government_is_mishpacha }
+					liege ?= { jip_is_jewish_family_trigger = yes }
 				}
 			}
 		}
 		localization_key = mishpacha_icon_concept
+	}
+	text = { # Familial
+		trigger = {
+			trigger_if = {
+				limit = {
+					is_alive = no
+				}
+				has_government = familial_government
+			}
+			trigger_else = {
+				trigger_if = {
+					limit = { is_ruler = yes }
+					government_has_flag = government_is_familial
+				}
+				trigger_else = {
+					liege ?= { government_has_flag = government_is_familial }
+				}
+			}
+		}
+		localization_key = familial_icon_concept
 	}
 	text = { # Republic
 		trigger = {

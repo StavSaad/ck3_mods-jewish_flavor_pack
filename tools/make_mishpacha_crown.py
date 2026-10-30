@@ -2,7 +2,9 @@
 # jip_mishpacha_topframe (the kippah, 80x48) or jip_exilarch_topframe (the Keter Shem Tov, 96x70)
 # Keys out the background, crops to the crown, fits it the way vanilla's crown strip sits (centred, base on the bottom row,
 # at most 96x70 of the 128x80 canvas), adds vanilla's soft dark edge and writes uncompressed BGRA like vanilla's topframes.
-# usage: python make_mishpacha_crown.py <image> [preview.png] [max_w] [max_h] [name]
+# The background may be any flat colour (read from the border): blue (#0000FF) for a green object like the klila.
+# usage: python make_mishpacha_crown.py <image> [preview.png] [max_w] [max_h] [name] [--no-flatten]
+#   --no-flatten: keep the shape as painted, for a decoration with no rim to stand on (the klila's hanging ribbon)
 import sys
 import numpy as np
 from PIL import Image
@@ -11,6 +13,8 @@ from scipy import ndimage
 sys.path.insert(0, __file__.rsplit('\\', 1)[0].rsplit('/', 1)[0])
 from make_mishpacha_coa import write_dds, downsample, over, CROWN, MOD, G
 
+FLATTEN = '--no-flatten' not in sys.argv
+sys.argv = [a for a in sys.argv if a != '--no-flatten']
 src = sys.argv[1]
 preview = sys.argv[2] if len(sys.argv) > 2 else None
 MAX_W = float(sys.argv[3]) if len(sys.argv) > 3 else 96
@@ -54,6 +58,8 @@ bottom = np.where(solid.any(0), H - 1 - np.argmax(solid[::-1], 0), -1)
 base_cols = np.nonzero(bottom >= H * 0.8)[0]
 curve = np.polyval(np.polyfit(base_cols, bottom[base_cols], 2), np.clip(np.arange(crop.shape[1]), base_cols.min(), base_cols.max()))
 shift = np.round(curve.max() - curve).astype(int)
+if not FLATTEN:
+    shift[:] = 0
 pad = shift.max()
 if pad > 0:
     src_rows = np.arange(H + pad)[:, None] - shift[None, :]

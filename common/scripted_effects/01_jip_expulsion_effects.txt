@@ -47,7 +47,7 @@ jip_expel_the_jews_effect = {
 		limit = {
 			is_landed = yes
 			religion = religion:judaism_religion
-			NOT = { has_government = mishpacha_government }
+			NOT = { has_government = familial_government }
 		}
 		custom = jip_expel_the_jews_every_lord_tt
 		add_opinion = {
@@ -89,7 +89,7 @@ jip_expel_the_jews_effect = {
 	hidden_effect = {
 		add_to_list = jip_expelling_courts
 		every_vassal_or_below = {
-			limit = { NOT = { has_government = mishpacha_government } }
+			limit = { NOT = { has_government = familial_government } }
 			add_to_list = jip_expelling_courts
 		}
 		capital_province ?= { save_scope_as = jip_courtier_origin }
@@ -223,7 +223,7 @@ jip_jewish_lord_lose_lands_effect = {
 		create_domicile_title = {
 			name = jip_mishpacha_house_title_name
 			holder = scope:jip_dispossessed_lord
-			government = mishpacha_government
+			government = familial_government
 			tier = duchy
 			save_scope_as = jip_domicile_title
 		}
@@ -240,7 +240,7 @@ jip_jewish_lord_lose_lands_effect = {
 			name = noble_family_name
 			tier = duchy
 			article = DEFAULT_TITLE_NAME_ARTICLE
-			government = mishpacha_government
+			government = familial_government
 			save_scope_as = jip_new_family_title
 		}
 		destroy_title = scope:jip_domicile_title
@@ -257,8 +257,8 @@ jip_jewish_lord_lose_lands_effect = {
 	}
 	# 3. Mishpacha, in case they already held a landless title of another government
 	if = {
-		limit = { NOT = { has_government = mishpacha_government } }
-		change_government = mishpacha_government
+		limit = { NOT = { has_government = familial_government } }
+		change_government = familial_government
 	}
 	jip_mishpacha_ensure_succession_law_effect = yes
 	jip_mishpacha_flee_expulsion_effect = { EXPELLER = scope:jip_dispossessor }
@@ -268,7 +268,7 @@ jip_jewish_lord_lose_lands_effect = {
 jip_send_expulsion_edict_event_effect = {
 	if = {
 		limit = {
-			has_government = mishpacha_government
+			has_government = familial_government
 			is_landed = no
 		}
 		trigger_event = {
@@ -342,7 +342,7 @@ jip_join_expulsion_war_effect = {
 # The edict is enforced on a resister after the war is lost or ends in a stalemate. Call in the resister's scope.
 jip_enforce_expulsion_on_resister_effect = {
 	if = {
-		limit = { has_government = mishpacha_government is_landed = no }
+		limit = { has_government = familial_government is_landed = no }
 		jip_mishpacha_flee_expulsion_effect = { EXPELLER = $EXPELLER$ }
 	}
 	else_if = {
@@ -408,7 +408,7 @@ jip_readmit_the_jews_effect = {
 	custom_tooltip = jip_readmit_the_jews_return_tt
 	hidden_effect = {
 		every_ruler = {
-			limit = { has_government = mishpacha_government }
+			limit = { jip_is_jewish_family_trigger = yes }
 			trigger_event = jip_expulsion.0002
 		}
 	}

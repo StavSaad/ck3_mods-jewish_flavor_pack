@@ -155,3 +155,12 @@
 [] Added the Court Astrologer, a Sabian of Harran who reads the stars for Muslim, Sabian and Middle Eastern courts (duke and above): horoscopes before wars, the births of children (each born under one of the seven planets) and marriages, tasks to compile astronomical tables or cast horoscopes for the court, and a new option in Recruit for a Court Position to send to Harran for one. Muslim zealots dislike it
 [] Added Pesach as a new kind of feast for every Jewish faith, shown in March and April: the four cups, the children's questions, the afikoman and Elijah's cup, ending with "Next year in Jerusalem" (or "this year" for a ruler who holds it). Karaites, Samaritans and the Beta Israel keep it their own way, an Exilarch's seder brings legitimacy, and a rebuilt Temple brings back the paschal lamb
 [] Every Jewish ruler who holds no grand seder keeps a household seder each spring
+[] Mishpacha is now the Jewish name of a new government, Familial, open to landless families of any faith; Jewish families keep their Mar/Geveret titles, kippah, court positions, Yeshiva, Beit Din and Beit Knesset, contracts and Shtadlanut
+[] Familial: non-Jewish families are headed by a Mar or Marta, and their family title is a Bayta
+[] Familial: a head who leaves the family's religion steps down for the nearest man of the house who keeps it
+[] 867: Thabit ibn Qurra, the Sabian mathematician and translator, heads a playable Familial family in Baghdad, a vassal of the Caliph
+[] Every start has a few Sabian families (Harran, Raqqa, Edessa; before 1100) and Mandaean families (the Marshes, Tib, Basra, Wasit, Ahvaz)
+[] Familial: Sabian families have court positions of their own (Mu'allim, Ra'is al-Kahana, Sha'ir, Kahin, Almoner, Rasul, Katib, Wakil), and so do Mandaean families (Ganzibra, Tarmida, Shganda, Izgadda, Sapra, Wakil), with their own tasks
+[] Familial: new estate branches for Sabians (Diwan, Haykal; the Observatory trains their Mu'allim) and Mandaeans (Scriptorium, Mandi)
+[] Familial: a non-Jewish family whose estate had a vanilla church or monastery gets its own temple branch, not a Beit Knesset
+[] Saves from earlier versions are not compatible

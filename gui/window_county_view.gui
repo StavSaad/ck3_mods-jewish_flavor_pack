@@ -244,7 +244,7 @@ window = {
 							name = "move_domcicle_button"
 							datacontext = "[GetPlayer.GetDomicile]"
 							datacontext = "[HoldingView.GetProvince]"
-							visible = "[Or( IsLandlessAdventurer( GetPlayer ), GetPlayer.GetGovernment.IsType( 'mishpacha_government' ) )]" # JIP: Mishpacha families can move their estate from the province view
+							visible = "[Or( IsLandlessAdventurer( GetPlayer ), GetPlayer.GetGovernment.IsType( 'familial_government' ) )]" # JIP: Mishpacha families can move their estate from the province view
 							widgetid = "move_domcicle_button"
 							size = { 50 50 }
 
@@ -266,7 +266,7 @@ window = {
 						expand = {}
 
 						spacer = {
-							visible = "[Or( Or( IsLandlessAdventurer( GetPlayer ), GetPlayer.GetGovernment.IsType( 'mishpacha_government' ) ), County.IsFullyOccupied )]" # JIP: match the move domicile button
+							visible = "[Or( Or( IsLandlessAdventurer( GetPlayer ), GetPlayer.GetGovernment.IsType( 'familial_government' ) ), County.IsFullyOccupied )]" # JIP: match the move domicile button
 							size = { 8 0 }
 						}
 

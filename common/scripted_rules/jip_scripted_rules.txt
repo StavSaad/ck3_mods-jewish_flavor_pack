@@ -12,7 +12,7 @@
 				trigger_if = {
 					limit = {
 						scope:owner = {
-							has_government = mishpacha_government
+							has_government = familial_government
 							is_landed = no
 						}
 					}
@@ -46,7 +46,7 @@
 					limit = {
 						NOT = {
 							scope:owner = {
-								has_government = mishpacha_government
+								has_government = familial_government
 								is_landed = no
 							}
 						}

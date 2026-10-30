@@ -11,7 +11,7 @@ on_travel_plan_complete = {
 # The estate is first set down where the family stopped, if the engine left it behind (jip_mishpacha_settle_estate_on_arrival_effect).
 jewish_admin_migration_on_action = {
 	trigger = {
-		has_government = mishpacha_government
+		has_government = familial_government
 		is_landed = no
 		current_travel_plan ?= { is_travel_with_domicile = yes }
 		exists = domicile
@@ -46,7 +46,7 @@ on_travel_plan_start = {
 # from a moving Mishpacha estate without overriding vanilla's travel danger on_action.
 mishpacha_block_camp_travel_events_on_action = {
 	trigger = {
-		has_government = mishpacha_government
+		has_government = familial_government
 		current_travel_plan ?= { is_travel_with_domicile = yes }
 		exists = primary_title
 	}
@@ -70,7 +70,7 @@ mishpacha_block_camp_travel_events_on_action = {
 # root = the travelling character
 jip_mishpacha_contracts_estate_arrival_on_action = {
 	trigger = {
-		has_government = mishpacha_government
+		has_government = familial_government
 		current_travel_plan ?= { is_travel_with_domicile = yes }
 	}
 	effect = {

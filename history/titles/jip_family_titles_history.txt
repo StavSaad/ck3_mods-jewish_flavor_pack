@@ -1,6 +1,6 @@
 ﻿d_jip_bostanite = {
 	560.1.1 = {
-		government = mishpacha_government
+		government = familial_government
 		succession_laws = {
 			noble_family_succession_law
 			male_only_law
@@ -152,7 +152,7 @@
 
 d_jip_ananite = {
 	760.9.1 = {
-		government = mishpacha_government
+		government = familial_government
 		succession_laws = {
 			noble_family_succession_law
 			male_only_law
@@ -210,7 +210,7 @@ d_jip_nathanite = {
 
 	270.1.1 = {
 		holder = rabbinic_exilarchate_ukban_dezuzita
-		government = mishpacha_government
+		government = familial_government
 		succession_laws = {
 			noble_family_succession_law
 			male_only_law
@@ -316,7 +316,7 @@ d_jip_makhirite = {
 
 	770.1.1 = {
 		holder = makhirite_makhir_ben_habibai
-		government = mishpacha_government
+		government = familial_government
 		succession_laws = { noble_family_succession_law male_only_law same_faith_only_law }
 	}
 
@@ -342,7 +342,7 @@ d_jip_shealtiel = {
 
 	1058.1.1 = {
 		holder = rabbinic_exilarchate_isaac_ben_chizqiyahu_ii
-		government = mishpacha_government
+		government = familial_government
 		succession_laws = { noble_family_succession_law same_faith_only_law }
 	}
 
@@ -374,7 +374,7 @@ d_jip_shealtiel = {
 
 d_jip_benveniste = {
 	1066.9.15 = {
-		government = mishpacha_government
+		government = familial_government
 		succession_laws = { noble_family_succession_law same_faith_only_law }
 		holder = yosef_cidellus_shealtiel
 	}
@@ -405,7 +405,7 @@ d_jip_benveniste = {
 d_jip_kalonymos = {
 	738.1.1 = {
 		holder = meshullam_i_kalonymos
-		government = mishpacha_government
+		government = familial_government
 		succession_laws = {
 			noble_family_succession_law
 			male_only_law
@@ -488,7 +488,7 @@ d_jip_maimon = {
 
 	1107.1.1 = {
 		holder = maimon_ben_yosef
-		government = mishpacha_government
+		government = familial_government
 		succession_laws = { noble_family_succession_law male_only_law same_faith_only_law }
 	}
 
@@ -508,4 +508,17 @@ d_jip_maimon = {
 		holder = david_ben_abraham_ben_maimonides
 	}
 
+}
+
+# Thabit ibn Qurra came to Baghdad with Muhammad ibn Musa and founded the Sabian community there
+d_jip_harrani = {
+	860.1.1 = {
+		holder = jip_sabian_thabit_ibn_qurra
+		government = familial_government
+		succession_laws = {
+			noble_family_succession_law
+			male_only_law
+			same_faith_only_law
+		}
+	}
 }

@@ -19,9 +19,9 @@ jip_valid_expulsion_refuge_trigger = {
 	}
 }
 
-# Character scope: a landless Mishpacha family whose estate lies in $RULER$'s realm
+# Character scope: a landless Jewish family whose estate lies in $RULER$'s realm
 jip_mishpacha_in_realm_of_trigger = {
-	has_government = mishpacha_government
+	jip_is_jewish_family_trigger = yes
 	is_landed = no
 	domicile ?= {
 		domicile_location.county.holder.top_liege ?= $RULER$

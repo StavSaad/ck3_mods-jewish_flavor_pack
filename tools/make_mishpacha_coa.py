@@ -1,5 +1,5 @@
 # Generates the Mishpacha government's realm CoA textures:
-#   gfx/interface/icons/realm_frames/mishpacha_government_{28,44,62,86,115}_{frame,shadow}.dds and _mask.dds:
+#   gfx/interface/icons/realm_frames/familial_government_{28,44,62,86,115}_{frame,shadow}.dds and _mask.dds:
 #     a banner with a Torah-mantle hem, from a Gemini silhouette (mishpacha_banner_silhouette.png, black on white)
 # The kippah and Keter above it come from make_mishpacha_crown.py; --crown draws an old procedural placeholder instead.
 # Everything is drawn at 8x in 128-unit coordinates and downsampled. Vanilla's are uncompressed BGRA without mips.
@@ -74,12 +74,12 @@ def make_shield(silhouette):
         frame = np.zeros((px, px, 4))
         frame[..., :3] = grad[:, None, :]
         frame[..., 3] = cov / 255.0 * 38
-        write_dds(MOD + f'gfx/interface/icons/realm_frames/mishpacha_government_{s}_frame.dds', frame, G + f'icons/realm_frames/_default_{s}_frame.dds')
+        write_dds(MOD + f'gfx/interface/icons/realm_frames/familial_government_{s}_frame.dds', frame, G + f'icons/realm_frames/_default_{s}_frame.dds')
         # shadow: the shape grown a little and softened, as vanilla's
         grow = {32: 1.2, 52: 1.5, 64: 1.7, 96: 2.0, 128: 2.3}[px] * 128 / px
         sh = ndimage.gaussian_filter((d_out < grow).astype(float), 0.6 * SS * 128 / px)
         shadow = downsample(np.dstack([np.zeros((N, N, 3)), sh * 255]), px, px)
-        write_dds(MOD + f'gfx/interface/icons/realm_frames/mishpacha_government_{s}_shadow.dds', shadow, G + f'icons/realm_frames/_default_{s}_shadow.dds')
+        write_dds(MOD + f'gfx/interface/icons/realm_frames/familial_government_{s}_shadow.dds', shadow, G + f'icons/realm_frames/_default_{s}_shadow.dds')
 
     # mask: vanilla's cloth texture under our shape (filled outward where vanilla's own shape ends)
     dm = np.array(Image.open(G + 'icons/realm_frames/_default_mask.dds').convert('RGBA')).astype(float)
@@ -89,7 +89,7 @@ def make_shield(silhouette):
     mask = np.zeros((128, 128, 4))
     mask[..., :3] = cloth
     mask[..., 3] = downsample(np.dstack([np.zeros((N, N, 3)), shape * 255.0]), 128, 128)[..., 3]
-    write_dds(MOD + 'gfx/interface/icons/realm_frames/mishpacha_government_mask.dds', mask, G + 'icons/realm_frames/_default_mask.dds')
+    write_dds(MOD + 'gfx/interface/icons/realm_frames/familial_government_mask.dds', mask, G + 'icons/realm_frames/_default_mask.dds')
 
 
 # Placeholder crown, drawn here; make_mishpacha_crown.py replaces it with the Gemini-painted one

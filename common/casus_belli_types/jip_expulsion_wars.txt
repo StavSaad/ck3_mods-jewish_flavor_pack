@@ -64,7 +64,7 @@ jip_resist_expulsion_cb = {
 				# Families who stood alone are taken back under the expeller's charter
 				if = {
 					limit = {
-						has_government = mishpacha_government
+						has_government = familial_government
 						is_landed = no
 						is_independent_ruler = yes
 					}

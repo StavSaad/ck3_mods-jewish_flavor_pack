@@ -1,4 +1,7 @@
-﻿mishpacha_government = { 
+﻿# Familial: landless families of protected minorities, modelled on the Jewish Nasi. One government for every faith: what is
+# Jewish about it (Mishpacha, its Jewish name; court positions, buildings, Shtadlanut, contracts) checks jip_is_jewish_family_trigger,
+# the shared mechanics the government_is_familial flag
+familial_government = { 
 	government_rules = {
 		create_cadet_branches = yes
 		rulers_should_have_dynasty = yes
@@ -10,7 +13,7 @@
 		inherit_from_dynastic_government = yes
 		sticky_government = yes
 		house_aspirations = no
-		noble_families = yes # dispossessed Jewish lords get a dynamic noble family title; vanilla destroys those yearly otherwise
+		noble_families = yes # dispossessed lords get a dynamic noble family title; vanilla destroys those yearly otherwise
 		deny_powerful_vassal = yes
 		uses_culture_and_house_head_named_realms = no
 		council = no
@@ -39,7 +42,7 @@
 		monthly_income_mult = 0.15
 		monthly_learning_lifestyle_xp_gain_mult = 0.1
 		monthly_stewardship_lifestyle_xp_gain_mult = 0.1 # Financiers as much as scholars
-		character_travel_safety = 10 # Trade networks and the hospitality of other Jewish communities on the road
+		character_travel_safety = 10 # Trade networks and the hospitality of fellow believers on the road
 		courtier_and_guest_opinion = 5 # The household is kin and dependants
 	}
 
@@ -61,7 +64,7 @@
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
 	flags = {
 		# These flags only exist for loc and in-game descriptions
-		government_is_mishpacha
+		government_is_familial
 		# These flags only exist for loc and in-game descriptions
 		# government_has_influence
 		government_has_title_men_at_arms
@@ -76,11 +79,11 @@
 		use_legends = yes
 	}
 
-	mechanic_type = mishpacha
+	mechanic_type = familial
 	is_mechanic_type_default = no
 
 	color = { 230 230 200 }
-	# Realm CoA: a banner with a Torah-mantle hem (gfx/interface/icons/realm_frames/mishpacha_government_*); the arms are kept clear of its scalloped corners
+	# Realm CoA: a banner with a Torah-mantle hem (gfx/interface/icons/realm_frames/familial_government_*); the arms are kept clear of its scalloped corners
 	realm_mask_offset = { 0.0 0.02 }
 	realm_mask_scale = { 0.96 0.96 }
 }

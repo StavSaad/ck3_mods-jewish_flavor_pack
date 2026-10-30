@@ -1,9 +1,10 @@
 ﻿# Mishpacha contracts (common/task_contracts/jip_mishpacha_contracts.txt)
 
 # Character scope: a family head who is offered Mishpacha contracts. Players only, like vanilla's adventurer contracts;
-# AI families get jip_mishpacha_ai_contract_effect instead
+# AI families get jip_mishpacha_ai_contract_effect instead. Jewish families only: the contracts' texts are Jewish
+# (the Sabian and Mandaean families' contracts are still to come, 0.15 plan section 8)
 jip_mishpacha_contract_owner_trigger = {
-	government_has_flag = government_is_mishpacha
+	jip_is_jewish_family_trigger = yes
 	is_ai = no
 	has_ep3_dlc_trigger = yes
 	exists = domicile
@@ -63,7 +64,7 @@ jip_mishpacha_contract_keep_trigger = {
 jip_mishpacha_contract_continue_trigger = {
 	task_contract_taker ?= {
 		is_alive = yes
-		government_has_flag = government_is_mishpacha
+		government_has_flag = government_is_familial
 	}
 	task_contract_employer ?= { is_alive = yes }
 }
@@ -95,7 +96,7 @@ jip_contract_approach_is_trigger = {
 # A contract scheme can go on: scope:owner = the family head, scope:target = its target
 jip_contract_scheme_valid_trigger = {
 	scope:owner = {
-		government_has_flag = government_is_mishpacha
+		government_has_flag = government_is_familial
 		is_imprisoned = no
 	}
 	scope:target = { is_alive = yes }

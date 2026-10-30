@@ -6,7 +6,7 @@
 jip_spawn_jewish_families_effect = {
 	# Counties that already hold a family estate are taken
 	every_ruler = {
-		limit = { has_government = mishpacha_government }
+		limit = { has_government = familial_government }
 		domicile ?= {
 			domicile_location.county = { add_to_list = jip_family_counties }
 		}
@@ -65,15 +65,24 @@ jip_spawn_jewish_families_in_region_effect = {
 	}
 }
 
-# A new Mishpacha family in the city scope:jip_new_family_home: a head aged 20 to 40, a family title and estate, the
-# local ruler as liege or suzerain, a spouse and children
+# A new Mishpacha family in the city scope:jip_new_family_home (jip_create_familial_family_effect)
 jip_create_jewish_family_effect = {
 	scope:jip_new_family_home = {
 		jip_jewish_family_culture_effect = yes
 		jip_jewish_family_faith_effect = yes
+	}
+	jip_create_familial_family_effect = yes
+}
+
+# A new Familial family of any faith in the city scope:jip_new_family_home, of the culture, faith and rite saved as
+# scope:jip_new_family_culture, scope:jip_new_family_faith and scope:jip_new_family_rite: a head aged 20 to 40, a family
+# title and estate, the local ruler as liege or suzerain, a spouse and children
+jip_create_familial_family_effect = {
+	scope:jip_new_family_home = {
 		county.holder.top_liege = { save_scope_as = jip_new_family_liege }
 	}
 	create_character = {
+		# Nothing Jewish in it but the name: skills and traits of a family of merchants and scholars
 		template = jip_jewish_family_head_template
 		location = scope:jip_new_family_home
 		culture = scope:jip_new_family_culture
@@ -88,7 +97,7 @@ jip_create_jewish_family_effect = {
 		create_domicile_title = {
 			name = jip_mishpacha_house_title_name
 			holder = scope:jip_new_mishpacha_head
-			government = mishpacha_government
+			government = familial_government
 			tier = duchy
 			save_scope_as = jip_domicile_title
 		}
@@ -96,7 +105,7 @@ jip_create_jewish_family_effect = {
 			name = noble_family_name
 			tier = duchy
 			article = DEFAULT_TITLE_NAME_ARTICLE
-			government = mishpacha_government
+			government = familial_government
 			save_scope_as = jip_new_family_title
 		}
 		destroy_title = scope:jip_domicile_title
@@ -106,8 +115,8 @@ jip_create_jewish_family_effect = {
 		}
 		jip_mishpacha_change_liege_effect = { LIEGE = scope:jip_new_family_liege }
 		if = {
-			limit = { NOT = { has_government = mishpacha_government } }
-			change_government = mishpacha_government
+			limit = { NOT = { has_government = familial_government } }
+			change_government = familial_government
 		}
 		jip_mishpacha_ensure_succession_law_effect = yes
 		add_gold = jip_jewish_family_starting_gold_value

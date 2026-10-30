@@ -30,16 +30,16 @@ mishpacha_succession_law = {
 	index = 30
 
 	can_keep = {
-		government_has_flag = government_is_mishpacha
+		government_has_flag = government_is_familial
 	}
 	can_have = {
-		government_has_flag = government_is_mishpacha
+		government_has_flag = government_is_familial
 	}
 	can_pass = {
-		government_has_flag = government_is_mishpacha
+		government_has_flag = government_is_familial
 	}
 	should_start_with = {
-		government_has_flag = government_is_mishpacha
+		government_has_flag = government_is_familial
 	}
 	succession = {
 		order_of_succession = inheritance
@@ -50,6 +50,6 @@ mishpacha_succession_law = {
 	flag = can_designate_heirs
 
 	potential = {
-		government_has_flag = government_is_mishpacha
+		government_has_flag = government_is_familial
 	}
 }

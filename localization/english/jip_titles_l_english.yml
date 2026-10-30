@@ -50,3 +50,5 @@
  h_fertile_crescent:0 "Fertile Crescent"
  h_fertile_crescent_adj:0 "Crescentite"
  h_fertile_crescent_article:0 "the "
+ d_jip_harrani:0 "$harrani_dynasty$"
+ d_jip_harrani_adj:0 "Harranian"

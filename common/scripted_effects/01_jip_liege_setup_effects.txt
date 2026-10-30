@@ -134,6 +134,10 @@ jip_867_liege_setup_effect = {
 		character:karaite_exilarchate_boaz_i ?= {
 			jip_mishpacha_change_liege_effect = { LIEGE = scope:jip_setup_liege }
 		}
+		# Thabit ibn Qurra, the Sabians of Baghdad
+		character:jip_sabian_thabit_ibn_qurra ?= {
+			jip_mishpacha_change_liege_effect = { LIEGE = scope:jip_setup_liege }
+		}
 	}
 
 	character:30228 ?= { # King of Italy

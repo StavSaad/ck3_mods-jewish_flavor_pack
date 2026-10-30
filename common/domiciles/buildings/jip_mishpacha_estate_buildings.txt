@@ -11,7 +11,7 @@ jip_yeshiva_03 = {
 	previous_building = library_02
 
 	can_construct_potential = {
-		jip_can_build_mishpacha_estate_building_trigger = yes
+		jip_can_build_jewish_estate_building_trigger = yes
 	}
 	can_construct = {
 		domicile ?= { has_domicile_building_or_higher = estate_main_02 }
@@ -57,7 +57,7 @@ jip_yeshiva_04 = {
 	previous_building = jip_yeshiva_03
 
 	can_construct_potential = {
-		jip_can_build_mishpacha_estate_building_trigger = yes
+		jip_can_build_jewish_estate_building_trigger = yes
 	}
 	can_construct = {
 		domicile ?= { has_domicile_building_or_higher = estate_main_03 }
@@ -106,7 +106,7 @@ jip_beit_din_03 = {
 	previous_building = jip_office_02
 
 	can_construct_potential = {
-		jip_can_build_mishpacha_estate_building_trigger = yes
+		jip_can_build_jewish_estate_building_trigger = yes
 	}
 	can_construct = {
 		domicile ?= { has_domicile_building_or_higher = estate_main_02 }
@@ -145,7 +145,7 @@ jip_beit_din_04 = {
 	previous_building = jip_beit_din_03
 
 	can_construct_potential = {
-		jip_can_build_mishpacha_estate_building_trigger = yes
+		jip_can_build_jewish_estate_building_trigger = yes
 	}
 	can_construct = {
 		domicile ?= { has_domicile_building_or_higher = estate_main_03 }
@@ -187,7 +187,7 @@ jip_beit_knesset_04 = {
 	previous_building = jip_temple_small_03
 
 	can_construct_potential = {
-		jip_can_build_mishpacha_estate_building_trigger = yes
+		jip_can_build_jewish_estate_building_trigger = yes
 	}
 	can_construct = {
 		domicile ?= { has_domicile_building_or_higher = estate_main_03 }
@@ -263,7 +263,7 @@ jip_beit_knesset_05 = {
 	previous_building = jip_beit_knesset_04
 
 	can_construct_potential = {
-		jip_can_build_mishpacha_estate_building_trigger = yes
+		jip_can_build_jewish_estate_building_trigger = yes
 	}
 	can_construct = {
 		domicile ?= { has_domicile_building_or_higher = estate_main_04 }
@@ -339,7 +339,7 @@ jip_beit_knesset_06 = {
 	previous_building = jip_beit_knesset_05
 
 	can_construct_potential = {
-		jip_can_build_mishpacha_estate_building_trigger = yes
+		jip_can_build_jewish_estate_building_trigger = yes
 	}
 	can_construct = {
 		domicile ?= { has_domicile_building_or_higher = estate_main_05 }

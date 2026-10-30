@@ -1,5 +1,28 @@
-﻿# Realm CoA decoration, gui/shared/coat_of_arms.gui: a Mishpacha head who is an Exilarch wears the Keter Shem Tov
-# (jip_exilarch_topframe_<size>.dds), the others a kippah (jip_mishpacha_topframe_<size>.dds)
+﻿# Realm CoA decoration, gui/shared/coat_of_arms.gui: a Jewish Familial head who is an Exilarch wears the Keter Shem Tov
+# (jip_exilarch_topframe_<size>.dds), the other Jewish heads a kippah (jip_mishpacha_topframe_<size>.dds)
+jip_coa_is_jewish = {
+	scope = character
+	is_shown = {
+		religion = religion:judaism_religion
+	}
+}
+
+# Sabian heads wear the crescent of Sin (jip_sabian_topframe_<size>.dds), Mandaean heads the klila, the priests' myrtle
+# wreath (jip_mandaean_topframe_<size>.dds)
+jip_coa_is_sabian = {
+	scope = character
+	is_shown = {
+		rite = rite:sabianism
+	}
+}
+
+jip_coa_is_mandaean = {
+	scope = character
+	is_shown = {
+		rite = rite:mandeaism
+	}
+}
+
 jip_coa_is_exilarch = {
 	scope = character
 	is_shown = {

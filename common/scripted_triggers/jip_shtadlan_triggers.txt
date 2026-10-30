@@ -3,7 +3,7 @@
 # scope:actor can intercede: the head of a landless Mishpacha family, free to act, with scope:recipient in reach
 jip_shtadlan_can_intercede_trigger = {
 	scope:actor = {
-		government_has_flag = government_is_mishpacha
+		jip_is_jewish_family_trigger = yes
 		is_landed = no
 	}
 	scope:recipient = {

@@ -56,7 +56,7 @@ jip_carthage_restored_on_action = {
 
 mishpacha_landed_government_switch_on_action = {
 	trigger = {
-		has_government = mishpacha_government
+		has_government = familial_government
 		is_landed = yes
 	}
 

@@ -1,0 +1,60 @@
+﻿# The Sabians of Harran in Baghdad
+
+# Qurra ibn Marwan, Thabit's father, of Harran
+jip_sabian_qurra_ibn_marwan = {
+	name = "Qurra"
+	rite = sabianism
+	culture = syriac
+	dynasty = harrani_dynasty
+	790.1.1 = {
+		birth = yes
+	}
+	855.1.1 = {
+		death = yes
+	}
+}
+
+# Thabit ibn Qurra al-Harrani (826-901): a money changer of Harran whom Muhammad ibn Musa of the Banu Musa brought to
+# Baghdad; mathematician, astronomer, physician and translator of Euclid, Archimedes and Ptolemy. Cast out by the Sabians of
+# Harran, he founded the Sabian community of Baghdad. Head of a Familial family at 867 (d_jip_harrani), the only start of
+# the Sabian storyline (0.15 plan section 10)
+jip_sabian_thabit_ibn_qurra = {
+	name = "Thabit"
+	rite = sabianism
+	culture = syriac
+	dynasty = harrani_dynasty
+	father = jip_sabian_qurra_ibn_marwan
+	trait = education_learning_4
+	trait = intellect_good_3
+	trait = lifestyle_physician
+	trait = diligent
+	trait = ambitious
+	trait = stubborn
+	826.1.1 = {
+		birth = yes
+	}
+	855.1.1 = {
+		add_spouse = jip_sabian_thabit_wife
+	}
+	901.2.18 = {
+		death = yes
+	}
+}
+
+# Thabit's wife; her name is not known
+jip_sabian_thabit_wife = {
+	name = "Maryam"
+	female = yes
+	rite = sabianism
+	culture = syriac
+	trait = education_stewardship_2
+	trait = patient
+	trait = honest
+	trait = calm
+	835.1.1 = {
+		birth = yes
+	}
+	905.1.1 = {
+		death = yes
+	}
+}

@@ -17,7 +17,7 @@ emperor_male_jewish = {
 	heritages = { heritage_israelite }
 }
 
-# Mar/Geveret for Mishpacha family heads. top_liege = no checks the family head rather than their non-Jewish
+# Mar/Geveret for Jewish Familial family heads (Mishpacha). top_liege = no checks the family head rather than their non-Jewish
 # top liege, and the priority beats the liege's titles and the Israelite tier titles (Nasi)
 duke_jewish_landless_male = {
 	type = character
@@ -26,7 +26,8 @@ duke_jewish_landless_male = {
 	tier = duchy
 	domicile_type = estate
 	priority = 302
-	governments = { mishpacha_government }
+	governments = { familial_government }
+	religions = { judaism_religion }
 
 	flavourization_rules = {
 		spouse_takes_title = no
@@ -95,7 +96,7 @@ exilarch = {
 	}
 }
 
-# Mar/Geveret for Mishpacha family heads. top_liege = no checks the family head rather than their non-Jewish
+# Mar/Geveret for Jewish Familial family heads (Mishpacha). top_liege = no checks the family head rather than their non-Jewish
 # top liege, and the priority beats the liege's titles and the Israelite tier titles (Nasi)
 duke_jewish_landless_female = {
 	type = character
@@ -104,7 +105,8 @@ duke_jewish_landless_female = {
 	tier = duchy
 	domicile_type = estate
 	priority = 302
-	governments = { mishpacha_government }
+	governments = { familial_government }
+	religions = { judaism_religion }
 
 	flavourization_rules = {
 		spouse_takes_title = no
@@ -120,7 +122,8 @@ spouse_jewish_landless_male = {
 	domicile_type = estate
 	tier = duchy
 	priority = 302
-	governments = { mishpacha_government }
+	governments = { familial_government }
+	religions = { judaism_religion }
 
 	flavourization_rules = {
 		top_liege = no
@@ -135,7 +138,8 @@ spouse_jewish_landless_female = {
 	domicile_type = estate
 	tier = duchy
 	priority = 302
-	governments = { mishpacha_government }
+	governments = { familial_government }
+	religions = { judaism_religion }
 
 	flavourization_rules = {
 		top_liege = no
@@ -248,7 +252,8 @@ duchy_mishpacha = {
 	type = title
 	tier = duchy
 	priority = 302
-	governments = { mishpacha_government }
+	governments = { familial_government }
+	religions = { judaism_religion }
 
 	flavourization_rules = {
 		top_liege = no
@@ -268,12 +273,95 @@ duchy_mishpacha_historical_families = {
 	}
 }
 
-# "the X Household" for Mishpacha estates, in place of vanilla's "the X Estate"
+# Non-Jewish Familial families (Sabians, Mandaeans): Mar/Marta, the Aramaic lord and lady, and the family title is a
+# Bayta ("house"). Below the Jewish entries above, which also check the religion
+duke_familial_landless_male = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	domicile_type = estate
+	priority = 301
+	governments = { familial_government }
+
+	flavourization_rules = {
+		spouse_takes_title = no
+		top_liege = no
+	}
+}
+
+duke_familial_landless_female = {
+	type = character
+	gender = female
+	special = holder
+	tier = duchy
+	domicile_type = estate
+	priority = 301
+	governments = { familial_government }
+
+	flavourization_rules = {
+		spouse_takes_title = no
+		top_liege = no
+	}
+}
+
+spouse_familial_landless_male = {
+	type = character
+	gender = male
+	special = domicile
+	domicile_type = estate
+	tier = duchy
+	priority = 301
+	governments = { familial_government }
+
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+spouse_familial_landless_female = {
+	type = character
+	gender = female
+	special = domicile
+	domicile_type = estate
+	tier = duchy
+	priority = 301
+	governments = { familial_government }
+
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+duchy_familial = {
+	type = title
+	tier = duchy
+	priority = 301
+	governments = { familial_government }
+
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+# The same for the mod's non-Jewish historical family titles when their holder is dead (see duchy_mishpacha_historical_families)
+duchy_familial_historical_families = {
+	type = title
+	tier = duchy
+	priority = 300
+	titles = { d_jip_harrani }
+
+	flavourization_rules = {
+		top_liege = no
+	}
+}
+
+# "the X Household" for Familial estates, in place of vanilla's "the X Estate"
 domicile_estate_mishpacha = {
 	type = domicile
 	domicile_type = estate
 	priority = 27
-	governments = { mishpacha_government }
+	governments = { familial_government }
 
 	flavourization_rules = {
 		top_liege = no

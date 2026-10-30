@@ -1,0 +1,59 @@
+﻿# Game start: a few Familial families of the Sabians and Mandaeans (0.15 plan section 8). Sabians in the cities of the upper
+# Euphrates while the Harranian cult lives (before 1100), Mandaeans in the marshes and Khuzestan. One family per county, and
+# none where a family already lives (Thabit ibn Qurra's in Baghdad, the Jewish families). Created like the Jewish families
+# (jip_create_familial_family_effect). Runs in on_game_start after jip_spawn_jewish_families_effect, where root is empty:
+# nothing here may use root.
+jip_spawn_gnostic_families_effect = {
+	every_ruler = {
+		limit = { has_government = familial_government }
+		domicile ?= {
+			domicile_location.county = { add_to_list = jip_family_counties }
+		}
+	}
+	if = {
+		limit = { current_date < 1100.1.1 }
+		title:c_harran = { add_to_list = jip_sabian_family_candidates }
+		title:c_raqqa = { add_to_list = jip_sabian_family_candidates }
+		title:c_edessa = { add_to_list = jip_sabian_family_candidates }
+		jip_spawn_gnostic_families_from_list_effect = { LIST = jip_sabian_family_candidates COUNT = 2 CULTURE = syriac RITE = sabianism }
+	}
+	title:c_tib = { add_to_list = jip_mandaean_family_candidates }
+	title:c_batiha = { add_to_list = jip_mandaean_family_candidates }
+	title:c_basra = { add_to_list = jip_mandaean_family_candidates }
+	title:c_wasit = { add_to_list = jip_mandaean_family_candidates }
+	title:c_ahvaz = { add_to_list = jip_mandaean_family_candidates }
+	jip_spawn_gnostic_families_from_list_effect = { LIST = jip_mandaean_family_candidates COUNT = 3 CULTURE = nabati RITE = mandeaism }
+}
+
+# Up to $COUNT$ new families of culture $CULTURE$ and the Mandaean faith's rite $RITE$, each in a free county of $LIST$
+# that has a city
+jip_spawn_gnostic_families_from_list_effect = {
+	while = {
+		count = $COUNT$
+		if = {
+			limit = {
+				any_in_list = {
+					list = $LIST$
+					NOT = { is_in_list = jip_family_counties }
+					any_county_province = { has_holding_type = city_holding }
+				}
+			}
+			random_in_list = {
+				list = $LIST$
+				limit = {
+					NOT = { is_in_list = jip_family_counties }
+					any_county_province = { has_holding_type = city_holding }
+				}
+				add_to_list = jip_family_counties
+				random_county_province = {
+					limit = { has_holding_type = city_holding }
+					save_scope_as = jip_new_family_home
+				}
+			}
+			culture:$CULTURE$ = { save_scope_as = jip_new_family_culture }
+			faith:mandaean_faith = { save_scope_as = jip_new_family_faith }
+			rite:$RITE$ = { save_scope_as = jip_new_family_rite }
+			jip_create_familial_family_effect = yes
+		}
+	}
+}

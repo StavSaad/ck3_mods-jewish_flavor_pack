@@ -122,3 +122,10 @@ kalonymos_dynasty = {
 	name = "dynn_Kalonymos"
 	culture = ashkenazi
 }
+
+# Thabit ibn Qurra's house, the Sabians of Harran in Baghdad (history/characters/jip_sabians.txt)
+harrani_dynasty = {
+	prefix = "dynnp_al-"
+	name = "dynn_Harrani"
+	culture = "syriac"
+}

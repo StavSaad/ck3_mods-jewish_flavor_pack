@@ -8,3 +8,4 @@ d_jip_makhirite = makhirite_dynasty
 d_jip_maimon = ben_maimon
 d_exilarchate = davidite_dynasty
 d_karaite_exilarchate = house_ananite
+d_jip_harrani = harrani_dynasty

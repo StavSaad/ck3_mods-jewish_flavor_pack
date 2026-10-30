@@ -1,7 +1,8 @@
-# Generates gui/shared/coat_of_arms.gui: a full copy of the realm CoA GUI with the Mishpacha government's decoration.
-# A Mishpacha head's realm CoA shows a kippah (jip_mishpacha_topframe_<size>.dds), or the Keter Shem Tov for an Exilarch
+# Generates gui/shared/coat_of_arms.gui: a full copy of the realm CoA GUI with the Familial government's decoration.
+# A Familial head's realm CoA has no tier crown. A Jewish head's (jip_coa_is_jewish) shows a kippah
+# (jip_mishpacha_topframe_<size>.dds), or the Keter Shem Tov for an Exilarch
 # (jip_exilarch_topframe_<size>.dds, jip_coa_is_exilarch in common/scripted_guis), instead of the tier crown; the tier bar
-# stays, as for adventurers (the shield shape itself comes from gfx/interface/icons/realm_frames/mishpacha_government_*,
+# stays, as for adventurers (the shield shape itself comes from gfx/interface/icons/realm_frames/familial_government_*,
 # picked by the engine from the government's name).
 #
 # Built on Aligned Realm Banners' copy of the file when that mod is installed (workshop 3823433423), so Rising Lion can load
@@ -17,9 +18,16 @@ import re
 VANILLA = r'C:/Program Files (x86)/Steam/steamapps/common/Crusader Kings III/game/gui/shared/coat_of_arms.gui'
 ARB = r'C:/Program Files (x86)/Steam/steamapps/workshop/content/1158310/3823433423/gui/shared/coat_of_arms.gui'
 OUT = r'C:/Users/stavs/OneDrive/Documents/Paradox Interactive/Crusader Kings III/mod/jewitup/gui/shared/coat_of_arms.gui'
-GOV = "'mishpacha_government'"
+GOV = "'familial_government'"
 HIDE_TIER_BAR = False
 EXILARCH = "GetScriptedGui('jip_coa_is_exilarch').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )"
+JEWISH = "GetScriptedGui('jip_coa_is_jewish').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )"
+# Other faiths' families: the Sabians' crescent of Sin and the Mandaeans' klila (jip_<kind>_topframe_<size>.dds, made by
+# make_mishpacha_crown.py), each drawn once its textures exist; checked by the jip_coa_is_<kind> scripted GUIs. The save
+# game and bookmark have no faith to check, so they keep the kippah.
+FAITH_DECOR = [(k, f"GetScriptedGui('jip_coa_is_{k}').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )")
+               for k in ['sabian', 'mandaean']
+               if os.path.exists(os.path.dirname(OUT) + f'/../../gfx/interface/coat_of_arms/jip_{k}_topframe_28.dds')]
 # A bookmark character is no real character, so titles can't be looked up: the bookmark entries of the Exilarchs at their
 # start dates (common/bookmarks/bookmarks/jip_bookmarks.txt) are matched by name instead
 EXILARCH_BOOKMARKS = ['bookmark_jip_exilarch_chisdai_ii', 'bookmark_jip_exilarch_karaite_boaz']
@@ -67,8 +75,10 @@ def add_decor_after_adventurer(p, name):
         position = re.search(r'position = \{ (-?\d+ -?\d+) \}', blk)
         vis = re.search(r'visible = "\[(.*)\]"', blk).group(1).replace("'landless_adventurer_government'", GOV)
         out.append(p[pos:mm.end()])
-        out.append(decor_icon(mm.group(1), f'[And( {vis}, Not({EXILARCH}) )]', size, w, h, position=position and position.group(1)))
+        out.append(decor_icon(mm.group(1), f'[And( And( {vis}, {JEWISH} ), Not({EXILARCH}) )]', size, w, h, position=position and position.group(1)))
         out.append(decor_icon(mm.group(1), f'[And( {vis}, {EXILARCH} )]', size, w, h, 'exilarch', position and position.group(1)))
+        for kind, shown in FAITH_DECOR:
+            out.append(decor_icon(mm.group(1), f'[And( {vis}, {shown} )]', size, w, h, kind, position and position.group(1)))
         pos = mm.end()
         found += 1
     assert found, name
@@ -91,7 +101,7 @@ for p in parts:
     elif re.fullmatch(r'coa_realm_(tiny|small|medium|big|huge)', name):
         p = add_decor_after_adventurer(p, name)
         p = hide_topframes(p, 'GovernmentType')
-    # a save game has no character to look titles up on, so it always shows the kippah
+    # a save game has no character to look titles or faith up on, so it always shows the kippah
     elif name == 'coa_savegame':
         p, n = re.subn(r'visible = "\[SaveGameItem\.HasCoatOfArms\]"(\n\t+parentanchor = hcenter\n\t+texture = "gfx/interface/coat_of_arms/crown_strip_44\.dds")',
                        lambda mm: f'visible = "[And( SaveGameItem.HasCoatOfArms, Not(SaveGameItem.GetPlayerGovernment.IsType({GOV})) )]"{mm.group(1)}', p)
@@ -127,7 +137,7 @@ if use_arb:
     assert not unguarded, 'unguarded ARB reference'
     print('guarded', n_gui, 'scripted GUI calls and', n_tex, 'textures')
 # realm types: a pair per helmet (vanilla: 5 in the flow; ARB: 5 in the _crown flows + 5 overlays); save game 1; bookmark 2
-expected_decor = (20 if use_arb else 10) + 1 + 2
+expected_decor = (10 if use_arb else 5) * (2 + len(FAITH_DECOR)) + 1 + 2
 assert count == {'crown': 7, 'decor': expected_decor, 'topframe': 9 if HIDE_TIER_BAR else 0}, count
 if use_arb:
     base = ("Aligned Realm Banners' copy (workshop 3823433423; its changes are marked \"arb\", and its references are guarded\n"
@@ -137,7 +147,7 @@ if use_arb:
 else:
     base = 'vanilla 1.20'
 header = (f'# Generated by make_coa_gui_override.py from {base}: a full copy of gui/shared/coat_of_arms.gui with the\n'
-          "# Mishpacha government's realm CoA decoration (a kippah, or the Keter Shem Tov for an Exilarch, instead of the tier crown).\n"
+          "# Familial government's realm CoA decoration (no tier crown; for Jews a kippah, or the Keter Shem Tov for an Exilarch).\n"
           '# With Aligned Realm Banners, Rising Lion must load after it. Rerun after every vanilla or ARB update.\n')
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 open(OUT, 'wb').write(b'\xef\xbb\xbf' + (header + text).encode('utf-8'))

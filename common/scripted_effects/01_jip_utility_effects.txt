@@ -41,7 +41,7 @@ jip_mishpacha_adopt_landed_government_effect = {
 			is_independent_ruler = no
 			liege ?= {
 				NOR = {
-					government_has_flag = government_is_mishpacha
+					government_has_flag = government_is_familial
 					government_has_flag = government_is_theocracy
 					government_has_flag = government_is_ecclesiastical
 					government_has_flag = government_is_holy_order
@@ -59,11 +59,28 @@ jip_mishpacha_adopt_landed_government_effect = {
 }
 
 
-# A Mishpacha family head who leaves Judaism steps down. Their titles pass to the nearest Jewish man of their house:
+# Character scope: records the family's religion on its family titles, once: the religion of the head who first holds them
+# as a Familial family (at game start, then yearly for new families). jip_family_left_faith_on_action compares the head's with it.
+jip_familial_record_religion_effect = {
+	every_held_title = {
+		limit = {
+			jip_is_mishpacha_family_title_trigger = yes
+			NOT = { has_variable = jip_family_religion }
+		}
+		set_variable = { name = jip_family_religion value = prev.religion }
+	}
+}
+
+# A Familial family head who leaves the family's religion (var:jip_family_religion on the family title) steps down. Their
+# titles pass to the nearest man of their house who keeps it:
 # children first, then close family, extended family and the rest of the house, eldest first within each group.
 # With no such heir, the family title is destroyed and the convert becomes Administrative, keeping any other titles and their liege.
 jip_mishpacha_leave_faith_effect = {
 	save_scope_as = jip_convert
+	random_held_title = {
+		limit = { has_variable = jip_family_religion }
+		var:jip_family_religion = { save_scope_as = jip_family_religion }
+	}
 	if = {
 		limit = { is_independent_ruler = no }
 		liege = { save_scope_as = jip_convert_liege }
@@ -75,7 +92,7 @@ jip_mishpacha_leave_faith_effect = {
 				any_house_member = {
 					this != scope:jip_convert
 					is_male = yes
-					religion = religion:judaism_religion
+					religion = scope:jip_family_religion
 				}
 			}
 		}
@@ -84,7 +101,7 @@ jip_mishpacha_leave_faith_effect = {
 				limit = {
 					this != scope:jip_convert
 					is_male = yes
-					religion = religion:judaism_religion
+					religion = scope:jip_family_religion
 				}
 				order_by = {
 					value = age
@@ -121,8 +138,8 @@ jip_mishpacha_leave_faith_effect = {
 			if = {
 				limit = { is_landed = no }
 				if = {
-					limit = { NOT = { has_government = mishpacha_government } }
-					change_government = mishpacha_government
+					limit = { NOT = { has_government = familial_government } }
+					change_government = familial_government
 				}
 				jip_mishpacha_ensure_succession_law_effect = yes
 				# Keep the family where it was and under the same liege
@@ -154,7 +171,7 @@ jip_mishpacha_leave_faith_effect = {
 jip_mishpacha_ensure_succession_law_effect = {
 	if = {
 		limit = {
-			has_government = mishpacha_government
+			has_government = familial_government
 			NOT = { has_realm_law = mishpacha_succession_law }
 		}
 		add_realm_law_skip_effects = mishpacha_succession_law
@@ -187,7 +204,7 @@ jip_mishpacha_refresh_villa_modifier_effect = {
 	}
 	if = {
 		limit = {
-			has_government = mishpacha_government
+			has_government = familial_government
 			exists = domicile
 		}
 		domicile = { save_temporary_scope_as = jip_villa_domicile }
@@ -211,6 +228,26 @@ jip_mishpacha_refresh_villa_modifier_effect = {
 			limit = { scope:jip_villa_domicile = { has_domicile_building_or_higher = estate_main_01 } }
 			add_character_modifier = jip_mishpacha_villa_1
 		}
+	}
+}
+
+# Domicile scope: the temple branch of tier $TIER$ that fits the family's faith, for a vanilla Church or Monastery being
+# replaced (jip_mishpacha_replace_estate_buildings_effect): Beit Knesset, Haykal or Mandi, else the Crypt
+jip_add_family_temple_branch_effect = {
+	if = {
+		limit = { domicile_owner = { jip_is_jewish_family_trigger = yes } }
+		add_domicile_building = jip_beit_knesset_$TIER$
+	}
+	else_if = {
+		limit = { domicile_owner = { jip_is_sabian_family_trigger = yes } }
+		add_domicile_building = jip_haykal_$TIER$
+	}
+	else_if = {
+		limit = { domicile_owner = { jip_is_mandaean_family_trigger = yes } }
+		add_domicile_building = jip_mandi_$TIER$
+	}
+	else = {
+		add_domicile_building = jip_temple_crypt_$TIER$
 	}
 }
 
@@ -426,7 +463,7 @@ jip_mishpacha_replace_estate_buildings_effect = {
 			add_domicile_building = jip_temple_small_01
 			add_domicile_building = jip_temple_small_02
 			add_domicile_building = jip_temple_small_03
-			add_domicile_building = jip_beit_knesset_04
+			jip_add_family_temple_branch_effect = { TIER = 04 }
 		}
 		if = {
 			limit = { has_domicile_building = temple_monastery_04 }
@@ -434,7 +471,7 @@ jip_mishpacha_replace_estate_buildings_effect = {
 			add_domicile_building = jip_temple_small_01
 			add_domicile_building = jip_temple_small_02
 			add_domicile_building = jip_temple_small_03
-			add_domicile_building = jip_beit_knesset_04
+			jip_add_family_temple_branch_effect = { TIER = 04 }
 		}
 		if = {
 			limit = { has_domicile_building = temple_crypt_05 }
@@ -451,8 +488,8 @@ jip_mishpacha_replace_estate_buildings_effect = {
 			add_domicile_building = jip_temple_small_01
 			add_domicile_building = jip_temple_small_02
 			add_domicile_building = jip_temple_small_03
-			add_domicile_building = jip_beit_knesset_04
-			add_domicile_building = jip_beit_knesset_05
+			jip_add_family_temple_branch_effect = { TIER = 04 }
+			jip_add_family_temple_branch_effect = { TIER = 05 }
 		}
 		if = {
 			limit = { has_domicile_building = temple_monastery_05 }
@@ -460,8 +497,8 @@ jip_mishpacha_replace_estate_buildings_effect = {
 			add_domicile_building = jip_temple_small_01
 			add_domicile_building = jip_temple_small_02
 			add_domicile_building = jip_temple_small_03
-			add_domicile_building = jip_beit_knesset_04
-			add_domicile_building = jip_beit_knesset_05
+			jip_add_family_temple_branch_effect = { TIER = 04 }
+			jip_add_family_temple_branch_effect = { TIER = 05 }
 		}
 		if = {
 			limit = { has_domicile_building = temple_crypt_06 }
@@ -479,9 +516,9 @@ jip_mishpacha_replace_estate_buildings_effect = {
 			add_domicile_building = jip_temple_small_01
 			add_domicile_building = jip_temple_small_02
 			add_domicile_building = jip_temple_small_03
-			add_domicile_building = jip_beit_knesset_04
-			add_domicile_building = jip_beit_knesset_05
-			add_domicile_building = jip_beit_knesset_06
+			jip_add_family_temple_branch_effect = { TIER = 04 }
+			jip_add_family_temple_branch_effect = { TIER = 05 }
+			jip_add_family_temple_branch_effect = { TIER = 06 }
 		}
 		if = {
 			limit = { has_domicile_building = temple_monastery_06 }
@@ -489,9 +526,9 @@ jip_mishpacha_replace_estate_buildings_effect = {
 			add_domicile_building = jip_temple_small_01
 			add_domicile_building = jip_temple_small_02
 			add_domicile_building = jip_temple_small_03
-			add_domicile_building = jip_beit_knesset_04
-			add_domicile_building = jip_beit_knesset_05
-			add_domicile_building = jip_beit_knesset_06
+			jip_add_family_temple_branch_effect = { TIER = 04 }
+			jip_add_family_temple_branch_effect = { TIER = 05 }
+			jip_add_family_temple_branch_effect = { TIER = 06 }
 		}
 		if = {
 			limit = { has_domicile_building = prison_02 }

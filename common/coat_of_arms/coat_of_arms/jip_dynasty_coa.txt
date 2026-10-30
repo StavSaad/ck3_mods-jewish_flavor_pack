@@ -261,3 +261,17 @@ davidite_dynasty = {
 		}
 	}
 }
+
+# The crescent of Sin, the moon god of Harran, silver on the night sky
+harrani_dynasty = {
+	pattern = "pattern_solid.dds"
+	color1 = "blue_dark"
+	color2 = "blue_dark"
+	colored_emblem = {
+		color1 = "white"
+		texture = "ce_crescent.dds"
+		instance = {
+			scale = { 0.8 0.8 }
+		}
+	}
+}

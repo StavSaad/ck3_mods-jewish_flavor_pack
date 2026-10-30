@@ -25,6 +25,39 @@ jip_jewish_court_position_validity_trigger = {
 	}
 }
 
+# The Sabian and Mandaean family positions (jip_gnostic_court_positions.txt): an adult of the family's rite, full time
+jip_sabian_court_position_validity_trigger = {
+	base_court_position_validity_trigger = { EMPLOYER = $EMPLOYER$ }
+	is_adult = yes
+	rite = rite:sabianism
+	custom_tooltip = {
+		text = none_does_not_have_a_full_time_job
+		trigger_if = {
+			limit = {
+				NOT = { has_court_position = $POS$ }
+			}
+			court_position_does_not_already_have_a_job_trigger = yes
+			jip_has_no_jewish_court_position_trigger = yes
+		}
+	}
+}
+
+jip_mandaean_court_position_validity_trigger = {
+	base_court_position_validity_trigger = { EMPLOYER = $EMPLOYER$ }
+	is_adult = yes
+	rite = rite:mandeaism
+	custom_tooltip = {
+		text = none_does_not_have_a_full_time_job
+		trigger_if = {
+			limit = {
+				NOT = { has_court_position = $POS$ }
+			}
+			court_position_does_not_already_have_a_job_trigger = yes
+			jip_has_no_jewish_court_position_trigger = yes
+		}
+	}
+}
+
 # Character scope: holds none of the Jewish court positions (nor the Sabian Court Astrologer). Vanilla's court_position_does_not_already_have_a_job_trigger
 # doesn't know them, so the full-time check above needs both.
 jip_has_no_jewish_court_position_trigger = {
@@ -39,13 +72,43 @@ jip_has_no_jewish_court_position_trigger = {
 		has_court_position = jip_parnas_court_position
 		has_court_position = jip_court_financier_court_position
 		has_court_position = jip_sabian_astrologer_court_position
+		jip_has_gnostic_court_position_trigger = yes
 	}
 }
 
-# Character scope: can appoint all the Jewish court positions. Mishpacha family heads can appoint almost none of the
+# Character scope: holds one of the Sabian or Mandaean family court positions (jip_gnostic_court_positions.txt)
+jip_has_gnostic_court_position_trigger = {
+	OR = {
+		has_court_position = jip_muallim_court_position
+		has_court_position = jip_rais_al_kahana_court_position
+		has_court_position = jip_shair_court_position
+		has_court_position = jip_kahin_court_position
+		has_court_position = jip_sabian_almoner_court_position
+		has_court_position = jip_rasul_court_position
+		has_court_position = jip_katib_court_position
+		has_court_position = jip_sabian_wakil_court_position
+		has_court_position = jip_ganzibra_court_position
+		has_court_position = jip_tarmida_court_position
+		has_court_position = jip_shganda_court_position
+		has_court_position = jip_izgadda_court_position
+		has_court_position = jip_sapra_court_position
+		has_court_position = jip_mandaean_wakil_court_position
+	}
+}
+
+# Character scope: can appoint all the Jewish court positions. Familial family heads can appoint almost none of the
 # vanilla positions (they fail is_landed_or_landless_administrative_or_theocratic) and have no council.
 jip_can_have_mishpacha_court_positions_trigger = {
-	government_has_flag = government_is_mishpacha
+	jip_is_jewish_family_trigger = yes
+}
+
+# Character scope: can appoint the Sabian or the Mandaean family court positions (jip_gnostic_court_positions.txt)
+jip_can_have_sabian_court_positions_trigger = {
+	jip_is_sabian_family_trigger = yes
+}
+
+jip_can_have_mandaean_court_positions_trigger = {
+	jip_is_mandaean_family_trigger = yes
 }
 
 # Character scope: can appoint the Jewish court positions that no vanilla position covers for a landed Jewish ruler
@@ -66,6 +129,19 @@ jip_ransomable_captive_trigger = {
 	is_imprisoned = yes
 	is_ruler = no
 	has_religion = religion:judaism_religion
+}
+
+# The same for a Sabian Almoner and a Mandaean Shganda: captives of their rite
+jip_ransomable_sabian_captive_trigger = {
+	is_imprisoned = yes
+	is_ruler = no
+	rite = rite:sabianism
+}
+
+jip_ransomable_mandaean_captive_trigger = {
+	is_imprisoned = yes
+	is_ruler = no
+	rite = rite:mandeaism
 }
 
 # Character scope: can employ a Sabian Court Astrologer (jip_sabian_astrologer_court_position): a settled ruler of the
