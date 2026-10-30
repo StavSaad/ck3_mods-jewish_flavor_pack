@@ -18,6 +18,7 @@
 # jip_contract_translate	Translate Texts				learning
 # jip_contract_responsum	Answer a Responsum			learning
 # jip_contract_news			Gather News from Correspondents	intrigue
+# jip_contract_horoscope	Cast a Horoscope (Sabian)		learning
 ##################################################
 
 # Extend a Loan
@@ -850,6 +851,80 @@ jip_contract_news = {
 			effect = {
 				jip_contract_reward_scopes_effect = { SOUND = failure }
 				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_failure_value TYPE = failed_task_contract_opinion }
+			}
+		}
+	}
+}
+
+# Cast a Horoscope (Sabian families only)
+jip_contract_horoscope = {
+	group = jip_mishpacha_contracts_group
+	icon = "gfx/interface/icons/court_position_types/jip_sabian_astrologer_court_position.dds"
+	travel = no
+	use_diplomatic_range = yes
+
+	weight = {
+		value = task_contract_weight_default_value
+		add = {
+			value = learning
+			multiply = 5
+		}
+		add = task_contract_weight_interesting_almost_rare_value
+		scope:employer = { multiply = task_contract_weight_by_tier_value }
+	}
+
+	valid_to_create = {
+		jip_mishpacha_contract_create_trigger = yes
+		jip_is_sabian_family_trigger = yes # the stars of Harran
+		scope:employer = { jip_contract_horoscope_employer_trigger = yes }
+	}
+	valid_to_accept = {
+		jip_mishpacha_contract_accept_trigger = yes
+	}
+	valid_to_keep = {
+		jip_mishpacha_contract_keep_trigger = yes
+	}
+	valid_to_continue = {
+		jip_mishpacha_contract_continue_trigger = yes
+	}
+
+	on_create = {
+		jip_mishpacha_contract_on_create_effect = yes
+	}
+	on_accepted = {
+		jip_mishpacha_contract_on_accepted_effect = { EVENT = jip_mishpacha_contract.0100 }
+	}
+	on_invalidated = {
+		jip_mishpacha_contract_on_invalidated_effect = yes
+	}
+
+	task_contract_reward = {
+		success_critical = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_pay_gold_effect = { SHARE = 1.5 }
+				scope:taker ?= { add_prestige = medium_prestige_gain }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_excelled_reward_value TYPE = critically_succeeded_task_contract_opinion }
+				jip_contract_add_contact_effect = { HOOK = yes }
+			}
+		}
+		success_standard = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_pay_gold_effect = { SHARE = 1 }
+				scope:taker ?= { add_prestige = minor_prestige_gain }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_reward_value TYPE = succeeded_task_contract_opinion }
+			}
+		}
+		failure_standard = {
+			positive = no
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = failure }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_failure_value TYPE = failed_task_contract_opinion }
+				scope:taker ?= { add_prestige = minor_prestige_loss }
 			}
 		}
 	}

@@ -5,7 +5,7 @@
  jip_av_beit_din_court_position: "Av Beit Din"
  jip_av_beit_din_court_position_desc: "The $jip_av_beit_din_court_position$ presides over the rabbinic court, judging disputes between Jews by the halakha and lending the authority of the law to the one who appointed them."
  jip_paytan_court_position: "Paytan"
- jip_paytan_court_position_desc: "The $jip_paytan_court_position$ writes piyyutim, the Hebrew liturgical poems sung in the synagogue, and verses in praise of their patron, in the tradition of Ibn Gabirol and Yehuda Halevi."
+ jip_paytan_court_position_desc: "The $jip_paytan_court_position$ writes piyyutim, the Hebrew liturgical poems sung in the synagogue, and verses in praise of their patron, in the tradition of Yannai and Eleazar Kalir."
  jip_chazan_court_position: "Chazan"
  jip_chazan_court_position_desc: "The $jip_chazan_court_position$ leads the family and its congregation in prayer, chanting the liturgy on the Sabbath and the festivals."
  jip_gabbai_tzedakah_court_position: "Gabbai Tzedakah"

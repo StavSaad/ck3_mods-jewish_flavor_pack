@@ -221,6 +221,15 @@ jip_contract_responsum_employer_trigger = {
 	NOT = { house ?= $OWNER$.house }
 }
 
+# Cast a Horoscope: a ruler who would employ a Sabian Court Astrologer, but has none
+jip_contract_horoscope_employer_trigger = {
+	is_landed = yes
+	highest_held_title_tier >= tier_county
+	jip_can_employ_sabian_astrologer_trigger = yes
+	NOT = { employs_court_position = jip_sabian_astrologer_court_position }
+	NOT = { has_trait = zealous }
+}
+
 # Gather News from Correspondents: a ruler who wants to know what a rival is up to
 jip_contract_news_employer_trigger = {
 	is_landed = yes

@@ -1,0 +1,88 @@
+﻿# The Question of the Sabians: a Muslim ruler asks the Sabians and Mandaeans of the realm to prove themselves a people of
+# the Book, as al-Ma'mun asked the Harranians in 830. Each landed Sabian or Mandaean vassal and each of their families in
+# the realm answers in jip_sabian.0100: pay, defend the claim, or convert.
+jip_question_the_sabians_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	ai_check_interval = 120
+	desc = jip_question_the_sabians_decision_desc
+	selection_tooltip = jip_question_the_sabians_decision_tooltip
+	decision_group_type = major
+
+	is_shown = {
+		is_landed = yes
+		religion = religion:islam_religion
+		highest_held_title_tier >= tier_duchy
+	}
+
+	is_valid = {
+		custom_tooltip = {
+			text = jip_question_the_sabians_cooldown_tt
+			primary_title = {
+				NOT = { has_variable = jip_sabians_questioned }
+			}
+		}
+		custom_tooltip = {
+			text = jip_question_the_sabians_recognised_tt
+			jip_ruler_recognises_sabians_trigger = no
+		}
+		custom_tooltip = {
+			text = jip_question_the_sabians_none_tt
+			jip_ruler_has_sabians_to_question_trigger = yes
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	effect = {
+		save_scope_as = jip_questioner
+		custom_tooltip = jip_question_the_sabians_effect_tt
+		add_piety = minor_piety_gain
+		primary_title = {
+			set_variable = {
+				name = jip_sabians_questioned
+				value = yes
+				years = jip_sabian_question_cooldown_years_value
+			}
+		}
+		hidden_effect = {
+			every_vassal_or_below = {
+				limit = { jip_is_sabian_or_mandaean_trigger = yes }
+				trigger_event = {
+					id = jip_sabian.0100
+					days = { 7 30 }
+				}
+			}
+			# Families who are not vassals (tributaries, or under another liege of the realm), so none is asked twice
+			every_ruler = {
+				limit = {
+					jip_gnostic_family_in_realm_of_trigger = { RULER = scope:jip_questioner }
+					NOT = { is_vassal_or_below_of = scope:jip_questioner }
+				}
+				trigger_event = {
+					id = jip_sabian.0100
+					days = { 7 30 }
+				}
+			}
+		}
+	}
+
+	ai_potential = {
+		religion = religion:islam_religion
+	}
+
+	# Weighed by the ruler's hostility toward the Sabians (jip_sabian_hostility_value)
+	ai_will_do = {
+		base = -10
+		modifier = {
+			add = jip_sabian_hostility_value
+		}
+		modifier = {
+			factor = 0
+			jip_ruler_has_sabians_to_question_trigger = no
+		}
+	}
+}

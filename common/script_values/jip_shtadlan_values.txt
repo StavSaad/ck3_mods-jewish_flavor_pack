@@ -17,6 +17,7 @@ jip_shtadlan_readmit_difficulty_value = -60
 jip_shtadlan_protection_difficulty_value = -45
 jip_shtadlan_release_difficulty_value = -30
 jip_shtadlan_charter_difficulty_value = -45
+jip_shtadlan_sabian_status_difficulty_value = -40 # the Sabians' plea to be a people of the Book
 
 # Character scope (the ruler asked): a great ruler stoops less readily to a Jewish petitioner
 jip_shtadlan_rank_value = {

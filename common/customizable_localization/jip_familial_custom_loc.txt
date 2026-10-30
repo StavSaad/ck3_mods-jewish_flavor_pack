@@ -236,3 +236,18 @@ JipFamilyLearningBranchName = {
 		fallback = yes
 	}
 }
+
+# Serve as Court Physician: the master the family's physicians follow. Asaf HaRofe for Jews (the Book of Asaf, the oldest
+# Hebrew medical work), Hippocrates for the others; only physicians dead long before 867
+JipPhysicianMaster = {
+	type = character
+	text = {
+		trigger = { religion = religion:judaism_religion }
+		localization_key = jip_physician_master_jewish
+	}
+	text = {
+		trigger = { always = no }
+		localization_key = jip_physician_master_other
+		fallback = yes
+	}
+}

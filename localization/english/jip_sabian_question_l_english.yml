@@ -1,0 +1,33 @@
+﻿l_english:
+ # The Question of the Sabians (common/decisions/jip_sabian_decisions.txt, events/jip_sabian_events.txt 0100)
+ jip_question_the_sabians_decision: "Question the Sabians"
+ jip_question_the_sabians_decision_desc: "The Book promises protection to the Jews, the Christians and the Sabians, but who are these Sabians? The star-worshippers of Harran and the baptists of the marshes both claim the name. Let them prove it, as the Caliph al-Ma'mun once made the Harranians prove it, or pay for the doubt."
+ jip_question_the_sabians_decision_tooltip: "Demand that the Sabians and Mandaeans of your [realm|E] prove themselves a people of the Book"
+ jip_question_the_sabians_decision_confirm: "Summon them"
+ jip_question_the_sabians_cooldown_tt: "You have not questioned the Sabians in the last 10 years"
+ jip_question_the_sabians_recognised_tt: "You have not recognised the Sabians as a people of the Book"
+ jip_question_the_sabians_none_tt: "Sabians or Mandaeans live in your [realm|E]: a [vassal|E], or a family's [estate|E]"
+ jip_question_the_sabians_effect_tt: "Every Sabian and Mandaean [vassal|E] and family in your [realm|E] must pay, defend their claim, or convert to your [faith|E]"
+
+ jip_sabian.0100.t: "The Question of the Sabians"
+ jip_sabian.0100.desc: "[jip_questioner.GetTitledFirstName] has sent for me. The Book names three peoples who are to be left their faith for a tax: the Jews, the Christians and the Sabians. [jip_questioner.GetSheHe|U] wants to know, before [jip_questioner.GetHerHis] scholars, why we should be counted among them.\n\n"
+ jip_sabian.0100.desc_sabian: "When al-Ma'mun put the same question to Harran, the elders answered that they were the Sabians, with Hermes, whom the Muslims call Idris, for their prophet, and the books of Seth and Hermes for their scripture. The Caliph died before he could hear more. It may be time to answer him again."
+ jip_sabian.0100.desc_mandaean: "Our priests say that we are the true Sabians, the baptised, who keep the teaching of John and the Great Treasure, the Ginza, as our book; and that the star-worshippers of Harran have stolen the name. Now we must say it to a Muslim court, and be believed."
+ jip_sabian.0100.a: "Pay for [jip_questioner.GetHerHis] doubt to be set aside"
+ jip_sabian.0100.a.toast: "[ROOT.Char.GetShortUIName|U] Pays to Be Left in Peace"
+ jip_sabian.0100.b: "Defend our claim before [jip_questioner.GetHerHis] scholars"
+ jip_sabian.0100.b.success: "The scholars are convinced"
+ jip_sabian.0100.b.failure: "The scholars are not convinced: we pay more, and lose face"
+ jip_sabian.0100.b.success_tt: "[jip_questioner.GetShortUIName|U] recognises the Sabians as a people of the Book for 20 years, and will not question them again"
+ jip_sabian.0100.b.success_toast: "[ROOT.Char.GetShortUIName|U] Convinces Your Scholars"
+ jip_sabian.0100.b.failure_toast: "[ROOT.Char.GetShortUIName|U] Fails to Convince Your Scholars"
+ jip_sabian.0100.c: "Embrace [jip_questioner.GetFaith.GetName]"
+ jip_sabian.0100.c.family_tt: "A head who leaves the family's religion steps down for the nearest man of the house who keeps it"
+ jip_sabian.0100.c.toast: "[ROOT.Char.GetShortUIName|U] Converts"
+
+ # The Sabians' plea (jip_shtadlan_sabian_status_interaction)
+ jip_shtadlan_sabian_status_interaction: "Plead: People of the Book"
+ jip_shtadlan_sabian_status_interaction_desc: "Ask [recipient.GetShortUIName] to recognise the Sabians and Mandaeans as a people of the Book, as the Qur'an names them, and to spare them the question of their faith."
+ jip_shtadlan_sabians_already_recognised_tt: "[recipient.GetShortUIName|U] has not already recognised the Sabians"
+ jip_shtadlan_sabian_status_tt: "The Sabians and Mandaeans of the [realm|E] are not questioned for 20 years"
+ jip_shtadlan_sabian_status_accepted_msg_desc: "[recipient.GetShortUIName|U] has recognised the Sabians and Mandaeans as a people of the Book"

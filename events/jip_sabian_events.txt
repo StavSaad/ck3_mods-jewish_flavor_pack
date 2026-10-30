@@ -3,6 +3,8 @@
 # The Sabians of Harran and the return of the old gods (0.15 plan, sections 2, 4 and 10)
 #  0001 The House of Rejoicing restored (the owner of jip_gp_temple_of_sin, on completion): proclaim the old gods, or
 #       remain a Sabian
+#  0100 The Question of the Sabians (a Sabian or Mandaean vassal or family, from jip_question_the_sabians_decision): pay,
+#       defend the claim to be a people of the Book, or convert
 
 # The House of Rejoicing restored
 # Root = the project's owner (scope:jip_temple_builder)
@@ -71,5 +73,167 @@ jip_sabian.0001 = {
 		name = jip_sabian.0001.c
 		trigger = { faith = faith:mesopotamian_pagan }
 		add_piety = major_piety_gain
+	}
+}
+
+# The Question of the Sabians: the questioner asks the Sabians and Mandaeans of the realm to prove themselves a people of
+# the Book. A defence that convinces them wins a recognition (var:jip_sabians_recognised on their primary title).
+# Root = the Sabian or Mandaean (a landed vassal, or the head of a family in the realm), scope:jip_questioner = the ruler
+jip_sabian.0100 = {
+	type = character_event
+	title = jip_sabian.0100.t
+	desc = {
+		desc = jip_sabian.0100.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { rite = rite:mandeaism }
+				desc = jip_sabian.0100.desc_mandaean
+			}
+			desc = jip_sabian.0100.desc_sabian
+		}
+	}
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = throne_room }
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	right_portrait = {
+		character = scope:jip_questioner
+		animation = dismissal
+	}
+
+	trigger = {
+		exists = scope:jip_questioner
+		scope:jip_questioner = { is_alive = yes }
+		jip_is_sabian_or_mandaean_trigger = yes
+	}
+
+	# Pay for the protection
+	option = {
+		name = jip_sabian.0100.a
+		trigger = { gold >= jip_sabian_question_fee_value }
+		show_as_unavailable = { always = yes }
+		remove_short_term_gold = jip_sabian_question_fee_value
+		scope:jip_questioner = { add_gold = jip_sabian_question_fee_value }
+		scope:jip_questioner = {
+			send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = jip_sabian.0100.a.toast
+				left_icon = root
+			}
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 20
+				gold >= 300
+			}
+			ai_value_modifier = {
+				ai_greed = -0.5
+			}
+		}
+	}
+
+	# Defend the claim
+	option = {
+		name = jip_sabian.0100.b
+		random_list = {
+			0 = {
+				desc = jip_sabian.0100.b.success
+				modifier = {
+					add = jip_sabian_defence_chance_value
+				}
+				add_prestige = medium_prestige_gain
+				add_piety = medium_piety_gain
+				scope:jip_questioner = {
+					primary_title = {
+						set_variable = {
+							name = jip_sabians_recognised
+							value = yes
+							years = jip_sabians_recognised_years_value
+						}
+					}
+				}
+				custom_tooltip = jip_sabian.0100.b.success_tt
+				scope:jip_questioner = {
+					send_interface_toast = {
+						type = event_toast_effect_neutral
+						title = jip_sabian.0100.b.success_toast
+						left_icon = root
+					}
+				}
+			}
+			0 = {
+				desc = jip_sabian.0100.b.failure
+				modifier = {
+					add = {
+						value = 100
+						subtract = jip_sabian_defence_chance_value
+					}
+				}
+				remove_short_term_gold = jip_sabian_question_failed_fee_value
+				add_prestige = medium_prestige_loss
+				scope:jip_questioner = {
+					add_gold = jip_sabian_question_failed_fee_value
+					add_piety = minor_piety_gain
+				}
+				scope:jip_questioner = {
+					send_interface_toast = {
+						type = event_toast_effect_neutral
+						title = jip_sabian.0100.b.failure_toast
+						left_icon = root
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = learning
+			}
+			ai_value_modifier = {
+				ai_zeal = 0.5
+				ai_boldness = 0.25
+			}
+		}
+	}
+
+	# Convert
+	option = {
+		name = jip_sabian.0100.c
+		if = {
+			limit = { government_has_flag = government_is_familial }
+			custom_tooltip = jip_sabian.0100.c.family_tt
+		}
+		set_character_faith = scope:jip_questioner.faith
+		scope:jip_questioner = { add_piety = medium_piety_gain }
+		scope:jip_questioner = {
+			send_interface_toast = {
+				type = event_toast_effect_neutral
+				title = jip_sabian.0100.c.toast
+				left_icon = root
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				add = 20
+				has_trait = cynical
+			}
+			modifier = {
+				factor = 0
+				has_trait = zealous
+			}
+			ai_value_modifier = {
+				ai_zeal = -0.5
+			}
+		}
 	}
 }

@@ -2020,3 +2020,157 @@ jip_mishpacha_contract.0094 = {
 		scope:scheme ?= { end_scheme = yes }
 	}
 }
+
+# What the Stars Foretell (horoscope): choose an approach
+jip_mishpacha_contract.0100 = {
+	type = character_event
+	title = jip_mishpacha_contract.0100.t
+	desc = jip_mishpacha_contract.0100.desc
+	theme = learning_scholarship_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = reading
+	}
+	right_portrait = {
+		character = scope:employer
+		animation = interested
+	}
+
+	trigger = { jip_mishpacha_contract_event_trigger = yes }
+
+	immediate = { jip_mishpacha_contract_event_scopes_effect = yes }
+
+	option = {
+		name = jip_mishpacha_contract.0100.a
+		custom_tooltip = jip_mishpacha_contract.0100.a.tt
+		jip_contract_choose_approach_effect = { SKILL = learning BONUS = 0 APPROACH = tables EVENT = jip_mishpacha_contract.0101 }
+	}
+
+	option = {
+		name = jip_mishpacha_contract.0100.b
+		custom_tooltip = jip_mishpacha_contract.0100.b.tt
+		jip_contract_choose_approach_effect = { SKILL = diplomacy BONUS = 15 APPROACH = flatter EVENT = jip_mishpacha_contract.0101 }
+	}
+
+	option = {
+		name = jip_mishpacha_contract.0100.c
+		custom_tooltip = jip_mishpacha_contract.0100.c.tt
+		jip_contract_choose_approach_effect = { SKILL = learning BONUS = -10 APPROACH = warn EVENT = jip_mishpacha_contract.0101 }
+	}
+
+	option = {
+		name = jip_mishpacha_contract.0100.d
+		trigger = { domicile ?= { has_domicile_building_or_higher = library_observatory_03 } }
+		custom_tooltip = jip_mishpacha_contract.0100.d.tt
+		jip_contract_choose_approach_effect = { SKILL = learning BONUS = 20 APPROACH = observatory EVENT = jip_mishpacha_contract.0101 }
+	}
+}
+
+# What the Stars Foretell (horoscope): the result
+jip_mishpacha_contract.0101 = {
+	type = character_event
+	title = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { jip_contract_outcome_is_trigger = { OUTCOME = critical } }
+				desc = jip_mishpacha_contract.0101.t.critical
+			}
+			triggered_desc = {
+				trigger = { jip_contract_outcome_is_trigger = { OUTCOME = success } }
+				desc = jip_mishpacha_contract.0101.t.success
+			}
+			desc = jip_mishpacha_contract.0101.t.failure
+		}
+	}
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = tables } }
+				desc = jip_mishpacha_contract.0101.tables
+			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = flatter } }
+				desc = jip_mishpacha_contract.0101.flatter
+			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = warn } }
+				desc = jip_mishpacha_contract.0101.warn
+			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = observatory } }
+				desc = jip_mishpacha_contract.0101.observatory
+			}
+			desc = jip_mishpacha_contract.0101.observatory
+		}
+		first_valid = {
+			triggered_desc = {
+				trigger = { jip_contract_outcome_is_trigger = { OUTCOME = critical } }
+				desc = jip_mishpacha_contract.0101.critical
+			}
+			triggered_desc = {
+				trigger = { jip_contract_outcome_is_trigger = { OUTCOME = success } }
+				desc = jip_mishpacha_contract.0101.success
+			}
+			desc = jip_mishpacha_contract.0101.failure
+		}
+	}
+	theme = learning_scholarship_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		triggered_animation = {
+			trigger = { jip_contract_outcome_is_trigger = { OUTCOME = critical } }
+			animation = happiness
+		}
+		triggered_animation = {
+			trigger = { jip_contract_outcome_is_trigger = { OUTCOME = failure } }
+			animation = worry
+		}
+		animation = personality_content
+	}
+	right_portrait = {
+		character = scope:employer
+		triggered_animation = {
+			trigger = { jip_contract_outcome_is_trigger = { OUTCOME = critical } }
+			animation = admiration
+		}
+		triggered_animation = {
+			trigger = { jip_contract_outcome_is_trigger = { OUTCOME = failure } }
+			animation = disapproval
+		}
+		animation = acknowledging
+	}
+
+	trigger = { jip_mishpacha_contract_event_trigger = yes }
+
+	immediate = { jip_mishpacha_contract_event_scopes_effect = yes }
+
+	option = {
+		name = jip_mishpacha_contract.0101.critical.a
+		trigger = { jip_contract_outcome_is_trigger = { OUTCOME = critical } }
+		jip_contract_finish_effect = { CONTRACT = horoscope }
+	}
+
+	option = {
+		name = jip_mishpacha_contract.0101.success.a
+		trigger = { jip_contract_outcome_is_trigger = { OUTCOME = success } }
+		jip_contract_finish_effect = { CONTRACT = horoscope }
+	}
+
+	option = {
+		name = jip_mishpacha_contract.0101.failure.a
+		trigger = { jip_contract_outcome_is_trigger = { OUTCOME = failure } }
+		jip_contract_finish_effect = { CONTRACT = horoscope }
+	}
+}

@@ -46,7 +46,7 @@ P = [
          modifier={'learning': 1, 'monthly_piety_gain_mult': 0.1},
          ai=['if = {', '\tlimit = { ai_zeal >= -25 }', '\tadd = 100', '}']),
     dict(key='jip_paytan',
-         comment='Liturgical poet, after Ibn Gabirol and Yehuda Halevi. Mishpacha families only; landed Jewish rulers have the\n# vanilla Court Poet.',
+         comment='Liturgical poet, after Yannai and Eleazar Kalir. Mishpacha families only; landed Jewish rulers have the\n# vanilla Court Poet.',
          order=237, rank='county', skill='diplomacy', who='mishpacha', anim='storyteller', bg='bp1_relaxing_room_mena', salary='court_poet',
          opinion='ceremonial', revoke='minor', skill_max=50,
          apt=[trait('lifestyle_poet', 25), trait('theologian', 10), trait('gregarious', 10), trait('shy', -10)],

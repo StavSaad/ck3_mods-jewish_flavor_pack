@@ -454,7 +454,7 @@ jip_av_beit_din_court_position = {
 	}
 }
 
-# Liturgical poet, after Ibn Gabirol and Yehuda Halevi. Mishpacha families only; landed Jewish rulers have the
+# Liturgical poet, after Yannai and Eleazar Kalir. Mishpacha families only; landed Jewish rulers have the
 # vanilla Court Poet.
 jip_paytan_court_position = {
 	sort_order = 237

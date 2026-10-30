@@ -1,0 +1,77 @@
+﻿# The Question of the Sabians (jip_question_the_sabians_decision, jip_sabian.0100)
+
+# Character scope (the ruler): how hostile a Muslim ruler is toward the Sabians and Mandaeans. The weights behind Expel the
+# Jews (jip_jewish_hostility_value: personality, debts, tenets), more for a Sunni, as vanilla groups the Mandaean faith
+# with the Shia and the zandaqa (faiths_are_in_shia_islam_group), and less with a Sabian Court Astrologer at court
+jip_sabian_hostility_value = {
+	value = jip_jewish_hostility_value
+	if = {
+		limit = { rite = { rite_has_doctrine = muhammad_succession_sunni_doctrine } }
+		add = 10
+	}
+	if = {
+		limit = { employs_court_position = jip_sabian_astrologer_court_position }
+		add = -20
+	}
+}
+
+# What the questioner (scope:jip_questioner) asks for leaving a family or vassal in peace: more from a greater ruler
+jip_sabian_question_fee_value = {
+	value = 100
+	if = {
+		limit = { scope:jip_questioner.highest_held_title_tier >= tier_empire }
+		add = 100
+	}
+	else_if = {
+		limit = { scope:jip_questioner.highest_held_title_tier >= tier_kingdom }
+		add = 50
+	}
+}
+
+# Paid when a defence fails
+jip_sabian_question_failed_fee_value = {
+	value = jip_sabian_question_fee_value
+	multiply = 1.5
+}
+
+# Chance in percent that a defence convinces the questioner (scope:jip_questioner): learning, the community's scholars and
+# priests, the questioner's opinion and hostility. root = the defender
+jip_sabian_defence_chance_value = {
+	value = 20
+	add = {
+		value = learning
+		multiply = 2
+	}
+	if = {
+		limit = {
+			OR = {
+				jip_employs_family_teacher_trigger = yes
+				employs_court_position = jip_rais_al_kahana_court_position
+			}
+		}
+		add = 15
+	}
+	add = {
+		value = scope:jip_questioner.jip_sabian_hostility_value
+		multiply = -0.5
+	}
+	if = {
+		limit = {
+			scope:jip_questioner = {
+				opinion = {
+					target = root
+					value >= 20
+				}
+			}
+		}
+		add = 10
+	}
+	min = 5
+	max = 90
+}
+
+# Years a recognition lasts, won by a plea or a defence
+jip_sabians_recognised_years_value = 20
+
+# Years before a ruler may question the Sabians again
+jip_sabian_question_cooldown_years_value = 10

@@ -1,0 +1,53 @@
+﻿# The Question of the Sabians (0.15 plan, sections 2 and 8): a Muslim ruler asks the Sabians and Mandaeans of the realm to
+# prove themselves a people of the Book, as al-Ma'mun asked the Harranians in 830 (jip_question_the_sabians_decision,
+# jip_sabian.0100). Their families can plead to be recognised beforehand (jip_shtadlan_sabian_status_interaction).
+
+# Character scope: a Sabian or Mandaean, whom the question concerns
+jip_is_sabian_or_mandaean_trigger = {
+	OR = {
+		rite = rite:sabianism
+		rite = rite:mandeaism
+	}
+}
+
+# Character scope: a landless Sabian or Mandaean family whose estate lies in $RULER$'s realm
+jip_gnostic_family_in_realm_of_trigger = {
+	OR = {
+		jip_is_sabian_family_trigger = yes
+		jip_is_mandaean_family_trigger = yes
+	}
+	is_landed = no
+	domicile ?= {
+		domicile_location.county.holder.top_liege ?= $RULER$
+	}
+}
+
+# Character scope: the ruler has recognised the Sabians as a people of the Book, through a family's plea or a defence
+# that convinced them (var:jip_sabians_recognised on the primary title)
+jip_ruler_recognises_sabians_trigger = {
+	primary_title ?= { has_variable = jip_sabians_recognised }
+}
+
+# Character scope: the ruler has Sabians or Mandaeans to question: landed vassals of theirs, or families in the realm
+jip_ruler_has_sabians_to_question_trigger = {
+	OR = {
+		any_vassal_or_below = { jip_is_sabian_or_mandaean_trigger = yes }
+		any_ruler = { jip_gnostic_family_in_realm_of_trigger = { RULER = root } }
+	}
+}
+
+# Shtadlanut for the Sabians: scope:actor can plead, the head of a landless Sabian or Mandaean family
+jip_shtadlan_gnostic_can_intercede_trigger = {
+	scope:actor = {
+		OR = {
+			jip_is_sabian_family_trigger = yes
+			jip_is_mandaean_family_trigger = yes
+		}
+		is_landed = no
+	}
+	scope:recipient = {
+		is_ruler = yes
+		is_landed = yes
+		this != scope:actor
+	}
+}

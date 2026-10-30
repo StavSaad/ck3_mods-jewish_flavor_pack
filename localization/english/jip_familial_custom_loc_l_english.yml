@@ -24,3 +24,5 @@
  jip_translate_road_jewish: "From Arabic into Hebrew into Latin"
  jip_translate_road_sabian: "From Greek into Syriac into Arabic"
  jip_translate_road_mandaean: "From Aramaic into Arabic"
+ jip_physician_master_jewish: "Asaf HaRofe"
+ jip_physician_master_other: "Hippocrates"

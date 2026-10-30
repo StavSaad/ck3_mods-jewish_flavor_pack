@@ -5,13 +5,23 @@ jip_shtadlan_ai_accept_modifier = {
 		desc = JIP_SHTADLAN_REQUEST_REASON
 		add = $DIFFICULTY$
 	}
-	# How the ruler feels about the Jews: the weights behind Expel the Jews (jip_jewish_hostility_value), turned around
+	# How the ruler feels about the Jews: the weights behind Expel the Jews (jip_jewish_hostility_value), turned around;
+	# about the Sabians and Mandaeans for their plea (jip_sabian_hostility_value)
 	modifier = {
 		desc = JIP_SHTADLAN_HOSTILITY_REASON
 		add = {
 			value = scope:recipient.jip_jewish_hostility_value
 			multiply = -1
 		}
+		scope:actor = { religion = religion:judaism_religion }
+	}
+	modifier = {
+		desc = JIP_SHTADLAN_SABIAN_HOSTILITY_REASON
+		add = {
+			value = scope:recipient.jip_sabian_hostility_value
+			multiply = -1
+		}
+		scope:actor = { jip_is_sabian_or_mandaean_trigger = yes }
 	}
 	opinion_modifier = {
 		who = scope:recipient
@@ -72,6 +82,13 @@ jip_shtadlan_ai_accept_modifier = {
 		desc = JIP_SHTADLAN_RECENT_REASON
 		add = -25
 		scope:recipient = { has_variable = jip_shtadlan_granted }
+	}
+	# A Sabian Court Astrologer speaks for the Sabians and Mandaeans at court
+	modifier = {
+		desc = JIP_SHTADLAN_ASTROLOGER_REASON
+		add = 15
+		scope:actor = { jip_is_sabian_or_mandaean_trigger = yes }
+		scope:recipient = { employs_court_position = jip_sabian_astrologer_court_position }
 	}
 	# A Jewish Court Financier speaks for the community at court
 	modifier = {

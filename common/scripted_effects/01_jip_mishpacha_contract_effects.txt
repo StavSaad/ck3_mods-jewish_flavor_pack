@@ -659,3 +659,28 @@ jip_contract_add_contact_effect = {
 		}
 	}
 }
+
+jip_contract_horoscope_approach_effect = {
+	# A flattering reading: the patron is pleased, but it wins no renown
+	if = {
+		limit = {
+			jip_contract_approach_is_trigger = { APPROACH = flatter }
+			jip_contract_succeeded_trigger = yes
+		}
+		jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = pleased_opinion OPINION = 10 }
+		add_prestige = minor_prestige_loss
+	}
+	# The hard truth: a famous reading, or an offended patron
+	else_if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = warn } }
+		if = {
+			limit = { jip_contract_succeeded_trigger = yes }
+			jip_contract_extra_gold_effect = { SHARE = 0.5 }
+			add_prestige = minor_prestige_gain
+		}
+		else = {
+			jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = disappointed_opinion OPINION = -20 }
+		}
+	}
+}
+

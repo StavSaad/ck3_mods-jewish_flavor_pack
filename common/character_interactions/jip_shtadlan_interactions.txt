@@ -390,3 +390,104 @@ jip_shtadlan_charter_interaction = {
 	}
 	# No ai_targets or ai_frequency: the AI never sends these (a frequency without targets logs an error)
 }
+
+# A Muslim ruler recognises the Sabians and Mandaeans as a people of the Book: no Question of the Sabians for jip_sabians_recognised_years_value years
+jip_shtadlan_sabian_status_interaction = {
+	category = interaction_category_diplomacy
+	icon = request_recognition
+	desc = jip_shtadlan_sabian_status_interaction_desc
+	interface_priority = 40
+
+	popup_on_receive = yes
+	pause_on_receive = yes
+	ai_min_reply_days = 1
+	ai_max_reply_days = 5
+	cooldown_against_recipient = { years = 5 }
+
+	is_shown = {
+		jip_shtadlan_gnostic_can_intercede_trigger = yes
+		scope:recipient = {
+			religion = religion:islam_religion
+			highest_held_title_tier >= tier_duchy
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		jip_shtadlan_valid_trigger = yes
+		custom_tooltip = {
+			text = jip_shtadlan_sabians_already_recognised_tt
+			scope:recipient = { jip_ruler_recognises_sabians_trigger = no }
+		}
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor.gold >= jip_shtadlan_gift_gold_value
+		}
+		flag = gold
+		localization = JIP_SHTADLAN_USE_GOLD
+	}
+	send_option = {
+		is_valid = {
+			scope:actor.prestige >= jip_shtadlan_prestige_value
+		}
+		flag = prestige
+		localization = JIP_SHTADLAN_USE_PRESTIGE
+	}
+	send_option = {
+		is_valid = {
+			scope:actor = { has_usable_hook = scope:recipient }
+		}
+		flag = hook
+		localization = SCHEME_HOOK
+	}
+	# The family owes the ruler a favour in return, if the ruler holds no hook on them yet
+	send_option = {
+		is_valid = {
+			custom_tooltip = {
+				text = jip_shtadlan_offer_hook_held_tt
+				scope:recipient = {
+					NOT = { has_hook = scope:actor }
+				}
+			}
+			scope:recipient = {
+				can_add_hook = {
+					target = scope:actor
+					type = favor_hook
+				}
+			}
+		}
+		flag = offer_hook
+		localization = JIP_SHTADLAN_OFFER_HOOK
+	}
+	send_options_exclusive = no
+	should_use_extra_icon = {
+		scope:actor = { has_usable_hook = scope:recipient }
+	}
+	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+
+	on_accept = {
+		jip_shtadlan_pay_effect = yes
+		scope:recipient = {
+			custom_tooltip = jip_shtadlan_sabian_status_tt
+			primary_title = {
+				set_variable = {
+					name = jip_sabians_recognised
+					value = yes
+					years = jip_sabians_recognised_years_value
+				}
+			}
+		}
+		jip_shtadlan_accepted_message_effect = { TEXT = jip_shtadlan_sabian_status_accepted_msg_desc }
+	}
+
+	on_decline = {
+		jip_shtadlan_declined_message_effect = yes
+	}
+
+	ai_accept = {
+		base = 0
+		jip_shtadlan_ai_accept_modifier = { DIFFICULTY = jip_shtadlan_sabian_status_difficulty_value }
+	}
+	# No ai_targets or ai_frequency: the AI never sends these (a frequency without targets logs an error)
+}
