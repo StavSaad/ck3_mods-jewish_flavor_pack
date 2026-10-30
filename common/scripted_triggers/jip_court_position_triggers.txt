@@ -148,7 +148,11 @@ jip_ransomable_mandaean_captive_trigger = {
 # lands where Sabian astrologers served (the Middle East, Anatolia), or a Muslim, Sabian or Mesopotamian pagan one
 # anywhere. Nomads have vanilla's Stargazer; the Mandaeans curse the planets as evil powers.
 jip_can_employ_sabian_astrologer_trigger = {
-	is_landed_or_landless_administrative_or_theocratic = yes
+	# Of the Familial families, only the Sabians' own (the Jewish and Mandaean ones have no use for the planets)
+	OR = {
+		is_landed_or_landless_administrative_or_theocratic = yes
+		jip_is_sabian_family_trigger = yes
+	}
 	NOT = { government_has_flag = government_is_nomadic }
 	NOT = { rite = rite:mandeaism }
 	OR = {

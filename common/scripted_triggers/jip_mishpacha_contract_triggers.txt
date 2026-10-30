@@ -1,10 +1,19 @@
 ﻿# Mishpacha contracts (common/task_contracts/jip_mishpacha_contracts.txt)
 
 # Character scope: a family head who is offered Mishpacha contracts. Players only, like vanilla's adventurer contracts;
-# AI families get jip_mishpacha_ai_contract_effect instead. Jewish families only: the contracts' texts are Jewish
-# (the Sabian and Mandaean families' contracts are still to come, 0.15 plan section 8)
+# AI families get jip_mishpacha_ai_contract_effect instead.
+# Character scope: a Familial family whose faith the contracts know: Jewish, Sabian or Mandaean. Their shared texts name
+# the family's faith (jip_familial_custom_loc.txt); the Caravan and the Responsum are Jewish only
+jip_familial_contract_family_trigger = {
+	OR = {
+		jip_is_jewish_family_trigger = yes
+		jip_is_sabian_family_trigger = yes
+		jip_is_mandaean_family_trigger = yes
+	}
+}
+
 jip_mishpacha_contract_owner_trigger = {
-	jip_is_jewish_family_trigger = yes
+	jip_familial_contract_family_trigger = yes
 	is_ai = no
 	has_ep3_dlc_trigger = yes
 	exists = domicile
@@ -47,7 +56,7 @@ jip_mishpacha_contract_accept_trigger = {
 			num_taken_task_contracts < 1
 			AND = {
 				num_taken_task_contracts < 2
-				employs_court_position = jip_sofer_court_position
+				jip_employs_family_scribe_trigger = yes
 			}
 		}
 	}
@@ -147,11 +156,26 @@ jip_contract_envoy_counterpart_trigger = {
 	NOT = { is_at_war_with = $EMPLOYER$ }
 }
 
-# Redeem the Captives: holds a Jew who is not a ruler in the dungeon
+# Redeem the Captives: holds one of the family's faith ($OWNER$'s) who is not a ruler in the dungeon
 jip_contract_ransom_employer_trigger = {
 	is_landed = yes
-	NOT = { has_religion = religion:judaism_religion }
-	any_prisoner = { jip_ransomable_captive_trigger = yes }
+	NOT = { religion = $OWNER$.religion }
+	any_prisoner = { jip_contract_ransomable_captive_trigger = { OWNER = $OWNER$ } }
+}
+
+# A captive the family $OWNER$ would ransom: a Jew for a Jewish family, else one of its rite
+jip_contract_ransomable_captive_trigger = {
+	trigger_if = {
+		limit = { $OWNER$ = { jip_is_sabian_family_trigger = yes } }
+		jip_ransomable_sabian_captive_trigger = yes
+	}
+	trigger_else_if = {
+		limit = { $OWNER$ = { jip_is_mandaean_family_trigger = yes } }
+		jip_ransomable_mandaean_captive_trigger = yes
+	}
+	trigger_else = {
+		jip_ransomable_captive_trigger = yes
+	}
 }
 
 # The captive is still alive and still in the employer's dungeon: root = the contract
@@ -210,4 +234,62 @@ jip_contract_news_employer_trigger = {
 jip_contract_news_target_trigger = {
 	is_alive = yes
 	NOT = { this = $OWNER$ }
+}
+
+# Character scope: employs the family's court position for a job, of whichever faith (jip_court_flavours.py): a second
+# contract (scribe), an extra offer and diplomacy odds (envoy), stewardship odds (agent), learning odds (teacher)
+jip_employs_family_scribe_trigger = {
+	OR = {
+		employs_court_position = jip_sofer_court_position
+		employs_court_position = jip_katib_court_position
+		employs_court_position = jip_sapra_court_position
+	}
+}
+
+jip_employs_family_envoy_trigger = {
+	OR = {
+		employs_court_position = jip_shaliach_court_position
+		employs_court_position = jip_rasul_court_position
+		employs_court_position = jip_izgadda_court_position
+	}
+}
+
+jip_employs_family_agent_trigger = {
+	OR = {
+		employs_court_position = jip_parnas_court_position
+		employs_court_position = jip_sabian_wakil_court_position
+		employs_court_position = jip_mandaean_wakil_court_position
+	}
+}
+
+jip_employs_family_teacher_trigger = {
+	OR = {
+		employs_court_position = jip_rosh_yeshiva_court_position
+		employs_court_position = jip_muallim_court_position
+		employs_court_position = jip_ganzibra_court_position
+	}
+}
+
+# Domicile scope: the family's learning branch of the library, at its first or second tier: the Yeshiva, the Scriptorium,
+# or for Sabians vanilla's Observatory
+jip_domicile_learning_branch_1_trigger = {
+	OR = {
+		has_domicile_parameter = jip_estate_yeshiva_1
+		has_domicile_parameter = jip_estate_scriptorium_1
+		AND = {
+			has_domicile_building = library_observatory_03
+			domicile_owner = { jip_is_sabian_family_trigger = yes }
+		}
+	}
+}
+
+jip_domicile_learning_branch_2_trigger = {
+	OR = {
+		has_domicile_parameter = jip_estate_yeshiva_2
+		has_domicile_parameter = jip_estate_scriptorium_2
+		AND = {
+			has_domicile_building_or_higher = library_observatory_04
+			domicile_owner = { jip_is_sabian_family_trigger = yes }
+		}
+	}
 }

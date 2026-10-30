@@ -19,7 +19,7 @@ jip_contract_stake_value = {
 jip_contract_refresh_amount_value = {
 	value = 3
 	if = {
-		limit = { employs_court_position = jip_shaliach_court_position }
+		limit = { jip_employs_family_envoy_trigger = yes }
 		add = 1
 	}
 }
@@ -45,7 +45,7 @@ jip_contract_stewardship_chance_value = {
 		add = 5
 	}
 	if = {
-		limit = { employs_court_position = jip_parnas_court_position }
+		limit = { jip_employs_family_agent_trigger = yes }
 		add = 10
 	}
 }
@@ -69,7 +69,7 @@ jip_contract_diplomacy_chance_value = {
 		add = 5
 	}
 	if = {
-		limit = { employs_court_position = jip_shaliach_court_position }
+		limit = { jip_employs_family_envoy_trigger = yes }
 		add = 10
 	}
 }
@@ -81,15 +81,15 @@ jip_contract_learning_chance_value = {
 		multiply = 3
 	}
 	if = {
-		limit = { domicile ?= { has_domicile_parameter = jip_estate_yeshiva_2 } }
+		limit = { domicile ?= { jip_domicile_learning_branch_2_trigger = yes } }
 		add = 15
 	}
 	else_if = {
-		limit = { domicile ?= { has_domicile_parameter = jip_estate_yeshiva_1 } }
+		limit = { domicile ?= { jip_domicile_learning_branch_1_trigger = yes } }
 		add = 10
 	}
 	if = {
-		limit = { employs_court_position = jip_rosh_yeshiva_court_position }
+		limit = { jip_employs_family_teacher_trigger = yes }
 		add = 10
 	}
 }
@@ -101,7 +101,7 @@ jip_contract_intrigue_chance_value = {
 		multiply = 3
 	}
 	if = {
-		limit = { employs_court_position = jip_sofer_court_position }
+		limit = { jip_employs_family_scribe_trigger = yes }
 		add = 5
 	}
 }

@@ -1,0 +1,238 @@
+﻿# The family's faith in the texts its Familial contracts share (jip_mishpacha_contracts_l_english.yml): Jewish, Sabian or
+# Mandaean. Keyed on the family head: GetPlayer in the contract window (contracts are offered to players only), ROOT in the
+# contract events. Jewish is the fallback, as the contracts were written for Jewish families.
+
+# "Jew", "Sabian", "Mandaean"
+JipFaithfulOne = {
+	type = character
+	text = {
+		trigger = { rite = rite:sabianism }
+		localization_key = jip_faithful_one_sabian
+	}
+	text = {
+		trigger = { rite = rite:mandeaism }
+		localization_key = jip_faithful_one_mandaean
+	}
+	text = {
+		trigger = { always = no }
+		localization_key = jip_faithful_one_jewish
+		fallback = yes
+	}
+}
+
+# "Jews", "Sabians", "Mandaeans"
+JipFaithfulMany = {
+	type = character
+	text = {
+		trigger = { rite = rite:sabianism }
+		localization_key = jip_faithful_many_sabian
+	}
+	text = {
+		trigger = { rite = rite:mandeaism }
+		localization_key = jip_faithful_many_mandaean
+	}
+	text = {
+		trigger = { always = no }
+		localization_key = jip_faithful_many_jewish
+		fallback = yes
+	}
+}
+
+# "Jewish", "Sabian", "Mandaean"
+JipFaithfulAdj = {
+	type = character
+	text = {
+		trigger = { rite = rite:sabianism }
+		localization_key = jip_faithful_adj_sabian
+	}
+	text = {
+		trigger = { rite = rite:mandeaism }
+		localization_key = jip_faithful_adj_mandaean
+	}
+	text = {
+		trigger = { always = no }
+		localization_key = jip_faithful_adj_jewish
+		fallback = yes
+	}
+}
+
+# The family's own tongue: Hebrew, Syriac (the Harranians wrote it), Mandaic
+JipFaithTongue = {
+	type = character
+	text = {
+		trigger = { rite = rite:sabianism }
+		localization_key = jip_faith_tongue_sabian
+	}
+	text = {
+		trigger = { rite = rite:mandeaism }
+		localization_key = jip_faith_tongue_mandaean
+	}
+	text = {
+		trigger = { always = no }
+		localization_key = jip_faith_tongue_jewish
+		fallback = yes
+	}
+}
+
+# Who teaches the family its duties: the sages, the elders of Harran, the priests
+JipFaithTeachers = {
+	type = character
+	text = {
+		trigger = { rite = rite:sabianism }
+		localization_key = jip_faith_teachers_sabian
+	}
+	text = {
+		trigger = { rite = rite:mandeaism }
+		localization_key = jip_faith_teachers_mandaean
+	}
+	text = {
+		trigger = { always = no }
+		localization_key = jip_faith_teachers_jewish
+		fallback = yes
+	}
+}
+
+# Redeem the Captives: why the family pays (jip_contract_ransom_desc)
+JipRansomDuty = {
+	type = character
+	text = {
+		trigger = { rite = rite:sabianism }
+		localization_key = jip_ransom_duty_sabian
+	}
+	text = {
+		trigger = { rite = rite:mandeaism }
+		localization_key = jip_ransom_duty_mandaean
+	}
+	text = {
+		trigger = { always = no }
+		localization_key = jip_ransom_duty_jewish
+		fallback = yes
+	}
+}
+
+# Redeem the Captives: the warning against paying too much (jip_mishpacha_contract.0050)
+JipRansomWarning = {
+	type = character
+	text = {
+		trigger = { rite = rite:sabianism }
+		localization_key = jip_ransom_warning_sabian
+	}
+	text = {
+		trigger = { rite = rite:mandeaism }
+		localization_key = jip_ransom_warning_mandaean
+	}
+	text = {
+		trigger = { always = no }
+		localization_key = jip_ransom_warning_jewish
+		fallback = yes
+	}
+}
+
+# Translate Texts: the road the family's books travel (jip_contract_translate_desc_title)
+JipTranslateRoad = {
+	type = character
+	text = {
+		trigger = { rite = rite:sabianism }
+		localization_key = jip_translate_road_sabian
+	}
+	text = {
+		trigger = { rite = rite:mandeaism }
+		localization_key = jip_translate_road_mandaean
+	}
+	text = {
+		trigger = { always = no }
+		localization_key = jip_translate_road_jewish
+		fallback = yes
+	}
+}
+
+# The family's own court positions and library branch, named in the contract schemes' odds (jip_contract_scheme_*_tt)
+# Rosh Yeshiva, Mu'allim, Ganzibra
+JipFamilyTeacherName = {
+	type = character
+	text = {
+		trigger = { rite = rite:sabianism }
+		localization_key = jip_muallim_court_position
+	}
+	text = {
+		trigger = { rite = rite:mandeaism }
+		localization_key = jip_ganzibra_court_position
+	}
+	text = {
+		trigger = { always = no }
+		localization_key = jip_rosh_yeshiva_court_position
+		fallback = yes
+	}
+}
+
+# Shaliach, Rasul, Izgadda
+JipFamilyEnvoyName = {
+	type = character
+	text = {
+		trigger = { rite = rite:sabianism }
+		localization_key = jip_rasul_court_position
+	}
+	text = {
+		trigger = { rite = rite:mandeaism }
+		localization_key = jip_izgadda_court_position
+	}
+	text = {
+		trigger = { always = no }
+		localization_key = jip_shaliach_court_position
+		fallback = yes
+	}
+}
+
+# Parnas, Wakil
+JipFamilyAgentName = {
+	type = character
+	text = {
+		trigger = { rite = rite:sabianism }
+		localization_key = jip_sabian_wakil_court_position
+	}
+	text = {
+		trigger = { rite = rite:mandeaism }
+		localization_key = jip_mandaean_wakil_court_position
+	}
+	text = {
+		trigger = { always = no }
+		localization_key = jip_parnas_court_position
+		fallback = yes
+	}
+}
+
+# Sofer, Katib, Sapra
+JipFamilyScribeName = {
+	type = character
+	text = {
+		trigger = { rite = rite:sabianism }
+		localization_key = jip_katib_court_position
+	}
+	text = {
+		trigger = { rite = rite:mandeaism }
+		localization_key = jip_sapra_court_position
+	}
+	text = {
+		trigger = { always = no }
+		localization_key = jip_sofer_court_position
+		fallback = yes
+	}
+}
+
+# Yeshiva, Observatory, Scriptorium
+JipFamilyLearningBranchName = {
+	type = character
+	text = {
+		trigger = { rite = rite:sabianism }
+		localization_key = library_observatory_03_domicile_building
+	}
+	text = {
+		trigger = { rite = rite:mandeaism }
+		localization_key = jip_scriptorium_03_domicile_building
+	}
+	text = {
+		trigger = { always = no }
+		localization_key = jip_yeshiva_03_domicile_building
+		fallback = yes
+	}
+}

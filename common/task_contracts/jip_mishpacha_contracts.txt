@@ -1,7 +1,8 @@
 ﻿##################################################
 # MISHPACHA CONTRACTS
 #
-# Work a Jewish family takes on from its estate: finance, diplomacy, scholarship and medicine, never war or the sword.
+# Work a Familial family takes on from its estate: finance, diplomacy, scholarship and medicine, never war or the sword.
+# Jewish, Sabian and Mandaean families (jip_familial_contract_family_trigger); the Caravan and the Responsum are Jewish only.
 # Offered to player family heads only, through jip_mishpacha_refresh_contracts_effect (yearly, on arriving somewhere
 # new, on a new head, at game start); AI families get jip_mishpacha_ai_contract_effect instead.
 # The long ones (caravan, envoy, ransom, translate, news) run as contract schemes, started with the approach chosen when
@@ -204,6 +205,7 @@ jip_contract_caravan = {
 
 	valid_to_create = {
 		jip_mishpacha_contract_create_trigger = yes
+		jip_is_jewish_family_trigger = yes # the Radhanite roads
 		scope:employer = { jip_contract_caravan_employer_trigger = yes }
 	}
 	valid_to_accept = {
@@ -381,7 +383,7 @@ jip_contract_ransom = {
 
 	valid_to_create = {
 		jip_mishpacha_contract_create_trigger = yes
-		scope:employer = { jip_contract_ransom_employer_trigger = yes }
+		scope:employer = { jip_contract_ransom_employer_trigger = { OWNER = root } }
 	}
 	valid_to_accept = {
 		jip_mishpacha_contract_accept_trigger = yes
@@ -406,7 +408,7 @@ jip_contract_ransom = {
 		jip_mishpacha_contract_on_create_effect = yes
 		scope:employer = {
 			random_prisoner = {
-				limit = { jip_ransomable_captive_trigger = yes }
+				limit = { jip_contract_ransomable_captive_trigger = { OWNER = root } }
 				save_scope_as = jip_contract_target
 			}
 		}
@@ -695,6 +697,7 @@ jip_contract_responsum = {
 
 	valid_to_create = {
 		jip_mishpacha_contract_create_trigger = yes
+		jip_is_jewish_family_trigger = yes # Jewish law
 		scope:employer = { jip_contract_responsum_employer_trigger = { OWNER = root } }
 	}
 	valid_to_accept = {

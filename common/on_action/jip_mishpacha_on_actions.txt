@@ -172,7 +172,7 @@ jip_mishpacha_domicile_building_completed_on_action = {
 # root = the family head
 jip_mishpacha_contracts_on_action = {
 	trigger = {
-		jip_is_jewish_family_trigger = yes
+		jip_familial_contract_family_trigger = yes
 	}
 	effect = {
 		if = {

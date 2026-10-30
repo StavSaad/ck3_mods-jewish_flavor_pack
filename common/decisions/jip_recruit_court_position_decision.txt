@@ -27,7 +27,10 @@ recruit_court_position_decision = {
 	decision_group_type = courtier
 
 	is_shown = {
-		is_landed_or_landless_administrative_or_theocratic = yes
+		OR = {
+			is_landed_or_landless_administrative_or_theocratic = yes
+			jip_is_sabian_family_trigger = yes # Rising Lion: for the Sabian Court Astrologer
+		}
 	}
 
 	is_valid_showing_failures_only = {
