@@ -389,27 +389,6 @@ GetGovernmentIcon = {
 		}
 		localization_key = administrative_icon_concept
 	}
-	text = { # Familial, Jewish (Mishpacha)
-		trigger = {
-			trigger_if = {
-				limit = {
-					is_alive = no
-				}
-				has_government = familial_government
-				religion = religion:judaism_religion
-			}
-			trigger_else = {
-				trigger_if = {
-					limit = { is_ruler = yes }
-					jip_is_jewish_family_trigger = yes
-				}
-				trigger_else = {
-					liege ?= { jip_is_jewish_family_trigger = yes }
-				}
-			}
-		}
-		localization_key = mishpacha_icon_concept
-	}
 	text = { # Familial
 		trigger = {
 			trigger_if = {

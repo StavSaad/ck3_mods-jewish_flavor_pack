@@ -1,13 +1,4 @@
-﻿# The Familial government's icon; Jewish families' text shows the Mishpacha one (GetGovernmentIcon in 01_government_custom_loc.txt)
-texticon = {
-	icon = government_type_mishpacha
-	iconsize = {
-		texture = "gfx/interface/icons/government_types/jip_mishpacha_government.dds"
-		size = { 28 28 }
-		offset = { 0 6 }
-		fontsize = 16
-	}
-}
+﻿# The Familial government's icon (GetGovernmentIcon in 01_government_custom_loc.txt)
 texticon = {
 	icon = government_type_familial
 	iconsize = {

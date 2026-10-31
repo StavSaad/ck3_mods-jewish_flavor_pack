@@ -245,36 +245,8 @@ barony_jewish = {
 	heritages = { heritage_israelite }
 }
 
-# Tier name for Mishpacha family titles. Without it the landless family titles found no title flavourization
-# ("Failed to find any valid flavorization for title d_jip_..."); vanilla gives its landless titles a government entry
-# the same way (duchy_landless_adventurer_camp, duchy_administrative).
-duchy_mishpacha = {
-	type = title
-	tier = duchy
-	priority = 302
-	governments = { familial_government }
-	religions = { judaism_religion }
-
-	flavourization_rules = {
-		top_liege = no
-	}
-}
-
-# The same tier name for the mod's historical family titles when their holder is dead, and so has no government
-# for duchy_mishpacha to check (e.g. a dead father's title in the family tree)
-duchy_mishpacha_historical_families = {
-	type = title
-	tier = duchy
-	priority = 300
-	titles = { d_jip_kalonymos d_jip_nathanite d_jip_bostanite d_jip_ananite d_jip_shealtiel d_jip_benveniste d_jip_maimon d_jip_makhirite }
-
-	flavourization_rules = {
-		top_liege = no
-	}
-}
-
-# Non-Jewish Familial families (Sabians, Mandaeans): Mar/Marta, the Aramaic lord and lady, and the family title is a
-# Bayta ("house"). Below the Jewish entries above, which also check the religion
+# Non-Jewish Familial families (Sabians, Mandaeans): Mar/Marta, the Aramaic lord and lady. Below the Jewish entries above,
+# which also check the religion
 duke_familial_landless_male = {
 	type = character
 	gender = male
@@ -333,6 +305,9 @@ spouse_familial_landless_female = {
 	}
 }
 
+# Tier name for every Familial family title, whatever the faith. Without it the landless family titles found no title
+# flavourization ("Failed to find any valid flavorization for title d_jip_..."); vanilla gives its landless titles a
+# government entry the same way (duchy_landless_adventurer_camp, duchy_administrative).
 duchy_familial = {
 	type = title
 	tier = duchy
@@ -344,12 +319,13 @@ duchy_familial = {
 	}
 }
 
-# The same for the mod's non-Jewish historical family titles when their holder is dead (see duchy_mishpacha_historical_families)
+# The same tier name for the mod's historical family titles when their holder is dead, and so has no government for
+# duchy_familial to check (e.g. a dead father's title in the family tree)
 duchy_familial_historical_families = {
 	type = title
 	tier = duchy
 	priority = 300
-	titles = { d_jip_harrani }
+	titles = { d_jip_kalonymos d_jip_nathanite d_jip_bostanite d_jip_ananite d_jip_shealtiel d_jip_benveniste d_jip_maimon d_jip_makhirite d_jip_harrani }
 
 	flavourization_rules = {
 		top_liege = no

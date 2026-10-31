@@ -933,8 +933,9 @@ jip_counting_house_06 = {
 	}
 }
 
-# Hachnasat Orchim: replaces the Guest Room for Mishpacha families (hidden from them in jip_vanilla_estate_overrides.txt).
-# Welcoming travellers is a mitzvah, so the influence bonus of the Guest Room becomes piety; everything else is kept.
+# Hachnasat Orchim: replaces the Guest Room for every Familial family (hidden from them in jip_vanilla_estate_overrides.txt),
+# keeping its name, so only the key is Hebrew. Welcoming travellers is a mitzvah (and a duty of every faith), so the
+# influence bonus of the Guest Room becomes piety; everything else is kept.
 jip_hachnasat_orchim_01 = {
 	construction_time = 730
 	allowed_domicile_types = { estate }

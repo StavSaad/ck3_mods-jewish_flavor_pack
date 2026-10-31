@@ -1,8 +1,8 @@
-﻿# The Familial government (jip_familial_government_types.txt); Jewish families call it Mishpacha, an alias of the same concept
+﻿# The Familial government (jip_familial_government_types.txt)
 familial = {
 	texture = "gfx/interface/icons/government_types/familial_government.dds"
 	parent = government
-	alias = { familial_government familial_governments familial_i mishpacha mishpacha_i }
+	alias = { familial_government familial_governments familial_i }
 }
 
 # Shtadlanut interactions (common/character_interactions/jip_shtadlan_interactions.txt)

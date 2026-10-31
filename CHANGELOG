@@ -155,7 +155,7 @@
 [] Added the Court Astrologer, a Sabian of Harran who reads the stars for Muslim, Sabian and Middle Eastern courts (duke and above): horoscopes before wars, the births of children (each born under one of the seven planets) and marriages, tasks to compile astronomical tables or cast horoscopes for the court, and a new option in Recruit for a Court Position to send to Harran for one. Muslim zealots dislike it
 [] Added Pesach as a new kind of feast for every Jewish faith, shown in March and April: the four cups, the children's questions, the afikoman and Elijah's cup, ending with "Next year in Jerusalem" (or "this year" for a ruler who holds it). Karaites, Samaritans and the Beta Israel keep it their own way, an Exilarch's seder brings legitimacy, and a rebuilt Temple brings back the paschal lamb
 [] Every Jewish ruler who holds no grand seder keeps a household seder each spring
-[] Mishpacha is now the Jewish name of a new government, Familial, open to landless families of any faith; Jewish families keep their Mar/Geveret titles, kippah, court positions, Yeshiva, Beit Din and Beit Knesset, contracts and Shtadlanut
+[] Mishpacha is now Familial, a government for landless families of any faith, called Familial by all; Jewish families keep their Mar/Geveret titles, kippah, court positions, Yeshiva, Beit Din and Beit Knesset, contracts and Shtadlanut
 [] Familial: non-Jewish families are headed by a Mar or Marta, and their family title is a Bayta
 [] Familial: a head who leaves the family's religion steps down for the nearest man of the house who keeps it
 [] 867: Thabit ibn Qurra, the Sabian mathematician and translator, heads a playable Familial family in Baghdad, a vassal of the Caliph
@@ -168,4 +168,6 @@
 [] Familial: Sabian families can take a new contract, Cast a Horoscope, for rulers without a Court Astrologer
 [] Added the Question of the Sabians: a Muslim duke or above can demand that the Sabians and Mandaeans of the realm prove themselves a people of the Book, as al-Ma'mun did at Harran; each answers by paying, defending the claim (a good defence wins 20 years' recognition) or converting
 [] Familial: Sabian and Mandaean families can plead with a Muslim ruler to recognise them as a people of the Book, which spares them the Question for 20 years
+[] Familial: the government is called Familial for every faith; Jewish families no longer see it as Mishpacha or with its own icon, and every family title is a "Family"
+[] Familial: the Charter of Privileges' Beit Din right is now "Own Courts", and the Villa and estate tooltips no longer call every family Jewish
 [] Saves from earlier versions are not compatible

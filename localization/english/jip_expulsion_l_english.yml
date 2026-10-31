@@ -4,9 +4,9 @@
  jip_expel_the_jews_decision_desc: "The Jewish families of my realm grow rich on its trade and lend at interest to my lords. Their houses and their coin would serve the crown better than they serve them."
  jip_expel_the_jews_decision_tooltip: "Banish every Jewish family from your [realm|E] and seize half of every Jew's [gold|E]"
  jip_expel_the_jews_decision_confirm: "Let the edict be proclaimed"
- jip_expel_the_jews_no_families_tt: "A Jewish [vassal|E] or [mishpacha|E] family lives in your [realm|E]"
+ jip_expel_the_jews_no_families_tt: "A Jewish [vassal|E] or [familial|E] family lives in your [realm|E]"
  jip_expel_the_jews_no_return_tt: "No Jewish family may settle in your [realm|E] again"
- jip_expel_the_jews_every_family_tt: "Every [mishpacha|E] family in your [realm|E]"
+ jip_expel_the_jews_every_family_tt: "Every Jewish [familial|E] family in your [realm|E]"
 
  # Domicile
  can_move_domicile_jewish_expelled_tt: "The Jews have been expelled from this [realm|E]"
@@ -50,7 +50,7 @@
  jip_expulsion.0003.b: "Let them come and take it!"
  jip_expulsion.0003.b.tt: "Fight [jip_expeller.GetShortUIName] to have the edict repealed. The other Jews of the realm who have not yet answered the edict will fight at your side. If the edict stands, your lands are revoked"
  jip_expel_the_jews_resistance_tt: "#X The Jews of your realm may take up arms against the edict. If they win, the edict is repealed#!"
- jip_expulsion.0003.a.tt: "Your lands pass to [jip_expeller.GetShortUIName]. Your house becomes a [mishpacha|E] family and leaves the realm with half of your [gold|E] seized"
+ jip_expulsion.0003.a.tt: "Your lands pass to [jip_expeller.GetShortUIName]. Your house becomes a [familial|E] family and leaves the realm with half of your [gold|E] seized"
  jip_mishpacha_house_title_name: "[jip_new_mishpacha_head.GetHouse.GetBaseNameNoTooltip]"
  jip_expel_the_jews_projected_gold_tt: "Half of every departing Jew's @gold_icon! [gold|E] will be seized"
  jip_expulsion_departure_msg: "A Jew Leaves the Realm"

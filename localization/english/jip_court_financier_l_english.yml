@@ -2,7 +2,7 @@
  # Court position
  jip_court_financier_court_position: "Court Financier"
  jip_court_financier_court_position_desc: "The $jip_court_financier_court_position$ is a Jewish banker who manages the treasury, arranges loans to the crown and its vassals, and collects what is owed. A trusted financier fills the coffers and earns the goodwill of the Jewish communities, though zealots resent a Jew handling the crown's wealth."
- court_position_jip_mishpacha_family: "Member of a Mishpacha family"
+ court_position_jip_mishpacha_family: "Member of a Jewish Familial house"
 
  # A debtor defaults
  jip_financier.0001.t: "A Debt Unpaid"

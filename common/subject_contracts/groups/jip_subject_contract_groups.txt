@@ -5,7 +5,7 @@ mishpacha_vassal = {
 		mishpacha_communal_taxes
 		religious_rights			# Freedom of worship, no forced conversion
 		jizya_special_rights		# Dhimmi status under Muslim lieges
-		mishpacha_beit_din_rights	# Self-jurisdiction
+		mishpacha_beit_din_rights	# Self-jurisdiction, shown as Own Courts (every faith's families have it)
 		mishpacha_trade_rights
 	}
 }
