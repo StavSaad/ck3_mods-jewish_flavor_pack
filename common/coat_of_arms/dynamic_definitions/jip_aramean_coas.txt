@@ -1,0 +1,33 @@
+﻿# Aramean arms for the titles named in Aramaic (0.15 plan, section 5; the arms are in jip_titles_coa.txt), picked by
+# the holder's culture like vanilla's Norse arms (00_norse_coas.txt). root = the title. Vanilla refreshes them on title
+# gain, culture change and rite change (update_dynamic_coa); jip_title_coa_on_actions.txt does it at game start
+
+# Aram (k_syria): the bull of Hadad
+k_syria = {
+	item = {
+		trigger = {
+			holder ?= { jip_uses_aramean_arms_trigger = yes }
+		}
+		coat_of_arms = k_syria_aram
+	}
+}
+
+# Osroene (d_edessa): the Abgarid tiara
+d_edessa = {
+	item = {
+		trigger = {
+			holder ?= { jip_uses_aramean_arms_trigger = yes }
+		}
+		coat_of_arms = d_edessa_osroene
+	}
+}
+
+# Adiabene (d_kurdistan, Hadyab in the Assyrian lists too): the star of Ishtar of Arbela
+d_kurdistan = {
+	item = {
+		trigger = {
+			holder ?= { jip_uses_assyrian_arms_trigger = yes }
+		}
+		coat_of_arms = d_kurdistan_adiabene
+	}
+}

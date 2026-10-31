@@ -1,4 +1,6 @@
 ﻿l_english:
+ nick_restorer_of_the_east: "Restorer of the East"
+ nick_restorer_of_the_east_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharAreIs(CHARACTER)] the founder of a reborn Palmyrene Empire, bearing the title Rome once gave Odaenathus of Tadmor"
  nick_the_rising_lion: "the Rising Lion"
  nick_the_rising_lion_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharAreIs(CHARACTER)] the founder of a reborn Empire of Canaan, rising from the ancient heartland of the Levant to unite the peoples of the coast and the river valleys under one crown"
  nick_the_rising_lioness: "the Rising Lioness"

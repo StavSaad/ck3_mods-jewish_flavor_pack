@@ -1,0 +1,37 @@
+﻿# The tablets of Ashurbanipal's library (jip_create_nineveh_tablet_effect). Their full modifiers, for the heirs of
+# Assyria (jip_nineveh_tablet_template); anyone else gets the template's fallback
+
+# The epic of the king who sought eternal life
+jip_nineveh_gilgamesh_modifier = {
+	monthly_prestige = 1
+	prowess = 3
+	court_grandeur_baseline_add = 2
+}
+
+# The story of creation, read at the Akitu
+jip_nineveh_enuma_elish_modifier = {
+	monthly_piety = 1
+	clergy_opinion = 10
+	court_grandeur_baseline_add = 2
+}
+
+# The omens of the Moon, the Sun and the planets
+jip_nineveh_enuma_anu_enlil_modifier = {
+	learning = 3
+	monthly_learning_lifestyle_xp_gain_mult = 0.1
+	court_grandeur_baseline_add = 2
+}
+
+# The physicians' handbook
+jip_nineveh_sakikku_modifier = {
+	health = 0.5
+	learning = 1
+	court_grandeur_baseline_add = 2
+}
+
+# Ashurbanipal's own order for his library
+jip_nineveh_catalogue_modifier = {
+	learning = 2
+	monthly_prestige = 0.5
+	court_grandeur_baseline_add = 3
+}

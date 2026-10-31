@@ -543,6 +543,82 @@ create_e_kemet_decision = {
 	}
 }
 
+# The Palmyrene Empire: the Aramean capstone, after Odaenathus and Zenobia (0.15 plan, section 5). Syria is its
+# heartland; Palestine, Arabia and Egypt, Zenobia's conquests of 270-272, join it if held
+create_e_palmyra_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	desc = create_e_palmyra_decision_desc
+	selection_tooltip = create_e_palmyra_decision_tooltip
+	decision_group_type = major
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 120
+		empire = 120
+		hegemony = 120
+	}
+
+	is_shown = {
+		culture = culture:syriac
+		OR = {
+			has_title = title:k_syria
+			has_title = title:c_palmyra
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:create_e_palmyra_decision
+			}
+		}
+	}
+
+	is_valid = {
+		prestige_level >= high_prestige_level
+		is_independent_ruler = yes
+		culture = culture:syriac
+		highest_held_title_tier >= tier_kingdom
+		has_title = title:c_palmyra
+		has_title = title:k_syria
+		completely_controls = title:k_syria
+		custom_tooltip = {
+			text = jip_empire_kingdom_taken_syria_tt
+			jip_can_take_de_jure_kingdom_trigger = { KINGDOM = k_syria }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_landed = yes
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	effect = {
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:create_e_palmyra_decision
+		}
+		show_as_tooltip = {
+			create_palmyra_decision_effect = yes
+		}
+		trigger_event = jip_palmyra.0001
+	}
+
+	cost = { gold = { value = 500 } }
+
+	ai_potential = {
+		culture = culture:syriac
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
 create_h_fertile_crescent_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
@@ -570,6 +646,7 @@ create_h_fertile_crescent_decision = {
 			has_title = title:e_canaan
 			has_title = title:e_beth_nahrain
 			has_title = title:e_kemet
+			has_title = title:e_palmyra
 		}
 		highest_held_title_tier = tier_empire
 		NOT = {
@@ -594,6 +671,7 @@ create_h_fertile_crescent_decision = {
 			has_title = title:e_canaan
 			has_title = title:e_beth_nahrain
 			has_title = title:e_kemet
+			has_title = title:e_palmyra
 		}
 		custom_description = {
 			any_held_title = {

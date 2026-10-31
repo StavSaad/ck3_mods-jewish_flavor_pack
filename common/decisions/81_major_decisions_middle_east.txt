@@ -68,15 +68,18 @@ found_empire_of_beth_nahrain_decision = {
 			has_title = title:k_mesopotamia
 		}
 		OR = {
+			# Not a kingdom of another ruler's Canaan or Palmyrene Empire (jip_empire_triggers.txt)
 			custom_tooltip = {
 				text = has_title_and_completely_control_jerusalem_tt
 				has_title = title:k_jerusalem
 				completely_controls = title:k_jerusalem
+				jip_can_take_de_jure_kingdom_trigger = { KINGDOM = k_jerusalem }
 			}
 			custom_tooltip = {
 				text = has_title_and_completely_control_syria_tt
 				has_title = title:k_syria
-				completely_controls = title:k_syria		
+				completely_controls = title:k_syria
+				jip_can_take_de_jure_kingdom_trigger = { KINGDOM = k_syria }
 			}
 		}
 	}
@@ -110,6 +113,7 @@ found_empire_of_beth_nahrain_decision = {
 				limit = {
 					has_title = title:k_jerusalem
 					completely_controls = title:k_jerusalem
+					jip_can_take_de_jure_kingdom_trigger = { KINGDOM = k_jerusalem }
 				}
 				title:k_jerusalem = {
 					set_de_jure_liege_title = title:e_beth_nahrain
@@ -120,6 +124,7 @@ found_empire_of_beth_nahrain_decision = {
 				limit = {
 					has_title = title:k_syria
 					completely_controls = title:k_syria
+					jip_can_take_de_jure_kingdom_trigger = { KINGDOM = k_syria }
 				}
 				title:k_syria = {
 					set_de_jure_liege_title = title:e_beth_nahrain

@@ -1573,6 +1573,8 @@ e_arabia = {
 
 			cultural_names = {
 				name_list_assyrian = cn_sha_imerishu
+				name_list_aramean = cn_aram_damascus
+				name_list_nabati = cn_aram_damascus
 			}
 
 			capital = c_damascus
@@ -3807,7 +3809,7 @@ e_kemet = {
 
 e_beth_nahrain = {
 	color = { 35 79 78 }
-	capital = c_damascus # Damascus
+	capital = c_ninive # Nineveh; vanilla's Damascus is the Palmyrene Empire's land (0.15 plan, section 5)
 
 	cultural_names = {
 		name_list_ashkenazi = cn_bethnaharaim
@@ -4557,6 +4559,18 @@ e_spain = {
 		}
 	}
 
+}
+
+# The Aramean capstone, founded by create_e_palmyra_decision: Syria and Zenobia's conquests (0.15 plan, section 5)
+e_palmyra = {
+	color = { 176 128 64 }
+	capital = c_palmyra # Palmyra
+
+	definite_form = yes
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 h_fertile_crescent = {

@@ -51,7 +51,7 @@ NAMES = {
     'b_antartus': ('arwada', 'arwad'),                # Antaradus, facing the island of Arwad
     'd_lebanon': ('labnanu', 'lebnan'),
     'b_saida': ('sidunu', None),                      # Sidon in Sennacherib's annals
-    'd_damascus': ('sha_imerishu', None),             # Sha-imerishu, the Assyrian name of the kingdom of Damascus
+    'd_damascus': ('sha_imerishu', 'aram_damascus'),  # Sha-imerishu, the Assyrian name of the kingdom of Damascus; Aram-Damascus
     'c_damascus': ('dimashqa', 'darmsuq'),
     'b_damascus': ('dimashqa', 'darmsuq'),
     'b_nawa': ('neve', 'neve'),

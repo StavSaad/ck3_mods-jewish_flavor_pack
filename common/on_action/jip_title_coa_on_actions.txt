@@ -1,0 +1,16 @@
+﻿# The Aramean arms (common/coat_of_arms/dynamic_definitions/jip_aramean_coas.txt) at game start: vanilla refreshes
+# dynamic arms on title gain, culture change and rite change, but not when the game starts
+
+on_game_start = {
+	on_actions = {
+		jip_aramean_coa_game_start_on_action
+	}
+}
+
+jip_aramean_coa_game_start_on_action = {
+	effect = {
+		title:k_syria = { update_dynamic_coa = yes }
+		title:d_edessa = { update_dynamic_coa = yes }
+		title:d_kurdistan = { update_dynamic_coa = yes }
+	}
+}

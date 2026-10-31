@@ -1,0 +1,47 @@
+﻿namespace = jip_palmyra
+
+# The Palmyrene Empire is founded (create_e_palmyra_decision)
+jip_palmyra.0001 = {
+	type = character_event
+	title = jip_palmyra.0001.t
+	desc = jip_palmyra.0001.desc
+	theme = realm
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = ecstasy
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_positive_effect"
+		create_palmyra_decision_effect = yes
+	}
+
+	# Rule from Palmyra, as Odaenathus and Zenobia did
+	option = {
+		name = jip_palmyra.0001.a
+		trigger = {
+			NOT = { capital_county = title:c_palmyra }
+		}
+		set_realm_capital = title:c_palmyra
+		stress_impact = {
+			ambitious = major_stress_loss
+		}
+	}
+
+	# Keep the court where it is
+	option = {
+		name = jip_palmyra.0001.b
+		title:e_palmyra = {
+			set_capital_county = root.capital_county
+		}
+		stress_impact = {
+			ambitious = medium_stress_loss
+		}
+	}
+}

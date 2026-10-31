@@ -1,0 +1,21 @@
+﻿# The Nineveh dig (jip_gp_nineveh_excavation)
+
+# Character scope: an heir of Assyria, who benefits fully from the tablets of Ashurbanipal's library
+# (jip_nineveh_tablet_template): Aramean, Nabati or Assyrian (the cultures with Aramaic place names), or the old faith
+jip_heir_of_assyria_trigger = {
+	OR = {
+		jip_uses_assyrian_arms_trigger = yes
+		faith = faith:mesopotamian_pagan
+	}
+}
+
+# Province scope (Nineveh): tablets of Ashurbanipal's library are still to be found
+jip_nineveh_has_tablets_trigger = {
+	custom_tooltip = {
+		text = jip_gp_nineveh_excavation_exhausted_tt
+		OR = {
+			NOT = { has_variable = jip_nineveh_digs }
+			var:jip_nineveh_digs < jip_nineveh_tablets_value
+		}
+	}
+}

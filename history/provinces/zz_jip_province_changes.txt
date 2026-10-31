@@ -18,3 +18,32 @@
 	}
 
 }
+
+# Special building slots for the temples of the old gods, raised by great projects (0.15 plan, sections 2 and 5)
+# 4870 - HARRAN: the Temple of Sin
+4870 = {
+	1.1.1 = {
+		special_building_slot = jip_temple_of_sin_01
+	}
+}
+
+# 5948 - TADMUR (Palmyra): the Temple of Bel
+5948 = {
+	1.1.1 = {
+		special_building_slot = jip_temple_of_bel_01
+	}
+}
+
+# 4837 - AL-HADR (Hatra): the Temple of Shamash
+4837 = {
+	1.1.1 = {
+		special_building_slot = jip_temple_of_shamash_01
+	}
+}
+
+# 4836 - AIN AL-QAYYARA (Ashur): the Temple of Ashur
+4836 = {
+	1.1.1 = {
+		special_building_slot = jip_temple_of_ashur_01
+	}
+}

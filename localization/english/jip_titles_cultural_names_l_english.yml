@@ -119,6 +119,8 @@
  cn_akko_adj:0 "Akkoi"
  cn_aram:0 "Aram"
  cn_aram_adj:0 "Aramean"
+ cn_aram_damascus:0 "Aram-Damascus"
+ cn_aram_damascus_adj:0 "Damascene"
  cn_ebla:0 "Ebla"
  cn_ebla_adj:0 "Eblaite"
  cn_padanaram:0 "Padan Aram"

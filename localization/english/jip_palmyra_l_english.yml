@@ -1,0 +1,6 @@
+﻿l_english:
+ # The Palmyrene Empire (events/jip_palmyra_events.txt)
+ jip_palmyra.0001.t: "Tadmor Rises Again"
+ jip_palmyra.0001.desc: "Six centuries ago the caravan city of Tadmor ruled the East. Odaenathus drove the Persian King of Kings back to the walls of Ctesiphon and Rome named him Restorer of the East; his widow Zenobia took Egypt and Arabia and struck coins in her own name, until Aurelian came for her.\n\nNow the desert empire is raised again. From the Euphrates to the sea, Aram answers to [ROOT.Char.GetTitledFirstName], and the Arameans remember that they were once more than the subjects of others."
+ jip_palmyra.0001.a: "Our court goes to [GetTitleByKey('c_palmyra').GetName], as Zenobia's did."
+ jip_palmyra.0001.b: "The empire is where its ruler sits."

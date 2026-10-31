@@ -1,6 +1,7 @@
 ﻿#################
 #	Rising Lion great projects (vanilla's system: _great_project_types.info; modelled on pam_cathedral_01)
 #	jip_gp_temple_of_sin - Restore the House of Rejoicing: the Ehulhul, Sin's temple at Harran (0.15 plan, sections 2 and 4)
+#	The temples of section 5 and the Nineveh dig below
 #################
 
 @jip_temple_of_sin_icon = "gfx/interface/icons/great_projects/jip_temple_of_sin.dds" # tools/make_great_project_art.py
@@ -101,7 +102,7 @@ jip_gp_temple_of_sin = {
 		scope:province = {
 			custom_tooltip = jip_gp_temple_of_sin_building_tt
 			hidden_effect = {
-				set_great_building = jip_temple_of_sin_01
+				add_special_building = jip_temple_of_sin_01 # Harran's special building slot
 			}
 		}
 		jip_unlock_mesopotamian_conversion_effect = yes
@@ -351,5 +352,1170 @@ jip_gp_temple_of_sin = {
 
 	group = major_project
 	is_important = yes
+	target_title_tier = barony
+}
+
+#################
+#	The temples of the old gods (0.15 plan, section 5). Like the Temple of Sin, each is raised once per game in its
+#	province's special building slot (history/provinces/zz_jip_province_changes.txt) and works only for its gods'
+#	followers. Contributions shared with the Temple of Sin reuse its tooltips
+#	jip_gp_temple_of_bel - the Temple of Bel at Palmyra, for the Palmyrene emperor
+#	jip_gp_temple_of_shamash - the Temple of Shamash at Hatra
+#	jip_gp_temple_of_ashur - the Temple of Ashur at Ashur, Ashurism's counterpart of the Temple of Sin
+#	jip_gp_nineveh_excavation - a repeatable dig into the mound of Nineveh for Ashurbanipal's library
+#################
+
+@jip_temple_of_bel_icon = "gfx/interface/icons/great_projects/jip_temple_of_bel.dds" # tools/make_great_project_art.py
+@jip_temple_of_bel_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_bel.dds" # default crop
+
+# The Palmyrene emperor (create_e_palmyra_decision) of the Sabian rite or the old faith rebuilds the temple of Bel,
+# Palmyra's great temple, consecrated in 32 AD
+jip_gp_temple_of_bel = {
+	icon = { reference = @jip_temple_of_bel_icon }
+	illustration = { reference = @jip_temple_of_bel_illustration }
+
+	name = {
+		desc = great_project_type_jip_gp_temple_of_bel
+	}
+
+	is_shown = {
+		has_title = title:e_palmyra
+		OR = {
+			rite = rite:sabianism
+			faith = faith:mesopotamian_pagan
+		}
+		NOT = { is_planning_great_project = jip_gp_temple_of_bel }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_bel
+			}
+		}
+	}
+
+	province_filter = landed_title
+	province_filter_target = c_palmyra
+
+	is_location_valid = {
+		scope:province = {
+			custom_tooltip = {
+				text = jip_gp_temple_of_bel_location_tt
+				this = title:b_tadmur.title_province
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_held_tt
+				barony.holder ?= { target_is_same_character_or_above = root }
+			}
+			NOT = { has_building_with_flag = jip_temple_of_bel_building }
+		}
+	}
+
+	can_start_planning = {
+		custom_tooltip = {
+			text = jip_gp_temple_of_bel_palmyra_tt
+			title:c_palmyra.holder ?= { target_is_same_character_or_above = root }
+		}
+		piety_level >= 2
+		is_at_war = no
+	}
+
+	owner = founder_primary_title_owner
+
+	is_valid = {
+		scope:founder = {
+			has_title = title:e_palmyra
+			OR = {
+				rite = rite:sabianism
+				faith = faith:mesopotamian_pagan
+			}
+		}
+		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = great_project_base_starting_cost
+		}
+		piety = {
+			value = 300
+		}
+	}
+
+	construction_time = 1825 # 5 years
+
+	allowed_contributor_filter = {
+		owner = yes
+		founder = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+		duchy = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:founder ?= {
+			add_piety = medium_piety_gain
+		}
+	}
+
+	on_complete = {
+		scope:province = {
+			custom_tooltip = jip_gp_temple_of_bel_building_tt
+			hidden_effect = {
+				add_special_building = jip_temple_of_bel_01 # The province's special building slot
+			}
+		}
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_bel
+			}
+		}
+		scope:owner ?= {
+			add_piety = major_piety_gain
+			add_prestige = major_prestige_gain
+		}
+	}
+
+	project_contributions = {
+		# Required: the golden limestone of the quarries near Palmyra
+		limestone = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the caravan masters, who paid for the temple's first building
+		caravans = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.75
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the priests of Bel, from the Sabians or the old faith
+		priests = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_temple_of_sin_faithful_tt
+					OR = {
+						rite = rite:sabianism
+						faith = faith:mesopotamian_pagan
+					}
+				}
+			}
+			cost = {
+				piety = {
+					value = 300
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = minor_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Optional: the carved eagle of Bel on the ceiling of the inner shrine
+		eagle = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+		# Optional: the great colonnade of the temple courtyard
+		colonnade = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		rank = county
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 5
+		duchy = 2
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+
+	ai_will_do = {
+		value = 100
+	}
+
+	group = major_project
+	is_important = yes
+	target_title_tier = barony
+}
+
+@jip_temple_of_shamash_icon = "gfx/interface/icons/great_projects/jip_temple_of_shamash.dds" # tools/make_great_project_art.py
+@jip_temple_of_shamash_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_shamash.dds" # default crop
+
+# A ruler of the Sabian rite or the old faith who holds Hatra rebuilds the temple of Shamash, the sun god, in the round
+# desert city between Mosul and the Euphrates
+jip_gp_temple_of_shamash = {
+	icon = { reference = @jip_temple_of_shamash_icon }
+	illustration = { reference = @jip_temple_of_shamash_illustration }
+
+	name = {
+		desc = great_project_type_jip_gp_temple_of_shamash
+	}
+
+	is_shown = {
+		OR = {
+			rite = rite:sabianism
+			faith = faith:mesopotamian_pagan
+		}
+		is_landed = yes
+		NOT = { is_planning_great_project = jip_gp_temple_of_shamash }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_shamash
+			}
+		}
+	}
+
+	province_filter = landed_title
+	province_filter_target = c_mosul
+
+	is_location_valid = {
+		scope:province = {
+			custom_tooltip = {
+				text = jip_gp_temple_of_shamash_location_tt
+				this = title:b_al-hadr.title_province
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_held_tt
+				barony.holder ?= { target_is_same_character_or_above = root }
+			}
+			NOT = { has_building_with_flag = jip_temple_of_shamash_building }
+		}
+	}
+
+	can_start_planning = {
+		custom_tooltip = {
+			text = jip_gp_temple_mosul_tt
+			title:c_mosul.holder ?= { target_is_same_character_or_above = root }
+		}
+		piety_level >= 2
+		is_at_war = no
+	}
+
+	owner = founder_primary_title_owner
+
+	is_valid = {
+		scope:founder = {
+			OR = {
+				rite = rite:sabianism
+				faith = faith:mesopotamian_pagan
+			}
+		}
+		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = great_project_base_starting_cost
+		}
+		piety = {
+			value = 300
+		}
+	}
+
+	construction_time = 1825 # 5 years
+
+	allowed_contributor_filter = {
+		owner = yes
+		founder = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+		duchy = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:founder ?= {
+			add_piety = medium_piety_gain
+		}
+	}
+
+	on_complete = {
+		scope:province = {
+			custom_tooltip = jip_gp_temple_of_shamash_building_tt
+			hidden_effect = {
+				add_special_building = jip_temple_of_shamash_01 # The province's special building slot
+			}
+		}
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_shamash
+			}
+		}
+		scope:owner ?= {
+			add_piety = major_piety_gain
+			add_prestige = major_prestige_gain
+		}
+	}
+
+	project_contributions = {
+		# Required: the great vaulted halls of the temple
+		iwans = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the round walls of Hatra, which turned back Trajan and Septimius Severus
+		walls = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.75
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the priests of Shamash, from the Sabians or the old faith
+		priests = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_temple_of_sin_faithful_tt
+					OR = {
+						rite = rite:sabianism
+						faith = faith:mesopotamian_pagan
+					}
+				}
+			}
+			cost = {
+				piety = {
+					value = 300
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = minor_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Optional: a golden sun disc above the central arch
+		sun_disc = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_piety = medium_piety_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+		# Optional: statues of the kings of Hatra in the temple courts
+		kings = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		rank = county
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 5
+		duchy = 2
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+
+	ai_will_do = {
+		value = 100
+	}
+
+	group = major_project
+	is_important = yes
+	target_title_tier = barony
+}
+
+@jip_temple_of_ashur_icon = "gfx/interface/icons/great_projects/jip_temple_of_ashur.dds" # tools/make_great_project_art.py
+@jip_temple_of_ashur_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_ashur.dds" # default crop
+
+# An independent ruler of the Ashurite rite who holds Ashur rebuilds the house of the god Ashur beside his ziggurat.
+# The rite opens with the Temple of Sin (jip_unlock_mesopotamian_conversion_effect), so this follows the restoration.
+# Independent only, like the Temple of Sin
+jip_gp_temple_of_ashur = {
+	icon = { reference = @jip_temple_of_ashur_icon }
+	illustration = { reference = @jip_temple_of_ashur_illustration }
+
+	name = {
+		desc = great_project_type_jip_gp_temple_of_ashur
+	}
+
+	is_shown = {
+		rite = rite:ashurism
+		is_independent_ruler = yes
+		NOT = { is_planning_great_project = jip_gp_temple_of_ashur }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_ashur
+			}
+		}
+	}
+
+	province_filter = landed_title
+	province_filter_target = c_mosul
+
+	is_location_valid = {
+		scope:province = {
+			custom_tooltip = {
+				text = jip_gp_temple_of_ashur_location_tt
+				this = title:b_ain_al-qayyara.title_province
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_held_tt
+				barony.holder ?= { target_is_same_character_or_above = root }
+			}
+			NOT = { has_building_with_flag = jip_temple_of_ashur_building }
+		}
+	}
+
+	can_start_planning = {
+		custom_tooltip = {
+			text = jip_gp_temple_mosul_tt
+			title:c_mosul.holder ?= { target_is_same_character_or_above = root }
+		}
+		piety_level >= 3
+		is_at_war = no
+	}
+
+	owner = founder_primary_title_owner
+
+	is_valid = {
+		scope:founder = {
+			rite = rite:ashurism
+			is_independent_ruler = yes
+		}
+		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = great_project_base_starting_cost
+		}
+		piety = {
+			value = 500
+		}
+	}
+
+	construction_time = 1825 # 5 years
+
+	allowed_contributor_filter = {
+		owner = yes
+		founder = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+		duchy = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:founder ?= {
+			add_piety = medium_piety_gain
+		}
+	}
+
+	on_complete = {
+		scope:province = {
+			custom_tooltip = jip_gp_temple_of_ashur_building_tt
+			hidden_effect = {
+				add_special_building = jip_temple_of_ashur_01 # The province's special building slot
+			}
+		}
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_ashur
+			}
+		}
+		scope:owner ?= {
+			add_piety = major_piety_gain
+			add_prestige = major_prestige_gain
+		}
+	}
+
+	project_contributions = {
+		# Required: baked bricks for the ziggurat and the temple
+		bricks = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the foundation deposits of the Assyrian kings; a scholar must read them
+		foundation = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_temple_of_sin_scholar_tt
+					learning >= 12
+				}
+			}
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_learning_lifestyle_xp = major_lifestyle_xp
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the priests of Ashur
+		priests = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_temple_of_ashur_faithful_tt
+					rite = rite:ashurism
+				}
+			}
+			cost = {
+				piety = {
+					value = 300
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = minor_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Optional: glazed bricks of blue and yellow for the gate
+		glazed_bricks = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+		# Optional: winged bulls with the faces of men to guard the gate
+		lamassu = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.75
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		rank = county
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 5
+		duchy = 2
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+
+	ai_will_do = {
+		value = 100
+	}
+
+	group = major_project
+	is_important = yes
+	target_title_tier = barony
+}
+
+@jip_nineveh_excavation_icon = "gfx/interface/icons/great_projects/jip_nineveh_excavation.dds" # tools/make_great_project_art.py
+@jip_nineveh_excavation_illustration = "gfx/interface/illustrations/great_projects/jip_nineveh_excavation.dds" # default crop
+
+# Any ruler who holds Nineveh may dig into its mound for the library of Ashurbanipal, again and again: each dig turns up
+# the next of the five tablets (jip_nineveh_tablet_effect), and the mound rests jip_nineveh_rest_years_value years
+# between digs. The count (jip_nineveh_digs) and the rest (jip_nineveh_resting) are variables on Nineveh's province
+jip_gp_nineveh_excavation = {
+	icon = { reference = @jip_nineveh_excavation_icon }
+	illustration = { reference = @jip_nineveh_excavation_illustration }
+
+	name = {
+		desc = great_project_type_jip_gp_nineveh_excavation
+	}
+
+	is_shown = {
+		is_landed = yes
+		NOT = { is_planning_great_project = jip_gp_nineveh_excavation }
+		title:b_ninawa.title_province = {
+			jip_nineveh_has_tablets_trigger = yes
+		}
+	}
+
+	province_filter = landed_title
+	province_filter_target = c_ninive
+
+	is_location_valid = {
+		scope:province = {
+			custom_tooltip = {
+				text = jip_gp_nineveh_excavation_location_tt
+				this = title:b_ninawa.title_province
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_held_tt
+				barony.holder ?= { target_is_same_character_or_above = root }
+			}
+			custom_tooltip = {
+				text = jip_gp_nineveh_excavation_resting_tt
+				NOT = { has_variable = jip_nineveh_resting }
+			}
+		}
+	}
+
+	can_start_planning = {
+		custom_tooltip = {
+			text = jip_gp_nineveh_excavation_nineveh_tt
+			title:c_ninive.holder ?= { target_is_same_character_or_above = root }
+		}
+		is_at_war = no
+	}
+
+	owner = founder_primary_title_owner
+
+	is_valid = {
+		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = great_project_base_starting_cost
+			multiply = 0.5
+		}
+	}
+
+	construction_time = 1095 # 3 years
+
+	allowed_contributor_filter = {
+		owner = yes
+		founder = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+		duchy = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_complete = {
+		scope:province = {
+			custom_tooltip = jip_gp_nineveh_excavation_tablet_tt
+			hidden_effect = {
+				change_variable = {
+					name = jip_nineveh_digs
+					add = 1
+				}
+				set_variable = {
+					name = jip_nineveh_resting
+					value = yes
+					years = jip_nineveh_rest_years_value
+				}
+			}
+		}
+		scope:owner ?= {
+			hidden_effect = { jip_nineveh_tablet_effect = yes }
+			add_learning_lifestyle_xp = major_lifestyle_xp
+			add_prestige = medium_prestige_gain
+		}
+	}
+
+	project_contributions = {
+		# Required: diggers, baskets and props for the galleries
+		diggers = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = minor_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: a scholar who can read the old wedge-writing
+		reader = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_temple_of_sin_scholar_tt
+					learning >= 12
+				}
+			}
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.25
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_learning_lifestyle_xp = medium_lifestyle_xp
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Optional: lamps and oil for the deep galleries
+		lamps = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.25
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_learning_lifestyle_xp = minor_lifestyle_xp
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+		# Optional: copyists to copy the tablets onto parchment
+		copyists = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_learning_lifestyle_xp = medium_lifestyle_xp
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		rank = county
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 12
+		duchy = 6
+		kingdom = 3
+		empire = 3
+		hegemony = 3
+	}
+
+	ai_will_do = {
+		value = 20
+	}
+
+	group = major_project
 	target_title_tier = barony
 }

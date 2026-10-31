@@ -1,0 +1,28 @@
+﻿# The tablets of Ashurbanipal's library from the Nineveh dig (jip_create_nineveh_tablet_effect), like vanilla's Ark of
+# the Covenant (ark_covenant_template): their full modifiers (jip_nineveh_<tablet>_modifier) only for the heirs of
+# Assyria (jip_heir_of_assyria_trigger: Aramean, Nabati or Assyrian, or the old faith), the fallback for anyone else
+jip_nineveh_tablet_template = {
+	can_equip = {
+		always = yes
+	}
+
+	# Root scope: character, scope:artifact the tablet
+	can_benefit = {
+		custom_tooltip = {
+			text = jip_heir_of_assyria_tt
+			jip_heir_of_assyria_trigger = yes
+		}
+	}
+
+	# Holy relics of the old gods, to enshrine at their holy sites. Root scope: the faith
+	is_holy_relic = {
+		this = faith:mesopotamian_pagan
+	}
+
+	fallback = {
+		learning = 1
+		court_grandeur_baseline_add = 1
+	}
+
+	unique = yes
+}

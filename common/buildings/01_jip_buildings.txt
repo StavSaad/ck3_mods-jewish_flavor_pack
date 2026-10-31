@@ -235,6 +235,7 @@ masada_03 = {
 #########################
 
 # The Ehulhul at Harran, raised by the great project jip_gp_temple_of_sin (common/great_projects/types/jip_great_projects.txt)
+# in Harran's special building slot (history/provinces/zz_jip_province_changes.txt), like vanilla's holy site buildings.
 # Works only for a holder who follows Sin: the Sabians or the old gods
 jip_temple_of_sin_01 = {
 	# Vanilla has no ziggurat: the Tomb of Cyrus's stepped base and shrine stand in for one, on Harran's map
@@ -285,8 +286,182 @@ jip_temple_of_sin_01 = {
 		base = 0
 	}
 
-	type = great_building
+	type = special
 
 	flag = jip_temple_of_sin_building
+	flag = travel_point_of_interest_religious
+}
+
+#########################
+#  Temples of the old   #
+#  gods (section 5)     #
+#########################
+
+# Raised by great projects (common/great_projects/types/jip_great_projects.txt) in the special building slot their
+# province's history gives them (history/provinces/zz_jip_province_changes.txt), like vanilla's holy site buildings.
+# Like the Temple of Sin, each works only for a holder of the gods it serves
+
+# The Temple of Bel at Palmyra (jip_gp_temple_of_bel): the caravan city's great temple. Bel is Jupiter to the
+# Sabians and one of Sinism's gods
+jip_temple_of_bel_01 = {
+	# The Temple of Sin's model (the Tomb of Cyrus's stepped base and shrine), on Palmyra's map locator (province 5948)
+	asset = {
+		type = pdxmesh
+		name = "fp3_building_special_tomb_of_cyrus_01_a_mesh"
+	}
+
+	type_icon = "icon_structure_tomb_of_cyrus.dds"
+
+	can_construct_potential = {
+		always = no # Built only by the great project
+	}
+
+	is_enabled = {
+		custom_description = {
+			text = jip_temple_of_the_old_gods_enabled_trigger
+			scope:holder = {
+				OR = {
+					rite = rite:sabianism
+					faith = faith:mesopotamian_pagan
+				}
+			}
+		}
+	}
+
+	show_disabled = yes
+
+	character_modifier = {
+		monthly_piety = 0.5
+		monthly_prestige = 0.5
+		diplomacy = 1
+		same_faith_opinion = 5
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.2
+		tax_mult = 0.15
+	}
+
+	province_modifier = {
+		monthly_income = 3 # The caravan trade
+	}
+
+	ai_value = {
+		base = 0
+	}
+
+	type = special
+
+	flag = jip_temple_of_bel_building
+	flag = travel_point_of_interest_religious
+}
+
+# The Temple of Shamash at Hatra (jip_gp_temple_of_shamash): the sun god's temple of the desert city that held off
+# Trajan and Septimius Severus
+jip_temple_of_shamash_01 = {
+	# The Temple of Sin's model (the Tomb of Cyrus's stepped base and shrine), on Hatra's map locator (province 4837)
+	asset = {
+		type = pdxmesh
+		name = "fp3_building_special_tomb_of_cyrus_01_a_mesh"
+	}
+
+	type_icon = "icon_structure_tomb_of_cyrus.dds"
+
+	can_construct_potential = {
+		always = no # Built only by the great project
+	}
+
+	is_enabled = {
+		custom_description = {
+			text = jip_temple_of_the_old_gods_enabled_trigger
+			scope:holder = {
+				OR = {
+					rite = rite:sabianism
+					faith = faith:mesopotamian_pagan
+				}
+			}
+		}
+	}
+
+	show_disabled = yes
+
+	character_modifier = {
+		monthly_piety = 0.5
+		vassal_opinion = 5 # Shamash the judge
+		same_faith_opinion = 5
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.1
+		tax_mult = 0.1
+	}
+
+	province_modifier = {
+		fort_level = 2 # Hatra's walls
+		garrison_size = 0.25
+		monthly_income = 1
+	}
+
+	ai_value = {
+		base = 0
+	}
+
+	type = special
+
+	flag = jip_temple_of_shamash_building
+	flag = travel_point_of_interest_religious
+}
+
+# The Temple of Ashur at Ashur (jip_gp_temple_of_ashur): the house of the god of the Assyrian kings, beside his
+# ziggurat. Ashurism's counterpart of the Temple of Sin
+jip_temple_of_ashur_01 = {
+	# Vanilla has no ziggurat: the Tomb of Cyrus's stepped base stands in for one, as at Harran, on Ashur's map locator
+	# (province 4836)
+	asset = {
+		type = pdxmesh
+		name = "fp3_building_special_tomb_of_cyrus_01_a_mesh"
+	}
+
+	type_icon = "icon_structure_tomb_of_cyrus.dds"
+
+	can_construct_potential = {
+		always = no # Built only by the great project
+	}
+
+	is_enabled = {
+		custom_description = {
+			text = jip_temple_of_ashur_enabled_trigger
+			scope:holder = {
+				rite = rite:ashurism
+			}
+		}
+	}
+
+	show_disabled = yes
+
+	character_modifier = {
+		monthly_piety = 0.5
+		monthly_prestige = 0.5
+		martial = 2
+		legitimacy_gain_mult = 0.1 # The king is Ashur's vicegerent
+		same_faith_opinion = 5
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.2
+		tax_mult = 0.1
+	}
+
+	province_modifier = {
+		monthly_income = 2
+	}
+
+	ai_value = {
+		base = 0
+	}
+
+	type = special
+
+	flag = jip_temple_of_ashur_building
 	flag = travel_point_of_interest_religious
 }

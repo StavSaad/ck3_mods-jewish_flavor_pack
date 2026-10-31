@@ -1,3 +1,7 @@
 ﻿# The mod's colored CoA emblems (tools/make_coa_emblem.py), listed for the CoA designer like vanilla's
 # 50_coa_designer_emblems.txt
 ce_jip_drabsha.dds = { colors = 3 category = faiths }
+ce_jip_bel_eagle.dds = { colors = 3 category = animals }
+ce_jip_hadad_bull.dds = { colors = 3 category = animals }
+ce_jip_abgarid_tiara.dds = { colors = 3 category = manmade }
+ce_jip_ishtar_star.dds = { colors = 3 category = faiths }

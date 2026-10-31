@@ -538,3 +538,59 @@ d_rish_amma = {
 		}
 	}
 }
+
+# Aramean arms for the titles named in Aramaic, shown under an Aramean or Nabati holder (Adiabene: Assyrian too),
+# picked in common/coat_of_arms/dynamic_definitions/jip_aramean_coas.txt. Emblems by tools/make_coa_emblem.py from
+# Gemini drawings
+
+# Aram (k_syria): the bull of Hadad, the Aramean storm god, with his lightning fork
+k_syria_aram = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 40 70 120 }
+	colored_emblem = {
+		texture = "ce_jip_hadad_bull.dds"
+		color1 = rgb { 212 175 55 }
+		color2 = rgb { 200 40 30 }
+		color3 = rgb { 240 240 240 }
+		instance = { position = { 0.5 0.5 } scale = { 0.9 0.9 } }
+	}
+}
+
+# Osroene (d_edessa): the tiara of the Abgarid kings of Edessa, as on their coins
+d_edessa_osroene = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 30 50 110 }
+	colored_emblem = {
+		texture = "ce_jip_abgarid_tiara.dds"
+		color1 = rgb { 240 240 240 }
+		color2 = rgb { 170 25 35 }
+		color3 = rgb { 212 175 55 }
+		instance = { position = { 0.5 0.5 } scale = { 0.85 0.85 } }
+	}
+}
+
+# Adiabene (d_kurdistan): the star of Ishtar of Arbela
+d_kurdistan_adiabene = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 25 75 55 }
+	colored_emblem = {
+		texture = "ce_jip_ishtar_star.dds"
+		color1 = rgb { 240 240 240 }
+		color2 = rgb { 212 175 55 }
+		color3 = rgb { 170 25 35 }
+		instance = { position = { 0.5 0.5 } scale = { 0.85 0.85 } }
+	}
+}
+
+# The Palmyrene Empire (e_palmyra): the eagle of Bel from the ceiling of his temple, on Zenobia's purple
+e_palmyra = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 90 30 80 }
+	colored_emblem = {
+		texture = "ce_jip_bel_eagle.dds"
+		color1 = rgb { 245 235 210 }
+		color2 = rgb { 212 175 55 }
+		color3 = rgb { 212 175 55 }
+		instance = { position = { 0.5 0.5 } scale = { 0.9 0.9 } }
+	}
+}

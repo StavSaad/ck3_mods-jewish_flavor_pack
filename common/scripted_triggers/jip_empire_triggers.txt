@@ -1,0 +1,49 @@
+﻿# The mod's Near Eastern empires share kingdoms: Canaan and Beth Nahrain can both take Syria and Jerusalem, and the
+# Palmyrene Empire takes Syria, Jerusalem and Egypt (Kemet's). The region splits by heartland (0.15 plan, section 5),
+# so one founding decision doesn't take a kingdom from another of these empires held by someone else: whichever
+# forms first keeps it.
+
+# Title scope: one of the mod's Near Eastern empires
+jip_is_near_east_empire_trigger = {
+	OR = {
+		this = title:e_canaan
+		this = title:e_beth_nahrain
+		this = title:e_palmyra
+		this = title:e_kemet
+	}
+}
+
+# Character scope: of a culture that uses the Aramean place names (Aramean, Nabati), so shows the Aramean arms of
+# Aram and Osroene (common/coat_of_arms/dynamic_definitions/jip_aramean_coas.txt)
+jip_uses_aramean_arms_trigger = {
+	culture ?= {
+		OR = {
+			has_name_list = name_list_aramean
+			has_name_list = name_list_nabati
+		}
+	}
+}
+
+# Character scope: the same, or Assyrian, whose lists also name Adiabene Hadyab
+jip_uses_assyrian_arms_trigger = {
+	culture ?= {
+		OR = {
+			has_name_list = name_list_aramean
+			has_name_list = name_list_nabati
+			has_name_list = name_list_assyrian
+		}
+	}
+}
+
+# Character scope (the founder): may make $KINGDOM$ a de jure kingdom of their new empire. Not while it belongs to
+# another of the mod's Near Eastern empires with a holder other than them
+jip_can_take_de_jure_kingdom_trigger = {
+	save_temporary_scope_as = jip_empire_founder
+	NOT = {
+		title:$KINGDOM$.de_jure_liege ?= {
+			jip_is_near_east_empire_trigger = yes
+			exists = holder
+			NOT = { holder = scope:jip_empire_founder }
+		}
+	}
+}

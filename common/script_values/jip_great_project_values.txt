@@ -1,0 +1,7 @@
+﻿# The Nineveh dig (jip_gp_nineveh_excavation)
+
+# Years the mound of Nineveh rests between digs
+jip_nineveh_rest_years_value = 10
+
+# Tablets of Ashurbanipal's library to be found, one per dig (jip_nineveh_tablet_effect)
+jip_nineveh_tablets_value = 5

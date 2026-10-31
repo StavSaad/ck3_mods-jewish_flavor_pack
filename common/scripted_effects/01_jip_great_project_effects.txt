@@ -1,0 +1,42 @@
+﻿# The Nineveh dig (jip_gp_nineveh_excavation)
+
+# Character scope (the project's owner): the tablet of Ashurbanipal's library that this dig turned up, by the number of
+# digs so far (var:jip_nineveh_digs on Nineveh's province, already counted)
+jip_nineveh_tablet_effect = {
+	title:b_ninawa.title_province = { save_scope_as = jip_nineveh }
+	if = {
+		limit = { scope:jip_nineveh.var:jip_nineveh_digs <= 1 }
+		jip_create_nineveh_tablet_effect = { TABLET = gilgamesh }
+	}
+	else_if = {
+		limit = { scope:jip_nineveh.var:jip_nineveh_digs = 2 }
+		jip_create_nineveh_tablet_effect = { TABLET = enuma_elish }
+	}
+	else_if = {
+		limit = { scope:jip_nineveh.var:jip_nineveh_digs = 3 }
+		jip_create_nineveh_tablet_effect = { TABLET = enuma_anu_enlil }
+	}
+	else_if = {
+		limit = { scope:jip_nineveh.var:jip_nineveh_digs = 4 }
+		jip_create_nineveh_tablet_effect = { TABLET = sakikku }
+	}
+	else = {
+		jip_create_nineveh_tablet_effect = { TABLET = catalogue }
+	}
+}
+
+# Character scope: a court artifact for one of the tablets, shown like vanilla's pedestal scroll. Like the Ark of the
+# Covenant, its full modifier only works for the heirs of Assyria (jip_nineveh_tablet_template); clay does not decay
+jip_create_nineveh_tablet_effect = {
+	create_artifact = {
+		name = jip_artifact_nineveh_$TABLET$_name
+		description = jip_artifact_nineveh_$TABLET$_desc
+		visuals = scroll
+		type = pedestal
+		template = jip_nineveh_tablet_template
+		modifier = jip_nineveh_$TABLET$_modifier
+		wealth = 40
+		quality = 70
+		decaying = no
+	}
+}
