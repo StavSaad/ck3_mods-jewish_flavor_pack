@@ -5,7 +5,8 @@
 	faith_details = {
 		religion = canaanite_religion
 		color = { 125 28 125 }
-		icon = canaanite
+		icon = jip_baal # Baal of the stele, with club and thunderbolt (tools/make_faith_icon.py)
+		reformed_icon = jip_baal_reformed
 	}
 
 	eminent_holy_sites = {

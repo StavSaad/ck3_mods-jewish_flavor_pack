@@ -158,6 +158,60 @@ jip_rite_dagon_icon = {
 	custom_faith_icons = { jip_rite_dagon }
 }
 
+# Baal Hammon's ram's horns, sun and crescent
+jip_rite_hammon_icon = {
+	trigger = {
+		jip_rite_hammon_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_hammon }
+}
+
+# Melqart's club and ship's prow
+jip_rite_melqart_icon = {
+	trigger = {
+		jip_rite_melqart_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_melqart }
+}
+
+# Anat's axe and spear and the lioness
+jip_rite_anat_icon = {
+	trigger = {
+		jip_rite_anat_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_anat }
+}
+
+# Astarte's star and crescent
+jip_rite_astarte_icon = {
+	trigger = {
+		jip_rite_astarte_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_astarte }
+}
+
+# Kothar's hammer, tongs and anvil
+jip_rite_kothar_icon = {
+	trigger = {
+		jip_rite_kothar_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_kothar }
+}
+
+# Asherah's sacred tree and ibexes
+jip_rite_asherah_icon = {
+	trigger = {
+		jip_rite_asherah_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_asherah }
+}
+
 # Sinism's children: the Aramean cities and the star-readers take the crescent standard of Sin
 jip_harranian_rite = {
 	trigger = {
