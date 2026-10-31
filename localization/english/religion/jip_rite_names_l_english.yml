@@ -1,5 +1,5 @@
 ﻿l_english:
- # Names for new rites of Mesopotamianism and Canaanism (common/religion/rite_names/00_jip_rite_names.txt)
+ # Names for new rites of Mesopotamianism and Baalism (common/religion/rite_names/00_jip_rite_names.txt)
  jip_rite_name_marduk: "Mardukism"
  jip_rite_name_marduk_adj: "Mardukite"
  jip_rite_name_marduk_adherent: "Mardukite"
@@ -115,8 +115,3 @@
  jip_rite_name_asherah_adherent: "Asherist"
  jip_rite_name_asherah_adherent_plural: "Asherists"
  jip_rite_name_asherah_desc: "Asherah, the mother of the gods, is honoured at the wooden poles that stand beside every altar and in every household."
- jip_rite_name_baal: "Baalism"
- jip_rite_name_baal_adj: "Baalite"
- jip_rite_name_baal_adherent: "Baalite"
- jip_rite_name_baal_adherent_plural: "Baalites"
- jip_rite_name_baal_desc: "Baal, who rides the clouds, defeated Yam the sea and Mot the death and reigns from Mount Zaphon. His followers hold his kingship over every other god."

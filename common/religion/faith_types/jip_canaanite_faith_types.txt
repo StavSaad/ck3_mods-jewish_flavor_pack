@@ -32,7 +32,7 @@
 }
 
 # The old gods of Assyria, Babylonia and the Aramean cities, restored from the Sabians of Harran (0.15 plan,
-# section 4). Reformed from the start (no unreformed_faith_doctrine), like Canaanism. Rites in jip_canaanite_rite_types.txt: Ashurism
+# section 4). Reformed from the start (no unreformed_faith_doctrine), like Baalism. Rites in jip_canaanite_rite_types.txt: Ashurism
 # (main; these gods) and Sinism (its own gods)
 mesopotamian_pagan = {
 

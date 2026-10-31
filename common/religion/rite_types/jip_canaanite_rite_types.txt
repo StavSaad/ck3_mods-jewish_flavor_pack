@@ -1,5 +1,5 @@
-﻿# Canaanism's main rite: the Phoenician cities' Baal, Astarte and Melqart. Baal's own emblem is still to come; until
-# then it shares the gold sign of Tanit with Punism
+﻿# Baalism's main rite: the Phoenician cities' Baal, Astarte and Melqart. Baal's own emblem is still to come; until
+# then it shares the gold sign of Tanit with Tanitism
 semitic_pagan = {
 	faith = semitic_pagan
 
@@ -19,7 +19,7 @@ semitic_pagan = {
 	}
 }
 
-# Punism, the faith of Carthage, whose first goddess is Tanit
+# Tanitism, the faith of Carthage, whose first goddess is Tanit
 carthage_pagan = {
 	faith = semitic_pagan
 
@@ -42,7 +42,7 @@ yahwism = {
 
 	color = { 0.75 0.6 0.25 }
 	icon = canaanite_01 # Until its own (the bull calf of Bethel)
-	# No conversion until Canaanism is restored (jip_unlock_canaanite_conversion_effect) (set_can_convert_to_rite)
+	# No conversion until Baalism is restored (jip_unlock_canaanite_conversion_effect) (set_can_convert_to_rite)
 	convert = no
 
 	cultures = { hebrew }
