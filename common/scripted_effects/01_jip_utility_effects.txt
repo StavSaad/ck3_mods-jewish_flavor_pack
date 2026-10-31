@@ -235,15 +235,15 @@ jip_mishpacha_refresh_villa_modifier_effect = {
 # replaced (jip_mishpacha_replace_estate_buildings_effect): Beit Knesset, Haykal or Mandi, else the Crypt
 jip_add_family_temple_branch_effect = {
 	if = {
-		limit = { domicile_owner = { jip_is_jewish_family_trigger = yes } }
+		limit = { owner = { jip_is_jewish_family_trigger = yes } }
 		add_domicile_building = jip_beit_knesset_$TIER$
 	}
 	else_if = {
-		limit = { domicile_owner = { jip_is_sabian_family_trigger = yes } }
+		limit = { owner = { jip_is_sabian_family_trigger = yes } }
 		add_domicile_building = jip_haykal_$TIER$
 	}
 	else_if = {
-		limit = { domicile_owner = { jip_is_mandaean_family_trigger = yes } }
+		limit = { owner = { jip_is_mandaean_family_trigger = yes } }
 		add_domicile_building = jip_mandi_$TIER$
 	}
 	else = {

@@ -1649,9 +1649,18 @@ jip_gp_nineveh_excavation = {
 		scope:province = {
 			custom_tooltip = jip_gp_nineveh_excavation_tablet_tt
 			hidden_effect = {
-				change_variable = {
-					name = jip_nineveh_digs
-					add = 1
+				if = {
+					limit = { has_variable = jip_nineveh_digs }
+					change_variable = {
+						name = jip_nineveh_digs
+						add = 1
+					}
+				}
+				else = {
+					set_variable = {
+						name = jip_nineveh_digs
+						value = 1
+					}
 				}
 				set_variable = {
 					name = jip_nineveh_resting

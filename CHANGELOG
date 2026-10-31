@@ -186,4 +186,8 @@
 [] Canaanism's rite Punism is renamed Tanitism
 [] Tanitism now has the gold sign of Tanit; Canaanism and Baalism have Baal of the stele with club and thunderbolt, and Yahwism the bull calf of Bethel
 [] Fixed Canaanism's gods showing as raw text keys (Baal, Astarte, Anat and the others)
+[] Taking a loan, tolls, physician, responsum or horoscope contract now tells you what comes next, and that word will come in two to four months
+[] Fixed the Maimon family title showing a raw text key instead of Ben Maimon
+[] Fixed the Cast a Horoscope contract's request and event texts breaking off, and the Sabian Observatory not counting for contract odds
+[] Fixed old estate temples not turning into the family's own temple branch (Beit Knesset, Haykal or Mandi)
 [] Saves from earlier versions are not compatible

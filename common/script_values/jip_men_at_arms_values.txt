@@ -1,4 +1,4 @@
-# Costs of the mod's cultural men-at-arms (common/men_at_arms_types/jip_cultural_maa_types.txt), as multiples of
+﻿# Costs of the mod's cultural men-at-arms (common/men_at_arms_types/jip_cultural_maa_types.txt), as multiples of
 # vanilla's base costs (00_men_at_arms_values.txt), like vanilla's cultural units
 
 jip_palmyrene_archers_recruitment_cost = { value = bowmen_recruitment_cost multiply = 1.1 }

@@ -287,7 +287,7 @@ jip_domicile_learning_branch_1_trigger = {
 		has_domicile_parameter = jip_estate_scriptorium_1
 		AND = {
 			has_domicile_building = library_observatory_03
-			domicile_owner = { jip_is_sabian_family_trigger = yes }
+			owner = { jip_is_sabian_family_trigger = yes }
 		}
 	}
 }
@@ -298,7 +298,7 @@ jip_domicile_learning_branch_2_trigger = {
 		has_domicile_parameter = jip_estate_scriptorium_2
 		AND = {
 			has_domicile_building_or_higher = library_observatory_04
-			domicile_owner = { jip_is_sabian_family_trigger = yes }
+			owner = { jip_is_sabian_family_trigger = yes }
 		}
 	}
 }

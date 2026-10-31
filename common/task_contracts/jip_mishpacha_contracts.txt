@@ -59,7 +59,7 @@ jip_contract_loan = {
 		jip_mishpacha_contract_on_create_effect = yes
 	}
 	on_accepted = {
-		jip_mishpacha_contract_on_accepted_effect = { EVENT = jip_mishpacha_contract.0010 }
+		jip_mishpacha_contract_on_accepted_effect = { EVENT = jip_mishpacha_contract.0010 ACCEPT = jip_mishpacha_contract.0012 }
 		jip_mishpacha_contract_pay_stake_effect = yes
 	}
 	on_invalidated = {
@@ -146,7 +146,7 @@ jip_contract_tolls = {
 		jip_mishpacha_contract_on_create_effect = yes
 	}
 	on_accepted = {
-		jip_mishpacha_contract_on_accepted_effect = { EVENT = jip_mishpacha_contract.0020 }
+		jip_mishpacha_contract_on_accepted_effect = { EVENT = jip_mishpacha_contract.0020 ACCEPT = jip_mishpacha_contract.0022 }
 	}
 	on_invalidated = {
 		jip_mishpacha_contract_on_invalidated_effect = yes
@@ -548,7 +548,7 @@ jip_contract_physician = {
 		}
 	}
 	on_accepted = {
-		jip_mishpacha_contract_on_accepted_effect = { EVENT = jip_mishpacha_contract.0060 }
+		jip_mishpacha_contract_on_accepted_effect = { EVENT = jip_mishpacha_contract.0060 ACCEPT = jip_mishpacha_contract.0062 }
 	}
 	on_invalidated = {
 		jip_mishpacha_contract_on_invalidated_effect = yes
@@ -715,7 +715,7 @@ jip_contract_responsum = {
 		jip_mishpacha_contract_on_create_effect = yes
 	}
 	on_accepted = {
-		jip_mishpacha_contract_on_accepted_effect = { EVENT = jip_mishpacha_contract.0080 }
+		jip_mishpacha_contract_on_accepted_effect = { EVENT = jip_mishpacha_contract.0080 ACCEPT = jip_mishpacha_contract.0082 }
 	}
 	on_invalidated = {
 		jip_mishpacha_contract_on_invalidated_effect = yes
@@ -892,7 +892,7 @@ jip_contract_horoscope = {
 		jip_mishpacha_contract_on_create_effect = yes
 	}
 	on_accepted = {
-		jip_mishpacha_contract_on_accepted_effect = { EVENT = jip_mishpacha_contract.0100 }
+		jip_mishpacha_contract_on_accepted_effect = { EVENT = jip_mishpacha_contract.0100 ACCEPT = jip_mishpacha_contract.0102 }
 	}
 	on_invalidated = {
 		jip_mishpacha_contract_on_invalidated_effect = yes

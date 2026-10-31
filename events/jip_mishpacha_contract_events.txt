@@ -65,6 +65,37 @@ jip_mishpacha_contract.0010 = {
 	}
 }
 
+# The Debt Falls Due (loan): the contract is taken
+jip_mishpacha_contract.0012 = {
+	type = character_event
+	title = jip_mishpacha_contract.0012.t
+	desc = jip_mishpacha_contract.0012.desc
+	theme = stewardship_wealth_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:employer
+		animation = worry
+	}
+
+	trigger = { jip_mishpacha_contract_event_trigger = yes }
+
+	immediate = { jip_mishpacha_contract_event_scopes_effect = yes }
+
+	option = {
+		name = jip_mishpacha_contract.0012.a
+		custom_tooltip = jip_contract_accepted_tt
+	}
+}
+
 # The Debt Falls Due (loan): the result
 jip_mishpacha_contract.0011 = {
 	type = character_event
@@ -205,6 +236,37 @@ jip_mishpacha_contract.0020 = {
 		name = jip_mishpacha_contract.0020.c
 		custom_tooltip = jip_mishpacha_contract.0020.c.tt
 		jip_contract_choose_approach_effect = { SKILL = intrigue BONUS = 15 APPROACH = books EVENT = jip_mishpacha_contract.0021 }
+	}
+}
+
+# The Season's Tolls (tolls): the contract is taken
+jip_mishpacha_contract.0022 = {
+	type = character_event
+	title = jip_mishpacha_contract.0022.t
+	desc = jip_mishpacha_contract.0022.desc
+	theme = stewardship_domain_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:employer
+		animation = personality_greedy
+	}
+
+	trigger = { jip_mishpacha_contract_event_trigger = yes }
+
+	immediate = { jip_mishpacha_contract_event_scopes_effect = yes }
+
+	option = {
+		name = jip_mishpacha_contract.0022.a
+		custom_tooltip = jip_contract_accepted_tt
 	}
 }
 
@@ -1203,6 +1265,41 @@ jip_mishpacha_contract.0060 = {
 	}
 }
 
+# At the Bedside (physician): the contract is taken
+jip_mishpacha_contract.0062 = {
+	type = character_event
+	title = jip_mishpacha_contract.0062.t
+	desc = jip_mishpacha_contract.0062.desc
+	theme = learning_medicine_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:jip_contract_target
+		animation = sick
+	}
+	lower_right_portrait = scope:employer
+
+	trigger = {
+		jip_mishpacha_contract_event_trigger = yes
+		exists = scope:task_contract.var:jip_contract_target
+	}
+
+	immediate = { jip_mishpacha_contract_event_scopes_effect = yes }
+
+	option = {
+		name = jip_mishpacha_contract.0062.a
+		custom_tooltip = jip_contract_accepted_tt
+	}
+}
+
 # At the Bedside (physician): the result
 jip_mishpacha_contract.0061 = {
 	type = character_event
@@ -1649,6 +1746,37 @@ jip_mishpacha_contract.0080 = {
 	}
 }
 
+# A Question of Law (responsum): the contract is taken
+jip_mishpacha_contract.0082 = {
+	type = character_event
+	title = jip_mishpacha_contract.0082.t
+	desc = jip_mishpacha_contract.0082.desc
+	theme = learning_theology_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:employer
+		animation = thinking
+	}
+
+	trigger = { jip_mishpacha_contract_event_trigger = yes }
+
+	immediate = { jip_mishpacha_contract_event_scopes_effect = yes }
+
+	option = {
+		name = jip_mishpacha_contract.0082.a
+		custom_tooltip = jip_contract_accepted_tt
+	}
+}
+
 # A Question of Law (responsum): the result
 jip_mishpacha_contract.0081 = {
 	type = character_event
@@ -2069,6 +2197,37 @@ jip_mishpacha_contract.0100 = {
 		trigger = { domicile ?= { has_domicile_building_or_higher = library_observatory_03 } }
 		custom_tooltip = jip_mishpacha_contract.0100.d.tt
 		jip_contract_choose_approach_effect = { SKILL = learning BONUS = 20 APPROACH = observatory EVENT = jip_mishpacha_contract.0101 }
+	}
+}
+
+# What the Stars Foretell (horoscope): the contract is taken
+jip_mishpacha_contract.0102 = {
+	type = character_event
+	title = jip_mishpacha_contract.0102.t
+	desc = jip_mishpacha_contract.0102.desc
+	theme = learning_scholarship_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:employer
+		animation = interested
+	}
+
+	trigger = { jip_mishpacha_contract_event_trigger = yes }
+
+	immediate = { jip_mishpacha_contract_event_scopes_effect = yes }
+
+	option = {
+		name = jip_mishpacha_contract.0102.a
+		custom_tooltip = jip_contract_accepted_tt
 	}
 }
 

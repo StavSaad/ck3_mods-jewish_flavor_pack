@@ -75,11 +75,12 @@ jip_mishpacha_contract_on_create_effect = {
 }
 
 # Shared contract on_accepted: the work is done from home through letters and agents, and comes to a head a few months on
-# root = the contract, $EVENT$ = the event that resolves it
+# root = the contract, $EVENT$ = the event that resolves it, $ACCEPT$ = the event that says so at once (.00X2)
 jip_mishpacha_contract_on_accepted_effect = {
 	task_contract_taker = { play_sound_effect = "event:/DLC/EP3/SFX/UI/Contracts/ep3_ui_contracts_accept_contract" }
 	save_scope_as = task_contract
 	task_contract_taker ?= {
+		trigger_event = $ACCEPT$
 		trigger_event = {
 			id = $EVENT$
 			months = { 2 4 }
