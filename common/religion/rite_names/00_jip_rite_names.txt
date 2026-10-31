@@ -1,4 +1,4 @@
-﻿# Names for new rites of Mesopotamianism and Baalism, like vanilla's Tyrism and Odinite for Asatru.
+﻿# Names for new rites of Mesopotamianism and Canaanism, like vanilla's Tyrism and Odinite for Asatru.
 # Sorts before vanilla's 00_rite_names.txt, so these come first; when all of a faith's are taken, vanilla's god names
 # (the faith's localization) and place names follow. Triggers in jip_rite_name_triggers.txt, loc in jip_rite_names_l_english.yml
 

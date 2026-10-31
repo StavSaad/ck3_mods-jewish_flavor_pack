@@ -1,7 +1,7 @@
-# Which god a new rite of Baalism or Mesopotamianism is named after (common/religion/rite_names/00_jip_rite_names.txt),
+# Which god a new rite of Canaanism or Mesopotamianism is named after (common/religion/rite_names/00_jip_rite_names.txt),
 # like vanilla's Tyrism and Odinite for Asatru. Root is the rite being created, scope:faith its faith, scope:founder its
 # founder (may not exist). A name goes to the first entry whose trigger is met and whose name is still unused, so the
-# names file lists the cult cities first, then the tenets. Baalism has no catch-all god: it is Baal's faith already
+# names file lists the cult cities first, then the tenets. Canaanism has no catch-all god: it is Baal's faith already
 
 jip_rite_founder_capital_trigger = {
 	scope:founder ?= {

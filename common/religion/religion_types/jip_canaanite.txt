@@ -56,7 +56,7 @@
 	}
 
 	custom_faith_icons = {
-		# Ours: the sign of Tanit (Baalism gold, Tanitism silver, and six colours for custom faiths; tools/make_tanit_icons.py)
+		# Ours: the sign of Tanit (Canaanism gold, Tanitism silver, and six colours for custom faiths; tools/make_tanit_icons.py)
 		# and Mesopotamianism's winged disc (six more colours; tools/make_mesopotamian_icons.py) and the Sinite crescent standard (six more;
 		# tools/make_harranian_icons.py), and the gods' own (jip_rite_*, also given to
 		# new rites named after them, common/religion/rite_icons/00_jip_rite_icons.txt)

@@ -1,4 +1,4 @@
-# Icons for new rites of Mesopotamianism and Baalism (vanilla has no pack for them, so they would take a generic one).
+# Icons for new rites of Mesopotamianism and Canaanism (vanilla has no pack for them, so they would take a generic one).
 # Sorts before vanilla's 00_rite_icons.txt. The first pack whose trigger is met and which has an unused icon is used
 
 # The named rites (00_jip_rite_names.txt): each god's own icon, under the same trigger and in the same order as its name,
@@ -182,7 +182,7 @@ jip_mesopotamian_rite = {
 	custom_faith_icons = { mesopotamian_01 mesopotamian_02 mesopotamian_03 mesopotamian_04 mesopotamian_05 mesopotamian_06 }
 }
 
-# Baalism: the sign of Tanit
+# Canaanism: the sign of Tanit
 jip_canaanite_rite = {
 	trigger = {
 		exists = scope:founder

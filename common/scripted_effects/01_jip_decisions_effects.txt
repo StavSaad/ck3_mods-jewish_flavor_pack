@@ -541,15 +541,15 @@ rebuild_the_third_temple_effect = {
 }
 
 # Faiths that can't be converted to until an event restores them: their rites are convert = no until these run.
-# Baalism (all three rites): the Phoenicia decision, or gaining k_carthage (vanilla's Restore Carthage)
+# Canaanism (all three rites): the Phoenicia decision, or gaining k_carthage (vanilla's Restore Carthage)
 jip_unlock_canaanite_conversion_effect = {
 	if = {
 		limit = {
-			rite:semitic_pagan = { can_convert_to_rite = no }
+			rite:baalism = { can_convert_to_rite = no }
 		}
 		custom_tooltip = jip_unlock_canaanite_conversion_tt
 		hidden_effect = {
-			rite:semitic_pagan = { set_can_convert_to_rite = yes }
+			rite:baalism = { set_can_convert_to_rite = yes }
 			rite:carthage_pagan = { set_can_convert_to_rite = yes }
 			rite:yahwism = { set_can_convert_to_rite = yes }
 		}

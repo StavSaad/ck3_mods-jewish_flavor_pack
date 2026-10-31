@@ -44,7 +44,7 @@ on_title_gain = {
 	}
 }
 
-# Baalism can be converted to once Carthage is restored: only vanilla's Restore Carthage hands out k_carthage
+# Canaanism can be converted to once Carthage is restored: only vanilla's Restore Carthage hands out k_carthage
 jip_carthage_restored_on_action = {
 	trigger = {
 		scope:title = title:k_carthage
