@@ -1,0 +1,203 @@
+﻿# Names for new rites of Mesopotamianism and Canaanism, like vanilla's Tyrism and Odinite for Asatru.
+# Sorts before vanilla's 00_rite_names.txt, so these come first; when all of a faith's are taken, vanilla's god names
+# (the faith's localization) and place names follow. Triggers in jip_rite_name_triggers.txt, loc in jip_rite_names_l_english.yml
+
+###################
+# MESOPOTAMIANISM #
+###################
+
+# Marduk of Esagila, for a founder ruling from Babylonia
+jip_rite_marduk = {
+	name = jip_rite_name_marduk
+	trigger = {
+		jip_rite_marduk_trigger = yes
+	}
+}
+
+# Bel of Palmyra, for a founder ruling from Palmyra or holding the Palmyrene Empire
+jip_rite_bel = {
+	name = jip_rite_name_bel
+	trigger = {
+		jip_rite_bel_trigger = yes
+	}
+}
+
+# Hadad of Damascus
+jip_rite_hadad = {
+	name = jip_rite_name_hadad
+	trigger = {
+		jip_rite_hadad_trigger = yes
+	}
+}
+
+# Atargatis of Manbij, the Syrian goddess
+jip_rite_atargatis = {
+	name = jip_rite_name_atargatis
+	trigger = {
+		jip_rite_atargatis_trigger = yes
+	}
+}
+
+# Shamash of Hatra, or a rite of Sun Worship or Legalism
+jip_rite_shamash = {
+	name = jip_rite_name_shamash
+	trigger = {
+		jip_rite_shamash_trigger = yes
+	}
+}
+
+# Ishtar of Arbela, or a fertility tenet
+jip_rite_ishtar = {
+	name = jip_rite_name_ishtar
+	trigger = {
+		jip_rite_ishtar_trigger = yes
+	}
+}
+
+# Nabu the scribe: a knowledge tenet
+jip_rite_nabu = {
+	name = jip_rite_name_nabu
+	trigger = {
+		jip_rite_nabu_trigger = yes
+	}
+}
+
+# Nergal of Kutha: a war tenet
+jip_rite_nergal = {
+	name = jip_rite_name_nergal
+	trigger = {
+		jip_rite_nergal_trigger = yes
+	}
+}
+
+# Tammuz: a festival or trickster tenet
+jip_rite_tammuz = {
+	name = jip_rite_name_tammuz
+	trigger = {
+		jip_rite_tammuz_trigger = yes
+	}
+}
+
+# Nusku, the lamp of the house: a household tenet
+jip_rite_nusku = {
+	name = jip_rite_name_nusku
+	trigger = {
+		jip_rite_nusku_trigger = yes
+	}
+}
+
+# Enlil, for any ruler
+jip_rite_enlil = {
+	name = jip_rite_name_enlil
+	trigger = {
+		jip_rite_enlil_trigger = yes
+	}
+}
+
+#############
+# CANAANISM #
+#############
+
+# Chemosh of Moab
+jip_rite_chemosh = {
+	name = jip_rite_name_chemosh
+	trigger = {
+		jip_rite_chemosh_trigger = yes
+	}
+}
+
+# Milcom of Ammon
+jip_rite_milcom = {
+	name = jip_rite_name_milcom
+	trigger = {
+		jip_rite_milcom_trigger = yes
+	}
+}
+
+# Qos of Edom, for an Edomite or a founder ruling from Edom
+jip_rite_qos = {
+	name = jip_rite_name_qos
+	trigger = {
+		jip_rite_qos_trigger = yes
+	}
+}
+
+# Eshmun of Sidon
+jip_rite_eshmun = {
+	name = jip_rite_name_eshmun
+	trigger = {
+		jip_rite_eshmun_trigger = yes
+	}
+}
+
+# Adonis of Byblos
+jip_rite_adonis = {
+	name = jip_rite_name_adonis
+	trigger = {
+		jip_rite_adonis_trigger = yes
+	}
+}
+
+# Dagon of Gaza and Ashdod
+jip_rite_dagon = {
+	name = jip_rite_name_dagon
+	trigger = {
+		jip_rite_dagon_trigger = yes
+	}
+}
+
+# Baal Hammon of Carthage, for a founder ruling from Africa (Tanit is Punism's)
+jip_rite_hammon = {
+	name = jip_rite_name_hammon
+	trigger = {
+		jip_rite_hammon_trigger = yes
+	}
+}
+
+# Melqart of Tyre, or a wealth tenet
+jip_rite_melqart = {
+	name = jip_rite_name_melqart
+	trigger = {
+		jip_rite_melqart_trigger = yes
+	}
+}
+
+# Anat: a war tenet
+jip_rite_anat = {
+	name = jip_rite_name_anat
+	trigger = {
+		jip_rite_anat_trigger = yes
+	}
+}
+
+# Astarte: a fertility tenet
+jip_rite_astarte = {
+	name = jip_rite_name_astarte
+	trigger = {
+		jip_rite_astarte_trigger = yes
+	}
+}
+
+# Kothar the craftsman: a knowledge tenet
+jip_rite_kothar = {
+	name = jip_rite_name_kothar
+	trigger = {
+		jip_rite_kothar_trigger = yes
+	}
+}
+
+# Asherah: a household tenet
+jip_rite_asherah = {
+	name = jip_rite_name_asherah
+	trigger = {
+		jip_rite_asherah_trigger = yes
+	}
+}
+
+# Baal, for any ruler
+jip_rite_baal = {
+	name = jip_rite_name_baal
+	trigger = {
+		jip_rite_baal_trigger = yes
+	}
+}

@@ -22,7 +22,7 @@
 	tenets = {
 		tenet_ancestor_worship
 		tenet_sanctity_of_nature
-		tenet_jewish_syncretism
+		tenet_mountain_worship
 	}
 
 	doctrines = {

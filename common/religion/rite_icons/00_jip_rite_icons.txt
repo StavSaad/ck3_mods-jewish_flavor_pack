@@ -1,0 +1,193 @@
+# Icons for new rites of Mesopotamianism and Canaanism (vanilla has no pack for them, so they would take a generic one).
+# Sorts before vanilla's 00_rite_icons.txt. The first pack whose trigger is met and which has an unused icon is used
+
+# The named rites (00_jip_rite_names.txt): each god's own icon, under the same trigger and in the same order as its name,
+# one icon each, so the rite that takes a god's name takes its icon too. Once it is used, the next rite falls through
+# to the faith's packs below
+
+# The spade of Marduk
+jip_rite_marduk_icon = {
+	trigger = {
+		jip_rite_marduk_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_marduk }
+}
+
+# The eagle of Bel
+jip_rite_bel_icon = {
+	trigger = {
+		jip_rite_bel_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_bel }
+}
+
+# Hadad's thunderbolts
+jip_rite_hadad_icon = {
+	trigger = {
+		jip_rite_hadad_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_hadad }
+}
+
+# The fish of Atargatis
+jip_rite_atargatis_icon = {
+	trigger = {
+		jip_rite_atargatis_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_atargatis }
+}
+
+# The sun disc of Shamash
+jip_rite_shamash_icon = {
+	trigger = {
+		jip_rite_shamash_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_shamash }
+}
+
+# The star of Ishtar
+jip_rite_ishtar_icon = {
+	trigger = {
+		jip_rite_ishtar_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_ishtar }
+}
+
+# Nabu's stylus
+jip_rite_nabu_icon = {
+	trigger = {
+		jip_rite_nabu_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_nabu }
+}
+
+# Nergal's lion mace and sword
+jip_rite_nergal_icon = {
+	trigger = {
+		jip_rite_nergal_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_nergal }
+}
+
+# Tammuz's crook and barley
+jip_rite_tammuz_icon = {
+	trigger = {
+		jip_rite_tammuz_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_tammuz }
+}
+
+# Nusku's lamp
+jip_rite_nusku_icon = {
+	trigger = {
+		jip_rite_nusku_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_nusku }
+}
+
+# Enlil's horned crown
+jip_rite_enlil_icon = {
+	trigger = {
+		jip_rite_enlil_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_enlil }
+}
+
+# The horned helmet and spear of Chemosh
+jip_rite_chemosh_icon = {
+	trigger = {
+		jip_rite_chemosh_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_chemosh }
+}
+
+# The crown of Milcom
+jip_rite_milcom_icon = {
+	trigger = {
+		jip_rite_milcom_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_milcom }
+}
+
+# Qos's bow and star
+jip_rite_qos_icon = {
+	trigger = {
+		jip_rite_qos_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_qos }
+}
+
+# Eshmun's serpent and staff
+jip_rite_eshmun_icon = {
+	trigger = {
+		jip_rite_eshmun_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_eshmun }
+}
+
+# Adonis's anemone and spear
+jip_rite_adonis_icon = {
+	trigger = {
+		jip_rite_adonis_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_adonis }
+}
+
+# Dagon's grain and fish tail
+jip_rite_dagon_icon = {
+	trigger = {
+		jip_rite_dagon_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_dagon }
+}
+
+# Sinism's children: the Aramean cities and the star-readers take the crescent standard of Sin
+jip_harranian_rite = {
+	trigger = {
+		exists = scope:founder
+		scope:faith = faith:mesopotamian_pagan
+		OR = {
+			scope:founder.culture ?= culture:syriac
+			rite_has_tenet = tenet_astrology
+		}
+	}
+
+	custom_faith_icons = { harranian_01 harranian_02 harranian_03 harranian_04 harranian_05 harranian_06 }
+}
+
+# Mesopotamianism: the winged disc of Ashur
+jip_mesopotamian_rite = {
+	trigger = {
+		exists = scope:founder
+		scope:faith = faith:mesopotamian_pagan
+	}
+
+	custom_faith_icons = { mesopotamian_01 mesopotamian_02 mesopotamian_03 mesopotamian_04 mesopotamian_05 mesopotamian_06 }
+}
+
+# Canaanism: the sign of Tanit
+jip_canaanite_rite = {
+	trigger = {
+		exists = scope:founder
+		scope:faith = faith:semitic_pagan
+	}
+
+	custom_faith_icons = { canaanite_01 canaanite_02 canaanite_03 canaanite_04 canaanite_05 canaanite_06 }
+}

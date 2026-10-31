@@ -58,8 +58,9 @@
 	custom_faith_icons = {
 		# Ours: the sign of Tanit (Canaanism gold, Punism silver, and six colours for custom faiths; tools/make_tanit_icons.py)
 		# and Mesopotamianism's winged disc (six more colours; tools/make_mesopotamian_icons.py) and the Sinite crescent standard (six more;
-		# tools/make_harranian_icons.py)
-		canaanite punic canaanite_01 canaanite_02 canaanite_03 canaanite_04 canaanite_05 canaanite_06 mesopotamian mesopotamian_01 mesopotamian_02 mesopotamian_03 mesopotamian_04 mesopotamian_05 mesopotamian_06 harranian harranian_01 harranian_02 harranian_03 harranian_04 harranian_05 harranian_06
+		# tools/make_harranian_icons.py), and the gods' own (jip_rite_*, also given to
+		# new rites named after them, common/religion/rite_icons/00_jip_rite_icons.txt)
+		canaanite punic canaanite_01 canaanite_02 canaanite_03 canaanite_04 canaanite_05 canaanite_06 mesopotamian mesopotamian_01 mesopotamian_02 mesopotamian_03 mesopotamian_04 mesopotamian_05 mesopotamian_06 harranian harranian_01 harranian_02 harranian_03 harranian_04 harranian_05 harranian_06 jip_rite_marduk jip_rite_bel jip_rite_hadad jip_rite_atargatis jip_rite_shamash jip_rite_ishtar jip_rite_nabu jip_rite_nergal jip_rite_tammuz jip_rite_nusku jip_rite_enlil jip_rite_chemosh jip_rite_milcom jip_rite_qos jip_rite_eshmun jip_rite_adonis jip_rite_dagon
 		germanic germanic_01 germanic_02 germanic_03 germanic_04 germanic_05 custom_faith_fp1_fenrir custom_faith_fp1_irminsul custom_faith_fp1_jormungandr custom_faith_fp1_odins_ravens custom_faith_fp1_runestone_moon custom_faith_fp1_thors_hammer custom_faith_fp1_valknut
 		custom_faith_fp1_yggdrasil germanic_custom akanism akanism_01 akanism_02 akanism_03 akanism_04 akanism_05 aluk aluk_01 aluk_02 aluk_03 aluk_04 aluk_05 baltic baltic_01 baltic_02 baltic_03 baltic_04 baltic_05 baltic_custom fp2_basque basque_01 basque_02 basque_03 basque_04 basque_05 bilikuism
 		pulugaism bon bon_01 bon_02 bon_03 bon_04 bon_05 custom_faith_gankyil custom_faith_gankyil_01 custom_faith_gankyil_02 custom_faith_gankyil_03 custom_faith_gankyil_04 custom_faith_gankyil_05 spirit_bon dayawism dayawism_01 dayawism_02 dayawism_03 dayawism_04 dayawism_05 donyipoloism donyipoloism_01 donyipoloism_02 donyipoloism_03 donyipoloism_04 donyipoloism_05 sedism sedism_01 sedism_02 sedism_03 sedism_04 sedism_05 finno_ugric finno_ugric_01 finno_ugric_02 finno_ugric_03 finno_ugric_04 finno_ugric_05
@@ -153,88 +154,88 @@
 
 	localization = {
 		#High God Name
-		HighGodName = semitic_high_god_name
-		HighGodName2 = semitic_high_god_name
-		HighGodNamePossessive = semitic_high_god_name_possessive
-		HighGodNameAlternate = semitic_high_god_name
-		HighGodNameAlternatePossessive = semitic_high_god_name_possessive
+		HighGodName = semitic_pagan_high_god_name
+		HighGodName2 = semitic_pagan_high_god_name
+		HighGodNamePossessive = semitic_pagan_high_god_name_possessive
+		HighGodNameAlternate = semitic_pagan_high_god_name_alternate
+		HighGodNameAlternatePossessive = semitic_pagan_high_god_name_alternate_possessive
 		HighGodNameSheHe = CHARACTER_SHEHE_HE
 		HighGodHerselfHimself = CHARACTER_HIMSELF
 		HighGodHerHis = CHARACTER_HERHIS_HIS
 
 		#Creator
-		CreatorName = semitic_creator_god_name
-		CreatorNamePossessive = semitic_creator_god_name_possessive
+		CreatorName = semitic_pagan_creator_god_name
+		CreatorNamePossessive = semitic_pagan_creator_god_name_possessive
 		CreatorSheHe = CHARACTER_SHEHE_SHE
 		CreatorHerHis = CHARACTER_HERHIS_HER
 		CreatorHerHim = CHARACTER_HERHIM_HER
 
 		#HealthGod
-		HealthGodName = semitic_health_god_name
-		HealthGodNamePossessive = semitic_health_god_name_possessive
+		HealthGodName = semitic_pagan_health_god_name
+		HealthGodNamePossessive = semitic_pagan_health_god_name_possessive
 		HealthGodSheHe = CHARACTER_SHEHE_SHE
 		HealthGodHerHis = CHARACTER_HERHIS_HER
 		HealthGodHerHim = CHARACTER_HERHIM_HER
 		
 		#FertilityGod
-		FertilityGodName = semitic_fertility_god_name
-		FertilityGodNamePossessive = semitic_fertility_god_name_possessive
+		FertilityGodName = semitic_pagan_fertility_god_name
+		FertilityGodNamePossessive = semitic_pagan_fertility_god_name_possessive
 		FertilityGodSheHe = CHARACTER_SHEHE_SHE
 		FertilityGodHerHis = CHARACTER_HERHIS_HER
 		FertilityGodHerHim = CHARACTER_HERHIM_HER
 
 		#WealthGod
-		WealthGodName = semitic_wealth_god_name
-		WealthGodNamePossessive = semitic_wealth_god_name_possessive
+		WealthGodName = semitic_pagan_wealth_god_name
+		WealthGodNamePossessive = semitic_pagan_wealth_god_name_possessive
 		WealthGodSheHe = CHARACTER_SHEHE_SHE
 		WealthGodHerHis = CHARACTER_HERHIS_HER
 		WealthGodHerHim = CHARACTER_HERHIM_HER
 
 		#HouseholdGod
-		HouseholdGodName = semitic_household_god_name
-		HouseholdGodNamePossessive = semitic_household_god_name_possessive
+		HouseholdGodName = semitic_pagan_household_god_name
+		HouseholdGodNamePossessive = semitic_pagan_household_god_name_possessive
 		HouseholdGodSheHe = CHARACTER_SHEHE_SHE
 		HouseholdGodHerHis = CHARACTER_HERHIS_HER
 		HouseholdGodHerHim = CHARACTER_HERHIM_HER
 
 		#FateGod
-		FateGodName = semitic_fate_god_name
-		FateGodNamePossessive = semitic_fate_god_name_possessive
+		FateGodName = semitic_pagan_fate_god_name
+		FateGodNamePossessive = semitic_pagan_fate_god_name_possessive
 		FateGodSheHe = CHARACTER_SHEHE_HE
 		FateGodHerHis = CHARACTER_HERHIS_HIS
 		FateGodHerHim = CHARACTER_HERHIM_HIM
 
 		#KnowledgeGod
-		KnowledgeGodName = semitic_knowledge_god_name
-		KnowledgeGodNamePossessive = semitic_knowledge_god_name_possessive
+		KnowledgeGodName = semitic_pagan_knowledge_god_name
+		KnowledgeGodNamePossessive = semitic_pagan_knowledge_god_name_possessive
 		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
 		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
 		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
 
 		#WarGod
-		WarGodName = semitic_war_god_name
-		WarGodNamePossessive = semitic_war_god_name_possessive
+		WarGodName = semitic_pagan_war_god_name
+		WarGodNamePossessive = semitic_pagan_war_god_name_possessive
 		WarGodSheHe = CHARACTER_SHEHE_HE
 		WarGodHerHis = CHARACTER_HERHIS_HIS
 		WarGodHerHim = CHARACTER_HERHIM_HIM
 
 		#TricksterGod
-		TricksterGodName = semitic_trickster_god_name
-		TricksterGodNamePossessive = semitic_trickster_god_name_possessive
+		TricksterGodName = semitic_pagan_trickster_god_name
+		TricksterGodNamePossessive = semitic_pagan_trickster_god_name_possessive
 		TricksterGodSheHe = CHARACTER_SHEHE_THEY
 		TricksterGodHerHis = CHARACTER_HERHIS_THEIR
 		TricksterGodHerHim = CHARACTER_HERHIM_THEM
 
 		#NightGod
-		NightGodName = semitic_night_god_name
-		NightGodNamePossessive = semitic_night_god_name_possessive
+		NightGodName = semitic_pagan_night_god_name
+		NightGodNamePossessive = semitic_pagan_night_god_name_possessive
 		NightGodSheHe = CHARACTER_SHEHE_HE
 		NightGodHerHis = CHARACTER_HERHIS_HIS
 		NightGodHerHim = CHARACTER_HERHIM_HIM
 
 		#WaterGod
-		WaterGodName = semitic_water_god_name
-		WaterGodNamePossessive = semitic_water_god_name_possessive
+		WaterGodName = semitic_pagan_water_god_name
+		WaterGodNamePossessive = semitic_pagan_water_god_name_possessive
 		WaterGodSheHe = CHARACTER_SHEHE_HE
 		WaterGodHerHis = CHARACTER_HERHIS_HIS
 		WaterGodHerHim = CHARACTER_HERHIM_HIM
@@ -293,8 +294,8 @@
 		NegativeAfterLife = paganism_afterlife
 		NegativeAfterLife2 = paganism_afterlife_2
 		NegativeAfterLife3 = paganism_afterlife_3
-		DeathDeityName = semitic_death_deity_name
-		DeathDeityNamePossessive = semitic_death_deity_name_possessive
+		DeathDeityName = semitic_pagan_death_deity_name
+		DeathDeityNamePossessive = semitic_pagan_death_deity_name_possessive
 		DeathDeitySheHe = CHARACTER_SHEHE_HE
 		DeathDeityHerHis = CHARACTER_HERHIS_HIS
 		DeathDeityHerHim = CHARACTER_HERHIM_HIM

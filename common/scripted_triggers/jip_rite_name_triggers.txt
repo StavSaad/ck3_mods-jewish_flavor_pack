@@ -1,0 +1,192 @@
+# Which god a new rite of Canaanism or Mesopotamianism is named after (common/religion/rite_names/00_jip_rite_names.txt),
+# like vanilla's Tyrism and Odinite for Asatru. Root is the rite being created, scope:faith its faith, scope:founder its
+# founder (may not exist). A name goes to the first entry whose trigger is met and whose name is still unused, so the
+# names file lists the cult cities first, then the tenets
+
+jip_rite_founder_capital_trigger = {
+	scope:founder ?= {
+		capital_county ?= title:$COUNTY$
+	}
+}
+
+jip_rite_founder_capital_under_trigger = {
+	scope:founder ?= {
+		capital_county ?= { target_is_de_jure_liege_or_above = title:$TITLE$ }
+	}
+}
+
+#################
+# MESOPOTAMIANISM
+#################
+
+# Marduk of Esagila, lord of Babylon
+jip_rite_marduk_trigger = {
+	scope:faith = faith:mesopotamian_pagan
+	jip_rite_founder_capital_under_trigger = { TITLE = k_mesopotamia }
+}
+
+# Bel of Palmyra
+jip_rite_bel_trigger = {
+	scope:faith = faith:mesopotamian_pagan
+	OR = {
+		jip_rite_founder_capital_trigger = { COUNTY = c_palmyra }
+		scope:founder ?= { has_title = title:e_palmyra }
+	}
+}
+
+# Hadad of Damascus
+jip_rite_hadad_trigger = {
+	scope:faith = faith:mesopotamian_pagan
+	jip_rite_founder_capital_under_trigger = { TITLE = d_damascus }
+}
+
+# Atargatis of Manbij (Hierapolis), the Syrian goddess
+jip_rite_atargatis_trigger = {
+	scope:faith = faith:mesopotamian_pagan
+	jip_rite_founder_capital_trigger = { COUNTY = c_aleppo }
+}
+
+# Shamash of Hatra, the sun and the judge
+jip_rite_shamash_trigger = {
+	scope:faith = faith:mesopotamian_pagan
+	OR = {
+		jip_rite_founder_capital_trigger = { COUNTY = c_mosul }
+		rite_has_tenet = tenet_sun_worship
+		rite_has_tenet = tenet_legalism
+	}
+}
+
+# Ishtar of Arbela
+jip_rite_ishtar_trigger = {
+	scope:faith = faith:mesopotamian_pagan
+	OR = {
+		jip_rite_founder_capital_trigger = { COUNTY = c_irbil }
+		has_fertilitygod_tenet_trigger = yes
+	}
+}
+
+# Nabu of Borsippa, the scribe
+jip_rite_nabu_trigger = {
+	scope:faith = faith:mesopotamian_pagan
+	has_knowledgegod_tenet_trigger = yes
+}
+
+# Nergal of Kutha, war and plague
+jip_rite_nergal_trigger = {
+	scope:faith = faith:mesopotamian_pagan
+	has_wargod_tenet_trigger = yes
+}
+
+# Tammuz, mourned every summer
+jip_rite_tammuz_trigger = {
+	scope:faith = faith:mesopotamian_pagan
+	has_trickstergod_tenet_trigger = yes
+}
+
+# Nusku, the lamp of the household (vanilla's household name would be "the Lamassuism")
+jip_rite_nusku_trigger = {
+	scope:faith = faith:mesopotamian_pagan
+	has_householdgod_tenet_trigger = yes
+}
+
+# Enlil of Nippur, lord of the wind, for any ruler
+jip_rite_enlil_trigger = {
+	scope:faith = faith:mesopotamian_pagan
+	scope:founder ?= { is_ruler = yes }
+}
+
+###########
+# CANAANISM
+###########
+
+# Chemosh of Moab
+jip_rite_chemosh_trigger = {
+	scope:faith = faith:semitic_pagan
+	OR = {
+		jip_rite_founder_capital_trigger = { COUNTY = c_maab }
+		jip_rite_founder_capital_trigger = { COUNTY = c_kerak }
+	}
+}
+
+# Milcom of Ammon (Rabbath Ammon, Amman)
+jip_rite_milcom_trigger = {
+	scope:faith = faith:semitic_pagan
+	jip_rite_founder_capital_trigger = { COUNTY = c_balqa }
+}
+
+# Qos of Edom
+jip_rite_qos_trigger = {
+	scope:faith = faith:semitic_pagan
+	scope:founder ?= {
+		OR = {
+			culture = culture:edomite
+			capital_province ?= { geographical_region = jip_region_edom }
+		}
+	}
+}
+
+# Eshmun of Sidon
+jip_rite_eshmun_trigger = {
+	scope:faith = faith:semitic_pagan
+	jip_rite_founder_capital_trigger = { COUNTY = c_beirut }
+}
+
+# Adonis of Byblos
+jip_rite_adonis_trigger = {
+	scope:faith = faith:semitic_pagan
+	jip_rite_founder_capital_trigger = { COUNTY = c_tripoli }
+}
+
+# Dagon of Gaza and Ashdod
+jip_rite_dagon_trigger = {
+	scope:faith = faith:semitic_pagan
+	OR = {
+		jip_rite_founder_capital_trigger = { COUNTY = c_ghazza }
+		jip_rite_founder_capital_trigger = { COUNTY = c_jaffa }
+	}
+}
+
+# Baal Hammon of Carthage (Tanit, his face, is Punism's)
+jip_rite_hammon_trigger = {
+	scope:faith = faith:semitic_pagan
+	jip_rite_founder_capital_under_trigger = { TITLE = k_africa }
+}
+
+# Melqart of Tyre, the merchants' god
+jip_rite_melqart_trigger = {
+	scope:faith = faith:semitic_pagan
+	OR = {
+		jip_rite_founder_capital_trigger = { COUNTY = c_acre }
+		has_wealthgod_tenet_trigger = yes
+	}
+}
+
+# Anat, the warrior maiden
+jip_rite_anat_trigger = {
+	scope:faith = faith:semitic_pagan
+	has_wargod_tenet_trigger = yes
+}
+
+# Astarte, the morning star
+jip_rite_astarte_trigger = {
+	scope:faith = faith:semitic_pagan
+	has_fertilitygod_tenet_trigger = yes
+}
+
+# Kothar-wa-Khasis, the craftsman
+jip_rite_kothar_trigger = {
+	scope:faith = faith:semitic_pagan
+	has_knowledgegod_tenet_trigger = yes
+}
+
+# Asherah of the sacred poles
+jip_rite_asherah_trigger = {
+	scope:faith = faith:semitic_pagan
+	has_householdgod_tenet_trigger = yes
+}
+
+# Baal, for any ruler
+jip_rite_baal_trigger = {
+	scope:faith = faith:semitic_pagan
+	scope:founder ?= { is_ruler = yes }
+}
