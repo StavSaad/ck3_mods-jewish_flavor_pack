@@ -413,7 +413,7 @@ jip_temple_of_shamash_01 = {
 }
 
 # The Temple of Ashur at Ashur (jip_gp_temple_of_ashur): the house of the god of the Assyrian kings, beside his
-# ziggurat. Ashurism's counterpart of the Temple of Sin
+# ziggurat. Ashurism's counterpart of the Temple of Sin; works for the whole old faith
 jip_temple_of_ashur_01 = {
 	# Vanilla has no ziggurat: the Tomb of Cyrus's stepped base stands in for one, as at Harran, on Ashur's map locator
 	# (province 4836)
@@ -432,7 +432,7 @@ jip_temple_of_ashur_01 = {
 		custom_description = {
 			text = jip_temple_of_ashur_enabled_trigger
 			scope:holder = {
-				rite = rite:ashurism
+				faith = faith:mesopotamian_pagan
 			}
 		}
 	}

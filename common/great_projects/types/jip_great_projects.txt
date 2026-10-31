@@ -970,8 +970,9 @@ jip_gp_temple_of_shamash = {
 @jip_temple_of_ashur_icon = "gfx/interface/icons/great_projects/jip_temple_of_ashur.dds" # tools/make_great_project_art.py
 @jip_temple_of_ashur_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_ashur.dds" # default crop
 
-# An independent ruler of the Ashurite rite who holds Ashur rebuilds the house of the god Ashur beside his ziggurat.
-# The rite opens with the Temple of Sin (jip_unlock_mesopotamian_conversion_effect), so this follows the restoration.
+# An independent ruler of the old faith (either rite) who holds Ashur rebuilds the house of the god Ashur beside his
+# ziggurat. The faith opens with the Temple of Sin (jip_unlock_mesopotamian_conversion_effect), so this follows the
+# restoration.
 # Independent only, like the Temple of Sin
 jip_gp_temple_of_ashur = {
 	icon = { reference = @jip_temple_of_ashur_icon }
@@ -982,7 +983,7 @@ jip_gp_temple_of_ashur = {
 	}
 
 	is_shown = {
-		rite = rite:ashurism
+		faith = faith:mesopotamian_pagan
 		is_independent_ruler = yes
 		NOT = { is_planning_great_project = jip_gp_temple_of_ashur }
 		NOT = {
@@ -1023,7 +1024,7 @@ jip_gp_temple_of_ashur = {
 
 	is_valid = {
 		scope:founder = {
-			rite = rite:ashurism
+			faith = faith:mesopotamian_pagan
 			is_independent_ruler = yes
 		}
 		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
@@ -1149,7 +1150,7 @@ jip_gp_temple_of_ashur = {
 			contributor_is_valid = {
 				custom_tooltip = {
 					text = jip_gp_temple_of_ashur_faithful_tt
-					rite = rite:ashurism
+					faith = faith:mesopotamian_pagan
 				}
 			}
 			cost = {

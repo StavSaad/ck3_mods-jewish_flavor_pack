@@ -43,8 +43,8 @@
  jip_gp_temple_held_tt:0 "The site is in your realm"
  jip_gp_temple_mosul_tt:0 "You hold the county of [GetTitleByKey('c_mosul').GetName], or your vassal does"
  jip_temple_of_the_old_gods_enabled_trigger:0 "The holder is a Sabian or follows the old gods"
- jip_temple_of_ashur_enabled_trigger:0 "The holder is of the $ashurism$ rite"
- jip_gp_temple_of_ashur_faithful_tt:0 "The contributor is of the $ashurism$ rite"
+ jip_temple_of_ashur_enabled_trigger:0 "The holder follows $mesopotamian_pagan$"
+ jip_gp_temple_of_ashur_faithful_tt:0 "The contributor follows $mesopotamian_pagan$"
 
  # The Temple of Bel at Palmyra
  great_project_type_jip_gp_temple_of_bel:0 "Raise the House of Bel"
@@ -103,7 +103,7 @@
  great_project_type_jip_gp_temple_of_ashur_contribution_foundation:0 "The Foundation Deposits"
  great_project_type_jip_gp_temple_of_ashur_contribution_foundation_desc:0 "The kings who built before buried their names in the foundations. A scholar must find and read them, so that the god's house rises on its true ground."
  great_project_type_jip_gp_temple_of_ashur_contribution_priests:0 "The Priests of Ashur"
- great_project_type_jip_gp_temple_of_ashur_contribution_priests_desc:0 "Priests of the Ashurite rite, to keep the god's house and crown the king in his name."
+ great_project_type_jip_gp_temple_of_ashur_contribution_priests_desc:0 "Priests of the old faith, to keep the god's house and crown the king in his name."
  great_project_type_jip_gp_temple_of_ashur_contribution_glazed_bricks:0 "Glazed Bricks"
  great_project_type_jip_gp_temple_of_ashur_contribution_glazed_bricks_desc:0 "Bands of blue and yellow glazed brick around the gate, and the winged disc of Ashur above it."
  great_project_type_jip_gp_temple_of_ashur_contribution_lamassu:0 "The Lamassu"
