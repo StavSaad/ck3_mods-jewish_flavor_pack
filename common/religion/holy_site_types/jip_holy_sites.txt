@@ -104,7 +104,9 @@ shushtar = { # The Mandaeans of Khuzestan, by the great weir of Shushtar
 	}
 }
 
-# Mesopotamianism (mesopotamian_pagan, jip_canaanite_faith_types.txt); it also holds Harran (above) and Damascus
+# Mesopotamianism (mesopotamian_pagan, jip_canaanite_faith_types.txt): the sites of its great projects (0.15 plan,
+# section 5), with Harran (above). Not Hatra, which shares the county of Mosul with Ashur: no faith has two holy sites
+# in one county
 
 nineveh = { # The Assyrian royal city, home of Ishtar of Nineveh and Ashurbanipal's library
 	county = c_ninive
@@ -131,6 +133,31 @@ nineveh = { # The Assyrian royal city, home of Ishtar of Nineveh and Ashurbanipa
 	}
 }
 
+ashur = { # The city of Ashur on the Tigris, the god Ashur's house and ziggurat, crowning city of the Assyrian kings
+	county = c_mosul
+	barony = b_ain_al-qayyara
+
+	county_holder_character_modifier = {
+		legitimacy_gain_mult = 0.1
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		development_growth_factor = 0.01
+		levy_size = 0.02
+	}
+
+	faith_character_modifier = {
+		martial = 1
+		monthly_prestige_gain_mult = 0.05
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		monthly_piety_gain_mult = 0.01
+	}
+}
+
 arbela = { # The temple of Ishtar of Arbela, whose prophetesses spoke to the Assyrian kings
 	county = c_irbil
 	barony = b_irbil
@@ -148,31 +175,6 @@ arbela = { # The temple of Ishtar of Arbela, whose prophetesses spoke to the Ass
 	faith_character_modifier = {
 		prowess = 1
 		fertility = 0.05
-	}
-
-	faith_character_modifier_scaled = {
-		scale = holy_site_total_artifact_rarity
-		monthly_piety_gain_mult = 0.01
-	}
-}
-
-manbij = { # Hierapolis, the temple of Atargatis and her sacred fish pools
-	county = c_aleppo
-	barony = b_manbij
-
-	county_holder_character_modifier = {
-		health = 0.1
-	}
-
-	county_modifier_scaled = {
-		scale = holy_site_total_artifact_rarity
-		development_growth_factor = 0.01
-		county_opinion_add = 1
-	}
-
-	faith_character_modifier = {
-		fertility = 0.05
-		stress_loss_mult = 0.1
 	}
 
 	faith_character_modifier_scaled = {

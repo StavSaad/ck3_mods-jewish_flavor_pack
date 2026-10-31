@@ -1,0 +1,13 @@
+﻿l_english:
+ # The Nineveh dig (events/jip_nineveh_events.txt)
+ jip_nineveh.0001.t: "Under the Mound of Nineveh"
+ jip_nineveh.0001.intro: "The diggers broke through into a chamber deep under the mound, where the walls were lined with shelves of clay. Most of what lay there had crumbled to dust, but your scholar carried one bundle of tablets up into the light, brushed the earth from the wedge-writing, and began to read.\n\n"
+ jip_nineveh.0001.gilgamesh: "It is the story of Gilgamesh, king of Uruk, who was two parts god and one part man; of his friend Enkidu, made from clay; and of the long road Gilgamesh walked after Enkidu died, looking for the plant that gives life, which a serpent stole from him while he bathed."
+ jip_nineveh.0001.enuma_elish: "‘When on high the heaven had not been named’: it is the story of creation, how the young god slew Tiamat, the sea, split her body to make the sky and the earth, and set the stars in their stations. The priests of Assyria read it aloud at every New Year."
+ jip_nineveh.0001.enuma_anu_enlil: "It is the great book of the omens of heaven: what it means when the Moon is eclipsed in this month or that, when Venus rises at dawn, when the Sun wears a halo. The star-readers of the Assyrian kings wrote their reports from it."
+ jip_nineveh.0001.sakikku: "It is the physicians' handbook: every sign of sickness, from the head down to the feet, what it foretells, and whether the patient will live. Some of what it says, the physicians of your own day still teach."
+ jip_nineveh.0001.catalogue: "It is the king's own voice: Ashurbanipal ordering his scribes to search every temple and house in the land for tablets, and to bring them to Nineveh, ‘tablets that are good for my palace’, with the lists of what they found."
+ jip_nineveh.0001.heir: "\n\nThese are the words of your own forefathers, written in the tongue that yours grew from. The scholars of the caliphs have never read them. You will."
+ jip_nineveh.0001.stranger: "\n\nThe old kings of Assyria wrote it for their own gods and their own people. It is yours now, though its full meaning is for the heirs of Assyria."
+ jip_nineveh.0001.a: "Have it read before the court."
+ jip_nineveh.0001.b: "I will study it myself."

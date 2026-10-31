@@ -38,5 +38,6 @@ jip_create_nineveh_tablet_effect = {
 		wealth = 40
 		quality = 70
 		decaying = no
+		save_scope_as = jip_nineveh_tablet # Shown in jip_nineveh.0001
 	}
 }

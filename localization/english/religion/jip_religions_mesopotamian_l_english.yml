@@ -90,9 +90,9 @@
  # Holy sites (jip_holy_sites.txt)
  holy_site_nineveh_name: "Nineveh"
  holy_site_nineveh_effect_name: "From [holy_site|E] #weak ($holy_site_nineveh_name$)#!"
+ holy_site_ashur_name: "Ashur"
+ holy_site_ashur_effect_name: "From [holy_site|E] #weak ($holy_site_ashur_name$)#!"
  holy_site_arbela_name: "Arbela"
  holy_site_arbela_effect_name: "From [holy_site|E] #weak ($holy_site_arbela_name$)#!"
- holy_site_manbij_name: "Manbij"
- holy_site_manbij_effect_name: "From [holy_site|E] #weak ($holy_site_manbij_name$)#!"
  holy_site_palmyra_name: "Palmyra"
  holy_site_palmyra_effect_name: "From [holy_site|E] #weak ($holy_site_palmyra_name$)#!"

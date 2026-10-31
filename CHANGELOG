@@ -170,11 +170,12 @@
 [] Familial: Sabian and Mandaean families can plead with a Muslim ruler to recognise them as a people of the Book, which spares them the Question for 20 years
 [] Familial: the government is called Familial for every faith; Jewish families no longer see it as Mishpacha or with its own icon, and every family title is a "Family"
 [] Familial: the Charter of Privileges' Beit Din right is now "Own Courts", and the Villa and estate tooltips no longer call every family Jewish
-[] Added the Palmyrene Empire: an independent Aramean king holding Palmyra and Syria can raise the empire of Odaenathus and Zenobia, taking Syria, and Palestine, Arabia and Egypt if held
-[] Canaan, Beth Nahrain and the Palmyrene Empire no longer take kingdoms from one another when another ruler holds them; the first to form keeps them
+[] Added the Palmyrene Empire: an independent Aramean king holding Palmyra and Syria can raise the empire of Odaenathus and Zenobia, taking Syria, and the Jazira, Jerusalem, Israel, Phoenicia, Arabia and Egypt if they exist and are completely controlled, whatever empire they belonged to
+[] Canaan and Beth Nahrain no longer take Syria or Jerusalem from each other, or from Kemet, when another ruler holds them; the first to form keeps them. The Palmyrene Empire never blocks them
 [] Beth Nahrain's capital is now Nineveh; the Fertile Crescent hegemony absorbs the Palmyrene Empire
 [] Aramean and Nabati rulers see the duchy of Damascus as Aram-Damascus; under them Aram (Syria) carries the bull of Hadad and Osroene (Edessa) the Abgarid tiara, and Adiabene (Arbela) the star of Ishtar under Assyrians too
 [] The Palmyrene Empire's arms: the eagle of Bel on Zenobia's purple
-[] Added great projects for the temples of the old gods: the Temple of Bel at Palmyra, the Temple of Shamash at Hatra and the Temple of Ashur at Ashur, and a repeatable dig into the mound of Nineveh that turns up the tablets of Ashurbanipal's library, at full strength for Aramean, Nabati, Assyrian and pagan rulers
+[] Added great projects for the temples of the old gods: the Temple of Bel at Palmyra, the Temple of Shamash at Hatra, the Temple of Ishtar at Arbela and the Temple of Ashur at Ashur, and a repeatable dig into the mound of Nineveh that turns up the tablets of Ashurbanipal's library, each told in an event, at full strength for Aramean, Nabati, Assyrian and pagan rulers
 [] The Temple of Sin now stands in Harran's special building slot, like a holy site building, instead of a great building slot
+[] Mesopotamianism's holy sites are now the sites of its temples: Harran and Ashur (eminent), Nineveh, Arbela and Palmyra
 [] Saves from earlier versions are not compatible

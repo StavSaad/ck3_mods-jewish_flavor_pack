@@ -1,0 +1,65 @@
+﻿namespace = jip_nineveh
+
+# A dig into the mound of Nineveh is complete (jip_gp_nineveh_excavation): the tablet it turned up
+# (scope:jip_nineveh_tablet, made by jip_nineveh_tablet_effect), by the number of digs so far
+jip_nineveh.0001 = {
+	type = character_event
+	title = jip_nineveh.0001.t
+	desc = {
+		desc = jip_nineveh.0001.intro
+		first_valid = {
+			triggered_desc = {
+				trigger = { title:b_ninawa.title_province.var:jip_nineveh_digs <= 1 }
+				desc = jip_nineveh.0001.gilgamesh
+			}
+			triggered_desc = {
+				trigger = { title:b_ninawa.title_province.var:jip_nineveh_digs = 2 }
+				desc = jip_nineveh.0001.enuma_elish
+			}
+			triggered_desc = {
+				trigger = { title:b_ninawa.title_province.var:jip_nineveh_digs = 3 }
+				desc = jip_nineveh.0001.enuma_anu_enlil
+			}
+			triggered_desc = {
+				trigger = { title:b_ninawa.title_province.var:jip_nineveh_digs = 4 }
+				desc = jip_nineveh.0001.sakikku
+			}
+			desc = jip_nineveh.0001.catalogue
+		}
+		first_valid = {
+			triggered_desc = {
+				trigger = { jip_heir_of_assyria_trigger = yes }
+				desc = jip_nineveh.0001.heir
+			}
+			desc = jip_nineveh.0001.stranger
+		}
+	}
+	theme = learning
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = reading
+	}
+	artifact = {
+		target = scope:jip_nineveh_tablet
+		position = lower_right_portrait
+		trigger = { exists = scope:jip_nineveh_tablet }
+	}
+
+	# Have it read before the court
+	option = {
+		name = jip_nineveh.0001.a
+		add_prestige = minor_prestige_gain
+	}
+
+	# Study it in private
+	option = {
+		name = jip_nineveh.0001.b
+		add_learning_lifestyle_xp = minor_lifestyle_xp
+	}
+}

@@ -1,14 +1,15 @@
 ﻿# The mod's Near Eastern empires share kingdoms: Canaan and Beth Nahrain can both take Syria and Jerusalem, and the
-# Palmyrene Empire takes Syria, Jerusalem and Egypt (Kemet's). The region splits by heartland (0.15 plan, section 5),
-# so one founding decision doesn't take a kingdom from another of these empires held by someone else: whichever
-# forms first keeps it.
+# Palmyrene Empire takes Syria, the Jazira, Jerusalem, Israel, Phoenicia and Egypt (Kemet's). A founding decision
+# doesn't take a kingdom from Canaan, Beth Nahrain or Kemet held by someone else, so whichever forms first keeps it.
+# The Palmyrene Empire stands outside this: it seizes the kingdoms it completely controls from any of them, and any of
+# them may take its kingdoms (0.15 plan, section 5).
 
-# Title scope: one of the mod's Near Eastern empires
+# Title scope: one of the mod's Near Eastern empires whose kingdoms another founding decision leaves alone (not the
+# Palmyrene Empire)
 jip_is_near_east_empire_trigger = {
 	OR = {
 		this = title:e_canaan
 		this = title:e_beth_nahrain
-		this = title:e_palmyra
 		this = title:e_kemet
 	}
 }
@@ -35,8 +36,8 @@ jip_uses_assyrian_arms_trigger = {
 	}
 }
 
-# Character scope (the founder): may make $KINGDOM$ a de jure kingdom of their new empire. Not while it belongs to
-# another of the mod's Near Eastern empires with a holder other than them
+# Character scope (the founder of Canaan or Beth Nahrain): may make $KINGDOM$ a de jure kingdom of their new empire. Not
+# while it belongs to another of the mod's Near Eastern empires with a holder other than them
 jip_can_take_de_jure_kingdom_trigger = {
 	save_temporary_scope_as = jip_empire_founder
 	NOT = {

@@ -359,17 +359,18 @@ jip_gp_temple_of_sin = {
 #	The temples of the old gods (0.15 plan, section 5). Like the Temple of Sin, each is raised once per game in its
 #	province's special building slot (history/provinces/zz_jip_province_changes.txt) and works only for its gods'
 #	followers. Contributions shared with the Temple of Sin reuse its tooltips
-#	jip_gp_temple_of_bel - the Temple of Bel at Palmyra, for the Palmyrene emperor
+#	jip_gp_temple_of_bel - the Temple of Bel at Palmyra
 #	jip_gp_temple_of_shamash - the Temple of Shamash at Hatra
 #	jip_gp_temple_of_ashur - the Temple of Ashur at Ashur, Ashurism's counterpart of the Temple of Sin
+#	jip_gp_temple_of_ishtar - the Temple of Ishtar at Arbela
 #	jip_gp_nineveh_excavation - a repeatable dig into the mound of Nineveh for Ashurbanipal's library
 #################
 
 @jip_temple_of_bel_icon = "gfx/interface/icons/great_projects/jip_temple_of_bel.dds" # tools/make_great_project_art.py
 @jip_temple_of_bel_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_bel.dds" # default crop
 
-# The Palmyrene emperor (create_e_palmyra_decision) of the Sabian rite or the old faith rebuilds the temple of Bel,
-# Palmyra's great temple, consecrated in 32 AD
+# A ruler of the Sabian rite or the old faith who holds Palmyra rebuilds the temple of Bel, the caravan city's great
+# temple, consecrated in 32 AD
 jip_gp_temple_of_bel = {
 	icon = { reference = @jip_temple_of_bel_icon }
 	illustration = { reference = @jip_temple_of_bel_illustration }
@@ -379,11 +380,11 @@ jip_gp_temple_of_bel = {
 	}
 
 	is_shown = {
-		has_title = title:e_palmyra
 		OR = {
 			rite = rite:sabianism
 			faith = faith:mesopotamian_pagan
 		}
+		is_landed = yes
 		NOT = { is_planning_great_project = jip_gp_temple_of_bel }
 		NOT = {
 			is_target_in_global_variable_list = {
@@ -423,7 +424,6 @@ jip_gp_temple_of_bel = {
 
 	is_valid = {
 		scope:founder = {
-			has_title = title:e_palmyra
 			OR = {
 				rite = rite:sabianism
 				faith = faith:mesopotamian_pagan
@@ -1267,6 +1267,307 @@ jip_gp_temple_of_ashur = {
 	target_title_tier = barony
 }
 
+@jip_temple_of_ishtar_icon = "gfx/interface/icons/great_projects/jip_temple_of_ishtar.dds" # tools/make_great_project_art.py
+@jip_temple_of_ishtar_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_ishtar.dds" # default crop
+
+# A ruler of the Sabian rite or the old faith who holds Arbela rebuilds the Egashankalamma, the temple of Ishtar of
+# Arbela, goddess of war, whose prophetesses spoke to the Assyrian kings. The Sabians honour her as Venus
+jip_gp_temple_of_ishtar = {
+	icon = { reference = @jip_temple_of_ishtar_icon }
+	illustration = { reference = @jip_temple_of_ishtar_illustration }
+
+	name = {
+		desc = great_project_type_jip_gp_temple_of_ishtar
+	}
+
+	is_shown = {
+		OR = {
+			rite = rite:sabianism
+			faith = faith:mesopotamian_pagan
+		}
+		is_landed = yes
+		NOT = { is_planning_great_project = jip_gp_temple_of_ishtar }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_ishtar
+			}
+		}
+	}
+
+	province_filter = landed_title
+	province_filter_target = c_irbil
+
+	is_location_valid = {
+		scope:province = {
+			custom_tooltip = {
+				text = jip_gp_temple_of_ishtar_location_tt
+				this = title:b_irbil.title_province
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_held_tt
+				barony.holder ?= { target_is_same_character_or_above = root }
+			}
+			NOT = { has_building_with_flag = jip_temple_of_ishtar_building }
+		}
+	}
+
+	can_start_planning = {
+		custom_tooltip = {
+			text = jip_gp_temple_of_ishtar_arbela_tt
+			title:c_irbil.holder ?= { target_is_same_character_or_above = root }
+		}
+		piety_level >= 2
+		is_at_war = no
+	}
+
+	owner = founder_primary_title_owner
+
+	is_valid = {
+		scope:founder = {
+			OR = {
+				rite = rite:sabianism
+				faith = faith:mesopotamian_pagan
+			}
+		}
+		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = great_project_base_starting_cost
+		}
+		piety = {
+			value = 300
+		}
+	}
+
+	construction_time = 1825 # 5 years
+
+	allowed_contributor_filter = {
+		owner = yes
+		founder = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+		duchy = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:founder ?= {
+			add_piety = medium_piety_gain
+		}
+	}
+
+	on_complete = {
+		scope:province = {
+			custom_tooltip = jip_gp_temple_of_ishtar_building_tt
+			hidden_effect = {
+				add_special_building = jip_temple_of_ishtar_01 # The province's special building slot
+			}
+		}
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_ishtar
+			}
+		}
+		scope:owner ?= {
+			add_piety = major_piety_gain
+			add_prestige = major_prestige_gain
+		}
+	}
+
+	project_contributions = {
+		# Required: cedar beams for the roof, as Esarhaddon brought for the Egashankalamma
+		cedars = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: gold to plate the goddess's shrine, as Ashurbanipal did
+		gold_plating = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.75
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the prophetesses of Ishtar, from the Sabians or the old faith
+		prophetesses = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_temple_of_sin_faithful_tt
+					OR = {
+						rite = rite:sabianism
+						faith = faith:mesopotamian_pagan
+					}
+				}
+			}
+			cost = {
+				piety = {
+					value = 300
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = minor_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Optional: the goddess's throne on the backs of lions
+		lion_throne = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+		# Optional: the festival house of Milqia outside the city, where the goddess rested in her processions
+		milqia = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_piety = medium_piety_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		rank = county
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 5
+		duchy = 2
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+
+	ai_will_do = {
+		value = 100
+	}
+
+	group = major_project
+	is_important = yes
+	target_title_tier = barony
+}
+
 @jip_nineveh_excavation_icon = "gfx/interface/icons/great_projects/jip_nineveh_excavation.dds" # tools/make_great_project_art.py
 @jip_nineveh_excavation_illustration = "gfx/interface/illustrations/great_projects/jip_nineveh_excavation.dds" # default crop
 
@@ -1362,6 +1663,7 @@ jip_gp_nineveh_excavation = {
 			hidden_effect = { jip_nineveh_tablet_effect = yes }
 			add_learning_lifestyle_xp = major_lifestyle_xp
 			add_prestige = medium_prestige_gain
+			trigger_event = jip_nineveh.0001 # The tablet found, with scope:jip_nineveh_tablet
 		}
 	}
 

@@ -465,3 +465,60 @@ jip_temple_of_ashur_01 = {
 	flag = jip_temple_of_ashur_building
 	flag = travel_point_of_interest_religious
 }
+
+# The Temple of Ishtar at Arbela (jip_gp_temple_of_ishtar): the Egashankalamma of Ishtar of Arbela, goddess of war,
+# whose prophetesses spoke to the Assyrian kings. Venus to the Sabians
+jip_temple_of_ishtar_01 = {
+	# The Temple of Sin's model (the Tomb of Cyrus's stepped base and shrine), on Arbela's map locator (province 4777)
+	asset = {
+		type = pdxmesh
+		name = "fp3_building_special_tomb_of_cyrus_01_a_mesh"
+	}
+
+	type_icon = "icon_structure_tomb_of_cyrus.dds"
+
+	can_construct_potential = {
+		always = no # Built only by the great project
+	}
+
+	is_enabled = {
+		custom_description = {
+			text = jip_temple_of_the_old_gods_enabled_trigger
+			scope:holder = {
+				OR = {
+					rite = rite:sabianism
+					faith = faith:mesopotamian_pagan
+				}
+			}
+		}
+	}
+
+	show_disabled = yes
+
+	character_modifier = {
+		monthly_piety = 0.5
+		prowess = 2 # The goddess of war
+		knight_effectiveness_mult = 0.1
+		attraction_opinion = 5
+		same_faith_opinion = 5
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.1
+		tax_mult = 0.1
+	}
+
+	province_modifier = {
+		levy_size = 0.1
+		monthly_income = 1
+	}
+
+	ai_value = {
+		base = 0
+	}
+
+	type = special
+
+	flag = jip_temple_of_ishtar_building
+	flag = travel_point_of_interest_religious
+}

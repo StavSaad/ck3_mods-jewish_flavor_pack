@@ -47,3 +47,10 @@
 		special_building_slot = jip_temple_of_ashur_01
 	}
 }
+
+# 4777 - IRBIL (Arbela): the Temple of Ishtar
+4777 = {
+	1.1.1 = {
+		special_building_slot = jip_temple_of_ishtar_01
+	}
+}

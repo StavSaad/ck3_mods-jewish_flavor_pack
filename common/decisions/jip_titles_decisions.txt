@@ -584,10 +584,6 @@ create_e_palmyra_decision = {
 		has_title = title:c_palmyra
 		has_title = title:k_syria
 		completely_controls = title:k_syria
-		custom_tooltip = {
-			text = jip_empire_kingdom_taken_syria_tt
-			jip_can_take_de_jure_kingdom_trigger = { KINGDOM = k_syria }
-		}
 	}
 
 	is_valid_showing_failures_only = {
