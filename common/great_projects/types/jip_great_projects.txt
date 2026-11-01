@@ -1825,7 +1825,7 @@ jip_gp_nineveh_excavation = {
 }
 
 @jip_temple_of_marduk_icon = "gfx/interface/icons/great_projects/jip_temple_of_marduk.dds" # tools/make_great_project_art.py
-@jip_temple_of_marduk_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_marduk.dds" # default crop
+@jip_temple_of_marduk_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_marduk.dds" # --y 0.45
 
 # An independent ruler of the old faith (Mesopotamianism, once the Temple of Sin has restored it) who holds Kufa
 # rebuilds the Esagila, the house of Marduk at Babylon (b_al-hila), whose god was king of the gods
