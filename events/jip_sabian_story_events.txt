@@ -1,0 +1,615 @@
+﻿namespace = jip_sabian_story
+
+# The Return of the Moon God, the Sabian story (common/story_cycles/jip_story_sabian_revival.txt; 0.15 plan, section 10).
+# Root = the story owner, the head of Thabit ibn Qurra's house.
+#  1001 The Sabians of Baghdad (the story begins, players)
+#  1010 A patron of the sciences (once)
+#  1020 The elders of Harran (once)
+#  1030 A disputation on the Sabians (every 8 years at most)
+#  1040 An initiate's secret reaches a Muslim (scope:jip_initiate)
+#  1050 The stars over the palace (every 5 years at most)
+#  1090 The road to Harran (standing reaches 10: Act 1 ends)
+#  1100 The mysteries (Keep the Mysteries; scope:jip_initiate)
+# Learned answers succeed with jip_sabian_story_learning_chance_value.
+
+# The Sabians of Baghdad
+jip_sabian_story.1001 = {
+	type = character_event
+	title = jip_sabian_story.1001.t
+	desc = {
+		desc = jip_sabian_story.1001.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { this = character:jip_sabian_thabit_ibn_qurra }
+				desc = jip_sabian_story.1001.desc_thabit
+			}
+			desc = jip_sabian_story.1001.desc_other
+		}
+		desc = jip_sabian_story.1001.desc_end
+	}
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = fp3_courtyard_night }
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+
+	trigger = {
+		jip_owns_sabian_story_trigger = yes
+	}
+
+	option = {
+		name = jip_sabian_story.1001.a
+		custom_tooltip = jip_sabian_story.1001.tt
+	}
+}
+
+# A patron of the sciences
+jip_sabian_story.1010 = {
+	type = character_event
+	title = jip_sabian_story.1010.t
+	desc = jip_sabian_story.1010.desc
+	theme = learning
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = study }
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+	right_portrait = {
+		character = scope:jip_patron
+		animation = personality_rational
+	}
+
+	trigger = {
+		jip_sabian_story_has_muslim_patron_trigger = yes
+	}
+
+	immediate = {
+		random_owned_story = {
+			type = story_jip_sabian_revival
+			var:jip_sabian_patron = { save_scope_as = jip_patron }
+		}
+		ordered_courtier = {
+			limit = {
+				house ?= root.house
+				age >= 14
+			}
+			order_by = learning
+			save_scope_as = jip_pupil
+		}
+	}
+
+	# Dispute before the court
+	option = {
+		name = jip_sabian_story.1010.a
+		random_list = {
+			0 = {
+				desc = jip_sabian_story.1010.a.success
+				modifier = {
+					add = jip_sabian_story_learning_chance_value
+				}
+				jip_sabian_story_raise_standing_effect = { VALUE = 2 }
+				add_prestige = medium_prestige_gain
+				scope:jip_patron = {
+					add_opinion = {
+						target = root
+						modifier = impressed_opinion
+						opinion = 20
+					}
+				}
+			}
+			0 = {
+				desc = jip_sabian_story.1010.a.failure
+				modifier = {
+					add = jip_sabian_story_learning_failure_value
+				}
+				jip_sabian_story_lower_standing_effect = { VALUE = 1 }
+				add_prestige = minor_prestige_loss
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = learning
+			}
+		}
+	}
+
+	# Send a young scholar of the house
+	option = {
+		name = jip_sabian_story.1010.b
+		trigger = { exists = scope:jip_pupil }
+		scope:jip_pupil = {
+			add_learning_lifestyle_xp = medium_lifestyle_xp
+		}
+		jip_sabian_story_raise_standing_effect = { VALUE = 1 }
+		ai_chance = {
+			base = 30
+		}
+	}
+
+	# Decline
+	option = {
+		name = jip_sabian_story.1010.c
+		add_learning_lifestyle_xp = minor_lifestyle_xp
+		ai_chance = {
+			base = 5
+		}
+	}
+}
+
+# The elders of Harran
+jip_sabian_story.1020 = {
+	type = character_event
+	title = jip_sabian_story.1020.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { this = character:jip_sabian_thabit_ibn_qurra }
+				desc = jip_sabian_story.1020.desc_thabit
+			}
+			desc = jip_sabian_story.1020.desc
+		}
+	}
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = temple }
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	trigger = {
+		jip_owns_sabian_story_trigger = yes
+	}
+
+	# Go to them humbly
+	option = {
+		name = jip_sabian_story.1020.a
+		add_prestige = minor_prestige_loss
+		jip_sabian_story_raise_standing_effect = { VALUE = 2 }
+		stress_impact = {
+			arrogant = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 0.25
+				has_trait = arrogant
+			}
+		}
+	}
+
+	# Send silver for the temple
+	option = {
+		name = jip_sabian_story.1020.b
+		trigger = { gold >= minor_gold_value }
+		show_as_unavailable = { always = yes }
+		remove_short_term_gold = minor_gold_value
+		add_piety = minor_piety_gain
+		jip_sabian_story_raise_standing_effect = { VALUE = 1 }
+		stress_impact = {
+			greedy = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 30
+		}
+	}
+
+	# Baghdad answers to no one
+	option = {
+		name = jip_sabian_story.1020.c
+		add_prestige = minor_prestige_gain
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 30
+				has_trait = arrogant
+			}
+		}
+	}
+}
+
+# A disputation on the Sabians
+jip_sabian_story.1030 = {
+	type = character_event
+	title = jip_sabian_story.1030.t
+	desc = jip_sabian_story.1030.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = throne_room_mediterranean }
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	right_portrait = {
+		character = scope:jip_patron
+		animation = thinking
+	}
+
+	trigger = {
+		jip_sabian_story_has_muslim_patron_trigger = yes
+	}
+
+	immediate = {
+		random_owned_story = {
+			type = story_jip_sabian_revival
+			var:jip_sabian_patron = { save_scope_as = jip_patron }
+		}
+	}
+
+	# Answer with Hermes and the books of Seth
+	option = {
+		name = jip_sabian_story.1030.a
+		random_list = {
+			0 = {
+				desc = jip_sabian_story.1030.a.success
+				modifier = {
+					add = jip_sabian_story_learning_chance_value
+				}
+				jip_sabian_story_raise_standing_effect = { VALUE = 2 }
+				add_piety = minor_piety_gain
+			}
+			0 = {
+				desc = jip_sabian_story.1030.a.failure
+				modifier = {
+					add = jip_sabian_story_learning_failure_value
+				}
+				jip_sabian_story_lower_standing_effect = { VALUE = 1 }
+				add_prestige = minor_prestige_loss
+			}
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = learning
+			}
+		}
+	}
+
+	# Ask the patron to end it
+	option = {
+		name = jip_sabian_story.1030.b
+		trigger = {
+			scope:jip_patron = {
+				opinion = {
+					target = root
+					value >= 20
+				}
+			}
+		}
+		show_as_unavailable = { always = yes }
+		jip_sabian_story_raise_standing_effect = { VALUE = 1 }
+		scope:jip_patron = {
+			add_opinion = {
+				target = root
+				modifier = annoyed_opinion
+				opinion = -10
+			}
+		}
+		ai_chance = {
+			base = 30
+		}
+	}
+
+	# Let it pass
+	option = {
+		name = jip_sabian_story.1030.c
+		jip_sabian_story_lower_standing_effect = { VALUE = 1 }
+		stress_impact = {
+			zealous = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+# An initiate's secret reaches a Muslim
+jip_sabian_story.1040 = {
+	type = character_event
+	title = jip_sabian_story.1040.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:jip_initiate = root }
+				desc = jip_sabian_story.1040.desc_self
+			}
+			desc = jip_sabian_story.1040.desc
+		}
+	}
+	theme = secret
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = market_east }
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	right_portrait = {
+		character = scope:jip_initiate
+		trigger = { scope:jip_initiate != root }
+		animation = shame
+	}
+
+	trigger = {
+		exists = scope:jip_initiate
+		scope:jip_initiate = { jip_sabian_initiate_exposed_trigger = yes }
+	}
+
+	immediate = {
+		scope:jip_initiate = {
+			set_variable = jip_sabian_exposure_answered
+		}
+	}
+
+	# Buy the silence of the tongues
+	option = {
+		name = jip_sabian_story.1040.a
+		trigger = { gold >= medium_gold_value }
+		show_as_unavailable = { always = yes }
+		remove_short_term_gold = medium_gold_value
+		ai_chance = {
+			base = 40
+		}
+	}
+
+	# Call it philosophy
+	option = {
+		name = jip_sabian_story.1040.b
+		random_list = {
+			0 = {
+				desc = jip_sabian_story.1040.b.success
+				modifier = {
+					add = jip_sabian_story_learning_chance_value
+				}
+				add_prestige = minor_prestige_gain
+			}
+			0 = {
+				desc = jip_sabian_story.1040.b.failure
+				modifier = {
+					add = jip_sabian_story_learning_failure_value
+				}
+				jip_sabian_story_lower_standing_effect = { VALUE = 2 }
+			}
+		}
+		ai_chance = {
+			base = 30
+		}
+	}
+
+	# The initiate recants
+	option = {
+		name = jip_sabian_story.1040.c
+		scope:jip_initiate = {
+			jip_sabian_recant_effect = yes
+			add_stress = minor_stress_gain
+		}
+		jip_sabian_story_lower_standing_effect = { VALUE = 1 }
+		ai_chance = {
+			base = 20
+		}
+	}
+}
+
+# The stars over the palace
+jip_sabian_story.1050 = {
+	type = character_event
+	title = jip_sabian_story.1050.t
+	desc = jip_sabian_story.1050.desc
+	theme = learning
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = fp3_courtyard_night }
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+	right_portrait = {
+		character = scope:jip_patron
+		animation = personality_rational
+	}
+
+	trigger = {
+		jip_sabian_story_has_muslim_patron_trigger = yes
+	}
+
+	immediate = {
+		random_owned_story = {
+			type = story_jip_sabian_revival
+			var:jip_sabian_patron = { save_scope_as = jip_patron }
+		}
+	}
+
+	# Read the stars truly
+	option = {
+		name = jip_sabian_story.1050.a
+		random_list = {
+			0 = {
+				desc = jip_sabian_story.1050.a.success
+				modifier = {
+					add = jip_sabian_story_learning_chance_value
+				}
+				jip_sabian_story_raise_standing_effect = { VALUE = 1 }
+				add_prestige = minor_prestige_gain
+				scope:jip_patron = {
+					add_opinion = {
+						target = root
+						modifier = respect_opinion
+						opinion = 15
+					}
+				}
+			}
+			0 = {
+				desc = jip_sabian_story.1050.a.failure
+				modifier = {
+					add = jip_sabian_story_learning_failure_value
+				}
+				jip_sabian_story_lower_standing_effect = { VALUE = 1 }
+				scope:jip_patron = {
+					add_opinion = {
+						target = root
+						modifier = disappointed_opinion
+						opinion = -10
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = learning
+			}
+		}
+	}
+
+	# Read them kindly
+	option = {
+		name = jip_sabian_story.1050.b
+		jip_sabian_story_raise_standing_effect = { VALUE = 1 }
+		add_piety = minor_piety_loss
+		scope:jip_patron = {
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 10
+			}
+		}
+		stress_impact = {
+			honest = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				has_trait = honest
+			}
+		}
+	}
+}
+
+# The road to Harran: Act 1 ends
+jip_sabian_story.1090 = {
+	type = character_event
+	title = jip_sabian_story.1090.t
+	desc = jip_sabian_story.1090.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = wilderness_desert }
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	trigger = {
+		jip_owns_sabian_story_trigger = yes
+	}
+
+	option = {
+		name = jip_sabian_story.1090.a
+		add_prestige = medium_prestige_gain
+		custom_tooltip = jip_sabian_story.1090.tt
+	}
+}
+
+# The mysteries
+jip_sabian_story.1100 = {
+	type = character_event
+	title = jip_sabian_story.1100.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:jip_initiate = root }
+				desc = jip_sabian_story.1100.desc_self
+			}
+			desc = jip_sabian_story.1100.desc
+		}
+	}
+	theme = secret
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = fp3_cave }
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+	right_portrait = {
+		character = scope:jip_initiate
+		trigger = { scope:jip_initiate != root }
+		animation = personality_rational
+	}
+
+	trigger = {
+		exists = scope:jip_initiate
+	}
+
+	# Initiate them
+	option = {
+		name = jip_sabian_story.1100.a
+		scope:jip_initiate = {
+			jip_sabian_initiate_effect = { HEAD = root }
+			add_piety = minor_piety_gain
+		}
+		if = {
+			limit = { scope:jip_initiate != root }
+			scope:jip_initiate = {
+				add_opinion = {
+					target = root
+					modifier = grateful_opinion
+					opinion = 15
+				}
+			}
+		}
+		ai_chance = {
+			base = 90
+		}
+	}
+
+	# Not yet
+	option = {
+		name = jip_sabian_story.1100.b
+		add_piety = 100
+		ai_chance = {
+			base = 10
+		}
+	}
+}

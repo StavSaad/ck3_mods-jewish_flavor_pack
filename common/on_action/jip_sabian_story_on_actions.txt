@@ -1,0 +1,41 @@
+﻿# The Return of the Moon God, the Sabian story (common/story_cycles/jip_story_sabian_revival.txt): it starts before the
+# lobby for the head of Thabit ibn Qurra's house (d_jip_harrani, held from 867), so the lobby already shows his secret
+# faith; a player head is told the story as the game begins (jip_sabian_story.1001)
+on_game_start = {
+	on_actions = {
+		jip_sabian_story_game_start_on_action
+	}
+}
+
+on_game_start_after_lobby = {
+	on_actions = {
+		jip_sabian_story_game_start_after_lobby_on_action
+	}
+}
+
+jip_sabian_story_game_start_on_action = {
+	effect = {
+		jip_sabian_story_start_effect = yes
+	}
+}
+
+jip_sabian_story_game_start_after_lobby_on_action = {
+	effect = {
+		# In case the head changed in the lobby
+		jip_sabian_story_start_effect = yes
+		title:d_jip_harrani.holder ?= {
+			# The patron, now that the start-date lieges are set
+			random_owned_story = {
+				type = story_jip_sabian_revival
+				jip_sabian_story_update_patron_effect = yes
+			}
+			if = {
+				limit = {
+					is_ai = no
+					jip_owns_sabian_story_trigger = yes
+				}
+				trigger_event = jip_sabian_story.1001
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+﻿# The Return of the Moon God, the Sabian story (events/jip_sabian_story_events.txt)
+
+# Chance (%) that a learned answer carries the day: 20, plus 3 per point of learning, between 10 and 90
+jip_sabian_story_learning_chance_value = {
+	value = 20
+	add = {
+		value = learning
+		multiply = 3
+	}
+	min = 10
+	max = 90
+}
+
+jip_sabian_story_learning_failure_value = {
+	value = 100
+	subtract = jip_sabian_story_learning_chance_value
+}

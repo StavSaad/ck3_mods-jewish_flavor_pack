@@ -1,0 +1,221 @@
+﻿# The Return of the Moon God (0.15 plan, section 10): the Sabian storyline, carried by the head of Thabit ibn Qurra's house
+# (d_jip_harrani) from 867 (jip_sabian_story_on_actions.txt), shown in the story window like vanilla's Hasan Sabbah story.
+# Variables on the story:
+#  jip_sabian_act       the act (1 the Sabians of Baghdad, 2 the Return to Harran)
+#  jip_sabian_standing  the Sabian community's standing, 0-10 (jip_sabian_story_raise/lower_standing_effect); at 10 in
+#                       Act 1 the act ends (jip_sabian_story.1090)
+#  jip_sabian_patron    the owner's liege or suzerain
+#  jip_sabian_initiates the house's secret believers in the old gods (list; Keep the Mysteries)
+#  jip_sabian_seen_*    the Act 1 events that have fired once; jip_sabian_cooldown_* the repeatable ones' waits
+# Events in events/jip_sabian_story_events.txt; effects and triggers in 01_jip_sabian_story_effects.txt and
+# jip_sabian_story_triggers.txt.
+story_jip_sabian_revival = {
+	visible = yes
+
+	icon = {
+		reference = "gfx/interface/icons/faith/harranian.dds"
+	}
+
+	visualization = {
+		custom_string_key = "JIP_SABIAN_STORY_ACT"
+		basic_counter = {
+			variable_name = "jip_sabian_standing"
+			min = 0
+			max = 10
+			label = "JIP_SABIAN_STANDING"
+			tooltip = "JIP_SABIAN_STANDING_TT"
+		}
+		character = {
+			variable_name = "jip_sabian_patron"
+			label = "JIP_SABIAN_PATRON"
+		}
+		character_list = {
+			variable_name = "jip_sabian_initiates"
+			label = "JIP_SABIAN_INITIATES"
+		}
+		decisions = {
+			jip_sabian_keep_the_mysteries_decision
+		}
+	}
+
+	on_setup = {
+		set_variable = {
+			name = jip_sabian_act
+			value = 1
+		}
+		set_variable = {
+			name = jip_sabian_standing
+			value = 2
+		}
+		jip_sabian_story_update_patron_effect = yes
+		# An owner who already keeps the old gods in secret (Thabit, jip_sabian_story_start_effect) is the first initiate
+		if = {
+			limit = {
+				story_owner = { secret_faith ?= faith:mesopotamian_pagan }
+			}
+			add_to_variable_list = {
+				name = jip_sabian_initiates
+				target = story_owner
+			}
+		}
+	}
+
+	on_end = {
+		debug_log = "The Sabian story (story_jip_sabian_revival) ended on:"
+		debug_log_date = yes
+	}
+
+	# The story stays with the house while its head keeps the faith (a head who leaves it hands it on in
+	# jip_mishpacha_leave_faith_effect)
+	on_owner_death = {
+		if = {
+			limit = {
+				story_owner.primary_heir ?= { jip_sabian_story_keeper_trigger = yes }
+			}
+			make_story_owner = story_owner.primary_heir
+			jip_sabian_story_update_patron_effect = yes
+		}
+		else = {
+			end_story = yes
+		}
+	}
+
+	# Upkeep: an owner who has left the faith ends it; the patron and the initiates are brought up to date
+	effect_group = {
+		years = 1
+
+		first_valid = {
+			triggered_effect = {
+				trigger = {
+					story_owner = { jip_sabian_story_keeper_trigger = no }
+				}
+				effect = {
+					end_story = yes
+				}
+			}
+			triggered_effect = {
+				trigger = { always = yes }
+				effect = {
+					jip_sabian_story_update_patron_effect = yes
+					jip_sabian_story_update_initiates_effect = yes
+				}
+			}
+		}
+	}
+
+	# An initiate's secret has reached a Muslim (jip_sabian_story.1040)
+	effect_group = {
+		months = 6
+
+		trigger = {
+			story_owner = {
+				is_available_adult = yes
+				is_ai = no
+			}
+		}
+
+		triggered_effect = {
+			trigger = {
+				any_in_list = {
+					variable = jip_sabian_initiates
+					jip_sabian_initiate_exposed_trigger = yes
+				}
+			}
+			effect = {
+				random_in_list = {
+					variable = jip_sabian_initiates
+					limit = { jip_sabian_initiate_exposed_trigger = yes }
+					save_scope_as = jip_initiate
+				}
+				story_owner = { trigger_event = jip_sabian_story.1040 }
+			}
+		}
+	}
+
+	# Act 1: Sabian astrologers at Muslim courts speak for the community
+	effect_group = {
+		years = 2
+
+		trigger = {
+			var:jip_sabian_act = 1
+		}
+
+		triggered_effect = {
+			trigger = { jip_sabian_astrologers_at_muslim_courts_trigger = yes }
+			effect = {
+				story_owner = {
+					send_interface_toast = {
+						type = event_toast_effect_good
+						title = jip_sabian_story_astrologers_toast
+						jip_sabian_story_raise_standing_effect = { VALUE = 1 }
+					}
+				}
+			}
+		}
+	}
+
+	# Act 1 events, one every one to two years
+	effect_group = {
+		months = { 12 24 }
+
+		trigger = {
+			var:jip_sabian_act = 1
+			story_owner = {
+				is_available_adult = yes
+				is_imprisoned = no
+			}
+		}
+
+		random_valid = {
+			# A patron of the sciences
+			triggered_effect = {
+				trigger = {
+					NOT = { has_variable = jip_sabian_seen_patron }
+					story_owner = { jip_sabian_story_has_muslim_patron_trigger = yes }
+				}
+				effect = {
+					set_variable = jip_sabian_seen_patron
+					story_owner = { trigger_event = jip_sabian_story.1010 }
+				}
+			}
+			# The elders of Harran
+			triggered_effect = {
+				trigger = {
+					NOT = { has_variable = jip_sabian_seen_elders }
+				}
+				effect = {
+					set_variable = jip_sabian_seen_elders
+					story_owner = { trigger_event = jip_sabian_story.1020 }
+				}
+			}
+			# A disputation on the Sabians
+			triggered_effect = {
+				trigger = {
+					NOT = { has_variable = jip_sabian_cooldown_disputation }
+					story_owner = { jip_sabian_story_has_muslim_patron_trigger = yes }
+				}
+				effect = {
+					set_variable = {
+						name = jip_sabian_cooldown_disputation
+						years = 8
+					}
+					story_owner = { trigger_event = jip_sabian_story.1030 }
+				}
+			}
+			# The stars over the palace
+			triggered_effect = {
+				trigger = {
+					NOT = { has_variable = jip_sabian_cooldown_stars }
+					story_owner = { jip_sabian_story_has_muslim_patron_trigger = yes }
+				}
+				effect = {
+					set_variable = {
+						name = jip_sabian_cooldown_stars
+						years = 5
+					}
+					story_owner = { trigger_event = jip_sabian_story.1050 }
+				}
+			}
+		}
+	}
+}

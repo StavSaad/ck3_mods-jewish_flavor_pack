@@ -1,0 +1,6 @@
+﻿# The Return of the Moon God, the Sabian story (common/story_cycles/jip_story_sabian_revival.txt), placed like vanilla's
+# Hasan story decisions
+jip_story_sabian_revival = {
+	sort_order = 300
+	gui_tags = { big_button }
+}

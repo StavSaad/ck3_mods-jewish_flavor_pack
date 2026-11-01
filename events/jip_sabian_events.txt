@@ -152,6 +152,7 @@ jip_sabian.0100 = {
 				}
 				add_prestige = medium_prestige_gain
 				add_piety = medium_piety_gain
+				jip_sabian_story_raise_standing_effect = { VALUE = 2 }
 				scope:jip_questioner = {
 					primary_title = {
 						set_variable = {
@@ -180,6 +181,7 @@ jip_sabian.0100 = {
 				}
 				remove_short_term_gold = jip_sabian_question_failed_fee_value
 				add_prestige = medium_prestige_loss
+				jip_sabian_story_lower_standing_effect = { VALUE = 2 }
 				scope:jip_questioner = {
 					add_gold = jip_sabian_question_failed_fee_value
 					add_piety = minor_piety_gain

@@ -1,0 +1,18 @@
+﻿# The Sabian story's current act, for its story window (JIP_SABIAN_STORY_ACT); keyed on the story owner
+JipSabianStoryAct = {
+	type = character
+	text = {
+		trigger = {
+			any_owned_story = {
+				type = story_jip_sabian_revival
+				var:jip_sabian_act ?= 2
+			}
+		}
+		localization_key = jip_sabian_story_act_2
+	}
+	text = {
+		trigger = { always = no }
+		localization_key = jip_sabian_story_act_1
+		fallback = yes
+	}
+}

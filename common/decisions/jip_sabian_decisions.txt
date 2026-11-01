@@ -86,3 +86,76 @@ jip_question_the_sabians_decision = {
 		}
 	}
 }
+
+# Keep the Mysteries (the Sabian story, Act 1): the head of the house, then its adults at court, are initiated into the old
+# gods as secret believers in Mesopotamianism, as the Fihrist's Harranians kept their mysteries from the Muslims
+# (jip_sabian_story.1100). The initiates count when the old gods are restored
+jip_sabian_keep_the_mysteries_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/fp3/fp3_decision_secret_faith.dds"
+	}
+	desc = jip_sabian_keep_the_mysteries_decision_desc
+	selection_tooltip = jip_sabian_keep_the_mysteries_decision_tooltip
+	decision_group_type = jip_story_sabian_revival
+	sort_order = 100
+	ai_check_interval = 60
+
+	cooldown = { years = 3 }
+
+	is_shown = {
+		jip_owns_sabian_story_trigger = yes
+	}
+
+	is_valid = {
+		custom_tooltip = {
+			text = jip_sabian_keep_the_mysteries_candidate_tt
+			OR = {
+				jip_sabian_initiate_of_house_trigger = { HEAD = root }
+				any_courtier = { jip_sabian_initiate_of_house_trigger = { HEAD = root } }
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_imprisoned = no
+	}
+
+	cost = { piety = 100 }
+
+	effect = {
+		if = {
+			limit = { jip_sabian_initiate_of_house_trigger = { HEAD = root } }
+			save_scope_as = jip_initiate
+		}
+		else = {
+			ordered_courtier = {
+				limit = { jip_sabian_initiate_of_house_trigger = { HEAD = root } }
+				order_by = learning
+				save_scope_as = jip_initiate
+			}
+		}
+		custom_tooltip = jip_sabian_keep_the_mysteries_effect_tt
+		trigger_event = jip_sabian_story.1100
+	}
+
+	ai_potential = {
+		jip_owns_sabian_story_trigger = yes
+	}
+
+	ai_will_do = {
+		base = 10
+		modifier = {
+			add = 20
+			has_trait = zealous
+		}
+		modifier = {
+			add = 10
+			has_trait = ambitious
+		}
+		modifier = {
+			factor = 0
+			has_trait = cynical
+		}
+	}
+}

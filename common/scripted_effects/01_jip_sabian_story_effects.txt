@@ -1,0 +1,183 @@
+﻿# The Return of the Moon God, the Sabian story (common/story_cycles/jip_story_sabian_revival.txt)
+
+# Starts the story for the head of Thabit ibn Qurra's house (jip_sabian_story_on_actions.txt; no root needed). Thabit
+# himself keeps the old gods in secret from the start, the first of the story's initiates (on_setup)
+jip_sabian_story_start_effect = {
+	title:d_jip_harrani.holder ?= {
+		if = {
+			limit = {
+				jip_sabian_story_keeper_trigger = yes
+				NOT = { jip_owns_sabian_story_trigger = yes }
+			}
+			if = {
+				limit = {
+					this = character:jip_sabian_thabit_ibn_qurra
+					jip_sabian_initiate_candidate_trigger = yes
+				}
+				make_character_crypto_religionist_effect = { CRYPTO_RELIGION = faith:mesopotamian_pagan }
+			}
+			create_story = story_jip_sabian_revival
+		}
+	}
+}
+
+# Character scope: raises the standing of the Sabian community by $VALUE$ (1-3), if they own the story
+jip_sabian_story_raise_standing_effect = {
+	if = {
+		limit = { jip_owns_sabian_story_trigger = yes }
+		custom_tooltip = jip_sabian_standing_up_$VALUE$_tt
+		hidden_effect = {
+			random_owned_story = {
+				type = story_jip_sabian_revival
+				change_variable = {
+					name = jip_sabian_standing
+					add = $VALUE$
+				}
+				jip_sabian_story_check_standing_effect = yes
+			}
+		}
+	}
+}
+
+# Character scope: lowers the standing of the Sabian community by $VALUE$ (1-3), if they own the story
+jip_sabian_story_lower_standing_effect = {
+	if = {
+		limit = { jip_owns_sabian_story_trigger = yes }
+		custom_tooltip = jip_sabian_standing_down_$VALUE$_tt
+		hidden_effect = {
+			random_owned_story = {
+				type = story_jip_sabian_revival
+				change_variable = {
+					name = jip_sabian_standing
+					subtract = $VALUE$
+				}
+				jip_sabian_story_check_standing_effect = yes
+			}
+		}
+	}
+}
+
+# Story scope: keeps the standing within 0-10; at 10 in Act 1 the act ends
+jip_sabian_story_check_standing_effect = {
+	clamp_variable = {
+		name = jip_sabian_standing
+		min = 0
+		max = 10
+	}
+	if = {
+		limit = {
+			var:jip_sabian_act = 1
+			var:jip_sabian_standing >= 10
+		}
+		set_variable = {
+			name = jip_sabian_act
+			value = 2
+		}
+		story_owner = {
+			trigger_event = {
+				id = jip_sabian_story.1090
+				days = 3
+			}
+		}
+	}
+}
+
+# Story scope: the patron is the owner's liege, or the suzerain of a tributary family
+jip_sabian_story_update_patron_effect = {
+	story_owner = {
+		if = {
+			limit = { is_independent_ruler = no }
+			liege = { save_scope_as = jip_sabian_patron }
+		}
+		else_if = {
+			limit = { exists = suzerain }
+			suzerain = { save_scope_as = jip_sabian_patron }
+		}
+	}
+	if = {
+		limit = { exists = scope:jip_sabian_patron }
+		set_variable = {
+			name = jip_sabian_patron
+			value = scope:jip_sabian_patron
+		}
+	}
+	else = {
+		remove_variable = jip_sabian_patron
+	}
+}
+
+# Story scope: drops initiates who have died, left the house's court or given up the secret faith
+jip_sabian_story_update_initiates_effect = {
+	every_in_list = {
+		variable = jip_sabian_initiates
+		limit = {
+			OR = {
+				is_alive = no
+				NOT = { secret_faith ?= faith:mesopotamian_pagan }
+				AND = {
+					this != scope:story.story_owner
+					NOT = { is_courtier_of = scope:story.story_owner }
+				}
+			}
+		}
+		save_temporary_scope_as = jip_lapsed
+		scope:story = {
+			remove_list_variable = {
+				name = jip_sabian_initiates
+				target = scope:jip_lapsed
+			}
+		}
+	}
+}
+
+# Character scope: makes them a secret believer in the old gods and adds them to the story's initiates; $HEAD$ = the story
+# owner
+jip_sabian_initiate_effect = {
+	make_character_crypto_religionist_effect = { CRYPTO_RELIGION = faith:mesopotamian_pagan }
+	save_temporary_scope_as = jip_new_initiate
+	$HEAD$ = {
+		random_owned_story = {
+			type = story_jip_sabian_revival
+			add_to_variable_list = {
+				name = jip_sabian_initiates
+				target = scope:jip_new_initiate
+			}
+		}
+	}
+}
+
+# Character scope: an initiate who recants, giving up the secret faith
+jip_sabian_recant_effect = {
+	if = {
+		limit = { secret_faith ?= faith:mesopotamian_pagan }
+		random_secret = {
+			type = secret_crypto_religionist
+			remove_secret = yes
+		}
+		remove_character_secret_faith = yes
+	}
+}
+
+# root = the family head finishing a contract (jip_contract_finish_effect): a translation, horoscope or cure for a Muslim
+# patron raises the Sabians' standing
+jip_sabian_story_contract_effect = {
+	if = {
+		limit = {
+			jip_owns_sabian_story_trigger = yes
+			OR = {
+				flag:$CONTRACT$ = flag:translate
+				flag:$CONTRACT$ = flag:horoscope
+				flag:$CONTRACT$ = flag:physician
+			}
+			scope:task_contract.task_contract_employer ?= { religion = religion:islam_religion }
+		}
+		if = {
+			limit = { jip_contract_outcome_is_trigger = { OUTCOME = critical } }
+			jip_sabian_story_raise_standing_effect = { VALUE = 2 }
+		}
+		else_if = {
+			limit = { jip_contract_outcome_is_trigger = { OUTCOME = success } }
+			jip_sabian_story_raise_standing_effect = { VALUE = 1 }
+		}
+	}
+}

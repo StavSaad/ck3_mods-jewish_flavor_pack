@@ -156,6 +156,21 @@ jip_mishpacha_leave_faith_effect = {
 				}
 			}
 		}
+		# The Sabian story goes with the family, if the new head keeps the faith
+		scope:jip_convert = {
+			random_owned_story = {
+				type = story_jip_sabian_revival
+				if = {
+					limit = {
+						scope:jip_new_head = { jip_sabian_story_keeper_trigger = yes }
+					}
+					make_story_owner = scope:jip_new_head
+				}
+				else = {
+					end_story = yes
+				}
+			}
+		}
 	}
 	else = {
 		every_held_title = {

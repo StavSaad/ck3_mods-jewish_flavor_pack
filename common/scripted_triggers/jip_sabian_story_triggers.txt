@@ -1,0 +1,69 @@
+﻿# The Return of the Moon God, the Sabian story (common/story_cycles/jip_story_sabian_revival.txt)
+
+# Character scope: may carry the story: a Sabian, or a believer in the old gods once they are restored
+jip_sabian_story_keeper_trigger = {
+	OR = {
+		rite = rite:sabianism
+		faith = faith:mesopotamian_pagan
+	}
+}
+
+# Character scope: owns the Sabian story
+jip_owns_sabian_story_trigger = {
+	any_owned_story = { type = story_jip_sabian_revival }
+}
+
+# Character scope: the story owner's liege or suzerain is a Muslim (the court where the Sabians must win their standing)
+jip_sabian_story_has_muslim_patron_trigger = {
+	any_owned_story = {
+		type = story_jip_sabian_revival
+		var:jip_sabian_patron ?= { religion = religion:islam_religion }
+	}
+}
+
+# Story scope: at least two Sabian Court Astrologers serve Muslim rulers (jip_sabian_astrologer_court_position)
+jip_sabian_astrologers_at_muslim_courts_trigger = {
+	any_ruler = {
+		count >= 2
+		religion = religion:islam_religion
+		any_court_position_holder = {
+			type = jip_sabian_astrologer_court_position
+			rite = rite:sabianism
+		}
+	}
+}
+
+# Character scope: can be initiated into the old gods' mysteries (Keep the Mysteries)
+jip_sabian_initiate_candidate_trigger = {
+	is_adult = yes
+	is_imprisoned = no
+	rite = rite:sabianism
+	NOT = { exists = secret_faith }
+	NOT = { any_secret = { type = secret_crypto_religionist } }
+}
+
+# Character scope ($HEAD$ = the story owner): the head, or an adult of the house or the head's spouse at the head's court,
+# who can be initiated
+jip_sabian_initiate_of_house_trigger = {
+	jip_sabian_initiate_candidate_trigger = yes
+	OR = {
+		this = $HEAD$
+		AND = {
+			is_courtier_of = $HEAD$
+			OR = {
+				house ?= $HEAD$.house
+				is_spouse_of = $HEAD$
+			}
+		}
+	}
+}
+
+# Character scope: an initiate whose secret faith a Muslim has learnt, not yet answered for (jip_sabian_story.1040)
+jip_sabian_initiate_exposed_trigger = {
+	is_alive = yes
+	NOT = { has_variable = jip_sabian_exposure_answered }
+	any_secret = {
+		type = secret_crypto_religionist
+		any_secret_knower = { religion = religion:islam_religion }
+	}
+}
