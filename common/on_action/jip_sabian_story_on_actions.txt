@@ -39,3 +39,25 @@ jip_sabian_story_game_start_after_lobby_on_action = {
 		}
 	}
 }
+
+# Act II ends when the story owner holds Harran, however they came by it
+on_title_gain = {
+	on_actions = {
+		jip_sabian_story_harran_gained_on_action
+	}
+}
+
+# root = the new holder, scope:title = the title
+jip_sabian_story_harran_gained_on_action = {
+	trigger = {
+		scope:title = title:c_harran
+		jip_sabian_story_in_act_trigger = { ACT = 2 }
+	}
+	effect = {
+		jip_sabian_story_set_act_effect = { ACT = 3 }
+		trigger_event = {
+			id = jip_sabian_story.2090
+			days = 2
+		}
+	}
+}

@@ -67,3 +67,54 @@ jip_sabian_initiate_exposed_trigger = {
 		any_secret_knower = { religion = religion:islam_religion }
 	}
 }
+
+### Act II: the Return to Harran
+
+# Character scope: owns the Sabian story in act $ACT$
+jip_sabian_story_in_act_trigger = {
+	any_owned_story = {
+		type = story_jip_sabian_revival
+		var:jip_sabian_act ?= $ACT$
+	}
+}
+
+# Character scope: a story owner in Act II who doesn't hold Harran yet, free to seek it
+jip_sabian_can_seek_harran_trigger = {
+	jip_sabian_story_in_act_trigger = { ACT = 2 }
+	NOT = { has_title = title:c_harran }
+	exists = title:c_harran.holder
+}
+
+# Character scope (the story owner): Harran lies in the patron's realm, so the patron can give it (Petition for Harran)
+jip_sabian_patron_can_give_harran_trigger = {
+	any_owned_story = {
+		type = story_jip_sabian_revival
+		exists = var:jip_sabian_patron
+		title:c_harran.holder ?= {
+			OR = {
+				this = prev.var:jip_sabian_patron
+				target_is_liege_or_above = prev.var:jip_sabian_patron
+			}
+		}
+	}
+}
+
+# A crisis in Harran's realm, when the Harranians could be raised: its count or the count's top liege is at war
+jip_sabian_harran_crisis_trigger = {
+	title:c_harran.holder ?= {
+		OR = {
+			is_at_war = yes
+			top_liege = { is_at_war = yes }
+		}
+	}
+}
+
+# Harran itself still keeps the Sabian faith
+jip_sabian_harran_is_sabian_trigger = {
+	title:c_harran = {
+		OR = {
+			faith = faith:mandaean_faith
+			faith = faith:mesopotamian_pagan
+		}
+	}
+}

@@ -15,3 +15,23 @@ jip_sabian_story_learning_failure_value = {
 	value = 100
 	subtract = jip_sabian_story_learning_chance_value
 }
+
+### Act II: the Return to Harran
+
+# The price of Harran's tax farm: 250 gold, plus 30 per level of development
+jip_sabian_harran_price_value = {
+	value = 250
+	add = {
+		value = title:c_harran.development_level
+		multiply = 30
+	}
+}
+
+# The Harranians who rise: 900 men, plus 25 per level of development
+jip_sabian_harranian_levies_value = {
+	value = 900
+	add = {
+		value = title:c_harran.development_level
+		multiply = 25
+	}
+}

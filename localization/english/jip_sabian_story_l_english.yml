@@ -82,3 +82,64 @@
  jip_sabian_story.1100.desc_self: "When the doors are shut and the lamps are lit below the house, the last of the old men will teach me what the Harranians never told the Muslims: the names of the seven, the Moon's feasts, and Sin, Lord of Harran, who is not yet dead. After tonight, I will keep the Sabian name by day and the old gods by night."
  jip_sabian_story.1100.a: "Let the mysteries pass on"
  jip_sabian_story.1100.b: "Not yet: the time is not right"
+
+ # Act II: the Return to Harran
+ jip_sabian_story_act_3: "Act III: Throw Off the Caliph. Harran is the house's again; only an independent ruler can bring back the old gods."
+ jip_sabian_harranian_army: "The Harranians"
+
+ jip_sabian_petition_for_harran_decision: "Petition for Harran"
+ jip_sabian_petition_for_harran_decision_desc: "Our standing at court has never been higher. Harran lies in our patron's realm, and a ruler can give a county to whomever they please. Who better to govern the city of the Sabians than the house that has served them so well?"
+ jip_sabian_petition_for_harran_decision_tooltip: "Ask your patron to give you the county of Harran"
+ jip_sabian_petition_for_harran_decision_confirm: "Send the petition"
+ jip_sabian_patron_can_give_harran_tt: "Harran is held by your patron, or by someone in your patron's [realm|E]"
+ jip_sabian_petition_for_harran_effect_tt: "Your patron decides whether to give you Harran. A patron who has recognised the Sabians, employs a Sabian Court Astrologer or thinks well of you is more likely to agree; one who would lose Harran from their own domain, or anger a loyal count, less so"
+
+ jip_sabian_buy_harran_decision: "Buy the Tax Farm of Harran"
+ jip_sabian_buy_harran_decision_desc: "Counts need silver more often than they need cities, and Harran's taxes are hard to gather from a people who keep their own feasts. Offer its count a price for the farm of Harran, its revenues and its government, and let the Sabians collect from the Sabians."
+ jip_sabian_buy_harran_decision_tooltip: "Offer Harran's count gold for the county"
+ jip_sabian_buy_harran_decision_confirm: "Make the offer"
+ jip_sabian_buy_harran_gold_tt: "You have at least [GetPlayer.MakeScope.ScriptValue('jip_sabian_harran_price_value')|0] @gold_icon! gold, the price of Harran"
+ jip_sabian_buy_harran_effect_tt: "Harran's count decides whether to sell. The gold is paid only if they agree. A count in need of money, or a greater ruler for whom Harran is one county among many, sells more readily; a count whose only county or seat it is, rarely"
+
+ jip_sabian_raise_the_harranians_decision: "Raise the Harranians"
+ jip_sabian_raise_the_harranians_decision_desc: "Harran's masters are at war, and their eyes are elsewhere. The Sabians of Harran have been taxed, questioned and despised for two hundred years; they need only someone to lead them. If the house calls, the city will rise."
+ jip_sabian_raise_the_harranians_decision_tooltip: "Lead the Sabians of Harran in a rising for the county"
+ jip_sabian_raise_the_harranians_decision_confirm: "Light the beacons"
+ jip_sabian_harran_crisis_tt: "Harran's count, or the ruler at the top of Harran's [realm|E], is at war"
+ jip_sabian_harran_is_sabian_tt: "The county of Harran keeps the Sabian [faith|E]"
+ jip_sabian_raise_the_harranians_effect_tt: "You gain a pressed [claim|E] on Harran and go to war for it against its count, at the head of an army of Harranians that serves until the war ends"
+
+ jip_sabian_story.2010.t: "A Sabian Asks for Harran"
+ jip_sabian_story.2010.desc: "[jip_petitioner.GetTitledFirstName] of the Sabians has come before me with a request: the governorship of Harran, the city of [jip_petitioner.GetHerHis] people.\n\nThe Sabians have served this court well, and Harran's Sabians would be easier to rule through one of their own. But a county given to a star-worshipper's house is a county taken from someone else, and the jurists will talk."
+ jip_sabian_story.2010.a: "Harran is [jip_petitioner.GetHerHis]"
+ jip_sabian_story.2010.b: "I cannot give it"
+
+ jip_sabian_story.2011.t: "The Governorship of Harran"
+ jip_sabian_story.2011.desc: "[jip_harran_liege.GetTitledFirstName] has heard my petition and granted it. The diploma is sealed: the house holds Harran, and the Sabians will be governed by a Sabian for the first time since anyone can remember."
+ jip_sabian_story.2011.a: "To Harran, then"
+
+ jip_sabian_story.2012.t: "The Petition Refused"
+ jip_sabian_story.2012.desc: "[jip_patron.GetTitledFirstName] has refused my petition for Harran. It was politely done, with praise for the Sabians' learning, but a refusal is a refusal. Perhaps in a few years, or with more friends at court, [jip_patron.GetSheHe] will think again. Or perhaps Harran will have to be had another way."
+ jip_sabian_story.2012.a: "There are other roads"
+
+ jip_sabian_story.2020.t: "An Offer for Harran"
+ jip_sabian_story.2020.desc: "[jip_buyer.GetTitledFirstName], head of the Sabians of Baghdad, has offered me [SCOPE.ScriptValue('jip_harran_price')|0] @gold_icon! gold for the farm of Harran: its taxes, its courts and its government. The Sabians, [jip_buyer.GetSheHe] says, will collect from the Sabians more easily than I ever could.\n\nIt is a great deal of silver, and Harran has never been an easy city to rule."
+ jip_sabian_story.2020.a: "Harran is sold"
+ jip_sabian_story.2020.b: "Harran is not for sale"
+
+ jip_sabian_story.2021.t: "The Farm of Harran"
+ jip_sabian_story.2021.desc: "[jip_seller.GetTitledFirstName] has taken the silver, and Harran is ours: its taxes, its courts, and its walls. The Sabians of Harran will be ruled by their own, and the Moon God's temple stands within our county."
+ jip_sabian_story.2021.a: "Silver well spent"
+
+ jip_sabian_story.2022.t: "Not for Sale"
+ jip_sabian_story.2022.desc: "[jip_seller.GetTitledFirstName] will not sell Harran, at that price or any other. Perhaps [jip_seller.GetSheHe] will change [jip_seller.GetHerHis] mind when [jip_seller.GetHerHis] treasury is empty, or perhaps Harran will have to be had another way."
+ jip_sabian_story.2022.a: "We will see"
+
+ jip_sabian_story.2030.t: "Harran Rises"
+ jip_sabian_story.2030.desc: "The word went out, and Harran answered. The Sabians have shut the gates against [jip_harran_loser.GetTitledFirstName]'s men, and from the villages of the plain they come in hundreds, with old spears, farm tools and their fathers' swords.\n\nThey have waited a long time for this. Now we must not lose."
+ jip_sabian_story.2030.a: "For Harran and the Moon"
+
+ jip_sabian_story.2090.t: "Home to Harran"
+ jip_sabian_story.2090.desc: "I have come home to Harran. The old men at the gate wept to see one of their own ride in as its lord, and on the hill the Moon God's temple waits, its doors still shut, its lamps still lit by the few who never stopped.\n\nBut Harran is held of another, and while the house answers to a Muslim lord, the old gods must stay behind closed doors. The Sabians cannot restore what they do not rule outright."
+ jip_sabian_story.2090.a: "The Moon rises over Harran"
+ jip_sabian_story.2090.tt: "The second act of the Return of the Moon God ends: the house must now rule Harran as an independent ruler"

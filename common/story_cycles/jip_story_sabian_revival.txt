@@ -1,7 +1,7 @@
 ﻿# The Return of the Moon God (0.15 plan, section 10): the Sabian storyline, carried by the head of Thabit ibn Qurra's house
 # (d_jip_harrani) from 867 (jip_sabian_story_on_actions.txt), shown in the story window like vanilla's Hasan Sabbah story.
 # Variables on the story:
-#  jip_sabian_act       the act (1 the Sabians of Baghdad, 2 the Return to Harran)
+#  jip_sabian_act       the act (1 the Sabians of Baghdad, 2 the Return to Harran, 3 Throw Off the Caliph)
 #  jip_sabian_standing  the Sabian community's standing, 0-10 (jip_sabian_story_raise/lower_standing_effect); at 10 in
 #                       Act 1 the act ends (jip_sabian_story.1090)
 #  jip_sabian_patron    the owner's liege or suzerain
@@ -35,6 +35,9 @@ story_jip_sabian_revival = {
 		}
 		decisions = {
 			jip_sabian_keep_the_mysteries_decision
+			jip_sabian_petition_for_harran_decision
+			jip_sabian_buy_harran_decision
+			jip_sabian_raise_the_harranians_decision
 		}
 	}
 

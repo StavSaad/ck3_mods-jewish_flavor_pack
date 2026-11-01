@@ -613,3 +613,364 @@ jip_sabian_story.1100 = {
 		}
 	}
 }
+
+#################### Act II: the Return to Harran ####################
+#  2010 The Sabian asks for Harran (to the patron; Petition for Harran)
+#  2011 / 2012 The petition granted / refused (to the story owner)
+#  2020 An offer for Harran's tax farm (to Harran's count; Buy the Tax Farm)
+#  2021 / 2022 The farm sold / refused (to the story owner)
+#  2030 The Harranians rise (Raise the Harranians)
+#  2090 Home to Harran (the owner holds Harran: Act II ends)
+
+# The Sabian asks for Harran (root = the patron)
+jip_sabian_story.2010 = {
+	type = character_event
+	title = jip_sabian_story.2010.t
+	desc = jip_sabian_story.2010.desc
+	theme = realm
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = throne_room_mediterranean }
+	left_portrait = {
+		character = scope:jip_petitioner
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:jip_harran_holder
+		trigger = { scope:jip_harran_holder != root }
+		animation = worry
+	}
+
+	trigger = {
+		exists = scope:jip_petitioner
+		scope:jip_petitioner = { jip_sabian_can_seek_harran_trigger = yes }
+	}
+
+	immediate = {
+		title:c_harran.holder = { save_scope_as = jip_harran_holder }
+	}
+
+	# Grant it
+	option = {
+		name = jip_sabian_story.2010.a
+		save_scope_as = jip_harran_liege
+		if = {
+			limit = { scope:jip_harran_holder != root }
+			scope:jip_harran_holder = {
+				add_opinion = {
+					target = root
+					modifier = angry_opinion
+					opinion = -30
+				}
+			}
+		}
+		scope:jip_petitioner = {
+			jip_sabian_take_harran_effect = { TYPE = granted }
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 30
+			}
+			trigger_event = jip_sabian_story.2011
+		}
+		ai_chance = {
+			base = 25
+			opinion_modifier = {
+				opinion_target = scope:jip_petitioner
+				multiplier = 0.75
+			}
+			modifier = {
+				add = 20
+				primary_title = { has_variable = jip_sabians_recognised }
+			}
+			modifier = {
+				add = 15
+				employs_court_position = jip_sabian_astrologer_court_position
+			}
+			modifier = {
+				add = -30
+				scope:jip_harran_holder = root
+			}
+			modifier = {
+				add = -15
+				scope:jip_harran_holder != root
+				scope:jip_harran_holder = {
+					opinion = {
+						target = root
+						value >= 30
+					}
+				}
+			}
+			ai_value_modifier = {
+				ai_zeal = -0.5
+			}
+			min = 0
+		}
+	}
+
+	# Refuse
+	option = {
+		name = jip_sabian_story.2010.b
+		scope:jip_petitioner = {
+			trigger_event = jip_sabian_story.2012
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# The petition granted (root = the story owner; Harran is already theirs)
+jip_sabian_story.2011 = {
+	type = character_event
+	title = jip_sabian_story.2011.t
+	desc = jip_sabian_story.2011.desc
+	theme = realm
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = throne_room_mediterranean }
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		character = scope:jip_harran_liege
+		animation = personality_honorable
+	}
+
+	option = {
+		name = jip_sabian_story.2011.a
+	}
+}
+
+# The petition refused (root = the story owner)
+jip_sabian_story.2012 = {
+	type = character_event
+	title = jip_sabian_story.2012.t
+	desc = jip_sabian_story.2012.desc
+	theme = realm
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = throne_room_mediterranean }
+	left_portrait = {
+		character = root
+		animation = disappointed
+	}
+	right_portrait = {
+		character = scope:jip_patron
+		animation = dismissal
+	}
+
+	option = {
+		name = jip_sabian_story.2012.a
+	}
+}
+
+# An offer for Harran's tax farm (root = Harran's count)
+jip_sabian_story.2020 = {
+	type = character_event
+	title = jip_sabian_story.2020.t
+	desc = jip_sabian_story.2020.desc
+	theme = stewardship
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = market_east }
+	left_portrait = {
+		character = scope:jip_buyer
+		animation = personality_rational
+	}
+
+	trigger = {
+		exists = scope:jip_buyer
+		has_title = title:c_harran
+		scope:jip_buyer = { jip_sabian_can_seek_harran_trigger = yes }
+	}
+
+	# Sell
+	option = {
+		name = jip_sabian_story.2020.a
+		trigger = {
+			scope:jip_buyer.gold >= scope:jip_harran_price
+		}
+		show_as_unavailable = { always = yes }
+		jip_sabian_harran_sale_liege_effect = yes
+		scope:jip_buyer = {
+			remove_short_term_gold = scope:jip_harran_price
+		}
+		add_gold = scope:jip_harran_price
+		scope:jip_buyer = {
+			jip_sabian_take_harran_effect = { TYPE = granted }
+			trigger_event = jip_sabian_story.2021
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 30
+				gold < 100
+			}
+			opinion_modifier = {
+				opinion_target = scope:jip_buyer
+				multiplier = 0.5
+			}
+			ai_value_modifier = {
+				ai_greed = 0.5
+			}
+			modifier = {
+				factor = 2
+				highest_held_title_tier >= tier_kingdom
+			}
+			modifier = {
+				factor = 0.25
+				capital_county = title:c_harran
+			}
+			modifier = {
+				factor = 0.1
+				NOT = {
+					any_held_title = {
+						tier = tier_county
+						this != title:c_harran
+					}
+				}
+			}
+			min = 0
+		}
+	}
+
+	# Refuse
+	option = {
+		name = jip_sabian_story.2020.b
+		scope:jip_buyer = {
+			trigger_event = jip_sabian_story.2022
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# The farm sold (root = the story owner)
+jip_sabian_story.2021 = {
+	type = character_event
+	title = jip_sabian_story.2021.t
+	desc = jip_sabian_story.2021.desc
+	theme = stewardship
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = market_east }
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		character = scope:jip_seller
+		animation = personality_greedy
+	}
+
+	option = {
+		name = jip_sabian_story.2021.a
+	}
+}
+
+# The farm refused (root = the story owner)
+jip_sabian_story.2022 = {
+	type = character_event
+	title = jip_sabian_story.2022.t
+	desc = jip_sabian_story.2022.desc
+	theme = stewardship
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = market_east }
+	left_portrait = {
+		character = root
+		animation = disappointed
+	}
+	right_portrait = {
+		character = scope:jip_seller
+		animation = dismissal
+	}
+
+	option = {
+		name = jip_sabian_story.2022.a
+	}
+}
+
+# The Harranians rise (root = the story owner; the war has begun)
+jip_sabian_story.2030 = {
+	type = character_event
+	title = jip_sabian_story.2030.t
+	desc = jip_sabian_story.2030.desc
+	theme = war
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = army_camp }
+	left_portrait = {
+		character = root
+		animation = war_attacker
+	}
+	right_portrait = {
+		character = scope:jip_harran_loser
+		animation = war_defender
+	}
+
+	option = {
+		name = jip_sabian_story.2030.a
+	}
+}
+
+# Home to Harran: Act II ends (root = the story owner, who now holds Harran)
+jip_sabian_story.2090 = {
+	type = character_event
+	title = jip_sabian_story.2090.t
+	desc = jip_sabian_story.2090.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = temple }
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	trigger = {
+		jip_owns_sabian_story_trigger = yes
+	}
+
+	option = {
+		name = jip_sabian_story.2090.a
+		add_prestige = major_prestige_gain
+		add_piety = medium_piety_gain
+		custom_tooltip = jip_sabian_story.2090.tt
+	}
+}

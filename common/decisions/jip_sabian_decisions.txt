@@ -159,3 +159,188 @@ jip_sabian_keep_the_mysteries_decision = {
 		}
 	}
 }
+
+# The Sabian story, Act II (the Return to Harran): three roads to the county of Harran. Any of them ends the act
+# (jip_sabian_story_harran_gained_on_action), as does gaining Harran any other way.
+
+# Petition for Harran: the patron (liege or suzerain) decides in jip_sabian_story.2010
+jip_sabian_petition_for_harran_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	desc = jip_sabian_petition_for_harran_decision_desc
+	selection_tooltip = jip_sabian_petition_for_harran_decision_tooltip
+	decision_group_type = jip_story_sabian_revival
+	sort_order = 90
+	ai_check_interval = 24
+
+	cooldown = { years = 5 }
+
+	is_shown = {
+		jip_sabian_story_in_act_trigger = { ACT = 2 }
+	}
+
+	is_valid = {
+		jip_sabian_can_seek_harran_trigger = yes
+		custom_tooltip = {
+			text = jip_sabian_patron_can_give_harran_tt
+			jip_sabian_patron_can_give_harran_trigger = yes
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	cost = { prestige = 250 }
+
+	effect = {
+		random_owned_story = {
+			type = story_jip_sabian_revival
+			var:jip_sabian_patron = { save_scope_as = jip_patron }
+		}
+		save_scope_as = jip_petitioner
+		custom_tooltip = jip_sabian_petition_for_harran_effect_tt
+		scope:jip_patron = {
+			trigger_event = jip_sabian_story.2010
+		}
+	}
+
+	ai_potential = {
+		jip_sabian_story_in_act_trigger = { ACT = 2 }
+	}
+
+	ai_will_do = {
+		base = 50
+	}
+}
+
+# Buy the Tax Farm: Harran's count decides in jip_sabian_story.2020; the gold is paid only if they sell
+jip_sabian_buy_harran_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
+	}
+	desc = jip_sabian_buy_harran_decision_desc
+	selection_tooltip = jip_sabian_buy_harran_decision_tooltip
+	decision_group_type = jip_story_sabian_revival
+	sort_order = 80
+	ai_check_interval = 24
+
+	cooldown = { years = 3 }
+
+	is_shown = {
+		jip_sabian_story_in_act_trigger = { ACT = 2 }
+	}
+
+	is_valid = {
+		jip_sabian_can_seek_harran_trigger = yes
+		custom_tooltip = {
+			text = jip_sabian_buy_harran_gold_tt
+			gold >= jip_sabian_harran_price_value
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	effect = {
+		save_scope_as = jip_buyer
+		title:c_harran.holder = { save_scope_as = jip_seller }
+		save_scope_value_as = {
+			name = jip_harran_price
+			value = jip_sabian_harran_price_value
+		}
+		custom_tooltip = jip_sabian_buy_harran_effect_tt
+		scope:jip_seller = {
+			trigger_event = jip_sabian_story.2020
+		}
+	}
+
+	ai_potential = {
+		jip_sabian_story_in_act_trigger = { ACT = 2 }
+	}
+
+	ai_will_do = {
+		base = 40
+		modifier = {
+			factor = 0
+			gold < {
+				value = jip_sabian_harran_price_value
+				multiply = 1.5
+			}
+		}
+	}
+}
+
+# Raise the Harranians: while Harran's realm is at war, the Sabians of Harran rise for the house (a claim war, with an army
+# of Harranians)
+jip_sabian_raise_the_harranians_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_siege_warfare.dds"
+	}
+	desc = jip_sabian_raise_the_harranians_decision_desc
+	selection_tooltip = jip_sabian_raise_the_harranians_decision_tooltip
+	decision_group_type = jip_story_sabian_revival
+	sort_order = 70
+	ai_check_interval = 12
+
+	cooldown = { years = 5 }
+
+	is_shown = {
+		jip_sabian_story_in_act_trigger = { ACT = 2 }
+	}
+
+	is_valid = {
+		jip_sabian_can_seek_harran_trigger = yes
+		custom_tooltip = {
+			text = jip_sabian_harran_crisis_tt
+			jip_sabian_harran_crisis_trigger = yes
+		}
+		custom_tooltip = {
+			text = jip_sabian_harran_is_sabian_tt
+			jip_sabian_harran_is_sabian_trigger = yes
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	cost = {
+		gold = 100
+		prestige = 300
+	}
+
+	effect = {
+		custom_tooltip = jip_sabian_raise_the_harranians_effect_tt
+		jip_sabian_raise_the_harranians_effect = yes
+		trigger_event = jip_sabian_story.2030
+	}
+
+	ai_potential = {
+		jip_sabian_story_in_act_trigger = { ACT = 2 }
+	}
+
+	ai_will_do = {
+		base = 10
+		modifier = {
+			add = 20
+			has_trait = ambitious
+		}
+		modifier = {
+			add = 20
+			martial >= 12
+		}
+		modifier = {
+			factor = 0
+			has_trait = craven
+		}
+	}
+}
