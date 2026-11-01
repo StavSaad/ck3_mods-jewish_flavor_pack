@@ -72,9 +72,12 @@ jip_sabian_initiate_exposed_trigger = {
 
 # Character scope: owns the Sabian story in act $ACT$
 jip_sabian_story_in_act_trigger = {
-	any_owned_story = {
-		type = story_jip_sabian_revival
-		var:jip_sabian_act ?= $ACT$
+	custom_tooltip = {
+		text = jip_sabian_story_in_act_$ACT$_tt
+		any_owned_story = {
+			type = story_jip_sabian_revival
+			var:jip_sabian_act ?= $ACT$
+		}
 	}
 }
 
@@ -127,4 +130,19 @@ jip_sabian_can_proclaim_freedom_trigger = {
 	has_title = title:c_harran
 	is_independent_ruler = no
 	exists = liege
+}
+
+### Act IV: Restore the Old Gods
+
+# Character scope: owns the Sabian story and has unveiled the mysteries
+jip_sabian_story_unveiled_trigger = {
+	any_owned_story = {
+		type = story_jip_sabian_revival
+		has_variable = jip_sabian_unveiled
+	}
+}
+
+# The Temple of Sin (jip_temple_of_sin_01) stands at Harran
+jip_sabian_temple_of_sin_stands_trigger = {
+	title:b_harran.title_province = { has_building = jip_temple_of_sin_01 }
 }

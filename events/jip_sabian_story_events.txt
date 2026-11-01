@@ -1171,3 +1171,77 @@ jip_sabian_story.3090 = {
 		custom_tooltip = jip_sabian_story.3090.tt
 	}
 }
+
+#################### Act IV: Restore the Old Gods ####################
+#  4010 The mysteries unveiled (Unveil the Mysteries): name a High Priest of Sin, or not
+#  4090 The New Year in Harran (the first Akitu or Feast of Nisan after the unveiling: Act IV ends)
+
+# The mysteries unveiled (root = the story owner)
+jip_sabian_story.4010 = {
+	type = character_event
+	title = jip_sabian_story.4010.t
+	desc = jip_sabian_story.4010.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = temple }
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+
+	# Name a High Priest of Sin
+	option = {
+		name = jip_sabian_story.4010.a
+		custom_tooltip = jip_sabian_story.4010.a.tt
+		custom_tooltip = jip_sabian_story.4010.tt
+		jip_sabian_name_high_priest_effect = yes
+		ai_chance = {
+			base = 70
+		}
+	}
+
+	# The chaplain who serves now will do
+	option = {
+		name = jip_sabian_story.4010.b
+		add_piety = medium_piety_gain
+		custom_tooltip = jip_sabian_story.4010.tt
+		ai_chance = {
+			base = 30
+		}
+	}
+}
+
+# The New Year in Harran: Act IV ends (root = the story owner)
+jip_sabian_story.4090 = {
+	type = character_event
+	title = jip_sabian_story.4090.t
+	desc = jip_sabian_story.4090.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = temple }
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	trigger = {
+		jip_owns_sabian_story_trigger = yes
+	}
+
+	option = {
+		name = jip_sabian_story.4090.a
+		add_piety = major_piety_gain
+		add_prestige = medium_prestige_gain
+		custom_tooltip = jip_sabian_story.4090.tt
+	}
+}

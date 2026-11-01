@@ -82,15 +82,22 @@ jip_sabian_story_check_standing_effect = {
 	}
 }
 
-# Story scope: the patron is the owner's liege, or the suzerain of a tributary family
+# Story scope: the patron is the owner's liege, or the suzerain of a tributary family; from Act IV, when Harran is free,
+# there is none
 jip_sabian_story_update_patron_effect = {
 	story_owner = {
 		if = {
-			limit = { is_independent_ruler = no }
+			limit = {
+				is_independent_ruler = no
+				prev.var:jip_sabian_act < 4
+			}
 			liege = { save_scope_as = jip_sabian_patron }
 		}
 		else_if = {
-			limit = { exists = suzerain }
+			limit = {
+				exists = suzerain
+				prev.var:jip_sabian_act < 4
+			}
 			suzerain = { save_scope_as = jip_sabian_patron }
 		}
 	}
@@ -298,6 +305,7 @@ jip_sabian_grant_freedom_effect = {
 	add_truce_both_ways = {
 		character = scope:jip_rebel
 		days = 1825
+		name = jip_sabian_freedom_truce
 	}
 }
 
@@ -323,5 +331,99 @@ jip_sabian_fight_for_freedom_effect = {
 		uses_supply = yes
 		war = scope:jip_freedom_war
 		name = jip_sabian_harranian_army
+	}
+}
+
+### Act IV: Restore the Old Gods
+
+# Character scope (the story owner): the mysteries unveiled. The owner proclaims the old gods if they haven't (ruler, capital,
+# Harran: jip_proclaim_old_gods_effect), the initiates give up their secret and take the owner's rite, and so do the Sabians
+# of the court, the realm's Sabian vassals and its Sabian counties. Muslim neighbours resent it, and their faiths grow
+# fervent
+jip_sabian_unveil_the_mysteries_effect = {
+	if = {
+		limit = { NOT = { faith = faith:mesopotamian_pagan } }
+		jip_proclaim_old_gods_effect = yes
+	}
+	rite = { save_scope_as = jip_old_gods_rite }
+	random_owned_story = {
+		type = story_jip_sabian_revival
+		every_in_list = {
+			variable = jip_sabian_initiates
+			limit = { is_alive = yes }
+			jip_sabian_recant_effect = yes
+			if = {
+				limit = { NOT = { faith = faith:mesopotamian_pagan } }
+				set_character_rite = scope:jip_old_gods_rite
+			}
+		}
+		set_variable = jip_sabian_unveiled
+	}
+	every_courtier = {
+		limit = { rite = rite:sabianism }
+		set_character_rite = scope:jip_old_gods_rite
+	}
+	every_vassal_or_below = {
+		limit = { rite = rite:sabianism }
+		set_character_rite = scope:jip_old_gods_rite
+	}
+	every_sub_realm_county = {
+		limit = { rite = rite:sabianism }
+		set_county_rite = scope:jip_old_gods_rite
+	}
+	every_neighboring_and_across_water_top_liege_realm_owner = {
+		limit = { religion = religion:islam_religion }
+		add_opinion = {
+			target = root
+			modifier = jip_restored_old_gods_opinion
+		}
+		faith = { add_to_temporary_list = jip_angered_faiths }
+	}
+	every_in_list = {
+		list = jip_angered_faiths
+		change_fervor = {
+			value = slight_fervor_gain
+			desc = fervor_gain_jip_old_gods_restored
+		}
+	}
+}
+
+# Character scope (the story owner): a High Priest of Sin, of the owner's rite, becomes their court chaplain
+jip_sabian_name_high_priest_effect = {
+	create_character = {
+		location = root.capital_province
+		culture = root.culture
+		faith = root.faith
+		gender_female_chance = 0
+		age = { 40 60 }
+		learning = { 12 18 }
+		trait = education_learning_3
+		trait = zealous
+		employer = root
+		save_scope_as = jip_high_priest
+	}
+	scope:jip_high_priest = {
+		set_character_rite = root.rite
+		give_nickname = nick_jip_high_priest_of_sin
+	}
+	assign_councillor_type = {
+		type = councillor_court_chaplain
+		target = scope:jip_high_priest
+	}
+}
+
+# Character scope (a feast's host): the New Year kept (Akitu, jip_feast.1004, or the Feast of Nisan for the old faith,
+# jip_feast.2004). After the unveiling, the first one ends Act IV
+jip_sabian_story_new_year_kept_effect = {
+	if = {
+		limit = {
+			jip_sabian_story_in_act_trigger = { ACT = 4 }
+			jip_sabian_story_unveiled_trigger = yes
+		}
+		jip_sabian_story_set_act_effect = { ACT = 5 }
+		trigger_event = {
+			id = jip_sabian_story.4090
+			days = 3
+		}
 	}
 }

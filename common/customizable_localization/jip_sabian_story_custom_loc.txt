@@ -5,6 +5,15 @@ JipSabianStoryAct = {
 		trigger = {
 			any_owned_story = {
 				type = story_jip_sabian_revival
+				var:jip_sabian_act ?= 5
+			}
+		}
+		localization_key = jip_sabian_story_act_5
+	}
+	text = {
+		trigger = {
+			any_owned_story = {
+				type = story_jip_sabian_revival
 				var:jip_sabian_act ?= 4
 			}
 		}

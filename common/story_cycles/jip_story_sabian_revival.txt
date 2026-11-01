@@ -2,7 +2,8 @@
 # (d_jip_harrani) from 867 (jip_sabian_story_on_actions.txt), shown in the story window like vanilla's Hasan Sabbah story.
 # Variables on the story:
 #  jip_sabian_act       the act (1 the Sabians of Baghdad, 2 the Return to Harran, 3 Throw Off the Caliph, 4 Restore
-#                       the Old Gods)
+#                       the Old Gods, 5 Reclaim the Land)
+#  jip_sabian_unveiled  set when the mysteries are unveiled (Act IV); the act ends at the next New Year kept
 #  jip_sabian_standing  the Sabian community's standing, 0-10 (jip_sabian_story_raise/lower_standing_effect); at 10 in
 #                       Act 1 the act ends (jip_sabian_story.1090)
 #  jip_sabian_patron    the owner's liege or suzerain
@@ -40,6 +41,7 @@ story_jip_sabian_revival = {
 			jip_sabian_buy_harran_decision
 			jip_sabian_raise_the_harranians_decision
 			jip_sabian_proclaim_freedom_decision
+			jip_sabian_unveil_the_mysteries_decision
 		}
 	}
 
@@ -173,7 +175,57 @@ story_jip_sabian_revival = {
 						name = jip_sabian_act
 						value = 4
 					}
+					remove_variable = jip_sabian_patron
 					story_owner = { trigger_event = jip_sabian_story.3090 }
+				}
+			}
+		}
+	}
+
+	# Act IV: Harran lost sends the story back to Act II, Harran's freedom lost back to Act III
+	effect_group = {
+		months = 1
+
+		trigger = {
+			var:jip_sabian_act = 4
+		}
+
+		first_valid = {
+			triggered_effect = {
+				trigger = {
+					story_owner = { NOT = { has_title = title:c_harran } }
+				}
+				effect = {
+					set_variable = {
+						name = jip_sabian_act
+						value = 2
+					}
+					story_owner = {
+						send_interface_toast = {
+							type = event_toast_effect_bad
+							title = jip_sabian_story_harran_lost_toast
+							custom_tooltip = jip_sabian_story_harran_lost_tt
+						}
+					}
+				}
+			}
+			triggered_effect = {
+				trigger = {
+					story_owner = { is_independent_ruler = no }
+				}
+				effect = {
+					set_variable = {
+						name = jip_sabian_act
+						value = 3
+					}
+					jip_sabian_story_update_patron_effect = yes
+					story_owner = {
+						send_interface_toast = {
+							type = event_toast_effect_bad
+							title = jip_sabian_story_freedom_lost_toast
+							custom_tooltip = jip_sabian_story_freedom_lost_tt
+						}
+					}
 				}
 			}
 		}

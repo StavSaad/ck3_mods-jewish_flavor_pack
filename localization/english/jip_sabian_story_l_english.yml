@@ -174,3 +174,37 @@
  jip_sabian_story.3090.desc: "For the first time since the Romans came, Harran answers to no one but its own. No caliph's governor sits in the citadel, no qadi will ask the Sabians what book they follow.\n\nOn the hill, the Moon God's temple waits. Its stones are old and its roof has fallen, but the Ehulhul stood there before Babylon was great, and it can stand again. The Sabians need only build it, and the gods of their fathers can be worshipped in the open."
  jip_sabian_story.3090.a: "Let the temple rise"
  jip_sabian_story.3090.tt: "The third act of the Return of the Moon God ends. The great project to Restore the Temple of Sin at Harran is now open to you"
+
+ # Fixes, and the acts' checks
+ jip_sabian_story_in_act_1_tt: "The Return of the Moon God is in its first act"
+ jip_sabian_story_in_act_2_tt: "The Return of the Moon God is in its second act, the Return to Harran"
+ jip_sabian_story_in_act_3_tt: "The Return of the Moon God is in its third act, Throw Off the Caliph"
+ jip_sabian_story_in_act_4_tt: "The Return of the Moon God is in its fourth act, Restore the Old Gods"
+ jip_sabian_story_in_act_5_tt: "The Return of the Moon God is in its fifth act, Reclaim the Land"
+ jip_sabian_freedom_truce: "Harran's Freedom"
+ jip_sabian_story_freedom_lost_toast: "Harran Is No Longer Free"
+ jip_sabian_story_freedom_lost_tt: "Under a liege again, the Return of the Moon God goes back to its third act: Harran must win its freedom again"
+
+ # Act IV: Restore the Old Gods
+ jip_sabian_story_act_5: "Act V: Reclaim the Land. The old gods are home in Harran; now their cities and their statues must be won back."
+ jip_sabian_unveil_the_mysteries_decision: "Unveil the Mysteries"
+ jip_sabian_unveil_the_mysteries_decision_desc: "The Ehulhul stands again on the hill of Harran, and no caliph can tell us whom to worship in it. For two hundred years the old gods were kept in cellars and whispered over at night. Let the doors open: let every Sabian who kept the mysteries say so aloud, and let Harran see its gods."
+ jip_sabian_unveil_the_mysteries_decision_tooltip: "Reveal the old faith of the Sabians, openly, to the world"
+ jip_sabian_unveil_the_mysteries_decision_confirm: "Open the doors"
+ jip_sabian_temple_of_sin_stands_tt: "The Temple of Sin has been restored at Harran"
+ jip_sabian_unveil_the_mysteries_effect_tt: "You proclaim the old gods, if you have not already. The Keepers of the Mysteries give up their secret and take your [rite|E], and so do the Sabians of your [court|E], your Sabian [vassals|E] and the Sabian [counties|E] of your [realm|E]. Your Muslim neighbours resent it, and their [faiths|E] gain [fervor|E]"
+ jip_restored_old_gods_opinion: "Restored the Old Gods"
+ fervor_gain_jip_old_gods_restored: "The old gods worshipped openly at Harran"
+ nick_jip_high_priest_of_sin: "High Priest of Sin"
+
+ jip_sabian_story.4010.t: "The Mysteries Unveiled"
+ jip_sabian_story.4010.desc: "At dawn the doors of the Ehulhul stood open, and the Sabians came up the hill: not by night, not one by one, but all together, the old men in front with the lamps they had kept lit in cellars all their lives. They spoke the names of the seven aloud in the street, and nobody stopped them.\n\nThe temple needs a priest who is not afraid to be seen. And when the spring comes, the New Year must be kept as it was in the days of the kings, with the god brought out among his people."
+ jip_sabian_story.4010.a: "Name a High Priest of Sin"
+ jip_sabian_story.4010.a.tt: "A learned and zealous priest of your [rite|E] joins your [court|E] as your [court_chaplain|E]"
+ jip_sabian_story.4010.b: "Our chaplain will serve"
+ jip_sabian_story.4010.tt: "Hold the Akitu, or the Feast of Nisan, in the spring to end the fourth act"
+
+ jip_sabian_story.4090.t: "The New Year in Harran"
+ jip_sabian_story.4090.desc: "For the first time in a thousand years, the New Year has been kept in Harran as the old kings kept it: the god carried out among his people, the fates of the year fixed, and no one hiding.\n\nThe old gods are home. But their other houses still lie in ruins, at Arbela, at Ashur, at Palmyra and at Hatra, and the statues that once stood in them were carried off long ago. The gods have more cities to come home to."
+ jip_sabian_story.4090.a: "The gods are home"
+ jip_sabian_story.4090.tt: "The fourth act of the Return of the Moon God ends"

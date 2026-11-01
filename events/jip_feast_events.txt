@@ -388,6 +388,7 @@ jip_feast.1004 = {
 			value = current_year
 		}
 		jip_akitu_clear_neglect_effect = yes
+		jip_sabian_story_new_year_kept_effect = yes
 	}
 }
 
@@ -777,6 +778,7 @@ jip_feast.2004 = {
 				}
 			}
 			jip_akitu_clear_neglect_effect = yes
+			jip_sabian_story_new_year_kept_effect = yes
 		}
 	}
 }
