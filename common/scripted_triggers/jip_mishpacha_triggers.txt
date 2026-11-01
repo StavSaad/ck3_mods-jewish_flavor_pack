@@ -69,11 +69,12 @@ jip_is_sabian_family_trigger = {
 }
 
 # Character scope: a Sabian for the families' features (branches, court positions, texts, arms): of the Sabian rite, or of
-# Sinism, which the Sabians take up openly when the Sabian story unveils the mysteries (jip_sabian_unveil_the_mysteries_effect)
+# the old faith (Mesopotamianism, either rite), which the Sabians take up openly when the Sabian story unveils the mysteries
+# (jip_sabian_unveil_the_mysteries_effect)
 jip_is_sabian_rite_trigger = {
 	OR = {
 		rite = rite:sabianism
-		rite = rite:sinism
+		faith = faith:mesopotamian_pagan
 	}
 }
 

@@ -18,7 +18,7 @@ FLAVOURS = {
         subs=[('jip_yeshiva_0', 'library_observatory_0'), ('court_position_jip_yeshiva', 'court_position_jip_observatory'),
               ('jip_beit_din_0', 'jip_diwan_0'), ('court_position_jip_beit_din', 'court_position_jip_diwan'),
               ('jip_beit_knesset_0', 'jip_haykal_0'), ('court_position_jip_beit_knesset', 'court_position_jip_haykal')],
-        rite='sabianism', is_rite='jip_is_sabian_rite_trigger = yes'),  # Sabianism or, once unveiled, Sinism
+        rite='sabianism', is_rite='jip_is_sabian_rite_trigger = yes'),  # Sabianism or the old faith
     'mandaean': dict(
         positions={
             'jip_rosh_yeshiva': 'jip_ganzibra',
