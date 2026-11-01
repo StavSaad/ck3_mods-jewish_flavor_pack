@@ -3603,7 +3603,7 @@ e_persia = {
 			capital = c_baghdad
 
 			cultural_names = {
-				name_list_canaanite = cn_babylon
+				name_list_canaanite = cn_akkad
 				name_list_ashkenazi = cn_bavel
 				name_list_sephardi = cn_bavel
 				name_list_radhanite = cn_bavel
