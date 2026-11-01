@@ -455,8 +455,8 @@ jip_sabian_unveil_the_mysteries_decision = {
 	}
 }
 
-# The Sabian story, Act V (Reclaim the Land): a pressed claim on the nearest of the old cult cities (Harran, Arbela,
-# Nineveh, Mosul, Palmyra) that lies outside the realm and isn't of the old faith; vanilla's claim war takes it
+# The Sabian story, Act V (Reclaim the Land): a pressed claim on the first of the old cult cities (Harran, Mosul, Nineveh,
+# Arbela, Palmyra, Babylon in Kufa) that lies outside the realm and isn't of the old faith; vanilla's claim war takes it
 jip_sabian_claim_cult_city_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"

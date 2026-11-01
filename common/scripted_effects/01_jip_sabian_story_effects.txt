@@ -438,7 +438,7 @@ jip_sabian_story_new_year_kept_effect = {
 ### Act V: Reclaim the Land
 
 # Character scope (the story owner): a pressed claim on the first cult city, in the order Harran, Mosul (Ashur and Hatra),
-# Nineveh, Arbela, Palmyra, that lies outside the realm and isn't of the old faith
+# Nineveh, Arbela, Palmyra, Babylon (Kufa), that lies outside the realm and isn't of the old faith
 jip_sabian_claim_cult_city_effect = {
 	if = {
 		limit = { title:c_harran = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } } }
@@ -459,6 +459,10 @@ jip_sabian_claim_cult_city_effect = {
 	else_if = {
 		limit = { title:c_palmyra = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } } }
 		title:c_palmyra = { save_scope_as = jip_cult_city }
+	}
+	else_if = {
+		limit = { title:c_kufa = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } } }
+		title:c_kufa = { save_scope_as = jip_cult_city }
 	}
 	if = {
 		limit = { exists = scope:jip_cult_city }

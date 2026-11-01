@@ -149,7 +149,8 @@ jip_sabian_temple_of_sin_stands_trigger = {
 
 ### Act V: Reclaim the Land
 
-# The old cult cities whose counties the story may claim: Harran, Arbela, Nineveh, Mosul (Ashur and Hatra) and Palmyra
+# The old cult cities whose counties the story may claim: Harran, Arbela, Nineveh, Mosul (Ashur and Hatra), Palmyra and
+# Kufa, where Babylon lies (b_al-hila, vanilla's Babylon holy site)
 jip_sabian_is_cult_city_trigger = {
 	OR = {
 		this = title:c_harran
@@ -157,6 +158,7 @@ jip_sabian_is_cult_city_trigger = {
 		this = title:c_ninive
 		this = title:c_mosul
 		this = title:c_palmyra
+		this = title:c_kufa
 	}
 }
 
@@ -178,6 +180,7 @@ jip_sabian_has_cult_city_to_claim_trigger = {
 		title:c_ninive = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
 		title:c_mosul = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
 		title:c_palmyra = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
+		title:c_kufa = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
 	}
 }
 
