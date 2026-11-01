@@ -333,6 +333,29 @@ GetActualBishopTitle = {
 		}
 		localization_key = councillor_court_chaplain_kohanism_religion
 	}
+
+	#Mesopotamianism: a priestess is an Entu, like Nabonidus' daughter at Ur; a priest of Ashurism a Shangu (the Assyrian
+	#kings were the shangu of Ashur), of Sinism and the other rites a Kumra (Aramaic: the priests of the moon god at Neirab)
+	text = {
+		trigger = {
+			faith = faith:mesopotamian_pagan
+			is_female = yes
+		}
+		localization_key = councillor_court_chaplain_mesopotamian_female
+	}
+	text = {
+		trigger = {
+			faith = faith:mesopotamian_pagan
+			rite = rite:ashurism
+		}
+		localization_key = councillor_court_chaplain_ashurism
+	}
+	text = {
+		trigger = {
+			faith = faith:mesopotamian_pagan
+		}
+		localization_key = councillor_court_chaplain_mesopotamian
+	}
 	
 	#Hellenic
 	text = {
@@ -1771,6 +1794,29 @@ GetActualBishopTitlePossessive = {
 			faith.religion = faith:kohanism.religion
 		}
 		localization_key = councillor_court_chaplain_kohanism_religion_possessive
+	}
+
+	#Mesopotamianism: a priestess is an Entu, like Nabonidus' daughter at Ur; a priest of Ashurism a Shangu (the Assyrian
+	#kings were the shangu of Ashur), of Sinism and the other rites a Kumra (Aramaic: the priests of the moon god at Neirab)
+	text = {
+		trigger = {
+			faith = faith:mesopotamian_pagan
+			is_female = yes
+		}
+		localization_key = councillor_court_chaplain_mesopotamian_female_possessive
+	}
+	text = {
+		trigger = {
+			faith = faith:mesopotamian_pagan
+			rite = rite:ashurism
+		}
+		localization_key = councillor_court_chaplain_ashurism_possessive
+	}
+	text = {
+		trigger = {
+			faith = faith:mesopotamian_pagan
+		}
+		localization_key = councillor_court_chaplain_mesopotamian_possessive
 	}
 	
 	#Hellenic
