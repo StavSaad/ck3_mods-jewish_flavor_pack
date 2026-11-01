@@ -46,12 +46,13 @@ mesopotamian_pagan = {
 		reformed_icon = mesopotamian_reformed
 	}
 
-	# The sites of the great projects (0.15 plan, section 5): Sinism's Temple of Sin and Ashurism's Temple of Ashur
-	# eminent, the Temple of Bel, the Temple of Ishtar and the Nineveh dig. Hatra is not one: it shares the county of
-	# Mosul with Ashur
+	# The sites of the great projects (0.15 plan, section 5): Sinism's Temple of Sin, Ashurism's Temple of Ashur and
+	# Marduk's Esagila at Babylon (vanilla's babylon site, shared with Judaism) eminent, the Temple of Bel, the Temple of
+	# Ishtar and the Nineveh dig. Hatra is not one: it shares the county of Mosul with Ashur
 	eminent_holy_sites = {
 		harran
 		ashur
+		babylon
 	}
 
 	holy_sites = {
