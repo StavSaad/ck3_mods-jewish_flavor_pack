@@ -356,6 +356,37 @@ GetActualBishopTitle = {
 		}
 		localization_key = councillor_court_chaplain_mesopotamian
 	}
+
+	#Canaanism: a priest of Baalism or Tanitism is a Kohen (Phoenician and Punic khn), the chief priest of a king's court
+	#a Rab Kohanim (rb khnm, attested at Carthage); a Yahwist priest a Komer (the kemarim of the high places, 2 Kings 23:5);
+	#a priestess a Kohenet (Punic khnt)
+	text = {
+		trigger = {
+			faith = faith:semitic_pagan
+			is_female = yes
+		}
+		localization_key = councillor_court_chaplain_canaanite_female
+	}
+	text = {
+		trigger = {
+			faith = faith:semitic_pagan
+			rite = rite:yahwism
+		}
+		localization_key = councillor_court_chaplain_yahwism
+	}
+	text = {
+		trigger = {
+			faith = faith:semitic_pagan
+			liege.highest_held_title_tier >= tier_kingdom
+		}
+		localization_key = councillor_court_chaplain_canaanite_kingdom
+	}
+	text = {
+		trigger = {
+			faith = faith:semitic_pagan
+		}
+		localization_key = councillor_court_chaplain_canaanite
+	}
 	
 	#Hellenic
 	text = {
@@ -1817,6 +1848,37 @@ GetActualBishopTitlePossessive = {
 			faith = faith:mesopotamian_pagan
 		}
 		localization_key = councillor_court_chaplain_mesopotamian_possessive
+	}
+
+	#Canaanism: a priest of Baalism or Tanitism is a Kohen (Phoenician and Punic khn), the chief priest of a king's court
+	#a Rab Kohanim (rb khnm, attested at Carthage); a Yahwist priest a Komer (the kemarim of the high places, 2 Kings 23:5);
+	#a priestess a Kohenet (Punic khnt)
+	text = {
+		trigger = {
+			faith = faith:semitic_pagan
+			is_female = yes
+		}
+		localization_key = councillor_court_chaplain_canaanite_female_possessive
+	}
+	text = {
+		trigger = {
+			faith = faith:semitic_pagan
+			rite = rite:yahwism
+		}
+		localization_key = councillor_court_chaplain_yahwism_possessive
+	}
+	text = {
+		trigger = {
+			faith = faith:semitic_pagan
+			liege.highest_held_title_tier >= tier_kingdom
+		}
+		localization_key = councillor_court_chaplain_canaanite_kingdom_possessive
+	}
+	text = {
+		trigger = {
+			faith = faith:semitic_pagan
+		}
+		localization_key = councillor_court_chaplain_canaanite_possessive
 	}
 	
 	#Hellenic
