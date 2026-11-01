@@ -9,7 +9,8 @@
 #  jip_sabian_standing  the Sabian community's standing, 0-10 (jip_sabian_story_raise/lower_standing_effect); at 10 in
 #                       Act 1 the act ends (jip_sabian_story.1090)
 #  jip_sabian_patron    the owner's liege or suzerain
-#  jip_sabian_initiates the house's secret believers in the old gods (list; Keep the Mysteries)
+#  jip_sabian_initiates the house's secret believers in the old gods (list; Keep the Mysteries), cleared when the
+#                       mysteries are unveiled (Act IV)
 #  jip_sabian_seen_*    the Act 1 events that have fired once; jip_sabian_cooldown_* the repeatable ones' waits
 # Events in events/jip_sabian_story_events.txt; effects and triggers in 01_jip_sabian_story_effects.txt and
 # jip_sabian_story_triggers.txt.

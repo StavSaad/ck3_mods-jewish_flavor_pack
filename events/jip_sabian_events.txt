@@ -2,7 +2,8 @@
 
 # The Sabians of Harran and the return of the old gods (0.15 plan, sections 2, 4 and 10)
 #  0001 The House of Rejoicing restored (the owner of jip_gp_temple_of_sin, on completion): proclaim the old gods, or
-#       remain a Sabian
+#       remain a Sabian. The owner of the Sabian story can't proclaim them here: the story does it when the mysteries are
+#       unveiled (jip_sabian_unveil_the_mysteries_decision)
 #  0100 The Question of the Sabians (a Sabian or Mandaean vassal or family, from jip_question_the_sabians_decision): pay,
 #       defend the claim to be a people of the Book, or convert
 
@@ -37,7 +38,10 @@ jip_sabian.0001 = {
 	# Proclaim the old gods
 	option = {
 		name = jip_sabian.0001.a
-		trigger = { NOT = { faith = faith:mesopotamian_pagan } }
+		trigger = {
+			NOT = { faith = faith:mesopotamian_pagan }
+			jip_owns_sabian_story_trigger = no
+		}
 		jip_proclaim_old_gods_effect = yes
 		add_piety = major_piety_gain
 		ai_chance = {
@@ -56,7 +60,10 @@ jip_sabian.0001 = {
 	# Remain a Sabian: the temple serves the Moon all the same
 	option = {
 		name = jip_sabian.0001.b
-		trigger = { rite = rite:sabianism }
+		trigger = {
+			rite = rite:sabianism
+			jip_owns_sabian_story_trigger = no
+		}
 		add_piety = medium_piety_gain
 		add_prestige = medium_prestige_gain
 		ai_chance = {
@@ -66,6 +73,18 @@ jip_sabian.0001 = {
 				has_trait = content
 			}
 		}
+	}
+
+	# The Sabian story's owner: the gods are named when the mysteries are unveiled
+	option = {
+		name = jip_sabian.0001.d
+		trigger = {
+			rite = rite:sabianism
+			jip_owns_sabian_story_trigger = yes
+		}
+		custom_tooltip = jip_sabian.0001.d_tt
+		add_piety = medium_piety_gain
+		add_prestige = medium_prestige_gain
 	}
 
 	# Already of the old faith

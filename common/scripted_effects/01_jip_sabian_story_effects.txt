@@ -337,9 +337,9 @@ jip_sabian_fight_for_freedom_effect = {
 ### Act IV: Restore the Old Gods
 
 # Character scope (the story owner): the mysteries unveiled. The owner proclaims the old gods if they haven't (ruler, capital,
-# Harran: jip_proclaim_old_gods_effect), the initiates give up their secret and take the owner's rite, and so do the Sabians
-# of the court, the realm's Sabian vassals and its Sabian counties. Muslim neighbours resent it, and their faiths grow
-# fervent
+# Harran: jip_proclaim_old_gods_effect), the initiates give up their secret and take the owner's rite (the list is cleared:
+# with no more secret to keep, the story window stops showing them), and so do the Sabians of the court, the realm's
+# Sabian vassals and its Sabian counties. Muslim neighbours resent it, and their faiths grow fervent
 jip_sabian_unveil_the_mysteries_effect = {
 	if = {
 		limit = { NOT = { faith = faith:mesopotamian_pagan } }
@@ -357,6 +357,7 @@ jip_sabian_unveil_the_mysteries_effect = {
 				set_character_rite = scope:jip_old_gods_rite
 			}
 		}
+		clear_variable_list = jip_sabian_initiates
 		set_variable = jip_sabian_unveiled
 	}
 	every_courtier = {
