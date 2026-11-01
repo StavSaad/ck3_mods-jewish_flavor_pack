@@ -65,3 +65,16 @@ jip_ginza_rabba_template = {
 
 	unique = no
 }
+
+# The Nabataean Agriculture (jip_nabati_nabataean_agriculture_decision): any reader benefits
+jip_nabataean_agriculture_template = {
+	can_equip = {
+		always = yes
+	}
+
+	can_benefit = {
+		always = yes
+	}
+
+	unique = no
+}

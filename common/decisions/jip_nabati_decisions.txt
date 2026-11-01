@@ -1,0 +1,58 @@
+﻿# The Nabati (0.15 plan, section 6)
+
+# Copy the Nabataean Agriculture, Ibn Wahshiyya's great book of farming, which claims to be translated from the books of the
+# ancient Chaldaeans: for a Nabati, or a ruler of the Sawad (the kingdom of Mesopotamia). Once the old gods are restored, its
+# Babylonian lore may tempt its reader (jip_nabati.0300)
+jip_nabati_nabataean_agriculture_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/tgp_scholars.dds"
+	}
+	desc = jip_nabati_nabataean_agriculture_decision_desc
+	selection_tooltip = jip_nabati_nabataean_agriculture_decision_tooltip
+	sort_order = 40
+	ai_check_interval = 60
+
+	is_shown = {
+		OR = {
+			culture = culture:nabati
+			capital_county ?= { kingdom = title:k_mesopotamia }
+		}
+		jip_owns_nabataean_agriculture_trigger = no
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_imprisoned = no
+	}
+
+	cost = {
+		gold = 150
+	}
+
+	effect = {
+		custom_tooltip = jip_nabati_nabataean_agriculture_decision_effect_tt
+		hidden_effect = {
+			create_artifact = {
+				name = jip_artifact_nabataean_agriculture_name
+				description = jip_artifact_nabataean_agriculture_desc
+				visuals = book
+				type = chronicle # a book slot artifact with no required features
+				template = jip_nabataean_agriculture_template
+				modifier = jip_nabataean_agriculture_modifier
+				wealth = 50
+				quality = 50
+				decaying = yes
+				save_scope_as = jip_nabataean_agriculture
+			}
+			scope:jip_nabataean_agriculture = { set_variable = jip_nabataean_agriculture }
+		}
+	}
+
+	ai_potential = {
+		culture = culture:nabati
+	}
+
+	ai_will_do = {
+		base = 25
+	}
+}

@@ -1,0 +1,30 @@
+﻿l_english:
+ # The Nabati (0.15 plan, section 6): common/decisions/jip_nabati_decisions.txt, events/jip_nabati_events.txt
+ jip_nabati_nabataean_agriculture_decision: "Copy the Nabataean Agriculture"
+ jip_nabati_nabataean_agriculture_decision_desc: "Ibn Wahshiyya says he put it into Arabic from the books of the ancient Chaldaeans: a thousand pages on the soil, the canals, the date palm, the vine and the olive, on the seasons of sowing and the virtues of plants. The farmers of the Sawad have done well by it. Some say it holds more than farming: prayers to the planets, and the lore of the old temples."
+ jip_nabati_nabataean_agriculture_decision_tooltip: "A copy of Ibn Wahshiyya's great book of farming"
+ jip_nabati_nabataean_agriculture_decision_confirm: "Have it copied"
+ jip_nabati_nabataean_agriculture_decision_effect_tt: "You gain the Nabataean Agriculture as an [artifact|E] (+1 [stewardship|E], more development growth in your [capital|E]). Once the old gods are restored, its lore may tempt you to them"
+ jip_artifact_nabataean_agriculture_name: "The Nabataean Agriculture"
+ jip_artifact_nabataean_agriculture_desc: "Al-Filaha al-Nabatiyya, Ibn Wahshiyya's great book of farming, which he claimed to have translated from the ancient Chaldaeans: canals and soils, palms and vines, and between the chapters on grafting, the prayers of Babylon's priests to the planets."
+ jip_nabataean_agriculture_modifier: "The Nabataean Agriculture"
+
+ jip_nabati.0100.t: "The Pride of the Nabat"
+ jip_nabati.0100.desc: "[jip_shuubi.GetTitledFirstName] of the Nabat has been reading aloud at court from a book of [jip_shuubi.GetHerHis] own. It says that when the Arabs were herding camels in the desert, the Nabat of the Sawad had built Babylon, dug the canals, measured the stars and written the laws, and that every science the Arabs boast of they learnt from older peoples.\n\nSome of your courtiers laugh. Others have their hands on their swords."
+ jip_nabati.0100.a: "Have [jip_shuubi.GetHerHim] flogged for this insolence."
+ jip_nabati.0100.b: "Answer [jip_shuubi.GetHerHim], if you can."
+ jip_nabati.0100.b.win: "You confound the Nabati"
+ jip_nabati.0100.b.loss: "The Nabati has the better of you"
+ jip_nabati.0100.c: "Every people has its glory."
+
+ jip_nabati.0200.t: "Heirs of Babylon"
+ jip_nabati.0200.desc: "In an old Aramaic book your scribes found the names of kings who ruled the Sawad before the Persians, before the Greeks, before any Arab crossed the Euphrates: Nimrod, Nebuchadnezzar, the Chaldaeans who read the stars.\n\nThe [jip_arab_liege.GetTitledFirstName]'s officials call your people the Nabat, the peasants, and their poets laugh at your speech. But the canals they tax were dug by your ancestors."
+ jip_nabati.0200.a: "We are the heirs of Babylon, and we will not forget it."
+ jip_nabati.0200.b: "Arabic is the tongue of the age. We must master it."
+ jip_nabati_pride_modifier: "Heir of Babylon"
+ jip_nabati_pride_modifier_desc: "This character is proud of the Nabat, the heirs of the Chaldaeans who built Babylon."
+
+ jip_nabati.0300.t: "The Chaldaeans' Books"
+ jip_nabati.0300.desc: "Between the chapters on grafting and the chapter on the date palm, the Nabataean Agriculture has a prayer to the Moon, and the order of the old feasts, and the names of the seven planets with the virtues of each. Since the temple was raised again at Harran, these pages no longer read like a dead people's superstitions.\n\nYou have read them more than once. Perhaps the Chaldaeans knew something."
+ jip_nabati.0300.a: "It is a book about crops."
+ jip_nabati.0300.b: "The old gods were the gods of this land. I will keep them, quietly."

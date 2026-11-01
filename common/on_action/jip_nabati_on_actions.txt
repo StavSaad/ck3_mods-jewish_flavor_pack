@@ -1,0 +1,57 @@
+﻿# The Nabati (0.15 plan, section 6)
+
+yearly_playable_pulse = {
+	on_actions = {
+		jip_shuubiyya_on_action
+		jip_nabati_pride_on_action
+		jip_nabataean_agriculture_temptation_on_action
+	}
+}
+
+# A Nabati courtier praises the Nabat over the Arabs (jip_nabati.0100)
+jip_shuubiyya_on_action = {
+	trigger = {
+		jip_can_hear_shuubiyya_trigger = yes
+	}
+	effect = {
+		random = {
+			chance = 15
+			trigger_event = {
+				id = jip_nabati.0100
+				days = { 30 300 }
+			}
+		}
+	}
+}
+
+# A Nabati under Arab rule takes pride in Babylon (jip_nabati.0200)
+jip_nabati_pride_on_action = {
+	trigger = {
+		jip_can_take_nabati_pride_trigger = yes
+	}
+	effect = {
+		random = {
+			chance = 10
+			trigger_event = {
+				id = jip_nabati.0200
+				days = { 30 300 }
+			}
+		}
+	}
+}
+
+# The Nabataean Agriculture's Babylonian lore tempts its reader (jip_nabati.0300)
+jip_nabataean_agriculture_temptation_on_action = {
+	trigger = {
+		jip_tempted_by_nabataean_agriculture_trigger = yes
+	}
+	effect = {
+		random = {
+			chance = 5
+			trigger_event = {
+				id = jip_nabati.0300
+				days = { 30 300 }
+			}
+		}
+	}
+}

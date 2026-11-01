@@ -89,15 +89,8 @@ jip_ginza_rabba_modifier = {
 	monthly_learning_lifestyle_xp_gain_mult = 0.1
 }
 
-# The Masbuta received (jip_mandaean_masbuta_decision)
-jip_masbuta_modifier = {
-	health = 0.25
-	monthly_piety_gain_mult = 0.1
-	same_faith_opinion = 5
-}
-
-# The Haran Gawaita kept (jip_mandaean.0102)
-jip_haran_gawaita_modifier = {
-	learning = 1
-	monthly_piety_gain_mult = 0.1
+# The Nabataean Agriculture (jip_nabati_nabataean_agriculture_decision)
+jip_nabataean_agriculture_modifier = {
+	stewardship = 1
+	character_capital_county_monthly_development_growth_add = 0.1
 }

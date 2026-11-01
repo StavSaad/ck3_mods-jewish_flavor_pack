@@ -1,0 +1,235 @@
+﻿namespace = jip_nabati
+
+# The Nabati (0.15 plan, section 6)
+#  0100 The Shu'ubiyya (an Arab ruler with a Nabati courtier): punish them, answer them, or grant every people its glory
+#  0200 Heirs of Babylon (a Nabati under an Arab top liege): pride in the Nabat, or the Arabic of the age
+#  0300 The Chaldaeans' books (the owner of the Nabataean Agriculture, once the old gods are restored): turn away, or keep
+#       the old gods in secret
+
+# The Shu'ubiyya. Root = the Arab ruler; scope:jip_shuubi = the Nabati courtier
+jip_nabati.0100 = {
+	type = character_event
+	title = jip_nabati.0100.t
+	desc = jip_nabati.0100.desc
+	theme = learning
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = throne_room }
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+	right_portrait = {
+		character = scope:jip_shuubi
+		animation = personality_bold
+	}
+
+	trigger = {
+		jip_can_hear_shuubiyya_trigger = yes
+	}
+
+	immediate = {
+		set_variable = {
+			name = jip_shuubiyya_cooldown
+			years = 10
+		}
+		random_courtier = {
+			limit = {
+				culture = culture:nabati
+				is_adult = yes
+			}
+			weight = {
+				base = 1
+				modifier = {
+					add = learning
+				}
+			}
+			save_scope_as = jip_shuubi
+		}
+	}
+
+	# Punish the insolence
+	option = {
+		name = jip_nabati.0100.a
+		add_dread = minor_dread_gain
+		scope:jip_shuubi = {
+			add_opinion = {
+				target = root
+				modifier = insulted_opinion
+				opinion = -30
+			}
+		}
+		culture:nabati = {
+			change_cultural_acceptance = {
+				target = root.culture
+				value = low_negative_culture_acceptance
+				desc = cultural_acceptance_loss_event
+			}
+		}
+	}
+
+	# Answer them in debate
+	option = {
+		name = jip_nabati.0100.b
+		duel = {
+			skill = learning
+			target = scope:jip_shuubi
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				desc = jip_nabati.0100.b.win
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = jip_nabati.0100.b.win
+					left_icon = scope:jip_shuubi
+					add_prestige = medium_prestige_gain
+				}
+			}
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				desc = jip_nabati.0100.b.loss
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = jip_nabati.0100.b.loss
+					left_icon = scope:jip_shuubi
+					add_prestige = minor_prestige_loss
+					scope:jip_shuubi = { add_prestige = minor_prestige_gain }
+				}
+			}
+		}
+	}
+
+	# Every people has its glory
+	option = {
+		name = jip_nabati.0100.c
+		add_prestige = minor_prestige_loss
+		scope:jip_shuubi = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 20
+			}
+		}
+		culture:nabati = {
+			change_cultural_acceptance = {
+				target = root.culture
+				value = medium_positive_culture_acceptance
+				desc = cultural_acceptance_gain_event
+			}
+		}
+	}
+}
+
+# Heirs of Babylon. Root = the Nabati; scope:jip_arab_liege = their Arab top liege
+jip_nabati.0200 = {
+	type = character_event
+	title = jip_nabati.0200.t
+	desc = jip_nabati.0200.desc
+	theme = learning
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = study }
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	trigger = {
+		jip_can_take_nabati_pride_trigger = yes
+	}
+
+	immediate = {
+		set_variable = {
+			name = jip_nabati_pride_cooldown
+			years = 15
+		}
+		top_liege = { save_scope_as = jip_arab_liege }
+	}
+
+	# We are the heirs of Babylon
+	option = {
+		name = jip_nabati.0200.a
+		add_character_modifier = {
+			modifier = jip_nabati_pride_modifier
+			years = 10
+		}
+		culture:nabati = {
+			change_cultural_acceptance = {
+				target = scope:jip_arab_liege.culture
+				value = low_negative_culture_acceptance
+				desc = cultural_acceptance_loss_event
+			}
+		}
+	}
+
+	# Arabic is the tongue of the age
+	option = {
+		name = jip_nabati.0200.b
+		add_learning_lifestyle_xp = medium_lifestyle_xp
+		culture:nabati = {
+			change_cultural_acceptance = {
+				target = scope:jip_arab_liege.culture
+				value = low_positive_culture_acceptance
+				desc = cultural_acceptance_gain_event
+			}
+		}
+	}
+}
+
+# The Chaldaeans' books. Root = the owner of the Nabataean Agriculture
+jip_nabati.0300 = {
+	type = character_event
+	title = jip_nabati.0300.t
+	desc = jip_nabati.0300.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = study }
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+
+	trigger = {
+		jip_tempted_by_nabataean_agriculture_trigger = yes
+	}
+
+	immediate = {
+		set_variable = {
+			name = jip_nabataean_temptation_cooldown
+			years = 10
+		}
+	}
+
+	# It is a book about crops
+	option = {
+		name = jip_nabati.0300.a
+		add_piety = minor_piety_gain
+	}
+
+	# Keep the old gods in secret
+	option = {
+		name = jip_nabati.0300.b
+		add_learning_lifestyle_xp = major_lifestyle_xp
+		make_character_crypto_religionist_effect = { CRYPTO_RELIGION = faith:mesopotamian_pagan }
+	}
+}

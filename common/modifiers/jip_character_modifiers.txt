@@ -1,0 +1,20 @@
+﻿# Character modifiers from the 0.15 content (Mandaeans, Nabati)
+
+# The Masbuta received (jip_mandaean_masbuta_decision)
+jip_masbuta_modifier = {
+	health = 0.25
+	monthly_piety_gain_mult = 0.1
+	same_faith_opinion = 5
+}
+
+# The Haran Gawaita kept (jip_mandaean.0102)
+jip_haran_gawaita_modifier = {
+	learning = 1
+	monthly_piety_gain_mult = 0.1
+}
+
+# Pride in the Nabat, heirs of Babylon (jip_nabati.0200)
+jip_nabati_pride_modifier = {
+	monthly_prestige = 0.5
+	same_culture_opinion = 10
+}

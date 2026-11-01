@@ -1,0 +1,42 @@
+﻿# The Nabati (0.15 plan, section 6): the Shu'ubiyya and the Nabataean Agriculture
+
+# Character scope: an Arab ruler (Arabic heritage), a player duke or above, with a Nabati courtier and no Shu'ubiyya quarrel in
+# the last ten years (jip_nabati.0100)
+jip_can_hear_shuubiyya_trigger = {
+	is_ai = no
+	is_available_adult = yes
+	highest_held_title_tier >= tier_duchy
+	culture = { has_cultural_pillar = heritage_arabic }
+	NOT = { has_variable = jip_shuubiyya_cooldown }
+	any_courtier = {
+		culture = culture:nabati
+		is_adult = yes
+	}
+}
+
+# Character scope: a Nabati player under an Arab top liege (jip_nabati.0200)
+jip_can_take_nabati_pride_trigger = {
+	is_ai = no
+	is_available_adult = yes
+	culture = culture:nabati
+	NOT = { has_variable = jip_nabati_pride_cooldown }
+	top_liege != this
+	top_liege = { culture = { has_cultural_pillar = heritage_arabic } }
+}
+
+# Character scope: owns a copy of the Nabataean Agriculture
+jip_owns_nabataean_agriculture_trigger = {
+	any_character_artifact = { has_variable = jip_nabataean_agriculture }
+}
+
+# Character scope: tempted by its Babylonian lore (jip_nabati.0300): the old gods restored (their rites open to converts), and
+# not already of them, openly or in secret
+jip_tempted_by_nabataean_agriculture_trigger = {
+	is_ai = no
+	is_available_adult = yes
+	jip_owns_nabataean_agriculture_trigger = yes
+	rite:sinism = { can_convert_to_rite = yes }
+	NOT = { faith = faith:mesopotamian_pagan }
+	NOT = { secret_faith ?= faith:mesopotamian_pagan }
+	NOT = { has_variable = jip_nabataean_temptation_cooldown }
+}
