@@ -1,7 +1,8 @@
 ﻿# The Return of the Moon God (0.15 plan, section 10): the Sabian storyline, carried by the head of Thabit ibn Qurra's house
 # (d_jip_harrani) from 867 (jip_sabian_story_on_actions.txt), shown in the story window like vanilla's Hasan Sabbah story.
 # Variables on the story:
-#  jip_sabian_act       the act (1 the Sabians of Baghdad, 2 the Return to Harran, 3 Throw Off the Caliph)
+#  jip_sabian_act       the act (1 the Sabians of Baghdad, 2 the Return to Harran, 3 Throw Off the Caliph, 4 Restore
+#                       the Old Gods)
 #  jip_sabian_standing  the Sabian community's standing, 0-10 (jip_sabian_story_raise/lower_standing_effect); at 10 in
 #                       Act 1 the act ends (jip_sabian_story.1090)
 #  jip_sabian_patron    the owner's liege or suzerain
@@ -38,6 +39,7 @@ story_jip_sabian_revival = {
 			jip_sabian_petition_for_harran_decision
 			jip_sabian_buy_harran_decision
 			jip_sabian_raise_the_harranians_decision
+			jip_sabian_proclaim_freedom_decision
 		}
 	}
 
@@ -131,6 +133,48 @@ story_jip_sabian_revival = {
 					save_scope_as = jip_initiate
 				}
 				story_owner = { trigger_event = jip_sabian_story.1040 }
+			}
+		}
+	}
+
+	# Act III: Harran lost sends the story back to Act II; Harran held as an independent ruler ends the act
+	effect_group = {
+		months = 1
+
+		trigger = {
+			var:jip_sabian_act = 3
+		}
+
+		first_valid = {
+			triggered_effect = {
+				trigger = {
+					story_owner = { NOT = { has_title = title:c_harran } }
+				}
+				effect = {
+					set_variable = {
+						name = jip_sabian_act
+						value = 2
+					}
+					story_owner = {
+						send_interface_toast = {
+							type = event_toast_effect_bad
+							title = jip_sabian_story_harran_lost_toast
+							custom_tooltip = jip_sabian_story_harran_lost_tt
+						}
+					}
+				}
+			}
+			triggered_effect = {
+				trigger = {
+					story_owner = { is_independent_ruler = yes }
+				}
+				effect = {
+					set_variable = {
+						name = jip_sabian_act
+						value = 4
+					}
+					story_owner = { trigger_event = jip_sabian_story.3090 }
+				}
 			}
 		}
 	}

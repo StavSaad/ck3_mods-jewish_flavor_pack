@@ -344,3 +344,64 @@ jip_sabian_raise_the_harranians_decision = {
 		}
 	}
 }
+
+# The Sabian story, Act III (Throw Off the Caliph): Harran's count demands to be free of their liege
+# (jip_sabian_story.3010); a refusal can be answered with vanilla's independence war. Independence won any way ends the act
+# (the story's monthly check)
+jip_sabian_proclaim_freedom_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	desc = jip_sabian_proclaim_freedom_decision_desc
+	selection_tooltip = jip_sabian_proclaim_freedom_decision_tooltip
+	decision_group_type = jip_story_sabian_revival
+	sort_order = 60
+	ai_check_interval = 12
+
+	cooldown = { years = 3 }
+
+	is_shown = {
+		jip_sabian_story_in_act_trigger = { ACT = 3 }
+	}
+
+	is_valid = {
+		jip_sabian_can_proclaim_freedom_trigger = yes
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	cost = { prestige = 300 }
+
+	effect = {
+		save_scope_as = jip_rebel
+		liege = { save_scope_as = jip_harran_overlord }
+		custom_tooltip = jip_sabian_proclaim_freedom_effect_tt
+		scope:jip_harran_overlord = {
+			trigger_event = jip_sabian_story.3010
+		}
+	}
+
+	ai_potential = {
+		jip_sabian_story_in_act_trigger = { ACT = 3 }
+	}
+
+	ai_will_do = {
+		base = 10
+		modifier = {
+			add = 40
+			liege ?= { is_at_war = yes }
+		}
+		modifier = {
+			add = 15
+			has_trait = ambitious
+		}
+		modifier = {
+			factor = 0
+			has_trait = craven
+		}
+	}
+}

@@ -280,3 +280,48 @@ jip_sabian_story_set_act_effect = {
 		}
 	}
 }
+
+### Act III: Throw Off the Caliph
+
+# Character scope (the liege): lets scope:jip_rebel go: independent if the liege is a top liege, else the liege's liege's
+# vassal (as vanilla's independence war does), with a five-year truce
+jip_sabian_grant_freedom_effect = {
+	create_title_and_vassal_change = {
+		type = independency
+		save_scope_as = change
+	}
+	change_liege_or_become_independent = {
+		CHANGE = scope:change
+		VASSAL = scope:jip_rebel
+	}
+	resolve_title_and_vassal_change = scope:change
+	add_truce_both_ways = {
+		character = scope:jip_rebel
+		days = 1825
+	}
+}
+
+# Character scope (the story owner): fights for Harran's freedom: vanilla's independence war against their liege, with an
+# army of Harranians that serves until it ends
+jip_sabian_fight_for_freedom_effect = {
+	liege = { save_scope_as = jip_harran_overlord }
+	start_war = {
+		casus_belli = independence_war
+		target = scope:jip_harran_overlord
+	}
+	random_character_war = {
+		limit = {
+			primary_attacker = root
+			primary_defender = scope:jip_harran_overlord
+		}
+		save_scope_as = jip_freedom_war
+	}
+	spawn_army = {
+		levies = jip_sabian_freedom_levies_value
+		location = title:c_harran.title_province
+		inheritable = no
+		uses_supply = yes
+		war = scope:jip_freedom_war
+		name = jip_sabian_harranian_army
+	}
+}

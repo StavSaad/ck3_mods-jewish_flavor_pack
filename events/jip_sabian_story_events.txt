@@ -974,3 +974,200 @@ jip_sabian_story.2090 = {
 		custom_tooltip = jip_sabian_story.2090.tt
 	}
 }
+
+#################### Act III: Throw Off the Caliph ####################
+#  3010 Harran demands its freedom (to the liege; Proclaim Harran's Freedom)
+#  3011 The demand refused (to the story owner): fight, or back down
+#  3012 The demand granted (to the story owner)
+#  3090 Harran is free (the owner rules Harran as an independent ruler: Act III ends)
+
+# Harran demands its freedom (root = the liege)
+jip_sabian_story.3010 = {
+	type = character_event
+	title = jip_sabian_story.3010.t
+	desc = jip_sabian_story.3010.desc
+	theme = realm
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = throne_room_mediterranean }
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+	right_portrait = {
+		character = scope:jip_rebel
+		animation = personality_bold
+	}
+
+	trigger = {
+		exists = scope:jip_rebel
+		scope:jip_rebel = {
+			jip_sabian_can_proclaim_freedom_trigger = yes
+			liege = root
+		}
+	}
+
+	# Let Harran go
+	option = {
+		name = jip_sabian_story.3010.a
+		jip_sabian_grant_freedom_effect = yes
+		add_prestige = medium_prestige_loss
+		scope:jip_rebel = {
+			trigger_event = jip_sabian_story.3012
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				add = 40
+				is_at_war = yes
+			}
+			modifier = {
+				add = 20
+				opinion = {
+					target = scope:jip_rebel
+					value >= 50
+				}
+			}
+			modifier = {
+				add = 15
+				primary_title = { has_variable = jip_sabians_recognised }
+			}
+			ai_value_modifier = {
+				ai_boldness = -0.5
+			}
+			min = 0
+		}
+	}
+
+	# Harran stays mine
+	option = {
+		name = jip_sabian_story.3010.b
+		scope:jip_rebel = {
+			trigger_event = jip_sabian_story.3011
+		}
+		ai_chance = {
+			base = 60
+		}
+	}
+}
+
+# The demand refused (root = the story owner)
+jip_sabian_story.3011 = {
+	type = character_event
+	title = jip_sabian_story.3011.t
+	desc = jip_sabian_story.3011.desc
+	theme = war
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = army_camp }
+	left_portrait = {
+		character = root
+		animation = war_attacker
+	}
+	right_portrait = {
+		character = scope:jip_harran_overlord
+		animation = dismissal
+	}
+
+	trigger = {
+		jip_sabian_can_proclaim_freedom_trigger = yes
+	}
+
+	# To war
+	option = {
+		name = jip_sabian_story.3011.a
+		trigger = {
+			NOT = { government_has_flag = government_is_administrative }
+		}
+		custom_tooltip = jip_sabian_story.3011.a.tt
+		jip_sabian_fight_for_freedom_effect = yes
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 40
+				scope:jip_harran_overlord = { is_at_war = yes }
+			}
+			ai_value_modifier = {
+				ai_boldness = 0.5
+			}
+			min = 0
+		}
+	}
+
+	# Not yet
+	option = {
+		name = jip_sabian_story.3011.b
+		add_prestige = minor_prestige_loss
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_boldness = -0.5
+			}
+			min = 0
+		}
+	}
+}
+
+# The demand granted (root = the story owner)
+jip_sabian_story.3012 = {
+	type = character_event
+	title = jip_sabian_story.3012.t
+	desc = jip_sabian_story.3012.desc
+	theme = realm
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = throne_room_mediterranean }
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		character = scope:jip_harran_overlord
+		animation = worry
+	}
+
+	option = {
+		name = jip_sabian_story.3012.a
+	}
+}
+
+# Harran is free: Act III ends (root = the story owner)
+jip_sabian_story.3090 = {
+	type = character_event
+	title = jip_sabian_story.3090.t
+	desc = jip_sabian_story.3090.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = temple }
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+
+	trigger = {
+		jip_owns_sabian_story_trigger = yes
+	}
+
+	option = {
+		name = jip_sabian_story.3090.a
+		add_prestige = major_prestige_gain
+		custom_tooltip = jip_sabian_story.3090.tt
+	}
+}

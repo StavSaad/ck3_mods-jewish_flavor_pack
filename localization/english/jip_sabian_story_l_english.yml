@@ -143,3 +143,34 @@
  jip_sabian_story.2090.desc: "I have come home to Harran. The old men at the gate wept to see one of their own ride in as its lord, and on the hill the Moon God's temple waits, its doors still shut, its lamps still lit by the few who never stopped.\n\nBut Harran is held of another, and while the house answers to a Muslim lord, the old gods must stay behind closed doors. The Sabians cannot restore what they do not rule outright."
  jip_sabian_story.2090.a: "The Moon rises over Harran"
  jip_sabian_story.2090.tt: "The second act of the Return of the Moon God ends: the house must now rule Harran as an independent ruler"
+
+ # Act III: Throw Off the Caliph
+ jip_sabian_story_act_4: "Act IV: Restore the Old Gods. Harran is free; the Temple of Sin can rise again."
+ jip_sabian_story_harran_lost_toast: "Harran Is Lost"
+ jip_sabian_story_harran_lost_tt: "Without Harran, the Return of the Moon God goes back to its second act: the house must win Harran again"
+
+ jip_sabian_proclaim_freedom_decision: "Proclaim Harran's Freedom"
+ jip_sabian_proclaim_freedom_decision_desc: "Harran is ours, but it is held of a Muslim lord, and while it is, the Moon God's doors stay shut. The old gods can only be restored by a ruler who answers to no one. It is time to tell our liege that Harran will govern itself, and to see whether they will let it go or fight to keep it."
+ jip_sabian_proclaim_freedom_decision_tooltip: "Demand that your liege let Harran go"
+ jip_sabian_proclaim_freedom_decision_confirm: "Send the demand"
+ jip_sabian_proclaim_freedom_effect_tt: "Your liege decides whether to let you go. A liege already at war, who thinks well of you or has recognised the Sabians is more likely to agree; a bold one less so. If they refuse, you may go to war for your independence at the head of the Harranians"
+
+ jip_sabian_story.3010.t: "Harran Demands Its Freedom"
+ jip_sabian_story.3010.desc: "[jip_rebel.GetTitledFirstName], whom I let rule Harran, now writes that Harran will govern itself and answer to no one. The Sabians have always been a stiff-necked people, and now they have a lord of their own to be stiff-necked for.\n\nI could let them go: Harran is one city, and I have other cares. Or I could remind them whose city it is."
+ jip_sabian_story.3010.a: "Let Harran go"
+ jip_sabian_story.3010.b: "Harran stays mine"
+
+ jip_sabian_story.3011.t: "The Demand Refused"
+ jip_sabian_story.3011.desc: "[jip_harran_overlord.GetTitledFirstName] has answered: Harran stays [jip_harran_overlord.GetHerHis]. The messenger who brought it says the court laughed.\n\nThe Harranians are ready. The old men say that the Moon God gave Harran its walls, and that no one has held them against its own people for long. We could find out."
+ jip_sabian_story.3011.a: "Then Harran will win its freedom"
+ jip_sabian_story.3011.a.tt: "You go to war for your independence against your liege, at the head of an army of Harranians that serves until the war ends, larger for every other Sabian county in your [realm|E]"
+ jip_sabian_story.3011.b: "Not yet"
+
+ jip_sabian_story.3012.t: "Harran Goes Free"
+ jip_sabian_story.3012.desc: "[jip_harran_overlord.GetTitledFirstName] has let Harran go. Whether from weariness, wisdom or contempt, the letter is sealed: the house answers to [jip_harran_overlord.GetHerHim] no longer."
+ jip_sabian_story.3012.a: "Without a drop of blood"
+
+ jip_sabian_story.3090.t: "Harran Is Free"
+ jip_sabian_story.3090.desc: "For the first time since the Romans came, Harran answers to no one but its own. No caliph's governor sits in the citadel, no qadi will ask the Sabians what book they follow.\n\nOn the hill, the Moon God's temple waits. Its stones are old and its roof has fallen, but the Ehulhul stood there before Babylon was great, and it can stand again. The Sabians need only build it, and the gods of their fathers can be worshipped in the open."
+ jip_sabian_story.3090.a: "Let the temple rise"
+ jip_sabian_story.3090.tt: "The third act of the Return of the Moon God ends. The great project to Restore the Temple of Sin at Harran is now open to you"

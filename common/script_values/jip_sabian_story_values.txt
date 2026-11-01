@@ -35,3 +35,21 @@ jip_sabian_harranian_levies_value = {
 		multiply = 25
 	}
 }
+
+### Act III: Throw Off the Caliph
+
+# The Harranians who fight for Harran's freedom (root = the story owner): the rising's army, plus 150 men for every other
+# Sabian or old-faith county in the realm
+jip_sabian_freedom_levies_value = {
+	value = jip_sabian_harranian_levies_value
+	every_sub_realm_county = {
+		limit = {
+			this != title:c_harran
+			OR = {
+				faith = faith:mandaean_faith
+				faith = faith:mesopotamian_pagan
+			}
+		}
+		add = 150
+	}
+}

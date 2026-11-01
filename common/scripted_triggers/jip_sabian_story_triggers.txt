@@ -118,3 +118,13 @@ jip_sabian_harran_is_sabian_trigger = {
 		}
 	}
 }
+
+### Act III: Throw Off the Caliph
+
+# Character scope: a story owner in Act III who holds Harran under a liege, and can demand to be free of them
+jip_sabian_can_proclaim_freedom_trigger = {
+	jip_sabian_story_in_act_trigger = { ACT = 3 }
+	has_title = title:c_harran
+	is_independent_ruler = no
+	exists = liege
+}
