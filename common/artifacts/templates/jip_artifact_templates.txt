@@ -48,3 +48,20 @@ jip_old_god_statue_template = {
 
 	unique = yes
 }
+
+# The Ginza Rabba (jip_mandaean_copy_ginza_effect): full only for Mandaeans
+jip_ginza_rabba_template = {
+	can_equip = {
+		always = yes
+	}
+
+	can_benefit = {
+		rite = rite:mandeaism
+	}
+
+	fallback = {
+		monthly_prestige = 0.1
+	}
+
+	unique = no
+}

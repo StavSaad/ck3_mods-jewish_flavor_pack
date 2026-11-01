@@ -1,0 +1,47 @@
+﻿# The Mandaeans (0.15 plan, section 3)
+
+yearly_playable_pulse = {
+	on_actions = {
+		jip_haran_gawaita_on_action
+	}
+}
+
+on_title_gain = {
+	on_actions = {
+		jip_rish_amma_succession_on_action
+	}
+}
+
+# A Mandaean player hears the Haran Gawaita, once per dynasty (jip_mandaean.0100-0102)
+jip_haran_gawaita_on_action = {
+	trigger = {
+		rite = rite:mandeaism
+		is_ai = no
+		is_available_adult = yes
+		exists = dynasty
+		dynasty = { NOT = { has_variable = jip_haran_gawaita_told } }
+	}
+	effect = {
+		random = {
+			chance = 25
+			trigger_event = {
+				id = jip_mandaean.0100
+				days = { 30 200 }
+			}
+		}
+	}
+}
+
+# The Rish Amma died and the engine named the next: a Ganzibra takes the title if there is one
+# root = the new holder, scope:title, scope:previous_holder
+jip_rish_amma_succession_on_action = {
+	trigger = {
+		scope:title = title:d_rish_amma
+		exists = scope:previous_holder
+		scope:previous_holder = { is_alive = no }
+		NOT = { has_court_position = jip_ganzibra_court_position }
+	}
+	effect = {
+		jip_rish_amma_succession_effect = yes
+	}
+}

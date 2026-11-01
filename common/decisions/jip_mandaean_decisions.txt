@@ -1,0 +1,107 @@
+﻿# The Mandaeans (0.15 plan, section 3): the Masbuta, baptism in living water, and copying the Ginza Rabba
+
+# The Masbuta: a solemn baptism in a river (yardena: all living water is a Jordan), for a Mandaean whose seat or estate lies on
+# one
+jip_mandaean_masbuta_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	}
+	desc = jip_mandaean_masbuta_decision_desc
+	selection_tooltip = jip_mandaean_masbuta_decision_tooltip
+	sort_order = 50
+	ai_check_interval = 60
+
+	cooldown = { years = 5 }
+
+	is_shown = {
+		rite = rite:mandeaism
+	}
+
+	is_valid = {
+		custom_tooltip = {
+			text = jip_mandaean_living_water_tt
+			jip_mandaean_by_living_water_trigger = yes
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_imprisoned = no
+	}
+
+	effect = {
+		add_piety = medium_piety_gain
+		stress_impact = {
+			base = medium_stress_impact_loss
+		}
+		add_character_modifier = {
+			modifier = jip_masbuta_modifier
+			years = 5
+		}
+	}
+
+	ai_potential = {
+		rite = rite:mandeaism
+	}
+
+	ai_will_do = {
+		base = 50
+	}
+}
+
+# Copy the Ginza Rabba, the Great Treasure: a learned Mandaean (the head, their Ganzibra or a Mandaean chaplain) copies the
+# scripture, and the copy, signed in its colophon, becomes a court artifact (jip_mandaean_copy_ginza_effect)
+jip_mandaean_copy_ginza_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/tgp_scholars.dds"
+	}
+	desc = jip_mandaean_copy_ginza_decision_desc
+	selection_tooltip = jip_mandaean_copy_ginza_decision_tooltip
+	sort_order = 40
+	ai_check_interval = 60
+
+	cooldown = { years = 20 }
+
+	is_shown = {
+		rite = rite:mandeaism
+	}
+
+	is_valid = {
+		custom_tooltip = {
+			text = jip_mandaean_ginza_scribe_tt
+			OR = {
+				jip_mandaean_ginza_scribe_trigger = yes
+				any_court_position_holder = {
+					type = jip_ganzibra_court_position
+					jip_mandaean_ginza_scribe_trigger = yes
+				}
+				cp:councillor_court_chaplain ?= { jip_mandaean_ginza_scribe_trigger = yes }
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_imprisoned = no
+	}
+
+	cost = {
+		gold = 100
+		piety = 100
+	}
+
+	effect = {
+		custom_tooltip = jip_mandaean_copy_ginza_decision_effect_tt
+		hidden_effect = {
+			jip_mandaean_copy_ginza_effect = yes
+		}
+	}
+
+	ai_potential = {
+		rite = rite:mandeaism
+	}
+
+	ai_will_do = {
+		base = 25
+	}
+}

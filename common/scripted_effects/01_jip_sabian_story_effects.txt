@@ -340,7 +340,7 @@ jip_sabian_fight_for_freedom_effect = {
 # Harran: jip_proclaim_old_gods_effect), the initiates give up their secret and take the owner's rite (the list is cleared:
 # with no more secret to keep, the story window stops showing them). Every Sabian in the world, and every Sabian county,
 # takes up Sinism (Familial families keep their family titles: their recorded religion follows), and Sabianism can't be
-# converted to again. Muslim neighbours resent it, and their faiths grow fervent
+# converted to again. Muslim neighbours resent it, and their faiths grow fervent; so do the Mandaeans
 jip_sabian_unveil_the_mysteries_effect = {
 	if = {
 		limit = { NOT = { faith = faith:mesopotamian_pagan } }
@@ -378,6 +378,20 @@ jip_sabian_unveil_the_mysteries_effect = {
 		set_county_rite = rite:sinism
 	}
 	rite:sabianism = { set_can_convert_to_rite = no }
+	# The Mandaeans, for whom the seven planets are evil powers, disown Harran (0.15 plan, section 3): the Rish Amma and
+	# every Mandaean ruler resent it, and players hear of it (jip_mandaean.0200)
+	save_scope_as = jip_harran_unveiler
+	every_ruler = {
+		limit = { rite = rite:mandeaism }
+		add_opinion = {
+			target = root
+			modifier = jip_mandaeans_disown_harran_opinion
+		}
+		if = {
+			limit = { is_ai = no }
+			trigger_event = jip_mandaean.0200
+		}
+	}
 	every_neighboring_and_across_water_top_liege_realm_owner = {
 		limit = { religion = religion:islam_religion }
 		add_opinion = {

@@ -1,0 +1,18 @@
+﻿# The Mandaeans (0.15 plan, section 3)
+
+# Character scope: their seat, or their family's estate, lies on a river: living water for the Masbuta
+jip_mandaean_by_living_water_trigger = {
+	OR = {
+		capital_province ?= { is_riverside_province = yes }
+		domicile ?= {
+			domicile_location = { is_riverside_province = yes }
+		}
+	}
+}
+
+# Character scope: a Mandaean learned enough to copy the Ginza Rabba
+jip_mandaean_ginza_scribe_trigger = {
+	rite = rite:mandeaism
+	is_adult = yes
+	learning >= 12
+}

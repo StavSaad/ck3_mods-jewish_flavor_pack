@@ -1,0 +1,141 @@
+﻿namespace = jip_mandaean
+
+# The Mandaeans (0.15 plan, section 3)
+#  0100-0102 The Haran Gawaita, the migration legend (a Mandaean player, once per dynasty, from jip_haran_gawaita_on_action):
+#            from Jerusalem to Harran and the Median hills, and down to the marshes
+#  0200      Harran's planets (a Mandaean player ruler, when the Sabian story unveils the old gods at Harran)
+
+# The Haran Gawaita I: Jerusalem
+jip_mandaean.0100 = {
+	type = character_event
+	title = jip_mandaean.0100.t
+	desc = jip_mandaean.0100.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = ep2_travel_settlement_ruin_desert }
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	trigger = {
+		exists = dynasty
+		dynasty = { NOT = { has_variable = jip_haran_gawaita_told } }
+	}
+
+	immediate = {
+		dynasty = { set_variable = jip_haran_gawaita_told }
+	}
+
+	option = {
+		name = jip_mandaean.0100.a
+		trigger_event = {
+			id = jip_mandaean.0101
+			days = { 20 40 }
+		}
+	}
+}
+
+# The Haran Gawaita II: the inner Harran and the Median hills
+jip_mandaean.0101 = {
+	type = character_event
+	title = jip_mandaean.0101.t
+	desc = jip_mandaean.0101.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = wilderness_mountains }
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	option = {
+		name = jip_mandaean.0101.a
+		trigger_event = {
+			id = jip_mandaean.0102
+			days = { 20 40 }
+		}
+	}
+}
+
+# The Haran Gawaita III: the marshes, and what the community remembers
+jip_mandaean.0102 = {
+	type = character_event
+	title = jip_mandaean.0102.t
+	desc = jip_mandaean.0102.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = wilderness_wetlands }
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+
+	# The faith kept through every flight
+	option = {
+		name = jip_mandaean.0102.a
+		add_piety = medium_piety_gain
+		add_character_modifier = {
+			modifier = jip_haran_gawaita_modifier
+			years = 10
+		}
+	}
+
+	# Harran sheltered us once
+	option = {
+		name = jip_mandaean.0102.b
+		add_prestige = medium_prestige_gain
+		add_diplomacy_lifestyle_xp = medium_lifestyle_xp
+	}
+}
+
+# Harran's planets: the Sabians of Harran have proclaimed the old gods, the seven planets the Mandaeans curse
+# Root = a Mandaean ruler; scope:jip_harran_unveiler = the Sabian story's owner
+jip_mandaean.0200 = {
+	type = character_event
+	title = jip_mandaean.0200.t
+	desc = jip_mandaean.0200.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = temple }
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+	right_portrait = {
+		character = scope:jip_harran_unveiler
+		animation = personality_zealous
+	}
+
+	# Denounce them
+	option = {
+		name = jip_mandaean.0200.a
+		add_piety = minor_piety_gain
+	}
+
+	# Keep silent
+	option = {
+		name = jip_mandaean.0200.b
+		add_prestige = minor_prestige_gain
+	}
+}

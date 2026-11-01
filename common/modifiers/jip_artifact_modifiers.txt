@@ -81,3 +81,23 @@ jip_statue_of_marduk_modifier = {
 	vassal_limit = 5
 	court_grandeur_baseline_add = 2
 }
+
+# The Ginza Rabba, a Mandaean copy (jip_mandaean_copy_ginza_effect; full for Mandaeans, jip_ginza_rabba_template)
+jip_ginza_rabba_modifier = {
+	learning = 1
+	monthly_piety = 0.5
+	monthly_learning_lifestyle_xp_gain_mult = 0.1
+}
+
+# The Masbuta received (jip_mandaean_masbuta_decision)
+jip_masbuta_modifier = {
+	health = 0.25
+	monthly_piety_gain_mult = 0.1
+	same_faith_opinion = 5
+}
+
+# The Haran Gawaita kept (jip_mandaean.0102)
+jip_haran_gawaita_modifier = {
+	learning = 1
+	monthly_piety_gain_mult = 0.1
+}
