@@ -369,8 +369,8 @@ jip_gp_temple_of_sin = {
 @jip_temple_of_bel_icon = "gfx/interface/icons/great_projects/jip_temple_of_bel.dds" # tools/make_great_project_art.py
 @jip_temple_of_bel_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_bel.dds" # default crop
 
-# A ruler of the old faith (Mesopotamianism, once the Temple of Sin has restored it) who holds Palmyra rebuilds the
-# temple of Bel, the caravan city's great temple, consecrated in 32 AD
+# An independent ruler of the old faith (Mesopotamianism, once the Temple of Sin has restored it) who holds Palmyra
+# rebuilds the temple of Bel, the caravan city's great temple, consecrated in 32 AD
 jip_gp_temple_of_bel = {
 	icon = { reference = @jip_temple_of_bel_icon }
 	illustration = { reference = @jip_temple_of_bel_illustration }
@@ -380,8 +380,9 @@ jip_gp_temple_of_bel = {
 	}
 
 	is_shown = {
-		# Only once the old gods are restored and the ruler follows them
+		# Only once the old gods are restored, for an independent ruler who follows them
 		faith = faith:mesopotamian_pagan
+		is_independent_ruler = yes
 		is_landed = yes
 		NOT = { is_planning_great_project = jip_gp_temple_of_bel }
 		NOT = {
@@ -421,7 +422,10 @@ jip_gp_temple_of_bel = {
 	owner = founder_primary_title_owner
 
 	is_valid = {
-		scope:founder = { faith = faith:mesopotamian_pagan }
+		scope:founder = {
+			faith = faith:mesopotamian_pagan
+			is_independent_ruler = yes
+		}
 		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
 	}
 
@@ -662,8 +666,8 @@ jip_gp_temple_of_bel = {
 @jip_temple_of_shamash_icon = "gfx/interface/icons/great_projects/jip_temple_of_shamash.dds" # tools/make_great_project_art.py
 @jip_temple_of_shamash_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_shamash.dds" # default crop
 
-# A ruler of the old faith (Mesopotamianism, once the Temple of Sin has restored it) who holds Hatra rebuilds the temple
-# of Shamash, the sun god, in the round desert city between Mosul and the Euphrates
+# An independent ruler of the old faith (Mesopotamianism, once the Temple of Sin has restored it) who holds Hatra
+# rebuilds the temple of Shamash, the sun god, in the round desert city between Mosul and the Euphrates
 jip_gp_temple_of_shamash = {
 	icon = { reference = @jip_temple_of_shamash_icon }
 	illustration = { reference = @jip_temple_of_shamash_illustration }
@@ -673,8 +677,9 @@ jip_gp_temple_of_shamash = {
 	}
 
 	is_shown = {
-		# Only once the old gods are restored and the ruler follows them
+		# Only once the old gods are restored, for an independent ruler who follows them
 		faith = faith:mesopotamian_pagan
+		is_independent_ruler = yes
 		is_landed = yes
 		NOT = { is_planning_great_project = jip_gp_temple_of_shamash }
 		NOT = {
@@ -714,7 +719,10 @@ jip_gp_temple_of_shamash = {
 	owner = founder_primary_title_owner
 
 	is_valid = {
-		scope:founder = { faith = faith:mesopotamian_pagan }
+		scope:founder = {
+			faith = faith:mesopotamian_pagan
+			is_independent_ruler = yes
+		}
 		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
 	}
 
@@ -958,8 +966,7 @@ jip_gp_temple_of_shamash = {
 
 # An independent ruler of the old faith (either rite) who holds Ashur rebuilds the house of the god Ashur beside his
 # ziggurat. The faith opens with the Temple of Sin (jip_unlock_mesopotamian_conversion_effect), so this follows the
-# restoration.
-# Independent only, like the Temple of Sin
+# restoration. Independent only, like the Temple of Sin
 jip_gp_temple_of_ashur = {
 	icon = { reference = @jip_temple_of_ashur_icon }
 	illustration = { reference = @jip_temple_of_ashur_illustration }
@@ -1257,9 +1264,9 @@ jip_gp_temple_of_ashur = {
 @jip_temple_of_ishtar_icon = "gfx/interface/icons/great_projects/jip_temple_of_ishtar.dds" # tools/make_great_project_art.py
 @jip_temple_of_ishtar_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_ishtar.dds" # default crop
 
-# A ruler of the old faith (Mesopotamianism, once the Temple of Sin has restored it) who holds Arbela rebuilds the
-# Egashankalamma, the temple of Ishtar of Arbela, goddess of war, whose prophetesses spoke to the Assyrian kings. The
-# Sabians honour her as Venus
+# An independent ruler of the old faith (Mesopotamianism, once the Temple of Sin has restored it) who holds Arbela
+# rebuilds the Egashankalamma, the temple of Ishtar of Arbela, goddess of war, whose prophetesses spoke to the Assyrian
+# kings. The Sabians honour her as Venus
 jip_gp_temple_of_ishtar = {
 	icon = { reference = @jip_temple_of_ishtar_icon }
 	illustration = { reference = @jip_temple_of_ishtar_illustration }
@@ -1269,8 +1276,9 @@ jip_gp_temple_of_ishtar = {
 	}
 
 	is_shown = {
-		# Only once the old gods are restored and the ruler follows them
+		# Only once the old gods are restored, for an independent ruler who follows them
 		faith = faith:mesopotamian_pagan
+		is_independent_ruler = yes
 		is_landed = yes
 		NOT = { is_planning_great_project = jip_gp_temple_of_ishtar }
 		NOT = {
@@ -1310,7 +1318,10 @@ jip_gp_temple_of_ishtar = {
 	owner = founder_primary_title_owner
 
 	is_valid = {
-		scope:founder = { faith = faith:mesopotamian_pagan }
+		scope:founder = {
+			faith = faith:mesopotamian_pagan
+			is_independent_ruler = yes
+		}
 		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
 	}
 
