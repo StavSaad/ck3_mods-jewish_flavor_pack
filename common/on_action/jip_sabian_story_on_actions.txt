@@ -61,3 +61,25 @@ jip_sabian_story_harran_gained_on_action = {
 		}
 	}
 }
+
+# A Sabian scholar offers a Muslim ruler their learning (jip_sabian.0200; 0.15 plan, section 2), about every four years
+yearly_playable_pulse = {
+	on_actions = {
+		jip_sabian_scholar_on_action
+	}
+}
+
+jip_sabian_scholar_on_action = {
+	trigger = {
+		jip_can_patronise_sabian_scholar_trigger = yes
+	}
+	effect = {
+		random = {
+			chance = 25
+			trigger_event = {
+				id = jip_sabian.0200
+				days = { 30 300 }
+			}
+		}
+	}
+}

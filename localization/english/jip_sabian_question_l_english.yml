@@ -31,3 +31,11 @@
  jip_shtadlan_sabians_already_recognised_tt: "[recipient.GetShortUIName|U] has not already recognised the Sabians"
  jip_shtadlan_sabian_status_tt: "The Sabians and Mandaeans of the [realm|E] are not questioned for 20 years"
  jip_shtadlan_sabian_status_accepted_msg_desc: "[recipient.GetShortUIName|U] has recognised the Sabians and Mandaeans as a people of the Book"
+
+ jip_sabian.0200.t: "The Star-Readers of Harran"
+ jip_sabian.0200.desc: "Since the days of the Banu Musa, the learned men of Harran have sold their learning in the cities of the faithful. They read Greek and Syriac as easily as Arabic, and they know the measures of the heavens and the earth.\n\n"
+ jip_sabian.0200.desc_courtier: "[jip_sabian_scholar.GetTitledFirstName], a Sabian of your court, has come with a bundle of manuscripts under [jip_sabian_scholar.GetHerHis] arm: Euclid and Archimedes, Ptolemy and Galen, and none of them yet in Arabic. With paper, scribes and some patience, [jip_sabian_scholar.GetSheHe] says, they would be. Or, if you prefer, [jip_sabian_scholar.GetSheHe] will cast up the sums of your treasury, which your clerks have not balanced in years."
+ jip_sabian.0200.desc_family: "[jip_sabian_scholar.GetTitledFirstName] of the Sabian house that lives under your protection has asked for an audience, with a bundle of manuscripts and a fair copy of the first pages: Euclid and Archimedes, Ptolemy and Galen, and none of them yet in Arabic. With paper, scribes and some patience, [jip_sabian_scholar.GetSheHe] says, they would be. Or, if you prefer, [jip_sabian_scholar.GetSheHe] will cast up the sums of your treasury, which your clerks have not balanced in years."
+ jip_sabian.0200.a: "Put the Greeks into Arabic."
+ jip_sabian.0200.b: "Set [jip_sabian_scholar.GetHerHim] to my accounts."
+ jip_sabian.0200.c: "I want no star-worshippers at my court."

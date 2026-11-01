@@ -129,3 +129,10 @@ harrani_dynasty = {
 	name = "dynn_Harrani"
 	culture = "syriac"
 }
+
+# Jabir ibn Sinan's house, the instrument makers of Harran, al-Battani's family (history/characters/jip_sabians.txt)
+battani_dynasty = {
+	prefix = "dynnp_al-"
+	name = "dynn_Battani"
+	culture = "syriac"
+}

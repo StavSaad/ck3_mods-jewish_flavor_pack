@@ -58,3 +58,49 @@ jip_sabian_thabit_wife = {
 		death = yes
 	}
 }
+
+# The Sabians of Harran
+
+# Jabir ibn Sinan al-Harrani, maker of astrolabes and astronomical instruments at Harran; his name is known from his son's.
+# At 867 at the court of Harran's count
+jip_sabian_jabir_ibn_sinan = {
+	name = "Jabir"
+	rite = sabianism
+	culture = syriac
+	dynasty = battani_dynasty
+	trait = education_learning_3
+	trait = diligent
+	trait = patient
+	trait = humble
+	820.1.1 = {
+		birth = yes
+	}
+	866.1.1 = {
+		employer = levantine000004
+	}
+	890.1.1 = {
+		death = yes
+	}
+}
+
+# Muhammad ibn Jabir al-Battani (c. 858-929), born at Harran of a Sabian family (Battan was a village near it): the
+# greatest astronomer of his age, who observed at Raqqa for forty years and corrected Ptolemy's tables (the Zij al-Sabi).
+# A child at 867, with his father
+jip_sabian_al_battani = {
+	name = "Muhammad"
+	rite = sabianism
+	culture = syriac
+	dynasty = battani_dynasty
+	father = jip_sabian_jabir_ibn_sinan
+	trait = intellect_good_3
+	trait = curious
+	858.1.1 = {
+		birth = yes
+	}
+	866.1.1 = {
+		employer = levantine000004
+	}
+	929.1.1 = {
+		death = yes
+	}
+}

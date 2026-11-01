@@ -6,6 +6,8 @@
 #       (jip_sabian_unveil_the_mysteries_effect, then jip_sabian_story.4010)
 #  0100 The Question of the Sabians (a Sabian or Mandaean vassal or family, from jip_question_the_sabians_decision): pay,
 #       defend the claim to be a people of the Book, or convert
+#  0200 A Sabian scholar (a Muslim duke or above, from jip_sabian_scholar_on_action): commission translations, set them to
+#       the realm's accounts, or send them away
 
 # The House of Rejoicing restored
 # Root = the project's owner (scope:jip_temple_builder)
@@ -256,6 +258,123 @@ jip_sabian.0100 = {
 			ai_value_modifier = {
 				ai_zeal = -0.5
 			}
+		}
+	}
+}
+
+# A Sabian scholar, a courtier or the head of a Sabian family in the realm, offers their learning: Greek books put into
+# Arabic, or the realm's sums. Patronage raises the Sabians' standing when the scholar carries the Sabian story.
+# Root = the Muslim ruler; scope:jip_sabian_scholar = the scholar (the story's owner first)
+jip_sabian.0200 = {
+	type = character_event
+	title = jip_sabian.0200.t
+	desc = {
+		desc = jip_sabian.0200.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:jip_sabian_scholar = { is_ruler = yes } }
+				desc = jip_sabian.0200.desc_family
+			}
+			desc = jip_sabian.0200.desc_courtier
+		}
+	}
+	theme = learning
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = study }
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+	right_portrait = {
+		character = scope:jip_sabian_scholar
+		animation = scheme
+	}
+
+	trigger = {
+		jip_can_patronise_sabian_scholar_trigger = yes
+	}
+
+	immediate = {
+		set_variable = {
+			name = jip_sabian_scholar_cooldown
+			years = 8
+		}
+		every_courtier = {
+			limit = { jip_sabian_scholar_for_trigger = { RULER = root } }
+			add_to_temporary_list = jip_sabian_scholars
+		}
+		every_ruler = {
+			limit = { jip_sabian_scholar_for_trigger = { RULER = root } }
+			add_to_temporary_list = jip_sabian_scholars
+		}
+		random_in_list = {
+			list = jip_sabian_scholars
+			weight = {
+				base = 1
+				modifier = {
+					add = 20
+					jip_owns_sabian_story_trigger = yes
+				}
+				modifier = {
+					add = learning
+				}
+			}
+			save_scope_as = jip_sabian_scholar
+		}
+	}
+
+	# Commission translations
+	option = {
+		name = jip_sabian.0200.a
+		trigger = { gold >= medium_gold_value }
+		show_as_unavailable = { always = yes }
+		remove_short_term_gold = medium_gold_value
+		add_learning_lifestyle_xp = medium_lifestyle_xp
+		add_prestige = minor_prestige_gain
+		scope:jip_sabian_scholar = {
+			add_gold = medium_gold_value
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 20
+			}
+			jip_sabian_story_raise_standing_effect = { VALUE = 1 }
+		}
+	}
+
+	# Set them to the realm's sums
+	option = {
+		name = jip_sabian.0200.b
+		add_stewardship_lifestyle_xp = medium_lifestyle_xp
+		capital_county ?= {
+			change_development_progress = medium_development_progress_gain
+		}
+		scope:jip_sabian_scholar = {
+			add_opinion = {
+				target = root
+				modifier = respect_opinion
+				opinion = 10
+			}
+			jip_sabian_story_raise_standing_effect = { VALUE = 1 }
+		}
+	}
+
+	# Send them away
+	option = {
+		name = jip_sabian.0200.c
+		add_piety = minor_piety_gain
+		scope:jip_sabian_scholar = {
+			add_opinion = {
+				target = root
+				modifier = insulted_opinion
+				opinion = -15
+			}
+			jip_sabian_story_lower_standing_effect = { VALUE = 1 }
 		}
 	}
 }

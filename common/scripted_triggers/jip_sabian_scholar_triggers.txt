@@ -1,0 +1,31 @@
+﻿# Sabian scholars at Muslim courts (0.15 plan, section 2; jip_sabian.0200): the translators and mathematicians of Harran,
+# after Thabit ibn Qurra in Baghdad
+
+# Character scope: a learned Sabian who could serve $RULER$ (a Muslim ruler) as a scholar: an adult courtier of theirs, or the
+# head of a Sabian family whose estate lies in their realm
+jip_sabian_scholar_for_trigger = {
+	is_adult = yes
+	is_imprisoned = no
+	rite = rite:sabianism
+	learning >= 10
+	OR = {
+		AND = {
+			is_ruler = no
+			is_courtier_of = $RULER$
+		}
+		jip_gnostic_family_in_realm_of_trigger = { RULER = $RULER$ }
+	}
+}
+
+# Character scope: a Muslim duke or above, a player, with a Sabian scholar to hand
+jip_can_patronise_sabian_scholar_trigger = {
+	religion = religion:islam_religion
+	is_ai = no
+	is_available_adult = yes
+	highest_held_title_tier >= tier_duchy
+	NOT = { has_variable = jip_sabian_scholar_cooldown }
+	OR = {
+		any_courtier = { jip_sabian_scholar_for_trigger = { RULER = root } }
+		any_ruler = { jip_sabian_scholar_for_trigger = { RULER = root } }
+	}
+}
