@@ -74,3 +74,10 @@ jip_old_god_home_modifier = {
 	development_growth_factor = 0.15
 	monthly_county_control_growth_add = 0.5
 }
+
+jip_statue_of_marduk_modifier = {
+	monthly_prestige = 1
+	learning = 2
+	vassal_limit = 5
+	court_grandeur_baseline_add = 2
+}

@@ -54,3 +54,10 @@
 		special_building_slot = jip_temple_of_ishtar_01
 	}
 }
+
+# 4826 - AL-HILA (Babylon): the Esagila, the temple of Marduk
+4826 = {
+	1.1.1 = {
+		special_building_slot = jip_temple_of_marduk_01
+	}
+}

@@ -507,6 +507,13 @@ jip_sabian_pick_sought_god_effect = {
 			name = jip_sought_god
 			value = flag:shamash
 		}
+	}
+	else_if = {
+		limit = { jip_sabian_god_statue_can_be_sought_trigger = { GOD = marduk BUILDING = jip_temple_of_marduk_01 BARONY = b_al-hila } }
+		save_scope_value_as = {
+			name = jip_sought_god
+			value = flag:marduk
+		}
 	}
 }
 
@@ -558,6 +565,11 @@ jip_sabian_bring_god_home_effect = {
 		limit = { scope:jip_sought_god = flag:shamash }
 		jip_sabian_create_god_statue_effect = { GOD = shamash }
 		title:c_mosul = { save_scope_as = jip_statue_county }
+	}
+	else_if = {
+		limit = { scope:jip_sought_god = flag:marduk }
+		jip_sabian_create_god_statue_effect = { GOD = marduk }
+		title:c_kufa = { save_scope_as = jip_statue_county }
 	}
 	scope:jip_statue_county = {
 		set_county_faith = root.faith

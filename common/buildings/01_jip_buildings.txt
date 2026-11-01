@@ -522,3 +522,52 @@ jip_temple_of_ishtar_01 = {
 	flag = jip_temple_of_ishtar_building
 	flag = travel_point_of_interest_religious
 }
+
+jip_temple_of_marduk_01 = {
+	# The Temple of Sin's model (the Tomb of Cyrus's stepped base and shrine), on al-Hila's map locator (province 4826)
+	asset = {
+		type = pdxmesh
+		name = "fp3_building_special_tomb_of_cyrus_01_a_mesh"
+	}
+
+	type_icon = "icon_structure_tomb_of_cyrus.dds"
+
+	can_construct_potential = {
+		always = no # Built only by the great project
+	}
+
+	is_enabled = {
+		custom_description = {
+			text = jip_temple_of_the_old_gods_enabled_trigger
+			scope:holder = {
+				OR = {
+					rite = rite:sabianism
+					faith = faith:mesopotamian_pagan
+				}
+			}
+		}
+	}
+
+	show_disabled = yes
+
+	character_modifier = {
+		monthly_piety = 0.5
+		monthly_prestige = 1
+		learning = 1
+		vassal_opinion = 5
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.25
+		tax_mult = 0.1
+	}
+
+	ai_value = {
+		base = 0
+	}
+
+	type = special
+
+	flag = jip_temple_of_marduk_building
+	flag = travel_point_of_interest_religious
+}
