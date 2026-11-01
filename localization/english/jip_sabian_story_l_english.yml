@@ -192,7 +192,7 @@
  jip_sabian_unveil_the_mysteries_decision_tooltip: "Reveal the old faith of the Sabians, openly, to the world"
  jip_sabian_unveil_the_mysteries_decision_confirm: "Open the doors"
  jip_sabian_temple_of_sin_stands_tt: "The Temple of Sin has been restored at Harran"
- jip_sabian_unveil_the_mysteries_effect_tt: "You proclaim the old gods, if you have not already. The Keepers of the Mysteries give up their secret and take your [rite|E], and so do the Sabians of your [court|E], your Sabian [vassals|E] and the Sabian [counties|E] of your [realm|E]. Your Muslim neighbours resent it, and their [faiths|E] gain [fervor|E]"
+ jip_sabian_unveil_the_mysteries_effect_tt: "You proclaim the old gods, if you have not already. The Keepers of the Mysteries give up their secret and take your [rite|E]. Every Sabian in the world, and every Sabian [county|E], takes up Sinism, and none may convert to the Sabian [rite|E] again. Your Muslim neighbours resent it, and their [faiths|E] gain [fervor|E]"
  jip_restored_old_gods_opinion: "Restored the Old Gods"
  fervor_gain_jip_old_gods_restored: "The old gods worshipped openly at Harran"
  nick_jip_high_priest_of_sin: "High Priest of Sin"

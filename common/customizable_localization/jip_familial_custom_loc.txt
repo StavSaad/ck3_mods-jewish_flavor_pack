@@ -6,7 +6,7 @@
 JipFaithfulOne = {
 	type = character
 	text = {
-		trigger = { rite = rite:sabianism }
+		trigger = { jip_is_sabian_rite_trigger = yes }
 		localization_key = jip_faithful_one_sabian
 	}
 	text = {
@@ -24,7 +24,7 @@ JipFaithfulOne = {
 JipFaithfulMany = {
 	type = character
 	text = {
-		trigger = { rite = rite:sabianism }
+		trigger = { jip_is_sabian_rite_trigger = yes }
 		localization_key = jip_faithful_many_sabian
 	}
 	text = {
@@ -42,7 +42,7 @@ JipFaithfulMany = {
 JipFaithfulAdj = {
 	type = character
 	text = {
-		trigger = { rite = rite:sabianism }
+		trigger = { jip_is_sabian_rite_trigger = yes }
 		localization_key = jip_faithful_adj_sabian
 	}
 	text = {
@@ -60,7 +60,7 @@ JipFaithfulAdj = {
 JipFaithTongue = {
 	type = character
 	text = {
-		trigger = { rite = rite:sabianism }
+		trigger = { jip_is_sabian_rite_trigger = yes }
 		localization_key = jip_faith_tongue_sabian
 	}
 	text = {
@@ -78,7 +78,7 @@ JipFaithTongue = {
 JipFaithTeachers = {
 	type = character
 	text = {
-		trigger = { rite = rite:sabianism }
+		trigger = { jip_is_sabian_rite_trigger = yes }
 		localization_key = jip_faith_teachers_sabian
 	}
 	text = {
@@ -96,7 +96,7 @@ JipFaithTeachers = {
 JipRansomDuty = {
 	type = character
 	text = {
-		trigger = { rite = rite:sabianism }
+		trigger = { jip_is_sabian_rite_trigger = yes }
 		localization_key = jip_ransom_duty_sabian
 	}
 	text = {
@@ -114,7 +114,7 @@ JipRansomDuty = {
 JipRansomWarning = {
 	type = character
 	text = {
-		trigger = { rite = rite:sabianism }
+		trigger = { jip_is_sabian_rite_trigger = yes }
 		localization_key = jip_ransom_warning_sabian
 	}
 	text = {
@@ -132,7 +132,7 @@ JipRansomWarning = {
 JipTranslateRoad = {
 	type = character
 	text = {
-		trigger = { rite = rite:sabianism }
+		trigger = { jip_is_sabian_rite_trigger = yes }
 		localization_key = jip_translate_road_sabian
 	}
 	text = {
@@ -151,7 +151,7 @@ JipTranslateRoad = {
 JipFamilyTeacherName = {
 	type = character
 	text = {
-		trigger = { rite = rite:sabianism }
+		trigger = { jip_is_sabian_rite_trigger = yes }
 		localization_key = jip_muallim_court_position
 	}
 	text = {
@@ -169,7 +169,7 @@ JipFamilyTeacherName = {
 JipFamilyEnvoyName = {
 	type = character
 	text = {
-		trigger = { rite = rite:sabianism }
+		trigger = { jip_is_sabian_rite_trigger = yes }
 		localization_key = jip_rasul_court_position
 	}
 	text = {
@@ -187,7 +187,7 @@ JipFamilyEnvoyName = {
 JipFamilyAgentName = {
 	type = character
 	text = {
-		trigger = { rite = rite:sabianism }
+		trigger = { jip_is_sabian_rite_trigger = yes }
 		localization_key = jip_sabian_wakil_court_position
 	}
 	text = {
@@ -205,7 +205,7 @@ JipFamilyAgentName = {
 JipFamilyScribeName = {
 	type = character
 	text = {
-		trigger = { rite = rite:sabianism }
+		trigger = { jip_is_sabian_rite_trigger = yes }
 		localization_key = jip_katib_court_position
 	}
 	text = {
@@ -223,7 +223,7 @@ JipFamilyScribeName = {
 JipFamilyLearningBranchName = {
 	type = character
 	text = {
-		trigger = { rite = rite:sabianism }
+		trigger = { jip_is_sabian_rite_trigger = yes }
 		localization_key = library_observatory_03_domicile_building
 	}
 	text = {

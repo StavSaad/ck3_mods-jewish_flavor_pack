@@ -12,7 +12,7 @@ jip_coa_is_jewish = {
 jip_coa_is_sabian = {
 	scope = character
 	is_shown = {
-		rite = rite:sabianism
+		jip_is_sabian_rite_trigger = yes
 	}
 }
 

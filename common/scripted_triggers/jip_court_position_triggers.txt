@@ -29,7 +29,7 @@ jip_jewish_court_position_validity_trigger = {
 jip_sabian_court_position_validity_trigger = {
 	base_court_position_validity_trigger = { EMPLOYER = $EMPLOYER$ }
 	is_adult = yes
-	rite = rite:sabianism
+	jip_is_sabian_rite_trigger = yes
 	custom_tooltip = {
 		text = none_does_not_have_a_full_time_job
 		trigger_if = {
@@ -135,7 +135,7 @@ jip_ransomable_captive_trigger = {
 jip_ransomable_sabian_captive_trigger = {
 	is_imprisoned = yes
 	is_ruler = no
-	rite = rite:sabianism
+	jip_is_sabian_rite_trigger = yes
 }
 
 jip_ransomable_mandaean_captive_trigger = {

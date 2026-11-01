@@ -18,7 +18,7 @@ FLAVOURS = {
         subs=[('jip_yeshiva_0', 'library_observatory_0'), ('court_position_jip_yeshiva', 'court_position_jip_observatory'),
               ('jip_beit_din_0', 'jip_diwan_0'), ('court_position_jip_beit_din', 'court_position_jip_diwan'),
               ('jip_beit_knesset_0', 'jip_haykal_0'), ('court_position_jip_beit_knesset', 'court_position_jip_haykal')],
-        rite='sabianism'),
+        rite='sabianism', is_rite='jip_is_sabian_rite_trigger = yes'),  # Sabianism or, once unveiled, Sinism
     'mandaean': dict(
         positions={
             'jip_rosh_yeshiva': 'jip_ganzibra',
@@ -32,7 +32,7 @@ FLAVOURS = {
         },
         subs=[('jip_yeshiva_0', 'jip_scriptorium_0'), ('court_position_jip_yeshiva', 'court_position_jip_scriptorium'),
               ('jip_beit_knesset_0', 'jip_mandi_0'), ('court_position_jip_beit_knesset', 'court_position_jip_mandi')],
-        rite='mandeaism'),
+        rite='mandeaism', is_rite='rite = rite:mandeaism'),
 }
 
 COMMENTS = {
@@ -58,7 +58,7 @@ def flavour_subs(f):
     d = FLAVOURS[f]
     return d['subs'] + [
         ('jip_ransomable_captive_trigger', f'jip_ransomable_{f}_captive_trigger'),
-        ('has_religion = religion:judaism_religion', f"rite = rite:{d['rite']}"),
+        ('has_religion = religion:judaism_religion', d['is_rite']),
         ('judaism_religion_opinion', 'dualism_religion_opinion'),
         ('jip_can_have_mishpacha_court_positions_trigger', f'jip_can_have_{f}_court_positions_trigger'),
         ('jip_can_have_jewish_court_positions_trigger', f'jip_can_have_{f}_court_positions_trigger'),

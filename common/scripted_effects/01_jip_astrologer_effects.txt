@@ -88,7 +88,14 @@ jip_create_sabian_astrologer_candidate_effect = {
 		save_scope_as = $SCOPE$
 	}
 	scope:$SCOPE$ = {
-		set_character_rite = rite:sabianism
+		# Once the Sabian story has unveiled the mysteries (Sabianism locked), Harran's astrologers are Sinites
+		if = {
+			limit = { rite:sabianism = { can_convert_to_rite = no } }
+			set_character_rite = rite:sinism
+		}
+		else = {
+			set_character_rite = rite:sabianism
+		}
 		random_list = {
 			60 = {}
 			20 = { add_trait = erudite }

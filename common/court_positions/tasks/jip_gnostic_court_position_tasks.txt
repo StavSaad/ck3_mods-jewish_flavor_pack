@@ -60,7 +60,7 @@ jip_muallim_train_disciples = {
 				random_courtier = {
 					limit = {
 						is_adult = yes
-						rite = rite:sabianism
+						jip_is_sabian_rite_trigger = yes
 						NOT = { this = root }
 						learning < 20
 					}
@@ -407,7 +407,7 @@ jip_sabian_almoner_ransom_captives = {
 				limit = {
 					NOT = { this = scope:liege }
 					is_ai = yes # Never frees the player's prisoners behind their back
-					NOT = { rite = rite:sabianism }
+					NOT = { jip_is_sabian_rite_trigger = yes }
 					any_prisoner = { jip_ransomable_sabian_captive_trigger = yes }
 				}
 				random_prisoner = {

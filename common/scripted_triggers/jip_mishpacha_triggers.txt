@@ -65,7 +65,16 @@ jip_can_build_jewish_estate_building_trigger = {
 # the crescent or the klila over the CoA) is gated by these, like the Jewish one by jip_is_jewish_family_trigger
 jip_is_sabian_family_trigger = {
 	government_has_flag = government_is_familial
-	rite = rite:sabianism
+	jip_is_sabian_rite_trigger = yes
+}
+
+# Character scope: a Sabian for the families' features (branches, court positions, texts, arms): of the Sabian rite, or of
+# Sinism, which the Sabians take up openly when the Sabian story unveils the mysteries (jip_sabian_unveil_the_mysteries_effect)
+jip_is_sabian_rite_trigger = {
+	OR = {
+		rite = rite:sabianism
+		rite = rite:sinism
+	}
 }
 
 jip_is_mandaean_family_trigger = {

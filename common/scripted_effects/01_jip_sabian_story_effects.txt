@@ -338,8 +338,9 @@ jip_sabian_fight_for_freedom_effect = {
 
 # Character scope (the story owner): the mysteries unveiled. The owner proclaims the old gods if they haven't (ruler, capital,
 # Harran: jip_proclaim_old_gods_effect), the initiates give up their secret and take the owner's rite (the list is cleared:
-# with no more secret to keep, the story window stops showing them), and so do the Sabians of the court, the realm's
-# Sabian vassals and its Sabian counties. Muslim neighbours resent it, and their faiths grow fervent
+# with no more secret to keep, the story window stops showing them). Every Sabian in the world, and every Sabian county,
+# takes up Sinism (Familial families keep their family titles: their recorded religion follows), and Sabianism can't be
+# converted to again. Muslim neighbours resent it, and their faiths grow fervent
 jip_sabian_unveil_the_mysteries_effect = {
 	if = {
 		limit = { NOT = { faith = faith:mesopotamian_pagan } }
@@ -360,18 +361,23 @@ jip_sabian_unveil_the_mysteries_effect = {
 		clear_variable_list = jip_sabian_initiates
 		set_variable = jip_sabian_unveiled
 	}
-	every_courtier = {
+	every_living_character = {
 		limit = { rite = rite:sabianism }
-		set_character_rite = scope:jip_old_gods_rite
+		set_character_rite = rite:sinism
+		# A family head's change of religion would otherwise cost the family its title (jip_family_left_faith_on_action)
+		every_held_title = {
+			limit = { has_variable = jip_family_religion }
+			set_variable = {
+				name = jip_family_religion
+				value = prev.religion
+			}
+		}
 	}
-	every_vassal_or_below = {
+	every_county = {
 		limit = { rite = rite:sabianism }
-		set_character_rite = scope:jip_old_gods_rite
+		set_county_rite = rite:sinism
 	}
-	every_sub_realm_county = {
-		limit = { rite = rite:sabianism }
-		set_county_rite = scope:jip_old_gods_rite
-	}
+	rite:sabianism = { set_can_convert_to_rite = no }
 	every_neighboring_and_across_water_top_liege_realm_owner = {
 		limit = { religion = religion:islam_religion }
 		add_opinion = {

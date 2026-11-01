@@ -10,12 +10,14 @@ jip_is_sabian_or_mandaean_trigger = {
 	}
 }
 
-# Character scope: a landless Sabian or Mandaean family whose estate lies in $RULER$'s realm
+# Character scope: a landless Sabian or Mandaean family whose estate lies in $RULER$'s realm (not one that has taken up the
+# old gods openly: the question is moot)
 jip_gnostic_family_in_realm_of_trigger = {
 	OR = {
 		jip_is_sabian_family_trigger = yes
 		jip_is_mandaean_family_trigger = yes
 	}
+	jip_is_sabian_or_mandaean_trigger = yes
 	is_landed = no
 	domicile ?= {
 		domicile_location.county.holder.top_liege ?= $RULER$
@@ -43,6 +45,7 @@ jip_shtadlan_gnostic_can_intercede_trigger = {
 			jip_is_sabian_family_trigger = yes
 			jip_is_mandaean_family_trigger = yes
 		}
+		jip_is_sabian_or_mandaean_trigger = yes
 		is_landed = no
 	}
 	scope:recipient = {
