@@ -27,3 +27,5 @@ nick_oravad = {}
 nick_al_bargeloni = {}
 nick_lord_of_kemet = {}
 nick_lord_of_the_crescent = {}
+nick_jip_high_priest_of_sin = {}
+nick_jip_restorer_of_the_gods = {}

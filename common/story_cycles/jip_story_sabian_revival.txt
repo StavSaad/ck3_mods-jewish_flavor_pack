@@ -4,6 +4,8 @@
 #  jip_sabian_act       the act (1 the Sabians of Baghdad, 2 the Return to Harran, 3 Throw Off the Caliph, 4 Restore
 #                       the Old Gods, 5 Reclaim the Land)
 #  jip_sabian_unveiled  set when the mysteries are unveiled (Act IV); the act ends at the next New Year kept
+# The gods brought home in Act V are the global list jip_old_gods_home (flags sin, ishtar, ashur, bel, shamash); with all
+# five, or with the Palmyrene Empire or Beth Nahrain, the story ends (jip_sabian_story.5090)
 #  jip_sabian_standing  the Sabian community's standing, 0-10 (jip_sabian_story_raise/lower_standing_effect); at 10 in
 #                       Act 1 the act ends (jip_sabian_story.1090)
 #  jip_sabian_patron    the owner's liege or suzerain
@@ -42,6 +44,8 @@ story_jip_sabian_revival = {
 			jip_sabian_raise_the_harranians_decision
 			jip_sabian_proclaim_freedom_decision
 			jip_sabian_unveil_the_mysteries_decision
+			jip_sabian_claim_cult_city_decision
+			jip_sabian_bring_the_gods_home_decision
 		}
 	}
 
@@ -227,6 +231,36 @@ story_jip_sabian_revival = {
 						}
 					}
 				}
+			}
+		}
+	}
+
+	# Act V: the story ends when all five gods are home, or the owner holds the Palmyrene Empire or Beth Nahrain, as an
+	# independent ruler of the old faith
+	effect_group = {
+		months = 1
+
+		trigger = {
+			var:jip_sabian_act = 5
+			story_owner = {
+				is_independent_ruler = yes
+				faith = faith:mesopotamian_pagan
+				OR = {
+					jip_sabian_all_gods_home_trigger = yes
+					has_title = title:e_palmyra
+					has_title = title:e_beth_nahrain
+				}
+			}
+		}
+
+		triggered_effect = {
+			trigger = { always = yes }
+			effect = {
+				set_variable = {
+					name = jip_sabian_act
+					value = 6
+				}
+				story_owner = { trigger_event = jip_sabian_story.5090 }
 			}
 		}
 	}

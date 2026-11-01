@@ -1245,3 +1245,151 @@ jip_sabian_story.4090 = {
 		custom_tooltip = jip_sabian_story.4090.tt
 	}
 }
+
+#################### Act V: Reclaim the Land ####################
+#  5010 The search begins (Bring the Gods Home; scope:jip_sought_god)
+#  5011 / 5012 A god found and brought home / the trail lost (some months on)
+#  5090 The Return of the Moon God (all five gods home, or the Palmyrene Empire or Beth Nahrain: the story ends)
+
+# The search begins (root = the story owner)
+jip_sabian_story.5010 = {
+	type = character_event
+	title = jip_sabian_story.5010.t
+	desc = jip_sabian_story.5010.desc
+	theme = learning
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = study }
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	trigger = {
+		exists = scope:jip_sought_god
+	}
+
+	# Send scholars to read the old records
+	option = {
+		name = jip_sabian_story.5010.a
+		add_learning_lifestyle_xp = minor_lifestyle_xp
+		save_scope_value_as = {
+			name = jip_search_skill
+			value = flag:learning
+		}
+		jip_sabian_story_search_effect = yes
+		ai_chance = { base = 50 }
+	}
+
+	# Send agents to the dealers and the treasuries of the great
+	option = {
+		name = jip_sabian_story.5010.b
+		add_intrigue_lifestyle_xp = minor_lifestyle_xp
+		save_scope_value_as = {
+			name = jip_search_skill
+			value = flag:intrigue
+		}
+		jip_sabian_story_search_effect = yes
+		ai_chance = { base = 50 }
+	}
+}
+
+# A god found and brought home (root = the story owner)
+jip_sabian_story.5011 = {
+	type = character_event
+	title = jip_sabian_story.5011.t
+	desc = jip_sabian_story.5011.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = temple }
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	artifact = {
+		target = scope:jip_statue
+		position = lower_center
+	}
+
+	immediate = {
+		jip_sabian_bring_god_home_effect = yes
+		remove_variable = jip_seeking_god_statue
+	}
+
+	option = {
+		name = jip_sabian_story.5011.a
+		add_piety = medium_piety_gain
+	}
+}
+
+# The trail lost (root = the story owner)
+jip_sabian_story.5012 = {
+	type = character_event
+	title = jip_sabian_story.5012.t
+	desc = jip_sabian_story.5012.desc
+	theme = learning
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = study }
+	left_portrait = {
+		character = root
+		animation = disappointed
+	}
+
+	immediate = {
+		remove_variable = jip_seeking_god_statue
+	}
+
+	option = {
+		name = jip_sabian_story.5012.a
+	}
+}
+
+# The Return of the Moon God: the story ends (root = the story owner)
+jip_sabian_story.5090 = {
+	type = character_event
+	title = jip_sabian_story.5090.t
+	desc = jip_sabian_story.5090.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = temple }
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+
+	option = {
+		name = jip_sabian_story.5090.a
+		add_prestige = major_prestige_gain
+		add_piety = major_piety_gain
+		dynasty ?= {
+			add_dynasty_prestige = 1000
+		}
+		if = {
+			limit = { has_any_nickname = no }
+			give_nickname = nick_jip_restorer_of_the_gods
+		}
+		random_owned_story = {
+			type = story_jip_sabian_revival
+			end_story = yes
+		}
+	}
+}

@@ -454,3 +454,107 @@ jip_sabian_unveil_the_mysteries_decision = {
 		base = 100
 	}
 }
+
+# The Sabian story, Act V (Reclaim the Land): a pressed claim on the nearest of the old cult cities (Harran, Arbela,
+# Nineveh, Mosul, Palmyra) that lies outside the realm and isn't of the old faith; vanilla's claim war takes it
+jip_sabian_claim_cult_city_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	desc = jip_sabian_claim_cult_city_decision_desc
+	selection_tooltip = jip_sabian_claim_cult_city_decision_tooltip
+	decision_group_type = jip_story_sabian_revival
+	sort_order = 40
+	ai_check_interval = 24
+
+	cooldown = { years = 5 }
+
+	is_shown = {
+		jip_sabian_story_in_act_trigger = { ACT = 5 }
+	}
+
+	is_valid = {
+		custom_tooltip = {
+			text = jip_sabian_has_cult_city_to_claim_tt
+			jip_sabian_has_cult_city_to_claim_trigger = yes
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_imprisoned = no
+	}
+
+	cost = { piety = 250 }
+
+	effect = {
+		jip_sabian_claim_cult_city_effect = yes
+		custom_tooltip = jip_sabian_claim_cult_city_effect_tt
+	}
+
+	ai_potential = {
+		jip_sabian_story_in_act_trigger = { ACT = 5 }
+	}
+
+	ai_will_do = {
+		base = 50
+	}
+}
+
+# The Sabian story, Act V: search for a god's statue, carried off long ago, for the restored temple that stands in the
+# realm (jip_sabian_story.5010, then .5011 or .5012 some months on)
+jip_sabian_bring_the_gods_home_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
+	}
+	desc = jip_sabian_bring_the_gods_home_decision_desc
+	selection_tooltip = jip_sabian_bring_the_gods_home_decision_tooltip
+	decision_group_type = jip_story_sabian_revival
+	sort_order = 30
+	ai_check_interval = 24
+
+	cooldown = { years = 2 }
+
+	is_shown = {
+		jip_sabian_story_in_act_trigger = { ACT = 5 }
+	}
+
+	is_valid = {
+		custom_tooltip = {
+			text = jip_sabian_any_statue_can_be_sought_tt
+			jip_sabian_any_statue_can_be_sought_trigger = yes
+		}
+		NOT = { has_variable = jip_seeking_god_statue }
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_imprisoned = no
+	}
+
+	cost = {
+		gold = 150
+		prestige = 200
+	}
+
+	effect = {
+		jip_sabian_pick_sought_god_effect = yes
+		custom_tooltip = jip_sabian_bring_the_gods_home_effect_tt
+		set_variable = {
+			name = jip_seeking_god_statue
+			years = 2
+		}
+		trigger_event = {
+			id = jip_sabian_story.5010
+			days = 1
+		}
+	}
+
+	ai_potential = {
+		jip_sabian_story_in_act_trigger = { ACT = 5 }
+	}
+
+	ai_will_do = {
+		base = 60
+	}
+}

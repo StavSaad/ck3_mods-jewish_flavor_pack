@@ -26,3 +26,25 @@ jip_nineveh_tablet_template = {
 
 	unique = yes
 }
+
+# The statues of the old gods brought home in the Sabian story (jip_sabian_create_god_statue_effect): their full modifiers
+# (jip_statue_of_<god>_modifier) only for followers of the old faith, the fallback for anyone else
+jip_old_god_statue_template = {
+	can_equip = {
+		always = yes
+	}
+
+	can_benefit = {
+		faith = faith:mesopotamian_pagan
+	}
+
+	is_holy_relic = {
+		this = faith:mesopotamian_pagan
+	}
+
+	fallback = {
+		court_grandeur_baseline_add = 1
+	}
+
+	unique = yes
+}

@@ -35,3 +35,42 @@ jip_nineveh_catalogue_modifier = {
 	monthly_prestige = 0.5
 	court_grandeur_baseline_add = 3
 }
+
+# The statues of the old gods (jip_old_god_statue_template), the Sabian story
+jip_statue_of_sin_modifier = {
+	monthly_piety = 1
+	learning = 2
+	court_grandeur_baseline_add = 2
+}
+
+jip_statue_of_ishtar_modifier = {
+	monthly_prestige = 1
+	prowess = 3
+	knight_effectiveness_mult = 0.1
+}
+
+jip_statue_of_ashur_modifier = {
+	monthly_prestige = 1
+	martial = 2
+	levy_size = 0.05
+}
+
+jip_statue_of_bel_modifier = {
+	monthly_piety = 1
+	diplomacy = 2
+	monthly_income_mult = 0.05
+}
+
+jip_statue_of_shamash_modifier = {
+	monthly_piety = 1
+	stewardship = 2
+	vassal_opinion = 5
+}
+
+# A god's statue is home in its temple: the county rejoices (jip_sabian_bring_god_home_effect)
+jip_old_god_home_modifier = {
+	icon = county_modifier_development_positive
+	county_opinion_add = 15
+	development_growth_factor = 0.15
+	monthly_county_control_growth_add = 0.5
+}

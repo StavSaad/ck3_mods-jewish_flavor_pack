@@ -53,3 +53,26 @@ jip_sabian_freedom_levies_value = {
 		add = 150
 	}
 }
+
+### Act V: Reclaim the Land
+
+# Chance (%) that a search finds the god's statue: 30, plus 4 per point of the chosen skill (learning or intrigue),
+# between 20 and 90
+jip_sabian_statue_search_chance_value = {
+	value = 30
+	if = {
+		limit = { scope:jip_search_skill = flag:intrigue }
+		add = {
+			value = intrigue
+			multiply = 4
+		}
+	}
+	else = {
+		add = {
+			value = learning
+			multiply = 4
+		}
+	}
+	min = 20
+	max = 90
+}
