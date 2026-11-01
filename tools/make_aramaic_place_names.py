@@ -119,7 +119,7 @@ NAMES = {
     'c_shahrazur': ('mazamua', None),                 # the Assyrian province of the Shahrizor plain
     'b_shahrazur': ('mazamua', None),
     # Mesopotamia
-    'k_mesopotamia': ('karduniash', 'beth_aramaye'),
+    'k_mesopotamia': ('karduniash', 'babylon'),       # Babylonia (not Beth Aramaye: Syria is already Aram)
     'd_samarra': ('beth_garmai', 'beth_garmai'),
     'c_hulwan': ('khalmanu', None),
     'b_hulwan': ('khalmanu', None),

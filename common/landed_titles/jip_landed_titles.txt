@@ -3138,8 +3138,8 @@ e_persia = {
 			name_list_sephardi = cn_bavel
 			name_list_radhanite = cn_bavel
 			name_list_assyrian = cn_karduniash
-			name_list_aramean = cn_beth_aramaye
-			name_list_nabati = cn_beth_aramaye
+			name_list_aramean = cn_babylon
+			name_list_nabati = cn_babylon
 		}
 		
 		d_samarra = {
