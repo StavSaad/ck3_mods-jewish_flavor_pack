@@ -38,8 +38,7 @@
  jip_sabian.0001.a:0 "Let the old gods be proclaimed."
  jip_sabian.0001.b:0 "We remain Sabians. The temple serves the Moon all the same."
  jip_sabian.0001.c:0 "The Lord of the Moon has his house again."
- jip_sabian.0001.d:0 "The gods will be named when the mysteries are unveiled."
- jip_sabian.0001.d_tt:0 "The old gods are proclaimed through the #V Unveil the Mysteries#! decision"
+ jip_sabian.0001.d:0 "Open the doors. Let the mysteries be unveiled."
 
  ### The temples of the old gods and the Nineveh dig (0.15 plan, section 5)
  jip_gp_temple_held_tt:0 "The site is in your realm"

@@ -1173,7 +1173,8 @@ jip_sabian_story.3090 = {
 }
 
 #################### Act IV: Restore the Old Gods ####################
-#  4010 The mysteries unveiled (Unveil the Mysteries): name a High Priest of Sin, or not
+#  4010 The mysteries unveiled (the Temple of Sin's completion, jip_sabian.0001, or Unveil the Mysteries): name a High
+#       Priest of Sin, or not
 #  4090 The New Year in Harran (the first Akitu or Feast of Nisan after the unveiling: Act IV ends)
 
 # The mysteries unveiled (root = the story owner)

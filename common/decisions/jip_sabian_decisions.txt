@@ -408,7 +408,9 @@ jip_sabian_proclaim_freedom_decision = {
 }
 
 # The Sabian story, Act IV (Restore the Old Gods): once the Temple of Sin stands, the secret believers reveal themselves
-# together (jip_sabian_unveil_the_mysteries_effect, jip_sabian_story.4010). The act ends at the next New Year kept
+# together (jip_sabian_unveil_the_mysteries_effect, jip_sabian_story.4010). The Temple of Sin's completion
+# (jip_sabian.0001) unveils them for the owner who builds it; this decision is for an owner who comes to a temple already
+# standing. The act ends at the next New Year kept
 jip_sabian_unveil_the_mysteries_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/fp3/fp3_decision_secret_faith.dds"

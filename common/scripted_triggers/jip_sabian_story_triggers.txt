@@ -142,6 +142,15 @@ jip_sabian_story_unveiled_trigger = {
 	}
 }
 
+# Character scope: owns the Sabian story and hasn't unveiled the mysteries yet (the Temple of Sin's completion,
+# jip_sabian.0001, unveils them)
+jip_sabian_story_awaits_unveiling_trigger = {
+	any_owned_story = {
+		type = story_jip_sabian_revival
+		NOT = { has_variable = jip_sabian_unveiled }
+	}
+}
+
 # The Temple of Sin (jip_temple_of_sin_01) stands at Harran
 jip_sabian_temple_of_sin_stands_trigger = {
 	title:b_harran.title_province = { has_building = jip_temple_of_sin_01 }
