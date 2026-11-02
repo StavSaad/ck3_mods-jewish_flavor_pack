@@ -1,7 +1,7 @@
-# Builds every sign-of-Tanit icon of the Levantine religion (canaanite_religion) from one silver Gemini painting on
-# flat green, through make_faith_icon.py: the silver as painted (for custom faiths), the gold of Tanitism, and colour
-# variants for
-# custom faiths (canaanite_01..06, listed in the religion's custom_faith_icons).
+# Builds the custom faiths' sign-of-Tanit icons of the Levantine religion (canaanite_religion) from one silver Gemini
+# painting on flat green, through make_faith_icon.py: the silver as painted (punic) and colour variants (canaanite_01..06,
+# listed in the religion's custom_faith_icons). Tanitism's own icon (canaanite) is a separate gold painting, the
+# ornate votive sign with the crescent: make_faith_icon.py <gold_tanit> canaanite --reformed.
 # Usage: make_tanit_icons.py <silver_tanit.png> [<preview.png>]
 import os
 import subprocess
@@ -18,7 +18,6 @@ preview = sys.argv[2] if len(sys.argv) > 2 else None
 # icon name: (palette shadow,mid,highlight or None for the painting's own silver, also write a reformed version)
 ICONS = {
     'punic': (None, True),                                # silver, for custom faiths
-    'canaanite': ('#2e1d06,#a8822f,#fbe7a1', True),       # Tanitism: gold
     'canaanite_01': ('#2a1708,#8c5a2b,#e8b27a', False),   # bronze
     'canaanite_02': ('#2d0f08,#a3452a,#f6b08c', False),   # copper
     'canaanite_03': ('#1e0a1e,#6e2a6a,#d9a3d2', False),   # Tyrian purple
