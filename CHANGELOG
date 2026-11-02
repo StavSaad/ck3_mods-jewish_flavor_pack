@@ -125,100 +125,70 @@
 [] Fixed many errors: Tanas holy site, Canaanite faith tenets, Lower Egypt adjective, Third Temple tenet check, Masada defense bonus, Maimonides' traits, Claim Exilarchate description, Semitic pagan religious head, and duplicate localization keys
 
 == Version 0.15.0 ==
-[] Mandaeans: the Rish Amma (Headship of the People) is now the head of the Mandaean faith, at every start date
-[] Mandaeans: a new icon, the drabsha, for the faith and its Mandaean rite
-[] Mandaeans: new holy sites of their own: Tib and the Marshes (eminent), Harran, Basra and Shushtar, in place of Farz, Baghdad, Damascus and Jerusalem
-[] 867: Harran is Sabian, and Tib and the Marshes are Mandaean
-[] Added the Nabati culture, the Aramaic-speaking peasants of the Sawad (Communal; Agrarian, Philosopher Culture, Language Scholars, Parochialism), with its own names and Aramaic place names in southern Iraq
-[] 867: Wasit, Tib, the Marshes, Badaraya, Iskaf and Ubulla are Nabati, and the Rish Amma is Nabati
-[] Arameans, Assyrians and Nabati now have place names of their own across Syria, the Jazira and Mesopotamia: Iron-Age Aramaic and Syriac names for Arameans and Nabati (Arpad, Mabbug, Urhay, Ninwe, Arbel, Babylon, Beth Huzaye), Neo-Assyrian ones for Assyrians (Bit Agusi, Nappigu, Ninua, Arbail, Karduniash, Elam), about 70 of them new, from Syria to Khuzestan
-[] Fixed Raqqa being named Mari, Aleppo Ebla and Baghdad Babylon for Assyrians and Arameans, and Assyrians using Punic names in Tunisia
-[] More Aramean and Assyrian place names (about 35): Tur Abdin / Kashiyari, the city of Ashur, Kalhu, Til Barsip, Serugh, Tella, Mari, Nippur, Uruk, Der, Unqi, Lebanon and others
-[] Jews now call Aleppo Aram Zobah (it was Ebla), and Canaanites call it Halab; Carchemish moved from Aintab to Jarabulus, Mari from Raqqa to the middle Euphrates, and Antioch is no longer Ramitha (Latakia's name) for Canaanites
-[] The Jazira is now Aram Naharaim for Jews and Ashur for Arameans, and Mesopotamia is Babylon for Canaanites; Diyar Rabia is Ashur for Jews (was Naharaim) and Diyar Mudar is Balihu for Assyrians (was Padan Aram)
-[] Fixed log errors from the Shtadlanut files (encoding, unused AI frequency)
-[] Added Mesopotamianism, the old gods of Assyria and the Aramean cities: a reformed pagan faith with two rites, Ashurism (Ashur, Marduk, Ishtar; the new Vicegerent of Ashur tenet, Warmonger, Ritual Celebrations) and Sinism (Sin of Harran, Hadad, Atargatis; Astrology, Esotericism, Sanctity of Nature), and holy sites at Harran, Nineveh, Arbela, Manbij, Damascus and Palmyra
+-- General --
 [] The Semitic pagan religion is now called Levantine
-[] New icons for Mesopotamianism (the winged disc of Ashur) and its rite Sinism (the crescent standard of Sin)
-[] New sign of Tanit icons for Canaanism and Tanitism (gold), and a silver one and six more colours each of the Tanit, the Mesopotamian winged disc and the Sinite crescent standard for custom Levantine faiths
-[] Kohenism, Canaanism and Mesopotamianism can no longer be converted to until they are restored: Kohenism when the Third Temple is built, Canaanism when Phoenicia or Carthage is restored, Mesopotamianism by a decision still to come
-[] Fixed the Levantine religion missing the doctrines CK3 1.20 added: polytheism, anointment of kings, no monasticism or sacraments, and written myths
-[] Added two cultural men-at-arms: Palmyrene Archers for Arameans (desert archers, from the new Archers of Tadmor tradition) and Clibanarii for Assyrians (armoured cavalry, from the new Armoured Horse of Adiabene tradition); any Syriac culture can adopt either tradition
-[] Added more cultural men-at-arms: Bowmen of Seir for Edomites (desert-mountain archers, in place of Desert Ribat), the Sacred Band for Phoenicians and Carthaginians (elite heavy infantry), and the Nile Archers for Kemi and Ancient Egyptians (through the new Archers of the Two Lands tradition)
-[] Forming Hebrew keeps the mod's new men-at-arms traditions
-[] Added festivals as new kinds of feast, each shown only to its faith and in its season: Akitu for Mesopotamian pagans in March and April (the purification, the king humbled before the god, the procession to the akitu house, the fates fixed for the year), the Feast of Nisan for Sabians and Harranians (the Moon's fast broken, the sacrifice to Sin, the mystery of the North), and Parwanaya and Dehwa Rabba for Mandaeans
-[] The Mandaean feasts follow the Mandaean calendar, which has no leap days: in 867 Dehwa Rabba falls in April and Parwanaya in December, and both move a day earlier every four years
-[] Mesopotamian rulers who let Akitu lapse for 8 years lose legitimacy and piety; for Sinites the Feast of Nisan keeps the New Year too
-[] Mishpacha family heads can now hold feasts at their estate
-[] The Rish Amma, head of the Mandaeans, has a coat of arms: the drabsha planted in living water
-[] Added a great project, Restore the House of Rejoicing: an independent Sabian ruler of Harran rebuilds the Temple of Sin, which opens the old gods to conversion and lets its builder proclaim them; the temple stands on the map at Harran
-[] Added the Court Astrologer, a Sabian of Harran who reads the stars for Muslim, Sabian and Middle Eastern courts (duke and above): horoscopes before wars, the births of children (each born under one of the seven planets) and marriages, tasks to compile astronomical tables or cast horoscopes for the court, and a new option in Recruit for a Court Position to send to Harran for one. Muslim zealots dislike it
-[] Added Pesach as a new kind of feast for every Jewish faith, shown in March and April: the four cups, the children's questions, the afikoman and Elijah's cup, ending with "Next year in Jerusalem" (or "this year" for a ruler who holds it). Karaites, Samaritans and the Beta Israel keep it their own way, an Exilarch's seder brings legitimacy, and a rebuilt Temple brings back the paschal lamb
-[] Every Jewish ruler who holds no grand seder keeps a household seder each spring
-[] Mishpacha is now Familial, a government for landless families of any faith, called Familial by all; Jewish families keep their Mar/Geveret titles, kippah, court positions, Yeshiva, Beit Din and Beit Knesset, contracts and Shtadlanut
-[] Familial: non-Jewish families are headed by a Mar or Marta, and their family title is a Bayta
-[] Familial: a head who leaves the family's religion steps down for the nearest man of the house who keeps it
-[] 867: Thabit ibn Qurra, the Sabian mathematician and translator, heads a playable Familial family in Baghdad, a vassal of the Caliph
-[] Every start has a few Sabian families (Harran, Raqqa, Edessa; before 1100) and Mandaean families (the Marshes, Tib, Basra, Wasit, Ahvaz)
-[] Familial: Sabian families have court positions of their own (Mu'allim, Ra'is al-Kahana, Sha'ir, Kahin, Almoner, Rasul, Katib, Wakil), and so do Mandaean families (Ganzibra, Tarmida, Shganda, Izgadda, Sapra, Wakil), with their own tasks
-[] Familial: new estate branches for Sabians (Diwan, Haykal; the Observatory trains their Mu'allim) and Mandaeans (Scriptorium, Mandi)
-[] Familial: a non-Jewish family whose estate had a vanilla church or monastery gets its own temple branch, not a Beit Knesset
-[] Familial: Sabian and Mandaean families take on contracts too (loans, tolls, envoys, ransoms, physicians, translations, news), told in their own faith's words; the Radhanite caravan and the responsum stay Jewish. Their own court positions and branches help the odds as the Jewish ones do
-[] Familial: Sabian family heads can employ a Court Astrologer, and send to Harran for one
-[] Familial: Sabian families can take a new contract, Cast a Horoscope, for rulers without a Court Astrologer
-[] Added the Question of the Sabians: a Muslim duke or above can demand that the Sabians and Mandaeans of the realm prove themselves a people of the Book, as al-Ma'mun did at Harran; each answers by paying, defending the claim (a good defence wins 20 years' recognition) or converting
-[] Familial: Sabian and Mandaean families can plead with a Muslim ruler to recognise them as a people of the Book, which spares them the Question for 20 years
-[] Familial: the government is called Familial for every faith; Jewish families no longer see it as Mishpacha or with its own icon, and every family title is a "Family"
-[] Familial: the Charter of Privileges' Beit Din right is now "Own Courts", and the Villa and estate tooltips no longer call every family Jewish
-[] Added the Palmyrene Empire: an independent Aramean king holding Palmyra and Syria can raise the empire of Odaenathus and Zenobia, taking Syria, and the Jazira, Jerusalem, Israel, Phoenicia, Arabia and Egypt if they exist and are completely controlled, whatever empire they belonged to
-[] Canaan and Beth Nahrain no longer take Syria or Jerusalem from each other, or from Kemet, when another ruler holds them; the first to form keeps them. The Palmyrene Empire never blocks them
-[] Beth Nahrain's capital is now Nineveh; the Fertile Crescent hegemony absorbs the Palmyrene Empire
-[] Aramean and Nabati rulers see the duchy of Damascus as Aram-Damascus; under them Aram (Syria) carries the bull of Hadad and Osroene (Edessa) the Abgarid tiara, and Adiabene (Arbela) the star of Ishtar under Assyrians too
-[] The Palmyrene Empire's arms: the eagle of Bel on Zenobia's purple
-[] Added great projects for the temples of the old gods: the Temple of Bel at Palmyra, the Temple of Shamash at Hatra, the Temple of Ishtar at Arbela and the Temple of Ashur at Ashur, and a repeatable dig into the mound of Nineveh that turns up the tablets of Ashurbanipal's library, each told in an event, at full strength for Aramean, Nabati, Assyrian and pagan rulers
-[] The Temple of Sin now stands in Harran's special building slot, like a holy site building, instead of a great building slot
-[] Mesopotamianism's holy sites are now the sites of its temples: Harran and Ashur (eminent), Nineveh, Arbela and Palmyra
-[] New rites of Mesopotamianism and Canaanism are named after their gods, as Asatru's are: the cult of the founder's city (Mardukism in Babylonia, Belism at Palmyra, Hadadism at Damascus, Atargatism at Manbij, Shamashism at Hatra, Ishtarism at Arbela; Chemoshism in Moab, Milcomism in Ammon, Qosism in Edom, Eshmunism at Sidon, Adonism at Byblos, Dagonism at Gaza, Hammonism in Africa, Melqartism at Tyre), else the god of their tenets (Nabuism, Nergalism, Tammuzism, Nuskuism; Anatism, Astartism, Kotharism, Asherism), else Enlilism for Mesopotamianism
-[] New rites of Mesopotamianism and Canaanism take their god's own icon (the spade of Marduk, the eagle of Bel, Hadad's thunderbolts, the fish of Atargatis, the sun of Shamash, the star of Ishtar, Nabu's stylus, Nergal's lion mace, Tammuz's crook and barley, Nusku's lamp, Enlil's horned crown), as do Canaanism's of Chemosh (the horned helmet), Milcom (the crown), Qos (the bow and star), Eshmun (the serpent staff), Adonis (the anemone), Dagon (grain and fish tail), Baal Hammon (the ram's horns), Melqart (club and ship), Anat (axe, spear and lioness), Astarte (star and crescent), Kothar (hammer and anvil) and Asherah (the sacred tree); all also offered for custom Levantine faiths
-[] Other new rites of Mesopotamianism and Canaanism take the faith's own icons: the winged disc, the crescent standard of Sin for Aramean or astrological rites, and the sign of Tanit
-[] Canaanism's main rite is now Baalism, the faith of the Phoenician cities, with Mountain Worship (Baal on Mount Zaphon) in place of Jewish Syncretism
-[] Added Yahwism, a new rite of Canaanism: the old faith of Israel and Judah, Yahweh beside his Asherah, the bull calves of Bethel and Dan and the high places, with gods of its own and Jewish Syncretism. The ancient kings of Israel and Judah who 'did evil in the eyes of the Lord' now follow it
-[] Canaanism's rite Punism is renamed Tanitism
-[] Tanitism now has the gold sign of Tanit; Canaanism and Baalism have Baal of the stele with club and thunderbolt, and Yahwism the bull calf of Bethel
-[] Fixed Canaanism's gods showing as raw text keys (Baal, Astarte, Anat and the others)
-[] Taking a loan, tolls, physician, responsum or horoscope contract now tells you what comes next, and that word will come in two to four months
-[] Fixed the Maimon family title showing a raw text key instead of Ben Maimon
-[] Fixed the Cast a Horoscope contract's request and event texts breaking off, and the Sabian Observatory not counting for contract odds
-[] Fixed old estate temples not turning into the family's own temple branch (Beit Knesset, Haykal or Mandi)
-[] Added the Sabian story, The Return of the Moon God, for the head of Thabit ibn Qurra's house at 867, told in an event as the game begins; Thabit secretly keeps the old gods. Act I, The Sabians of Baghdad: raise the Sabians' standing at the Muslim courts through translations, horoscopes and cures for Muslim patrons, Sabian astrologers at Muslim courts, the Question of the Sabians and the story's own events, and pass the old gods to your house in secret with Keep the Mysteries
-[] The Sabian story, Act II, The Return to Harran: petition your patron for Harran, buy the county's tax farm from its count, or raise the Harranians in a war while their masters are at war elsewhere
-[] The Sabian story, Act III, Throw Off the Caliph: demand that your liege let Harran go, and if they refuse, fight for your independence at the head of the Harranians
-[] The Temples of Bel, Shamash and Ishtar can now only be rebuilt by independent rulers of the restored old faith, Mesopotamianism, not by Sabians before the Temple of Sin
-[] The Sabian story, Act IV, Restore the Old Gods: once the Temple of Sin stands, unveil the mysteries: the house's secret believers, the Sabians of the court, the realm's Sabian vassals and its Sabian counties take up the old gods together, and Muslim neighbours resent it. Name a High Priest of Sin, and keep the New Year to end the act
-[] The Sabian story, Act V, Reclaim the Land: claim the old gods' cities (Babylon among them), search for the lost statues of Sin, Ishtar, Ashur, Bel, Shamash and Marduk and bring them home to their restored temples, and end the story with all six gods home or with the Palmyrene Empire or Beth Nahrain
-[] Added a great project to rebuild the Esagila, the temple of Marduk at Babylon, for an independent ruler of the old faith
-[] Babylon is now an eminent holy site of Mesopotamianism
-[] Added Jabir ibn Sinan, the instrument maker of Harran, and his son al-Battani, the future astronomer, at Harran in 867
-[] Muslim rulers may now be offered the learning of a Sabian scholar: translations of the Greeks, or the realm's sums
-[] Mandaeans can receive the Masbuta, baptism in living water, if their seat or estate lies on a river
-[] Mandaeans can copy the Ginza Rabba, a book artifact signed by its copyist
-[] Mandaean players hear the Haran Gawaita, the legend of their people's wanderings
-[] Mandaean rulers disown the Sabians of Harran when they proclaim the old gods
-[] When the Rish Amma dies, a Ganzibra takes the title if there is one
-[] The Shu'ubiyya: Nabati courtiers at Arab courts praise the Nabat over the Arabs, and Nabati under Arab rule take pride in Babylon
-[] Nabati and rulers of the Sawad can copy the Nabataean Agriculture, whose Babylonian lore may tempt its reader to the old gods
-[] The drabsha now appears in randomly generated Mandaean arms and their holy orders
-[] A Sabian Court Astrologer trained in a family's Observatory is more able
-[] Added the Harran dynasty legacy for Sabian and old-faith dynasties: Star-Readers, Heirs of Hermes, Hidden Rites, Priests of Sin, Return of the Gods
+[] Arameans, Assyrians and Nabati have place names of their own from Syria to Khuzestan, about 100 of them: Iron-Age Aramaic and Syriac for Arameans and Nabati (Arpad, Mabbug, Urhay, Ninwe, Arbel; Mesopotamia is Babylon), Neo-Assyrian for Assyrians (Bit Agusi, Ninua, Arbail, Karduniash)
+[] Jewish and Canaanite place names corrected: Aleppo is Aram Zobah for Jews and Halab for Canaanites, the Jazira Aram Naharaim for Jews, for Canaanites Babylon is al-Hila, where its ruins lie, and Baghdad's duchy Akkad, and Assyrians no longer use Punic names in Tunisia
+[] Aram, Osroene, Adiabene and the Palmyrene Empire carry arms of their own under Aramean and Assyrian holders, and Hadad's bull, the Abgarid tiara, Bel's eagle, Ishtar's star and the Mandaean drabsha appear in randomly generated arms
+[] Added cultural men-at-arms: Palmyrene Archers (Arameans), Clibanarii (Assyrians), Bowmen of Seir (Edomites), the Sacred Band (Phoenicians and Carthaginians) and Nile Archers (Kemi and Ancient Egyptians)
 [] The Mandaeans and the Nabati take part in the Persian struggle
-[] Hadad's bull, the Abgarid tiara, Bel's eagle and Ishtar's star now appear in randomly generated Aramean, Nabati, Assyrian, Mesopotamian and Canaanite arms
-[] Mesopotamian court chaplains have their own titles: Kumra for Sinism, Shangu for Ashurism, Entu for a priestess; and so do Canaanite ones: Kohen (Rab Kohanim at a king's court), Komer for Yahwism, Kohenet for a priestess
-[] For Canaanites, Babylon is now al-Hila, where the ruins of Babylon lie, and no longer the city and county of Baghdad, whose duchy is now Akkad
-[] Fixed the High Priest of Sin's nickname
-[] The Sabian story's decisions notify you when they can be taken
-[] The Sabian story no longer shows a patron once Harran is free
-[] The Sabian story no longer lists the keepers of the mysteries once they are unveiled
-[] The Sabian story's owner unveils the mysteries as soon as the Temple of Sin is finished
-[] Unveiling the mysteries now turns every Sabian in the world to Sinism and closes the Sabian rite to converts; Sabian families keep their titles, buildings and court positions as Sinites, and families of the old faith have them too
-[] Fixed the truce after Harran's liege lets it go
+[] Fixed Canaanism's gods showing as raw text keys, the Levantine religion missing the doctrines CK3 1.20 added, the Maimon family title's name, and log errors from the Shtadlanut files
+
+-- Nabati --
+[] Added the Nabati, the Aramaic-speaking peasants of the Sawad (Communal; Agrarian, Philosopher Culture, Language Scholars, Parochialism); at 867 they hold Wasit, Tib, the Marshes, Badaraya, Iskaf and Ubulla
+[] The Shu'ubiyya: Nabati at Arab courts praise the Nabat over the Arabs, and Nabati under Arab rule take pride in Babylon
+[] Copy the Nabataean Agriculture, a book of farming whose Babylonian lore may tempt its reader to the old gods
+
+-- Mesopotamianism and Canaanism --
+[] Added Mesopotamianism, the old gods of Assyria and Harran: a reformed pagan faith with two rites, Ashurism (Ashur, Marduk, Ishtar; the new Vicegerent of Ashur tenet) and Sinism (Sin of Harran; Astrology, Esotericism). Its holy sites are its temples: Harran, Ashur and Babylon (eminent), Nineveh, Arbela and Palmyra
+[] Canaanism's main rite is now Baalism, the faith of the Phoenician cities; Punism is renamed Tanitism; and the new rite Yahwism is the old faith of Israel and Judah, Yahweh beside his Asherah, followed by the ancient kings who 'did evil in the eyes of the Lord'
+[] New icons: the winged disc of Ashur, the crescent standard of Sin, Baal of the stele, the bull calf of Bethel and the sign of Tanit, with colours for custom faiths
+[] New Mesopotamian and Canaanite rites are named after a god, by their founder's city or their tenets (Mardukism, Belism, Hadadism, Chemoshism, Melqartism, Astartism and 24 more), each with the god's own icon
+[] Court chaplains have their own titles: Kumra, Shangu and Entu for Mesopotamianism, Kohen, Rab Kohanim, Komer and Kohenet for Canaanism
+[] Kohenism, Canaanism and Mesopotamianism are closed to converts until restored: the Third Temple, Phoenicia or Carthage, and the Temple of Sin
+
+-- Temples of the old gods --
+[] New great projects: the Temple of Sin at Harran, which restores the old gods, then for independent rulers of the old faith the Temples of Bel at Palmyra, Shamash at Hatra, Ishtar at Arbela and Ashur at Ashur, and the Esagila, Marduk's temple at Babylon
+[] Dig into the mound of Nineveh again and again for the tablets of Ashurbanipal's library
+
+-- Empires --
+[] Added the Palmyrene Empire: an independent Aramean king of Palmyra and Syria raises the empire of Odaenathus and Zenobia, taking Syria and whatever Jazira, Jerusalem, Israel, Phoenicia, Arabia and Egypt they completely control
+[] Canaan and Beth Nahrain no longer take Syria or Jerusalem from each other or from Kemet; Beth Nahrain's capital is now Nineveh; the Fertile Crescent absorbs the Palmyrene Empire
+
+-- Festivals --
+[] Festivals are new kinds of feast, each shown only to its faith and in its season: Akitu for Mesopotamian pagans, the Feast of Nisan for Sabians and Sinites, Parwanaya and Dehwa Rabba for Mandaeans (on the Mandaean calendar, which drifts a day every four years) and Pesach for every Jewish faith
+[] Pesach has its own seder for Karaites, Samaritans and the Beta Israel, more for an Exilarch, a ruler of Jerusalem and a rebuilt Temple, and every Jewish ruler without a grand seder keeps a household one
+[] Mesopotamian rulers who let Akitu lapse for 8 years lose legitimacy and piety
+
+-- Mandaeans --
+[] The Rish Amma heads the Mandaeans at every start date, with a coat of arms; when one dies a Ganzibra takes the title if there is one
+[] New holy sites: Tib and the Marshes (eminent), Harran, Basra and Shushtar; and a new icon, the drabsha
+[] 867: Tib and the Marshes are Mandaean, and Harran Sabian
+[] Receive the Masbuta, baptism in living water, if your seat or estate lies on a river; copy the Ginza Rabba, signed by its copyist; and hear the Haran Gawaita, the legend of the people's wanderings
+
+-- Sabians --
+[] 867: Thabit ibn Qurra, the mathematician and translator, heads a playable Sabian family in Baghdad; Jabir ibn Sinan and his son al-Battani live at Harran
+[] Added the Court Astrologer, a Sabian of Harran who reads the stars for Muslim, Sabian and Middle Eastern courts: horoscopes for wars, births and marriages, astronomical tasks, and an option in Recruit for a Court Position to send to Harran for one
+[] The Question of the Sabians: a Muslim ruler can make the Sabians and Mandaeans of the realm prove themselves a people of the Book, as al-Ma'mun did at Harran; they pay, defend the claim or convert
+[] Muslim rulers may be offered a Sabian scholar's learning: translations of the Greeks, or the realm's sums
+[] Added the Harran dynasty legacy for Sabian and old-faith dynasties
+
+-- The Return of the Moon God --
+[] A story for Thabit ibn Qurra's house in five acts, shown in the story window, its decisions notifying you when they can be taken:
+[] Act I, The Sabians of Baghdad: raise the Sabians' standing with translations, horoscopes and cures for Muslim patrons, and keep the old gods in secret
+[] Act II, The Return to Harran: petition for Harran, buy its tax farm, or raise the Harranians in war
+[] Act III, Throw Off the Caliph: ask your liege to let Harran go, or fight for it
+[] Act IV, Restore the Old Gods: rebuild the Temple of Sin and unveil the mysteries; every Sabian turns to Sinism, the Mandaeans disown Harran and the Muslims resent it
+[] Act V, Reclaim the Land: claim the old gods' cities and bring their statues home, until all six gods are home or the Palmyrene Empire or Beth Nahrain is raised
+
+-- Familial (was Mishpacha) --
+[] Mishpacha is now Familial, a government for landless families of any faith; Jewish families keep their Mar/Geveret titles, kippah, court positions, Yeshiva, Beit Din, Beit Knesset, contracts and Shtadlanut, and others are headed by a Mar or Marta
+[] Every start has a few Sabian families (around Harran, before 1100) and Mandaean ones (the marshes and Khuzestan)
+[] Sabian and Mandaean families have court positions of their own (Mu'allim, Ra'is al-Kahana, Kahin and others; Ganzibra, Tarmida and others), estate branches (Diwan, Haykal; Scriptorium, Mandi), contracts told in their own words, and the crescent of Sin or the klila on their arms
+[] Sabian families can employ a Court Astrologer, whom their Observatory trains, and take a new contract, Cast a Horoscope
+[] Sabian and Mandaean families can plead to be recognised as a people of the Book, sparing them the Question for 20 years
+[] A head who leaves the family's religion steps down for the nearest man of the house who keeps it
+[] Family heads can hold feasts at their estate
+[] Taking a loan, tolls, physician, responsum or horoscope contract tells you what comes next
+[] Fixed old estate temples not turning into the family's own temple branch
 [] Saves from earlier versions are not compatible
