@@ -188,7 +188,7 @@ avinadav = {
 }
 
 shemaa = {
-	name = "Shemaiah"
+	name = "Shimea"
 	rite = kohanism
 	culture = "hebrew"
 	father = jessa_father_of_david
@@ -776,7 +776,7 @@ king_baasha = {
 }
 
 king_ellah_ben_baash = {
-	name = "Alla"
+	name = "Elah"
 	rite = yahwism
 	culture = "hebrew"
 	father = king_baasha
@@ -1073,7 +1073,7 @@ king_pekach = {
 }
 
 alla = {
-	name = "Alla"
+	name = "Elah"
 	rite = yahwism
 	culture = "hebrew"
 	-779.1.1 = {

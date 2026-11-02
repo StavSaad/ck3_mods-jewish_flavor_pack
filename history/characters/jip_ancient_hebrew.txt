@@ -125,7 +125,7 @@ naftali_ben_yaakob = {
 }
 
 reuven_ben_yaakob = {
-	name = "Re'uven"
+	name = "Reuven"
 	rite = kohanism
 	culture = "hebrew"
 	father = yaakov_ben_isaac
@@ -139,7 +139,7 @@ reuven_ben_yaakob = {
 }
 
 shimon_ben_yaakob = {
-	name = "ShimOn"
+	name = "Shimon"
 	rite = kohanism
 	culture = "hebrew"
 	father = yaakov_ben_isaac
@@ -320,7 +320,7 @@ nachshon_ben_aminadav = {
 }
 
 shelomo_ben_nachshon = {
-	name = "Shelomo"
+	name = "Salmon"
 	rite = kohanism
 	culture = "hebrew"
 	father = nachshon_ben_aminadav

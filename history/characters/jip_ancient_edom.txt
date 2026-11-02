@@ -61,7 +61,7 @@ edom_husam_i = {
 }
 
 edom_bedad_father_of_hadad_i = {
-	name = "Bedam"
+	name = "Bedad"
 	rite = baalism
 	culture = edomite
 	-1155.1.1 = {
@@ -112,7 +112,7 @@ edom_shaul_i = {
 }
 
 edom_baal_hanan_i = {
-	name = "Baal Hanan"
+	name = "BaalHanan"
 	rite = baalism
 	culture = edomite
 	-1075.1.1 = {
