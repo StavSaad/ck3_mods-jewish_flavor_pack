@@ -1,7 +1,6 @@
 # Generates common/coat_of_arms/template_lists/colored_emblem_lists.txt: a full copy of vanilla's file, replacing it by path,
 # with the mod's emblems added to the lists that pick an emblem by culture or faith. Not overridden by key: vanilla wraps
-# every list in one colored_emblem_texture_lists block, and a second block holding only some lists crashed the game at
-# startup (0.15). The emblems' textures and their CoA designer entries are in gfx/coat_of_arms/colored_emblems/.
+# every list in one colored_emblem_texture_lists block, and a second block holding only some lists may drop the rest. The emblems' textures and their CoA designer entries are in gfx/coat_of_arms/colored_emblems/.
 #  charge                      the general charges, with vanilla's culture selections (Norse ships, the Persian simurgh):
 #                              Hadad's bull, the Abgarid tiara and Bel's eagle for Arameans and Nabati, Ishtar's star and
 #                              the bull for Assyrians
