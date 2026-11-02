@@ -27,18 +27,24 @@
 	}
 
 	male_names = {
-		Abba Abbaye Acha Achai Achunai Aharon Alechsandri Ammi Amram Amunah Ashi Asher Avomai Avraham Azariah Baboi Baruch
-		Bibai Binyamin Boaz Bustenai Chanan Chananel Chaninai Chanoch Chaim Chayim Chelbo Chisdai Chiyya Chizkiyah Chofni Chushiel
-		Daniel David Dimi Dodai Dudai Efrayim Eina Elazar Elchanan Eldad Eliezer Elyakim Gedalyah Gershom Ghayyat Giat Giza Hillel
-		Hila Isaac Ivomai Kafnai Kahana Kalonymos Levi Kiyomi Machir Malcha Mar Mari Matiyahu Meir Menechem Menashe Mesharsheya Meshulam
-		Mevasser Mishael Mordechai Moshe Nachman Nachshon Nasan Natan Natroi Natronai Nechemiah Nehilai Nesanel Nissim Paltoi Pirkoi
-		Peter Rava Ravai Ravi Ravya Reuven Rivai Saadiah Sechok Shabsai Shalom Shanoi Shemaryah Sherira Sheshna Shila Shimon Shinoi
-		Shlomo Shmuel Sorgo Sulam Tachlifa Tamar Tzadok Tzemach Uri Yaakov Yachya Yechiel Yehudah Yehudai Yehoshua Yeshayah
-		Yisrael Yitzchak Yoel Yosef Yoshiah Yosi Yuda Zakkai Zelekman Zuiskind Yehoshiyahu Chananiah
+		Abba Abbaye Acha Achai Achunai Aharon Alechsandri Ammi Amram Amunah Ashi Asher Avomai Avraham Azariah Baboi
+		Baruch Bibai Binyamin Boaz Bustenai Chanan Chananel Chaninai Chanoch Chaim Chayim Chelbo Chisdai Chiyya
+		Chizkiyah Chofni Chushiel Daniel David Dimi Dodai Dudai Efrayim Eina Elazar Elchanan Eldad Eliezer Elyakim
+		Gedalyah Gershom Ghayyat Giat Giza Hillel Hila Isaac Ivomai Kafnai Kahana Kalonymos Levi Kiyomi Machir Malcha
+		Mar Mari Matiyahu Meir Menechem Menashe Mesharsheya Meshulam Mevasser Mishael Mordechai Moshe Nachman Nachshon
+		Nasan Natan Natroi Natronai Nechemiah Nehilai Nesanel Nissim Paltoi Pirkoi Peter Rava Ravai Ravi Ravya Reuven
+		Rivai Saadiah Sechok Shabsai Shalom Shanoi Shemaryah Sherira Sheshna Shila Shimon Shinoi Shlomo Shmuel Sorgo
+		Sulam Tachlifa Tamar Tzadok Tzemach Uri Yaakov Yachya Yechiel Yehudah Yehudai Yehoshua Yeshayah Yisrael
+		Yitzchak Yoel Yosef Yoshiah Yosi Yuda Zakkai Zelekman Zuiskind Yehoshiyahu Chananiah Avigdor Yekutiel Simcha
+		Shimshon Peretz Yomtov Zelig Lipman Anshel Kalman Hirsch Leib Mendel Zalman Gumprecht Gutman Jekel Liebermann
+		Josel Seligmann Vivelin Susslin Alexander Meshullam Menachem Eliyahu Deulecresse Benedict Hagin Jurnet Josce
+		Copin Bonevie Elias Vives Leo
 	}
 	female_names = {
 		Beila Belet Chana Doltza Esther Guta Guthela Madrona Matrona Minna Pultzelina Rachel Rivkah Saris Scolaster
-		Shluida Shoinlin Shonlin Tziporah Yehudis Yeintil Tehilla Drora
+		Shluida Shoinlin Shonlin Tziporah Yehudis Yeintil Tehilla Drora Bella Bruna Richenza Gutlin Sprinza Frumet
+		Glikl Golde Hendel Kreinel Roesel Freidel Sorlin Perl Sheindel Zisel Malka Edel Mirel Hindel Yocheved Miriam
+		Sarah Leah Chava Licoricia Belaset Floria Chera Comitissa Pucelle Mirabel Belia Antera
 	}
 	
 	dynasty_of_location_prefix = "dynnp_of"
@@ -75,18 +81,23 @@ name_list_sephardi = {
 	}
 
 	male_names = {
-		Abba Abbaye Acha Achai Achunai Aharon Alechsandri Ammi Amram Amunah Ashi Asher Avomai Avraham Azariah Baboi Baruch
-		Bibai Binyamin Boaz Bustenai Chanan Chananel Chaninai Chanoch Chaim Chayim Chelbo Chisdai Chiyya Chizkiyah Chofni Chushiel
-		Daniel David Dimi Dodai Dudai Efrayim Eina Elazar Elchanan Eldad Eliezer Elyakim Gedalyah Gershom Ghayyat Giat Giza Hillel
-		Hila Isaac Ivomai Kafnai Kahana Kalonymos Levi Kiyomi Machir Malcha Mar Mari Matiyahu Meir Menechem Menashe Mesharsheya Meshulam
-		Mevasser Mishael Mordechai Moshe Nachman Nachshon Nasan Natan Natroi Natronai Nechemiah Nehilai Nesanel Nissim Paltoi Pirkoi
-		Peter Rava Ravai Ravi Ravya Reuven Rivai Saadiah Sechok Shabsai Shalom Shanoi Shemaryah Sherira Sheshna Shila Shimon Shinoi
-		Shlomo Shmuel Sorgo Sulam Tachlifa Tamar Tzadok Tzemach Uri Yaakov Yachya Yechiel Yehudah Yehudai Yehoshua Yeshayah
-		Yisrael Yitzchak Yoel Yosef Yoshiah Amon YehoAhaz Yosi Yuda Zakkai Zelekman Zuiskind Yehoshiyahu Chananiah
+		Abba Abbaye Acha Achai Achunai Aharon Alechsandri Ammi Amram Amunah Ashi Asher Avomai Avraham Azariah Baboi
+		Baruch Bibai Binyamin Boaz Bustenai Chanan Chananel Chaninai Chanoch Chaim Chayim Chelbo Chisdai Chiyya
+		Chizkiyah Chofni Chushiel Daniel David Dimi Dodai Dudai Efrayim Eina Elazar Elchanan Eldad Eliezer Elyakim
+		Gedalyah Gershom Ghayyat Giat Giza Hillel Hila Isaac Ivomai Kafnai Kahana Kalonymos Levi Kiyomi Machir Malcha
+		Mar Mari Matiyahu Meir Menechem Menashe Mesharsheya Meshulam Mevasser Mishael Mordechai Moshe Nachman Nachshon
+		Nasan Natan Natroi Natronai Nechemiah Nehilai Nesanel Nissim Paltoi Pirkoi Rava Ravai Ravi Ravya Reuven Rivai
+		Saadiah Sechok Shabsai Shalom Shanoi Shemaryah Sherira Sheshna Shila Shimon Shinoi Shlomo Shmuel Sorgo Sulam
+		Tachlifa Tamar Tzadok Tzemach Uri Yaakov Yachya Yechiel Yehudah Yehudai Yehoshua Yeshayah Yisrael Yitzchak Yoel
+		Yosef Yoshiah Amon YehoAhaz Yosi Yuda Zakkai Yehoshiyahu Chananiah Astruc Bachya Bonafos Bonet Bondia Bonjuha
+		Bonsenyor Hasdai Cresques Dunash Ezra Jafuda Jucef Mahir Menachem Mosse Profiat Salamo SheAltiEl Sheshet
+		Shemtov Todros Vidal Yonah Yomtov Zerachiah Benvenist Ferrer Ibrahim Ishaq Musa Harun Sulayman Yusuf Ismail
 	}
 	female_names = {
-		Beila Belet Chana Doltza Esther Guta Guthela Madrona Matrona Minna Pultzelina Rachel Rivkah Saris Scolaster
-		Shluida Shoinlin Shonlin Tziporah Yehudis Yeintil Tehilla Drora
+		Belet Chana Doltza Esther Madrona Matrona Minna Rachel Rivkah Saris Scolaster Tziporah Tehilla Drora Alegre
+		Astruga Bellida Bienvenida Blanca Bonafilla Bonadona Clara Cima Duenya Esterlina Estrella Fermosa Goig Gracia
+		Jamila Luna Mayor Mira Oro Orovida Perla Preciosa Regina Reyna Sitbona Sol Tolsana Vida Sarah Miriam Leah
+		Yehudit
 	}
 	
 	dynasty_of_location_prefix = "dynnp_of"
@@ -150,30 +161,35 @@ name_list_radhanite = {
 	}
 
 	male_names = {
-		Anah MaAkhah Gomer Mikhayahu Ofir Yachin AchAv Adam Chunyahu
-		Adlai Adoniram Adoniyah Adriel Aharon Amaryahu Amittai Ammiel Amnon Amos Amram Anaiah Anan Anani Aran Arieh
-		AriEl Asa Asaf Asher Asnappar AvdiEl Avidan AviEl Avihu AvimaEl Avimelekh Aviram Avishay Avner Avraham ElYashiv
-		Avram Avshalom Azarel Azaryah Azazyahu AzriEl BaAl Barak Barukh Belshatzzar Benayahu BetUel Binyamin Boaz
-		Chaggai Chanan Chananyah Chanokh Chavaqquq ChazaEl Chizqiyahu Dan Daniyyel David Delayahu Efrayim Ahab Zimri Attai
-		Ehud Eiran Eitan Elah ElAzar Elchanan Eli Eliav Eliel EliEzer Elifalet Elifelet Elihu Elisha Elishua Eliyyahu
-		Elkanah Elnatan Elon Enosh Esaw Evyatar Ezer Ezra Gad Gamaliel GavriEl Gedalyahu Gemaryahu Gershom Gershon
-		GidOn Gilad Golyat Haran Hevel Hillel Hiram Hoshea Iddo Ilai Immanuel Ira Itamar Iyyov Kalev Kayin Yehotzadak
-		Keinan Kenanyahu Koresh Laban Lael Lemuel Levi Lot Machli MalAkhi Mattan Mattanyahu Mattithyahu Mattityahu
-		Melech Menachem Menashsheh Meshullam Metushelach MikhaEl Mikhah Mordokhay Moshe Nachum Nadav Naftali Natan Nechemyah
-		Neriah NetanEl Netanyahu Nimrod Omri Ovadyah Oved Peleg Pikchiyah Penuel Peretz Pinchas QemuEl Shechanya Chasdiah Brachiah Meshulam Zerubavel
-		RafaEl RehavAm YeravAm Reuel Reuven Sancheriv Seraiah Shalmaneser ShaUl SheAltiEl Shelach Shelah Shelomoh Ahaz
-		Shem ShemaYah ShemuEl Shet Shimon Shimshon Talmai Tammuz Teman Terach Toviyyah Tzefanyah Tzidkiyahu Tzion Tzivah
-		TzuriEl Uri Uriyah UriyEl Uzzi Uzziel Uzziyyah Yaakov YachleEl YachtzeEl Yadon Yair Yamin YaRah YaravAm Avinadav
-		Yared Yawan Yechezkel YechiEl Nimshi Yavesh Yedidyah Yefet YehoAsh Yehochanan Yehonatan Yehoram Yehoshafat Yehoshua Yehoyakhin
-		Yehoyakim Yehu Yehudah Yehudi Yekonyah YerachmeEl Yeriyahu YeshaYahu Yeshua Yiftach Yirmiyahu Yishai Ittay Yoav Yehoyada
-		BaAlZevuv Tovi Noach Haniyah Huna Zutra Ukban Guriya Aviyah Ahonai Migam Yehoshiyahu Chananiah Ziza Chizkiyahu YadoA
+		Anah MaAkhah Gomer Mikhayahu Ofir Yachin AchAv Adam Chunyahu Adlai Adoniram Adoniyah Adriel Aharon Amaryahu
+		Amittai Ammiel Amnon Amos Amram Anaiah Anan Anani Aran Arieh AriEl Asa Asaf Asher Asnappar AvdiEl Avidan AviEl
+		Avihu AvimaEl Avimelekh Aviram Avishay Avner Avraham ElYashiv Avram Avshalom Azarel Azaryah Azazyahu AzriEl
+		BaAl Barak Barukh Belshatzzar Benayahu BetUel Binyamin Boaz Chaggai Chanan Chananyah Chanokh Chavaqquq ChazaEl
+		Chizqiyahu Dan Daniyyel David Delayahu Efrayim Ahab Zimri Attai Ehud Eiran Eitan Elah ElAzar Elchanan Eli Eliav
+		Eliel EliEzer Elifalet Elifelet Elihu Elisha Elishua Eliyyahu Elkanah Elnatan Elon Enosh Esaw Evyatar Ezer Ezra
+		Gad Gamaliel GavriEl Gedalyahu Gemaryahu Gershom Gershon GidOn Gilad Golyat Haran Hevel Hillel Hiram Hoshea
+		Iddo Ilai Immanuel Ira Itamar Iyyov Kalev Kayin Yehotzadak Keinan Kenanyahu Koresh Laban Lael Lemuel Levi Lot
+		Machli MalAkhi Mattan Mattanyahu Mattithyahu Mattityahu Melech Menachem Menashsheh Meshullam Metushelach
+		MikhaEl Mikhah Mordokhay Moshe Nachum Nadav Naftali Natan Nechemyah Neriah NetanEl Netanyahu Nimrod Omri
+		Ovadyah Oved Peleg Pikchiyah Penuel Peretz Pinchas QemuEl Shechanya Chasdiah Brachiah Meshulam Zerubavel RafaEl
+		RehavAm YeravAm Reuel Reuven Sancheriv Seraiah Shalmaneser ShaUl SheAltiEl Shelach Shelah Shelomoh Ahaz Shem
+		ShemaYah ShemuEl Shet Shimon Shimshon Talmai Tammuz Teman Terach Toviyyah Tzefanyah Tzidkiyahu Tzion Tzivah
+		TzuriEl Uri Uriyah UriyEl Uzzi Uzziel Uzziyyah Yaakov YachleEl YachtzeEl Yadon Yair Yamin YaRah YaravAm
+		Avinadav Yared Yawan Yechezkel YechiEl Nimshi Yavesh Yedidyah Yefet YehoAsh Yehochanan Yehonatan Yehoram
+		Yehoshafat Yehoshua Yehoyakhin Yehoyakim Yehu Yehudah Yehudi Yekonyah YerachmeEl Yeriyahu YeshaYahu Yeshua
+		Yiftach Yirmiyahu Yishai Ittay Yoav Yehoyada BaAlZevuv Tovi Noach Haniyah Huna Zutra Ukban Guriya Aviyah Ahonai
+		Migam Yehoshiyahu Chananiah Ziza Chizkiyahu YadoA Abbaye Rava Ashi Ravina Pappa Chisda Sheshet Zeira Amemar
+		Mesharsheya Hamnuna Tachlifa Achai Giddel Chiyya Assi Ammi Dimi Ulla Rabbah Abbahu Idi Kahana Sherira Hai
+		Saadiah Natronai Tzemach Yehudai Dosa Chofni Shammai Akiva Tarfon IshmaEl Nechunya Chanina Tzadok Yose Yochanan
+		Hyrkanos Antigonos Alexandros Yanai Bustenai Hasdai Kafnai Chaninai
 	}
 	female_names = {
-		Anah Anat Atalyah MaAkhah Machlah Achinoam Asenat Atarah Avigayil Avishag Avital Basmat BatSheva
-		Beulah Bilhah Bityah Chaggit Channah Chavah CheftziBah Chuldah Delilah Devorah Dinah Ednah Efrat Elisheva
-		Ester Hadassah Hagar Hodiyah Izevel KetziAh Leah Machalat MeheitavEl Merav Mikhal Miriam NaAmah NaOmi
-		Orpah Rachel Rivqah Rut Sarah Shifra Shoshannah Shulammit Tamar Tirtzah Tzillah Tzipporah Tzivyah
-		Yael Yedidah Yehosheva Yehudit Yemima Yerushah NoAh Keren Drora Diklah Tehilla Bosmat
+		Anah Anat Atalyah MaAkhah Machlah Achinoam Asenat Atarah Avigayil Avishag Avital Basmat BatSheva Beulah Bilhah
+		Bityah Chaggit Channah Chavah CheftziBah Chuldah Delilah Devorah Dinah Ednah Efrat Elisheva Ester Hadassah
+		Hagar Hodiyah Izevel KetziAh Leah Machalat MeheitavEl Merav Mikhal Miriam NaAmah NaOmi Orpah Rachel Rivqah Rut
+		Sarah Shifra Shoshannah Shulammit Tamar Tirtzah Tzillah Tzipporah Tzivyah Yael Yedidah Yehosheva Yehudit Yemima
+		Yerushah NoAh Keren Drora Diklah Tehilla Bosmat Yalta Homa Beruriah ImmaShalom Kimchit Martha Shlomtzion Helena
+		Yocheved Mariamne Alexandra Salome Shlomit
 	}
 	
 	dynasty_of_location_prefix = "dynnp_of"
@@ -228,30 +244,28 @@ name_list_canaanite = {
 	}
 
 	male_names = {
-		Anah MaAkhah Gomer Mikhabaal Ofir Yachin AchAv Adam Amaziah YehoAsh
-		Adlai Adoniram Adonibaal Aharon Amarbaal Amittai Amnon Amos Amram Anabaal Anan Anani Aran Arieh
-		Asa Asaf Asher Asnappar Avidan AviEl Avimelekh Aviram Avishay Avner Avraham
-		Avram Avshalom Azarbaal Azazbaal AzriEl BaAl Barak Barukh Belshatzzar BetUel Boaz
-		Chaggai Chanan Chananbaal Chanokh Chavaqquq ChazaEl Chizqibaal Danel David
-		Ehud Eiran Eitan Elah ElAzar Elchanan Eli Eliav EliEzer Elifalet Elifelet Elisha Elishua
-		Elon Enosh Esaw Evyatar Ezer Ezra Gad Gershon
-		GidOn Gilad Golyat Haran Hevel Hiram Hoshea Iddo Ilai Ira Itamar Iyyov Yotam Kalev Kayin
-		Keinan Laban Lael Lemuel Lot Machli MalAkhi Mattan
-		Melech Menachem Meshullam Metushelach Mikhah Mordokhay Nachum Nadav Natan
-		Nimrod Omri Oved Peleg Baaliahon Pinchas Gadi Remalyahu Pekach
-		RafaEl RehavAm Reuel Reuven Sancheriv Shalmaneser Shelach Shelah
-		Shem Shet Shimshon Talmai Tammuz Abdhammon Terach
-		Uri Uzzi Uzziel Yadon Yair Yamin YaRah Urumilki Mago
-		Yared Yawan Yefet Yeshua Yiftach Yishai Ittay Hamilcar
-		BaAlZevuv Tovi Noach Amminadav Ratzin Hanibaal Hasdrubaal
+		Anah MaAkhah Gomer Mikhabaal Ofir Yachin AchAv Adam Amaziah YehoAsh Adlai Adoniram Adonibaal Aharon Amarbaal
+		Amittai Amnon Amos Amram Anabaal Anan Anani Aran Arieh Asa Asaf Asher Asnappar Avidan AviEl Avimelekh Aviram
+		Avishay Avner Avraham Avram Avshalom Azarbaal Azazbaal AzriEl BaAl Barak Barukh Belshatzzar BetUel Boaz Chaggai
+		Chanan Chananbaal Chanokh Chavaqquq ChazaEl Chizqibaal Danel David Ehud Eiran Eitan Elah ElAzar Elchanan Eli
+		Eliav EliEzer Elifalet Elifelet Elisha Elishua Elon Enosh Esaw Evyatar Ezer Ezra Gad Gershon GidOn Gilad Golyat
+		Haran Hevel Hiram Hoshea Iddo Ilai Ira Itamar Iyyov Yotam Kalev Kayin Keinan Laban Lael Lemuel Lot Machli
+		MalAkhi Mattan Melech Menachem Meshullam Metushelach Mikhah Mordokhay Nachum Nadav Natan Nimrod Omri Oved Peleg
+		Baaliahon Pinchas Gadi Remalyahu Pekach RafaEl RehavAm Reuel Reuven Sancheriv Shalmaneser Shelach Shelah Shem
+		Shet Shimshon Talmai Tammuz Abdhammon Terach Uri Uzzi Uzziel Yadon Yair Yamin YaRah Urumilki Mago Yared Yawan
+		Yefet Yeshua Yiftach Yishai Ittay Hamilcar BaAlZevuv Tovi Noach Amminadav Ratzin Hanibaal Hasdrubaal Abibaal
+		Ithobaal Baal-Eser Abd-Ashtart Ashtart Pummay Phelles Ahiram Yehimilk Elibaal Shipitbaal Eshmunazar Tabnit
+		Bodashtart Yatonmilk Abdalonim Azemilk Milkyaton Baalyaton Abdmelqart Bodmelqart Zakarbaal Sidqimilk Luli Hanno
+		Himilkat Bodmilkart Gisgo Adherbaal Maharbaal Karthalo Abdeshmun Germelqart Baalshillek Qosgeber Qosmelech
+		Qosnatan Hadad Husham BaalHanan Samlah Jobab Bela Benhadad Hadadezer Rezon Tabrimmon Barrakib Panamuwa Kilamuwa
+		Zakkur Matiel Mesha Kemoshyat Kemoshnadav Eglon Balak Baalis Chanun Nachash Akhish Padi Sidqa
 	}
 	female_names = {
-		Anah Anat MaAkhah Achinoam Asenat Atarah Avigayil Avishag Avital Basmat BatSheva
-		Beulah Bilhah Bityah Chaggit Channah Chavah Chuldah Delilah Devorah Dinah Ednah Efrat Elisheva
-		Ester Hadassah Hagar Izevel KetziAh Leah Machalat MeheitavEl Merav Mikhal Miriam NaAmah NaOmi
-		Orpah Rachel Rivqah Rut Sarah Shifra Shoshannah Shulammit Tamar Tirtzah Tzillah Tzipporah
-		Yael Yedidah Yemima Yerushah NoAh Keren Diklah Gomer Mikhayahu Ofir Yachin
-		Hurriyah Pigat Dido Elishat
+		Anah Anat MaAkhah Achinoam Asenat Atarah Avigayil Avishag Avital Basmat BatSheva Beulah Bilhah Bityah Chaggit
+		Channah Chavah Chuldah Delilah Devorah Dinah Ednah Efrat Elisheva Ester Hadassah Hagar Izevel KetziAh Leah
+		Machalat MeheitavEl Merav Mikhal Miriam NaAmah NaOmi Orpah Rachel Rivqah Rut Sarah Shifra Shoshannah Shulammit
+		Tamar Tirtzah Tzillah Tzipporah Yael Yedidah Yemima Yerushah NoAh Keren Diklah Gomer Mikhayahu Ofir Yachin
+		Hurriyah Pigat Dido Elishat Arishat Batbaal Amotmelqart Saphanbaal Anna Amoashtart Batnoam Athaliah
 	}
 	
 	dynasty_of_location_prefix = "dynnp_of"
@@ -292,13 +306,13 @@ name_list_nabati = {
 	}
 
 	male_names = {
-		Abba Adam Anush Bihram Danqa Hibil Karaya Mari Mhatam Nahir Narsai Nur Qutama Ram Sam Shitil Yuhana Zakia Zihrun
-		Hilal Ibrahim Ishaq Jabir Marinus Muhassin Sinan Thabit
-		Abdul-Karim Ahmad Ali Hasan Hussayn Isa Ja_far Mihran Mukhtar Musa Sabur Sulayman Yahya
+		Abba Adam Anush Bihram Danqa Hibil Karaya Mari Mhatam Nahir Narsai Nur Qutama Ram Sam Shitil Yuhana Zakia
+		Zihrun Hilal Ibrahim Ishaq Jabir Marinus Muhassin Sinan Thabit Abdul-Karim Ahmad Ali Hasan Hussayn Isa Ja_far
+		Mihran Mukhtar Musa Sabur Sulayman Yahya Zazai Bayan Qurra Yanbushad Abdallah Khalid Umar
 	}
 	female_names = {
-		Anhar Duvsha Hanna Hawa Hayuta Kitra Marta Maryam Nura Sabah Sharat Simat Talia
-		Amina Fatima Khadija Layla Rabiya Shirin Zaynab
+		Anhar Duvsha Hanna Hawa Hayuta Kitra Marta Maryam Nura Sabah Sharat Simat Talia Amina Fatima Khadija Layla
+		Rabiya Shirin Zaynab Shlama Haiwa
 	}
 
 	dynasty_of_location_prefix = "dynnp_of"
@@ -332,29 +346,30 @@ name_list_aramean = {
 	}
 
 	male_names = {
-		Aba Abahu Abaya Abaye Abayi Abba Abdima Abdisho Abgar Abimalek Abraham Abris Abrisius Acacius Achan Achina Addai
-		Adlai Aggai Ahai Ahadabui Ahha Akha_d_abuh Akh_es_Samain Aqib_Alaha Asa Ashur Avahu Avda Avdima Avdimi Avina Avira Azai
-		Babaeus Babai Babowai Babwahi Bar Bar_Abba Barba_shimin Bar_Nabha Bar_Talmai Bar_Timai Bar_Tolmai Bustan
-		Caiaphas Cephas Cephus Chadlai Chama Chanin Chanina Chaninai Chinena Chozai Chuma Chunya Clopas
-		Dadisho Denha Dikla Diklah Dimi Dinkha Dunanu Elisha Eliya Emmanuel Enosh Ezekiel Farbokht Foma Giwargis Grwgari
-		Hanina Hnanisho Hozai Idan Idra Ila Isaac Isho Isho_yahb Israel Kaiapha Karna Katsiu Kelaya
-		Laszio Lazar Lazare Lazaro Lazaros Lazarus Lazarz Lazer Lebbaeus Maadai Macabee Maccabee Magna Makkikha Maluch Ma_na Marabokht Maremmeh Mari Mikha_il Moqli Muna
-		Nahir Nahor Nahur Narsai Nazuk Nechunya Nehor Nehorai Niv Nun Nur Oran Pappa Paul Pethion Petros Petuel Qaligh Qayyoma Raca Rachim Rahim Raka Raz Raziel Rubil
-		Saad Saba Sabah Sabba_e Sabrisho Sabr_Ishu Salu Samal Sami Samiy Sagi Sargis Sava Sawma Shafer Shahdost
-		Shahlufa Shai Shalmai Shama Shamir Shammai Shemaiah Shem_on Sheraga Shila Shovai Shraga Sima Sliba-zkha Surin
-		Tabbai Taddai Talia Taliah Talmai Talya Tam Tam_as Ta_mhas Targhal Tauma Tavi Tavish Tevis Th_amhais Thoma Timai Tiv Toba Todos Tolmai Tomarsa Tamuza Tulmay
-		Ukba Yahballaha Yanai Ya_qob Yeshua Yohannan Yosip Yousef Yunanis Zerika
+		Aba Abahu Abaya Abaye Abayi Abba Abdima Abdisho Abgar Abimalek Abraham Abris Abrisius Acacius Achan Achina
+		Addai Adlai Aggai Ahai Ahadabui Ahha Akha_d_abuh Akh_es_Samain Aqib_Alaha Asa Ashur Avahu Avda Avdima Avdimi
+		Avina Avira Azai Babaeus Babai Babowai Babwahi Bar Bar_Abba Barba_shimin Bar_Nabha Bar_Talmai Bar_Timai
+		Bar_Tolmai Bustan Caiaphas Cephas Cephus Chadlai Chama Chanin Chanina Chaninai Chinena Chozai Chuma Chunya
+		Clopas Dadisho Denha Dikla Diklah Dimi Dinkha Dunanu Elisha Eliya Emmanuel Enosh Ezekiel Farbokht Foma Giwargis
+		Grwgari Hanina Hnanisho Hozai Idan Idra Ila Isaac Isho Isho_yahb Israel Kaiapha Karna Katsiu Kelaya Laszio
+		Lazar Lazare Lazaro Lazaros Lazarus Lazarz Lazer Lebbaeus Maadai Macabee Maccabee Magna Makkikha Maluch Ma_na
+		Marabokht Maremmeh Mari Mikha_il Moqli Muna Nahir Nahor Nahur Narsai Nazuk Nechunya Nehor Nehorai Niv Nun Nur
+		Oran Pappa Paul Pethion Petros Petuel Qaligh Qayyoma Raca Rachim Rahim Raka Raz Raziel Rubil Saad Saba Sabah
+		Sabba_e Sabrisho Sabr_Ishu Salu Samal Sami Samiy Sagi Sargis Sava Sawma Shafer Shahdost Shahlufa Shai Shalmai
+		Shama Shamir Shammai Shemaiah Shem_on Sheraga Shila Shovai Shraga Sima Sliba-zkha Surin Tabbai Taddai Talia
+		Taliah Talmai Talya Tam Tam_as Ta_mhas Targhal Tauma Tavi Tavish Tevis Th_amhais Thoma Timai Tiv Toba Todos
+		Tolmai Tomarsa Tamuza Tulmay Ukba Yahballaha Yanai Ya_qob Yeshua Yohannan Yosip Yousef Yunanis Zerika Hazael
+		Benhadad Hadadezer Rezon Tabrimmon Barrakib Panamuwa Kilamuwa Zakkur Matiel Odainat Wahballat Hairan Zabdai
+		Malku Yarhai Moqimu Zabdibol Taimarsu Lishamsh Manu Wael Bakru Sanatruq Abdsamya Nasru Bardaisan Afrem Rabbula
+		Hiba Hunayn Yuhanna Masawayh Qusta Luqa
 	}
 	
 	female_names = {
-		Adva Alya Anena Anina Bustan Chanina Chasina Chayuta China Chiyuta
-		Dikla Diklah Diklit Duvsha Hanina Hasna Hayuta Hina Ketina Kitra
-		Magdala Mahalia Mahalie Marfa Mariam Marta Marte Martha Marthe Marti
-		Martita Mehalia Meiriona Meirona Morta Nahara Nura Raz Reuma
-		Saba Sabah Samantha Sameah Samee Sameea Samiya Samiyah Samiyya Samya Sava Shapira Sima
-		Tabatha Tabby Tabetha Tabitha Tadea Talia Taliah Talya Talitha
-		Tam Tamasin Tami Tammy Tamsin Tamsyn Tamzin Thaddea Thomasa
-		Zeita Zeta
+		Adva Alya Anena Anina Bustan Chanina Chasina Chayuta China Chiyuta Dikla Diklah Diklit Duvsha Hanina Hasna
+		Hayuta Hina Ketina Kitra Magdala Mahalia Mahalie Marfa Mariam Marta Marte Martha Marthe Marti Martita Mehalia
+		Meiriona Meirona Morta Nahara Nura Raz Reuma Saba Sabah Samantha Sameah Samee Sameea Samiya Samiyah Samiyya
+		Samya Sava Shapira Sima Tabatha Tabby Tabetha Tabitha Tadea Talia Taliah Talya Talitha Tam Tamasin Tami Tammy
+		Tamsin Tamsyn Tamzin Thaddea Thomasa Zeita Zeta Batzabbai Shalmat Aqmat Febronia Teqla Shmuni Shirin
 	}
 
 	dynasty_of_location_prefix = "dynnp_of"
