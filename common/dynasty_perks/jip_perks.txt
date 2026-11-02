@@ -73,7 +73,7 @@ harranian_legacy_1 = { # Star-Readers
 		value = 11
 		if = {
 			limit = {
-				jip_is_sabian_rite_trigger = yes
+				dynasty ?= { has_variable = jip_harranian_dynasty }
 			}
 			multiply = 10
 		}

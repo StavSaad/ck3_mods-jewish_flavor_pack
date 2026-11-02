@@ -121,3 +121,19 @@ jip_rish_amma_succession_effect = {
 		resolve_title_and_vassal_change = scope:change
 	}
 }
+
+# Dynasty scope: marks a dynasty whose dynast is a Sabian or of the old faith (var:jip_harranian_dynasty), the mark the
+# Harranian legacy checks (common/on_action/jip_legacy_on_actions.txt). Legacies and perks load before the faiths, so their
+# script can't name a faith or rite: rite:sabianism there crashed the game at startup
+jip_update_harranian_dynasty_effect = {
+	if = {
+		limit = {
+			dynast ?= { jip_is_sabian_rite_trigger = yes }
+		}
+		set_variable = jip_harranian_dynasty
+	}
+	else_if = {
+		limit = { has_variable = jip_harranian_dynasty }
+		remove_variable = jip_harranian_dynasty
+	}
+}

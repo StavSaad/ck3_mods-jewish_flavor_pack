@@ -1,0 +1,38 @@
+﻿# The Harranian legacy (common/dynasty_legacies/82_jip_legacies.txt) is shown to dynasties marked by
+# jip_update_harranian_dynasty_effect: at game start, when a character converts, and yearly
+on_game_start_after_lobby = {
+	on_actions = {
+		jip_harranian_dynasty_game_start_on_action
+	}
+}
+
+on_faith_conversion = {
+	on_actions = {
+		jip_harranian_dynasty_update_on_action
+	}
+}
+
+yearly_playable_pulse = {
+	on_actions = {
+		jip_harranian_dynasty_update_on_action
+	}
+}
+
+jip_harranian_dynasty_game_start_on_action = {
+	effect = {
+		every_living_character = {
+			limit = {
+				is_dynast = yes
+				jip_is_sabian_rite_trigger = yes
+			}
+			dynasty = { jip_update_harranian_dynasty_effect = yes }
+		}
+	}
+}
+
+# root = a character who converted, or a playable character
+jip_harranian_dynasty_update_on_action = {
+	effect = {
+		dynasty ?= { jip_update_harranian_dynasty_effect = yes }
+	}
+}

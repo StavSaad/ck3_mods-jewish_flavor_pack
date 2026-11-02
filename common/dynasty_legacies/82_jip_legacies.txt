@@ -11,14 +11,14 @@
 	}
 }
 
-# The Harranian legacy (0.15 plan, section 10): for dynasties whose dynast is a Sabian or of the old faith
-# (jip_is_sabian_rite_trigger). Illustration gfx/interface/illustrations/legacy_tracks/harranian_legacy_track.dds (for now a
-# copy of vanilla's Erudition art)
+# The Harranian legacy (0.15 plan, section 10): for dynasties whose dynast is a Sabian or of the old faith, marked
+# var:jip_harranian_dynasty by jip_update_harranian_dynasty_effect (common/on_action/jip_legacy_on_actions.txt). Never name a
+# faith or rite here or in the perks: legacies load before the faiths, and the game crashes at startup
 harranian_legacy_track = {
 	is_shown = {
 		dynasty = {
 			OR = {
-				dynast = { jip_is_sabian_rite_trigger = yes }
+				has_variable = jip_harranian_dynasty
 				has_dynasty_perk = harranian_legacy_1
 			}
 		}
