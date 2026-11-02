@@ -10,3 +10,17 @@
 		}
 	}
 }
+
+# The Harranian legacy (0.15 plan, section 10): for dynasties whose dynast is a Sabian or of the old faith
+# (jip_is_sabian_rite_trigger). Illustration gfx/interface/illustrations/legacy_tracks/harranian_legacy_track.dds (for now a
+# copy of vanilla's Erudition art)
+harranian_legacy_track = {
+	is_shown = {
+		dynasty = {
+			OR = {
+				dynast = { jip_is_sabian_rite_trigger = yes }
+				has_dynasty_perk = harranian_legacy_1
+			}
+		}
+	}
+}

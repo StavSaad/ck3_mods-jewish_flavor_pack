@@ -58,3 +58,68 @@ davidic_legacy_5 = {
 		tax_mult = 0.2
 	}
 }
+
+# The Harranian legacy (common/dynasty_legacies/82_jip_legacies.txt)
+harranian_legacy_1 = { # Star-Readers
+	legacy = harranian_legacy_track
+
+	character_modifier = {
+		learning = 1
+		monthly_learning_lifestyle_xp_gain_mult = 0.15
+		enemy_hostile_scheme_success_chance_add = -10
+	}
+
+	ai_chance = {
+		value = 11
+		if = {
+			limit = {
+				jip_is_sabian_rite_trigger = yes
+			}
+			multiply = 10
+		}
+		if = {
+			limit = {
+				can_start_new_legacy_track_trigger = no
+			}
+			multiply = 0
+		}
+	}
+}
+
+harranian_legacy_2 = { # Heirs of Hermes
+	legacy = harranian_legacy_track
+
+	character_modifier = {
+		learning = 2
+		stewardship = 1
+	}
+}
+
+harranian_legacy_3 = { # Hidden Rites
+	legacy = harranian_legacy_track
+
+	character_modifier = {
+		intrigue = 2
+		stress_loss_mult = 0.15
+	}
+}
+
+harranian_legacy_4 = { # Priests of Sin
+	legacy = harranian_legacy_track
+
+	character_modifier = {
+		monthly_piety_gain_mult = 0.2
+		same_faith_opinion = 10
+		faith_conversion_piety_cost_mult = -0.25
+	}
+}
+
+harranian_legacy_5 = { # Return of the Gods
+	legacy = harranian_legacy_track
+
+	character_modifier = {
+		monthly_prestige = 1
+		county_opinion_add = 5
+		development_growth_factor = 0.2
+	}
+}

@@ -25,6 +25,7 @@
 		khwarezmian
 		assyrian
 		bavlim
+		nabati # Rising Lion: the Sawad's Aramaic peasants, Levantine in vanilla
 
 		# Arabic
 		bedouin
@@ -52,6 +53,9 @@
 		#Jewish
 		rabbinic_faith
 		karaism
+
+		# Rising Lion: the Mandaeans and Sabians
+		mandaean_faith
 	}
 	regions = {
 		world_persian_empire
