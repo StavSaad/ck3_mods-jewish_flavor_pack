@@ -357,6 +357,32 @@ jip_sabian_astrologer_court_position = {
 				desc = education_learning
 			}
 		}
+		# Trained in a Sabian family's Observatory (vanilla's library branch, the Sabians' own): their house's, or their
+		# employer's when a family employs them
+		if = {
+			limit = {
+				OR = {
+					house ?= { house_head ?= { domicile ?= { has_domicile_building_or_higher = library_observatory_04 } } }
+					employer ?= { domicile ?= { has_domicile_building_or_higher = library_observatory_04 } }
+				}
+			}
+			add = {
+				value = jip_observatory_astrologer_aptitude_2_value
+				desc = court_position_jip_observatory_astrologer
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					house ?= { house_head ?= { domicile ?= { has_domicile_building_or_higher = library_observatory_03 } } }
+					employer ?= { domicile ?= { has_domicile_building_or_higher = library_observatory_03 } }
+				}
+			}
+			add = {
+				value = jip_observatory_astrologer_aptitude_1_value
+				desc = court_position_jip_observatory_astrologer
+			}
+		}
 
 		add = court_position_aptitude_low_penalty_value
 		add = general_aptitude_bonus

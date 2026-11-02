@@ -33,6 +33,7 @@
 
  # Aptitude reasons
  court_position_jip_observatory: "The family's $library_observatory_03_domicile_building$"
+ court_position_jip_observatory_astrologer: "Trained in a family's $library_observatory_03_domicile_building$"
  court_position_jip_diwan: "The family's $jip_diwan_03_domicile_building$"
  court_position_jip_haykal: "The family's $jip_haykal_04_domicile_building$"
  court_position_jip_scriptorium: "The family's $jip_scriptorium_03_domicile_building$"

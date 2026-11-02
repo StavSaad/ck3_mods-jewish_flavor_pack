@@ -24,14 +24,29 @@ EXILARCH = "GetScriptedGui('jip_coa_is_exilarch').IsShown( GuiScope.SetRoot( Cha
 JEWISH = "GetScriptedGui('jip_coa_is_jewish').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )"
 # Other faiths' families: the Sabians' crescent of Sin and the Mandaeans' klila (jip_<kind>_topframe_<size>.dds, made by
 # make_mishpacha_crown.py), each drawn once its textures exist; checked by the jip_coa_is_<kind> scripted GUIs. The save
-# game and bookmark have no faith to check, so they keep the kippah.
+# game has no faith to check, so it keeps the kippah; bookmark families are matched by name (FAITH_BOOKMARKS).
 FAITH_DECOR = [(k, f"GetScriptedGui('jip_coa_is_{k}').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )")
                for k in ['sabian', 'mandaean']
                if os.path.exists(os.path.dirname(OUT) + f'/../../gfx/interface/coat_of_arms/jip_{k}_topframe_28.dds')]
 # A bookmark character is no real character, so titles can't be looked up: the bookmark entries of the Exilarchs at their
 # start dates (common/bookmarks/bookmarks/jip_bookmarks.txt) are matched by name instead
 EXILARCH_BOOKMARKS = ['bookmark_jip_exilarch_chisdai_ii', 'bookmark_jip_exilarch_karaite_boaz']
-BOOKMARK_EXILARCH = 'Or( ' + ', '.join(f"EqualTo_string( BookmarkCharacter.GetName, Localize('{k}') )" for k in EXILARCH_BOOKMARKS) + ' )'
+# Non-Jewish Familial bookmark characters, matched by name the same way, get their faith's decoration (FAITH_DECOR) instead
+# of the kippah: add their bookmark entries here (none yet; Thabit ibn Qurra is played from the map)
+FAITH_BOOKMARKS = {'sabian': [], 'mandaean': []}
+
+
+def gui_or(exprs):
+    """The GUI's Or takes two arguments: nest them"""
+    return exprs[0] if len(exprs) == 1 else f'Or( {exprs[0]}, {gui_or(exprs[1:])} )'
+
+
+def bookmark_named(keys):
+    return gui_or([f"EqualTo_string( BookmarkCharacter.GetName, Localize('{k}') )" for k in keys])
+
+
+BOOKMARK_EXILARCH = bookmark_named(EXILARCH_BOOKMARKS)
+BOOKMARK_FAITHS = [(k, bookmark_named(FAITH_BOOKMARKS[k])) for k, _ in FAITH_DECOR if FAITH_BOOKMARKS.get(k)]
 
 ARB_PRESENT = "Not( EqualTo_string( Localize('setting_arb_contract_decor_on'), 'setting_arb_contract_decor_on' ) )"
 
@@ -117,9 +132,11 @@ for p in parts:
         count['crown'] += 1
         mm = re.search(r'(\t+)icon = \{\n\t+name = "crown"\n(?:.*\n)*?\1\}\n', p)
         bm_gov = f'BookmarkCharacter.GetGovernmentType.IsType({GOV})'
+        not_kippah = gui_or([BOOKMARK_EXILARCH] + [named for _, named in BOOKMARK_FAITHS])
         p = (p[:mm.end()]
-             + decor_icon(mm.group(1), f'[And( {bm_gov}, Not({BOOKMARK_EXILARCH}) )]', 62, 64, 40)
+             + decor_icon(mm.group(1), f'[And( {bm_gov}, Not({not_kippah}) )]', 62, 64, 40)
              + decor_icon(mm.group(1), f'[And( {bm_gov}, {BOOKMARK_EXILARCH} )]', 62, 64, 40, 'exilarch')
+             + ''.join(decor_icon(mm.group(1), f'[And( {bm_gov}, {named} )]', 62, 64, 40, kind) for kind, named in BOOKMARK_FAITHS)
              + p[mm.end():])
         p = hide_topframes(p, 'BookmarkCharacter.GetGovernmentType')
     elif name == 'coa_dynasty_bookmark':
@@ -136,8 +153,9 @@ if use_arb:
     unguarded = [u for u in re.findall(r"GetScriptedGui\( *'arb_|texture *= *\"gfx/interface/coat_of_arms/arb_", text)]
     assert not unguarded, 'unguarded ARB reference'
     print('guarded', n_gui, 'scripted GUI calls and', n_tex, 'textures')
-# realm types: a pair per helmet (vanilla: 5 in the flow; ARB: 5 in the _crown flows + 5 overlays); save game 1; bookmark 2
-expected_decor = (10 if use_arb else 5) * (2 + len(FAITH_DECOR)) + 1 + 2
+# realm types: a pair per helmet (vanilla: 5 in the flow; ARB: 5 in the _crown flows + 5 overlays); save game 1; bookmark 2,
+# plus one per faith with bookmark families
+expected_decor = (10 if use_arb else 5) * (2 + len(FAITH_DECOR)) + 1 + 2 + len(BOOKMARK_FAITHS)
 assert count == {'crown': 7, 'decor': expected_decor, 'topframe': 9 if HIDE_TIER_BAR else 0}, count
 if use_arb:
     base = ("Aligned Realm Banners' copy (workshop 3823433423; its changes are marked \"arb\", and its references are guarded\n"

@@ -13,6 +13,10 @@ jip_counting_house_financier_aptitude_1_value = 5
 jip_counting_house_financier_aptitude_2_value = 10
 jip_counting_house_financier_aptitude_3_value = 15
 
+# Aptitude for the Sabian Court Astrologer (jip_court_positions.txt) trained in a family's Observatory
+jip_observatory_astrologer_aptitude_1_value = 10 # Observatory
+jip_observatory_astrologer_aptitude_2_value = 15 # and up
+
 # Aptitude for the family's own court positions (jip_jewish_court_positions.txt) from the matching building in the
 # employer's estate, by tier. Shown as building parameters in the estate view.
 jip_yeshiva_rosh_yeshiva_aptitude_1_value = 10 # Yeshiva
