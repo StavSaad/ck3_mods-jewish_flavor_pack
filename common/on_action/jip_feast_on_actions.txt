@@ -12,14 +12,25 @@ jip_akitu_neglect_on_action = {
 	}
 }
 
-# The festivals' pulse events for guests, each checking its variant
+# The festivals' pulse events for guests, each checking its variant: the x101s once a feast (jip_feast_pulse_seen),
+# the others once a year each (cooldown)
 feast_default_event_selection = {
 	random_events = {
 		100 = jip_feast.1101 # Akitu: a priest of Nabu reads your fate
+		100 = jip_feast.1102 # Akitu: the ram of purification
+		100 = jip_feast.1103 # Akitu: the procession of the gods
 		100 = jip_feast.2101 # Nisan: an astrologer casts your horoscope
+		100 = jip_feast.2102 # Nisan: the seven temples
+		100 = jip_feast.2103 # Nisan: Hermes the prophet
 		100 = jip_feast.3101 # Parwanaya: you are invited into the river
+		100 = jip_feast.3102 # Parwanaya: the meal for a dead parent
+		100 = jip_feast.3103 # Parwanaya: the myrtle wreath
 		100 = jip_feast.4101 # Dehwa Rabba: tales in the night of seclusion
+		100 = jip_feast.4102 # Dehwa Rabba: water for the long night
+		100 = jip_feast.4103 # Dehwa Rabba: a name from the stars
 		100 = jip_feast.5101 # Pesach: Dayenu
+		100 = jip_feast.5102 # Pesach: leaven in the bag
+		100 = jip_feast.5103 # Pesach: Chad Gadya
 	}
 }
 

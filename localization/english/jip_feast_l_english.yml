@@ -99,6 +99,20 @@
  jip_feast.1101.a_bad:0 "A troubling fate"
  jip_feast.1101.b:0 "Take this offering for Nabu instead."
 
+ jip_feast.1102.t:0 "The Ram of Purification"
+ jip_feast.1102.desc:0 "On the fifth day the mashmashu priest cleanses the temple of Nabu: a ram is beheaded, its body rubbed against the walls to soak up the impurity of the year, and thrown into the river. Whoever carries it must leave the city until the festival is over. The swordsman chosen for it has fallen ill, and the priest's eyes come to rest on me."
+ jip_feast.1102.a:0 "I will carry the year's sins to the river."
+ jip_feast.1102.b:0 "Let another bear them."
+ jip_feast.1102.c:0 "Watch, and wonder at these Babylonians."
+
+ jip_feast.1103.t:0 "The Processional Way"
+ jip_feast.1103.desc:0 "Marduk rides out of his temple in his chariot, Nabu beside him, down the Processional Way between the lions of glazed brick and out through the gate to the akitu house. The crowd presses close, and I find myself shoulder to shoulder with [scope:jip_feast_companion.GetTitledFirstName], who is craning to see which god is which."
+ jip_feast.1103.a:0 "Name the gods to [scope:jip_feast_companion.GetHerHim] as they pass."
+ jip_feast.1103.b:0 "Push to the front and touch the chariot's rope!"
+ jip_feast.1103.b_good:0 "My hand on the rope"
+ jip_feast.1103.b_bad:0 "Trampled in the crush"
+ jip_feast.1103.c:0 "Find some shade and some wine."
+
  ### FEAST OF NISAN
  jip_feast.2001.t:0 "Nisan: The Fast Is Broken"
  jip_feast.2001.desc:0 "For thirty days the faithful of Harran have fasted for the Moon, eating nothing from dawn until dusk. Now, on the eighth day of Nisan, the fast is over. The priests bless the bread, and the year of Harran begins."
@@ -135,6 +149,19 @@
  jip_feast.2101.a_bad:0 "An unlucky star"
  jip_feast.2101.b:0 "My faith forbids it, but thank you."
 
+ jip_feast.2102.t:0 "The Seven Temples"
+ jip_feast.2102.desc:0 "The Harranians keep a temple for each of the seven planets, each in its own shape and colour: the black hexagon of Saturn, Jupiter's green triangle, the red oblong of Mars, the Sun's golden square, blue Venus, Mercury, and the silver octagon of the Moon. For the feast their doors stand open to the guests. To which planet shall I bring my prayer?"
+ jip_feast.2102.a:0 "The Sun, the king of the seven."
+ jip_feast.2102.b:0 "The Moon, the lord of Harran."
+ jip_feast.2102.c:0 "Mars, the red one."
+ jip_feast.2102.d:0 "Mercury, the scribe of the gods."
+ jip_feast.2102.e:0 "Venus, the morning star."
+
+ jip_feast.2103.t:0 "The Prophet Hermes"
+ jip_feast.2103.desc:0 "The Harranians say their first prophets were Hermes and Agathodaimon, who taught how the soul climbs through the seven spheres back to its source. [scope:jip_feast_companion.GetTitledFirstName] has heard enough of it, and calls across the table that a pagan sage is no prophet. The whole table turns to me."
+ jip_feast.2103.a:0 "Take up Hermes' cause."
+ jip_feast.2103.b:0 "Ask whether anyone has tried the wine."
+
  ### PARWANAYA
  jip_feast.3001.t:0 "Parwanaya: Living Water"
  jip_feast.3001.desc:0 "For five days, outside the months of the year, the gates of the world of light stand open. Your household dresses in the white rasta and goes down to the river, where the priests wait in the living water to baptise the faithful."
@@ -161,6 +188,17 @@
  jip_feast.3101.desc:0 "The priests stand waist-deep in the river, and one of [scope:activity.GetHost.GetFirstNamePossessive] household beckons you down the bank to join the white-robed crowd in the water."
  jip_feast.3101.a:0 "Go down into the water."
  jip_feast.3101.b:0 "Watch from the bank."
+
+ jip_feast.3102.t:0 "The Meal for the Souls"
+ jip_feast.3102.desc:0 "In the five days of Parwanaya the gates of the World of Light stand open, and the Mandaeans set out the lofani, a meal for the souls of their dead, so that they are fed on their way. A priest asks me whose soul I would remember. I think of [scope:jip_feast_dead.GetFirstName]."
+ jip_feast.3102.a:0 "Set out bread and water for [scope:jip_feast_dead.GetFirstName]."
+ jip_feast.3102.b:0 "Remember [scope:jip_feast_dead.GetFirstName] in my own way."
+
+ jip_feast.3103.t:0 "The Myrtle Wreath"
+ jip_feast.3103.desc:0 "A tarmida sits by the water weaving klilas, the myrtle wreaths every Mandaean wears in the river. He sets one on my head without asking and, while it is there, mentions that the mandi's reed walls will not mend themselves before the floods."
+ jip_feast.3103.a:0 "Give something for the mandi."
+ jip_feast.3103.b:0 "Wear the wreath with joy."
+ jip_feast.3103.c:0 "Thank him, and hand the wreath back."
 
  ### DEHWA RABBA
  jip_feast.4001.t:0 "Dehwa Rabba: The Night of Seclusion"
@@ -194,6 +232,17 @@
  jip_feast.4101.desc:0 "The doors are barred and no one may leave. To pass the long hours of the seclusion an old priest tells stories by the lamps: of the King of Light, of Hibil Ziwa who went down into the darkness, and of the souls rising through the watch-houses."
  jip_feast.4101.a:0 "Listen through the night."
  jip_feast.4101.b:0 "How many hours are left?"
+
+ jip_feast.4102.t:0 "Water for the Long Night"
+ jip_feast.4102.desc:0 "For the thirty-six hours of Dehwa Rabba no one steps outside or touches the river, for the guardians of the world have gone up to the King of Light and the dark powers walk abroad. Everyone filled their jars beforehand, everyone but [scope:jip_feast_companion.GetTitledFirstName], who is eyeing my water jar like a traveller lost in the desert."
+ jip_feast.4102.a:0 "Share my water."
+ jip_feast.4102.b:0 "Slip out to the river and fill a jar."
+ jip_feast.4102.c:0 "[scope:jip_feast_companion.GetSheHe|U] will have to wait it out."
+
+ jip_feast.4103.t:0 "A Name from the Stars"
+ jip_feast.4103.desc:0 "With the new year come the priests with the Book of the Zodiac, to read in it what the stars hold for each of the faithful. Every Mandaean bears a malwasha, a name of the stars reckoned from the hour of birth and the mother's name, and one of the priests offers to find mine."
+ jip_feast.4103.a:0 "Take the name the stars give me."
+ jip_feast.4103.b:0 "Hear what the stars would call me."
 
  ### Pesach (jip_feast.5000s)
  jip_pesach_next_year_in_jerusalem:0 "Next Year in Jerusalem"
@@ -273,3 +322,18 @@
  jip_feast.5101.desc_gentile:0 "My hosts have broken into a song with a refrain every child at the table knows: dayenu, \"it would have been enough\". I understand few of the words, but none of the joy is lost on me."
  jip_feast.5101.a:0 "Dayenu!"
  jip_feast.5101.b:0 "Listen, and learn something of my hosts."
+
+ jip_feast.5102.t:0 "Pesach: Chametz!"
+ jip_feast.5102.desc:0 "The house was searched for leaven by candlelight and every crumb burned before the feast, yet as I reach into my bag a heel of bread, forgotten there since the road, tumbles out and rolls to the feet of [scope:host.GetTitledFirstName]. The table falls silent."
+ jip_feast.5102.a:0 "Take it out and burn it at once."
+ jip_feast.5102.b:0 "Sell it to a gentile servant until the feast is over."
+ jip_feast.5102.c:0 "Blame the dog."
+ jip_feast.5102.c_good:0 "The dog takes the blame"
+ jip_feast.5102.c_bad:0 "No one believes it"
+
+ jip_feast.5103.t:0 "Pesach: One Little Goat"
+ jip_feast.5103.desc:0 "The seder ends, as it always has, with Chad Gadya: the little goat that father bought for two zuzim, and the cat that ate the goat, and the dog that bit the cat, on through the stick, the fire, the water, the ox and the slaughterer to the Angel of Death and the Holy One, blessed be He. [scope:jip_feast_companion.GetTitledFirstName] has decided to sing it faster than me."
+ jip_feast.5103.desc_gentile:0 "My hosts end their feast with a song that grows longer with every verse: a little goat, a cat, a dog, a stick, a fire, water, an ox, a butcher, Death, and at last their God. [scope:jip_feast_companion.GetTitledFirstName] is racing through it, and the children are shrieking with laughter."
+ jip_feast.5103.a:0 "Race [scope:jip_feast_companion.GetHerHim] to the end!"
+ jip_feast.5103.b:0 "Explain the goat: it is Israel, and the beasts the empires."
+ jip_feast.5103.c:0 "Clap along."

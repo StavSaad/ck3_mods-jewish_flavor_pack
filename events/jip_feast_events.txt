@@ -14,24 +14,32 @@
 #  1010 Guest: farewell
 #  1020 A ruler who let Akitu lapse: the priests' warning
 #  1101 Guest pulse: a priest of Nabu reads your fate
+#  1102 Guest pulse: the ram of purification
+#  1103 Guest pulse: the procession of the gods
 # 2000s Feast of Nisan (Sabians, Sinism)
 #  2001 Host: the Moon's fast ends
 #  2002 Host: the sacrifice to Sin and the seven (the omen)
 #  2004 Host: the mystery of the North (summary)
 #  2010 Guest: farewell
 #  2101 Guest pulse: an astrologer casts your horoscope
+#  2102 Guest pulse: the seven temples
+#  2103 Guest pulse: Hermes the prophet
 # 3000s Parwanaya (Mandaean rite)
 #  3001 Host: white robes and living water
 #  3002 Host: the meal for the souls
 #  3004 Host: the five days end (summary)
 #  3010 Guest: farewell
 #  3101 Guest pulse: invited into the river
+#  3102 Guest pulse: the meal for a dead parent
+#  3103 Guest pulse: the myrtle wreath
 # 4000s Dehwa Rabba (Mandaean rite)
 #  4001 Host: the night of seclusion (the omen)
 #  4002 Host: the New Year greeted
 #  4004 Host: the year begins (summary)
 #  4010 Guest: farewell
 #  4101 Guest pulse: tales in the night
+#  4102 Guest pulse: water for the long night
+#  4103 Guest pulse: a name from the stars
 # 5000s Pesach (every Jewish faith; 0.16 plan, section 1)
 #  5001 Host: Kiddush and the four cups
 #  5002 Host: the questions (the youngest child, scope:jip_seder_child, or the host)
@@ -42,6 +50,8 @@
 #  5010 Guest: farewell
 #  5020 The household seder (yearly in April, for Jewish playable characters who sat at no grand seder)
 #  5101 Guest pulse: Dayenu
+#  5102 Guest pulse: leaven in the bag
+#  5103 Guest pulse: Chad Gadya
 
 ##################################################
 # AKITU
@@ -525,6 +535,147 @@ jip_feast.1101 = {
 	}
 }
 
+# Guest pulse: the ram of purification
+jip_feast.1102 = {
+	type = activity_event
+	title = jip_feast.1102.t
+	desc = jip_feast.1102.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	cooldown = { years = 1 }
+
+	trigger = {
+		exists = scope:activity
+		jip_is_akitu = yes
+		NOT = { this = scope:activity.activity_host }
+	}
+
+	immediate = {
+		scope:activity.activity_host = { save_scope_as = host }
+	}
+
+	# Carry the ram to the river (the faithful)
+	option = {
+		name = jip_feast.1102.a
+		trigger = { faith = scope:host.faith }
+		add_piety = medium_piety_gain
+		add_stress = minor_stress_gain
+		scope:host = {
+			add_opinion = {
+				target = root
+				modifier = respect_opinion
+				opinion = 15
+			}
+		}
+	}
+
+	# Let another bear the year's sins
+	option = {
+		name = jip_feast.1102.b
+		trigger = { faith = scope:host.faith }
+		add_stress = minor_stress_loss
+	}
+
+	# Watch the strange rite (others)
+	option = {
+		name = jip_feast.1102.c
+		trigger = { NOT = { faith = scope:host.faith } }
+		add_learning_lifestyle_xp = minor_lifestyle_xp
+	}
+}
+
+# Guest pulse: the procession of the gods, beside another guest
+jip_feast.1103 = {
+	type = activity_event
+	title = jip_feast.1103.t
+	desc = jip_feast.1103.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		character = scope:jip_feast_companion
+		animation = admiration
+	}
+	cooldown = { years = 1 }
+
+	trigger = {
+		exists = scope:activity
+		jip_is_akitu = yes
+		NOT = { this = scope:activity.activity_host }
+		scope:activity = {
+			any_attending_character = {
+				feast_default_participant_trigger = yes
+				is_adult = yes
+			}
+		}
+	}
+
+	immediate = {
+		scope:activity.activity_host = { save_scope_as = host }
+		scope:activity = {
+			random_attending_character = {
+				limit = {
+					feast_default_participant_trigger = yes
+					is_adult = yes
+				}
+				save_scope_as = jip_feast_companion
+			}
+		}
+	}
+
+	# Name the gods as they pass
+	option = {
+		name = jip_feast.1103.a
+		add_learning_lifestyle_xp = minor_lifestyle_xp
+		scope:jip_feast_companion = {
+			add_opinion = {
+				target = root
+				modifier = friendliness_opinion
+				opinion = 10
+			}
+		}
+	}
+
+	# Push to the front to touch the chariot's rope
+	option = {
+		name = jip_feast.1103.b
+		random_list = {
+			70 = {
+				desc = jip_feast.1103.b_good
+				add_prestige = minor_prestige_gain
+			}
+			30 = {
+				desc = jip_feast.1103.b_bad
+				add_prestige = minor_prestige_loss
+				add_stress = minor_stress_gain
+			}
+		}
+	}
+
+	# Find shade and wine
+	option = {
+		name = jip_feast.1103.c
+		add_stress = minor_stress_loss
+	}
+}
+
 ##################################################
 # FEAST OF NISAN
 ##################################################
@@ -877,6 +1028,141 @@ jip_feast.2101 = {
 	}
 }
 
+# Guest pulse: the temples of the seven planets
+jip_feast.2102 = {
+	type = activity_event
+	title = jip_feast.2102.t
+	desc = jip_feast.2102.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = interested
+	}
+	cooldown = { years = 1 }
+
+	trigger = {
+		exists = scope:activity
+		jip_is_nisan = yes
+		NOT = { this = scope:activity.activity_host }
+	}
+
+	immediate = {
+		scope:activity.activity_host = { save_scope_as = host }
+	}
+
+	# The Sun
+	option = {
+		name = jip_feast.2102.a
+		add_prestige = minor_prestige_gain
+	}
+
+	# The Moon, Sin himself
+	option = {
+		name = jip_feast.2102.b
+		add_piety = minor_piety_gain
+	}
+
+	# Mars
+	option = {
+		name = jip_feast.2102.c
+		add_martial_lifestyle_xp = minor_lifestyle_xp
+	}
+
+	# Mercury, the scribe of the gods
+	option = {
+		name = jip_feast.2102.d
+		add_learning_lifestyle_xp = minor_lifestyle_xp
+	}
+
+	# Venus
+	option = {
+		name = jip_feast.2102.e
+		add_stress = minor_stress_loss
+	}
+}
+
+# Guest pulse: Hermes the prophet, a dispute with another guest
+jip_feast.2103 = {
+	type = activity_event
+	title = jip_feast.2103.t
+	desc = jip_feast.2103.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:jip_feast_companion
+		animation = debating
+	}
+	cooldown = { years = 1 }
+
+	trigger = {
+		exists = scope:activity
+		jip_is_nisan = yes
+		NOT = { this = scope:activity.activity_host }
+		scope:activity = {
+			any_attending_character = {
+				feast_default_participant_trigger = yes
+				is_adult = yes
+				learning >= 8
+			}
+		}
+	}
+
+	immediate = {
+		scope:activity.activity_host = { save_scope_as = host }
+		scope:activity = {
+			random_attending_character = {
+				limit = {
+					feast_default_participant_trigger = yes
+					is_adult = yes
+					learning >= 8
+				}
+				save_scope_as = jip_feast_companion
+			}
+		}
+	}
+
+	# Argue for Hermes: the more learned wins
+	option = {
+		name = jip_feast.2103.a
+		if = {
+			limit = { learning >= scope:jip_feast_companion.learning }
+			add_prestige = minor_prestige_gain
+			scope:jip_feast_companion = {
+				add_opinion = {
+					target = root
+					modifier = respect_opinion
+					opinion = 15
+				}
+			}
+		}
+		else = {
+			add_stress = minor_stress_gain
+			add_learning_lifestyle_xp = minor_lifestyle_xp
+		}
+	}
+
+	# Turn the talk to the wine
+	option = {
+		name = jip_feast.2103.b
+		add_stress = minor_stress_loss
+	}
+}
+
 ##################################################
 # PARWANAYA
 ##################################################
@@ -1125,6 +1411,117 @@ jip_feast.3101 = {
 		name = jip_feast.3101.b
 		trigger = { NOT = { faith = scope:activity.activity_host.faith } }
 		add_learning_lifestyle_xp = minor_lifestyle_xp
+	}
+}
+
+# Guest pulse: the meal for a dead parent
+jip_feast.3102 = {
+	type = activity_event
+	title = jip_feast.3102.t
+	desc = jip_feast.3102.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = sadness
+	}
+	cooldown = { years = 1 }
+
+	trigger = {
+		exists = scope:activity
+		jip_is_parwanaya = yes
+		NOT = { this = scope:activity.activity_host }
+		OR = {
+			father ?= { is_alive = no }
+			mother ?= { is_alive = no }
+		}
+	}
+
+	immediate = {
+		scope:activity.activity_host = { save_scope_as = host }
+		if = {
+			limit = { father ?= { is_alive = no } }
+			father = { save_scope_as = jip_feast_dead }
+		}
+		else = {
+			mother = { save_scope_as = jip_feast_dead }
+		}
+	}
+
+	# Set out bread for them (the faithful)
+	option = {
+		name = jip_feast.3102.a
+		trigger = { faith = scope:host.faith }
+		add_stress = medium_stress_loss
+		add_piety = minor_piety_gain
+	}
+
+	# Remember them in my own way (others)
+	option = {
+		name = jip_feast.3102.b
+		trigger = { NOT = { faith = scope:host.faith } }
+		add_stress = minor_stress_loss
+	}
+}
+
+# Guest pulse: the myrtle wreath and the mandi
+jip_feast.3103 = {
+	type = activity_event
+	title = jip_feast.3103.t
+	desc = jip_feast.3103.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = interested
+	}
+	cooldown = { years = 1 }
+
+	trigger = {
+		exists = scope:activity
+		jip_is_parwanaya = yes
+		NOT = { this = scope:activity.activity_host }
+	}
+
+	immediate = {
+		scope:activity.activity_host = { save_scope_as = host }
+	}
+
+	# Give for the mandi
+	option = {
+		name = jip_feast.3103.a
+		trigger = { short_term_gold >= tiny_gold_value }
+		remove_short_term_gold = tiny_gold_value
+		add_piety = minor_piety_gain
+		scope:host = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 10
+			}
+		}
+	}
+
+	# Wear the wreath (the faithful)
+	option = {
+		name = jip_feast.3103.b
+		trigger = { faith = scope:host.faith }
+		add_stress = minor_stress_loss
+	}
+
+	# Thank him and move on
+	option = {
+		name = jip_feast.3103.c
 	}
 }
 
@@ -1447,6 +1844,144 @@ jip_feast.4101 = {
 		trigger = { has_trait = impatient }
 		add_stress = minor_stress_gain
 		add_prestige = miniscule_prestige_gain
+	}
+}
+
+# Guest pulse: water for the long night, another guest forgot theirs
+jip_feast.4102 = {
+	type = activity_event
+	title = jip_feast.4102.t
+	desc = jip_feast.4102.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	right_portrait = {
+		character = scope:jip_feast_companion
+		animation = worry
+	}
+	cooldown = { years = 1 }
+
+	trigger = {
+		exists = scope:activity
+		jip_is_dehwa_rabba = yes
+		NOT = { this = scope:activity.activity_host }
+		scope:activity = {
+			any_attending_character = {
+				feast_default_participant_trigger = yes
+				is_adult = yes
+			}
+		}
+	}
+
+	immediate = {
+		scope:activity.activity_host = { save_scope_as = host }
+		scope:activity = {
+			random_attending_character = {
+				limit = {
+					feast_default_participant_trigger = yes
+					is_adult = yes
+				}
+				save_scope_as = jip_feast_companion
+			}
+		}
+	}
+
+	# Share my water
+	option = {
+		name = jip_feast.4102.a
+		add_stress = minor_stress_gain
+		scope:jip_feast_companion = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 20
+			}
+		}
+	}
+
+	# Slip out to the river for them (others)
+	option = {
+		name = jip_feast.4102.b
+		trigger = { NOT = { faith = scope:host.faith } }
+		scope:jip_feast_companion = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 15
+			}
+		}
+		scope:host = {
+			add_opinion = {
+				target = root
+				modifier = annoyed_opinion
+				opinion = -10
+			}
+		}
+	}
+
+	# They will have to wait it out
+	option = {
+		name = jip_feast.4102.c
+		scope:jip_feast_companion = {
+			add_opinion = {
+				target = root
+				modifier = annoyed_opinion
+				opinion = -10
+			}
+		}
+	}
+}
+
+# Guest pulse: the name from the Book of the Zodiac
+jip_feast.4103 = {
+	type = activity_event
+	title = jip_feast.4103.t
+	desc = jip_feast.4103.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = interested
+	}
+	cooldown = { years = 1 }
+
+	trigger = {
+		exists = scope:activity
+		jip_is_dehwa_rabba = yes
+		NOT = { this = scope:activity.activity_host }
+	}
+
+	immediate = {
+		scope:activity.activity_host = { save_scope_as = host }
+	}
+
+	# Take the name (the faithful)
+	option = {
+		name = jip_feast.4103.a
+		trigger = { faith = scope:host.faith }
+		add_piety = minor_piety_gain
+		add_learning_lifestyle_xp = minor_lifestyle_xp
+	}
+
+	# Hear it out of curiosity (others)
+	option = {
+		name = jip_feast.4103.b
+		trigger = { NOT = { faith = scope:host.faith } }
+		add_learning_lifestyle_xp = minor_lifestyle_xp
+		add_stress = minor_stress_loss
 	}
 }
 
@@ -2186,5 +2721,153 @@ jip_feast.5101 = {
 		name = jip_feast.5101.b
 		trigger = { NOT = { religion = religion:judaism_religion } }
 		add_learning_lifestyle_xp = minor_lifestyle_xp
+	}
+}
+
+# Guest pulse: leaven found in a guest's bag
+jip_feast.5102 = {
+	type = activity_event
+	title = jip_feast.5102.t
+	desc = jip_feast.5102.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+	cooldown = { years = 1 }
+
+	trigger = {
+		exists = scope:activity
+		jip_is_pesach = yes
+		NOT = { this = scope:activity.activity_host }
+		religion = religion:judaism_religion
+	}
+
+	immediate = {
+		scope:activity.activity_host = { save_scope_as = host }
+	}
+
+	# Burn it, as the Law commands
+	option = {
+		name = jip_feast.5102.a
+		add_piety = minor_piety_gain
+		add_prestige = minor_prestige_loss
+	}
+
+	# Sell it to a gentile servant
+	option = {
+		name = jip_feast.5102.b
+		add_stewardship_lifestyle_xp = minor_lifestyle_xp
+	}
+
+	# Blame the dog
+	option = {
+		name = jip_feast.5102.c
+		add_intrigue_lifestyle_xp = minor_lifestyle_xp
+		random_list = {
+			60 = {
+				desc = jip_feast.5102.c_good
+				add_stress = minor_stress_loss
+			}
+			40 = {
+				desc = jip_feast.5102.c_bad
+				scope:host = {
+					add_opinion = {
+						target = root
+						modifier = annoyed_opinion
+						opinion = -10
+					}
+				}
+			}
+		}
+	}
+}
+
+# Guest pulse: Chad Gadya, sung with another guest
+jip_feast.5103 = {
+	type = activity_event
+	title = jip_feast.5103.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { religion = religion:judaism_religion }
+				desc = jip_feast.5103.desc
+			}
+			desc = jip_feast.5103.desc_gentile
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		character = scope:jip_feast_companion
+		animation = happiness
+	}
+	cooldown = { years = 1 }
+
+	trigger = {
+		exists = scope:activity
+		jip_is_pesach = yes
+		NOT = { this = scope:activity.activity_host }
+		scope:activity = {
+			any_attending_character = {
+				feast_default_participant_trigger = yes
+			}
+		}
+	}
+
+	immediate = {
+		scope:activity.activity_host = { save_scope_as = host }
+		scope:activity = {
+			random_attending_character = {
+				limit = {
+					feast_default_participant_trigger = yes
+				}
+				save_scope_as = jip_feast_companion
+			}
+		}
+	}
+
+	# Race them to the end
+	option = {
+		name = jip_feast.5103.a
+		trigger = { religion = religion:judaism_religion }
+		add_stress = minor_stress_loss
+		scope:jip_feast_companion = {
+			add_opinion = {
+				target = root
+				modifier = friendliness_opinion
+				opinion = 10
+			}
+		}
+	}
+
+	# Expound the allegory
+	option = {
+		name = jip_feast.5103.b
+		trigger = { religion = religion:judaism_religion }
+		add_learning_lifestyle_xp = minor_lifestyle_xp
+		add_piety = miniscule_piety_gain
+	}
+
+	# Clap along (gentiles)
+	option = {
+		name = jip_feast.5103.c
+		trigger = { NOT = { religion = religion:judaism_religion } }
+		add_stress = minor_stress_loss
 	}
 }
