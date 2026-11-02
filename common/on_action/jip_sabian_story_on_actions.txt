@@ -40,7 +40,8 @@ jip_sabian_story_game_start_after_lobby_on_action = {
 	}
 }
 
-# Act II ends when the story owner holds Harran, however they came by it
+# The story owner who holds Harran in Act I or II, however they came by it, moves on to Act III, or to Act IV if
+# independent (jip_sabian_story_harran_held_effect; the story's monthly check catches the rest)
 on_title_gain = {
 	on_actions = {
 		jip_sabian_story_harran_gained_on_action
@@ -51,14 +52,13 @@ on_title_gain = {
 jip_sabian_story_harran_gained_on_action = {
 	trigger = {
 		scope:title = title:c_harran
-		jip_sabian_story_in_act_trigger = { ACT = 2 }
+		OR = {
+			jip_sabian_story_in_act_trigger = { ACT = 1 }
+			jip_sabian_story_in_act_trigger = { ACT = 2 }
+		}
 	}
 	effect = {
-		jip_sabian_story_set_act_effect = { ACT = 3 }
-		trigger_event = {
-			id = jip_sabian_story.2090
-			days = 2
-		}
+		jip_sabian_story_harran_held_effect = yes
 	}
 }
 

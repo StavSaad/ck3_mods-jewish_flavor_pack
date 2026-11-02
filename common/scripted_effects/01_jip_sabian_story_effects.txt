@@ -277,7 +277,31 @@ jip_sabian_raise_the_harranians_effect = {
 	}
 }
 
-# The story's act moves on; Act II ends when the owner holds Harran (jip_sabian_story_harran_gained_on_action)
+# Character scope (the story owner, in Act I or II, holding Harran): Act III (jip_sabian_story.2090), or straight to Act
+# IV for an independent ruler (jip_sabian_story.3090)
+jip_sabian_story_harran_held_effect = {
+	if = {
+		limit = { is_independent_ruler = yes }
+		jip_sabian_story_set_act_effect = { ACT = 4 }
+		random_owned_story = {
+			type = story_jip_sabian_revival
+			jip_sabian_story_update_patron_effect = yes
+		}
+		trigger_event = {
+			id = jip_sabian_story.3090
+			days = 2
+		}
+	}
+	else = {
+		jip_sabian_story_set_act_effect = { ACT = 3 }
+		trigger_event = {
+			id = jip_sabian_story.2090
+			days = 2
+		}
+	}
+}
+
+# The story's act moves on; Acts I and II end when the owner holds Harran (jip_sabian_story_harran_held_effect)
 jip_sabian_story_set_act_effect = {
 	random_owned_story = {
 		type = story_jip_sabian_revival

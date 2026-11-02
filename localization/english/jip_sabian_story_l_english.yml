@@ -142,7 +142,7 @@
  jip_sabian_story.2090.t: "Home to Harran"
  jip_sabian_story.2090.desc: "I have come home to Harran. The old men at the gate wept to see one of their own ride in as its lord, and on the hill the Moon God's temple waits, its doors still shut, its lamps still lit by the few who never stopped.\n\nBut Harran is held of another, and while the house answers to a Muslim lord, the old gods must stay behind closed doors. The Sabians cannot restore what they do not rule outright."
  jip_sabian_story.2090.a: "The Moon rises over Harran"
- jip_sabian_story.2090.tt: "The second act of the Return of the Moon God ends: the house must now rule Harran as an independent ruler"
+ jip_sabian_story.2090.tt: "The Return of the Moon God moves on to its third act, Throw Off the Caliph: the house must now rule Harran as an independent ruler"
 
  # Act III: Throw Off the Caliph
  jip_sabian_story_act_4: "Act IV: Restore the Old Gods. Harran is free; the Temple of Sin can rise again."
@@ -173,7 +173,7 @@
  jip_sabian_story.3090.t: "Harran Is Free"
  jip_sabian_story.3090.desc: "For the first time since the Romans came, Harran answers to no one but its own. No caliph's governor sits in the citadel, no qadi will ask the Sabians what book they follow.\n\nOn the hill, the Moon God's temple waits. Its stones are old and its roof has fallen, but the Ehulhul stood there before Babylon was great, and it can stand again. The Sabians need only build it, and the gods of their fathers can be worshipped in the open."
  jip_sabian_story.3090.a: "Let the temple rise"
- jip_sabian_story.3090.tt: "The third act of the Return of the Moon God ends. The great project to Restore the Temple of Sin at Harran is now open to you"
+ jip_sabian_story.3090.tt: "The Return of the Moon God moves on to its fourth act, Restore the Old Gods. The great project to Restore the Temple of Sin at Harran is now open to you"
 
  # Fixes, and the acts' checks
  jip_sabian_story_in_act_1_tt: "The Return of the Moon God is in its first act"
