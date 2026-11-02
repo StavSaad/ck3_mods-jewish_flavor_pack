@@ -150,7 +150,7 @@ Both use **Exilarchate Elective** succession: dynasty members and claimants of t
 
 ## The Harranian Legacy
 
-`harranian_legacy_track` (`common/dynasty_legacies/82_jip_legacies.txt`, perks in `common/dynasty_perks/jip_perks.txt`): for a dynasty whose dynast is a Sabian or of the old faith (`jip_is_sabian_rite_trigger`). Star-Readers (+1 learning, learning XP, hostile schemes against them less likely), Heirs of Hermes (+2 learning, +1 stewardship), Hidden Rites (+2 intrigue, stress loss), Priests of Sin (piety gain, same-faith opinion, cheaper conversion), Return of the Gods (+1 prestige a month, county opinion, development growth). Its illustration is a copy of vanilla's Erudition art until a painting replaces it (`gfx/interface/illustrations/legacy_tracks/harranian_legacy_track.dds`)
+`harranian_legacy_track` (`common/dynasty_legacies/82_jip_legacies.txt`, perks in `common/dynasty_perks/jip_perks.txt`): for a dynasty whose dynast is a Sabian or of the old faith (`jip_is_sabian_rite_trigger`). Star-Readers (+1 learning, learning XP, hostile schemes against them less likely), Heirs of Hermes (+2 learning, +1 stewardship), Hidden Rites (+2 intrigue, stress loss), Priests of Sin (piety gain, same-faith opinion, cheaper conversion), Return of the Gods (+1 prestige a month, county opinion, development growth). Its icon is the crescent standard of Sin (`gfx/interface/icons/dynasty/harranian_legacy_track.dds`, 140x140, built by `tools/make_legacy_icon.py <silhouette> <track> [preview] [box_px]` from a Gemini black-on-white silhouette; 104 for this tall glyph); its illustration is a copy of vanilla's Erudition art until a painting replaces it (`gfx/interface/illustrations/legacy_tracks/harranian_legacy_track.dds`, 4216x368)
 
 ---
 
