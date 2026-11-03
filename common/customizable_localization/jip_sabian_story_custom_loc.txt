@@ -62,3 +62,301 @@ JipSabianStoryAct = {
 		fallback = yes
 	}
 }
+
+# The six gods' cities in the story window in Acts IV and V (JIP_SABIAN_STORY_ACT), keyed on the story owner: the
+# statue home, the temple standing in the realm, the temple standing outside it, the city in the realm without its
+# temple, or the city outside the realm. Generated with the header JipSabianSitesHeader; empty in the other acts
+JipSabianSitesHeader = {
+	type = character
+	text = {
+		trigger = {
+			any_owned_story = {
+				type = story_jip_sabian_revival
+				OR = {
+					var:jip_sabian_act ?= 4
+					var:jip_sabian_act ?= 5
+				}
+			}
+		}
+		localization_key = jip_sabian_sites_header
+	}
+	text = {
+		localization_key = jip_sabian_empty
+	}
+}
+
+JipSabianSiteSin = {
+	type = character
+	text = {
+		trigger = {
+			NOT = {
+				any_owned_story = {
+					type = story_jip_sabian_revival
+					OR = {
+						var:jip_sabian_act ?= 4
+						var:jip_sabian_act ?= 5
+					}
+				}
+			}
+		}
+		localization_key = jip_sabian_empty
+	}
+	text = {
+		trigger = {
+			is_target_in_global_variable_list = { name = jip_old_gods_home target = flag:sin }
+		}
+		localization_key = jip_sabian_site_sin_home
+	}
+	text = {
+		trigger = {
+			title:b_harran.title_province = { has_building = jip_temple_of_sin_01 }
+			title:b_harran.holder ?= { target_is_same_character_or_above = root }
+		}
+		localization_key = jip_sabian_site_sin_temple
+	}
+	text = {
+		trigger = {
+			title:b_harran.title_province = { has_building = jip_temple_of_sin_01 }
+		}
+		localization_key = jip_sabian_site_sin_temple_lost
+	}
+	text = {
+		trigger = {
+			title:b_harran.holder ?= { target_is_same_character_or_above = root }
+		}
+		localization_key = jip_sabian_site_sin_held
+	}
+	text = {
+		localization_key = jip_sabian_site_sin_lost
+	}
+}
+
+JipSabianSiteIshtar = {
+	type = character
+	text = {
+		trigger = {
+			NOT = {
+				any_owned_story = {
+					type = story_jip_sabian_revival
+					OR = {
+						var:jip_sabian_act ?= 4
+						var:jip_sabian_act ?= 5
+					}
+				}
+			}
+		}
+		localization_key = jip_sabian_empty
+	}
+	text = {
+		trigger = {
+			is_target_in_global_variable_list = { name = jip_old_gods_home target = flag:ishtar }
+		}
+		localization_key = jip_sabian_site_ishtar_home
+	}
+	text = {
+		trigger = {
+			title:b_irbil.title_province = { has_building = jip_temple_of_ishtar_01 }
+			title:b_irbil.holder ?= { target_is_same_character_or_above = root }
+		}
+		localization_key = jip_sabian_site_ishtar_temple
+	}
+	text = {
+		trigger = {
+			title:b_irbil.title_province = { has_building = jip_temple_of_ishtar_01 }
+		}
+		localization_key = jip_sabian_site_ishtar_temple_lost
+	}
+	text = {
+		trigger = {
+			title:b_irbil.holder ?= { target_is_same_character_or_above = root }
+		}
+		localization_key = jip_sabian_site_ishtar_held
+	}
+	text = {
+		localization_key = jip_sabian_site_ishtar_lost
+	}
+}
+
+JipSabianSiteAshur = {
+	type = character
+	text = {
+		trigger = {
+			NOT = {
+				any_owned_story = {
+					type = story_jip_sabian_revival
+					OR = {
+						var:jip_sabian_act ?= 4
+						var:jip_sabian_act ?= 5
+					}
+				}
+			}
+		}
+		localization_key = jip_sabian_empty
+	}
+	text = {
+		trigger = {
+			is_target_in_global_variable_list = { name = jip_old_gods_home target = flag:ashur }
+		}
+		localization_key = jip_sabian_site_ashur_home
+	}
+	text = {
+		trigger = {
+			title:b_ain_al-qayyara.title_province = { has_building = jip_temple_of_ashur_01 }
+			title:b_ain_al-qayyara.holder ?= { target_is_same_character_or_above = root }
+		}
+		localization_key = jip_sabian_site_ashur_temple
+	}
+	text = {
+		trigger = {
+			title:b_ain_al-qayyara.title_province = { has_building = jip_temple_of_ashur_01 }
+		}
+		localization_key = jip_sabian_site_ashur_temple_lost
+	}
+	text = {
+		trigger = {
+			title:b_ain_al-qayyara.holder ?= { target_is_same_character_or_above = root }
+		}
+		localization_key = jip_sabian_site_ashur_held
+	}
+	text = {
+		localization_key = jip_sabian_site_ashur_lost
+	}
+}
+
+JipSabianSiteBel = {
+	type = character
+	text = {
+		trigger = {
+			NOT = {
+				any_owned_story = {
+					type = story_jip_sabian_revival
+					OR = {
+						var:jip_sabian_act ?= 4
+						var:jip_sabian_act ?= 5
+					}
+				}
+			}
+		}
+		localization_key = jip_sabian_empty
+	}
+	text = {
+		trigger = {
+			is_target_in_global_variable_list = { name = jip_old_gods_home target = flag:bel }
+		}
+		localization_key = jip_sabian_site_bel_home
+	}
+	text = {
+		trigger = {
+			title:b_tadmur.title_province = { has_building = jip_temple_of_bel_01 }
+			title:b_tadmur.holder ?= { target_is_same_character_or_above = root }
+		}
+		localization_key = jip_sabian_site_bel_temple
+	}
+	text = {
+		trigger = {
+			title:b_tadmur.title_province = { has_building = jip_temple_of_bel_01 }
+		}
+		localization_key = jip_sabian_site_bel_temple_lost
+	}
+	text = {
+		trigger = {
+			title:b_tadmur.holder ?= { target_is_same_character_or_above = root }
+		}
+		localization_key = jip_sabian_site_bel_held
+	}
+	text = {
+		localization_key = jip_sabian_site_bel_lost
+	}
+}
+
+JipSabianSiteShamash = {
+	type = character
+	text = {
+		trigger = {
+			NOT = {
+				any_owned_story = {
+					type = story_jip_sabian_revival
+					OR = {
+						var:jip_sabian_act ?= 4
+						var:jip_sabian_act ?= 5
+					}
+				}
+			}
+		}
+		localization_key = jip_sabian_empty
+	}
+	text = {
+		trigger = {
+			is_target_in_global_variable_list = { name = jip_old_gods_home target = flag:shamash }
+		}
+		localization_key = jip_sabian_site_shamash_home
+	}
+	text = {
+		trigger = {
+			title:b_al-hadr.title_province = { has_building = jip_temple_of_shamash_01 }
+			title:b_al-hadr.holder ?= { target_is_same_character_or_above = root }
+		}
+		localization_key = jip_sabian_site_shamash_temple
+	}
+	text = {
+		trigger = {
+			title:b_al-hadr.title_province = { has_building = jip_temple_of_shamash_01 }
+		}
+		localization_key = jip_sabian_site_shamash_temple_lost
+	}
+	text = {
+		trigger = {
+			title:b_al-hadr.holder ?= { target_is_same_character_or_above = root }
+		}
+		localization_key = jip_sabian_site_shamash_held
+	}
+	text = {
+		localization_key = jip_sabian_site_shamash_lost
+	}
+}
+
+JipSabianSiteMarduk = {
+	type = character
+	text = {
+		trigger = {
+			NOT = {
+				any_owned_story = {
+					type = story_jip_sabian_revival
+					OR = {
+						var:jip_sabian_act ?= 4
+						var:jip_sabian_act ?= 5
+					}
+				}
+			}
+		}
+		localization_key = jip_sabian_empty
+	}
+	text = {
+		trigger = {
+			is_target_in_global_variable_list = { name = jip_old_gods_home target = flag:marduk }
+		}
+		localization_key = jip_sabian_site_marduk_home
+	}
+	text = {
+		trigger = {
+			title:b_al-hila.title_province = { has_building = jip_temple_of_marduk_01 }
+			title:b_al-hila.holder ?= { target_is_same_character_or_above = root }
+		}
+		localization_key = jip_sabian_site_marduk_temple
+	}
+	text = {
+		trigger = {
+			title:b_al-hila.title_province = { has_building = jip_temple_of_marduk_01 }
+		}
+		localization_key = jip_sabian_site_marduk_temple_lost
+	}
+	text = {
+		trigger = {
+			title:b_al-hila.holder ?= { target_is_same_character_or_above = root }
+		}
+		localization_key = jip_sabian_site_marduk_held
+	}
+	text = {
+		localization_key = jip_sabian_site_marduk_lost
+	}
+}
