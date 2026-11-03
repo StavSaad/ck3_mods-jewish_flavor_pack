@@ -159,3 +159,4 @@
  holy_site_tyre_effect_name: "From [holy_site|E] #weak ($holy_site_tyre_name$)#!"
  holy_site_sidon_name: "Sidon"
  holy_site_sidon_effect_name: "From [holy_site|E] #weak ($holy_site_sidon_name$)#!"
+ NOT_jip_tenet_kehunah_jewish_trigger: "The [faith|E] is not Jewish and lacks the $tenet_jewish_syncretism_name$ [tenet|E]"

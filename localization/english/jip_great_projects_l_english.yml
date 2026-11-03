@@ -333,3 +333,9 @@
  building_type_jip_temple_of_astarte_01_desc:0 "The temple of Astarte at Kition, the greatest Phoenician temple on Cyprus."
  building_jip_temple_of_astarte_01:0 "Temple of Astarte"
  building_jip_temple_of_astarte_01_desc:0 "Astarte's temple stands again at Kition, its doves on the walls and copper smoke rising beside it."
+ # Negations of the buildings' custom_description texts, which the game looks up when they fail
+ NOT_jip_temple_of_sin_enabled_trigger:0 "The holder is neither a Sabian nor a follower of the old gods"
+ NOT_jip_temple_of_the_old_gods_enabled_trigger:0 "The holder is neither a Sabian nor a follower of the old gods"
+ NOT_jip_temple_of_ashur_enabled_trigger:0 "The holder does not follow $mesopotamian_pagan$"
+ NOT_jip_temple_of_canaan_enabled_trigger:0 "The holder does not follow Canaanism"
+ jip_gp_temple_not_built_tt:0 "The temple does not stand there yet"

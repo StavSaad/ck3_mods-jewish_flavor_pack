@@ -351,7 +351,7 @@ jip_hebrew.0022 = {
 		set_culture = culture:phoenician
 		scope:canaanite_former = {
 			add_opinion = {
-				target = THIS
+				target = root
 				modifier = approving_opinion
 			}
 		}
@@ -364,7 +364,7 @@ jip_hebrew.0022 = {
 		name = jip_hebrew.0022.b
 		scope:canaanite_former = {
 			add_opinion = {
-				target = THIS
+				target = root
 				modifier = disapproving_opinion
 			}
 		}
@@ -460,7 +460,7 @@ jip_hebrew.0032 = {
 		set_culture = culture:edomite
 		scope:edomite_former = {
 			add_opinion = {
-				target = THIS
+				target = root
 				modifier = approving_opinion
 			}
 		}
@@ -473,7 +473,7 @@ jip_hebrew.0032 = {
 		name = jip_hebrew.0032.b
 		scope:edomite_former = {
 			add_opinion = {
-				target = THIS
+				target = root
 				modifier = disapproving_opinion
 			}
 		}

@@ -20,9 +20,8 @@ form_hebrew_decision_effects = {
 			limit = { has_same_culture_as = scope:hebrew_former }
 			add_to_list = convert_list
 		}
-		#transfer over innovations from previous culture. 
+		#transfer over innovations from previous culture (no reset_culture_creation_date: it needs parent cultures, which Hebrew lacks)
 		culture:hebrew = {
-			reset_culture_creation_date = yes
 			get_all_innovations_from = scope:hebrew_former.culture
 			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = futuwaa }
 			handle_maa_traditions_for_culture = { CULTURE = hebrew TRADITION = mubarizuns }
@@ -122,9 +121,8 @@ form_canaanite_decision_effects = {
 			limit = { has_same_culture_as = scope:canaanite_former }
 			add_to_list = convert_list
 		}
-		#transfer over innovations from previous culture. 
+		#transfer over innovations from previous culture (no reset_culture_creation_date: it needs parent cultures, which Phoenician lacks)
 		culture:phoenician = {
-			reset_culture_creation_date = yes
 			get_all_innovations_from = scope:canaanite_former.culture
 		}
 		set_culture = culture:phoenician

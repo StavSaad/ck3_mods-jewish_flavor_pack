@@ -1,23 +1,24 @@
 ﻿# The Nineveh dig (jip_gp_nineveh_excavation)
 
 # Character scope (the project's owner): the tablet of Ashurbanipal's library that this dig turned up, by the number of
-# digs so far (var:jip_nineveh_digs on Nineveh's province, already counted)
+# digs so far (var:jip_nineveh_digs on Nineveh's province, already counted; read through jip_nineveh_digs_value, which is 0
+# while the variable is unset, as when the project's tooltip is built before the first dig)
 jip_nineveh_tablet_effect = {
 	title:b_ninawa.title_province = { save_scope_as = jip_nineveh }
 	if = {
-		limit = { scope:jip_nineveh.var:jip_nineveh_digs <= 1 }
+		limit = { scope:jip_nineveh = { jip_nineveh_digs_value <= 1 } }
 		jip_create_nineveh_tablet_effect = { TABLET = gilgamesh }
 	}
 	else_if = {
-		limit = { scope:jip_nineveh.var:jip_nineveh_digs = 2 }
+		limit = { scope:jip_nineveh = { jip_nineveh_digs_value = 2 } }
 		jip_create_nineveh_tablet_effect = { TABLET = enuma_elish }
 	}
 	else_if = {
-		limit = { scope:jip_nineveh.var:jip_nineveh_digs = 3 }
+		limit = { scope:jip_nineveh = { jip_nineveh_digs_value = 3 } }
 		jip_create_nineveh_tablet_effect = { TABLET = enuma_anu_enlil }
 	}
 	else_if = {
-		limit = { scope:jip_nineveh.var:jip_nineveh_digs = 4 }
+		limit = { scope:jip_nineveh = { jip_nineveh_digs_value = 4 } }
 		jip_create_nineveh_tablet_effect = { TABLET = sakikku }
 	}
 	else = {

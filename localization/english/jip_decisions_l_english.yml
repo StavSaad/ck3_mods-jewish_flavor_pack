@@ -88,3 +88,6 @@
  claim_exilarchate_decision_tooltip: "Participate in Exilarchate Politics"
  claim_exilarchate_decision_confirm: "Do it"
  no_active_claim_exilarchate_scheme: "You are not currently scheming to claim the Exilarchate"
+ NOT_latakia_must_be_city: "[GetTitleByKey('b_latakia').GetName] must not have a city holding"
+ jip_capital_in_phoenicia_tt: "Your [capital|E] is in Phoenicia"
+ jip_capital_in_edom_tt: "Your [capital|E] is in Edom"

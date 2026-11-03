@@ -5,3 +5,12 @@ jip_nineveh_rest_years_value = 10
 
 # Tablets of Ashurbanipal's library to be found, one per dig (jip_nineveh_tablet_effect)
 jip_nineveh_tablets_value = 5
+
+# Province scope (Nineveh): the digs so far, 0 before the first (var:jip_nineveh_digs)
+jip_nineveh_digs_value = {
+	value = 0
+	if = {
+		limit = { has_variable = jip_nineveh_digs }
+		value = var:jip_nineveh_digs
+	}
+}

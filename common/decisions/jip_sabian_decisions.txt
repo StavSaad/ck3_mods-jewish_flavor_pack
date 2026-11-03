@@ -515,7 +515,7 @@ jip_sabian_bring_the_gods_home_decision = {
 	sort_order = 30
 	ai_check_interval = 24
 
-	cooldown = { years = 2 }
+	cooldown = { months = 6 }
 
 	is_shown = {
 		jip_sabian_story_in_act_trigger = { ACT = 5 }

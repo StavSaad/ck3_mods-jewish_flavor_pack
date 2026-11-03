@@ -193,8 +193,9 @@ create_k_phoenicia_decision = {
 		OR = {
 			has_title = title:d_lebanon
 			has_title = title:d_antioch
-			capital_province = {
-				geographical_region = jip_region_phoenicia
+			custom_tooltip = { # The region trigger has no third-person text
+				text = jip_capital_in_phoenicia_tt
+				capital_province = { geographical_region = jip_region_phoenicia }
 			}
 		}
 		NOT = {
@@ -215,8 +216,9 @@ create_k_phoenicia_decision = {
 		OR = {
 			has_primary_title = title:d_lebanon
 			has_primary_title = title:d_antioch
-			capital_province = {
-				geographical_region = jip_region_phoenicia
+			custom_tooltip = { # The region trigger has no third-person text
+				text = jip_capital_in_phoenicia_tt
+				capital_province = { geographical_region = jip_region_phoenicia }
 			}
 		}
 		completely_controls_region = jip_region_phoenicia

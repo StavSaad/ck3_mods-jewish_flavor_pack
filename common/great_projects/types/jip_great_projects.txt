@@ -45,7 +45,10 @@ jip_gp_temple_of_sin = {
 				text = jip_gp_temple_of_sin_held_tt
 				barony.holder ?= { target_is_same_character_or_above = root }
 			}
-			NOT = { has_building_with_flag = jip_temple_of_sin_building }
+			custom_tooltip = {
+				text = jip_gp_temple_not_built_tt
+				NOT = { has_building_with_flag = jip_temple_of_sin_building }
+			}
 		}
 	}
 
@@ -413,7 +416,10 @@ jip_gp_temple_of_bel = {
 				text = jip_gp_temple_held_tt
 				barony.holder ?= { target_is_same_character_or_above = root }
 			}
-			NOT = { has_building_with_flag = jip_temple_of_bel_building }
+			custom_tooltip = {
+				text = jip_gp_temple_not_built_tt
+				NOT = { has_building_with_flag = jip_temple_of_bel_building }
+			}
 		}
 	}
 
@@ -710,7 +716,10 @@ jip_gp_temple_of_shamash = {
 				text = jip_gp_temple_held_tt
 				barony.holder ?= { target_is_same_character_or_above = root }
 			}
-			NOT = { has_building_with_flag = jip_temple_of_shamash_building }
+			custom_tooltip = {
+				text = jip_gp_temple_not_built_tt
+				NOT = { has_building_with_flag = jip_temple_of_shamash_building }
+			}
 		}
 	}
 
@@ -1007,7 +1016,10 @@ jip_gp_temple_of_ashur = {
 				text = jip_gp_temple_held_tt
 				barony.holder ?= { target_is_same_character_or_above = root }
 			}
-			NOT = { has_building_with_flag = jip_temple_of_ashur_building }
+			custom_tooltip = {
+				text = jip_gp_temple_not_built_tt
+				NOT = { has_building_with_flag = jip_temple_of_ashur_building }
+			}
 		}
 	}
 
@@ -1309,7 +1321,10 @@ jip_gp_temple_of_ishtar = {
 				text = jip_gp_temple_held_tt
 				barony.holder ?= { target_is_same_character_or_above = root }
 			}
-			NOT = { has_building_with_flag = jip_temple_of_ishtar_building }
+			custom_tooltip = {
+				text = jip_gp_temple_not_built_tt
+				NOT = { has_building_with_flag = jip_temple_of_ishtar_building }
+			}
 		}
 	}
 
@@ -1644,7 +1659,8 @@ jip_gp_nineveh_excavation = {
 	contributor_cooldown = standard_contributor_cooldown_value
 
 	on_complete = {
-		scope:province = {
+		# Nineveh by its title, not scope:province, which the project's tooltip is built without
+		title:b_ninawa.title_province = {
 			custom_tooltip = jip_gp_nineveh_excavation_tablet_tt
 			hidden_effect = {
 				if = {
@@ -1870,7 +1886,10 @@ jip_gp_temple_of_marduk = {
 				text = jip_gp_temple_held_tt
 				barony.holder ?= { target_is_same_character_or_above = root }
 			}
-			NOT = { has_building_with_flag = jip_temple_of_marduk_building }
+			custom_tooltip = {
+				text = jip_gp_temple_not_built_tt
+				NOT = { has_building_with_flag = jip_temple_of_marduk_building }
+			}
 		}
 	}
 
@@ -2167,7 +2186,10 @@ jip_gp_temple_of_melqart = {
 				text = jip_gp_temple_held_tt
 				barony.holder ?= { target_is_same_character_or_above = root }
 			}
-			NOT = { has_building_with_flag = jip_temple_of_melqart_building }
+			custom_tooltip = {
+				text = jip_gp_temple_not_built_tt
+				NOT = { has_building_with_flag = jip_temple_of_melqart_building }
+			}
 		}
 	}
 
@@ -2462,7 +2484,10 @@ jip_gp_temple_of_tanit = {
 				text = jip_gp_temple_held_tt
 				barony.holder ?= { target_is_same_character_or_above = root }
 			}
-			NOT = { has_building_with_flag = jip_temple_of_tanit_building }
+			custom_tooltip = {
+				text = jip_gp_temple_not_built_tt
+				NOT = { has_building_with_flag = jip_temple_of_tanit_building }
+			}
 		}
 	}
 
@@ -2757,7 +2782,10 @@ jip_gp_temple_of_eshmun = {
 				text = jip_gp_temple_held_tt
 				barony.holder ?= { target_is_same_character_or_above = root }
 			}
-			NOT = { has_building_with_flag = jip_temple_of_eshmun_building }
+			custom_tooltip = {
+				text = jip_gp_temple_not_built_tt
+				NOT = { has_building_with_flag = jip_temple_of_eshmun_building }
+			}
 		}
 	}
 
@@ -3052,7 +3080,10 @@ jip_gp_temple_of_baalat_gebal = {
 				text = jip_gp_temple_held_tt
 				barony.holder ?= { target_is_same_character_or_above = root }
 			}
-			NOT = { has_building_with_flag = jip_temple_of_baalat_gebal_building }
+			custom_tooltip = {
+				text = jip_gp_temple_not_built_tt
+				NOT = { has_building_with_flag = jip_temple_of_baalat_gebal_building }
+			}
 		}
 	}
 
@@ -3347,7 +3378,10 @@ jip_gp_temple_of_baal = {
 				text = jip_gp_temple_held_tt
 				barony.holder ?= { target_is_same_character_or_above = root }
 			}
-			NOT = { has_building_with_flag = jip_temple_of_baal_building }
+			custom_tooltip = {
+				text = jip_gp_temple_not_built_tt
+				NOT = { has_building_with_flag = jip_temple_of_baal_building }
+			}
 		}
 	}
 
@@ -3642,7 +3676,10 @@ jip_gp_temple_of_astarte = {
 				text = jip_gp_temple_held_tt
 				barony.holder ?= { target_is_same_character_or_above = root }
 			}
-			NOT = { has_building_with_flag = jip_temple_of_astarte_building }
+			custom_tooltip = {
+				text = jip_gp_temple_not_built_tt
+				NOT = { has_building_with_flag = jip_temple_of_astarte_building }
+			}
 		}
 	}
 

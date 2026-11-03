@@ -103,7 +103,10 @@ form_edomite_decision = {
 		is_ruler = yes
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
-			capital_province = { geographical_region = jip_region_edom }
+			custom_tooltip = { # The region trigger has no third-person text
+				text = jip_capital_in_edom_tt
+				capital_province = { geographical_region = jip_region_edom }
+			}
 		}
 		NOT = {
 			is_target_in_global_variable_list = {
@@ -122,7 +125,10 @@ form_edomite_decision = {
 			culture = { has_cultural_pillar = heritage_israelite }
 			culture = { has_cultural_pillar = heritage_phoenician }
 		}
-		capital_province = { geographical_region = jip_region_edom }
+		custom_tooltip = { # The region trigger has no third-person text
+			text = jip_capital_in_edom_tt
+			capital_province = { geographical_region = jip_region_edom }
+		}
 		OR = {
 			has_trait = lunatic
 			has_trait = erudite
@@ -178,7 +184,10 @@ form_canaanite_decision = {
 		is_ruler = yes
 		OR = {
 			culture = { has_cultural_pillar = heritage_israelite }
-			capital_province = { geographical_region = jip_region_phoenicia }
+			custom_tooltip = { # The region trigger has no third-person text
+				text = jip_capital_in_phoenicia_tt
+				capital_province = { geographical_region = jip_region_phoenicia }
+			}
 		}
 		NOT = {
 			is_target_in_global_variable_list = {
@@ -197,7 +206,10 @@ form_canaanite_decision = {
 			culture = { has_cultural_pillar = heritage_phoenician }
 			AND = {
 				culture = { has_cultural_pillar = heritage_israelite }
-				capital_province = { geographical_region = jip_region_phoenicia }
+				custom_tooltip = { # The region trigger has no third-person text
+					text = jip_capital_in_phoenicia_tt
+					capital_province = { geographical_region = jip_region_phoenicia }
+				}
 			}
 		}
 		OR = {

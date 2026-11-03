@@ -123,7 +123,7 @@ jip_feast.1001 = {
 			base = 30
 			modifier = {
 				add = 40
-				has_trait = scholar
+				has_trait = lifestyle_scholar
 			}
 		}
 	}

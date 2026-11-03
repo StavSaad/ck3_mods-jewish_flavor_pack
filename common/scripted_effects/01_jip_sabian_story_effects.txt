@@ -31,10 +31,11 @@ jip_sabian_story_start_for_harrani_effect = {
 	}
 }
 
-# Character scope: raises the standing of the Sabian community by $VALUE$ (1-3), if they own the story
+# Character scope: raises the standing of the Sabian community by $VALUE$ (1-3), if they own the story and it is in Act I
+# (the standing only counts there, and the story window hides it afterwards)
 jip_sabian_story_raise_standing_effect = {
 	if = {
-		limit = { jip_owns_sabian_story_trigger = yes }
+		limit = { jip_sabian_story_in_act_trigger = { ACT = 1 } }
 		custom_tooltip = jip_sabian_standing_up_$VALUE$_tt
 		hidden_effect = {
 			random_owned_story = {
@@ -49,10 +50,10 @@ jip_sabian_story_raise_standing_effect = {
 	}
 }
 
-# Character scope: lowers the standing of the Sabian community by $VALUE$ (1-3), if they own the story
+# Character scope: lowers the standing of the Sabian community by $VALUE$ (1-3), if they own the story and it is in Act I
 jip_sabian_story_lower_standing_effect = {
 	if = {
-		limit = { jip_owns_sabian_story_trigger = yes }
+		limit = { jip_sabian_story_in_act_trigger = { ACT = 1 } }
 		custom_tooltip = jip_sabian_standing_down_$VALUE$_tt
 		hidden_effect = {
 			random_owned_story = {
@@ -83,6 +84,7 @@ jip_sabian_story_check_standing_effect = {
 			name = jip_sabian_act
 			value = 2
 		}
+		remove_variable = jip_sabian_standing # Hides it in the story window
 		story_owner = {
 			trigger_event = {
 				id = jip_sabian_story.1090
@@ -171,7 +173,7 @@ jip_sabian_recant_effect = {
 			type = secret_crypto_religionist
 			remove_secret = yes
 		}
-		remove_character_secret_faith = yes
+		hidden_effect = { remove_character_secret_faith = yes } # No tooltip text of its own
 	}
 }
 
@@ -319,6 +321,7 @@ jip_sabian_story_set_act_effect = {
 			name = jip_sabian_act
 			value = $ACT$
 		}
+		remove_variable = jip_sabian_standing # Only Act I has a standing; the story window hides it once it is gone
 	}
 }
 
