@@ -503,22 +503,26 @@ jip_sabian_claim_cult_city_decision = {
 	}
 }
 
-# The Sabian story, Act V: search for a god's statue, carried off long ago, for the restored temple that stands in the
-# realm (jip_sabian_story.5010, then .5011 or .5012 some months on)
+# Search for a god's statue, carried off long ago, for the restored temple that stands in the realm
+# (jip_sabian_story.5010, then .5011 or .5012 some months on): the Sabian story's Act V, and open to any independent ruler
+# of the old faith while a statue is still missing. A major decision, so rulers without the story see it too; the story
+# window lists it for its owner
 jip_sabian_bring_the_gods_home_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
 	}
 	desc = jip_sabian_bring_the_gods_home_decision_desc
 	selection_tooltip = jip_sabian_bring_the_gods_home_decision_tooltip
-	decision_group_type = jip_story_sabian_revival
+	decision_group_type = major
 	sort_order = 30
 	ai_check_interval = 24
 
 	cooldown = { months = 6 }
 
 	is_shown = {
-		jip_sabian_story_in_act_trigger = { ACT = 5 }
+		faith = faith:mesopotamian_pagan
+		is_independent_ruler = yes
+		NOT = { jip_sabian_all_gods_home_trigger = yes }
 	}
 
 	is_valid = {
@@ -553,7 +557,9 @@ jip_sabian_bring_the_gods_home_decision = {
 	}
 
 	ai_potential = {
-		jip_sabian_story_in_act_trigger = { ACT = 5 }
+		faith = faith:mesopotamian_pagan
+		is_independent_ruler = yes
+		jip_sabian_any_statue_can_be_sought_trigger = yes
 	}
 
 	ai_will_do = {

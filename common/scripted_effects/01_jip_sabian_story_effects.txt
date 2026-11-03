@@ -677,7 +677,8 @@ jip_sabian_story_search_effect = {
 }
 
 # Story scope: jip_sabian_show_sites while the story is in Act IV or V, for the story window's houses of the gods
-# (gui/window_situation_list.gui, tools/make_story_window_override.py)
+# (gui/window_situation_list.gui, tools/make_story_window_override.py), and jip_sabian_show_all_sites in Act V: Act IV
+# shows only Harran's
 jip_sabian_story_update_sites_flag_effect = {
 	if = {
 		limit = {
@@ -690,5 +691,12 @@ jip_sabian_story_update_sites_flag_effect = {
 	}
 	else = {
 		remove_variable = jip_sabian_show_sites
+	}
+	if = {
+		limit = { var:jip_sabian_act ?= 5 }
+		set_variable = jip_sabian_show_all_sites
+	}
+	else = {
+		remove_variable = jip_sabian_show_all_sites
 	}
 }

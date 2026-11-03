@@ -10,7 +10,8 @@
 #  jip_sabian_standing  the Sabian community's standing, 0-10 (jip_sabian_story_raise/lower_standing_effect); at 10 in
 #                       Act 1 the act ends (jip_sabian_story.1090). Removed when Act I ends, so the window hides it
 #  jip_sabian_patron    the owner's liege or suzerain
-#  jip_sabian_show_sites set in Acts IV and V: the story window shows the houses of the gods
+#  jip_sabian_show_sites set in Acts IV and V: the story window shows the houses of the gods (only Harran's until
+#                       jip_sabian_show_all_sites, set in Act V)
 #  jip_sabian_initiates the house's secret believers in the old gods (list; Keep the Mysteries), cleared when the
 #                       mysteries are unveiled (Act IV)
 #  jip_sabian_seen_*    the Act 1 events that have fired once; jip_sabian_cooldown_* the repeatable ones' waits

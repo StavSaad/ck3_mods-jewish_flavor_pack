@@ -1,6 +1,7 @@
 # Generates gui/window_situation_list.gui: a full copy of vanilla's situations and stories window, replacing it by path,
 # with the Sabian story's houses of the gods (0.15 plan, section 10) added to the story entry (vbox_story_cycle_entry)
 # after its custom string: in Acts IV and V (the story variable jip_sabian_show_sites), a column for each of the six gods
+# (in Act IV only Sin's at Harran: the others wait for jip_sabian_show_all_sites, set in Act V)
 # with the icon of its temple's great project (faded until the temple stands, a check once its statue is home; the
 # status as a tooltip, JipSabianSite<God> custom loc) and the coat of arms of its county, which opens the title view.
 # Also writes the scripted GUIs the columns check (common/scripted_guis/jip_sabian_story_guis.txt), on the story owner.
@@ -31,8 +32,9 @@ def column(god, suffix, county, icon):
     temple, home, held = (f'jip_sabian_site_{k}_{god}' for k in ('temple', 'home', 'held'))
     # A fixed-size column with its parts at fixed positions, centred on its middle (x 36): a vbox ignores parentanchor,
     # so its rows sat unevenly and the CoA covered the name
+    only_act_5 = '' if god == 'sin' else "\n\t\t\t\t\t\tvisible = \"[Story.MakeScope.HasFlag('jip_sabian_show_all_sites')]\""
     return f'''
-					widget = {{
+					widget = {{{only_act_5}
 						size = {{ 72 144 }}
 
 						widget = {{
