@@ -5,8 +5,8 @@
 	faith_details = {
 		religion = canaanite_religion
 		color = { 125 28 125 }
-		icon = jip_baal # Baal of the stele, with club and thunderbolt (tools/make_faith_icon.py)
-		reformed_icon = jip_baal_reformed
+		icon = canaanite_faith # The sacred tree between two rearing ibexes, under the crescent (tools/make_faith_icon.py)
+		reformed_icon = canaanite_faith_reformed
 	}
 
 	# The cities of the Canaanite temples (jip_great_projects.txt): Tyre (Melqart) and Sidon (Eshmun) by their baronies,
