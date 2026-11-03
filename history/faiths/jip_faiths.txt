@@ -7,3 +7,10 @@ mesopotamian_pagan = {
 		created = yes
 	}
 }
+
+semitic_pagan = {
+	867.1.1 = {
+		# Its last followers are ancient kings; without created the faith list may hide it at the medieval starts
+		created = yes
+	}
+}

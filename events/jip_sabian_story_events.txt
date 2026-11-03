@@ -3,6 +3,7 @@
 # The Return of the Moon God, the Sabian story (common/story_cycles/jip_story_sabian_revival.txt; 0.15 plan, section 10).
 # Root = the story owner, the head of Thabit ibn Qurra's house.
 #  1001 The Sabians of Baghdad (the story begins, players)
+#  1002 The Moon God's children (the story offered to any other Sabian player at the start)
 #  1010 A patron of the sciences (once)
 #  1020 The elders of Harran (once)
 #  1030 A disputation on the Sabians (every 8 years at most)
@@ -47,6 +48,50 @@ jip_sabian_story.1001 = {
 	option = {
 		name = jip_sabian_story.1001.a
 		custom_tooltip = jip_sabian_story.1001.tt
+	}
+}
+
+# The Moon God's children: a Sabian player other than the head of Thabit's house (a ruler-designer character, or the
+# head of a Sabian family) may take up the story
+jip_sabian_story.1002 = {
+	type = character_event
+	title = jip_sabian_story.1002.t
+	desc = jip_sabian_story.1002.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = fp3_courtyard_night }
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+
+	trigger = {
+		jip_sabian_story_can_be_offered_trigger = yes
+	}
+
+	# Take up the story
+	option = {
+		name = jip_sabian_story.1002.a
+		custom_tooltip = jip_sabian_story.1002.a.tt
+		hidden_effect = {
+			create_story = story_jip_sabian_revival
+			# A ruler of Harran begins further along (Act III, or Act IV if independent)
+			if = {
+				limit = { has_title = title:c_harran }
+				jip_sabian_story_harran_held_effect = yes
+			}
+		}
+	}
+
+	# Leave it
+	option = {
+		name = jip_sabian_story.1002.b
+		custom_tooltip = jip_sabian_story.1002.b.tt
 	}
 }
 
@@ -1318,7 +1363,7 @@ jip_sabian_story.5011 = {
 	}
 	artifact = {
 		target = scope:jip_statue
-		position = lower_center
+		position = lower_center_portrait
 	}
 
 	immediate = {

@@ -8,6 +8,14 @@ jip_sabian_story_keeper_trigger = {
 	}
 }
 
+# Character scope: a Sabian player without the story, offered it at the start (jip_sabian_story.1002)
+jip_sabian_story_can_be_offered_trigger = {
+	is_ai = no
+	rite = rite:sabianism
+	NOT = { jip_owns_sabian_story_trigger = yes }
+	NOT = { has_global_variable = jip_sabian_story_disabled }
+}
+
 # Character scope: owns the Sabian story
 jip_owns_sabian_story_trigger = {
 	any_owned_story = { type = story_jip_sabian_revival }

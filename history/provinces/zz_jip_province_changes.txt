@@ -61,3 +61,17 @@
 		special_building_slot = jip_temple_of_marduk_01
 	}
 }
+
+# 5921 - TYRE: the Temple of Melqart
+5921 = {
+	1.1.1 = {
+		special_building_slot = jip_temple_of_melqart_01
+	}
+}
+
+# 4582 - CARTHAGE: the Temple of Tanit and Baal Hammon
+4582 = {
+	1.1.1 = {
+		special_building_slot = jip_temple_of_tanit_01
+	}
+}

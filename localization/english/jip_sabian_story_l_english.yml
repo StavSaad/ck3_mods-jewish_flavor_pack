@@ -32,6 +32,12 @@
  jip_sabian_story.1001.desc_end: "We are tolerated for what we know, and for a name: the Book promises its protection to the Sabians, and we are careful to be them.\n\nBut Harran remembers older things. Sin, the Moon, still has his temple there, and his feasts are kept behind closed doors. If the Sabians could win enough favour at the courts, could they go home, and could the Moon God one day be worshipped openly again?"
  jip_sabian_story.1001.a: "We begin in the palace, and we end in Harran"
  jip_sabian_story.1001.tt: "Raise the Sabians' standing: complete translation, horoscope and physician [task_contracts|E] for Muslim patrons, defend your claim to be a people of the Book, and answer well when the courts test you. Meanwhile, use the Keep the Mysteries decision to pass the old faith to your house in secret"
+ jip_sabian_story.1002.t: "The Moon God's Children"
+ jip_sabian_story.1002.desc: "The Sabians of Harran have outlasted the Greeks, the Romans, the Christian emperors and now the Caliphs, by knowing the stars better than anyone, and by calling themselves the Sabians of the Book whenever a Muslim asks. Behind that name older gods wait: Sin, the Moon, whose temple still stands on Harran's hill, and the gods worshipped beside him from Babylon to Palmyra.\n\nThe Sabians have no prince to lead them home. They could have one."
+ jip_sabian_story.1002.a: "I will lead them home"
+ jip_sabian_story.1002.a.tt: "The Return of the Moon God begins for you: win the Sabians standing at the Muslim courts, take Harran, free it from its lords and restore the old gods. If you already hold Harran, the story begins further along"
+ jip_sabian_story.1002.b: "Let the old gods sleep"
+ jip_sabian_story.1002.b.tt: "The Return of the Moon God is not told for you"
 
  jip_sabian_story.1010.t: "A Patron of the Sciences"
  jip_sabian_story.1010.desc: "[jip_patron.GetTitledFirstName] has heard of the Sabians' work on the motion of the stars and the measure of the year, and would like to see a Sabian dispute geometry with the court's scholars. A good showing before [jip_patron.GetHerHim] would do our people more good than a bag of silver. A poor one would be remembered too."

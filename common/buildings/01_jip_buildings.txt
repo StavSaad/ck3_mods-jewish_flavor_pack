@@ -571,3 +571,95 @@ jip_temple_of_marduk_01 = {
 	flag = jip_temple_of_marduk_building
 	flag = travel_point_of_interest_religious
 }
+
+jip_temple_of_melqart_01 = {
+	# A Mediterranean temple, on Tyre's map locator (province 5921)
+	asset = {
+		type = pdxmesh
+		name = "building_mediterranean_temple_generic_01_mesh"
+	}
+
+	type_icon = "icon_structure_temple_in_jerusalem.dds" # Solomon's temple, which Tyrian craftsmen built
+
+	can_construct_potential = {
+		always = no # Built only by the great project
+	}
+
+	is_enabled = {
+		custom_description = {
+			text = jip_temple_of_canaan_enabled_trigger
+			scope:holder = {
+				faith = faith:semitic_pagan
+			}
+		}
+	}
+
+	show_disabled = yes
+
+	character_modifier = {
+		monthly_piety = 0.5
+		monthly_prestige = 1
+		diplomacy = 1
+		vassal_opinion = 5
+	}
+
+	county_modifier = {
+		tax_mult = 0.15
+		development_growth_factor = 0.25
+	}
+
+	ai_value = {
+		base = 0
+	}
+
+	type = special
+
+	flag = jip_temple_of_melqart_building
+	flag = travel_point_of_interest_religious
+}
+
+jip_temple_of_tanit_01 = {
+	# A Mediterranean temple, on Carthage's map locator (province 4582)
+	asset = {
+		type = pdxmesh
+		name = "building_mediterranean_temple_generic_01_mesh"
+	}
+
+	type_icon = "icon_structure_temple_in_jerusalem.dds" # Solomon's temple, which Tyrian craftsmen built
+
+	can_construct_potential = {
+		always = no # Built only by the great project
+	}
+
+	is_enabled = {
+		custom_description = {
+			text = jip_temple_of_canaan_enabled_trigger
+			scope:holder = {
+				faith = faith:semitic_pagan
+			}
+		}
+	}
+
+	show_disabled = yes
+
+	character_modifier = {
+		monthly_piety = 0.5
+		monthly_prestige = 1
+		stewardship = 1
+		fertility = 0.15
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.25
+		tax_mult = 0.1
+	}
+
+	ai_value = {
+		base = 0
+	}
+
+	type = special
+
+	flag = jip_temple_of_tanit_building
+	flag = travel_point_of_interest_religious
+}

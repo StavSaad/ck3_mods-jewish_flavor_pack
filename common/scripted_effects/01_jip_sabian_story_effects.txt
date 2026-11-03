@@ -3,6 +3,16 @@
 # Starts the story for the head of Thabit ibn Qurra's house (jip_sabian_story_on_actions.txt; no root needed). Thabit
 # himself keeps the old gods in secret from the start, the first of the story's initiates (on_setup)
 jip_sabian_story_start_effect = {
+	# Not when a Mesopotamian pagan player has disabled it (jip_sabian_story_game_start_after_lobby_on_action)
+	if = {
+		limit = {
+			NOT = { has_global_variable = jip_sabian_story_disabled }
+		}
+		jip_sabian_story_start_for_harrani_effect = yes
+	}
+}
+
+jip_sabian_story_start_for_harrani_effect = {
 	title:d_jip_harrani.holder ?= {
 		if = {
 			limit = {

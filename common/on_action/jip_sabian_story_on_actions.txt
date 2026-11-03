@@ -21,6 +21,27 @@ jip_sabian_story_game_start_on_action = {
 
 jip_sabian_story_game_start_after_lobby_on_action = {
 	effect = {
+		# A player of the old faiths (a ruler-designer character) finds them open to conversion from day 0. A Mesopotamian
+		# pagan player already has what the Sabian story works for, so the story ends, and is never started or offered
+		if = {
+			limit = {
+				any_player = { faith = faith:mesopotamian_pagan }
+			}
+			jip_unlock_mesopotamian_conversion_effect = yes
+			set_global_variable = jip_sabian_story_disabled
+			title:d_jip_harrani.holder ?= {
+				random_owned_story = {
+					type = story_jip_sabian_revival
+					end_story = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_player = { faith = faith:semitic_pagan }
+			}
+			jip_unlock_canaanite_conversion_effect = yes
+		}
 		# In case the head changed in the lobby
 		jip_sabian_story_start_effect = yes
 		title:d_jip_harrani.holder ?= {
@@ -36,6 +57,13 @@ jip_sabian_story_game_start_after_lobby_on_action = {
 				}
 				trigger_event = jip_sabian_story.1001
 			}
+		}
+		# Any other Sabian player (a ruler-designer character, or the head of a Sabian family) may take up the story
+		every_player = {
+			limit = {
+				jip_sabian_story_can_be_offered_trigger = yes
+			}
+			trigger_event = jip_sabian_story.1002
 		}
 	}
 }
