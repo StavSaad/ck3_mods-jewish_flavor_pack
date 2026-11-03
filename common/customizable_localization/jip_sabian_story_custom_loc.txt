@@ -24,6 +24,16 @@ JipSabianStoryAct = {
 			any_owned_story = {
 				type = story_jip_sabian_revival
 				var:jip_sabian_act ?= 4
+				has_variable = jip_sabian_unveiled
+			}
+		}
+		localization_key = jip_sabian_story_act_4_unveiled
+	}
+	text = {
+		trigger = {
+			any_owned_story = {
+				type = story_jip_sabian_revival
+				var:jip_sabian_act ?= 4
 			}
 		}
 		localization_key = jip_sabian_story_act_4

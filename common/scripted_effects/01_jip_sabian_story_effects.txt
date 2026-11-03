@@ -446,7 +446,7 @@ jip_sabian_unveil_the_mysteries_effect = {
 # Character scope (the story owner): a High Priest of Sin, of the owner's rite, becomes their court chaplain
 jip_sabian_name_high_priest_effect = {
 	create_character = {
-		location = root.capital_province
+		# employer places them at court (create_character refuses both employer and location)
 		culture = root.culture
 		faith = root.faith
 		gender_female_chance = 0
