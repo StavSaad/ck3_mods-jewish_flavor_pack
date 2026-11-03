@@ -322,6 +322,7 @@ jip_sabian_story_set_act_effect = {
 			value = $ACT$
 		}
 		remove_variable = jip_sabian_standing # Only Act I has a standing; the story window hides it once it is gone
+		jip_sabian_story_update_sites_flag_effect = yes
 	}
 }
 
@@ -672,5 +673,22 @@ jip_sabian_story_search_effect = {
 				months = { 4 8 }
 			}
 		}
+	}
+}
+
+# Story scope: jip_sabian_show_sites while the story is in Act IV or V, for the story window's houses of the gods
+# (gui/window_situation_list.gui, tools/make_story_window_override.py)
+jip_sabian_story_update_sites_flag_effect = {
+	if = {
+		limit = {
+			OR = {
+				var:jip_sabian_act ?= 4
+				var:jip_sabian_act ?= 5
+			}
+		}
+		set_variable = jip_sabian_show_sites
+	}
+	else = {
+		remove_variable = jip_sabian_show_sites
 	}
 }

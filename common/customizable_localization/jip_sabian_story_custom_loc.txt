@@ -63,27 +63,9 @@ JipSabianStoryAct = {
 	}
 }
 
-# The six gods' cities in the story window in Acts IV and V (JIP_SABIAN_STORY_ACT), keyed on the story owner: the
+# The six gods' cities in the story window in Acts IV and V, keyed on the story owner: the
 # statue home, the temple standing in the realm, the temple standing outside it, the city in the realm without its
-# temple, or the city outside the realm. Generated with the header JipSabianSitesHeader; empty in the other acts
-JipSabianSitesHeader = {
-	type = character
-	text = {
-		trigger = {
-			any_owned_story = {
-				type = story_jip_sabian_revival
-				OR = {
-					var:jip_sabian_act ?= 4
-					var:jip_sabian_act ?= 5
-				}
-			}
-		}
-		localization_key = jip_sabian_sites_header
-	}
-	text = {
-		localization_key = jip_sabian_empty
-	}
-}
+# temple, or the city outside the realm; the tooltips of the window's houses of the gods (gui/window_situation_list.gui)
 
 JipSabianSiteSin = {
 	type = character
