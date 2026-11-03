@@ -457,8 +457,9 @@ jip_sabian_unveil_the_mysteries_decision = {
 	}
 }
 
-# The Sabian story, Act V (Reclaim the Land): a pressed claim on the first of the old cult cities (Harran, Mosul, Nineveh,
-# Arbela, Palmyra, Babylon in Kufa) that lies outside the realm and isn't of the old faith; vanilla's claim war takes it
+# The Sabian story, Act V (Reclaim the Land): a pressed claim on one of the old cult cities (Harran, Mosul, Nineveh,
+# Arbela, Palmyra, Babylon in Kufa), chosen from a list, that lies outside the realm and isn't of the old faith; vanilla's
+# claim war takes it
 jip_sabian_claim_cult_city_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
@@ -468,6 +469,92 @@ jip_sabian_claim_cult_city_decision = {
 	decision_group_type = jip_story_sabian_revival
 	sort_order = 40
 	ai_check_interval = 24
+
+	widget = {
+		gui = "decision_view_widget_option_list_generic"
+		controller = decision_option_list_controller
+		decision_to_second_step_button = "JIP_SABIAN_CLAIM_CITY_NEXT_STEP"
+		show_from_start = yes
+
+		item = {
+			value = jip_claim_harran
+			current_description = jip_claim_harran_desc
+			localization = jip_claim_harran
+			icon = "gfx/interface/icons/great_projects/jip_temple_of_sin.dds"
+			is_valid = {
+				custom_tooltip = {
+					text = jip_sabian_cult_city_claimable_tt
+					title:c_harran = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
+				}
+			}
+			ai_chance = { value = 100 }
+		}
+		item = {
+			value = jip_claim_mosul
+			current_description = jip_claim_mosul_desc
+			localization = jip_claim_mosul
+			icon = "gfx/interface/icons/great_projects/jip_temple_of_ashur.dds"
+			is_valid = {
+				custom_tooltip = {
+					text = jip_sabian_cult_city_claimable_tt
+					title:c_mosul = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
+				}
+			}
+			ai_chance = { value = 100 }
+		}
+		item = {
+			value = jip_claim_nineveh
+			current_description = jip_claim_nineveh_desc
+			localization = jip_claim_nineveh
+			icon = "gfx/interface/icons/great_projects/jip_nineveh_excavation.dds"
+			is_valid = {
+				custom_tooltip = {
+					text = jip_sabian_cult_city_claimable_tt
+					title:c_ninive = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
+				}
+			}
+			ai_chance = { value = 100 }
+		}
+		item = {
+			value = jip_claim_arbela
+			current_description = jip_claim_arbela_desc
+			localization = jip_claim_arbela
+			icon = "gfx/interface/icons/great_projects/jip_temple_of_ishtar.dds"
+			is_valid = {
+				custom_tooltip = {
+					text = jip_sabian_cult_city_claimable_tt
+					title:c_irbil = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
+				}
+			}
+			ai_chance = { value = 100 }
+		}
+		item = {
+			value = jip_claim_palmyra
+			current_description = jip_claim_palmyra_desc
+			localization = jip_claim_palmyra
+			icon = "gfx/interface/icons/great_projects/jip_temple_of_bel.dds"
+			is_valid = {
+				custom_tooltip = {
+					text = jip_sabian_cult_city_claimable_tt
+					title:c_palmyra = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
+				}
+			}
+			ai_chance = { value = 100 }
+		}
+		item = {
+			value = jip_claim_babylon
+			current_description = jip_claim_babylon_desc
+			localization = jip_claim_babylon
+			icon = "gfx/interface/icons/great_projects/jip_temple_of_marduk.dds"
+			is_valid = {
+				custom_tooltip = {
+					text = jip_sabian_cult_city_claimable_tt
+					title:c_kufa = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
+				}
+			}
+			ai_chance = { value = 100 }
+		}
+	}
 
 	cooldown = { years = 5 }
 
@@ -503,7 +590,8 @@ jip_sabian_claim_cult_city_decision = {
 	}
 }
 
-# Search for a god's statue, carried off long ago, for the restored temple that stands in the realm
+# Search for a god's statue, carried off long ago, for a restored temple that stands in the realm, not occupied, chosen
+# from a list
 # (jip_sabian_story.5010, then .5011 or .5012 some months on): the Sabian story's Act V, and open to any independent ruler
 # of the old faith while a statue is still missing. A major decision, so rulers without the story see it too; the story
 # window lists it for its owner
@@ -516,6 +604,92 @@ jip_sabian_bring_the_gods_home_decision = {
 	decision_group_type = major
 	sort_order = 30
 	ai_check_interval = 24
+
+	widget = {
+		gui = "decision_view_widget_option_list_generic"
+		controller = decision_option_list_controller
+		decision_to_second_step_button = "JIP_SABIAN_SEEK_GOD_NEXT_STEP"
+		show_from_start = yes
+
+		item = {
+			value = jip_seek_sin
+			current_description = jip_seek_sin_desc
+			localization = jip_seek_sin
+			icon = "gfx/interface/icons/great_projects/jip_temple_of_sin.dds"
+			is_valid = {
+				custom_tooltip = {
+					text = jip_sabian_god_can_be_sought_tt
+					jip_sabian_god_statue_can_be_sought_trigger = { GOD = sin BUILDING = jip_temple_of_sin_01 BARONY = b_harran }
+				}
+			}
+			ai_chance = { value = 100 }
+		}
+		item = {
+			value = jip_seek_ishtar
+			current_description = jip_seek_ishtar_desc
+			localization = jip_seek_ishtar
+			icon = "gfx/interface/icons/great_projects/jip_temple_of_ishtar.dds"
+			is_valid = {
+				custom_tooltip = {
+					text = jip_sabian_god_can_be_sought_tt
+					jip_sabian_god_statue_can_be_sought_trigger = { GOD = ishtar BUILDING = jip_temple_of_ishtar_01 BARONY = b_irbil }
+				}
+			}
+			ai_chance = { value = 100 }
+		}
+		item = {
+			value = jip_seek_ashur
+			current_description = jip_seek_ashur_desc
+			localization = jip_seek_ashur
+			icon = "gfx/interface/icons/great_projects/jip_temple_of_ashur.dds"
+			is_valid = {
+				custom_tooltip = {
+					text = jip_sabian_god_can_be_sought_tt
+					jip_sabian_god_statue_can_be_sought_trigger = { GOD = ashur BUILDING = jip_temple_of_ashur_01 BARONY = b_ain_al-qayyara }
+				}
+			}
+			ai_chance = { value = 100 }
+		}
+		item = {
+			value = jip_seek_bel
+			current_description = jip_seek_bel_desc
+			localization = jip_seek_bel
+			icon = "gfx/interface/icons/great_projects/jip_temple_of_bel.dds"
+			is_valid = {
+				custom_tooltip = {
+					text = jip_sabian_god_can_be_sought_tt
+					jip_sabian_god_statue_can_be_sought_trigger = { GOD = bel BUILDING = jip_temple_of_bel_01 BARONY = b_tadmur }
+				}
+			}
+			ai_chance = { value = 100 }
+		}
+		item = {
+			value = jip_seek_shamash
+			current_description = jip_seek_shamash_desc
+			localization = jip_seek_shamash
+			icon = "gfx/interface/icons/great_projects/jip_temple_of_shamash.dds"
+			is_valid = {
+				custom_tooltip = {
+					text = jip_sabian_god_can_be_sought_tt
+					jip_sabian_god_statue_can_be_sought_trigger = { GOD = shamash BUILDING = jip_temple_of_shamash_01 BARONY = b_al-hadr }
+				}
+			}
+			ai_chance = { value = 100 }
+		}
+		item = {
+			value = jip_seek_marduk
+			current_description = jip_seek_marduk_desc
+			localization = jip_seek_marduk
+			icon = "gfx/interface/icons/great_projects/jip_temple_of_marduk.dds"
+			is_valid = {
+				custom_tooltip = {
+					text = jip_sabian_god_can_be_sought_tt
+					jip_sabian_god_statue_can_be_sought_trigger = { GOD = marduk BUILDING = jip_temple_of_marduk_01 BARONY = b_al-hila }
+				}
+			}
+			ai_chance = { value = 100 }
+		}
+	}
 
 	cooldown = { months = 6 }
 
