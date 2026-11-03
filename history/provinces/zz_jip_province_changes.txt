@@ -69,7 +69,7 @@
 	}
 }
 
-# 4582 - CARTHAGE: the Temple of Tanit and Baal Hammon
+# 4582 - CARTHAGE: the Temple of Tanit
 4582 = {
 	1.1.1 = {
 		special_building_slot = jip_temple_of_tanit_01
@@ -94,13 +94,6 @@
 5926 = {
 	1.1.1 = {
 		special_building_slot = jip_temple_of_baal_01
-	}
-}
-
-# 1843 - GADES: the Temple of Melqart
-1843 = {
-	1.1.1 = {
-		special_building_slot = jip_temple_of_melqart_gades_01
 	}
 }
 
