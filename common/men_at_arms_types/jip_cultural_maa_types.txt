@@ -1,4 +1,4 @@
-# The mod's cultural men-at-arms (0.15 plan, section 12), unlocked by the traditions in
+﻿# The mod's cultural men-at-arms (0.15 plan, section 12), unlocked by the traditions in
 # common/culture/traditions/jip_maa_traditions.txt. Balanced against vanilla's cultural units. Kemi and Ancient
 # Egyptian use vanilla's archers_of_the_nile, so they have no unit here.
 # The @ values are local to each file, so vanilla's are repeated here.

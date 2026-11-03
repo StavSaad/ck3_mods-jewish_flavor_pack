@@ -1,4 +1,4 @@
-# Traditions that unlock the mod's cultural men-at-arms (common/men_at_arms_types/jip_cultural_maa_types.txt), built
+﻿# Traditions that unlock the mod's cultural men-at-arms (common/men_at_arms_types/jip_cultural_maa_types.txt), built
 # like vanilla's in 00_maa_traditions.txt, each open to one heritage:
 # - Syriac: Aramean (syriac) starts with the Palmyrene archers, Assyrian with the clibanarii. Neither costs extra for a
 #   Bellicose (Aramean) or Communal (Assyrian) culture
