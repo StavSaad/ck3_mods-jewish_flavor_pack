@@ -29,11 +29,14 @@ def shown(gui):
 def column(god, suffix, county, icon):
     tex = f'gfx/interface/icons/great_projects/{icon}.dds'
     temple, home, held = (f'jip_sabian_site_{k}_{god}' for k in ('temple', 'home', 'held'))
+    # A fixed-size column with its parts at fixed positions, centred on its middle (x 36): a vbox ignores parentanchor,
+    # so its rows sat unevenly and the CoA covered the name
     return f'''
-					vbox = {{
-						spacing = 2
+					widget = {{
+						size = {{ 72 144 }}
 
 						widget = {{
+							position = {{ 4 0 }}
 							size = {{ 64 64 }}
 							tooltip = "[Story.GetOwner.Custom('JipSabianSite{suffix}')]"
 
@@ -57,14 +60,16 @@ def column(god, suffix, county, icon):
 						}}
 
 						text_single = {{
-							parentanchor = hcenter
+							position = {{ 0 66 }}
+							size = {{ 72 20 }}
+							autoresize = no
 							text = "jip_sabian_god_{god}"
 							using = Font_Size_Small
-							align = center
+							align = center|nobaseline
 						}}
 
 						widget = {{
-							parentanchor = hcenter
+							position = {{ 10 90 }}
 							size = {{ 52 52 }}
 
 							widget = {{
@@ -105,7 +110,7 @@ BLOCK = '''
 
 			hbox = {
 				margin = { 0 6 }
-				spacing = 6
+				spacing = 4
 ''' + ''.join(column(g, s, c, i).replace('\n\t', '\n') for g, s, _, c, _, i in GODS) + '''
 			}
 		}

@@ -650,12 +650,13 @@ types SituationList
 
 			hbox = {
 				margin = { 0 6 }
-				spacing = 6
+				spacing = 4
 
-				vbox = {
-					spacing = 2
+				widget = {
+					size = { 72 144 }
 
 					widget = {
+						position = { 4 0 }
 						size = { 64 64 }
 						tooltip = "[Story.GetOwner.Custom('JipSabianSiteSin')]"
 
@@ -679,14 +680,16 @@ types SituationList
 					}
 
 					text_single = {
-						parentanchor = hcenter
+						position = { 0 66 }
+						size = { 72 20 }
+						autoresize = no
 						text = "jip_sabian_god_sin"
 						using = Font_Size_Small
-						align = center
+						align = center|nobaseline
 					}
 
 					widget = {
-						parentanchor = hcenter
+						position = { 10 90 }
 						size = { 52 52 }
 
 						widget = {
@@ -706,10 +709,11 @@ types SituationList
 						}
 					}
 				}
-				vbox = {
-					spacing = 2
+				widget = {
+					size = { 72 144 }
 
 					widget = {
+						position = { 4 0 }
 						size = { 64 64 }
 						tooltip = "[Story.GetOwner.Custom('JipSabianSiteIshtar')]"
 
@@ -733,14 +737,16 @@ types SituationList
 					}
 
 					text_single = {
-						parentanchor = hcenter
+						position = { 0 66 }
+						size = { 72 20 }
+						autoresize = no
 						text = "jip_sabian_god_ishtar"
 						using = Font_Size_Small
-						align = center
+						align = center|nobaseline
 					}
 
 					widget = {
-						parentanchor = hcenter
+						position = { 10 90 }
 						size = { 52 52 }
 
 						widget = {
@@ -760,10 +766,11 @@ types SituationList
 						}
 					}
 				}
-				vbox = {
-					spacing = 2
+				widget = {
+					size = { 72 144 }
 
 					widget = {
+						position = { 4 0 }
 						size = { 64 64 }
 						tooltip = "[Story.GetOwner.Custom('JipSabianSiteAshur')]"
 
@@ -787,14 +794,16 @@ types SituationList
 					}
 
 					text_single = {
-						parentanchor = hcenter
+						position = { 0 66 }
+						size = { 72 20 }
+						autoresize = no
 						text = "jip_sabian_god_ashur"
 						using = Font_Size_Small
-						align = center
+						align = center|nobaseline
 					}
 
 					widget = {
-						parentanchor = hcenter
+						position = { 10 90 }
 						size = { 52 52 }
 
 						widget = {
@@ -814,10 +823,11 @@ types SituationList
 						}
 					}
 				}
-				vbox = {
-					spacing = 2
+				widget = {
+					size = { 72 144 }
 
 					widget = {
+						position = { 4 0 }
 						size = { 64 64 }
 						tooltip = "[Story.GetOwner.Custom('JipSabianSiteBel')]"
 
@@ -841,14 +851,16 @@ types SituationList
 					}
 
 					text_single = {
-						parentanchor = hcenter
+						position = { 0 66 }
+						size = { 72 20 }
+						autoresize = no
 						text = "jip_sabian_god_bel"
 						using = Font_Size_Small
-						align = center
+						align = center|nobaseline
 					}
 
 					widget = {
-						parentanchor = hcenter
+						position = { 10 90 }
 						size = { 52 52 }
 
 						widget = {
@@ -868,10 +880,11 @@ types SituationList
 						}
 					}
 				}
-				vbox = {
-					spacing = 2
+				widget = {
+					size = { 72 144 }
 
 					widget = {
+						position = { 4 0 }
 						size = { 64 64 }
 						tooltip = "[Story.GetOwner.Custom('JipSabianSiteShamash')]"
 
@@ -895,14 +908,16 @@ types SituationList
 					}
 
 					text_single = {
-						parentanchor = hcenter
+						position = { 0 66 }
+						size = { 72 20 }
+						autoresize = no
 						text = "jip_sabian_god_shamash"
 						using = Font_Size_Small
-						align = center
+						align = center|nobaseline
 					}
 
 					widget = {
-						parentanchor = hcenter
+						position = { 10 90 }
 						size = { 52 52 }
 
 						widget = {
@@ -922,10 +937,11 @@ types SituationList
 						}
 					}
 				}
-				vbox = {
-					spacing = 2
+				widget = {
+					size = { 72 144 }
 
 					widget = {
+						position = { 4 0 }
 						size = { 64 64 }
 						tooltip = "[Story.GetOwner.Custom('JipSabianSiteMarduk')]"
 
@@ -949,14 +965,16 @@ types SituationList
 					}
 
 					text_single = {
-						parentanchor = hcenter
+						position = { 0 66 }
+						size = { 72 20 }
+						autoresize = no
 						text = "jip_sabian_god_marduk"
 						using = Font_Size_Small
-						align = center
+						align = center|nobaseline
 					}
 
 					widget = {
-						parentanchor = hcenter
+						position = { 10 90 }
 						size = { 52 52 }
 
 						widget = {
