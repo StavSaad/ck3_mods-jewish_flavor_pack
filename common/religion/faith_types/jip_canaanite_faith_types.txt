@@ -44,8 +44,8 @@ mesopotamian_pagan = {
 	faith_details = {
 		religion = canaanite_religion
 		color = { 0.2 0.35 0.7 }
-		icon = mesopotamian # The winged disc of Ashur (tools/make_faith_icon.py)
-		reformed_icon = mesopotamian_reformed
+		icon = mesopotamian_faith # The astral triad of Sin, Shamash and Ishtar on lapis (tools/make_faith_icon.py)
+		reformed_icon = mesopotamian_faith_reformed
 	}
 
 	# The sites of the great projects (0.15 plan, section 5): Sinism's Temple of Sin, Ashurism's Temple of Ashur and
