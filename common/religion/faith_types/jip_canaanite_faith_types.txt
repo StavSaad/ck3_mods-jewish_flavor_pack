@@ -9,10 +9,12 @@
 		reformed_icon = jip_baal_reformed
 	}
 
+	# The cities of the Canaanite temples (jip_great_projects.txt): Tyre (Melqart) and Sidon (Eshmun) by their baronies,
+	# Baalbek (Baal) eminent
 	eminent_holy_sites = {
-		beirut
+		tyre
+		sidon
 		baalbek
-		antioch
 	}
 
 	holy_sites = {

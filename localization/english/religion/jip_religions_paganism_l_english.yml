@@ -153,3 +153,9 @@
  jip_unlock_canaanite_conversion_tt: "The old gods of Canaan are honoured again: characters may now convert to $baalism$, $carthage_pagan$ and $yahwism$"
  jip_unlock_kohanism_conversion_tt: "The Temple stands again: characters may now convert to $kohanism$"
  jip_tenet_kehunah_jewish_trigger: "The [faith|E] is Jewish, or has the $tenet_jewish_syncretism_name$ [tenet|E]"
+
+ # Canaanism's holy sites (jip_holy_sites.txt)
+ holy_site_tyre_name: "Tyre"
+ holy_site_tyre_effect_name: "From [holy_site|E] #weak ($holy_site_tyre_name$)#!"
+ holy_site_sidon_name: "Sidon"
+ holy_site_sidon_effect_name: "From [holy_site|E] #weak ($holy_site_sidon_name$)#!"

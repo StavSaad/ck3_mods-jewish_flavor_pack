@@ -207,3 +207,56 @@ palmyra = { # Tadmor, the caravan city and its temple of Bel
 		character_travel_safety_mult = 0.01
 	}
 }
+
+# Canaanism (semitic_pagan, jip_canaanite_faith_types.txt): the Phoenician cities' own temples, in place of vanilla's
+# Antioch and Beirut sites
+
+tyre = { # Tyre, the island city of Melqart, the King of the City (its barony, in the county of Acre)
+	county = c_acre
+	barony = b_tyre
+
+	county_holder_character_modifier = {
+		diplomacy = 1
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		tax_mult = 0.01
+		development_growth_factor = 0.01
+	}
+
+	faith_character_modifier = {
+		monthly_prestige_gain_mult = 0.1
+		embarkation_cost_mult = -0.1
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		monthly_prestige_gain_mult = 0.01
+	}
+}
+
+sidon = { # Sidon and the temple of Eshmun, the god who heals, in the orchards above the river (its barony, in the county of Beirut)
+	county = c_beirut
+	barony = b_saida
+
+	county_holder_character_modifier = {
+		learning = 1
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		development_growth_factor = 0.01
+		epidemic_resistance = 1
+	}
+
+	faith_character_modifier = {
+		health = 0.1
+		monthly_piety_gain_mult = 0.1
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		monthly_learning_lifestyle_xp_gain_mult = 0.01
+	}
+}
