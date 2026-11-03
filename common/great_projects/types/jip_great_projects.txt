@@ -366,6 +366,11 @@ jip_gp_temple_of_sin = {
 #	jip_gp_temple_of_marduk - the Esagila, the temple of Marduk at Babylon
 #	jip_gp_temple_of_melqart - the Temple of Melqart at Tyre, for Canaanism
 #	jip_gp_temple_of_tanit - the Temple of Tanit and Baal Hammon at Carthage, for Canaanism
+#	jip_gp_temple_of_eshmun - the Temple of Eshmun at Sidon, for Canaanism
+#	jip_gp_temple_of_baalat_gebal - the Temple of Baalat Gebal at Byblos, for Canaanism
+#	jip_gp_temple_of_baal - the Temple of Baal at Baalbek, for Canaanism
+#	jip_gp_temple_of_melqart_gades - the Temple of Melqart at Gades, for Canaanism
+#	jip_gp_temple_of_astarte - the Temple of Astarte at Kition, for Canaanism
 #	jip_gp_nineveh_excavation - a repeatable dig into the mound of Nineveh for Ashurbanipal's library
 #################
 
@@ -2660,6 +2665,1481 @@ jip_gp_temple_of_tanit = {
 		}
 		# Optional: the sixty steps up the Byrsa
 		steps = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		rank = county
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 5
+		duchy = 2
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+
+	ai_will_do = {
+		value = 100
+	}
+
+	group = major_project
+	is_important = yes
+	target_title_tier = barony
+}
+
+@jip_temple_of_eshmun_icon = "gfx/interface/icons/great_projects/jip_temple_of_eshmun.dds" # tools/make_great_project_art.py
+@jip_temple_of_eshmun_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_eshmun.dds" # default crop
+
+# An independent ruler of Canaanism who holds Sidon (b_saida, in the county of Beirut) rebuilds the temple of
+# Eshmun, the healing god, in the gardens above the river Awali outside the city
+jip_gp_temple_of_eshmun = {
+	icon = { reference = @jip_temple_of_eshmun_icon }
+	illustration = { reference = @jip_temple_of_eshmun_illustration }
+
+	name = {
+		desc = great_project_type_jip_gp_temple_of_eshmun
+	}
+
+	is_shown = {
+		# For an independent ruler of Canaanism (any rite)
+		faith = faith:semitic_pagan
+		is_independent_ruler = yes
+		is_landed = yes
+		NOT = { is_planning_great_project = jip_gp_temple_of_eshmun }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_eshmun
+			}
+		}
+	}
+
+	province_filter = landed_title
+	province_filter_target = c_beirut
+
+	is_location_valid = {
+		scope:province = {
+			custom_tooltip = {
+				text = jip_gp_temple_of_eshmun_location_tt
+				this = title:b_saida.title_province
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_held_tt
+				barony.holder ?= { target_is_same_character_or_above = root }
+			}
+			NOT = { has_building_with_flag = jip_temple_of_eshmun_building }
+		}
+	}
+
+	can_start_planning = {
+		custom_tooltip = {
+			text = jip_gp_temple_of_eshmun_city_tt
+			title:c_beirut.holder ?= { target_is_same_character_or_above = root }
+		}
+		piety_level >= 2
+		is_at_war = no
+	}
+
+	owner = founder_primary_title_owner
+
+	is_valid = {
+		scope:founder = {
+			faith = faith:semitic_pagan
+			is_independent_ruler = yes
+		}
+		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = great_project_base_starting_cost
+		}
+		piety = {
+			value = 300
+		}
+	}
+
+	construction_time = 1825 # 5 years
+
+	allowed_contributor_filter = {
+		owner = yes
+		founder = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+		duchy = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:founder ?= {
+			add_piety = medium_piety_gain
+		}
+	}
+
+	on_complete = {
+		scope:province = {
+			custom_tooltip = jip_gp_temple_of_eshmun_building_tt
+			hidden_effect = {
+				add_special_building = jip_temple_of_eshmun_01 # The province's special building slot
+			}
+		}
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_eshmun
+			}
+		}
+		scope:owner ?= {
+			jip_unlock_canaanite_conversion_effect = yes
+			add_piety = major_piety_gain
+			add_prestige = major_prestige_gain
+		}
+	}
+
+	project_contributions = {
+		# Required: the great limestone podium above the river
+		podium = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the channel from the Ydlal spring to the sacred pools
+		spring = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.75
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the priests of Eshmun, from Canaanism
+		priests = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_canaanite_faithful_tt
+					faith = faith:semitic_pagan
+				}
+			}
+			cost = {
+				piety = {
+					value = 300
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = minor_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Optional: the throne of Astarte in the pool, flanked by sphinxes
+		throne = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+		# Optional: the tribune carved with gods and dancers
+		tribune = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		rank = county
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 5
+		duchy = 2
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+
+	ai_will_do = {
+		value = 100
+	}
+
+	group = major_project
+	is_important = yes
+	target_title_tier = barony
+}
+
+@jip_temple_of_baalat_gebal_icon = "gfx/interface/icons/great_projects/jip_temple_of_baalat_gebal.dds" # tools/make_great_project_art.py
+@jip_temple_of_baalat_gebal_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_baalat_gebal.dds" # default crop
+
+# An independent ruler of Canaanism who holds Byblos (Gebal for Canaanites: b_syrtripolis, Tripoli's barony)
+# rebuilds the temple of Baalat Gebal, the Lady of Byblos, the oldest goddess of the coast
+jip_gp_temple_of_baalat_gebal = {
+	icon = { reference = @jip_temple_of_baalat_gebal_icon }
+	illustration = { reference = @jip_temple_of_baalat_gebal_illustration }
+
+	name = {
+		desc = great_project_type_jip_gp_temple_of_baalat_gebal
+	}
+
+	is_shown = {
+		# For an independent ruler of Canaanism (any rite)
+		faith = faith:semitic_pagan
+		is_independent_ruler = yes
+		is_landed = yes
+		NOT = { is_planning_great_project = jip_gp_temple_of_baalat_gebal }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_baalat_gebal
+			}
+		}
+	}
+
+	province_filter = landed_title
+	province_filter_target = c_tripoli
+
+	is_location_valid = {
+		scope:province = {
+			custom_tooltip = {
+				text = jip_gp_temple_of_baalat_gebal_location_tt
+				this = title:b_syrtripolis.title_province
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_held_tt
+				barony.holder ?= { target_is_same_character_or_above = root }
+			}
+			NOT = { has_building_with_flag = jip_temple_of_baalat_gebal_building }
+		}
+	}
+
+	can_start_planning = {
+		custom_tooltip = {
+			text = jip_gp_temple_of_baalat_gebal_city_tt
+			title:c_tripoli.holder ?= { target_is_same_character_or_above = root }
+		}
+		piety_level >= 2
+		is_at_war = no
+	}
+
+	owner = founder_primary_title_owner
+
+	is_valid = {
+		scope:founder = {
+			faith = faith:semitic_pagan
+			is_independent_ruler = yes
+		}
+		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = great_project_base_starting_cost
+		}
+		piety = {
+			value = 300
+		}
+	}
+
+	construction_time = 1825 # 5 years
+
+	allowed_contributor_filter = {
+		owner = yes
+		founder = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+		duchy = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:founder ?= {
+			add_piety = medium_piety_gain
+		}
+	}
+
+	on_complete = {
+		scope:province = {
+			custom_tooltip = jip_gp_temple_of_baalat_gebal_building_tt
+			hidden_effect = {
+				add_special_building = jip_temple_of_baalat_gebal_01 # The province's special building slot
+			}
+		}
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_baalat_gebal
+			}
+		}
+		scope:owner ?= {
+			jip_unlock_canaanite_conversion_effect = yes
+			add_piety = major_piety_gain
+			add_prestige = major_prestige_gain
+		}
+	}
+
+	project_contributions = {
+		# Required: the old foundations, laid before the pyramids
+		foundations = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the papyrus trade, which named the book after the city
+		papyrus = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.75
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the priestesses of the Lady, from Canaanism
+		priests = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_canaanite_faithful_tt
+					faith = faith:semitic_pagan
+				}
+			}
+			cost = {
+				piety = {
+					value = 300
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = minor_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Optional: the field of obelisks beside the temple
+		obelisks = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+		# Optional: the gardens of Adonis
+		gardens = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		rank = county
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 5
+		duchy = 2
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+
+	ai_will_do = {
+		value = 100
+	}
+
+	group = major_project
+	is_important = yes
+	target_title_tier = barony
+}
+
+@jip_temple_of_baal_icon = "gfx/interface/icons/great_projects/jip_temple_of_baal.dds" # tools/make_great_project_art.py
+@jip_temple_of_baal_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_baal.dds" # default crop
+
+# An independent ruler of Canaanism who holds Baalbek rebuilds the great temple of Baal at Heliopolis, the greatest
+# temple the Romans ever raised, on the platform of an older one
+jip_gp_temple_of_baal = {
+	icon = { reference = @jip_temple_of_baal_icon }
+	illustration = { reference = @jip_temple_of_baal_illustration }
+
+	name = {
+		desc = great_project_type_jip_gp_temple_of_baal
+	}
+
+	is_shown = {
+		# For an independent ruler of Canaanism (any rite)
+		faith = faith:semitic_pagan
+		is_independent_ruler = yes
+		is_landed = yes
+		NOT = { is_planning_great_project = jip_gp_temple_of_baal }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_baal
+			}
+		}
+	}
+
+	province_filter = landed_title
+	province_filter_target = c_baalbek
+
+	is_location_valid = {
+		scope:province = {
+			custom_tooltip = {
+				text = jip_gp_temple_of_baal_location_tt
+				this = title:b_baalbak.title_province
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_held_tt
+				barony.holder ?= { target_is_same_character_or_above = root }
+			}
+			NOT = { has_building_with_flag = jip_temple_of_baal_building }
+		}
+	}
+
+	can_start_planning = {
+		custom_tooltip = {
+			text = jip_gp_temple_of_baal_city_tt
+			title:c_baalbek.holder ?= { target_is_same_character_or_above = root }
+		}
+		piety_level >= 3
+		is_at_war = no
+	}
+
+	owner = founder_primary_title_owner
+
+	is_valid = {
+		scope:founder = {
+			faith = faith:semitic_pagan
+			is_independent_ruler = yes
+		}
+		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = great_project_base_starting_cost
+		}
+		piety = {
+			value = 300
+		}
+	}
+
+	construction_time = 1825 # 5 years
+
+	allowed_contributor_filter = {
+		owner = yes
+		founder = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+		duchy = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:founder ?= {
+			add_piety = medium_piety_gain
+		}
+	}
+
+	on_complete = {
+		scope:province = {
+			custom_tooltip = jip_gp_temple_of_baal_building_tt
+			hidden_effect = {
+				add_special_building = jip_temple_of_baal_01 # The province's special building slot
+			}
+		}
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_baal
+			}
+		}
+		scope:owner ?= {
+			jip_unlock_canaanite_conversion_effect = yes
+			add_piety = major_piety_gain
+			add_prestige = major_prestige_gain
+		}
+	}
+
+	project_contributions = {
+		# Required: the trilithon, three stones of eight hundred tons in the podium
+		trilithon = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the quarry, where a greater stone still lies
+		quarry = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.75
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the priests of Baal, from Canaanism
+		priests = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_canaanite_faithful_tt
+					faith = faith:semitic_pagan
+				}
+			}
+			cost = {
+				piety = {
+					value = 300
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = minor_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Optional: the great columns around the temple
+		columns = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+		# Optional: the lesser temple beside it
+		lesser_temple = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		rank = county
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 5
+		duchy = 2
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+
+	ai_will_do = {
+		value = 100
+	}
+
+	group = major_project
+	is_important = yes
+	target_title_tier = barony
+}
+
+@jip_temple_of_melqart_gades_icon = "gfx/interface/icons/great_projects/jip_temple_of_melqart_gades.dds" # tools/make_great_project_art.py
+@jip_temple_of_melqart_gades_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_melqart_gades.dds" # default crop
+
+# An independent ruler of Canaanism who holds Cadiz (Gadir, Gades) rebuilds the temple of Melqart at the edge of
+# the world, the westernmost Phoenician shrine, beside Tyre's
+jip_gp_temple_of_melqart_gades = {
+	icon = { reference = @jip_temple_of_melqart_gades_icon }
+	illustration = { reference = @jip_temple_of_melqart_gades_illustration }
+
+	name = {
+		desc = great_project_type_jip_gp_temple_of_melqart_gades
+	}
+
+	is_shown = {
+		# For an independent ruler of Canaanism (any rite)
+		faith = faith:semitic_pagan
+		is_independent_ruler = yes
+		is_landed = yes
+		NOT = { is_planning_great_project = jip_gp_temple_of_melqart_gades }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_melqart_gades
+			}
+		}
+	}
+
+	province_filter = landed_title
+	province_filter_target = c_cadiz
+
+	is_location_valid = {
+		scope:province = {
+			custom_tooltip = {
+				text = jip_gp_temple_of_melqart_gades_location_tt
+				this = title:b_cadiz.title_province
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_held_tt
+				barony.holder ?= { target_is_same_character_or_above = root }
+			}
+			NOT = { has_building_with_flag = jip_temple_of_melqart_gades_building }
+		}
+	}
+
+	can_start_planning = {
+		custom_tooltip = {
+			text = jip_gp_temple_of_melqart_gades_city_tt
+			title:c_cadiz.holder ?= { target_is_same_character_or_above = root }
+		}
+		piety_level >= 2
+		is_at_war = no
+	}
+
+	owner = founder_primary_title_owner
+
+	is_valid = {
+		scope:founder = {
+			faith = faith:semitic_pagan
+			is_independent_ruler = yes
+		}
+		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = great_project_base_starting_cost
+		}
+		piety = {
+			value = 300
+		}
+	}
+
+	construction_time = 1825 # 5 years
+
+	allowed_contributor_filter = {
+		owner = yes
+		founder = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+		duchy = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:founder ?= {
+			add_piety = medium_piety_gain
+		}
+	}
+
+	on_complete = {
+		scope:province = {
+			custom_tooltip = jip_gp_temple_of_melqart_gades_building_tt
+			hidden_effect = {
+				add_special_building = jip_temple_of_melqart_gades_01 # The province's special building slot
+			}
+		}
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_melqart_gades
+			}
+		}
+		scope:owner ?= {
+			jip_unlock_canaanite_conversion_effect = yes
+			add_piety = major_piety_gain
+			add_prestige = major_prestige_gain
+		}
+	}
+
+	project_contributions = {
+		# Required: the island shrine, where the Tyrians first landed
+		island = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the bronze pillars, which sailors took for the Pillars of Heracles
+		bronze = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.75
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the priests of Melqart, from Canaanism
+		priests = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_canaanite_faithful_tt
+					faith = faith:semitic_pagan
+				}
+			}
+			cost = {
+				piety = {
+					value = 300
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = minor_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Optional: Pygmalion's golden olive tree
+		olive = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+		# Optional: the wells that rose and fell against the tide
+		wells = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		rank = county
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 5
+		duchy = 2
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+
+	ai_will_do = {
+		value = 100
+	}
+
+	group = major_project
+	is_important = yes
+	target_title_tier = barony
+}
+
+@jip_temple_of_astarte_icon = "gfx/interface/icons/great_projects/jip_temple_of_astarte.dds" # tools/make_great_project_art.py
+@jip_temple_of_astarte_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_astarte.dds" # default crop
+
+# An independent ruler of Canaanism who holds Kition (b_nicosia, Kition for Canaanites) rebuilds the temple of
+# Astarte, the greatest Phoenician temple on Cyprus
+jip_gp_temple_of_astarte = {
+	icon = { reference = @jip_temple_of_astarte_icon }
+	illustration = { reference = @jip_temple_of_astarte_illustration }
+
+	name = {
+		desc = great_project_type_jip_gp_temple_of_astarte
+	}
+
+	is_shown = {
+		# For an independent ruler of Canaanism (any rite)
+		faith = faith:semitic_pagan
+		is_independent_ruler = yes
+		is_landed = yes
+		NOT = { is_planning_great_project = jip_gp_temple_of_astarte }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_astarte
+			}
+		}
+	}
+
+	province_filter = landed_title
+	province_filter_target = c_nicosia
+
+	is_location_valid = {
+		scope:province = {
+			custom_tooltip = {
+				text = jip_gp_temple_of_astarte_location_tt
+				this = title:b_nicosia.title_province
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_held_tt
+				barony.holder ?= { target_is_same_character_or_above = root }
+			}
+			NOT = { has_building_with_flag = jip_temple_of_astarte_building }
+		}
+	}
+
+	can_start_planning = {
+		custom_tooltip = {
+			text = jip_gp_temple_of_astarte_city_tt
+			title:c_nicosia.holder ?= { target_is_same_character_or_above = root }
+		}
+		piety_level >= 2
+		is_at_war = no
+	}
+
+	owner = founder_primary_title_owner
+
+	is_valid = {
+		scope:founder = {
+			faith = faith:semitic_pagan
+			is_independent_ruler = yes
+		}
+		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = great_project_base_starting_cost
+		}
+		piety = {
+			value = 300
+		}
+	}
+
+	construction_time = 1825 # 5 years
+
+	allowed_contributor_filter = {
+		owner = yes
+		founder = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+		duchy = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:founder ?= {
+			add_piety = medium_piety_gain
+		}
+	}
+
+	on_complete = {
+		scope:province = {
+			custom_tooltip = jip_gp_temple_of_astarte_building_tt
+			hidden_effect = {
+				add_special_building = jip_temple_of_astarte_01 # The province's special building slot
+			}
+		}
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_astarte
+			}
+		}
+		scope:owner ?= {
+			jip_unlock_canaanite_conversion_effect = yes
+			add_piety = major_piety_gain
+			add_prestige = major_prestige_gain
+		}
+	}
+
+	project_contributions = {
+		# Required: the great ashlar walls
+		ashlar = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the copper of Cyprus, whose workshops stood beside the temple
+		copper = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.75
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the priestesses of Astarte, from Canaanism
+		priests = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_canaanite_faithful_tt
+					faith = faith:semitic_pagan
+				}
+			}
+			cost = {
+				piety = {
+					value = 300
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = minor_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Optional: the dovecotes of the goddess
+		doves = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+		# Optional: the sacred harbour and its ship sheds
+		harbour = {
 			cost = {
 				treasury_or_gold = {
 					value = great_project_base_contribution_cost
