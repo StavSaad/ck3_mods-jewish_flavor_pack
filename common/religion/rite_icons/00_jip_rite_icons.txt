@@ -226,16 +226,6 @@ jip_harranian_rite = {
 	custom_faith_icons = { harranian_01 harranian_02 harranian_03 harranian_04 harranian_05 harranian_06 }
 }
 
-# Mesopotamianism: the lamassu
-jip_mesopotamian_rite = {
-	trigger = {
-		exists = scope:founder
-		scope:faith = faith:mesopotamian_pagan
-	}
-
-	custom_faith_icons = { mesopotamian_01 mesopotamian_02 mesopotamian_03 mesopotamian_04 mesopotamian_05 mesopotamian_06 }
-}
-
 # Canaanism: the sign of Tanit
 jip_canaanite_rite = {
 	trigger = {
