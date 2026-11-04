@@ -155,7 +155,7 @@ ashurism = {
 	faith = mesopotamian_pagan
 
 	color = { 0.2 0.35 0.7 }
-	icon = mesopotamian # The winged disc of Ashur
+	icon = mesopotamian # The lamassu, the winged bull of Ashur's gates
 	# No conversion until the old gods are restored (the decision is still to come; 0.15 plan, section 4) (set_can_convert_to_rite)
 	convert = no
 

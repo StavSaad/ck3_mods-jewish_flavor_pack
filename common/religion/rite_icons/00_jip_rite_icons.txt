@@ -226,7 +226,7 @@ jip_harranian_rite = {
 	custom_faith_icons = { harranian_01 harranian_02 harranian_03 harranian_04 harranian_05 harranian_06 }
 }
 
-# Mesopotamianism: the winged disc of Ashur
+# Mesopotamianism: the lamassu
 jip_mesopotamian_rite = {
 	trigger = {
 		exists = scope:founder

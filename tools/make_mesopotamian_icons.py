@@ -1,8 +1,8 @@
-# Builds Mesopotamianism's winged-disc icons from its gold-and-lapis Gemini painting on flat green, through
+# Builds Ashurism's lamassu icons (once a winged disc, too like the Faravahar) from its gold-and-lapis Gemini painting on flat green, through
 # make_faith_icon.py: the faith's own (as painted, with a reformed version) and colour variants for custom faiths
 # (mesopotamian_01..06, listed in the Levantine religion's custom_faith_icons). The metal and the blue inlay are
 # recoloured apart (--palette, --inlay).
-# Usage: make_mesopotamian_icons.py <winged_disc.png> [<preview.png>]
+# Usage: make_mesopotamian_icons.py <lamassu.png> [<preview.png>]
 import os
 import subprocess
 import sys

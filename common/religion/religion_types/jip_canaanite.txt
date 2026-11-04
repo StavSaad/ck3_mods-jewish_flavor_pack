@@ -57,7 +57,7 @@
 
 	custom_faith_icons = {
 		# Ours: the sign of Tanit (Tanitism gold, a silver, and six colours for custom faiths; tools/make_tanit_icons.py), Baal of the stele (Canaanism) and the bull calf (Yahwism)
-		# and Mesopotamianism's winged disc (six more colours; tools/make_mesopotamian_icons.py) and the Sinite crescent standard (six more;
+		# and Mesopotamianism's lamassu (six more colours; tools/make_mesopotamian_icons.py) and the Sinite crescent standard (six more;
 		# tools/make_harranian_icons.py), and the gods' own (jip_rite_*, also given to
 		# new rites named after them, common/religion/rite_icons/00_jip_rite_icons.txt)
 		canaanite punic canaanite_01 canaanite_02 canaanite_03 canaanite_04 canaanite_05 canaanite_06 mesopotamian mesopotamian_01 mesopotamian_02 mesopotamian_03 mesopotamian_04 mesopotamian_05 mesopotamian_06 harranian harranian_01 harranian_02 harranian_03 harranian_04 harranian_05 harranian_06 jip_rite_marduk jip_rite_bel jip_rite_hadad jip_rite_atargatis jip_rite_shamash jip_rite_ishtar jip_rite_nabu jip_rite_nergal jip_rite_tammuz jip_rite_nusku jip_rite_enlil jip_rite_chemosh jip_rite_milcom jip_rite_qos jip_rite_eshmun jip_rite_adonis jip_rite_dagon jip_rite_hammon jip_rite_melqart jip_rite_anat jip_rite_astarte jip_rite_kothar jip_rite_asherah jip_baal jip_yahwism
