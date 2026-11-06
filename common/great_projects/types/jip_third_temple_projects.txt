@@ -5,10 +5,10 @@
 #	Effects in common/scripted_effects/01_jip_third_temple_effects.txt
 #################
 
-@jip_clear_the_temple_mount_icon = "gfx/interface/icons/great_projects/_default.dds" # placeholder until its art
-@jip_clear_the_temple_mount_illustration = "gfx/interface/illustrations/event_scenes/pam_cathedral_construction.dds" # placeholder
-@jip_rebuild_the_temple_icon = "gfx/interface/icons/great_projects/_default.dds" # placeholder until its art
-@jip_rebuild_the_temple_illustration = "gfx/interface/illustrations/event_scenes/pam_cathedral_construction.dds" # placeholder
+@jip_clear_the_temple_mount_icon = "gfx/interface/icons/great_projects/jip_clear_the_temple_mount.dds" # tools/make_great_project_art.py
+@jip_clear_the_temple_mount_illustration = "gfx/interface/illustrations/great_projects/jip_clear_the_temple_mount.dds" # default crop
+@jip_rebuild_the_temple_icon = "gfx/interface/icons/great_projects/jip_rebuild_the_temple.dds" # tools/make_great_project_art.py
+@jip_rebuild_the_temple_illustration = "gfx/interface/illustrations/great_projects/jip_rebuild_the_temple.dds" # default crop
 
 # Stage 1. The old decision's founder: an independent Jewish ruler of Israelite heritage who holds Jerusalem and
 # completely controls Israel, at piety level 4. While the work lasts every Muslim ruler resents the founder; on
