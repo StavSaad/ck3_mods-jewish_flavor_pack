@@ -850,3 +850,34 @@ jip_temple_of_astarte_01 = {
 	flag = jip_temple_of_astarte_building
 	flag = travel_point_of_interest_religious
 }
+
+# The Temple Mount cleared (jip_gp_clear_the_temple_mount) and awaiting the Temple (jip_gp_rebuild_the_temple): it
+# fills Jerusalem's special building slot, so no generic holy site building can be raised in the Temple's place
+jip_temple_mount_cleared_01 = {
+	type_icon = "icon_structure_temple_in_jerusalem.dds"
+
+	can_construct_potential = {
+		always = no # Placed only by the great project
+	}
+
+	is_enabled = {
+		custom_description = {
+			text = jip_temple_mount_cleared_enabled_trigger
+			scope:holder = {
+				religion = religion:judaism_religion
+			}
+		}
+	}
+
+	show_disabled = yes
+
+	character_modifier = {
+		monthly_piety = 0.5
+	}
+
+	ai_value = {
+		base = 0
+	}
+
+	type = special
+}
