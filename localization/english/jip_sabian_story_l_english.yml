@@ -221,7 +221,7 @@
  nick_jip_high_priest_of_sin_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharAreIs(CHARACTER)] the high priest of Sin, the Moon God, in his restored temple at Harran"
  nick_jip_restorer_of_the_gods: "Restorer of the Gods"
  nick_jip_restorer_of_the_gods_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] brought the old gods of Mesopotamia home to their temples, a thousand years after they were driven out"
- jip_sabian_statues_at_new_year_tt: "Each god's statue brought home adds to the [piety|E] of the New Year"
+ jip_sabian_statues_at_new_year_tt: "Each god brought home to a [holy_site|E] in your [realm|E] adds to the [piety|E] of the New Year"
 
  jip_sabian_claim_cult_city_decision: "Claim a City of the Gods"
  jip_sabian_claim_cult_city_decision_desc: "The old gods had more houses than Harran. Arbela of Ishtar, Ashur and Nineveh on the Tigris, Hatra of the Sun, Palmyra of Bel, and Babylon itself, the city of Marduk: their temples are ruins in the lands of others. The gods want their cities back, and their priests know whose they were."
@@ -235,7 +235,7 @@
  jip_sabian_bring_the_gods_home_decision_tooltip: "Search for the lost statue of a god whose temple stands in your [realm|E], of your choice"
  jip_sabian_bring_the_gods_home_decision_confirm: "Begin the search"
  jip_sabian_any_statue_can_be_sought_tt: "A temple of the old gods stands restored in your [realm|E], not occupied, and its god's statue is not yet home"
- jip_sabian_bring_the_gods_home_effect_tt: "You search for the statue of the god you chose; in some months it is found or the trail goes cold. A god brought home becomes a [court_artifact|E] of your [court|E], and the temple's [county|E] takes your [faith|E] and rejoices"
+ jip_sabian_bring_the_gods_home_effect_tt: "You search for the statue of the god you chose; in some months it is found or the trail goes cold. A god brought home is enshrined in its [holy_site|E] (Shamash of Hatra in Ashur's, which shares its county), or kept at your [court|E] if the site has no room, and the temple's [county|E] takes your [faith|E] and rejoices"
 
  jip_sabian_story.5010.t: "The Search for the Gods"
  jip_sabian_story.5010.desc: "The priests have drawn up what is known: an inventory from a temple sacked a thousand years ago, a traveller's tale of a bearded idol in a merchant's house in Mosul, a bishop's boast of the images his monks threw into the river. It is not much. But gods have been found with less."
@@ -243,7 +243,7 @@
  jip_sabian_story.5010.b: "Let the agents ask in the markets"
 
  jip_sabian_story.5011.t: "A God Comes Home"
- jip_sabian_story.5011.desc: "We have found [jip_statue.GetName]. It had lain for centuries where no one thought to look, and it came back to its temple wrapped in sackcloth on the back of a mule, as gods do in the stories.\n\nThe priests washed it, clothed it and set it on its pedestal, and the people came in crowds to see the god who had come home."
+ jip_sabian_story.5011.desc: "We have found [jip_statue.GetName]. It had lain for centuries where no one thought to look, and it came back to its temple wrapped in sackcloth on the back of a mule, as gods do in the stories.\n\nThe priests washed it, clothed it and set it on its pedestal in the god's own house, and the people came in crowds to see the god who had come home."
  jip_sabian_story.5011.a: "Welcome home"
 
  jip_sabian_story.5012.t: "The Trail Goes Cold"

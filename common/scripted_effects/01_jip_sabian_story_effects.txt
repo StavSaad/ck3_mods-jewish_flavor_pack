@@ -476,7 +476,7 @@ jip_sabian_name_high_priest_effect = {
 jip_sabian_story_new_year_kept_effect = {
 	if = {
 		limit = {
-			any_character_artifact = { has_variable = jip_old_god_statue }
+			has_global_variable_list = jip_old_gods_home
 		}
 		custom_tooltip = jip_sabian_statues_at_new_year_tt
 		hidden_effect = { jip_sabian_statues_at_new_year_effect = yes }
@@ -597,38 +597,45 @@ jip_sabian_create_god_statue_effect = {
 	}
 }
 
-# Character scope (the story owner): the statue of scope:jip_sought_god found and brought home: the artifact, and its
-# temple's county takes the owner's rite and rejoices (jip_old_god_home_modifier)
+# Character scope (the decision taker): the statue of scope:jip_sought_god found and brought home: the artifact,
+# enshrined in its god's holy site (scope:jip_statue_site; Shamash's at Ashur's, which shares Hatra's county) or, with
+# no room there, kept at court; and its temple's county takes the taker's rite and rejoices (jip_old_god_home_modifier)
 jip_sabian_bring_god_home_effect = {
 	if = {
 		limit = { scope:jip_sought_god = flag:sin }
 		jip_sabian_create_god_statue_effect = { GOD = sin }
 		title:c_harran = { save_scope_as = jip_statue_county }
+		holy_site:harran = { save_scope_as = jip_statue_site }
 	}
 	else_if = {
 		limit = { scope:jip_sought_god = flag:ishtar }
 		jip_sabian_create_god_statue_effect = { GOD = ishtar }
 		title:c_irbil = { save_scope_as = jip_statue_county }
+		holy_site:arbela = { save_scope_as = jip_statue_site }
 	}
 	else_if = {
 		limit = { scope:jip_sought_god = flag:ashur }
 		jip_sabian_create_god_statue_effect = { GOD = ashur }
 		title:c_mosul = { save_scope_as = jip_statue_county }
+		holy_site:ashur = { save_scope_as = jip_statue_site }
 	}
 	else_if = {
 		limit = { scope:jip_sought_god = flag:bel }
 		jip_sabian_create_god_statue_effect = { GOD = bel }
 		title:c_palmyra = { save_scope_as = jip_statue_county }
+		holy_site:palmyra = { save_scope_as = jip_statue_site }
 	}
 	else_if = {
 		limit = { scope:jip_sought_god = flag:shamash }
 		jip_sabian_create_god_statue_effect = { GOD = shamash }
 		title:c_mosul = { save_scope_as = jip_statue_county }
+		holy_site:ashur = { save_scope_as = jip_statue_site }
 	}
 	else_if = {
 		limit = { scope:jip_sought_god = flag:marduk }
 		jip_sabian_create_god_statue_effect = { GOD = marduk }
 		title:c_kufa = { save_scope_as = jip_statue_county }
+		holy_site:babylon = { save_scope_as = jip_statue_site }
 	}
 	scope:jip_statue_county = {
 		set_county_faith = root.faith
@@ -638,13 +645,42 @@ jip_sabian_bring_god_home_effect = {
 			years = 50
 		}
 	}
+	if = {
+		limit = {
+			scope:jip_statue_site = { holy_site_artifact_count < 3 } # A holy site has three relic slots
+			can_enshrine_holy_site_artifact = {
+				holy_site = scope:jip_statue_site
+				artifact = scope:jip_statue
+			}
+		}
+		enshrine_holy_site_artifact = {
+			holy_site = scope:jip_statue_site
+			artifact = scope:jip_statue
+		}
+	}
 }
 
-# Character scope: at each New Year kept, the gods brought home add to its piety (jip_sabian_story_new_year_kept_effect)
+# Character scope: at each New Year kept, each god brought home whose holy site lies in the host's realm adds to its
+# piety (jip_sabian_story_new_year_kept_effect)
 jip_sabian_statues_at_new_year_effect = {
-	every_character_artifact = {
-		limit = { has_variable = jip_old_god_statue }
-		root = { add_piety = minor_piety_gain }
+	jip_sabian_statue_at_new_year_effect = { GOD = sin SITE = harran }
+	jip_sabian_statue_at_new_year_effect = { GOD = ishtar SITE = arbela }
+	jip_sabian_statue_at_new_year_effect = { GOD = ashur SITE = ashur }
+	jip_sabian_statue_at_new_year_effect = { GOD = bel SITE = palmyra }
+	jip_sabian_statue_at_new_year_effect = { GOD = shamash SITE = ashur }
+	jip_sabian_statue_at_new_year_effect = { GOD = marduk SITE = babylon }
+}
+
+jip_sabian_statue_at_new_year_effect = {
+	if = {
+		limit = {
+			is_target_in_global_variable_list = {
+				name = jip_old_gods_home
+				target = flag:$GOD$
+			}
+			holy_site:$SITE$.holy_site_county.holder ?= { target_is_same_character_or_above = root }
+		}
+		add_piety = minor_piety_gain
 	}
 }
 
