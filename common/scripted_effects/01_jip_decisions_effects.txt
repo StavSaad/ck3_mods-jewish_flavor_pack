@@ -478,59 +478,6 @@ reestablish_canaanite_city_effect = {
 	title:$BARONY$ = { set_capital_barony = yes }
 }
 
-rebuild_the_third_temple_effect = {
-	title:c_jerusalem.title_province = { 
-		remove_building = dome_of_the_rock_01
-		custom_description = {
-			text = replace_temple_description
-			add_special_building = temple_in_jerusalem_01
-			remove_building = temple_in_jerusalem_01
-		}
-	}
-	religion:islam_religion = {
-		every_faith = {
-			limit = {
-				AND = {
-					NOT = {
-						# Tenets live on the rite since 1.20
-						main_rite ?= { rite_has_tenet = tenet_jewish_syncretism }
-					}
-					NOT = { this = faith:druze }
-				}
-			}
-			remove_holy_site = {
-				target = holy_site:jerusalem
-			}
-			change_fervor = {
-				value = -15
-				desc = fervor_loss_third_temple
-			}
-			every_ruler = {
-				limit = {
-					has_faith = this
-				}
-				add_opinion = {
-					target = ROOT
-					modifier = destroyed_dome_of_the_rock_opinion
-				}
-			}
-		}
-	}
-	custom_description = {
-		text = every_muslim_ruler_loses_opinion
-		object = ROOT
-		every_ruler = {
-			limit = {
-				has_religion = religion:islam_religion
-			}
-			add_opinion = {
-				target = ROOT
-				modifier = destroyed_dome_of_the_rock_opinion
-			}
-		}
-	}
-}
-
 # Faiths that can't be converted to until an event restores them: their rites are convert = no until these run.
 # Canaanism (all three rites): the Phoenicia decision, or gaining k_carthage (vanilla's Restore Carthage)
 jip_unlock_canaanite_conversion_effect = {

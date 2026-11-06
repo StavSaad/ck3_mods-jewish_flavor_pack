@@ -96,7 +96,7 @@ jip_pesach_paschal_lamb_trigger = {
 	}
 }
 
-# The Temple in Jerusalem stands again (temple_in_jerusalem_01, rebuild_the_third_temple_effect): the Korban Pesach
+# The Temple in Jerusalem stands again (temple_in_jerusalem_01, jip_gp_rebuild_the_temple): the Korban Pesach
 jip_temple_stands_trigger = {
 	title:c_jerusalem.title_province = { has_building = temple_in_jerusalem_01 }
 }

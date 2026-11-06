@@ -282,69 +282,6 @@ reestablish_canaanite_city_decision = {
 
 }
 
-clear_grounds_for_the_third_temple_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	ai_check_interval = 60
-	desc = clear_grounds_for_the_third_temple_decision_desc
-	decision_group_type = major
-
-	is_shown = {
-		culture = { has_cultural_pillar = heritage_israelite }
-		has_religion = religion:judaism_religion
-		has_title = title:c_jerusalem
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:clear_grounds_for_the_third_temple_decision
-			}
-		}
-	}
-
-	is_valid = {
-		piety_level >= 4
-		is_independent_ruler = yes
-		capital_county.rite.faith = {
-			religion = religion:judaism_religion
-		}
-		OR = {
-			has_primary_title = title:k_israel
-			primary_title = {
-				is_de_facto_liege_or_above_target = title:k_israel
-			}
-		}
-		completely_controls = title:k_israel
-	}
-
-	is_valid_showing_failures_only = {
-		is_available_adult = yes
-		is_at_war = no
-	}
-
-	effect = {
-		add_to_global_variable_list = {
-			name = unavailable_unique_decisions
-			target = flag:clear_grounds_for_the_third_temple_decision
-		}
-		show_as_tooltip = {
-			rebuild_the_third_temple_effect = yes
-		}
-		trigger_event = jip_hebrew.0041
-	}
-
-	cost = { piety = { value = 500 } }
-
-	ai_potential = {
-		always = yes
-	}
-
-	ai_will_do = {
-		base = 100
-	}
-
-}
-
 # A Christian or Muslim ruler expels the Jews from their realm, seizing half of every Jew's gold.
 # The edict is stored on the ruler's primary title and bars Jewish families from settling there.
 jip_expel_the_jews_decision = {

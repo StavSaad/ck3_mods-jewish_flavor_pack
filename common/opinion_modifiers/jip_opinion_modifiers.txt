@@ -4,6 +4,12 @@
 	imprisonment_reason = yes
 }
 
+# While the Temple Mount is cleared (jip_gp_clear_the_temple_mount), from every Muslim ruler
+jip_clearing_the_temple_mount_opinion = {
+	opinion = -40
+	decaying = no
+}
+
 jip_expelled_my_family_opinion = {
 	opinion = -60
 	monthly_change = 0.02

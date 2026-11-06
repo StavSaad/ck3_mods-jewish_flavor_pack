@@ -1,0 +1,102 @@
+﻿# The Third Temple's great projects (common/great_projects/types/jip_third_temple_projects.txt; 0.16 plan, section 7).
+# Each runs in the scope of a character: the project's founder or owner (a project's own root is the project).
+
+# Clearing the Mount begins: every Muslim ruler resents the founder while the work lasts
+jip_temple_mount_clearing_begins_effect = {
+	save_scope_as = jip_temple_mount_founder
+	every_ruler = {
+		limit = {
+			has_religion = religion:islam_religion
+		}
+		add_opinion = {
+			target = scope:jip_temple_mount_founder
+			modifier = jip_clearing_the_temple_mount_opinion
+		}
+	}
+}
+
+# The work ends, done or abandoned: the resentment of the work gives way (on completion, to the Dome's own)
+jip_temple_mount_clearing_ends_effect = {
+	save_scope_as = jip_temple_mount_founder
+	every_ruler = {
+		limit = {
+			has_opinion_modifier = {
+				target = scope:jip_temple_mount_founder
+				modifier = jip_clearing_the_temple_mount_opinion
+			}
+		}
+		remove_opinion = {
+			target = scope:jip_temple_mount_founder
+			modifier = jip_clearing_the_temple_mount_opinion
+		}
+	}
+}
+
+# The Dome of the Rock comes down: Jerusalem is no longer an Islamic holy site (but for faiths of Jewish
+# Syncretism and the Druze), the Islamic faiths lose fervour, and every Muslim ruler hates the builder
+jip_clear_the_temple_mount_effect = {
+	save_scope_as = jip_temple_builder
+	title:c_jerusalem.title_province = {
+		remove_building = dome_of_the_rock_01
+	}
+	religion:islam_religion = {
+		every_faith = {
+			limit = {
+				NOT = {
+					# Tenets live on the rite since 1.20
+					main_rite ?= { rite_has_tenet = tenet_jewish_syncretism }
+				}
+				NOT = { this = faith:druze }
+			}
+			remove_holy_site = {
+				target = holy_site:jerusalem
+			}
+			change_fervor = {
+				value = -15
+				desc = fervor_loss_third_temple
+			}
+		}
+	}
+	custom_description = {
+		text = every_muslim_ruler_loses_opinion
+		object = scope:jip_temple_builder
+		every_ruler = {
+			limit = {
+				has_religion = religion:islam_religion
+			}
+			add_opinion = {
+				target = scope:jip_temple_builder
+				modifier = destroyed_dome_of_the_rock_opinion
+			}
+		}
+	}
+}
+
+# The Temple stands: temple_in_jerusalem_01 in Jerusalem's special building slot, Kohanism open to conversion, and
+# the first time, jip_hebrew.0040 (the flag also keeps jip_third_temple_on_action from firing it a second time)
+jip_rebuild_the_temple_effect = {
+	title:c_jerusalem.title_province = {
+		custom_tooltip = jip_gp_rebuild_the_temple_building_tt
+		hidden_effect = {
+			add_special_building = temple_in_jerusalem_01
+		}
+	}
+	jip_unlock_kohanism_conversion_effect = yes
+	if = {
+		limit = {
+			NOT = {
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:jip_third_temple_on_action
+				}
+			}
+		}
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_third_temple_on_action
+			}
+		}
+		trigger_event = jip_hebrew.0040
+	}
+}
