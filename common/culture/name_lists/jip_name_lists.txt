@@ -1,4 +1,6 @@
-﻿name_list_ashkenazi = {
+﻿# Ashkenaz (the Rhineland, Germany, Northern France and England): Hebrew names with the German, Yiddish and French kinnuyim
+# Jews used beside them. No Babylonian or Arabic names.
+name_list_ashkenazi = {
 
 	cadet_dynasty_names = {
 		"dynn_Ben_Aharon"
@@ -27,33 +29,32 @@
 	}
 
 	male_names = {
-		Abba Abbaye Acha Achai Achunai Aharon Alechsandri Ammi Amram Amunah Ashi Asher Avomai Avraham Azariah Baboi
-		Baruch Bibai Binyamin Boaz Bustenai Chanan Chananel Chaninai Chanoch Chaim Chayim Chelbo Chisdai Chiyya
-		Chizkiyah Chofni Chushiel Daniel David Dimi Dodai Dudai Efrayim Eina Elazar Elchanan Eldad Eliezer Elyakim
-		Gedalyah Gershom Ghayyat Giat Giza Hillel Hila Isaac Ivomai Kafnai Kahana Kalonymos Levi Kiyomi Machir Malcha
-		Mar Mari Matiyahu Meir Menechem Menashe Mesharsheya Meshulam Mevasser Mishael Mordechai Moshe Nachman Nachshon
-		Nasan Natan Natroi Natronai Nechemiah Nehilai Nesanel Nissim Paltoi Pirkoi Peter Rava Ravai Ravi Ravya Reuven
-		Rivai Saadiah Sechok Shabsai Shalom Shanoi Shemaryah Sherira Sheshna Shila Shimon Shinoi Shlomo Shmuel Sorgo
-		Sulam Tachlifa Tamar Tzadok Tzemach Uri Yaakov Yachya Yechiel Yehudah Yehudai Yehoshua Yeshayah Yisrael
-		Yitzchak Yoel Yosef Yoshiah Yosi Yuda Zakkai Zelekman Zuiskind Yehoshiyahu Chananiah Avigdor Yekutiel Simcha
-		Shimshon Peretz Yomtov Zelig Lipman Anshel Kalman Hirsch Leib Mendel Zalman Gumprecht Gutman Jekel Liebermann
-		Josel Seligmann Vivelin Susslin Alexander Meshullam Menachem Eliyahu Deulecresse Benedict Hagin Jurnet Josce
-		Copin Bonevie Elias Vives Leo
+		Abba Aharon Alexander Amram Anshel Asher Avigdor Avraham Azariah Baruch Bendit Benedict Ber Binyamin Boaz
+		Bonevie Bunim Chaim Chanan Chananiah Chanoch Chizkiyah Copin Cresse Daniel David Deulecresse Deulesalt Eberlin
+		Efrayim Elazar Elchanan Elias Eliezer Eliyahu Elyakim Falk Feivel Gedalyah Gershom Gotlib Gumprecht Gutman
+		Hagin Hillel Hirsch Isaac Jekel Josce Josel Jurnet Kalman Koppel Leib Leo Levi Liebermann Lipman Machir
+		Matiyahu Meir Menachem Menashe Mendel Meshullam Mordechai Moshe Nachman Nachshon Naftali Natan Nechemiah
+		Netanel Peretz Reuven Seligmann Sender Shabtai Shalom Shemaryah Shimon Shimshon Shlomo Shmuel Simcha Susslin
+		Tzadok Uri Vivelin Vives Wolf Yaakov Yechiel Yehoshua Yehudah Yekutiel Yeshayah Yisrael Yitzchak
+		Yoel Yomtov Yosef Yoshiah Yosi Yuda Zalman Zelekman Zelig Zuiskind
 	}
 	female_names = {
-		Beila Belet Chana Doltza Esther Guta Guthela Madrona Matrona Minna Pultzelina Rachel Rivkah Saris Scolaster
-		Shluida Shoinlin Shonlin Tziporah Yehudis Yeintil Tehilla Drora Bella Bruna Richenza Gutlin Sprinza Frumet
-		Glikl Golde Hendel Kreinel Roesel Freidel Sorlin Perl Sheindel Zisel Malka Edel Mirel Hindel Yocheved Miriam
-		Sarah Leah Chava Licoricia Belaset Floria Chera Comitissa Pucelle Mirabel Belia Antera
+		Antera Beila Belaset Belet Belia Bella Bona Bruna Chana Chava Chera Clarice Comitissa Doltza Edel Esther
+		Floria Freidel Frumet Genta Glikl Gnendel Golde Guta Guthela Gutlin Hendel Hindel Juetta Kreinel Leah
+		Licoricia Liebel Madrona Malka Matrona Minna Mirabel Mirel Miriam Muriel Perl Pucelle Pultzelina Rachel
+		Reichel Richenza Rivkah Roesel Sarah Saris Scolaster Sheindel Shluida Shoinlin Shonlin Sorlin Sprinza Tamar
+		Tziporah Yehudis Yeintil Yocheved Zelde Zerlin Zisel
 	}
-	
+
 	dynasty_of_location_prefix = "dynnp_of"
-	
+
 	patronym_prefix_male = "dynnpat_pre_ben"
 	patronym_prefix_female = "dynnpat_pre_bat"
 	always_use_patronym = yes
-	
 }
+
+# Sepharad (al-Andalus, Castile, Aragon, Catalonia, Provence): Hebrew names, the Judeo-Arabic names of al-Andalus and
+# the Romance names of the Christian kingdoms.
 name_list_sephardi = {
 
 	cadet_dynasty_names = {
@@ -81,124 +82,256 @@ name_list_sephardi = {
 	}
 
 	male_names = {
-		Abba Abbaye Acha Achai Achunai Aharon Alechsandri Ammi Amram Amunah Ashi Asher Avomai Avraham Azariah Baboi
-		Baruch Bibai Binyamin Boaz Bustenai Chanan Chananel Chaninai Chanoch Chaim Chayim Chelbo Chisdai Chiyya
-		Chizkiyah Chofni Chushiel Daniel David Dimi Dodai Dudai Efrayim Eina Elazar Elchanan Eldad Eliezer Elyakim
-		Gedalyah Gershom Ghayyat Giat Giza Hillel Hila Isaac Ivomai Kafnai Kahana Kalonymos Levi Kiyomi Machir Malcha
-		Mar Mari Matiyahu Meir Menechem Menashe Mesharsheya Meshulam Mevasser Mishael Mordechai Moshe Nachman Nachshon
-		Nasan Natan Natroi Natronai Nechemiah Nehilai Nesanel Nissim Paltoi Pirkoi Rava Ravai Ravi Ravya Reuven Rivai
-		Saadiah Sechok Shabsai Shalom Shanoi Shemaryah Sherira Sheshna Shila Shimon Shinoi Shlomo Shmuel Sorgo Sulam
-		Tachlifa Tamar Tzadok Tzemach Uri Yaakov Yachya Yechiel Yehudah Yehudai Yehoshua Yeshayah Yisrael Yitzchak Yoel
-		Yosef Yoshiah Amon YehoAhaz Yosi Yuda Zakkai Yehoshiyahu Chananiah Astruc Bachya Bonafos Bonet Bondia Bonjuha
-		Bonsenyor Hasdai Cresques Dunash Ezra Jafuda Jucef Mahir Menachem Mosse Profiat Salamo SheAltiEl Sheshet
-		Shemtov Todros Vidal Yonah Yomtov Zerachiah Benvenist Ferrer Ibrahim Ishaq Musa Harun Sulayman Yusuf Ismail
+		Abba Abram Aharon Amram Asher Astruc Avner Avraham Azariah Bachya Baruch Benvenist Binyamin Boaz Bonafos
+		Bondia Bonet Bonjuha Bonsenyor Chanan Chananel Chananiah Chanoch Chizkiyah Cresques Daniel Davi David Dunash
+		Efrayim Elazar Elchanan Eliezer Elyakim Ezra Ferrer Gedalyah Gershom Ghayyat Giat Haim Harun Hasdai Hillel
+		Ibrahim Isaac Ishaq Ismail Jafuda Jucef Kalonymos Khalaf Levi Machir Mahir Mair Marwan Matiyahu Meir Menachem
+		Menashe Meshulam Mevasser Mordechai Moshe Mosse Musa Nachman Natan Nechemiah Netanel Nissim Profiat Reuven
+		Saadiah Salamo Samuel Shabtai Shalom SheAltiEl Shemaryah Shemtov Sheshet Shimon Shlomo Shmuel Sulayman Todros
+		Tzadok Uri Vidal Yaakov Yachya Yaco Yechiel Yehosef Yehoshua Yehudah Yeshayah Yisrael Yitzchak
+		Yoel Yomtov Yonah Yosef Yoshiah Yuda Yusuf Zag Zerachiah
 	}
 	female_names = {
-		Belet Chana Doltza Esther Madrona Matrona Minna Rachel Rivkah Saris Scolaster Tziporah Tehilla Drora Alegre
-		Astruga Bellida Bienvenida Blanca Bonafilla Bonadona Clara Cima Duenya Esterlina Estrella Fermosa Goig Gracia
-		Jamila Luna Mayor Mira Oro Orovida Perla Preciosa Regina Reyna Sitbona Sol Tolsana Vida Sarah Miriam Leah
-		Yehudit
+		Alegre Astruga Bella Bellida Bienvenida Blanca Bonadona Bonafilla Ceti Chana Cima Clara Dinah Dolca Duenya
+		Esterlina Esther Estrella Fermosa Goig Gracia Jamila Karima Leah Luna Mayor Mira Miriam Oro Orovida Perla
+		Preciosa Rachel Regina Reyna Rivkah Sarah Sitbona Sol Tamar Tolsana Tziporah Vida Yehudit
 	}
-	
+
 	dynasty_of_location_prefix = "dynnp_of"
 
 	patronym_prefix_male = "dynnpat_pre_ben"
 	patronym_prefix_female = "dynnpat_pre_bat"
 	always_use_patronym = yes
-	
-	
 }
+
+# The Radhanites: Jewish merchants of Iraq and Persia on the roads to Khazaria, the Slavs and China. Hebrew and
+# Judeo-Arabic names, the Persian Jews' (Yudghan, Hiwi, Masarjawayh) and the Khazar Jews' (the kings in Joseph's letter,
+# the Kievan Letter's Gostata, Kiabar, Sawarta, Kufin and Manas).
 name_list_radhanite = {
 
 	cadet_dynasty_names = {
-		"dynn_Rabban"
+		"dynn_al_Radhani"
+		"dynn_ha_Parnas"
+		"dynn_Cohen"
 		"dynn_Efraim"
 		"dynn_Eliyahu"
-		"dynn_Cohen"
-		"dynn_Dharan"
 		"dynn_Yitzhak"
-		"dynn_Koder"
-		"dynn_Japheth"
-		"dynn_Hallegua"
-		"dynn_Madayi"
 		"dynn_Meir"
 		"dynn_Menahem"
-		"dynn_Mutath"
 		"dynn_Nehemya"
-		"dynn_Oran"
-		"dynn_Pallivathikal"
-		"dynn_Rahabi"
-		"dynn_Sarphati"
-		"dynn_Sassoon"
-		"dynn_Chorath"
 		"dynn_Solomon"
 		"dynn_Yaakov"
 	}
 
 	dynasty_names = {
-		"dynn_Rabban"
+		"dynn_al_Radhani"
+		"dynn_ha_Parnas"
+		"dynn_Cohen"
 		"dynn_Efraim"
 		"dynn_Eliyahu"
-		"dynn_Cohen"
-		"dynn_Dharan"
 		"dynn_Yitzhak"
-		"dynn_Koder"
-		"dynn_Japheth"
-		"dynn_Hallegua"
-		"dynn_Madayi"
 		"dynn_Meir"
 		"dynn_Menahem"
-		"dynn_Mutath"
 		"dynn_Nehemya"
-		"dynn_Oran"
-		"dynn_Pallivathikal"
-		"dynn_Rahabi"
-		"dynn_Sarphati"
-		"dynn_Sassoon"
-		"dynn_Chorath"
 		"dynn_Solomon"
 		"dynn_Yaakov"
 	}
 
 	male_names = {
-		Anah MaAkhah Gomer Mikhayahu Ofir Yachin AchAv Adam Chunyahu Adlai Adoniram Adoniyah Adriel Aharon Amaryahu
-		Amittai Ammiel Amnon Amos Amram Anaiah Anan Anani Aran Arieh AriEl Asa Asaf Asher Asnappar AvdiEl Avidan AviEl
-		Avihu AvimaEl Avimelekh Aviram Avishay Avner Avraham ElYashiv Avram Avshalom Azarel Azaryah Azazyahu AzriEl
-		BaAl Barak Barukh Belshatzzar Benayahu BetUel Binyamin Boaz Chaggai Chanan Chananyah Chanokh Chavaqquq ChazaEl
-		Chizqiyahu Dan Daniyyel David Delayahu Efrayim Ahab Zimri Attai Ehud Eiran Eitan Elah ElAzar Elchanan Eli Eliav
-		Eliel EliEzer Elifalet Elifelet Elihu Elisha Elishua Eliyyahu Elkanah Elnatan Elon Enosh Esaw Evyatar Ezer Ezra
-		Gad Gamaliel GavriEl Gedalyahu Gemaryahu Gershom Gershon GidOn Gilad Golyat Haran Hevel Hillel Hiram Hoshea
-		Iddo Ilai Immanuel Ira Itamar Iyyov Kalev Kayin Yehotzadak Keinan Kenanyahu Koresh Laban Lael Lemuel Levi Lot
-		Machli MalAkhi Mattan Mattanyahu Mattithyahu Mattityahu Melech Menachem Menashsheh Meshullam Metushelach
-		MikhaEl Mikhah Mordokhay Moshe Nachum Nadav Naftali Natan Nechemyah Neriah NetanEl Netanyahu Nimrod Omri
-		Ovadyah Oved Peleg Pikchiyah Penuel Peretz Pinchas QemuEl Shechanya Chasdiah Brachiah Meshulam Zerubavel RafaEl
-		RehavAm YeravAm Reuel Reuven Sancheriv Seraiah Shalmaneser ShaUl SheAltiEl Shelach Shelah Shelomoh Ahaz Shem
-		ShemaYah ShemuEl Shet Shimon Shimshon Talmai Tammuz Teman Terach Toviyyah Tzefanyah Tzidkiyahu Tzion Tzivah
-		TzuriEl Uri Uriyah UriyEl Uzzi Uzziel Uzziyyah Yaakov YachleEl YachtzeEl Yadon Yair Yamin YaRah YaravAm
-		Avinadav Yared Yawan Yechezkel YechiEl Nimshi Yavesh Yedidyah Yefet YehoAsh Yehochanan Yehonatan Yehoram
-		Yehoshafat Yehoshua Yehoyakhin Yehoyakim Yehu Yehudah Yehudi Yekonyah YerachmeEl Yeriyahu YeshaYahu Yeshua
-		Yiftach Yirmiyahu Yishai Ittay Yoav Yehoyada BaAlZevuv Tovi Noach Haniyah Huna Zutra Ukban Guriya Aviyah Ahonai
-		Migam Yehoshiyahu Chananiah Ziza Chizkiyahu YadoA Abbaye Rava Ashi Ravina Pappa Chisda Sheshet Zeira Amemar
-		Mesharsheya Hamnuna Tachlifa Achai Giddel Chiyya Assi Ammi Dimi Ulla Rabbah Abbahu Idi Kahana Sherira Hai
-		Saadiah Natronai Tzemach Yehudai Dosa Chofni Shammai Akiva Tarfon IshmaEl Nechunya Chanina Tzadok Yose Yochanan
-		Hyrkanos Antigonos Alexandros Yanai Bustenai Hasdai Kafnai Chaninai
+		Aharon Avraham Binyamin Bulan Chizkiyahu Daniel David Dawud Elazar Eldad Eliezer Faraj Gostata Halfon Hanukkah
+		Harun Hiba Hiwi Ibrahim Imran Ishaq Khalaf Kiabar Kufin Levi Manas Mansur Masarjawayh Menachem Menashe Moshe
+		Musa Mushka Natan Netira Nisi Ovadyah Pesach Reuven Sabriel Sahl Said Salama Sasson Sawarta Shimon Shlomo
+		Shmuel Sinai Sulayman Yaakov Yahya Yaqub Yehoshua Yehudah Yeshua Yitzchak Yosef Yudghan Yusuf Zevulun
 	}
 	female_names = {
-		Anah Anat Atalyah MaAkhah Machlah Achinoam Asenat Atarah Avigayil Avishag Avital Basmat BatSheva Beulah Bilhah
-		Bityah Chaggit Channah Chavah CheftziBah Chuldah Delilah Devorah Dinah Ednah Efrat Elisheva Ester Hadassah
-		Hagar Hodiyah Izevel KetziAh Leah Machalat MeheitavEl Merav Mikhal Miriam NaAmah NaOmi Orpah Rachel Rivqah Rut
-		Sarah Shifra Shoshannah Shulammit Tamar Tirtzah Tzillah Tzipporah Tzivyah Yael Yedidah Yehosheva Yehudit Yemima
-		Yerushah NoAh Keren Drora Diklah Tehilla Bosmat Yalta Homa Beruriah ImmaShalom Kimchit Martha Shlomtzion Helena
-		Yocheved Mariamne Alexandra Salome Shlomit
+		Baraka Chana Dhahab Dinah Esther Jamila Jawhara Karima Khazariyya Leah Malika Miriam Mubaraka Rachel Rivkah
+		Sarah Sayyida Serach Sitt_Bagdad Sitt_al-Furs Sitt_al-Gharb Sitt_al-Iraq Sitt_al-Tujjar Sittuna Tamar Turkiyya
+		Tziporah Wuhsha Yocheved
 	}
-	
+
 	dynasty_of_location_prefix = "dynnp_of"
 
 	patronym_prefix_male = "dynnpat_pre_ben"
 	patronym_prefix_female = "dynnpat_pre_bat"
 	always_use_patronym = yes
-	
-	
+}
+
+# The Jews of Babylonia (Iraq) under the Exilarchs and Geonim: Aramaic and Hebrew names of the Talmud and the geonic
+# academies, and the Judeo-Arabic names of Baghdad's merchants and bankers; women's names from the Cairo Geniza.
+name_list_bavlim = {
+
+	cadet_dynasty_names = {
+		"dynn_Netira"
+		"dynn_Sassoon"
+		"dynn_Cohen"
+		"dynn_Efraim"
+		"dynn_Eliyahu"
+		"dynn_Yitzhak"
+		"dynn_Meir"
+		"dynn_Menahem"
+		"dynn_Nehemya"
+		"dynn_Solomon"
+		"dynn_Yaakov"
+	}
+
+	dynasty_names = {
+		"dynn_Netira"
+		"dynn_Sassoon"
+		"dynn_Cohen"
+		"dynn_Efraim"
+		"dynn_Eliyahu"
+		"dynn_Yitzhak"
+		"dynn_Meir"
+		"dynn_Menahem"
+		"dynn_Nehemya"
+		"dynn_Solomon"
+		"dynn_Yaakov"
+	}
+
+	male_names = {
+		Abba Abbaye Achai Achunai Aharon Ahonai Amemar Amram Ashi Avraham Bibai Bishr Bustenai Chanan Chananiah
+		Chaninai Chisda Chisdai Chiyya Chofni Daniel David Dawud Dimi Dodai Dosa Elazar Eliyahu Faraj Giddel Guriya
+		Hai Halfon Hamnuna Harun Hasan Hiba Hilai Hillel Huna Ibrahim Idi Imran Ishaq Kafnai Kahana Khalaf Kimoi
+		Malcha Mansur Mari Mesharsheya Mevasser Mishael Moshe Musa Natan Natroi Natronai Nechemiah Nehilai Netira
+		Nissim Paltoi Pappa Pinchas Rabbah Rava Ravai Ravina Saadiah Sahl Said Salama Sasson Shalom Sherira Sheshet
+		Sheshna Shila Shimon Shlomo Shmuel Sulayman Tachlifa Tzadok Tzemach Ukban Yaakov Yahya Yaqub Yehoshua Yehudah
+		Yehudai Yeshua Yitzchak Yosef Yusuf Zakkai Zutra
+	}
+	female_names = {
+		Aziza Baraka Berakha Chana Dhahab Dinah Esther Fadla Ghaliya Hasna Homa Jamila Jawhara Karima Khulla Layla
+		Leah Malika Maymuna Miriam Mubaraka Muna Nafisa Najiya Rachel Rashida Rivkah Saada Sarah Sayyida Sitt_Bagdad
+		Sitt_al-Ahl Sitt_al-Banat Sitt_al-Dar Sitt_al-Husn Sitt_al-Iraq Sitt_al-Kull Sitt_al-Nas Sittan Sittuna Tamar
+		Thamira Turfa Wuhsha Yalta Yocheved
+	}
+
+	dynasty_of_location_prefix = "dynnp_of"
+
+	patronym_prefix_male = "dynnpat_pre_bar"
+	patronym_prefix_female = "dynnpat_pre_bat"
+	always_use_patronym = yes
+}
+
+# The Jews of Kerala (Cranganore and Cochin): the Hebrew names they kept, some in Malayalam form (Issuppu, Joseph
+# Rabban's name on the copper plates; Tamara), and the Yemenite and Iraqi names their contacts brought.
+name_list_kochinim = {
+
+	cadet_dynasty_names = {
+		"dynn_Rabban"
+		"dynn_Azar"
+		"dynn_Koder"
+		"dynn_Hallegua"
+		"dynn_Madayi"
+		"dynn_Mutath"
+		"dynn_Pallivathikal"
+		"dynn_Rahabi"
+		"dynn_Chorath"
+		"dynn_Sarphati"
+		"dynn_Japheth"
+		"dynn_Dharan"
+		"dynn_Oran"
+		"dynn_Cohen"
+		"dynn_Eliyahu"
+	}
+
+	dynasty_names = {
+		"dynn_Rabban"
+		"dynn_Azar"
+		"dynn_Koder"
+		"dynn_Hallegua"
+		"dynn_Madayi"
+		"dynn_Mutath"
+		"dynn_Pallivathikal"
+		"dynn_Rahabi"
+		"dynn_Chorath"
+		"dynn_Sarphati"
+		"dynn_Japheth"
+		"dynn_Dharan"
+		"dynn_Oran"
+		"dynn_Cohen"
+		"dynn_Eliyahu"
+	}
+
+	male_names = {
+		Aharon Avner Avraham Baruch Binyamin Chaim Chizkiyahu Daniel David Efrayim Elazar Eliyahu Ezra Issuppu Levi
+		Meir Menachem Menashe Mordechai Moshe Naftali Natan Nechemiah Pinchas Reuven Saadiah Salem Shabtai Shalom
+		Shimon Shlomo Shmuel Yaakov Yachya Yechezkel Yehoshua Yehudah Yisrael Yitzchak Yonah Yosef Zecharyah
+	}
+	female_names = {
+		Avigayil BatSheva Chana Devorah Dinah Esther Hadassah Leah Malka Miriam Rachel Rivkah Rut Sarah Shoshannah
+		Tamara Tziporah Yehudit Yocheved
+	}
+
+	dynasty_of_location_prefix = "dynnp_of"
+
+	patronym_prefix_male = "dynnpat_pre_ben"
+	patronym_prefix_female = "dynnpat_pre_bat"
+	always_use_patronym = yes
+}
+
+# The Hebrews of the Land of Israel: the names of the Bible's Israelites and of the Second Temple and the Mishnah
+# (Hasmoneans, priests, the Tannaim and the sages of Galilee). No foreign kings or gods, no villains.
+name_list_hebrew = {
+
+	cadet_dynasty_names = {
+		"dynn_Hashmonai"
+		"dynn_Ben_David"
+		"dynn_Ben_Aharon"
+		"dynn_Binyamin"
+		"dynn_Ben_Reuben"
+		"dynn_Cohen"
+		"dynn_Eliyahu"
+		"dynn_Yitzhak"
+		"dynn_Meir"
+		"dynn_Menahem"
+		"dynn_Nehemya"
+		"dynn_Yaakov"
+	}
+
+	dynasty_names = {
+		"dynn_Hashmonai"
+		"dynn_Ben_David"
+		"dynn_Ben_Aharon"
+		"dynn_Binyamin"
+		"dynn_Ben_Reuben"
+		"dynn_Cohen"
+		"dynn_Eliyahu"
+		"dynn_Yitzhak"
+		"dynn_Meir"
+		"dynn_Menahem"
+		"dynn_Nehemya"
+		"dynn_Yaakov"
+	}
+
+	male_names = {
+		Abbahu Adlai Adoniram Adoniyah Adriel Aharon Akiva Alexandros Amaryahu Amittai Ammi Ammiel Amos Amram Anaiah
+		Anan Anani Antigonos Arieh AriEl Asa Asaf Asher Assi Attai AvdiEl Avidan AviEl Avihu AvimaEl Avinadav Aviram
+		Avishay Aviyah Avner Avraham Avram Avshalom Azarel Azaryah Azazyahu AzriEl Barak Barukh Benayahu BetUel
+		Binyamin Boaz Brachiah Chaggai Chanan Chanina Chananyah Chanokh Chasdiah Chavaqquq Chiyya Chizkiyahu
+		 Chunyahu Dan Daniyyel David Delayahu Dimi Dosa Efrayim Ehud Eiran Eitan ElAzar ElYashiv Elchanan
+		Eli Eliav Eliel EliEzer Elifelet Elihu Elisha Elishua Eliyyahu Elkanah Elnatan Elon Enosh Evyatar
+		Ezer Ezra Gad Gamaliel GavriEl Gedalyahu Gemaryahu Gershom Gershon GidOn Hillel Hoshea Hyrkanos Iddo Ilai
+		Immanuel Ira IshmaEl Itamar Ittay Iyyov Kalev Kenanyahu Lael Lemuel Levi Machli MalAkhi Mattan Mattanyahu
+		 Mattityahu Menachem Menashsheh Meshullam MikhaEl Mikhah Mikhayahu Mordokhay Moshe Nachum
+		Nadav Naftali Natan Nechemyah Nechunya Neriah NetanEl Netanyahu Noach Ovadyah Oved Penuel Peretz Pinchas
+		QemuEl RafaEl Reuel Reuven Seraiah ShaUl Shammai SheAltiEl Shechanya Shelomoh Shem ShemaYah ShemuEl Shet
+		Shimon Shimshon Tarfon Tovi Toviyyah Tzadok Tzefanyah Tzidkiyahu TzuriEl Ulla Uri Uriyah UriyEl Uzzi Uzziel
+		Uzziyyah Yaakov YachleEl YachtzeEl Yachin YadoA Yadon Yair Yamin Yanai YaRah Yechezkel YechiEl Yedidyah Yefet
+		YehoAsh Yehochanan Yehonatan Yehoshafat Yehoshua Yehotzadak Yehoyada Yehoyakhin Yehu Yehudah Yehudi Yekonyah
+		YerachmeEl Yeriyahu YeshaYahu Yeshua Yiftach Yirmiyahu Yishai Yoav Yochanan Yose Zeira Zerubavel Ziza
+	}
+	female_names = {
+		Achinoam Alexandra Asenat Atarah Avigayil Avishag Avital Basmat BatSheva Beruriah Bilhah Bityah Chaggit
+		Channah Chavah CheftziBah Chuldah Devorah Dinah Ednah Efrat Elisheva Ester Hadassah Helena Hodiyah ImmaShalom
+		KetziAh Kimchit Leah MaAkhah Machlah Mariamne Martha MeheitavEl Merav Mikhal Miriam NaAmah NaOmi NoAh Rachel
+		Rivqah Rut Salome Sarah Shifra Shlomit Shlomtzion Shoshannah Shulammit Tamar Tirtzah Tzillah Tzipporah Tzivyah
+		Yael Yedidah Yehosheva Yehudit Yemima Yerushah Yocheved
+	}
+
+	dynasty_of_location_prefix = "dynnp_of"
+
+	patronym_prefix_male = "dynnpat_pre_ben"
+	patronym_prefix_female = "dynnpat_pre_bat"
+	always_use_patronym = yes
 }
 name_list_canaanite = {
 

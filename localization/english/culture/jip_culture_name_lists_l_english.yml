@@ -6,3 +6,7 @@
  dynnpat_pre_ben:0 "Ben "
  dynnpat_pre_bar:0 "Bar "
  dynnpat_pre_bat:0 "Bat "
+ # Jewish name lists (0.15)
+ name_list_bavlim:0 "Bavlim"
+ name_list_hebrew:0 "Hebrew"
+ name_list_kochinim:0 "Kochinim"

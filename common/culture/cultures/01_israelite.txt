@@ -90,7 +90,7 @@ bavlim = {
 		tradition_mobile_guards
 	}
 	
-	name_list = name_list_radhanite
+	name_list = name_list_bavlim
 	
 	coa_gfx = { israelite_group_coa_gfx }
 	building_gfx = { mena_building_gfx }
@@ -165,7 +165,7 @@ kochinim = {
 	
 	color = { 0.5 0.2 0.8 }
 
-	name_list = name_list_radhanite
+	name_list = name_list_kochinim
 
 	coa_gfx = { israelite_group_coa_gfx } 
 	building_gfx = { indian_building_gfx } 

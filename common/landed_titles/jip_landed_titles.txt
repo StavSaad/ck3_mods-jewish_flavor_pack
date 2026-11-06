@@ -129,6 +129,9 @@ e_arabia = {
 				name_list_ashkenazi = cn_qedar
 				name_list_sephardi = cn_qedar
 				name_list_radhanite = cn_qedar
+				name_list_hebrew = cn_qedar
+				name_list_bavlim = cn_qedar
+				name_list_kochinim = cn_qedar
 			}
 
 			c_al_jawf = {
@@ -182,6 +185,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_qedar
 					name_list_sephardi = cn_qedar
 					name_list_radhanite = cn_qedar
+					name_list_hebrew = cn_qedar
+					name_list_bavlim = cn_qedar
+					name_list_kochinim = cn_qedar
 				}
 
 				b_quraqir = {
@@ -194,6 +200,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_qedar
 						name_list_sephardi = cn_qedar
 						name_list_radhanite = cn_qedar
+						name_list_hebrew = cn_qedar
+						name_list_bavlim = cn_qedar
+						name_list_kochinim = cn_qedar
 					}
 				}
 				b_sirhan = {
@@ -214,6 +223,9 @@ e_arabia = {
 				name_list_ashkenazi = cn_ammon
 				name_list_sephardi = cn_ammon
 				name_list_radhanite = cn_ammon
+				name_list_hebrew = cn_ammon
+				name_list_bavlim = cn_ammon
+				name_list_kochinim = cn_ammon
 			}
 
 
@@ -225,6 +237,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_ammon
 					name_list_sephardi = cn_ammon
 					name_list_radhanite = cn_ammon
+					name_list_hebrew = cn_ammon
+					name_list_bavlim = cn_ammon
+					name_list_kochinim = cn_ammon
 				}
 
 				b_amman = {
@@ -237,6 +252,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_rabat_ammon
 						name_list_sephardi = cn_rabat_ammon
 						name_list_radhanite = cn_rabat_ammon
+						name_list_hebrew = cn_rabat_ammon
+						name_list_bavlim = cn_rabat_ammon
+						name_list_kochinim = cn_rabat_ammon
 					}
 				}
 				b_az-zarqa = {
@@ -249,6 +267,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_yabok
 						name_list_sephardi = cn_yabok
 						name_list_radhanite = cn_yabok
+						name_list_hebrew = cn_yabok
+						name_list_bavlim = cn_yabok
+						name_list_kochinim = cn_yabok
 					}
 				}
 				b_al-azraq = {
@@ -265,6 +286,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_moab
 					name_list_sephardi = cn_moab
 					name_list_radhanite = cn_moab
+					name_list_hebrew = cn_moab
+					name_list_bavlim = cn_moab
+					name_list_kochinim = cn_moab
 				}
 
 				b_maab = {
@@ -277,6 +301,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_dibon
 						name_list_sephardi = cn_dibon
 						name_list_radhanite = cn_dibon
+						name_list_hebrew = cn_dibon
+						name_list_bavlim = cn_dibon
+						name_list_kochinim = cn_dibon
 					}
 				}
 				b_zaiza = {
@@ -294,6 +321,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_arnon
 						name_list_sephardi = cn_arnon
 						name_list_radhanite = cn_arnon
+						name_list_hebrew = cn_arnon
+						name_list_bavlim = cn_arnon
+						name_list_kochinim = cn_arnon
 					}
 				}
 			}
@@ -344,6 +374,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_midyan
 					name_list_sephardi = cn_midyan
 					name_list_radhanite = cn_midyan
+					name_list_hebrew = cn_midyan
+					name_list_bavlim = cn_midyan
+					name_list_kochinim = cn_midyan
 				}
 
 				b_aqaba = {
@@ -376,6 +409,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_midyan
 						name_list_sephardi = cn_midyan
 						name_list_radhanite = cn_midyan
+						name_list_hebrew = cn_midyan
+						name_list_bavlim = cn_midyan
+						name_list_kochinim = cn_midyan
 					}
 				}
 				b_ziba = {
@@ -392,6 +428,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_maon
 					name_list_sephardi = cn_maon
 					name_list_radhanite = cn_maon
+					name_list_hebrew = cn_maon
+					name_list_bavlim = cn_maon
+					name_list_kochinim = cn_maon
 				}
 
 				b_maan = {
@@ -404,6 +443,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_maon
 						name_list_sephardi = cn_maon
 						name_list_radhanite = cn_maon
+						name_list_hebrew = cn_maon
+						name_list_bavlim = cn_maon
+						name_list_kochinim = cn_maon
 					}
 				}
 				b_al-humayma = {
@@ -473,6 +515,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_sin
 					name_list_sephardi = cn_sin
 					name_list_radhanite = cn_sin
+					name_list_hebrew = cn_sin
+					name_list_bavlim = cn_sin
+					name_list_kochinim = cn_sin
 				}
 
 				b_farama = {
@@ -485,6 +530,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_sin
 						name_list_sephardi = cn_sin
 						name_list_radhanite = cn_sin
+						name_list_hebrew = cn_sin
+						name_list_bavlim = cn_sin
+						name_list_kochinim = cn_sin
 					}
 				}
 				b_warrada = {
@@ -502,6 +550,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_rafiah
 						name_list_sephardi = cn_rafiah
 						name_list_radhanite = cn_rafiah
+						name_list_hebrew = cn_rafiah
+						name_list_bavlim = cn_rafiah
+						name_list_kochinim = cn_rafiah
 					}
 				}
 			}
@@ -552,6 +603,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_dizahav
 						name_list_sephardi = cn_dizahav
 						name_list_radhanite = cn_dizahav
+						name_list_hebrew = cn_dizahav
+						name_list_bavlim = cn_dizahav
+						name_list_kochinim = cn_dizahav
 					}
 				}
 			}
@@ -594,6 +648,9 @@ e_arabia = {
 				name_list_ashkenazi = cn_edom
 				name_list_sephardi = cn_edom
 				name_list_radhanite = cn_edom
+				name_list_hebrew = cn_edom
+				name_list_bavlim = cn_edom
+				name_list_kochinim = cn_edom
 			}
 
 			c_kerak = { #Al-Karak
@@ -604,6 +661,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_edom
 					name_list_sephardi = cn_edom
 					name_list_radhanite = cn_edom
+					name_list_hebrew = cn_edom
+					name_list_bavlim = cn_edom
+					name_list_kochinim = cn_edom
 				}
 
 				b_kerak = { #Al-Karak
@@ -616,6 +676,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_arabah
 						name_list_sephardi = cn_arabah
 						name_list_radhanite = cn_arabah
+						name_list_hebrew = cn_arabah
+						name_list_bavlim = cn_arabah
+						name_list_kochinim = cn_arabah
 					}
 				}
 				b_shawbak = { #AKA Monreal
@@ -628,6 +691,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_bozrah
 						name_list_sephardi = cn_bozrah
 						name_list_radhanite = cn_bozrah
+						name_list_hebrew = cn_bozrah
+						name_list_bavlim = cn_bozrah
+						name_list_kochinim = cn_bozrah
 					}
 				}
 				b_at-tafila = {
@@ -640,6 +706,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_tophel
 						name_list_sephardi = cn_tophel
 						name_list_radhanite = cn_tophel
+						name_list_hebrew = cn_tophel
+						name_list_bavlim = cn_tophel
+						name_list_kochinim = cn_tophel
 					}
 				}
 			}
@@ -655,6 +724,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_zoar
 						name_list_sephardi = cn_zoar
 						name_list_radhanite = cn_zoar
+						name_list_hebrew = cn_zoar
+						name_list_bavlim = cn_zoar
+						name_list_kochinim = cn_zoar
 					}
 				}
 				b_baidha-petra = { #Yes, this is Petra
@@ -666,6 +738,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_petra
 						name_list_sephardi = cn_petra
 						name_list_radhanite = cn_petra
+						name_list_hebrew = cn_petra
+						name_list_bavlim = cn_petra
+						name_list_kochinim = cn_petra
 					}
 				}
 				b_arandal = {
@@ -677,6 +752,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_paran
 						name_list_sephardi = cn_paran
 						name_list_radhanite = cn_paran
+						name_list_hebrew = cn_paran
+						name_list_bavlim = cn_paran
+						name_list_kochinim = cn_paran
 					}
 				}
 				b_aila = { #AKA Eilat
@@ -688,6 +766,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_eilat
 						name_list_sephardi = cn_eilat
 						name_list_radhanite = cn_eilat
+						name_list_hebrew = cn_eilat
+						name_list_bavlim = cn_eilat
+						name_list_kochinim = cn_eilat
 					}
 				}
 			}
@@ -703,6 +784,9 @@ e_arabia = {
 				name_list_ashkenazi = cn_judea
 				name_list_sephardi = cn_judea
 				name_list_radhanite = cn_judea
+				name_list_hebrew = cn_judea
+				name_list_bavlim = cn_judea
+				name_list_kochinim = cn_judea
 			}
 
 			c_jerusalem = {
@@ -724,6 +808,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_lod
 						name_list_sephardi = cn_lod
 						name_list_radhanite = cn_lod
+						name_list_hebrew = cn_lod
+						name_list_bavlim = cn_lod
+						name_list_kochinim = cn_lod
 					}
 				}
 				b_nablus = {
@@ -736,6 +823,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_shechem
 						name_list_sephardi = cn_shechem
 						name_list_radhanite = cn_shechem
+						name_list_hebrew = cn_shechem
+						name_list_bavlim = cn_shechem
+						name_list_kochinim = cn_shechem
 					}
 				}
 				b_hebron = {
@@ -752,6 +842,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_azza
 					name_list_sephardi = cn_azza
 					name_list_radhanite = cn_azza
+					name_list_hebrew = cn_azza
+					name_list_bavlim = cn_azza
+					name_list_kochinim = cn_azza
 				}
 
 				b_ghazza = {
@@ -763,6 +856,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_azza
 						name_list_sephardi = cn_azza
 						name_list_radhanite = cn_azza
+						name_list_hebrew = cn_azza
+						name_list_bavlim = cn_azza
+						name_list_kochinim = cn_azza
 					}
 				}
 				b_ascalon = {
@@ -774,6 +870,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_ashkelon
 						name_list_sephardi = cn_ashkelon
 						name_list_radhanite = cn_ashkelon
+						name_list_hebrew = cn_ashkelon
+						name_list_bavlim = cn_ashkelon
+						name_list_kochinim = cn_ashkelon
 					}
 				}
 			}
@@ -795,6 +894,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_dor
 						name_list_sephardi = cn_dor
 						name_list_radhanite = cn_dor
+						name_list_hebrew = cn_dor
+						name_list_bavlim = cn_dor
+						name_list_kochinim = cn_dor
 					}
 				}
 			}
@@ -810,6 +912,9 @@ e_arabia = {
 				name_list_ashkenazi = cn_galil
 				name_list_sephardi = cn_galil
 				name_list_radhanite = cn_galil
+				name_list_hebrew = cn_galil
+				name_list_bavlim = cn_galil
+				name_list_kochinim = cn_galil
 			}
 
 			c_tiberias = {
@@ -830,6 +935,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_dan
 						name_list_sephardi = cn_dan
 						name_list_radhanite = cn_dan
+						name_list_hebrew = cn_dan
+						name_list_bavlim = cn_dan
+						name_list_kochinim = cn_dan
 					}
 				}
 			}
@@ -841,6 +949,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_akko
 					name_list_sephardi = cn_akko
 					name_list_radhanite = cn_akko
+					name_list_hebrew = cn_akko
+					name_list_bavlim = cn_akko
+					name_list_kochinim = cn_akko
 				}
 
 				b_acre = {
@@ -852,6 +963,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_akko
 						name_list_sephardi = cn_akko
 						name_list_radhanite = cn_akko
+						name_list_hebrew = cn_akko
+						name_list_bavlim = cn_akko
+						name_list_kochinim = cn_akko
 					}
 				}
 				b_tyre = {
@@ -868,6 +982,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_gilead
 					name_list_sephardi = cn_gilead
 					name_list_radhanite = cn_gilead
+					name_list_hebrew = cn_gilead
+					name_list_bavlim = cn_gilead
+					name_list_kochinim = cn_gilead
 				}
 
 				b_irbid = {
@@ -880,6 +997,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_bashan
 						name_list_sephardi = cn_bashan
 						name_list_radhanite = cn_bashan
+						name_list_hebrew = cn_bashan
+						name_list_bavlim = cn_bashan
+						name_list_kochinim = cn_bashan
 					}
 				}
 				b_jarash = {
@@ -892,6 +1012,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_gerasa
 						name_list_sephardi = cn_gerasa
 						name_list_radhanite = cn_gerasa
+						name_list_hebrew = cn_gerasa
+						name_list_bavlim = cn_gerasa
+						name_list_kochinim = cn_gerasa
 					}
 				}
 			}
@@ -907,6 +1030,9 @@ e_arabia = {
 			name_list_ashkenazi = cn_aram
 			name_list_sephardi = cn_aram
 			name_list_radhanite = cn_aram
+			name_list_hebrew = cn_aram
+			name_list_bavlim = cn_aram
+			name_list_kochinim = cn_aram
 			name_list_canaanite = cn_aram
 			name_list_assyrian = cn_eber_nari
 			name_list_aramean = cn_aram
@@ -923,6 +1049,9 @@ e_arabia = {
 				name_list_ashkenazi = cn_aram_zobah
 				name_list_sephardi = cn_aram_zobah
 				name_list_radhanite = cn_aram_zobah
+				name_list_hebrew = cn_aram_zobah
+				name_list_bavlim = cn_aram_zobah
+				name_list_kochinim = cn_aram_zobah
 				name_list_assyrian = cn_bit_agusi
 				name_list_aramean = cn_arpad
 				name_list_nabati = cn_arpad
@@ -936,6 +1065,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_aram_zobah
 					name_list_sephardi = cn_aram_zobah
 					name_list_radhanite = cn_aram_zobah
+					name_list_hebrew = cn_aram_zobah
+					name_list_bavlim = cn_aram_zobah
+					name_list_kochinim = cn_aram_zobah
 					name_list_assyrian = cn_halab
 					name_list_aramean = cn_halab
 					name_list_nabati = cn_halab
@@ -967,6 +1099,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_hazazu
 						name_list_sephardi = cn_hazazu
 						name_list_radhanite = cn_hazazu
+						name_list_hebrew = cn_hazazu
+						name_list_bavlim = cn_hazazu
+						name_list_kochinim = cn_hazazu
 						name_list_assyrian = cn_hazazu
 						name_list_aramean = cn_hazaz
 						name_list_nabati = cn_hazaz
@@ -982,6 +1117,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_manbug
 						name_list_sephardi = cn_manbug
 						name_list_radhanite = cn_manbug
+						name_list_hebrew = cn_manbug
+						name_list_bavlim = cn_manbug
+						name_list_kochinim = cn_manbug
 						name_list_assyrian = cn_nappigu
 						name_list_aramean = cn_mabbug
 						name_list_nabati = cn_mabbug
@@ -1041,6 +1179,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_qennesharim
 					name_list_sephardi = cn_qennesharim
 					name_list_radhanite = cn_qennesharim
+					name_list_hebrew = cn_qennesharim
+					name_list_bavlim = cn_qennesharim
+					name_list_kochinim = cn_qennesharim
 					name_list_assyrian = cn_qennesrin
 					name_list_aramean = cn_qennesrin
 					name_list_nabati = cn_qennesrin
@@ -1056,6 +1197,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_qennesharim
 						name_list_sephardi = cn_qennesharim
 						name_list_radhanite = cn_qennesharim
+						name_list_hebrew = cn_qennesharim
+						name_list_bavlim = cn_qennesharim
+						name_list_kochinim = cn_qennesharim
 						name_list_assyrian = cn_qennesrin
 						name_list_aramean = cn_qennesrin
 						name_list_nabati = cn_qennesrin
@@ -1084,6 +1228,9 @@ e_arabia = {
 				name_list_ashkenazi = cn_carchemish
 				name_list_sephardi = cn_carchemish
 				name_list_radhanite = cn_carchemish
+				name_list_hebrew = cn_carchemish
+				name_list_bavlim = cn_carchemish
+				name_list_kochinim = cn_carchemish
 				name_list_assyrian = cn_carchemish
 				name_list_aramean = cn_osroene
 				name_list_nabati = cn_osroene
@@ -1097,6 +1244,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_adme
 					name_list_sephardi = cn_adme
 					name_list_radhanite = cn_adme
+					name_list_hebrew = cn_adme
+					name_list_bavlim = cn_adme
+					name_list_kochinim = cn_adme
 					name_list_assyrian = cn_adme
 					name_list_aramean = cn_urhay
 					name_list_nabati = cn_urhay
@@ -1112,6 +1262,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_adme
 						name_list_sephardi = cn_adme
 						name_list_radhanite = cn_adme
+						name_list_hebrew = cn_adme
+						name_list_bavlim = cn_adme
+						name_list_kochinim = cn_adme
 						name_list_assyrian = cn_adme
 						name_list_aramean = cn_urhay
 						name_list_nabati = cn_urhay
@@ -1189,6 +1342,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_carchemish
 					name_list_sephardi = cn_carchemish
 					name_list_radhanite = cn_carchemish
+					name_list_hebrew = cn_carchemish
+					name_list_bavlim = cn_carchemish
+					name_list_kochinim = cn_carchemish
 					name_list_assyrian = cn_carchemish
 					name_list_aramean = cn_carchemish
 					name_list_nabati = cn_carchemish
@@ -1214,6 +1370,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_carchemish
 						name_list_sephardi = cn_carchemish
 						name_list_radhanite = cn_carchemish
+						name_list_hebrew = cn_carchemish
+						name_list_bavlim = cn_carchemish
+						name_list_kochinim = cn_carchemish
 						name_list_assyrian = cn_carchemish
 						name_list_aramean = cn_carchemish
 						name_list_nabati = cn_carchemish
@@ -1238,6 +1397,9 @@ e_arabia = {
 				name_list_ashkenazi = cn_zobah
 				name_list_sephardi = cn_zobah
 				name_list_radhanite = cn_zobah
+				name_list_hebrew = cn_zobah
+				name_list_bavlim = cn_zobah
+				name_list_kochinim = cn_zobah
 				name_list_assyrian = cn_subat
 				name_list_aramean = cn_zobah
 				name_list_nabati = cn_zobah
@@ -1252,6 +1414,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_zobah
 					name_list_sephardi = cn_zobah
 					name_list_radhanite = cn_zobah
+					name_list_hebrew = cn_zobah
+					name_list_bavlim = cn_zobah
+					name_list_kochinim = cn_zobah
 					name_list_assyrian = cn_subat
 					name_list_aramean = cn_hems
 					name_list_nabati = cn_hems
@@ -1268,6 +1433,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_zobah
 						name_list_sephardi = cn_zobah
 						name_list_radhanite = cn_zobah
+						name_list_hebrew = cn_zobah
+						name_list_bavlim = cn_zobah
+						name_list_kochinim = cn_zobah
 						name_list_assyrian = cn_subat
 						name_list_aramean = cn_hems
 						name_list_nabati = cn_hems
@@ -1297,6 +1465,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_sezer
 					name_list_sephardi = cn_sezer
 					name_list_radhanite = cn_sezer
+					name_list_hebrew = cn_sezer
+					name_list_bavlim = cn_sezer
+					name_list_kochinim = cn_sezer
 					name_list_assyrian = cn_sezer
 					name_list_aramean = cn_sezer
 					name_list_nabati = cn_sezer
@@ -1313,6 +1484,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_sezer
 						name_list_sephardi = cn_sezer
 						name_list_radhanite = cn_sezer
+						name_list_hebrew = cn_sezer
+						name_list_bavlim = cn_sezer
+						name_list_kochinim = cn_sezer
 						name_list_assyrian = cn_sezer
 						name_list_aramean = cn_sezer
 						name_list_nabati = cn_sezer
@@ -1328,6 +1502,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_mansuate
 						name_list_sephardi = cn_mansuate
 						name_list_radhanite = cn_mansuate
+						name_list_hebrew = cn_mansuate
+						name_list_bavlim = cn_mansuate
+						name_list_kochinim = cn_mansuate
 						name_list_assyrian = cn_mansuate
 						name_list_aramean = cn_mansuate
 						name_list_nabati = cn_mansuate
@@ -1342,6 +1519,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_hamath
 					name_list_sephardi = cn_hamath
 					name_list_radhanite = cn_hamath
+					name_list_hebrew = cn_hamath
+					name_list_bavlim = cn_hamath
+					name_list_kochinim = cn_hamath
 					name_list_assyrian = cn_hamath
 					name_list_aramean = cn_hamath
 					name_list_nabati = cn_hamath
@@ -1357,6 +1537,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_hamath
 						name_list_sephardi = cn_hamath
 						name_list_radhanite = cn_hamath
+						name_list_hebrew = cn_hamath
+						name_list_bavlim = cn_hamath
+						name_list_kochinim = cn_hamath
 						name_list_assyrian = cn_hamath
 						name_list_aramean = cn_hamath
 						name_list_nabati = cn_hamath
@@ -1372,6 +1555,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_luash
 						name_list_sephardi = cn_luash
 						name_list_radhanite = cn_luash
+						name_list_hebrew = cn_luash
+						name_list_bavlim = cn_luash
+						name_list_kochinim = cn_luash
 						name_list_assyrian = cn_luhuti
 						name_list_aramean = cn_luash
 						name_list_nabati = cn_luash
@@ -1387,6 +1573,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_kfartav
 						name_list_sephardi = cn_kfartav
 						name_list_radhanite = cn_kfartav
+						name_list_hebrew = cn_kfartav
+						name_list_bavlim = cn_kfartav
+						name_list_kochinim = cn_kfartav
 						name_list_assyrian = cn_kfartav
 						name_list_aramean = cn_kfartav
 						name_list_nabati = cn_kfartav
@@ -1429,6 +1618,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_ramitha
 						name_list_sephardi = cn_ramitha
 						name_list_radhanite = cn_ramitha
+						name_list_hebrew = cn_ramitha
+						name_list_bavlim = cn_ramitha
+						name_list_kochinim = cn_ramitha
 						name_list_assyrian = cn_ramitha
 						name_list_aramean = cn_ramitha
 						name_list_nabati = cn_ramitha
@@ -1499,6 +1691,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_biruta
 					name_list_sephardi = cn_biruta
 					name_list_radhanite = cn_biruta
+					name_list_hebrew = cn_biruta
+					name_list_bavlim = cn_biruta
+					name_list_kochinim = cn_biruta
 				}
 
 				b_beirut = {
@@ -1512,6 +1707,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_biruta
 						name_list_sephardi = cn_biruta
 						name_list_radhanite = cn_biruta
+						name_list_hebrew = cn_biruta
+						name_list_bavlim = cn_biruta
+						name_list_kochinim = cn_biruta
 					}
 				}
 				b_saida = { #Sidon
@@ -1524,6 +1722,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_sidon
 						name_list_sephardi = cn_sidon
 						name_list_radhanite = cn_sidon
+						name_list_hebrew = cn_sidon
+						name_list_bavlim = cn_sidon
+						name_list_kochinim = cn_sidon
 						name_list_assyrian = cn_sidunu
 					}
 				}
@@ -1536,6 +1737,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_geval
 					name_list_sephardi = cn_geval
 					name_list_radhanite = cn_geval
+					name_list_hebrew = cn_geval
+					name_list_bavlim = cn_geval
+					name_list_kochinim = cn_geval
 				}
 
 				b_syrtripolis = {
@@ -1548,6 +1752,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_geval
 						name_list_sephardi = cn_geval
 						name_list_radhanite = cn_geval
+						name_list_hebrew = cn_geval
+						name_list_bavlim = cn_geval
+						name_list_kochinim = cn_geval
 					}
 				}
 				b_antartus = {
@@ -1560,6 +1767,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_arvad
 						name_list_sephardi = cn_arvad
 						name_list_radhanite = cn_arvad
+						name_list_hebrew = cn_arvad
+						name_list_bavlim = cn_arvad
+						name_list_kochinim = cn_arvad
 						name_list_assyrian = cn_arwada
 						name_list_aramean = cn_arwad
 						name_list_nabati = cn_arwad
@@ -1609,6 +1819,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_neve
 						name_list_sephardi = cn_neve
 						name_list_radhanite = cn_neve
+						name_list_hebrew = cn_neve
+						name_list_bavlim = cn_neve
+						name_list_kochinim = cn_neve
 						name_list_assyrian = cn_neve
 						name_list_aramean = cn_neve
 						name_list_nabati = cn_neve
@@ -1629,6 +1842,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_geshur
 						name_list_sephardi = cn_geshur
 						name_list_radhanite = cn_geshur
+						name_list_hebrew = cn_geshur
+						name_list_bavlim = cn_geshur
+						name_list_kochinim = cn_geshur
 						name_list_assyrian = cn_geshur
 						name_list_aramean = cn_geshur
 						name_list_nabati = cn_geshur
@@ -1678,6 +1894,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_iturea
 						name_list_sephardi = cn_iturea
 						name_list_radhanite = cn_iturea
+						name_list_hebrew = cn_iturea
+						name_list_bavlim = cn_iturea
+						name_list_kochinim = cn_iturea
 						name_list_assyrian = cn_iturea
 						name_list_aramean = cn_iturea
 						name_list_nabati = cn_iturea
@@ -1706,6 +1925,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_salcah
 						name_list_sephardi = cn_salcah
 						name_list_radhanite = cn_salcah
+						name_list_hebrew = cn_salcah
+						name_list_bavlim = cn_salcah
+						name_list_kochinim = cn_salcah
 						name_list_assyrian = cn_salcah
 						name_list_aramean = cn_salcah
 						name_list_nabati = cn_salcah
@@ -1721,6 +1943,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_canatha
 						name_list_sephardi = cn_canatha
 						name_list_radhanite = cn_canatha
+						name_list_hebrew = cn_canatha
+						name_list_bavlim = cn_canatha
+						name_list_kochinim = cn_canatha
 						name_list_assyrian = cn_canatha
 						name_list_aramean = cn_canatha
 						name_list_nabati = cn_canatha
@@ -1739,6 +1964,9 @@ e_arabia = {
 				name_list_ashkenazi = cn_tadmur
 				name_list_sephardi = cn_tadmur
 				name_list_radhanite = cn_tadmur
+				name_list_hebrew = cn_tadmur
+				name_list_bavlim = cn_tadmur
+				name_list_kochinim = cn_tadmur
 				name_list_assyrian = cn_tadmar
 				name_list_aramean = cn_tadmur
 				name_list_nabati = cn_tadmur
@@ -1752,6 +1980,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_tadmur
 					name_list_sephardi = cn_tadmur
 					name_list_radhanite = cn_tadmur
+					name_list_hebrew = cn_tadmur
+					name_list_bavlim = cn_tadmur
+					name_list_kochinim = cn_tadmur
 					name_list_assyrian = cn_tadmar
 					name_list_aramean = cn_tadmur
 					name_list_nabati = cn_tadmur
@@ -1767,6 +1998,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_tadmur
 						name_list_sephardi = cn_tadmur
 						name_list_radhanite = cn_tadmur
+						name_list_hebrew = cn_tadmur
+						name_list_bavlim = cn_tadmur
+						name_list_kochinim = cn_tadmur
 						name_list_assyrian = cn_tadmar
 						name_list_aramean = cn_tadmur
 						name_list_nabati = cn_tadmur
@@ -1805,6 +2039,9 @@ e_arabia = {
 					name_list_ashkenazi = cn_kiryataim
 					name_list_sephardi = cn_kiryataim
 					name_list_radhanite = cn_kiryataim
+					name_list_hebrew = cn_kiryataim
+					name_list_bavlim = cn_kiryataim
+					name_list_kochinim = cn_kiryataim
 					name_list_assyrian = cn_qiryatain
 					name_list_aramean = cn_qiryatain
 					name_list_nabati = cn_qiryatain
@@ -1820,6 +2057,9 @@ e_arabia = {
 						name_list_ashkenazi = cn_kiryataim
 						name_list_sephardi = cn_kiryataim
 						name_list_radhanite = cn_kiryataim
+						name_list_hebrew = cn_kiryataim
+						name_list_bavlim = cn_kiryataim
+						name_list_kochinim = cn_kiryataim
 						name_list_assyrian = cn_qiryatain
 						name_list_aramean = cn_qiryatain
 						name_list_nabati = cn_qiryatain
@@ -1897,6 +2137,9 @@ e_canaan = {
 			name_list_ashkenazi = cn_geval
 			name_list_sephardi = cn_geval
 			name_list_radhanite = cn_geval
+			name_list_hebrew = cn_geval
+			name_list_bavlim = cn_geval
+			name_list_kochinim = cn_geval
 		}
 
 		can_create = {
@@ -2306,6 +2549,9 @@ e_persia = {
 			name_list_ashkenazi = cn_aram_naharaim
 			name_list_sephardi = cn_aram_naharaim
 			name_list_radhanite = cn_aram_naharaim
+			name_list_hebrew = cn_aram_naharaim
+			name_list_bavlim = cn_aram_naharaim
+			name_list_kochinim = cn_aram_naharaim
 			name_list_assyrian = cn_ashur
 			name_list_aramean = cn_ashur
 			name_list_nabati = cn_ashur
@@ -2321,6 +2567,9 @@ e_persia = {
 				name_list_ashkenazi = cn_ashur
 				name_list_sephardi = cn_ashur
 				name_list_radhanite = cn_ashur
+				name_list_hebrew = cn_ashur
+				name_list_bavlim = cn_ashur
+				name_list_kochinim = cn_ashur
 				name_list_assyrian = cn_hanigalbat
 				name_list_aramean = cn_beth_arbaye
 				name_list_nabati = cn_beth_arbaye
@@ -2334,6 +2583,9 @@ e_persia = {
 					name_list_ashkenazi = cn_ashur
 					name_list_sephardi = cn_ashur
 					name_list_radhanite = cn_ashur
+					name_list_hebrew = cn_ashur
+					name_list_bavlim = cn_ashur
+					name_list_kochinim = cn_ashur
 					name_list_assyrian = cn_athor
 					name_list_aramean = cn_athor
 					name_list_nabati = cn_athor
@@ -2349,6 +2601,9 @@ e_persia = {
 						name_list_ashkenazi = cn_ashur
 						name_list_sephardi = cn_ashur
 						name_list_radhanite = cn_ashur
+						name_list_hebrew = cn_ashur
+						name_list_bavlim = cn_ashur
+						name_list_kochinim = cn_ashur
 						name_list_assyrian = cn_athor
 						name_list_aramean = cn_athor
 						name_list_nabati = cn_athor
@@ -2404,6 +2659,9 @@ e_persia = {
 					name_list_ashkenazi = cn_nineveh
 					name_list_sephardi = cn_nineveh
 					name_list_radhanite = cn_nineveh
+					name_list_hebrew = cn_nineveh
+					name_list_bavlim = cn_nineveh
+					name_list_kochinim = cn_nineveh
 					name_list_assyrian = cn_ninua
 					name_list_aramean = cn_ninwe
 					name_list_nabati = cn_ninwe
@@ -2419,6 +2677,9 @@ e_persia = {
 						name_list_ashkenazi = cn_nineveh
 						name_list_sephardi = cn_nineveh
 						name_list_radhanite = cn_nineveh
+						name_list_hebrew = cn_nineveh
+						name_list_bavlim = cn_nineveh
+						name_list_kochinim = cn_nineveh
 						name_list_assyrian = cn_ninua
 						name_list_aramean = cn_ninwe
 						name_list_nabati = cn_ninwe
@@ -2448,6 +2709,9 @@ e_persia = {
 					name_list_ashkenazi = cn_shingar
 					name_list_sephardi = cn_shingar
 					name_list_radhanite = cn_shingar
+					name_list_hebrew = cn_shingar
+					name_list_bavlim = cn_shingar
+					name_list_kochinim = cn_shingar
 					name_list_assyrian = cn_shingar
 					name_list_aramean = cn_shingar
 					name_list_nabati = cn_shingar
@@ -2463,6 +2727,9 @@ e_persia = {
 						name_list_ashkenazi = cn_shingar
 						name_list_sephardi = cn_shingar
 						name_list_radhanite = cn_shingar
+						name_list_hebrew = cn_shingar
+						name_list_bavlim = cn_shingar
+						name_list_kochinim = cn_shingar
 						name_list_assyrian = cn_shingar
 						name_list_aramean = cn_shingar
 						name_list_nabati = cn_shingar
@@ -2539,6 +2806,9 @@ e_persia = {
 					name_list_ashkenazi = cn_habor
 					name_list_sephardi = cn_habor
 					name_list_radhanite = cn_habor
+					name_list_hebrew = cn_habor
+					name_list_bavlim = cn_habor
+					name_list_kochinim = cn_habor
 					name_list_assyrian = cn_habor
 					name_list_aramean = cn_habor
 					name_list_nabati = cn_habor
@@ -2587,6 +2857,9 @@ e_persia = {
 					name_list_ashkenazi = cn_upperhabor
 					name_list_sephardi = cn_upperhabor
 					name_list_radhanite = cn_upperhabor
+					name_list_hebrew = cn_upperhabor
+					name_list_bavlim = cn_upperhabor
+					name_list_kochinim = cn_upperhabor
 					name_list_assyrian = cn_bit_bahiani
 					name_list_aramean = cn_upperhabor
 					name_list_nabati = cn_upperhabor
@@ -2602,6 +2875,9 @@ e_persia = {
 						name_list_ashkenazi = cn_gozan
 						name_list_sephardi = cn_gozan
 						name_list_radhanite = cn_gozan
+						name_list_hebrew = cn_gozan
+						name_list_bavlim = cn_gozan
+						name_list_kochinim = cn_gozan
 						name_list_assyrian = cn_guzana
 						name_list_aramean = cn_gozan
 						name_list_nabati = cn_gozan
@@ -2628,6 +2904,9 @@ e_persia = {
 						name_list_ashkenazi = cn_kfartut
 						name_list_sephardi = cn_kfartut
 						name_list_radhanite = cn_kfartut
+						name_list_hebrew = cn_kfartut
+						name_list_bavlim = cn_kfartut
+						name_list_kochinim = cn_kfartut
 						name_list_assyrian = cn_kfartut
 						name_list_aramean = cn_kfartut
 						name_list_nabati = cn_kfartut
@@ -2646,6 +2925,9 @@ e_persia = {
 				name_list_ashkenazi = cn_padanaram
 				name_list_sephardi = cn_padanaram
 				name_list_radhanite = cn_padanaram
+				name_list_hebrew = cn_padanaram
+				name_list_bavlim = cn_padanaram
+				name_list_kochinim = cn_padanaram
 				name_list_assyrian = cn_balihu
 				name_list_aramean = cn_padanaram
 				name_list_nabati = cn_padanaram
@@ -2723,6 +3005,9 @@ e_persia = {
 					name_list_ashkenazi = cn_bethadini
 					name_list_sephardi = cn_bethadini
 					name_list_radhanite = cn_bethadini
+					name_list_hebrew = cn_bethadini
+					name_list_bavlim = cn_bethadini
+					name_list_kochinim = cn_bethadini
 					name_list_assyrian = cn_bit_adini
 					name_list_aramean = cn_bethadini
 					name_list_nabati = cn_bethadini
@@ -2965,6 +3250,9 @@ e_persia = {
 						name_list_ashkenazi = cn_mari
 						name_list_sephardi = cn_mari
 						name_list_radhanite = cn_mari
+						name_list_hebrew = cn_mari
+						name_list_bavlim = cn_mari
+						name_list_kochinim = cn_mari
 						name_list_assyrian = cn_mari
 						name_list_aramean = cn_mari
 						name_list_nabati = cn_mari
@@ -3032,6 +3320,9 @@ e_persia = {
 					name_list_ashkenazi = cn_arbela
 					name_list_sephardi = cn_arbela
 					name_list_radhanite = cn_arbela
+					name_list_hebrew = cn_arbela
+					name_list_bavlim = cn_arbela
+					name_list_kochinim = cn_arbela
 					name_list_assyrian = cn_arbail
 					name_list_aramean = cn_arbel
 					name_list_nabati = cn_arbel
@@ -3047,6 +3338,9 @@ e_persia = {
 						name_list_ashkenazi = cn_arbela
 						name_list_sephardi = cn_arbela
 						name_list_radhanite = cn_arbela
+						name_list_hebrew = cn_arbela
+						name_list_bavlim = cn_arbela
+						name_list_kochinim = cn_arbela
 						name_list_assyrian = cn_arbail
 						name_list_aramean = cn_arbel
 						name_list_nabati = cn_arbel
@@ -3137,6 +3431,9 @@ e_persia = {
 			name_list_ashkenazi = cn_bavel
 			name_list_sephardi = cn_bavel
 			name_list_radhanite = cn_bavel
+			name_list_hebrew = cn_bavel
+			name_list_bavlim = cn_bavel
+			name_list_kochinim = cn_bavel
 			name_list_assyrian = cn_karduniash
 			name_list_aramean = cn_babylon
 			name_list_nabati = cn_babylon
@@ -3185,6 +3482,9 @@ e_persia = {
 					name_list_ashkenazi = cn_khalmanu
 					name_list_sephardi = cn_khalmanu
 					name_list_radhanite = cn_khalmanu
+					name_list_hebrew = cn_khalmanu
+					name_list_bavlim = cn_khalmanu
+					name_list_kochinim = cn_khalmanu
 					name_list_assyrian = cn_khalmanu
 				}
 
@@ -3198,6 +3498,9 @@ e_persia = {
 						name_list_ashkenazi = cn_khalmanu
 						name_list_sephardi = cn_khalmanu
 						name_list_radhanite = cn_khalmanu
+						name_list_hebrew = cn_khalmanu
+						name_list_bavlim = cn_khalmanu
+						name_list_kochinim = cn_khalmanu
 						name_list_assyrian = cn_khalmanu
 					}
 				}
@@ -3225,6 +3528,9 @@ e_persia = {
 					name_list_ashkenazi = cn_arrapha
 					name_list_sephardi = cn_arrapha
 					name_list_radhanite = cn_arrapha
+					name_list_hebrew = cn_arrapha
+					name_list_bavlim = cn_arrapha
+					name_list_kochinim = cn_arrapha
 					name_list_assyrian = cn_arrapha
 					name_list_aramean = cn_karka_d_beth_slokh
 					name_list_nabati = cn_karka_d_beth_slokh
@@ -3240,6 +3546,9 @@ e_persia = {
 						name_list_ashkenazi = cn_arrapha
 						name_list_sephardi = cn_arrapha
 						name_list_radhanite = cn_arrapha
+						name_list_hebrew = cn_arrapha
+						name_list_bavlim = cn_arrapha
+						name_list_kochinim = cn_arrapha
 						name_list_assyrian = cn_arrapha
 						name_list_aramean = cn_karka_d_beth_slokh
 						name_list_nabati = cn_karka_d_beth_slokh
@@ -3304,6 +3613,9 @@ e_persia = {
 				name_list_ashkenazi = cn_kashkar
 				name_list_sephardi = cn_kashkar
 				name_list_radhanite = cn_kashkar
+				name_list_hebrew = cn_kashkar
+				name_list_bavlim = cn_kashkar
+				name_list_kochinim = cn_kashkar
 				name_list_assyrian = cn_kashkar
 				name_list_aramean = cn_kashkar
 				name_list_nabati = cn_kashkar
@@ -3317,6 +3629,9 @@ e_persia = {
 					name_list_ashkenazi = cn_kashkar
 					name_list_sephardi = cn_kashkar
 					name_list_radhanite = cn_kashkar
+					name_list_hebrew = cn_kashkar
+					name_list_bavlim = cn_kashkar
+					name_list_kochinim = cn_kashkar
 					name_list_assyrian = cn_kashkar
 					name_list_aramean = cn_kashkar
 					name_list_nabati = cn_kashkar
@@ -3337,6 +3652,9 @@ e_persia = {
 						name_list_ashkenazi = cn_kashkar
 						name_list_sephardi = cn_kashkar
 						name_list_radhanite = cn_kashkar
+						name_list_hebrew = cn_kashkar
+						name_list_bavlim = cn_kashkar
+						name_list_kochinim = cn_kashkar
 						name_list_assyrian = cn_kashkar
 						name_list_aramean = cn_kashkar
 						name_list_nabati = cn_kashkar
@@ -3607,6 +3925,9 @@ e_persia = {
 				name_list_ashkenazi = cn_bavel
 				name_list_sephardi = cn_bavel
 				name_list_radhanite = cn_bavel
+				name_list_hebrew = cn_bavel
+				name_list_bavlim = cn_bavel
+				name_list_kochinim = cn_bavel
 				name_list_assyrian = cn_akkad
 			}
 
@@ -3617,6 +3938,9 @@ e_persia = {
 					name_list_ashkenazi = cn_bavel
 					name_list_sephardi = cn_bavel
 					name_list_radhanite = cn_bavel
+					name_list_hebrew = cn_bavel
+					name_list_bavlim = cn_bavel
+					name_list_kochinim = cn_bavel
 				}
 
 				b_baghdad = {
@@ -3628,6 +3952,9 @@ e_persia = {
 						name_list_ashkenazi = cn_bavel
 						name_list_sephardi = cn_bavel
 						name_list_radhanite = cn_bavel
+						name_list_hebrew = cn_bavel
+						name_list_bavlim = cn_bavel
+						name_list_kochinim = cn_bavel
 					}
 				}
 				b_baquba = {
@@ -3655,6 +3982,9 @@ e_persia = {
 						name_list_ashkenazi = cn_sura
 						name_list_sephardi = cn_sura
 						name_list_radhanite = cn_sura
+						name_list_hebrew = cn_sura
+						name_list_bavlim = cn_sura
+						name_list_kochinim = cn_sura
 					}
 				}
 				b_sarsar = {
@@ -3690,6 +4020,9 @@ e_persia = {
 					name_list_ashkenazi = cn_pumbedita
 					name_list_sephardi = cn_pumbedita
 					name_list_radhanite = cn_pumbedita
+					name_list_hebrew = cn_pumbedita
+					name_list_bavlim = cn_pumbedita
+					name_list_kochinim = cn_pumbedita
 					name_list_assyrian = cn_piroz_shabur
 					name_list_aramean = cn_piroz_shabur
 					name_list_nabati = cn_piroz_shabur
@@ -3705,6 +4038,9 @@ e_persia = {
 						name_list_ashkenazi = cn_pumbedita
 						name_list_sephardi = cn_pumbedita
 						name_list_radhanite = cn_pumbedita
+						name_list_hebrew = cn_pumbedita
+						name_list_bavlim = cn_pumbedita
+						name_list_kochinim = cn_pumbedita
 						name_list_assyrian = cn_piroz_shabur
 						name_list_aramean = cn_piroz_shabur
 						name_list_nabati = cn_piroz_shabur
@@ -3742,6 +4078,9 @@ e_persia = {
 					name_list_ashkenazi = cn_bethdaraye
 					name_list_sephardi = cn_bethdaraye
 					name_list_radhanite = cn_bethdaraye
+					name_list_hebrew = cn_bethdaraye
+					name_list_bavlim = cn_bethdaraye
+					name_list_kochinim = cn_bethdaraye
 					name_list_assyrian = cn_der
 					name_list_aramean = cn_bethdaraye
 					name_list_nabati = cn_bethdaraye
@@ -3757,6 +4096,9 @@ e_persia = {
 						name_list_ashkenazi = cn_bethdaraye
 						name_list_sephardi = cn_bethdaraye
 						name_list_radhanite = cn_bethdaraye
+						name_list_hebrew = cn_bethdaraye
+						name_list_bavlim = cn_bethdaraye
+						name_list_kochinim = cn_bethdaraye
 						name_list_assyrian = cn_der
 						name_list_aramean = cn_bethdaraye
 						name_list_nabati = cn_bethdaraye
@@ -3786,6 +4128,9 @@ e_kemet = {
 		name_list_ashkenazi = cn_mitzraim
 		name_list_sephardi = cn_mitzraim
 		name_list_radhanite = cn_mitzraim
+		name_list_hebrew = cn_mitzraim
+		name_list_bavlim = cn_mitzraim
+		name_list_kochinim = cn_mitzraim
 		name_list_canaanite = cn_mitzraim
 		name_list_nubian = cn_kush
 		name_list_ancient_egyptian = cn_kemet
@@ -3814,6 +4159,9 @@ e_beth_nahrain = {
 		name_list_ashkenazi = cn_bethnaharaim
 		name_list_sephardi = cn_bethnaharaim
 		name_list_radhanite = cn_bethnaharaim
+		name_list_hebrew = cn_bethnaharaim
+		name_list_bavlim = cn_bethnaharaim
+		name_list_kochinim = cn_bethnaharaim
 	}
 
 	can_create = {
@@ -3942,6 +4290,9 @@ e_maghreb = {
 				name_list_ashkenazi = cn_qarthadasht
 				name_list_sephardi = cn_qarthadasht
 				name_list_radhanite = cn_qarthadasht
+				name_list_hebrew = cn_qarthadasht
+				name_list_bavlim = cn_qarthadasht
+				name_list_kochinim = cn_qarthadasht
 			}
 
 			c_tunis = {
@@ -3953,6 +4304,9 @@ e_maghreb = {
 					name_list_ashkenazi = cn_qarthadasht
 					name_list_sephardi = cn_qarthadasht
 					name_list_radhanite = cn_qarthadasht
+					name_list_hebrew = cn_qarthadasht
+					name_list_bavlim = cn_qarthadasht
+					name_list_kochinim = cn_qarthadasht
 				}
 
 				b_tunis = {
@@ -3966,6 +4320,9 @@ e_maghreb = {
 						name_list_ashkenazi = cn_qarthadasht
 						name_list_sephardi = cn_qarthadasht
 						name_list_radhanite = cn_qarthadasht
+						name_list_hebrew = cn_qarthadasht
+						name_list_bavlim = cn_qarthadasht
+						name_list_kochinim = cn_qarthadasht
 					}
 				}
 				b_zaghwan = {
@@ -3984,6 +4341,9 @@ e_maghreb = {
 						name_list_ashkenazi = cn_ataq
 						name_list_sephardi = cn_ataq
 						name_list_radhanite = cn_ataq
+						name_list_hebrew = cn_ataq
+						name_list_bavlim = cn_ataq
+						name_list_kochinim = cn_ataq
 					}
 				}
 				b_nabeul = {
@@ -4003,6 +4363,9 @@ e_maghreb = {
 				cultural_names = {
 					name_list_canaanite = cn_ipun
 					name_list_radhanite = cn_ipun
+					name_list_hebrew = cn_ipun
+					name_list_bavlim = cn_ipun
+					name_list_kochinim = cn_ipun
 					name_list_ashkenazi = cn_ipun
 					name_list_sephardi = cn_ipun
 				}
@@ -4015,6 +4378,9 @@ e_maghreb = {
 					cultural_names = {
 						name_list_canaanite = cn_ipun
 						name_list_radhanite = cn_ipun
+						name_list_hebrew = cn_ipun
+						name_list_bavlim = cn_ipun
+						name_list_kochinim = cn_ipun
 						name_list_ashkenazi = cn_ipun
 						name_list_sephardi = cn_ipun
 					}
@@ -4065,6 +4431,9 @@ e_maghreb = {
 					cultural_names = {
 						name_list_canaanite = cn_roshpinat
 						name_list_radhanite = cn_roshpinat
+						name_list_hebrew = cn_roshpinat
+						name_list_bavlim = cn_roshpinat
+						name_list_kochinim = cn_roshpinat
 						name_list_ashkenazi = cn_roshpinat
 						name_list_sephardi = cn_roshpinat
 					}
@@ -4077,6 +4446,9 @@ e_maghreb = {
 					cultural_names = {
 						name_list_canaanite = cn_hadrumete
 						name_list_radhanite = cn_hadrumete
+						name_list_hebrew = cn_hadrumete
+						name_list_bavlim = cn_hadrumete
+						name_list_kochinim = cn_hadrumete
 						name_list_ashkenazi = cn_hadrumete
 						name_list_sephardi = cn_hadrumete
 					}
@@ -4149,6 +4521,9 @@ e_maghreb = {
 				name_list_ashkenazi = cn_takapes
 				name_list_sephardi = cn_takapes
 				name_list_radhanite = cn_takapes
+				name_list_hebrew = cn_takapes
+				name_list_bavlim = cn_takapes
+				name_list_kochinim = cn_takapes
 			}
 
 			c_gabes = {
@@ -4159,6 +4534,9 @@ e_maghreb = {
 					name_list_ashkenazi = cn_takapes
 					name_list_sephardi = cn_takapes
 					name_list_radhanite = cn_takapes
+					name_list_hebrew = cn_takapes
+					name_list_bavlim = cn_takapes
+					name_list_kochinim = cn_takapes
 				}
 
 				b_gabes = {
@@ -4171,6 +4549,9 @@ e_maghreb = {
 						name_list_ashkenazi = cn_takapes
 						name_list_sephardi = cn_takapes
 						name_list_radhanite = cn_takapes
+						name_list_hebrew = cn_takapes
+						name_list_bavlim = cn_takapes
+						name_list_kochinim = cn_takapes
 					}
 				}
 				b_al_hamma = {
@@ -4187,6 +4568,9 @@ e_maghreb = {
 					name_list_ashkenazi = cn_thynath
 					name_list_sephardi = cn_thynath
 					name_list_radhanite = cn_thynath
+					name_list_hebrew = cn_thynath
+					name_list_bavlim = cn_thynath
+					name_list_kochinim = cn_thynath
 				}
 
 				b_sfax = {
@@ -4199,6 +4583,9 @@ e_maghreb = {
 						name_list_ashkenazi = cn_thynath
 						name_list_sephardi = cn_thynath
 						name_list_radhanite = cn_thynath
+						name_list_hebrew = cn_thynath
+						name_list_bavlim = cn_thynath
+						name_list_kochinim = cn_thynath
 					}
 				}
 				b_el_jem = {
@@ -4474,6 +4861,9 @@ e_germany = {
 		name_list_ashkenazi = cn_ashkenaz
 		name_list_sephardi = cn_ashkenaz
 		name_list_radhanite = cn_ashkenaz
+		name_list_hebrew = cn_ashkenaz
+		name_list_bavlim = cn_ashkenaz
+		name_list_kochinim = cn_ashkenaz
 	}
 
 	k_east_francia = {	#Germany
@@ -4513,6 +4903,9 @@ e_germany = {
 				name_list_ashkenazi = cn_shum
 				name_list_sephardi = cn_shum
 				name_list_radhanite = cn_shum
+				name_list_hebrew = cn_shum
+				name_list_bavlim = cn_shum
+				name_list_kochinim = cn_shum
 			}
 		}
 	}
@@ -4528,6 +4921,9 @@ e_spain = {
 		name_list_ashkenazi = cn_sepharad
 		name_list_sephardi = cn_sepharad
 		name_list_radhanite = cn_sepharad
+		name_list_hebrew = cn_sepharad
+		name_list_bavlim = cn_sepharad
+		name_list_kochinim = cn_sepharad
 		name_list_bedouin = cn_isbaniya
 		name_list_butr = cn_isbaniya
 		name_list_baranis = cn_isbaniya
@@ -4595,6 +4991,9 @@ e_france = {
 		name_list_ashkenazi = cn_tzarfat
 		name_list_sephardi = cn_tzarfat
 		name_list_radhanite = cn_tzarfat
+		name_list_hebrew = cn_tzarfat
+		name_list_bavlim = cn_tzarfat
+		name_list_kochinim = cn_tzarfat
 	}
 
 	ai_primary_priority = {

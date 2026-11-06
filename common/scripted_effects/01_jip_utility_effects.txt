@@ -11,6 +11,9 @@
 					root.culture = { has_name_list = name_list_ashkenazi }
 					root.culture = { has_name_list = name_list_sephardi }
 					root.culture = { has_name_list = name_list_radhanite }
+					root.culture = { has_name_list = name_list_bavlim }
+					root.culture = { has_name_list = name_list_kochinim }
+					root.culture = { has_name_list = name_list_hebrew }
 					root.culture = { has_name_list = name_list_canaanite }
 					root.culture = { has_name_list = name_list_assyrian }
 					root.culture = { has_name_list = name_list_aramean }
