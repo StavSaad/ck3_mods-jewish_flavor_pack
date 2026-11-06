@@ -488,7 +488,13 @@ jip_hebrew.0040 = {
 	type = character_event
 	title = jip_hebrew.0040.t #change
 	desc = {
-		desc = jip_hebrew.0040.desc #change
+		first_valid = {
+			triggered_desc = { # A Yahwist builder (jip_temple_faith_trigger)
+				trigger = { rite = rite:yahwism }
+				desc = jip_hebrew.0040.desc_yahwist
+			}
+			desc = jip_hebrew.0040.desc
+		}
 	}
 	theme = faith
 	widgets = {
@@ -529,7 +535,20 @@ jip_hebrew.0040 = {
 			NOT = {
 				faith = faith:samaritan
 			}
+			NOT = { rite = rite:yahwism }
 		}
+		stress_impact = {
+			zealous = medium_stress_loss
+			diligent = medium_stress_loss
+		}
+	}
+
+	option = {
+		name = jip_hebrew.0040.e # A Yahwist keeps the old worship: YHWH and his Asherah in their house
+		trigger = {
+			rite = rite:yahwism
+		}
+		add_piety = medium_piety_gain
 		stress_impact = {
 			zealous = medium_stress_loss
 			diligent = medium_stress_loss

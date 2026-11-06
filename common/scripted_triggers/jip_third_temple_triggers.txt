@@ -1,0 +1,18 @@
+﻿# Who may raise the Third Temple (common/great_projects/types/jip_third_temple_projects.txt): Jews, and Yahwists, the
+# rite of Canaanism that worships YHWH and kept the Temple before the Josianic reform
+
+# Character scope
+jip_temple_faith_trigger = {
+	OR = {
+		has_religion = religion:judaism_religion
+		rite = rite:yahwism
+	}
+}
+
+# County scope
+jip_temple_faith_county_trigger = {
+	OR = {
+		rite.faith.religion = religion:judaism_religion
+		rite = rite:yahwism
+	}
+}

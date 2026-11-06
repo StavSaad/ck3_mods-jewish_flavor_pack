@@ -864,7 +864,7 @@ jip_temple_mount_cleared_01 = {
 		custom_description = {
 			text = jip_temple_mount_cleared_enabled_trigger
 			scope:holder = {
-				religion = religion:judaism_religion
+				jip_temple_faith_trigger = yes
 			}
 		}
 	}

@@ -60,8 +60,13 @@ jip_clear_the_temple_mount_effect = {
 					}
 					NOT = { this = faith:druze }
 				}
-				remove_holy_site = {
-					target = holy_site:jerusalem
+				if = {
+					limit = {
+						any_holy_site = { this = holy_site:jerusalem } # Not every Islamic faith holds it
+					}
+					remove_holy_site = {
+						target = holy_site:jerusalem
+					}
 				}
 				change_fervor = {
 					value = -15

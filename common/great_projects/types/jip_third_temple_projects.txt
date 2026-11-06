@@ -1,5 +1,6 @@
 ﻿#################
 #	The Third Temple as two great projects (0.16 plan, section 7; vanilla's system: _great_project_types.info)
+#	Founders and priestly contributors are Jews or Yahwists (jip_temple_faith_trigger)
 #	jip_gp_clear_the_temple_mount - Clear the Temple Mount: the Dome of the Rock comes down (while it stands)
 #	jip_gp_rebuild_the_temple - Rebuild the Temple: temple_in_jerusalem_01 (once the Mount is clear and no Temple stands)
 #	Effects in common/scripted_effects/01_jip_third_temple_effects.txt
@@ -10,7 +11,7 @@
 @jip_rebuild_the_temple_icon = "gfx/interface/icons/great_projects/jip_rebuild_the_temple.dds" # tools/make_great_project_art.py
 @jip_rebuild_the_temple_illustration = "gfx/interface/illustrations/great_projects/jip_rebuild_the_temple.dds" # default crop
 
-# Stage 1. The old decision's founder: an independent Jewish ruler of Israelite heritage who holds Jerusalem and
+# Stage 1. The old decision's founder: an independent Jewish (or Yahwist) ruler of Israelite heritage who holds Jerusalem and
 # completely controls Israel, at piety level 4. While the work lasts every Muslim ruler resents the founder; on
 # completion the Dome of the Rock is gone, Jerusalem is no longer an Islamic holy site, and jip_hebrew.0041 fires.
 jip_gp_clear_the_temple_mount = {
@@ -23,7 +24,7 @@ jip_gp_clear_the_temple_mount = {
 
 	is_shown = {
 		culture = { has_cultural_pillar = heritage_israelite }
-		has_religion = religion:judaism_religion
+		jip_temple_faith_trigger = yes
 		is_independent_ruler = yes
 		is_landed = yes
 		NOT = { is_planning_great_project = jip_gp_clear_the_temple_mount }
@@ -55,8 +56,8 @@ jip_gp_clear_the_temple_mount = {
 			title:c_jerusalem.holder ?= { target_is_same_character_or_above = root }
 		}
 		piety_level >= 4
-		capital_county.rite.faith = {
-			religion = religion:judaism_religion
+		capital_county = {
+			jip_temple_faith_county_trigger = yes
 		}
 		OR = {
 			has_primary_title = title:k_israel
@@ -72,7 +73,7 @@ jip_gp_clear_the_temple_mount = {
 
 	is_valid = {
 		scope:founder = {
-			has_religion = religion:judaism_religion
+			jip_temple_faith_trigger = yes
 			is_independent_ruler = yes
 		}
 		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
@@ -156,7 +157,7 @@ jip_gp_clear_the_temple_mount = {
 			contributor_is_valid = {
 				custom_tooltip = {
 					text = jip_gp_temple_jewish_contributor_tt
-					has_religion = religion:judaism_religion
+					jip_temple_faith_trigger = yes
 				}
 			}
 			cost = {
@@ -252,7 +253,7 @@ jip_gp_clear_the_temple_mount = {
 	target_title_tier = barony
 }
 
-# Stage 2. Any independent Jewish ruler who holds Jerusalem, once the Mount is clear (no Dome of the Rock) and no
+# Stage 2. Any independent Jewish or Yahwist ruler who holds Jerusalem, once the Mount is clear (no Dome of the Rock) and no
 # Temple stands. On completion the Temple stands (temple_in_jerusalem_01), Kohanism opens and jip_hebrew.0040 fires.
 jip_gp_rebuild_the_temple = {
 	icon = { reference = @jip_rebuild_the_temple_icon }
@@ -263,7 +264,7 @@ jip_gp_rebuild_the_temple = {
 	}
 
 	is_shown = {
-		has_religion = religion:judaism_religion
+		jip_temple_faith_trigger = yes
 		is_independent_ruler = yes
 		is_landed = yes
 		NOT = { is_planning_great_project = jip_gp_rebuild_the_temple }
@@ -306,7 +307,7 @@ jip_gp_rebuild_the_temple = {
 
 	is_valid = {
 		scope:founder = {
-			has_religion = religion:judaism_religion
+			jip_temple_faith_trigger = yes
 			is_independent_ruler = yes
 		}
 		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
@@ -413,7 +414,7 @@ jip_gp_rebuild_the_temple = {
 			contributor_is_valid = {
 				custom_tooltip = {
 					text = jip_gp_temple_jewish_contributor_tt
-					has_religion = religion:judaism_religion
+					jip_temple_faith_trigger = yes
 				}
 			}
 			cost = {
@@ -480,7 +481,7 @@ jip_gp_rebuild_the_temple = {
 			contributor_is_valid = {
 				custom_tooltip = {
 					text = jip_gp_temple_jewish_contributor_tt
-					has_religion = religion:judaism_religion
+					jip_temple_faith_trigger = yes
 				}
 			}
 			cost = {

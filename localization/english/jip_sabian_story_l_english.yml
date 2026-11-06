@@ -234,7 +234,7 @@
  jip_sabian_bring_the_gods_home_decision_desc: "When the temples fell, the gods' images were carried off: melted down, buried, sold to collectors of curiosities, or hidden by priests who meant to come back for them. Some must still exist. A god whose house stands again should not stand outside it."
  jip_sabian_bring_the_gods_home_decision_tooltip: "Search for the lost statue of a god whose temple stands in your [realm|E], of your choice"
  jip_sabian_bring_the_gods_home_decision_confirm: "Begin the search"
- jip_sabian_any_statue_can_be_sought_tt: "A temple of the old gods stands restored in your [realm|E], not occupied, and its god\'s statue is not yet home"
+ jip_sabian_any_statue_can_be_sought_tt: "A temple of the old gods stands restored in your [realm|E], not occupied, and its god's statue is not yet home"
  jip_sabian_bring_the_gods_home_effect_tt: "You search for the statue of the god you chose; in some months it is found or the trail goes cold. A god brought home becomes a [court_artifact|E] of your [court|E], and the temple's [county|E] takes your [faith|E] and rejoices"
 
  jip_sabian_story.5010.t: "The Search for the Gods"

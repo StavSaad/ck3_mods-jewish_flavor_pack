@@ -8,15 +8,18 @@ switch_house_effect_desc = {
 
 jip_jerusalem_lost_to_islam = {
 	global = jip_jerusalem_lost_to_islam
+	first = jip_jerusalem_lost_to_islam
 }
 
 jip_muslims_resent_temple_mount_clearing = {
 	global = jip_muslims_resent_temple_mount_clearing
+	first = jip_muslims_resent_temple_mount_clearing_first_past
 	first_past = jip_muslims_resent_temple_mount_clearing_first_past
 }
 
 every_muslim_ruler_loses_opinion = {
 	global = every_muslim_ruler_loses_opinion
+	first = every_muslim_ruler_loses_opinion_first_past
 	first_past = every_muslim_ruler_loses_opinion_first_past
 }
 
@@ -26,5 +29,6 @@ reestablish_canaanite_city_decision_effect = {
 
 judaism_hof_restored_effect = {
 	global = judaism_hof_restored_effect
+	first = judaism_hof_restored_effect
 	first_past = judaism_hof_restored_effect
 }
