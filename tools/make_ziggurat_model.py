@@ -1,7 +1,8 @@
 # Builds the map models of the old gods' ziggurats in Blender: --model sin (the Ehulhul, the Temple of Sin at Harran, a
 # Neo-Babylonian moon-god ziggurat; the default), ashur (Ashur's, after Dur-Sharrukin's: coloured stages, a winding ramp)
-# or marduk (the Etemenanki at Babylon: seven levels, the great south stair). See each build_<model>() for its sources.
-# Run: blender --background --python tools/make_ziggurat_model.py -- [--model sin|ashur|marduk] [--preview <png>]
+# marduk (the Etemenanki at Babylon: seven levels, the great south stair) or generic (a plain three-stage ziggurat for the
+# other temples of the old gods). See each build_<model>() for its sources.
+# Run: blender --background --python tools/make_ziggurat_model.py -- [--model sin|ashur|marduk|generic] [--preview <png>]
 #      [--no-bake]
 # Needs the io_pdx_mesh add-on (github.com/ross-g/io_pdx_mesh; patched for Blender 5's removed material settings).
 #
@@ -39,11 +40,13 @@ argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else []
 PREVIEW = argv[argv.index('--preview') + 1] if '--preview' in argv else None
 BAKE = '--no-bake' not in argv
 MODEL = argv[argv.index('--model') + 1] if '--model' in argv else 'sin'
-NAME = {'sin': 'jip_temple_of_sin', 'ashur': 'jip_temple_of_ashur', 'marduk': 'jip_temple_of_marduk'}[MODEL]
+NAME = {'sin': 'jip_temple_of_sin', 'ashur': 'jip_temple_of_ashur', 'marduk': 'jip_temple_of_marduk',
+        'generic': 'jip_ziggurat_generic'}[MODEL]
 TITLE = {
     'sin': "The Ehulhul, the Temple of Sin at Harran: a Neo-Babylonian moon-god ziggurat",
     'ashur': "The ziggurat of Ashur at Ashur, after Sargon's at Dur-Sharrukin: coloured stages and a winding ramp",
     'marduk': "The Etemenanki, the ziggurat of Marduk's Esagila at Babylon: seven levels and the great south stair",
+    'generic': "A generic Mesopotamian ziggurat for the other temples of the old gods: three stages, one stair",
 }[MODEL]
 
 DENS = 4.8   # map units per atlas UV unit: a 128 px tile spans 0.6 units (vanilla's Samarra: 0.45; a little coarser
@@ -578,6 +581,42 @@ def disc(b, cx, cy, cz, R, depth, n=14):
                 T_GOLD, 'fit_tile')
 
 
+def build_generic():
+    """A plain ziggurat for the old gods' other temples (Bel, Shamash, Ishtar): square and compact, three buttressed
+    brick stages, one stair up the middle of the south face climbing every stage, a pale brick shrine with the frieze
+    and merlons, and no god's emblem, so it suits any of them."""
+    b = Builder()
+    rng = random.Random(4800)
+    b.box(-3.4, 3.4, -4.4, 3.0, 0.0, 0.12, T_BRICK_DARK, T_PAVING)
+    z = 0.12
+    tiers = [(2.3, 1.05, 0.1), (1.65, 0.8, 0.07), (1.1, 0.65, 0.06)]       # (half-size, height, batter)
+    levels = [z]
+    for i, (h, ht, bat) in enumerate(tiers):
+        z0, z1 = levels[-1], levels[-1] + ht
+        b.stage(-h, h, -h, h, z0, z1, batter=bat, spacing=0.5, stair_gap=0.45)
+        levels.append(z1)
+    # One stair up the middle: out from the first stage's face, then up each stage's front from the terrace below
+    h0 = tiers[0][0]
+    b.flight((-0.36, -h0 - 1.6, z), (0.36, -h0 - 1.6, z), (0, 1.6 + tiers[0][2], 0), levels[1] - z)
+    for i in (1, 2):
+        h_below, bat_below = tiers[i - 1][0], tiers[i - 1][2]
+        h, bat = tiers[i][0], tiers[i][2]
+        foot = -h_below + bat_below + 0.12
+        b.flight((-0.3, foot, levels[i]), (0.3, foot, levels[i]), (0, -h + bat - foot, 0), levels[i + 1] - levels[i])
+    # The shrine, plain: pale brick, the frieze, the door, merlons
+    zt = levels[-1]
+    shrine(b, -0.55, 0.55, -0.45, 0.45, zt, 0.62, T_BRICK_PALE, merlon=(0.1, 0.12, 0.2))
+    # Processional way, altars, a palm grove either side of the stair, shrubs and corner clumps
+    b.box(-0.5, 0.5, -4.4, -h0 - 1.6, z, z + 0.015, T_WAY, T_WAY, sides='flr')
+    for x in (-0.8, 0.8):
+        b.box(x - 0.1, x + 0.1, -4.15, -3.95, z, z + 0.16, T_BRICK_PALE, T_BRICK_PALE)
+    garden(b, rng, z,
+           groves=[(sx * gx, gy) for sx in (-1, 1) for gx in (1.3, 2.1) for gy in (-3.95, -3.15)],
+           edge_shrubs=[(sx * 2.9, y) for sx in (-1, 1) for y in (-1.5, -0.3, 0.9, 2.1)] + [(-2.85, 2.7), (2.85, 2.7)],
+           corner_clumps=[(sx * gx, gy) for sx in (-1, 1) for (gx, gy) in ((3.65, -4.55), (3.4, -4.75), (3.65, 3.15))])
+    return b
+
+
 def spade(b, cx, cy, cz):
     """Marduk's spade (marru), his emblem: a triangular gold blade on the pole, point up, with a short tang."""
     w, h, d = 0.11, 0.22, 0.03
@@ -621,7 +660,7 @@ def main():
     pdx = importlib.import_module(mods[0] + '.pdx_blender.blender_import_export')
     bpy.ops.wm.read_factory_settings(use_empty=True)
 
-    b = {'sin': build_sin, 'ashur': build_ashur, 'marduk': build_marduk}[MODEL]()
+    b = {'sin': build_sin, 'ashur': build_ashur, 'marduk': build_marduk, 'generic': build_generic}[MODEL]()
     bmesh.ops.remove_doubles(b.bm, verts=b.bm.verts, dist=1e-5)
     me = bpy.data.meshes.new(NAME + '_LOD0Shape')
     b.bm.to_mesh(me)

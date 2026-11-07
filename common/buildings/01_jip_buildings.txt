@@ -304,10 +304,11 @@ jip_temple_of_sin_01 = {
 # The Temple of Bel at Palmyra (jip_gp_temple_of_bel): the caravan city's great temple. Bel is Jupiter to the
 # Sabians and one of Sinism's gods
 jip_temple_of_bel_01 = {
-	# The Temple of Sin's model (the Tomb of Cyrus's stepped base and shrine), on Palmyra's map locator (province 5948)
+	# Our generic ziggurat (three stages, one stair, no god's emblem), on Palmyra's map locator (province 5948):
+	# gfx/models/buildings/jip/jip_ziggurat_generic.asset, tools/make_ziggurat_model.py --model generic
 	asset = {
 		type = pdxmesh
-		name = "fp3_building_special_tomb_of_cyrus_01_a_mesh"
+		name = "jip_ziggurat_generic_mesh"
 	}
 
 	type_icon = "icon_structure_tomb_of_cyrus.dds"
@@ -359,10 +360,11 @@ jip_temple_of_bel_01 = {
 # The Temple of Shamash at Hatra (jip_gp_temple_of_shamash): the sun god's temple of the desert city that held off
 # Trajan and Septimius Severus
 jip_temple_of_shamash_01 = {
-	# The Temple of Sin's model (the Tomb of Cyrus's stepped base and shrine), on Hatra's map locator (province 4837)
+	# Our generic ziggurat (three stages, one stair, no god's emblem), on Hatra's map locator (province 4837):
+	# gfx/models/buildings/jip/jip_ziggurat_generic.asset, tools/make_ziggurat_model.py --model generic
 	asset = {
 		type = pdxmesh
-		name = "fp3_building_special_tomb_of_cyrus_01_a_mesh"
+		name = "jip_ziggurat_generic_mesh"
 	}
 
 	type_icon = "icon_structure_tomb_of_cyrus.dds"
@@ -469,10 +471,11 @@ jip_temple_of_ashur_01 = {
 # The Temple of Ishtar at Arbela (jip_gp_temple_of_ishtar): the Egashankalamma of Ishtar of Arbela, goddess of war,
 # whose prophetesses spoke to the Assyrian kings. Venus to the Sabians
 jip_temple_of_ishtar_01 = {
-	# The Temple of Sin's model (the Tomb of Cyrus's stepped base and shrine), on Arbela's map locator (province 4777)
+	# Our generic ziggurat (three stages, one stair, no god's emblem), on Arbela's map locator (province 4777):
+	# gfx/models/buildings/jip/jip_ziggurat_generic.asset, tools/make_ziggurat_model.py --model generic
 	asset = {
 		type = pdxmesh
-		name = "fp3_building_special_tomb_of_cyrus_01_a_mesh"
+		name = "jip_ziggurat_generic_mesh"
 	}
 
 	type_icon = "icon_structure_tomb_of_cyrus.dds"
