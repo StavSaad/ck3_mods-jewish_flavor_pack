@@ -38,6 +38,9 @@ BAKE = '--no-bake' not in argv
 
 DENS = 12.0  # map units per atlas UV unit (vanilla's median): a 128 px tile spans 1.5 units
 SCALE = 0.9  # the model is built in round numbers, then shrunk to the Tomb of Cyrus's footprint (about 6.3 x 7.5)
+# Built facing -y; turned a quarter clockwise (seen from above) so that, on Harran's locator, the stairs face south-west
+# like vanilla's buildings (built facing south they showed south-east in game)
+ROTATE_Z = -90
 TILE_LEN = DENS / 8
 
 
@@ -58,7 +61,7 @@ T_PAVING = [tile(0, 0), tile(1, 0), tile(0, 1), tile(1, 1)]   # plain mud plaste
 T_TERRACE = [tile(2, 6), tile(3, 6)]   # worn brick paving, the terraces (the redder tiles beside them read as a checkerboard)
 T_WAY = tile(4, 7)            # pale brick paving, the processional way
 T_TREAD = tile(3, 6)          # a step's tread
-T_RISER = tile(4, 7)          # a step's riser, pale brick
+T_RISER = tile(2, 0)          # a step's riser, pale brick (not a bottom-row tile: filtering there wraps to the top row)
 T_GLAZED = tile(5, 2)         # blue glazed brick with gold rosettes
 T_NICHES = px(0, 692, 1024, 766)   # strip: brick panels between dark recesses (unused since the buttresses are modelled)
 T_FRIEZE = px(0, 642, 1024, 690)   # strip: turquoise and gold frieze
@@ -94,6 +97,8 @@ class Builder:
         u0, v0, u1, v1 = variants[0]
         width = max((br - bl).length, (tr - tl).length)
         height = max((tl - bl).length, (tr - br).length)
+        if mode == 'tile' and width <= TILE_LEN * 0.6 and height <= TILE_LEN * 0.6:
+            mode = 'fit_tile'          # a small face (a buttress's side, a merlon): from its tile's middle, like the steps
 
         def at(s, t):
             return bl.lerp(br, s).lerp(tl.lerp(tr, s), t)
@@ -102,9 +107,12 @@ class Builder:
             self.face([bl, br, tr, tl], [(u0, v0), (u1, v0), (u1, v1), (u0, v1)])
             return
         if mode == 'fit_tile':
-            fu, fv = min(1.0, width / TILE_LEN), min(1.0, height / TILE_LEN)
-            uu, vv = u0 + (u1 - u0) * fu, v0 + (v1 - v0) * fv
-            self.face([bl, br, tr, tl], [(u0, v0), (uu, v0), (uu, vv), (u0, vv)])
+            # a small face takes the matching piece from the middle of its tile, away from the edges where texture
+            # filtering (and mipmaps, seen from afar) blend in the neighbouring tiles
+            fu, fv = min(0.8, width / TILE_LEN), min(0.8, height / TILE_LEN)
+            cu, cv = (u0 + u1) / 2, (v0 + v1) / 2
+            hu, hv = (u1 - u0) * fu / 2, (v1 - v0) * fv / 2
+            self.face([bl, br, tr, tl], [(cu - hu, cv - hv), (cu + hu, cv - hv), (cu + hu, cv + hv), (cu - hu, cv + hv)])
             return
         if mode == 'strip':
             span = (u1 - u0) * DENS          # map units the strip covers before it must wrap
@@ -136,9 +144,11 @@ class Builder:
         pts2 = [((p - a).dot(ax), (p - a).dot(ay)) for p in (a, b, c)]
         xs, ys = [p[0] for p in pts2], [p[1] for p in pts2]
         ext = max(max(xs) - min(xs), max(ys) - min(ys), 1e-6)
-        k = min(1.0, TILE_LEN / ext) / TILE_LEN
-        u0, v0, u1, v1 = region
-        uvs = [(u0 + (x - min(xs)) * k * (u1 - u0), v0 + (y - min(ys)) * k * (v1 - v0)) for x, y in pts2]
+        k = min(0.8, TILE_LEN / ext) / TILE_LEN
+        u0, v0, u1, v1 = region[0] if isinstance(region, list) else region
+        mx, my = (max(xs) + min(xs)) / 2, (max(ys) + min(ys)) / 2     # centred in the tile, away from its edges
+        cu, cv = (u0 + u1) / 2, (v0 + v1) / 2
+        uvs = [(cu + (x - mx) * k * (u1 - u0), cv + (y - my) * k * (v1 - v0)) for x, y in pts2]
         self.face([a, b, c], uvs)
 
     def box(self, x0, x1, y0, y1, z0, z1, side, top, batter=0.0, side_mode='tile', sides='fbrl', top_mode='tile'):
@@ -431,7 +441,7 @@ def main():
     b.bm.to_mesh(me)
     b.bm.free()
     from mathutils import Matrix
-    me.transform(Matrix.Scale(SCALE, 4))
+    me.transform(Matrix.Rotation(math.radians(ROTATE_Z), 4, 'Z') @ Matrix.Scale(SCALE, 4))
     obj = bpy.data.objects.new(NAME + '_LOD0', me)
     bpy.context.scene.collection.objects.link(obj)
     bpy.context.view_layer.objects.active = obj
@@ -465,7 +475,7 @@ def main():
 
 def bake_unique(obj, me, mat):
     """Ambient occlusion on map2, brightened like vanilla's (mean ~0.82), as an uncompressed 512 px DDS."""
-    size = 512
+    size = 1024  # the small faces (steps, buttresses, fronds) need more than vanilla's 512 to get clean shading
     img = bpy.data.images.new(NAME + '_unique', size, size, alpha=False)
     nodes = mat.node_tree.nodes
     node = nodes.new('ShaderNodeTexImage')
@@ -481,7 +491,7 @@ def bake_unique(obj, me, mat):
     bpy.context.view_layer.objects.active = obj
     for o in bpy.context.scene.objects:
         o.select_set(o == obj)
-    bpy.ops.object.bake(type='AO', margin=8, use_clear=True)
+    bpy.ops.object.bake(type='AO', margin=4, use_clear=True)
     bpy.data.objects.remove(ground)
     nodes.remove(node)
     a = np.array(img.pixels[:], dtype=np.float32).reshape(size, size, 4)[::-1]   # Blender's rows run bottom-up
