@@ -9,8 +9,9 @@
 # crescent of Sin on a pole; around it a temple garden of date palms and tamarisks, in rows like Assyrian planting pits.
 #
 # Texturing follows vanilla's special buildings (e.g. the Great Mosque of Samarra): every face maps onto a tile of the
-# shared Persian atlas (building_persia_atlas_*), about 1.5 map units to a 128 px tile, with the standard_atlas shader;
-# a second UV set (map2) carries the building's own baked ambient occlusion, the "unique" map (texture index 5).
+# shared Persian atlas (building_persia_atlas_*), about 0.6 map units to a 128 px tile, with the standard_atlas shader,
+# which reads the atlas through the SECOND UV set (map2) and the building's own baked ambient occlusion, the "unique"
+# map (texture index 5), through the FIRST (map1).
 # Outputs gfx/models/buildings/jip/jip_temple_of_sin.mesh, .asset and jip_temple_of_sin_unique.dds.
 import importlib
 import math
@@ -36,7 +37,8 @@ argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else []
 PREVIEW = argv[argv.index('--preview') + 1] if '--preview' in argv else None
 BAKE = '--no-bake' not in argv
 
-DENS = 12.0  # map units per atlas UV unit (vanilla's median): a 128 px tile spans 1.5 units
+DENS = 4.8   # map units per atlas UV unit: a 128 px tile spans 0.6 units (vanilla's Samarra: 0.45; a little coarser
+             # keeps the face count near vanilla's)
 SCALE = 0.9  # the model is built in round numbers, then shrunk to the Tomb of Cyrus's footprint (about 6.3 x 7.5)
 # Built facing -y; turned a quarter clockwise (seen from above) so that, on Harran's locator, the stairs face south-west
 # like vanilla's buildings (built facing south they showed south-east in game)
@@ -77,8 +79,10 @@ STRIPS = (T_NICHES, T_FRIEZE)
 class Builder:
     def __init__(self):
         self.bm = bmesh.new()
-        self.uv0 = self.bm.loops.layers.uv.new('map1')
-        self.uv1 = self.bm.loops.layers.uv.new('map2')
+        # The order matters: with the standard_atlas shader the FIRST set (UV0) reads the unique map and the SECOND
+        # (UV1) the atlas (gfx/FX/pdxmesh.shader: DIFFUSE_UV_SET Input.UV1, UNIQUE_UV_SET Input.UV0)
+        self.uv1 = self.bm.loops.layers.uv.new('map1')     # the unique map's islands
+        self.uv0 = self.bm.loops.layers.uv.new('map2')     # the atlas
 
     def face(self, pts, uvs):
         verts = [self.bm.verts.new(p) for p in pts]
@@ -455,7 +459,7 @@ def main():
     me.materials.append(mat)
 
     # The unique map's UVs: every face once, in its own island
-    me.uv_layers.active = me.uv_layers['map2']
+    me.uv_layers.active = me.uv_layers['map1']
     bpy.ops.object.mode_set(mode='EDIT')
     bpy.ops.mesh.select_all(action='SELECT')
     bpy.ops.uv.smart_project(angle_limit=math.radians(66), island_margin=0.01)
@@ -464,8 +468,8 @@ def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     if BAKE:
         bake_unique(obj, me, mat)
-    me.uv_layers.active = me.uv_layers['map1']
-    me.uv_layers['map1'].active_render = True
+    me.uv_layers.active = me.uv_layers['map2']
+    me.uv_layers['map2'].active_render = True          # the preview shows the atlas
 
     pdx.export_meshfile(OUT_DIR + NAME + '.mesh', exp_mesh=True, exp_skel=False, exp_locs=False)
     write_asset()
@@ -474,7 +478,7 @@ def main():
 
 
 def bake_unique(obj, me, mat):
-    """Ambient occlusion on map2, brightened like vanilla's (mean ~0.82), as an uncompressed 512 px DDS."""
+    """Ambient occlusion on map1 (the first UV set), brightened like vanilla's, as an uncompressed DDS."""
     size = 1024  # the small faces (steps, buttresses, fronds) need more than vanilla's 512 to get clean shading
     img = bpy.data.images.new(NAME + '_unique', size, size, alpha=False)
     nodes = mat.node_tree.nodes
