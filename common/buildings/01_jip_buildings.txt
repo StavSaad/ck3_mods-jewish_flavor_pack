@@ -415,11 +415,11 @@ jip_temple_of_shamash_01 = {
 # The Temple of Ashur at Ashur (jip_gp_temple_of_ashur): the house of the god of the Assyrian kings, beside his
 # ziggurat. Ashurism's counterpart of the Temple of Sin; works for the whole old faith
 jip_temple_of_ashur_01 = {
-	# Vanilla has no ziggurat: the Tomb of Cyrus's stepped base stands in for one, as at Harran, on Ashur's map locator
-	# (province 4836)
+	# Our own model, Ashur's ziggurat after Sargon's at Dur-Sharrukin (coloured stages, a winding ramp), on Ashur's map
+	# locator (province 4836): gfx/models/buildings/jip/jip_temple_of_ashur.asset, tools/make_ziggurat_model.py --model ashur
 	asset = {
 		type = pdxmesh
-		name = "fp3_building_special_tomb_of_cyrus_01_a_mesh"
+		name = "jip_temple_of_ashur_mesh"
 	}
 
 	type_icon = "icon_structure_tomb_of_cyrus.dds"
@@ -524,10 +524,11 @@ jip_temple_of_ishtar_01 = {
 }
 
 jip_temple_of_marduk_01 = {
-	# The Temple of Sin's model (the Tomb of Cyrus's stepped base and shrine), on al-Hila's map locator (province 4826)
+	# Our own model, the Etemenanki, the Esagila's ziggurat, on al-Hila's map locator (province 4826):
+	# gfx/models/buildings/jip/jip_temple_of_marduk.asset, tools/make_ziggurat_model.py --model marduk
 	asset = {
 		type = pdxmesh
-		name = "fp3_building_special_tomb_of_cyrus_01_a_mesh"
+		name = "jip_temple_of_marduk_mesh"
 	}
 
 	type_icon = "icon_structure_tomb_of_cyrus.dds"

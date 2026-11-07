@@ -1,0 +1,23 @@
+﻿# The Etemenanki, the ziggurat of Marduk's Esagila at Babylon: seven levels and the great south stair (tools/make_ziggurat_model.py --model marduk)
+pdxmesh = {
+	name = "jip_temple_of_marduk_mesh"
+	file = "jip_temple_of_marduk.mesh"
+
+	scale = 1
+
+	meshsettings = {
+		name = "jip_temple_of_marduk_LOD0Shape"
+		index = 0
+		texture_diffuse = "building_persia_atlas_diffuse.dds"
+		texture_normal = "building_persia_atlas_normal.dds"
+		texture_specular = "building_persia_atlas_properties.dds"
+		texture = { file = "jip_temple_of_marduk_unique.dds" index = 5 }
+		shader = "standard_atlas"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "jip_temple_of_marduk_entity"
+	pdxmesh = "jip_temple_of_marduk_mesh"
+}

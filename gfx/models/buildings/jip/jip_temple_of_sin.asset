@@ -1,4 +1,4 @@
-﻿# The Ehulhul, the Temple of Sin at Harran: a Neo-Babylonian moon-god ziggurat (tools/make_ziggurat_model.py)
+﻿# The Ehulhul, the Temple of Sin at Harran: a Neo-Babylonian moon-god ziggurat (tools/make_ziggurat_model.py --model sin)
 pdxmesh = {
 	name = "jip_temple_of_sin_mesh"
 	file = "jip_temple_of_sin.mesh"

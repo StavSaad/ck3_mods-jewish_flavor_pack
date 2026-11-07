@@ -1,5 +1,8 @@
-# Builds the map model of the Ehulhul, the Temple of Sin at Harran, as a Neo-Babylonian moon-god ziggurat, in Blender.
-# Run: blender --background --python tools/make_ziggurat_model.py -- [--preview <png>] [--no-bake]
+# Builds the map models of the old gods' ziggurats in Blender: --model sin (the Ehulhul, the Temple of Sin at Harran, a
+# Neo-Babylonian moon-god ziggurat; the default), ashur (Ashur's, after Dur-Sharrukin's: coloured stages, a winding ramp)
+# or marduk (the Etemenanki at Babylon: seven levels, the great south stair). See each build_<model>() for its sources.
+# Run: blender --background --python tools/make_ziggurat_model.py -- [--model sin|ashur|marduk] [--preview <png>]
+#      [--no-bake]
 # Needs the io_pdx_mesh add-on (github.com/ross-g/io_pdx_mesh; patched for Blender 5's removed material settings).
 #
 # The design (0.15 plan, section 2): no ziggurat at Harran is attested (Nabonidus's texts call the Ehulhul a temple),
@@ -31,11 +34,17 @@ MOD = 'C:/Users/stavs/OneDrive/Documents/Paradox Interactive/Crusader Kings III/
 VAN = 'C:/Program Files (x86)/Steam/steamapps/common/Crusader Kings III/game/'
 ATLAS_DIR = VAN + 'gfx/models/buildings/holdings/atlas/persian'
 OUT_DIR = MOD + 'gfx/models/buildings/jip/'
-NAME = 'jip_temple_of_sin'
 
 argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else []
 PREVIEW = argv[argv.index('--preview') + 1] if '--preview' in argv else None
 BAKE = '--no-bake' not in argv
+MODEL = argv[argv.index('--model') + 1] if '--model' in argv else 'sin'
+NAME = {'sin': 'jip_temple_of_sin', 'ashur': 'jip_temple_of_ashur', 'marduk': 'jip_temple_of_marduk'}[MODEL]
+TITLE = {
+    'sin': "The Ehulhul, the Temple of Sin at Harran: a Neo-Babylonian moon-god ziggurat",
+    'ashur': "The ziggurat of Ashur at Ashur, after Sargon's at Dur-Sharrukin: coloured stages and a winding ramp",
+    'marduk': "The Etemenanki, the ziggurat of Marduk's Esagila at Babylon: seven levels and the great south stair",
+}[MODEL]
 
 DENS = 4.8   # map units per atlas UV unit: a 128 px tile spans 0.6 units (vanilla's Samarra: 0.45; a little coarser
              # keeps the face count near vanilla's)
@@ -72,6 +81,11 @@ T_GOLD = px(702, 317, 708, 323)    # a rosette's gold
 T_LEAF = tile(3, 3)           # green foliage, as vanilla's own shrubs (Samarra's) use
 T_DRY = tile(6, 0)            # dry grass
 T_BARK = tile(5, 3)           # dark vertical grain, a palm's trunk
+T_WHITE = tile(7, 6)          # white plaster: Ashur's first stage (Dur-Sharrukin's were white, black, red and blue)
+T_BLACK = tile(0, 6)          # dark brick, the second
+T_RED = tile(6, 6)            # red brick, the third
+T_BLUE = tile(7, 0, inset=6)  # blue brick, the fourth (inset more: the tile below begins with a teal line)
+T_WINGED = px(776, 414, 892, 470)   # the winged disc on brick, the god Ashur's emblem
 
 STRIPS = (T_NICHES, T_FRIEZE)
 
@@ -199,6 +213,25 @@ class Builder:
                 self.oquad((foot + up * ph, top + up * ph, top + o + up * ph, foot + o + up * ph), up, T_BRICK_PALE)
                 self.oquad((g0, g0 + o, foot + o + up * ph, foot + up * ph), -fwd, T_BRICK)          # its foot
 
+    def ramp(self, a0, a1, run, rise, out_side=1, ph=0.11, th=0.06):
+        """A smooth ramp (no steps), as at Dur-Sharrukin: a0-a1 its foot, `run` the way up, `rise` its height; the side
+        at a1 (out_side=1) or a0 (-1) is open, with a parapet and the ramp's solid flank below it; the other lies
+        against a wall."""
+        a0, a1, run = Vector(a0), Vector(a1), Vector(run)
+        up = Vector((0, 0, 1))
+        across, fwd = (a1 - a0).normalized(), run.normalized()
+        top0, top1 = a0 + run + up * rise, a1 + run + up * rise
+        self.oquad((a0, a1, top1, top0), up, T_WAY)
+        p, out = (a1, across) if out_side == 1 else (a0, -across)
+        top = p + run + up * rise
+        ground_top = Vector((top.x, top.y, p.z))
+        self.otri(p, ground_top, top, out, T_BRICK_PALE)                       # the ramp's flank
+        o = out * th
+        self.oquad((p + o, ground_top + o, top + o + up * ph, p + o + up * ph), out, T_BRICK_PALE)
+        self.oquad((p, top, top + up * ph, p + up * ph), -out, T_BRICK_PALE)
+        self.oquad((p + up * ph, top + up * ph, top + o + up * ph, p + o + up * ph), up, T_BRICK_PALE)
+        self.oquad((p, p + o, p + o + up * ph, p + up * ph), -fwd, T_BRICK_PALE)
+
     def oquad(self, pts, want, region, mode='tile'):
         """A quad (bl, br, tr, tl) turned, if need be, so that its normal faces `want`."""
         bl, br, tr, tl = map(Vector, pts)
@@ -206,7 +239,7 @@ class Builder:
             bl, br, tr, tl = br, bl, tl, tr
         self.quad(bl, br, tr, tl, region, mode)
 
-    def buttresses(self, bl, br, tr, tl, out, spacing, width=0.16, depth=0.07, top_gap=0.14, skip=None):
+    def buttresses(self, bl, br, tr, tl, out, spacing, width=0.16, depth=0.07, top_gap=0.14, skip=None, wall=None):
         """Buttresses standing out from a battered wall face (bl, br, tr, tl), leaning with it, every `spacing`;
         `skip(point)` leaves out those in front of a stair."""
         bl, br, tr, tl = map(Vector, (bl, br, tr, tl))
@@ -222,15 +255,19 @@ class Builder:
             t1 = b1.lerp(tl.lerp(tr, s + width / 2 / lt), ft)
             if skip and skip((b0 + b1) / 2):
                 continue
-            self.oquad((b0 + off, b1 + off, t1 + off, t0 + off), out, T_BRICK)
-            self.oquad((b0, b0 + off, t0 + off, t0), -along, T_BRICK)
-            self.oquad((b1 + off, b1, t1, t1 + off), along, T_BRICK)
-            self.oquad((t0, t1, t1 + off, t0 + off), (0, 0, 1), T_BRICK_PALE)
+            wall = wall or T_BRICK
+            self.oquad((b0 + off, b1 + off, t1 + off, t0 + off), out, wall)
+            self.oquad((b0, b0 + off, t0 + off, t0), -along, wall)
+            self.oquad((b1 + off, b1, t1, t1 + off), along, wall)
+            self.oquad((t0, t1, t1 + off, t0 + off), (0, 0, 1), T_BRICK_PALE if wall is T_BRICK else wall)
 
-    def stage(self, x0, x1, y0, y1, z0, z1, batter, spacing=0.55, front=True, stair_gap=0.0):
-        """A stage of the ziggurat: battered brick walls with buttresses, a paved top, and a coping that stands
-        a little proud of the wall head, open in front where the stair arrives."""
-        self.box(x0, x1, y0, y1, z0, z1, T_BRICK, T_TERRACE, batter=batter)
+    def stage(self, x0, x1, y0, y1, z0, z1, batter, spacing=0.55, front=True, stair_gap=0.0, wall=None,
+              plain='', coping=True):
+        """A stage of the ziggurat: battered walls (brick, or `wall`) with buttresses, a paved top, and a coping that
+        stands a little proud of the wall head, open in front where the stair arrives. Faces in `plain` ('fbrl')
+        get no buttresses (a ramp climbs them)."""
+        wall = wall or T_BRICK
+        self.box(x0, x1, y0, y1, z0, z1, wall, T_TERRACE, batter=batter)
         i = batter
         faces = {
             'f': ((x0, y0, z0), (x1, y0, z0), (x1 - i, y0 + i, z1), (x0 + i, y0 + i, z1), (0, -1, 0)),
@@ -239,10 +276,12 @@ class Builder:
             'l': ((x0, y1, z0), (x0, y0, z0), (x0 + i, y0 + i, z1), (x0 + i, y1 - i, z1), (-1, 0, 0)),
         }
         for key, (bl, br, tr, tl, out) in faces.items():
-            if key == 'f' and not front:
+            if (key == 'f' and not front) or key in plain:
                 continue
             skip = (lambda p: abs(p.x) < stair_gap + 0.1) if key == 'f' else None
-            self.buttresses(bl, br, tr, tl, out, spacing, skip=skip)
+            self.buttresses(bl, br, tr, tl, out, spacing, skip=skip, wall=wall)
+        if not coping:
+            return
         c, w, lo, hi = 0.05, 0.09, z1 - 0.06, z1 + 0.09
         X0, X1, Y0, Y1 = x0 + i, x1 - i, y0 + i, y1 - i
         if stair_gap:
@@ -332,7 +371,7 @@ class Builder:
         row(y0 + h + step, y1 - h - step, x1 - h, False)
 
 
-def build():
+def build_sin():
     b = Builder()
     # The temple court: a low platform of dark brick, paved
     b.box(-4.0, 4.0, -4.6, 2.6, 0.0, 0.12, T_BRICK_DARK, T_PAVING)
@@ -410,6 +449,149 @@ def build():
     return b
 
 
+def garden(b, rng, z, groves, edge_shrubs, corner_clumps):
+    """Date palms in rows (Assyrian planting pits), shrubs, and ground clumps at the platform's corners."""
+    for (gx, gy) in groves:
+        b.palm(gx + rng.uniform(-0.06, 0.06), gy + rng.uniform(-0.06, 0.06), z, rng)
+        b.shrub(gx + rng.uniform(-0.1, 0.1), gy - 0.12, z, rng, radius=0.07, region=T_DRY)
+    for (gx, gy) in edge_shrubs:
+        b.shrub(gx + rng.uniform(-0.08, 0.08), gy + rng.uniform(-0.1, 0.1), z, rng, radius=0.16)
+    for (gx, gy) in corner_clumps:
+        b.shrub(gx, gy, 0.0, rng, radius=rng.uniform(0.14, 0.22), region=rng.choice((T_LEAF, T_LEAF, T_DRY)))
+
+
+def shrine(b, x0, x1, y0, y1, z, height, wall, frieze=True, merlon=(0.11, 0.13, 0.22)):
+    """The god's house on the summit: walls, a frieze band, the door, merlons; returns the roof's height."""
+    body = height - (0.18 if frieze else 0)
+    b.box(x0, x1, y0, y1, z, z + body, wall, None)
+    if frieze:
+        b.box(x0, x1, y0, y1, z + body, z + height, T_FRIEZE, T_TERRACE, side_mode='strip')
+    else:
+        b.box(x0, x1, y0, y1, z + body, z + height, wall, T_TERRACE, sides='')
+    b.quad((-0.15, y0 - 0.01, z), (0.15, y0 - 0.01, z), (0.15, y0 - 0.01, z + 0.42), (-0.15, y0 - 0.01, z + 0.42),
+           T_DOOR, 'fit')
+    b.merlons(x0, x1, y0, y1, z + height, size=merlon[0], height=merlon[1], step=merlon[2])
+    return z + height
+
+
+def build_ashur():
+    """Ashur's ziggurat: square, as most Assyrian ones; its plan is not known, so it follows Dur-Sharrukin's, the only
+    Assyrian ziggurat whose look is recorded: four stages faced white, black, red and blue, climbed by a ramp that winds
+    round it, one face to a stage. The shrine bears the winged disc of Ashur."""
+    b = Builder()
+    rng = random.Random(4791)
+    b.box(-3.6, 3.6, -3.7, 3.6, 0.0, 0.12, T_BRICK_DARK, T_PAVING)
+    z = 0.12
+    halves = [2.5, 1.95, 1.45, 1.0]
+    heights = [0.9, 0.75, 0.65, 0.6]
+    walls = [T_WHITE, T_BLACK, T_RED, T_BLUE]
+    sides = ['f', 'r', 'b', 'l']          # the ramp of each stage climbs this face, turning round the tower
+    batter, w = 0.06, 0.3
+    levels = [z]
+    for i, (h, ht, wall, side) in enumerate(zip(halves, heights, walls, sides)):
+        z0, z1 = levels[-1], levels[-1] + ht
+        b.stage(-h, h, -h, h, z0, z1, batter=batter, wall=wall, plain=side, coping=False, spacing=0.5)
+        # The ramp, on the level below, against this stage's face, from one corner to the next (counter-clockwise
+        # seen from above: front rising east, right rising north, back rising west, left rising south)
+        if side == 'f':
+            a0, a1, run = (-h, -h, z0), (-h, -h - w, z0), (2 * h, 0, 0)
+            land = (h, h + w, -h - w, -h)
+        elif side == 'r':
+            a0, a1, run = (h, -h, z0), (h + w, -h, z0), (0, 2 * h, 0)
+            land = (h, h + w, h, h + w)
+        elif side == 'b':
+            a0, a1, run = (h, h, z0), (h, h + w, z0), (-2 * h, 0, 0)
+            land = (-h - w, -h, h, h + w)
+        else:
+            a0, a1, run = (-h, h, z0), (-h - w, h, z0), (0, -2 * h, 0)
+            land = (-h - w, -h, -h - w, -h)
+        b.ramp(a0, a1, run, ht)
+        # The landing at the ramp's head, at the corner, level with the stage's top
+        b.box(land[0], land[1], land[2], land[3], z0, z1, T_BRICK_PALE, T_WAY)
+        levels.append(z1)
+    zt = levels[-1]
+    # Ashur's house: blue glazed brick, the winged disc over the door, stepped merlons, a gold disc on a pole
+    sh = (-0.6, 0.6, -0.5, 0.5)
+    zr = shrine(b, sh[0], sh[1], sh[2], sh[3], zt, 0.72, T_GLAZED)
+    b.quad((-0.3, sh[2] - 0.012, zt + 0.43), (0.3, sh[2] - 0.012, zt + 0.43), (0.3, sh[2] - 0.012, zt + 0.72),
+           (-0.3, sh[2] - 0.012, zt + 0.72), T_WINGED, 'fit')
+    b.box(-0.025, 0.025, -0.025, 0.025, zr, zr + 0.45, T_GOLD, T_GOLD)
+    disc(b, 0.0, 0.0, zr + 0.56, 0.13, 0.04)                                       # the sun disc
+    # The court: palms in rows either side of the ramp's foot, shrubs along the sides, clumps at the corners
+    garden(b, rng, 0.12,
+           groves=[(x, y) for x in (-3.1, -2.4) for y in (-3.35, )] + [(x, y) for x in (2.4, 3.1) for y in (-3.35, )]
+           + [(-3.15, 3.15), (3.15, 3.15)],
+           edge_shrubs=[(sx * 3.2, y) for sx in (-1, 1) for y in (-1.6, -0.4, 0.8, 2.0)],
+           corner_clumps=[(sx * gx, gy) for sx in (-1, 1) for (gx, gy) in ((3.85, -3.85), (3.6, -4.05), (3.85, 3.8))])
+    return b
+
+
+def build_marduk():
+    """The Etemenanki: a square of about 91 m, seven levels, the first two much the tallest; on the south a great
+    stair running out from the face up to the second stage, two more along the face to the first; the upper stages
+    reached from inside; the temple on top (Herodotus's, with its couch and golden table) in blue glazed brick. Marduk's
+    spade on its pole crowns it."""
+    b = Builder()
+    rng = random.Random(4877)
+    b.box(-3.8, 3.8, -5.0, 3.3, 0.0, 0.12, T_BRICK_DARK, T_PAVING)
+    z = 0.12
+    # (half-size, height): two tall stages, four short ones
+    tiers = [(2.6, 1.25), (2.05, 0.75), (1.6, 0.45), (1.25, 0.4), (0.95, 0.35), (0.72, 0.3)]
+    levels = [z]
+    for i, (h, ht) in enumerate(tiers):
+        z0, z1 = levels[-1], levels[-1] + ht
+        b.stage(-h, h, -h, h, z0, z1, batter=0.08 if i < 2 else 0.05, spacing=0.55 if i < 2 else 0.45,
+                front=(i != 0), stair_gap=0.55 if i == 1 else (0.6 if i == 0 else 0.0), coping=(i < 4))
+        levels.append(z1)
+    # The great stair: straight out from the south face, from the court to the top of the second stage
+    top2 = -tiers[1][0] + 0.08
+    b.flight((-0.42, -4.7, z), (0.42, -4.7, z), (0, top2 + 4.7, 0), levels[2] - z, step_h=0.1)
+    # The two side stairs along the face, up to the first stage
+    h1, yf = tiers[0][0], -tiers[0][0] - 0.62
+    b.flight((-2.95, -h1 - 0.02, z), (-2.95, yf + 0.07, z), (2.35, 0, 0), levels[1] - z, sides=('none', 'parapet'))
+    b.flight((2.95, -h1 - 0.02, z), (2.95, yf + 0.07, z), (-2.35, 0, 0), levels[1] - z, sides=('none', 'parapet'))
+    # The temple of Marduk: blue glazed brick, the frieze, merlons; the spade on its pole
+    zt = levels[-1]
+    zr = shrine(b, -0.5, 0.5, -0.42, 0.42, zt, 0.62, T_GLAZED, merlon=(0.09, 0.11, 0.19))
+    b.box(-0.025, 0.025, -0.025, 0.025, zr, zr + 0.5, T_GOLD, T_GOLD)
+    spade(b, 0.0, 0.0, zr + 0.5)
+    # Processional way to the stair foot, altars, and palms in rows along the great stair
+    b.box(-0.5, 0.5, -5.0, -4.7, z, z + 0.015, T_WAY, T_WAY, sides='flr')
+    for x in (-0.85, 0.85):
+        b.box(x - 0.11, x + 0.11, -4.9, -4.68, z, z + 0.17, T_BRICK_PALE, T_BRICK_PALE)
+    garden(b, rng, z,
+           groves=[(sx * gx, gy) for sx in (-1, 1) for gx in (1.3, 2.1) for gy in (-4.45, -3.65)],
+           edge_shrubs=[(sx * 3.3, y) for sx in (-1, 1) for y in (-1.4, -0.2, 1.0, 2.2)] + [(-3.3, 2.95), (3.3, 2.95)],
+           corner_clumps=[(sx * gx, gy) for sx in (-1, 1) for (gx, gy) in ((4.05, -5.15), (3.8, -5.35), (4.05, 3.45))])
+    return b
+
+
+def disc(b, cx, cy, cz, R, depth, n=14):
+    """A gold disc facing south (-y) on its pole: two faces of a fan and a rim."""
+    yf, yb = cy - depth / 2, cy + depth / 2
+    ring = [(cx + R * math.cos(2 * math.pi * k / n), cz + R * math.sin(2 * math.pi * k / n)) for k in range(n)]
+    for k in range(n):
+        (x0, z0), (x1, z1) = ring[k], ring[(k + 1) % n]
+        b.otri((cx, yf, cz), (x0, yf, z0), (x1, yf, z1), (0, -1, 0), T_GOLD)
+        b.otri((cx, yb, cz), (x0, yb, z0), (x1, yb, z1), (0, 1, 0), T_GOLD)
+        b.oquad(((x0, yf, z0), (x1, yf, z1), (x1, yb, z1), (x0, yb, z0)), ((x0 + x1) / 2 - cx, 0, (z0 + z1) / 2 - cz),
+                T_GOLD, 'fit_tile')
+
+
+def spade(b, cx, cy, cz):
+    """Marduk's spade (marru), his emblem: a triangular gold blade on the pole, point up, with a short tang."""
+    w, h, d = 0.11, 0.22, 0.03
+    yf, yb = cy - d / 2, cy + d / 2
+    base, tip = cz, cz + h
+    gold = T_GOLD
+    pts = [(cx - w, base), (cx + w, base), (cx, tip)]
+    b.otri(*[(x, yf, zz) for x, zz in pts], (0, -1, 0), gold)
+    b.otri(*[(x, yb, zz) for x, zz in pts], (0, 1, 0), gold)
+    for (x0, z0), (x1, z1) in ((pts[0], pts[1]), (pts[1], pts[2]), (pts[2], pts[0])):
+        mid = Vector(((x0 + x1) / 2 - cx, 0, (z0 + z1) / 2 - (base + tip) / 2))
+        b.oquad(((x0, yf, z0), (x1, yf, z1), (x1, yb, z1), (x0, yb, z0)), mid, gold, 'fit_tile')
+
+
 def crescent(b, cx, cy, cz, R, r, d, depth, n=16):
     """A crescent, horns up, facing -y: a disc of radius R less a disc of radius r raised by d."""
     yi = (R * R - r * r + d * d) / (2 * d)          # where the two circles meet
@@ -439,7 +621,7 @@ def main():
     pdx = importlib.import_module(mods[0] + '.pdx_blender.blender_import_export')
     bpy.ops.wm.read_factory_settings(use_empty=True)
 
-    b = build()
+    b = {'sin': build_sin, 'ashur': build_ashur, 'marduk': build_marduk}[MODEL]()
     bmesh.ops.remove_doubles(b.bm, verts=b.bm.verts, dist=1e-5)
     me = bpy.data.meshes.new(NAME + '_LOD0Shape')
     b.bm.to_mesh(me)
@@ -521,7 +703,7 @@ def dds(levels, w, h):
 
 
 def write_asset():
-    text = f'''# The Ehulhul, the Temple of Sin at Harran: a Neo-Babylonian moon-god ziggurat (tools/make_ziggurat_model.py)
+    text = f'''# {TITLE} (tools/make_ziggurat_model.py --model {MODEL})
 pdxmesh = {{
 	name = "{NAME}_mesh"
 	file = "{NAME}.mesh"
