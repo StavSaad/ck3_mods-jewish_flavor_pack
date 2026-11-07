@@ -4,7 +4,7 @@
 #
 # The design (0.15 plan, section 2): no ziggurat at Harran is attested (Nabonidus's texts call the Ehulhul a temple),
 # so the model follows the moon god's ziggurat he restored at Ur: a broad first stage (Ur's 64 x 45 m proportions) of
-# baked brick, every stage's battered walls lined with modelled buttresses and capped with a coping, three stairs meeting at a gatehouse on the first terrace, a single stair on to
+# baked brick, every stage's battered walls lined with modelled buttresses and capped with a coping, three stairs of real steps with low parapets meeting at a gatehouse on the first terrace, a single stair on to
 # two smaller stages, and the god's shrine on top in blue glazed brick (as found at Ur), with stepped merlons and the
 # crescent of Sin on a pole.
 #
@@ -53,9 +53,11 @@ def tile(c, r, inset=2):
 T_BRICK = tile(3, 0)          # weathered baked brick
 T_BRICK_PALE = tile(2, 0)     # paler baked brick
 T_BRICK_DARK = tile(7, 7)     # dark baked brick, the platform
-T_PAVING = tile(0, 0)         # plain mud plaster, the courtyard
-T_TERRACE = tile(2, 6)        # worn brick paving, the terraces
-T_STAIRS = tile(2, 3)         # steps
+T_PAVING = [tile(0, 0), tile(1, 0), tile(0, 1), tile(1, 1)]   # plain mud plaster, the courtyard (a list: one per cell)
+T_TERRACE = [tile(2, 6), tile(3, 6)]   # worn brick paving, the terraces (the redder tiles beside them read as a checkerboard)
+T_WAY = tile(4, 7)            # pale brick paving, the processional way
+T_TREAD = tile(3, 6)          # a step's tread
+T_RISER = tile(4, 7)          # a step's riser, pale brick
 T_GLAZED = tile(5, 2)         # blue glazed brick with gold rosettes
 T_NICHES = px(0, 692, 1024, 766)   # strip: brick panels between dark recesses (unused since the buttresses are modelled)
 T_FRIEZE = px(0, 642, 1024, 690)   # strip: turquoise and gold frieze
@@ -84,7 +86,8 @@ class Builder:
         'strip' runs a full-width atlas strip along the face (u by density, v over the whole height), 'fit' maps the
         region over the whole face."""
         bl, br, tr, tl = map(Vector, (bl, br, tr, tl))
-        u0, v0, u1, v1 = region
+        variants = region if isinstance(region, list) else [region]
+        u0, v0, u1, v1 = variants[0]
         width = max((br - bl).length, (tr - tl).length)
         height = max((tl - bl).length, (tr - br).length)
 
@@ -93,6 +96,11 @@ class Builder:
 
         if mode == 'fit':
             self.face([bl, br, tr, tl], [(u0, v0), (u1, v0), (u1, v1), (u0, v1)])
+            return
+        if mode == 'fit_tile':
+            fu, fv = min(1.0, width / TILE_LEN), min(1.0, height / TILE_LEN)
+            uu, vv = u0 + (u1 - u0) * fu, v0 + (v1 - v0) * fv
+            self.face([bl, br, tr, tl], [(u0, v0), (uu, v0), (uu, vv), (u0, vv)])
             return
         if mode == 'strip':
             span = (u1 - u0) * DENS          # map units the strip covers before it must wrap
@@ -108,6 +116,7 @@ class Builder:
         for i in range(nu):
             for j in range(nv):
                 s0, s1, t0, t1 = i / nu, (i + 1) / nu, j / nv, (j + 1) / nv
+                u0, v0, u1, v1 = variants[(i * 7 + j * 13 + int(abs(bl.x * 31 + bl.y * 17 + bl.z * 11))) % len(variants)]
                 fu = (s1 - s0) * width / TILE_LEN
                 fv = (t1 - t0) * height / TILE_LEN
                 uu, vv = u0 + (u1 - u0) * fu, v0 + (v1 - v0) * fv
@@ -142,11 +151,35 @@ class Builder:
             self.quad((x0 + i, y0 + i, z1), (x1 - i, y0 + i, z1), (x1 - i, y1 - i, z1), (x0 + i, y1 - i, z1), top,
                       top_mode)
 
-    def stair(self, x0, x1, y_foot, y_top, z_foot, z_top):
-        """A straight stair rising towards +y, with its two side walls."""
-        self.quad((x0, y_foot, z_foot), (x1, y_foot, z_foot), (x1, y_top, z_top), (x0, y_top, z_top), T_STAIRS)
-        self.tri((x0, y_foot, z_foot), (x0, y_top, z_top), (x0, y_top, z_foot), T_BRICK)
-        self.tri((x1, y_foot, z_foot), (x1, y_top, z_foot), (x1, y_top, z_top), T_BRICK)
+    def flight(self, a0, a1, run, rise, sides=('parapet', 'parapet'), step_h=0.1, ph=0.13, th=0.07):
+        """A flight of real steps: a0-a1 is its foot (the first riser's lower edge), `run` the horizontal way up to the
+        top edge, `rise` its height. Each side is 'parapet' (a low wall standing just outside the steps, sloping
+        with them), 'solid' (the stepped mass under the treads, down to the foot) or 'none' (against a wall)."""
+        a0, a1, run = Vector(a0), Vector(a1), Vector(run)
+        up = Vector((0, 0, 1))
+        n = max(3, round(rise / step_h))
+        h, d = rise / n, run / n
+        fwd, across = run.normalized(), (a1 - a0).normalized()
+        z0 = a0.z
+        for k in range(n):
+            b0, b1 = a0 + d * k + up * (h * k), a1 + d * k + up * (h * k)
+            self.oquad((b0, b1, b1 + up * h, b0 + up * h), -fwd, T_RISER, 'fit_tile')
+            t0, t1 = b0 + up * h, b1 + up * h
+            self.oquad((t0, t1, t1 + d, t0 + d), up, T_TREAD, 'fit_tile')
+        for p, out, mode in ((a0, -across, sides[0]), (a1, across, sides[1])):
+            if mode == 'solid':
+                for k in range(n):
+                    s0 = p + d * k + up * (h * (k + 1))
+                    s1 = s0 + d
+                    self.oquad((Vector((s0.x, s0.y, z0)), Vector((s1.x, s1.y, z0)), s1, s0), out, T_BRICK)
+            elif mode == 'parapet':
+                o = out * th
+                foot, top = p, p + run + up * rise
+                g0, g1 = Vector((foot.x, foot.y, z0)), Vector((top.x, top.y, z0))
+                self.oquad((g0 + o, g1 + o, top + o + up * ph, foot + o + up * ph), out, T_BRICK)      # outer face
+                self.oquad((foot, top, top + up * ph, foot + up * ph), -out, T_BRICK)                # over the treads
+                self.oquad((foot + up * ph, top + up * ph, top + o + up * ph, foot + o + up * ph), up, T_BRICK_PALE)
+                self.oquad((g0, g0 + o, foot + o + up * ph, foot + up * ph), -fwd, T_BRICK)          # its foot
 
     def oquad(self, pts, want, region, mode='tile'):
         """A quad (bl, br, tr, tl) turned, if need be, so that its normal faces `want`."""
@@ -227,19 +260,26 @@ def build():
     # The temple court: a low platform of dark brick, paved
     b.box(-4.0, 4.0, -4.6, 2.6, 0.0, 0.12, T_BRICK_DARK, T_PAVING)
     z1 = 0.12
+    # The processional way, from the court's edge to the foot of the great stair, and its kerbs
+    b.box(-0.5, 0.5, -4.6, -4.0, z1, z1 + 0.015, T_WAY, T_WAY, sides='flr')
+    for x in (-0.55, 0.55):
+        b.box(x - 0.05, x + 0.05, -4.6, -4.0, z1, z1 + 0.05, T_BRICK_PALE, T_BRICK_PALE)
+    # Offering altars at the stair foot
+    for x in (-0.85, 0.85):
+        b.box(x - 0.11, x + 0.11, -4.3, -4.08, z1, z1 + 0.17, T_BRICK_PALE, T_BRICK_PALE)
+        b.box(x - 0.13, x + 0.13, -4.32, -4.06, z1 + 0.17, z1 + 0.21, T_BRICK, T_TERRACE)
     # Stage 1: 6.0 x 4.3 (Ur's proportions), battered, buttressed (not in front, where the stairs climb its face)
     s1 = dict(x0=-3.0, x1=3.0, y0=-2.15, y1=2.15)
     b.stage(s1['x0'], s1['x1'], s1['y0'], s1['y1'], z1, z1 + 1.3, batter=0.12, front=False, stair_gap=0.6)
     z2 = z1 + 1.3
     # The three stairs of the first stage: a central flight out from the face, two along it, meeting at the gatehouse
-    b.stair(-0.35, 0.35, -4.0, s1['y0'] + 0.12, z1, z2)
+    top1 = s1['y0'] + 0.12
+    b.flight((-0.35, -4.0, z1), (0.35, -4.0, z1), (0, top1 + 4.0, 0), z2 - z1)
     yf, yb = s1['y0'] - 0.62, s1['y0'] - 0.02
-    # Left flight rises towards +x, along the face
-    b.quad((-3.0, yb, z1), (-3.0, yf, z1), (-0.45, yf, z2), (-0.45, yb, z2), T_STAIRS)
-    b.tri((-3.0, yf, z1), (-0.45, yf, z1), (-0.45, yf, z2), T_BRICK)
+    # Left flight rises towards +x, along the face: a parapet on its open side, the wall on the other
+    b.flight((-3.0, yb, z1), (-3.0, yf + 0.07, z1), (2.55, 0, 0), z2 - z1, sides=('none', 'parapet'))
     # Right flight rises towards -x
-    b.quad((3.0, yf, z1), (3.0, yb, z1), (0.45, yb, z2), (0.45, yf, z2), T_STAIRS)
-    b.tri((0.45, yf, z1), (3.0, yf, z1), (0.45, yf, z2), T_BRICK)
+    b.flight((3.0, yb, z1), (3.0, yf + 0.07, z1), (-2.55, 0, 0), z2 - z1, sides=('none', 'parapet'))
     # Their landings' fronts, under the gatehouse
     b.quad((-0.45, yf, z1), (0.45, yf, z1), (0.45, yf, z2), (-0.45, yf, z2), T_BRICK)
     b.quad((-0.45, yf, z2), (0.45, yf, z2), (0.45, yb, z2), (-0.45, yb, z2), T_TERRACE)
@@ -253,12 +293,13 @@ def build():
     s2 = dict(x0=-2.1, x1=2.1, y0=-0.65, y1=2.05)
     b.stage(s2['x0'], s2['x1'], s2['y0'], s2['y1'], z2, z2 + 0.95, batter=0.08, stair_gap=0.4)
     z3 = z2 + 0.95
-    b.stair(-0.3, 0.3, g['y1'], s2['y0'] + 0.08, z2, z3)
+    b.flight((-0.3, g['y1'], z2), (0.3, g['y1'], z2), (0, s2['y0'] + 0.08 - g['y1'], 0), z3 - z2)
     # Stage 3
     s3 = dict(x0=-1.3, x1=1.3, y0=0.1, y1=1.9)
     b.stage(s3['x0'], s3['x1'], s3['y0'], s3['y1'], z3, z3 + 0.75, batter=0.06, spacing=0.5, stair_gap=0.35)
     z4 = z3 + 0.75
-    b.stair(-0.25, 0.25, s2['y0'] + 0.08 + 0.05, s3['y0'] + 0.06, z3, z4)
+    b.flight((-0.25, s2['y0'] + 0.13, z3), (0.25, s2['y0'] + 0.13, z3), (0, s3['y0'] + 0.06 - s2['y0'] - 0.13, 0),
+             z4 - z3)
     # The shrine of Sin: blue glazed brick, a turquoise and gold frieze, the door, stepped merlons
     sh = dict(x0=-0.7, x1=0.7, y0=0.65, y1=1.65)
     b.box(sh['x0'], sh['x1'], sh['y0'], sh['y1'], z4, z4 + 0.62, T_GLAZED, None)
@@ -267,6 +308,10 @@ def build():
     b.quad((-0.16, sh['y0'] - 0.01, z4), (0.16, sh['y0'] - 0.01, z4), (0.16, sh['y0'] - 0.01, z4 + 0.46),
            (-0.16, sh['y0'] - 0.01, z4 + 0.46), T_DOOR, 'fit')
     b.merlons(sh['x0'], sh['x1'], sh['y0'], sh['y1'], zr, size=0.11, height=0.13, step=0.22)
+    # Offering tables either side of the shrine's door
+    for x in (-0.38, 0.38):
+        b.box(x - 0.08, x + 0.08, sh['y0'] - 0.24, sh['y0'] - 0.08, z4, z4 + 0.13, T_BRICK_PALE, T_BRICK_PALE)
+        b.box(x - 0.09, x + 0.09, sh['y0'] - 0.25, sh['y0'] - 0.07, z4 + 0.13, z4 + 0.15, T_GLAZED, T_GLAZED)
     # The crescent of Sin on its pole, horns up, over the shrine's front
     b.box(-0.025, 0.025, 1.0, 1.05, zr, zr + 0.5, T_GOLD, T_GOLD)
     crescent(b, cx=0.0, cy=1.025, cz=zr + 0.68, R=0.24, r=0.2, d=0.09, depth=0.05)
