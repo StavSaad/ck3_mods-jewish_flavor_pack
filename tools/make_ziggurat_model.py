@@ -6,7 +6,7 @@
 # so the model follows the moon god's ziggurat he restored at Ur: a broad first stage (Ur's 64 x 45 m proportions) of
 # baked brick, every stage's battered walls lined with modelled buttresses and capped with a coping, three stairs of real steps with low parapets meeting at a gatehouse on the first terrace, a single stair on to
 # two smaller stages, and the god's shrine on top in blue glazed brick (as found at Ur), with stepped merlons and the
-# crescent of Sin on a pole.
+# crescent of Sin on a pole; around it a temple garden of date palms and tamarisks, in rows like Assyrian planting pits.
 #
 # Texturing follows vanilla's special buildings (e.g. the Great Mosque of Samarra): every face maps onto a tile of the
 # shared Persian atlas (building_persia_atlas_*), about 1.5 map units to a 128 px tile, with the standard_atlas shader;
@@ -14,6 +14,7 @@
 # Outputs gfx/models/buildings/jip/jip_temple_of_sin.mesh, .asset and jip_temple_of_sin_unique.dds.
 import importlib
 import math
+import random
 import os
 import struct
 import sys
@@ -63,6 +64,9 @@ T_NICHES = px(0, 692, 1024, 766)   # strip: brick panels between dark recesses (
 T_FRIEZE = px(0, 642, 1024, 690)   # strip: turquoise and gold frieze
 T_DOOR = px(905, 388, 941, 444)    # an arched opening
 T_GOLD = px(702, 317, 708, 323)    # a rosette's gold
+T_LEAF = tile(3, 3)           # green foliage, as vanilla's own shrubs (Samarra's) use
+T_DRY = tile(6, 0)            # dry grass
+T_BARK = tile(5, 3)           # dark vertical grain, a palm's trunk
 
 STRIPS = (T_NICHES, T_FRIEZE)
 
@@ -236,6 +240,65 @@ class Builder:
         self.box(X0 - c, X0 + w, Y0 + w, Y1 - w, lo, hi, T_BRICK_PALE, T_BRICK_PALE, sides='lr')
         self.box(X1 - w, X1 + c, Y0 + w, Y1 - w, lo, hi, T_BRICK_PALE, T_BRICK_PALE, sides='lr')
 
+    def otri(self, a, b, c, want, region):
+        a, b, c = map(Vector, (a, b, c))
+        if (b - a).cross(c - a).dot(Vector(want)) < 0:
+            b, c = c, b
+        self.tri(a, b, c, region)
+
+    def palm(self, x, y, z, rng, height=0.62):
+        """A date palm: a tapering six-sided trunk leaning a little, and a crown of drooping two-sided fronds."""
+        h = height * rng.uniform(0.85, 1.15)
+        lean = Vector((rng.uniform(-0.06, 0.06), rng.uniform(-0.06, 0.06), 0))
+        base, top = Vector((x, y, z)), Vector((x, y, z + h)) + lean
+        sides, r0, r1 = 6, 0.04, 0.026
+        ring0 = [base + Vector((r0 * math.cos(2 * math.pi * k / sides), r0 * math.sin(2 * math.pi * k / sides), 0))
+                 for k in range(sides)]
+        ring1 = [top + Vector((r1 * math.cos(2 * math.pi * k / sides), r1 * math.sin(2 * math.pi * k / sides), 0))
+                 for k in range(sides)]
+        for k in range(sides):
+            k1 = (k + 1) % sides
+            mid = (ring0[k] + ring0[k1]) / 2
+            self.oquad((ring0[k], ring0[k1], ring1[k1], ring1[k]), mid - base, T_BARK, 'fit_tile')
+        n = 8
+        a0 = rng.uniform(0, 2 * math.pi)
+        for k in range(n):
+            a = a0 + 2 * math.pi * k / n + rng.uniform(-0.2, 0.2)
+            d = Vector((math.cos(a), math.sin(a), 0))
+            side = Vector((-d.y, d.x, 0))
+            reach = rng.uniform(0.85, 1.15)
+            p0 = top
+            p1 = top + d * 0.17 * reach + Vector((0, 0, 0.07))
+            p2 = top + d * 0.33 * reach + Vector((0, 0, -0.06 * reach))
+            w0, w1, w2 = 0.012, 0.055, 0.008
+            for (q0, q1, ww0, ww1) in ((p0, p1, w0, w1), (p1, p2, w1, w2)):
+                quad = (q0 - side * ww0, q0 + side * ww0, q1 + side * ww1, q1 - side * ww1)
+                self.oquad(quad, (0, 0, 1), T_LEAF, 'fit_tile')          # the upper face
+                self.oquad(quad, (0, 0, -1), T_LEAF, 'fit_tile')         # and the under side
+
+    def shrub(self, x, y, z, rng, radius=0.17, region=None):
+        """A low rounded clump (tamarisk, saltbush): a jittered half-dome of quads, open at the ground."""
+        region = region or T_LEAF
+        rx, ry = radius * rng.uniform(0.8, 1.2), radius * rng.uniform(0.8, 1.2)
+        rz = radius * rng.uniform(0.7, 1.0)
+        c = Vector((x, y, z))
+        segs, rings = 7, (math.radians(-5), math.radians(30), math.radians(62))
+        jit = [[rng.uniform(0.85, 1.12) for _ in range(segs)] for _ in rings]
+        pts = [[c + Vector((rx * math.cos(e) * math.cos(2 * math.pi * s / segs) * jit[i][s],
+                            ry * math.cos(e) * math.sin(2 * math.pi * s / segs) * jit[i][s],
+                            max(0.0, rz * math.sin(e)) * jit[i][s]))
+                for s in range(segs)] for i, e in enumerate(rings)]
+        top = c + Vector((0, 0, rz * rng.uniform(0.95, 1.1)))
+        for i in range(len(rings) - 1):
+            for s in range(segs):
+                s1 = (s + 1) % segs
+                q = (pts[i][s], pts[i][s1], pts[i + 1][s1], pts[i + 1][s])
+                self.oquad(q, sum(q, Vector()) / 4 - c, region, 'fit_tile')
+        for s in range(segs):
+            s1 = (s + 1) % segs
+            a, b2 = pts[-1][s], pts[-1][s1]
+            self.otri(a, b2, top, (a + b2 + top) / 3 - c, region)
+
     def merlons(self, x0, x1, y0, y1, z, size=0.12, height=0.14, step=0.24):
         """Stepped merlons along a roof's edge."""
         def row(a, b, fixed, along_x):
@@ -312,6 +375,21 @@ def build():
     for x in (-0.38, 0.38):
         b.box(x - 0.08, x + 0.08, sh['y0'] - 0.24, sh['y0'] - 0.08, z4, z4 + 0.13, T_BRICK_PALE, T_BRICK_PALE)
         b.box(x - 0.09, x + 0.09, sh['y0'] - 0.25, sh['y0'] - 0.07, z4 + 0.13, z4 + 0.15, T_GLAZED, T_GLAZED)
+    # The temple garden, in rows like the planting pits before Assyrian temples: a grove of date palms either side of
+    # the great stair, a palm at each back corner, tamarisks along the side terraces of the court, and low clumps on
+    # the ground at the platform's corners to soften its edge into the terrain
+    rng = random.Random(4870)          # Harran's province: the same garden every build
+    for sx in (-1, 1):
+        for gx in (1.45, 2.3):
+            for gy in (-4.3, -3.45):
+                b.palm(sx * gx + rng.uniform(-0.06, 0.06), gy + rng.uniform(-0.06, 0.06), z1, rng)
+                b.shrub(sx * gx + rng.uniform(-0.1, 0.1), gy - 0.12, z1, rng, radius=0.07, region=T_DRY)
+        b.palm(sx * 3.55, 2.33, z1, rng)
+        for gy in (-1.6, -0.55, 0.5, 1.55):
+            b.shrub(sx * 3.55 + rng.uniform(-0.08, 0.08), gy + rng.uniform(-0.1, 0.1), z1, rng, radius=0.16)
+        for (gx, gy) in ((4.25, -4.75), (4.0, -4.95), (4.3, 2.75), (4.05, 2.9)):
+            b.shrub(sx * gx + rng.uniform(-0.05, 0.05), gy, 0.0, rng, radius=rng.uniform(0.14, 0.22),
+                    region=rng.choice((T_LEAF, T_LEAF, T_DRY)))
     # The crescent of Sin on its pole, horns up, over the shrine's front
     b.box(-0.025, 0.025, 1.0, 1.05, zr, zr + 0.5, T_GOLD, T_GOLD)
     crescent(b, cx=0.0, cy=1.025, cz=zr + 0.68, R=0.24, r=0.2, d=0.09, depth=0.05)
