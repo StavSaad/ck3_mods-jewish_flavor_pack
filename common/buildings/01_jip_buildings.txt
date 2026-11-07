@@ -238,11 +238,11 @@ masada_03 = {
 # in Harran's special building slot (history/provinces/zz_jip_province_changes.txt), like vanilla's holy site buildings.
 # Works only for a holder who follows Sin: the Sabians or the old gods
 jip_temple_of_sin_01 = {
-	# Vanilla has no ziggurat: the Tomb of Cyrus's stepped base and shrine stand in for one, on Harran's map
-	# locator (province 4870)
+	# Our own model, a Neo-Babylonian moon-god ziggurat on Harran's map locator (province 4870):
+	# gfx/models/buildings/jip/jip_temple_of_sin.asset, built in Blender by tools/make_ziggurat_model.py
 	asset = {
 		type = pdxmesh
-		name = "fp3_building_special_tomb_of_cyrus_01_a_mesh"
+		name = "jip_temple_of_sin_mesh"
 	}
 
 	type_icon = "icon_structure_tomb_of_cyrus.dds"
