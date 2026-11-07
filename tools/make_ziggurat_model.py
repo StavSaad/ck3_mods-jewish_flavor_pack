@@ -3,8 +3,8 @@
 # Needs the io_pdx_mesh add-on (github.com/ross-g/io_pdx_mesh; patched for Blender 5's removed material settings).
 #
 # The design (0.15 plan, section 2): no ziggurat at Harran is attested (Nabonidus's texts call the Ehulhul a temple),
-# so the model follows the moon god's ziggurat he restored at Ur: a broad first stage (Ur's 64 x 45 m proportions) with
-# a niche-and-buttress face of baked brick, three stairs meeting at a gatehouse on the first terrace, a single stair on to
+# so the model follows the moon god's ziggurat he restored at Ur: a broad first stage (Ur's 64 x 45 m proportions) of
+# baked brick, every stage's battered walls lined with modelled buttresses and capped with a coping, three stairs meeting at a gatehouse on the first terrace, a single stair on to
 # two smaller stages, and the god's shrine on top in blue glazed brick (as found at Ur), with stepped merlons and the
 # crescent of Sin on a pole.
 #
@@ -57,7 +57,7 @@ T_PAVING = tile(0, 0)         # plain mud plaster, the courtyard
 T_TERRACE = tile(2, 6)        # worn brick paving, the terraces
 T_STAIRS = tile(2, 3)         # steps
 T_GLAZED = tile(5, 2)         # blue glazed brick with gold rosettes
-T_NICHES = px(0, 692, 1024, 766)   # strip: brick panels between dark recesses (niche and buttress)
+T_NICHES = px(0, 692, 1024, 766)   # strip: brick panels between dark recesses (unused since the buttresses are modelled)
 T_FRIEZE = px(0, 642, 1024, 690)   # strip: turquoise and gold frieze
 T_DOOR = px(905, 388, 941, 444)    # an arched opening
 T_GOLD = px(702, 317, 708, 323)    # a rosette's gold
