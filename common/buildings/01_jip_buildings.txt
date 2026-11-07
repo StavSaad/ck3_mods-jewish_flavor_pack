@@ -885,3 +885,95 @@ jip_temple_mount_cleared_01 = {
 
 	type = special
 }
+
+# The generic holy site building of Mesopotamianism, in place of vanilla's pagan grand temple: a copy of it (cost,
+# effects, flags) with our generic ziggurat. Its slot is given to the old faith's holy sites that have none (Nineveh, and
+# holy sites created in play) by add_holy_site_fallback_special_building_slot_effect
+# (common/scripted_effects/zz_jip_holy_site_slot_effects.txt)
+jip_holy_site_ziggurat_01 = {
+
+	effect_desc = {
+		triggered_desc = {
+			trigger = { has_dlc_feature = legends_of_the_dead }
+			desc = building_funeral_effect_desc
+		}
+	}
+
+	asset = {
+		type = pdxmesh
+		name = "jip_ziggurat_generic_mesh" # gfx/models/buildings/jip/, tools/make_ziggurat_model.py --model generic
+	}
+
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_structure_tomb_of_cyrus.dds"
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+	}
+	
+	can_construct = {
+		custom_description = {
+			text = holy_site_building_trigger
+			barony = {
+				is_holy_site_of = scope:holder.faith
+			}
+		}
+		scope:holder = {
+			culture = {
+				has_innovation = innovation_crop_rotation
+			}
+		}
+	}
+	
+	is_enabled = {
+		custom_description = {
+			text = holy_site_building_trigger
+			barony = {
+				is_holy_site_of = scope:holder.faith
+			}
+		}
+	}
+	
+	cost_gold = 1000
+
+	character_modifier = {
+		monthly_piety = 0.25
+		monthly_dynasty_prestige_mult = 0.05
+		knight_effectiveness_mult = 0.15
+		levy_reinforcement_rate = 0.1
+		monthly_county_control_growth_factor = 0.05
+	}
+	
+	county_modifier = {
+		tax_mult = 0.1
+		levy_size = 0.1
+		development_growth_factor = 0.2
+		development_growth = 0.15
+	}
+	
+	levy = 500
+	province_modifier = {
+		monthly_income = 1
+	}
+
+	on_complete = {
+		#Regular Mandala Boon
+		mandala_built_piety_duchy_building_t3_effect = yes
+	}
+	
+	ai_value = {
+		base = 100
+		ai_pious_building_preference_modifier = yes
+		modifier = { # Fill all building slots before going for special buildings
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+	
+	type = special
+
+	flag = travel_point_of_interest_religious
+	flag = holy_building
+	flag = religious_studies_location
+}

@@ -9,3 +9,7 @@
  building_masada_03_desc:0 "Restored according to the plans drafted by King Herod's architects, Masada contains an extensive garrison built to house a thousand men and thick walls that rise to meet the sky, all atop four hundred and fifty meters of raised bedrock.\n\nIts lavish palaces grant the residents a magnificent view of the Dead Sea."
  building_type_temple_in_jerusalem_01:0 "Temple in Jerusalem"
  building_type_temple_in_jerusalem_01_desc:0 "On Temple Mount, stands the site where Abraham was going to sacrfice his Son to the god. On this spot, the temple of the jews once stood. On this spot, it will stand again."
+ building_type_jip_holy_site_ziggurat_01:0 "Ziggurat"
+ building_type_jip_holy_site_ziggurat_01_desc:0 "A stepped tower of baked brick, the mountain of the gods, with a shrine on its summit where the god comes down to meet the priests."
+ building_jip_holy_site_ziggurat_01:0 "Ziggurat"
+ building_jip_holy_site_ziggurat_01_desc:0 "$building_type_jip_holy_site_ziggurat_01_desc$"
