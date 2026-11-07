@@ -148,6 +148,61 @@ class Builder:
         self.tri((x0, y_foot, z_foot), (x0, y_top, z_top), (x0, y_top, z_foot), T_BRICK)
         self.tri((x1, y_foot, z_foot), (x1, y_top, z_foot), (x1, y_top, z_top), T_BRICK)
 
+    def oquad(self, pts, want, region, mode='tile'):
+        """A quad (bl, br, tr, tl) turned, if need be, so that its normal faces `want`."""
+        bl, br, tr, tl = map(Vector, pts)
+        if (br - bl).cross(tl - bl).dot(Vector(want)) < 0:
+            bl, br, tr, tl = br, bl, tl, tr
+        self.quad(bl, br, tr, tl, region, mode)
+
+    def buttresses(self, bl, br, tr, tl, out, spacing, width=0.16, depth=0.07, top_gap=0.14, skip=None):
+        """Buttresses standing out from a battered wall face (bl, br, tr, tl), leaning with it, every `spacing`;
+        `skip(point)` leaves out those in front of a stair."""
+        bl, br, tr, tl = map(Vector, (bl, br, tr, tl))
+        along = (br - bl).normalized()
+        off = Vector(out).normalized() * depth
+        lb, lt, height = (br - bl).length, (tr - tl).length, (tl - bl).length
+        ft = 1 - top_gap / height
+        n = max(2, round(lb / spacing))
+        for k in range(1, n):
+            s = k / n
+            b0, b1 = bl.lerp(br, s - width / 2 / lb), bl.lerp(br, s + width / 2 / lb)
+            t0 = b0.lerp(tl.lerp(tr, s - width / 2 / lt), ft)
+            t1 = b1.lerp(tl.lerp(tr, s + width / 2 / lt), ft)
+            if skip and skip((b0 + b1) / 2):
+                continue
+            self.oquad((b0 + off, b1 + off, t1 + off, t0 + off), out, T_BRICK)
+            self.oquad((b0, b0 + off, t0 + off, t0), -along, T_BRICK)
+            self.oquad((b1 + off, b1, t1, t1 + off), along, T_BRICK)
+            self.oquad((t0, t1, t1 + off, t0 + off), (0, 0, 1), T_BRICK_PALE)
+
+    def stage(self, x0, x1, y0, y1, z0, z1, batter, spacing=0.55, front=True, stair_gap=0.0):
+        """A stage of the ziggurat: battered brick walls with buttresses, a paved top, and a coping that stands
+        a little proud of the wall head, open in front where the stair arrives."""
+        self.box(x0, x1, y0, y1, z0, z1, T_BRICK, T_TERRACE, batter=batter)
+        i = batter
+        faces = {
+            'f': ((x0, y0, z0), (x1, y0, z0), (x1 - i, y0 + i, z1), (x0 + i, y0 + i, z1), (0, -1, 0)),
+            'r': ((x1, y0, z0), (x1, y1, z0), (x1 - i, y1 - i, z1), (x1 - i, y0 + i, z1), (1, 0, 0)),
+            'b': ((x1, y1, z0), (x0, y1, z0), (x0 + i, y1 - i, z1), (x1 - i, y1 - i, z1), (0, 1, 0)),
+            'l': ((x0, y1, z0), (x0, y0, z0), (x0 + i, y0 + i, z1), (x0 + i, y1 - i, z1), (-1, 0, 0)),
+        }
+        for key, (bl, br, tr, tl, out) in faces.items():
+            if key == 'f' and not front:
+                continue
+            skip = (lambda p: abs(p.x) < stair_gap + 0.1) if key == 'f' else None
+            self.buttresses(bl, br, tr, tl, out, spacing, skip=skip)
+        c, w, lo, hi = 0.05, 0.09, z1 - 0.06, z1 + 0.09
+        X0, X1, Y0, Y1 = x0 + i, x1 - i, y0 + i, y1 - i
+        if stair_gap:
+            self.box(X0 - c, -stair_gap, Y0 - c, Y0 + w, lo, hi, T_BRICK_PALE, T_BRICK_PALE)
+            self.box(stair_gap, X1 + c, Y0 - c, Y0 + w, lo, hi, T_BRICK_PALE, T_BRICK_PALE)
+        else:
+            self.box(X0 - c, X1 + c, Y0 - c, Y0 + w, lo, hi, T_BRICK_PALE, T_BRICK_PALE)
+        self.box(X0 - c, X1 + c, Y1 - w, Y1 + c, lo, hi, T_BRICK_PALE, T_BRICK_PALE)
+        self.box(X0 - c, X0 + w, Y0 + w, Y1 - w, lo, hi, T_BRICK_PALE, T_BRICK_PALE, sides='lr')
+        self.box(X1 - w, X1 + c, Y0 + w, Y1 - w, lo, hi, T_BRICK_PALE, T_BRICK_PALE, sides='lr')
+
     def merlons(self, x0, x1, y0, y1, z, size=0.12, height=0.14, step=0.24):
         """Stepped merlons along a roof's edge."""
         def row(a, b, fixed, along_x):
@@ -172,9 +227,9 @@ def build():
     # The temple court: a low platform of dark brick, paved
     b.box(-4.0, 4.0, -4.6, 2.6, 0.0, 0.12, T_BRICK_DARK, T_PAVING)
     z1 = 0.12
-    # Stage 1: 6.0 x 4.3 (Ur's proportions), battered, the niche-and-buttress face
+    # Stage 1: 6.0 x 4.3 (Ur's proportions), battered, buttressed (not in front, where the stairs climb its face)
     s1 = dict(x0=-3.0, x1=3.0, y0=-2.15, y1=2.15)
-    b.box(s1['x0'], s1['x1'], s1['y0'], s1['y1'], z1, z1 + 1.3, T_NICHES, T_TERRACE, batter=0.12, side_mode='strip')
+    b.stage(s1['x0'], s1['x1'], s1['y0'], s1['y1'], z1, z1 + 1.3, batter=0.12, front=False, stair_gap=0.6)
     z2 = z1 + 1.3
     # The three stairs of the first stage: a central flight out from the face, two along it, meeting at the gatehouse
     b.stair(-0.35, 0.35, -4.0, s1['y0'] + 0.12, z1, z2)
@@ -196,12 +251,12 @@ def build():
     b.merlons(g['x0'], g['x1'], g['y0'], g['y1'], z2 + 0.55, size=0.1, height=0.11, step=0.2)
     # Stage 2
     s2 = dict(x0=-2.1, x1=2.1, y0=-0.65, y1=2.05)
-    b.box(s2['x0'], s2['x1'], s2['y0'], s2['y1'], z2, z2 + 0.95, T_NICHES, T_TERRACE, batter=0.08, side_mode='strip')
+    b.stage(s2['x0'], s2['x1'], s2['y0'], s2['y1'], z2, z2 + 0.95, batter=0.08, stair_gap=0.4)
     z3 = z2 + 0.95
     b.stair(-0.3, 0.3, g['y1'], s2['y0'] + 0.08, z2, z3)
     # Stage 3
     s3 = dict(x0=-1.3, x1=1.3, y0=0.1, y1=1.9)
-    b.box(s3['x0'], s3['x1'], s3['y0'], s3['y1'], z3, z3 + 0.75, T_BRICK, T_TERRACE, batter=0.06)
+    b.stage(s3['x0'], s3['x1'], s3['y0'], s3['y1'], z3, z3 + 0.75, batter=0.06, spacing=0.5, stair_gap=0.35)
     z4 = z3 + 0.75
     b.stair(-0.25, 0.25, s2['y0'] + 0.08 + 0.05, s3['y0'] + 0.06, z3, z4)
     # The shrine of Sin: blue glazed brick, a turquoise and gold frieze, the door, stepped merlons
