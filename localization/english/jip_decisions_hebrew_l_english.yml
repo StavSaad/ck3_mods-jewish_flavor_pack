@@ -47,6 +47,9 @@
 
 Some of the priests whisper that the worship should be gathered here alone, every high place torn down, as King Josiah once did. Others say the house is enough, and the hills may keep their altars."
  jip_hebrew.0040.e:0 "YHWH and his Asherah have their house again"
+ # Vanilla's doctrine names its text prophecy_of_malachi_name; GetBaseName looks for <key>_name
+ special_doctrine_prophecy_of_malachi_name:0 "$prophecy_of_malachi_name$"
+ special_doctrine_prophecy_of_malachi_desc:0 "$prophecy_of_malachi_desc$"
  judaism_hof_restored_effect:0 "Jewish faiths lose [GetDoctrineType('special_doctrine_prophecy_of_malachi').GetBaseName]"
  jip_hebrew.0041.t:0 "Cleansing of the Dvir"
  jip_hebrew.0041.desc:0 "As the builders clear the last of the rubble from where the Muslim dome once stood, You watch the Kohanim entering the Dvir, The Holy of Holies, to cleanse it from the defilement brought on it by the Romans, and then the Arabs. You know what the people want - A new temple, rebuilt in the name of god."
