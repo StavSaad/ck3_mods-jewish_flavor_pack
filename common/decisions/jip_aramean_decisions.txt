@@ -1,0 +1,77 @@
+﻿# Arameanism (0.15 plan, section 14)
+
+# Restore the Gods of Aram: an independent Aramean or Nabati ruler who holds and controls Damascus, Palmyra and Manbij
+# (the county of Aleppo), the cities of the three great temples, turns back to Hadad (jip_restore_gods_of_aram_effect)
+jip_restore_gods_of_aram_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	}
+	desc = jip_restore_gods_of_aram_decision_desc
+	selection_tooltip = jip_restore_gods_of_aram_decision_tooltip
+	decision_group_type = major
+
+	is_shown = {
+		is_ruler = yes
+		OR = {
+			culture = culture:syriac
+			culture = culture:nabati
+		}
+		NOT = { faith = faith:aramean_pagan }
+		NOT = { has_character_flag = jip_restored_gods_of_aram }
+		any_held_title = {
+			OR = {
+				this = title:c_damascus
+				this = title:c_palmyra
+				this = title:c_aleppo
+			}
+		}
+	}
+
+	is_valid = {
+		is_independent_ruler = yes
+		prestige_level >= 2
+		custom_tooltip = {
+			text = jip_restore_gods_of_aram_cities_tt
+			title:c_damascus.holder ?= { target_is_same_character_or_above = root }
+			title:c_palmyra.holder ?= { target_is_same_character_or_above = root }
+			title:c_aleppo.holder ?= { target_is_same_character_or_above = root }
+		}
+		completely_controls = title:c_damascus
+		completely_controls = title:c_palmyra
+		completely_controls = title:c_aleppo
+	}
+
+	is_valid_showing_failures_only = {
+		is_landed = yes
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+
+	cost = {
+		prestige = 500
+	}
+
+	effect = {
+		add_character_flag = jip_restored_gods_of_aram
+		if = {
+			limit = { capital_county = title:c_palmyra }
+			jip_restore_gods_of_aram_effect = { RITE = belism }
+		}
+		else = {
+			jip_restore_gods_of_aram_effect = { RITE = hadadism }
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 10
+			has_trait = cynical
+		}
+	}
+}

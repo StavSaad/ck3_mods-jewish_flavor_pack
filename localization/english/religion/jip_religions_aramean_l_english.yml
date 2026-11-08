@@ -100,3 +100,11 @@
  holy_site_emesa_effect_name: "From [holy_site|E] #weak ($holy_site_emesa_name$)#!"
  holy_site_dura_name: "Dura-Europos"
  holy_site_dura_effect_name: "From [holy_site|E] #weak ($holy_site_dura_name$)#!"
+
+ # Restore the Gods of Aram (common/decisions/jip_aramean_decisions.txt)
+ jip_restore_gods_of_aram_decision: "Restore the Gods of Aram"
+ jip_restore_gods_of_aram_decision_desc: "Damascus, Palmyra and Manbij, the cities of Hadad, Bel and the Syrian Goddess, are ours. Their temples are ruins and their people pray to other gods, but the old names are still spoken in the villages. A ruler of Aram could call the gods home."
+ jip_restore_gods_of_aram_decision_tooltip: "Turn to $aramean_pagan$, the faith of the Aramean kings, and open it to your people"
+ jip_restore_gods_of_aram_decision_confirm: "The gods of Aram return"
+ jip_restore_gods_of_aram_cities_tt: "You hold [GetTitleByKey('c_damascus').GetName], [GetTitleByKey('c_palmyra').GetName] and [GetTitleByKey('c_aleppo').GetName] (where Manbij lies), or your vassals do"
+ fervor_gain_jip_gods_of_aram_restored: "The gods of Aram worshipped openly again"

@@ -4,3 +4,7 @@
  jip_palmyra.0001.desc: "Six centuries ago the caravan city of Tadmor ruled the East. Odaenathus drove the Persian King of Kings back to the walls of Ctesiphon and Rome named him Restorer of the East; his widow Zenobia took Egypt and Arabia and struck coins in her own name, until Aurelian came for her.\n\nNow the desert empire is raised again. From the Euphrates to the sea, Aram answers to [ROOT.Char.GetTitledFirstName], and the Arameans remember that they were once more than the subjects of others."
  jip_palmyra.0001.a: "Our court goes to [GetTitleByKey('c_palmyra').GetName], as Zenobia's did."
  jip_palmyra.0001.b: "The empire is where its ruler sits."
+ jip_palmyra.0002.t: "The Gods of Tadmor"
+ jip_palmyra.0002.desc: "In the middle of Palmyra the court of Bel still stands, its columns black with the smoke of the cooking fires of those who live in it now. The old men of the desert tribes still swear by Allat, and the camel drivers still touch the stones of the ruined temples for luck.\n\nZenobia's empire is ours again. The gods who watched over it are waiting to see if we remember them."
+ jip_palmyra.0002.a: "Bel and the gods of Aram will have their city back."
+ jip_palmyra.0002.b: "The gods of Tadmor are dust, like Zenobia."

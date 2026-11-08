@@ -523,6 +523,49 @@ jip_unlock_aramean_conversion_effect = {
 	}
 }
 
+# The gods of Aram restored (jip_restore_gods_of_aram_decision, jip_palmyra.0002): the ruler and their capital take
+# $RITE$ (hadadism, or belism at Palmyra), and Palmyra too if they hold it; the faith opens, and the Christian and
+# Muslim rulers around resent it
+jip_restore_gods_of_aram_effect = {
+	set_character_faith = faith:aramean_pagan
+	set_character_rite = rite:$RITE$
+	capital_county ?= {
+		set_county_faith = faith:aramean_pagan
+		set_county_rite = rite:$RITE$
+	}
+	title:c_palmyra = {
+		if = {
+			limit = {
+				holder ?= { target_is_same_character_or_above = root }
+			}
+			set_county_faith = faith:aramean_pagan
+			set_county_rite = rite:belism
+		}
+	}
+	jip_unlock_aramean_conversion_effect = yes
+	add_piety = major_piety_gain
+	every_neighboring_and_across_water_top_liege_realm_owner = {
+		limit = {
+			OR = {
+				religion = religion:islam_religion
+				religion = religion:christianity_religion
+			}
+		}
+		add_opinion = {
+			target = root
+			modifier = jip_restored_old_gods_opinion
+		}
+		faith = { add_to_temporary_list = jip_angered_faiths }
+	}
+	every_in_list = {
+		list = jip_angered_faiths
+		change_fervor = {
+			value = slight_fervor_gain
+			desc = fervor_gain_jip_gods_of_aram_restored
+		}
+	}
+}
+
 # The old gods proclaimed (jip_sabian.0001): the ruler, their capital and Harran take the rite of their culture:
 # Assyrian and Nabati Ashurism, everyone else (Arameans first) Sinism, the rite of Sin of Harran
 jip_proclaim_old_gods_effect = {

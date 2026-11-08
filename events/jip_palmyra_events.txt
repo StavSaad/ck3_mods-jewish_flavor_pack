@@ -44,4 +44,61 @@ jip_palmyra.0001 = {
 			ambitious = medium_stress_loss
 		}
 	}
+
+	after = {
+		# An Aramean or Nabati founder may bring back Palmyra's gods
+		if = {
+			limit = {
+				OR = {
+					culture = culture:syriac
+					culture = culture:nabati
+				}
+				NOT = { faith = faith:aramean_pagan }
+			}
+			trigger_event = jip_palmyra.0002
+		}
+	}
+}
+
+# The gods of Tadmor: the founder of the Palmyrene Empire may restore the gods of Aram (0.15 plan, section 14)
+jip_palmyra.0002 = {
+	type = character_event
+	title = jip_palmyra.0002.t
+	desc = jip_palmyra.0002.desc
+	theme = faith
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	# Bring back Bel and the gods of Aram
+	option = {
+		name = jip_palmyra.0002.a
+		add_character_flag = jip_restored_gods_of_aram
+		jip_restore_gods_of_aram_effect = { RITE = belism }
+		stress_impact = {
+			zealous = major_stress_impact_gain
+			cynical = minor_stress_impact_loss
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+
+	# Keep the faith
+	option = {
+		name = jip_palmyra.0002.b
+		stress_impact = {
+			cynical = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 90
+		}
+	}
 }
