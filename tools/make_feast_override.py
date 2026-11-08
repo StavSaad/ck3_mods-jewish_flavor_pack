@@ -38,6 +38,10 @@ VARIANTS = {
     'jip_feast_type_pesach': (1.5, '''religion = religion:judaism_religion
 					current_month >= 3
 					current_month <= 4''', 'jip_recent_pesach_feast_var'),
+    # The Pyre, the spring festival of the Syrian Goddess at Manbij (Lucian), for Arameanism (0.15 plan, section 14)
+    'jip_feast_type_pyre': (1.5, '''faith = faith:aramean_pagan
+					current_month >= 3
+					current_month <= 4''', 'jip_recent_pyre_feast_var'),
 }
 
 
@@ -153,6 +157,8 @@ BACKGROUNDS = [  # (trigger, texture, environment, ambience)
     ('jip_is_dehwa_rabba = yes', 'ep2_feast_mena', 'environment_mena_feast', 'event:/SFX/Events/Backgrounds/feasthall'),
     ('jip_is_pesach = yes', 'bp1_relaxing_room_mena', 'environment_event_bp1_relaxing_room_mena',
      'event:/SFX/Events/Backgrounds/feasthall'),
+    ('jip_is_pyre = yes', 'fp3_courtyard_night', 'environment_event_fp3_courtyard_night',
+     'event:/SFX/Events/Backgrounds/castle_corridor_night'),
 ]
 old = '''	background = {
 		trigger = {

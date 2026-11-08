@@ -51,6 +51,15 @@ jip_is_pesach = {
 	}
 }
 
+jip_is_pyre = {
+	scope:activity = {
+		has_activity_option = {
+			category = special_type
+			option = jip_feast_type_pyre
+		}
+	}
+}
+
 jip_is_festival = {
 	OR = {
 		jip_is_akitu = yes
@@ -58,6 +67,7 @@ jip_is_festival = {
 		jip_is_parwanaya = yes
 		jip_is_dehwa_rabba = yes
 		jip_is_pesach = yes
+		jip_is_pyre = yes
 	}
 }
 

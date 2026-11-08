@@ -31,6 +31,9 @@ feast_default_event_selection = {
 		100 = jip_feast.5101 # Pesach: Dayenu
 		100 = jip_feast.5102 # Pesach: leaven in the bag
 		100 = jip_feast.5103 # Pesach: Chad Gadya
+		100 = jip_feast.6101 # The Pyre: the Galli dance
+		100 = jip_feast.6102 # The Pyre: the goddess's fish
+		100 = jip_feast.6103 # The Pyre: the pilgrim's mark
 	}
 }
 

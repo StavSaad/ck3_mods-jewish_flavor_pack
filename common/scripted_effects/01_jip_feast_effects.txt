@@ -66,6 +66,17 @@ jip_feast_meal_phase_effect = {
 			days = 2
 		}
 	}
+	else_if = {
+		limit = { jip_is_pyre = yes }
+		set_variable = {
+			name = jip_recent_pyre_feast_var
+			years = 5
+		}
+		trigger_event = {
+			id = jip_feast.6001
+			days = 2
+		}
+	}
 }
 
 # Called by the feast override in the toast phase, for every participant: the host's summary, the guests' farewell
@@ -123,6 +134,16 @@ jip_feast_toast_phase_effect = {
 		}
 		else = {
 			trigger_event = jip_feast.5010
+		}
+	}
+	else_if = {
+		limit = { jip_is_pyre = yes }
+		if = {
+			limit = { this = scope:host }
+			trigger_event = jip_feast.6004
+		}
+		else = {
+			trigger_event = jip_feast.6010
 		}
 	}
 }

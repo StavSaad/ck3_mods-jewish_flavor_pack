@@ -84,3 +84,16 @@ jip_pesach_this_year_in_jerusalem = {
 	monthly_prestige_gain_mult = 0.15
 	legitimacy_gain_mult = 0.15
 }
+
+# The Pyre (Arameanism): the goddess's blessing for the year
+jip_pyre_blessed = {
+	icon = piety_positive
+	monthly_piety_gain_mult = 0.1
+	fertility = 0.1
+}
+
+# A pilgrim's mark of the Syrian Goddess, pricked on the wrist
+jip_pyre_pilgrim_mark = {
+	icon = piety_positive
+	monthly_piety_gain_mult = 0.05
+}

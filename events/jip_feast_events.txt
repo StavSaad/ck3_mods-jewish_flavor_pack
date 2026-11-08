@@ -52,6 +52,14 @@
 #  5101 Guest pulse: Dayenu
 #  5102 Guest pulse: leaven in the bag
 #  5103 Guest pulse: Chad Gadya
+# 6000s The Pyre (Arameanism; 0.15 plan, section 14)
+#  6001 Host: the trees hung with offerings
+#  6002 Host: the gods carried round the fire
+#  6004 Host: the Pyre burns out (summary)
+#  6010 Guest: farewell
+#  6101 Guest pulse: the Galli dance
+#  6102 Guest pulse: the goddess's fish
+#  6103 Guest pulse: the pilgrim's mark
 
 ##################################################
 # AKITU
@@ -2869,5 +2877,350 @@ jip_feast.5103 = {
 		name = jip_feast.5103.c
 		trigger = { NOT = { religion = religion:judaism_religion } }
 		add_stress = minor_stress_loss
+	}
+}
+
+################
+# THE PYRE
+################
+
+# The trees set up in the temple court and hung with offerings
+jip_feast.6001 = {
+	type = activity_event
+	title = jip_feast.6001.t
+	desc = jip_feast.6001.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		trigger = { exists = scope:jip_feast_priest }
+		character = scope:jip_feast_priest
+		animation = personality_honorable
+	}
+
+	immediate = {
+		jip_feast_save_scopes_effect = yes
+	}
+
+	# Gold and silver vessels from the treasury
+	option = {
+		name = jip_feast.6001.a
+		trigger = { short_term_gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		add_prestige = medium_prestige_gain
+		add_piety = minor_piety_gain
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 30
+				has_trait = arrogant
+			}
+			modifier = {
+				factor = 0
+				has_trait = greedy
+			}
+		}
+	}
+
+	# Garlands and fine cloth from the household
+	option = {
+		name = jip_feast.6001.b
+		add_piety = minor_piety_gain
+		add_stress = minor_stress_loss
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# Let the people hang their own
+	option = {
+		name = jip_feast.6001.c
+		add_piety = minor_piety_gain
+		every_vassal = {
+			limit = { faith = root.faith }
+			custom = jip_feast.6001.c_tt
+			add_opinion = {
+				target = root
+				modifier = jip_festival_guest_opinion
+			}
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 30
+				has_trait = humble
+			}
+		}
+	}
+
+	after = {
+		trigger_event = {
+			id = jip_feast.6002
+			days = 2
+		}
+	}
+}
+
+# The gods carried round the burning trees
+jip_feast.6002 = {
+	type = activity_event
+	title = jip_feast.6002.t
+	desc = jip_feast.6002.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = ecstasy
+	}
+
+	# Carry the goddess's litter yourself
+	option = {
+		name = jip_feast.6002.a
+		add_piety = medium_piety_gain
+		add_prestige = minor_prestige_gain
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 30
+				has_trait = zealous
+			}
+		}
+	}
+
+	# Watch from the temple steps
+	option = {
+		name = jip_feast.6002.b
+		add_stress = medium_stress_loss
+		ai_chance = {
+			base = 60
+		}
+	}
+}
+
+# The Pyre burns out (host summary, toast phase)
+jip_feast.6004 = {
+	type = activity_event
+	title = jip_feast.6004.t
+	desc = {
+		desc = jip_feast.6004.desc
+		triggered_desc = {
+			trigger = { jip_feast_at_holy_site_trigger = yes }
+			desc = jip_feast.6004.desc_holy_site
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	option = {
+		name = jip_feast.6004.a
+		add_piety = medium_piety_gain
+		add_stress = medium_stress_loss
+		if = {
+			limit = { jip_feast_at_holy_site_trigger = yes }
+			add_piety = medium_piety_gain
+		}
+		add_character_modifier = {
+			modifier = jip_pyre_blessed
+			years = 1
+		}
+	}
+}
+
+# Guest farewell
+jip_feast.6010 = {
+	type = activity_event
+	title = jip_feast.6010.t
+	desc = jip_feast.6010.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		character = scope:host
+		animation = personality_honorable
+	}
+
+	trigger = {
+		is_alive = yes
+		is_imprisoned = no
+	}
+
+	option = {
+		name = jip_feast.6010.a
+		add_opinion = {
+			target = scope:host
+			modifier = jip_festival_guest_opinion
+		}
+		if = {
+			limit = { faith = scope:host.faith }
+			add_piety = minor_piety_gain
+		}
+	}
+}
+
+# Guest pulse: the Galli dance
+jip_feast.6101 = {
+	type = activity_event
+	title = jip_feast.6101.t
+	desc = jip_feast.6101.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = interested
+	}
+
+	trigger = {
+		exists = scope:activity
+		jip_is_pyre = yes
+		NOT = { this = scope:activity.activity_host }
+		NOT = { has_character_flag = jip_feast_pulse_seen }
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = jip_feast_pulse_seen
+			months = 2
+		}
+	}
+
+	# Join the dance (the faithful)
+	option = {
+		name = jip_feast.6101.a
+		trigger = { faith = scope:activity.activity_host.faith }
+		add_stress = medium_stress_loss
+		add_piety = minor_piety_gain
+	}
+
+	# Keep back from the frenzy
+	option = {
+		name = jip_feast.6101.b
+		add_learning_lifestyle_xp = minor_lifestyle_xp
+	}
+}
+
+# Guest pulse: the goddess's fish
+jip_feast.6102 = {
+	type = activity_event
+	title = jip_feast.6102.t
+	desc = jip_feast.6102.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = interested
+	}
+	cooldown = { years = 1 }
+
+	trigger = {
+		exists = scope:activity
+		jip_is_pyre = yes
+		NOT = { this = scope:activity.activity_host }
+	}
+
+	# Buy bread for the fish (the faithful)
+	option = {
+		name = jip_feast.6102.a
+		trigger = {
+			faith = scope:activity.activity_host.faith
+			short_term_gold >= tiny_gold_value
+		}
+		remove_short_term_gold = tiny_gold_value
+		add_piety = minor_piety_gain
+	}
+
+	# Ask why no one eats them
+	option = {
+		name = jip_feast.6102.b
+		trigger = { NOT = { faith = scope:activity.activity_host.faith } }
+		add_learning_lifestyle_xp = minor_lifestyle_xp
+	}
+
+	# Walk on
+	option = {
+		name = jip_feast.6102.c
+		add_stress = minor_stress_loss
+	}
+}
+
+# Guest pulse: the pilgrim's mark
+jip_feast.6103 = {
+	type = activity_event
+	title = jip_feast.6103.t
+	desc = jip_feast.6103.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+	cooldown = { years = 1 }
+
+	trigger = {
+		exists = scope:activity
+		jip_is_pyre = yes
+		NOT = { this = scope:activity.activity_host }
+		faith = scope:activity.activity_host.faith
+		NOT = { has_character_modifier = jip_pyre_pilgrim_mark }
+	}
+
+	# Take the mark
+	option = {
+		name = jip_feast.6103.a
+		add_character_modifier = {
+			modifier = jip_pyre_pilgrim_mark
+			years = 10
+		}
+		add_piety = minor_piety_gain
+	}
+
+	# Decline
+	option = {
+		name = jip_feast.6103.b
+		add_stress = minor_stress_gain
 	}
 }
