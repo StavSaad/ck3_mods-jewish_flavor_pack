@@ -69,7 +69,7 @@ jip_sabian_story_game_start_after_lobby_on_action = {
 }
 
 # The story owner who holds Harran in Act I or II, however they came by it, moves on to Act III, or to Act IV if
-# independent (jip_sabian_story_harran_held_effect; the story's monthly check catches the rest)
+# independent (jip_sabian_story_harran_held_effect; the story's daily check catches the rest)
 on_title_gain = {
 	on_actions = {
 		jip_sabian_story_harran_gained_on_action

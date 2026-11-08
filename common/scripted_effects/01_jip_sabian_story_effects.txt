@@ -86,10 +86,7 @@ jip_sabian_story_check_standing_effect = {
 		}
 		remove_variable = jip_sabian_standing # Hides it in the story window
 		story_owner = {
-			trigger_event = {
-				id = jip_sabian_story.1090
-				days = 3
-			}
+			trigger_event = jip_sabian_story.1090
 		}
 	}
 }
@@ -299,17 +296,11 @@ jip_sabian_story_harran_held_effect = {
 			type = story_jip_sabian_revival
 			jip_sabian_story_update_patron_effect = yes
 		}
-		trigger_event = {
-			id = jip_sabian_story.3090
-			days = 2
-		}
+		trigger_event = jip_sabian_story.3090
 	}
 	else = {
 		jip_sabian_story_set_act_effect = { ACT = 3 }
-		trigger_event = {
-			id = jip_sabian_story.2090
-			days = 2
-		}
+		trigger_event = jip_sabian_story.2090
 	}
 }
 
@@ -487,10 +478,7 @@ jip_sabian_story_new_year_kept_effect = {
 			jip_sabian_story_unveiled_trigger = yes
 		}
 		jip_sabian_story_set_act_effect = { ACT = 5 }
-		trigger_event = {
-			id = jip_sabian_story.4090
-			days = 3
-		}
+		trigger_event = jip_sabian_story.4090
 	}
 }
 

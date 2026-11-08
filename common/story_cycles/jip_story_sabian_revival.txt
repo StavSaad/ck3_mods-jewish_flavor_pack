@@ -152,10 +152,11 @@ story_jip_sabian_revival = {
 		}
 	}
 
+	# The act checks below run daily, as vanilla's stories' do, so an act ends the day its conditions are met
 	# Acts I and II: Harran held (gained before the story began, or by an heir who holds it) moves the story on to Act
 	# III, or to Act IV for an independent ruler; gaining it is caught at once by jip_sabian_story_harran_gained_on_action
 	effect_group = {
-		months = 1
+		days = 1
 
 		trigger = {
 			var:jip_sabian_act <= 2
@@ -172,7 +173,7 @@ story_jip_sabian_revival = {
 
 	# The story window's houses of the gods follow the act (jip_sabian_show_sites), whichever way it changed
 	effect_group = {
-		months = 1
+		days = 1
 
 		triggered_effect = {
 			trigger = { always = yes }
@@ -184,7 +185,7 @@ story_jip_sabian_revival = {
 
 	# Act III: Harran lost sends the story back to Act II; Harran held as an independent ruler ends the act
 	effect_group = {
-		months = 1
+		days = 1
 
 		trigger = {
 			var:jip_sabian_act = 3
@@ -227,7 +228,7 @@ story_jip_sabian_revival = {
 
 	# Act IV: Harran lost sends the story back to Act II, Harran's freedom lost back to Act III
 	effect_group = {
-		months = 1
+		days = 1
 
 		trigger = {
 			var:jip_sabian_act = 4
@@ -277,7 +278,7 @@ story_jip_sabian_revival = {
 	# Act V: the story ends when all six gods are home, or the owner holds the Palmyrene Empire or Beth Nahrain, as an
 	# independent ruler of the old faith
 	effect_group = {
-		months = 1
+		days = 1
 
 		trigger = {
 			var:jip_sabian_act = 5
