@@ -43,9 +43,7 @@
  jip_hebrew.0040.b:0 "The Rabbinic tradition have changed before, it will change again"
  jip_hebrew.0040.c:0 "We should restore our ancient traditions, and concentrate our worhsip"
  jip_hebrew.0040.d:0 "The true temple lies in Mount Gerizim, But this one should appease the masses of the jews."
- jip_hebrew.0040.desc_yahwist:0 "\"Your Grace, the House of YHWH stands again on Zion. Smoke rises from the altar, and the people come up with their offerings as they did in the days of the kings, before the priests of the scrolls made one god of him and drove his Asherah from his side.\"
-
-Some of the priests whisper that the worship should be gathered here alone, every high place torn down, as King Josiah once did. Others say the house is enough, and the hills may keep their altars."
+ jip_hebrew.0040.desc_yahwist:0 "\"Your Grace, the House of YHWH stands again on Zion. Smoke rises from the altar, and the people come up with their offerings as they did in the days of the kings, before the priests of the scrolls made one god of him and drove his Asherah from his side.\"\n\nSome of the priests whisper that the worship should be gathered here alone, every high place torn down, as King Josiah once did. Others say the house is enough, and the hills may keep their altars."
  jip_hebrew.0040.e:0 "YHWH and his Asherah have their house again"
  # Vanilla's doctrine names its text prophecy_of_malachi_name; GetBaseName looks for <key>_name
  special_doctrine_prophecy_of_malachi_name:0 "$prophecy_of_malachi_name$"

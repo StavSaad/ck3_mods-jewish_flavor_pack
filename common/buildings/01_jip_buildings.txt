@@ -742,7 +742,7 @@ jip_temple_of_baalat_gebal_01 = {
 		monthly_piety = 0.5
 		monthly_prestige = 1
 		learning = 1
-		monthly_legitimacy = 0.1
+		monthly_legitimacy_add = 0.1
 	}
 
 	county_modifier = {

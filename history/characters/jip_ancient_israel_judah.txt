@@ -284,7 +284,7 @@ yoav_ben_zeruyah = {
 	name = "Yoav"
 	rite = kohanism
 	culture = "hebrew"
-	father = zeruyah
+	mother = zeruyah
 	-1001.1.1 = {
 		birth = yes
 	}
@@ -297,7 +297,7 @@ avishay_ben_zeruyah = {
 	name = "Avishay"
 	rite = kohanism
 	culture = "hebrew"
-	father = zeruyah
+	mother = zeruyah
 	-1000.1.1 = {
 		birth = yes
 	}
@@ -310,7 +310,7 @@ asael_ben_zeruyah = {
 	name = "AsaEl"
 	rite = kohanism
 	culture = "hebrew"
-	father = zeruyah
+	mother = zeruyah
 	-999.1.1 = {
 		birth = yes
 	}
