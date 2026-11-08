@@ -556,6 +556,30 @@ k_syria_aram = {
 	}
 }
 
+# The duchies' own arms, which the dynamic definitions (jip_aramean_coas.txt) need to swap from: vanilla gives them none
+# (a title without pre-scripted arms can't take dynamic ones). Edessa: a castle for the walled city; Kurdistan: a lion
+d_edessa = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 120 25 30 }
+	colored_emblem = {
+		texture = "ce_castle.dds"
+		color1 = rgb { 212 175 55 }
+		color2 = rgb { 212 175 55 }
+		instance = { position = { 0.5 0.5 } scale = { 0.8 0.8 } }
+	}
+}
+
+d_kurdistan = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 35 90 55 }
+	colored_emblem = {
+		texture = "ce_lion_rampant.dds"
+		color1 = rgb { 212 175 55 }
+		color2 = rgb { 170 25 35 }
+		instance = { position = { 0.5 0.5 } scale = { 0.85 0.85 } }
+	}
+}
+
 # Osroene (d_edessa): the tiara of the Abgarid kings of Edessa, as on their coins
 d_edessa_osroene = {
 	pattern = "pattern_solid.dds"

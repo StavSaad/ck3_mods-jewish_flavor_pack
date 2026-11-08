@@ -9,6 +9,7 @@ jip_restore_gods_of_aram_decision = {
 	desc = jip_restore_gods_of_aram_decision_desc
 	selection_tooltip = jip_restore_gods_of_aram_decision_tooltip
 	decision_group_type = major
+	ai_check_interval = 60
 
 	is_shown = {
 		is_ruler = yes
