@@ -354,6 +354,7 @@
  jip_gp_temple_of_hadad_location_tt:0 "Only at [GetTitleByKey('b_damascus').GetName], where Hadad's court stood"
  jip_gp_temple_of_hadad_city_tt:0 "You hold the county of [GetTitleByKey('c_damascus').GetName], or your vassal does"
  jip_gp_temple_of_hadad_building_tt:0 "The Temple of Hadad rises at Damascus"
+ jip_gp_temple_of_hadad_mosque_tt:0 "The Great Mosque of Damascus, built over the temple's court, gives way to it"
  great_project_type_jip_gp_temple_of_hadad_contribution_temenos:0 "The Sacred Court"
  great_project_type_jip_gp_temple_of_hadad_contribution_temenos_desc:0 "Hadad's house stood in a walled court three hundred metres long, lined with colonnades and entered through a monumental gate. Raise its walls again."
  great_project_type_jip_gp_temple_of_hadad_contribution_statue:0 "The Lord of the Storm"

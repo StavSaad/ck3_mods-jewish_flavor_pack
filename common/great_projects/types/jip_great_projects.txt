@@ -4027,8 +4027,18 @@ jip_gp_temple_of_hadad = {
 
 	on_complete = {
 		scope:province = {
+			# The Great Mosque of Damascus (vanilla's damascus_mosque_01, placed at game start with Medieval Monuments)
+			# stands on the temple's site and fills the special building slot: it gives way to the temple
+			if = {
+				limit = { has_building = damascus_mosque_01 }
+				custom_tooltip = jip_gp_temple_of_hadad_mosque_tt
+			}
 			custom_tooltip = jip_gp_temple_of_hadad_building_tt
 			hidden_effect = {
+				if = {
+					limit = { has_building = damascus_mosque_01 }
+					remove_building = damascus_mosque_01
+				}
 				add_special_building = jip_temple_of_hadad_01 # The province's special building slot
 			}
 		}
