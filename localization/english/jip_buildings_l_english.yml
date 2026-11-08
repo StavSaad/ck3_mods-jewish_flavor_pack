@@ -13,3 +13,7 @@
  building_type_jip_holy_site_ziggurat_01_desc:0 "A stepped tower of baked brick, the mountain of the gods, with a shrine on its summit where the god comes down to meet the priests."
  building_jip_holy_site_ziggurat_01:0 "Ziggurat"
  building_jip_holy_site_ziggurat_01_desc:0 "$building_type_jip_holy_site_ziggurat_01_desc$"
+ building_type_jip_holy_site_classical_temple_01:0 "Temple"
+ building_type_jip_holy_site_classical_temple_01_desc:0 "A temple of the gods of Aram in the Greek manner, columns and pediment over a high podium, in a walled court where the people bring their offerings."
+ building_jip_holy_site_classical_temple_01:0 "Temple"
+ building_jip_holy_site_classical_temple_01_desc:0 "$building_type_jip_holy_site_classical_temple_01_desc$"

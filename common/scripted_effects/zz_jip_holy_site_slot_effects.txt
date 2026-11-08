@@ -14,6 +14,11 @@ add_holy_site_fallback_special_building_slot_effect = {
 			limit = { $FAITH$ = { this = faith:mesopotamian_pagan } }
 			add_special_building_slot = jip_holy_site_ziggurat_01
 		}
+		# Rising Lion: Arameanism's take a classical temple (jip_holy_site_classical_temple_01)
+		else_if = {
+			limit = { $FAITH$ = { this = faith:aramean_pagan } }
+			add_special_building_slot = jip_holy_site_classical_temple_01
+		}
 		else_if = {
 			limit = { $FAITH$ = { religion = religion:islam_religion } }
 			add_special_building_slot = holy_site_mosque_01
