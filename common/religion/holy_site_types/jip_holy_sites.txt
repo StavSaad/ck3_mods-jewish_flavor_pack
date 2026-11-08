@@ -183,7 +183,7 @@ arbela = { # The temple of Ishtar of Arbela, whose prophetesses spoke to the Ass
 	}
 }
 
-palmyra = { # Tadmor, the caravan city and its temple of Bel
+palmyra = { # Tadmor, the caravan city and its temple of Bel (Arameanism)
 	county = c_palmyra
 	barony = b_tadmur
 
@@ -258,5 +258,82 @@ sidon = { # Sidon and the temple of Eshmun, the god who heals, in the orchards a
 	faith_character_modifier_scaled = {
 		scale = holy_site_total_artifact_rarity
 		monthly_learning_lifestyle_xp_gain_mult = 0.01
+	}
+}
+
+# Arameanism (aramean_pagan, jip_canaanite_faith_types.txt): its temples' cities. Damascus is vanilla's site, Palmyra above
+
+manbij = { # Hierapolis Bambyce, the city of Atargatis, the Syrian Goddess (its barony, in the county of Aleppo)
+	county = c_aleppo
+	barony = b_manbij
+
+	county_holder_character_modifier = {
+		monthly_piety_gain_mult = 0.05
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		development_growth_factor = 0.01
+		tax_mult = 0.01
+	}
+
+	faith_character_modifier = {
+		fertility = 0.05
+		monthly_piety_gain_mult = 0.05
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		monthly_piety_gain_mult = 0.01
+	}
+}
+
+emesa = { # Emesa (Homs), the city of Elagabal, the sun god of the black stone, whose priest-kings ruled it
+	county = c_homs
+	barony = b_hims
+
+	county_holder_character_modifier = {
+		monthly_legitimacy_add = 0.1
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		development_growth_factor = 0.01
+		levy_size = 0.02
+	}
+
+	faith_character_modifier = {
+		learning = 1
+		monthly_prestige_gain_mult = 0.05
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		monthly_piety_gain_mult = 0.01
+	}
+}
+
+dura = { # Dura-Europos on the Euphrates, below Rahba, and its temple of Gad, the Fortune of the city
+	county = c_rahba
+	barony = b_al-rahba
+
+	county_holder_character_modifier = {
+		monthly_income_mult = 0.05
+	}
+
+	county_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		tax_mult = 0.01
+		supply_limit_mult = 0.02
+	}
+
+	faith_character_modifier = {
+		stewardship = 1
+		monthly_income_mult = 0.03
+	}
+
+	faith_character_modifier_scaled = {
+		scale = holy_site_total_artifact_rarity
+		monthly_income_mult = 0.005
 	}
 }

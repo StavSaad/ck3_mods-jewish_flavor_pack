@@ -185,3 +185,161 @@ mesopotamian_pagan = {
 		ReligiousText3 = mesopotamian_pagan_religious_text
 	}
 }
+
+# Arameanism, the gods of Aram (0.15 plan, section 14): the old gods of inland Syria and the Jazira, West Semitic like
+# the Canaanites' (Hadad is their Baal; Atargatis' name joins Astarte and Anat), as their inscriptions name them.
+# Reformed from the start, like the other two. Rites in jip_canaanite_rite_types.txt: Hadadism (main; these gods),
+# Belism (Palmyra) and Atargatism (Manbij). Locked until restored (jip_unlock_aramean_conversion_effect)
+aramean_pagan = {
+
+	main_rite = hadadism
+
+	faith_details = {
+		religion = canaanite_religion
+		color = { 0.55 0.4 0.15 }
+		icon = aramean_faith # Hadad's bull carrying the lightning fork (tools/make_faith_icon.py)
+		reformed_icon = aramean_faith_reformed
+	}
+
+	# The cities of its temples (jip_great_projects.txt): Hadad at Damascus (vanilla's damascus site), Bel at Palmyra and
+	# Atargatis at Manbij eminent, Elagabal at Emesa and Gad at Dura (Rahba's county); each in a county of its own, and none
+	# shared with Canaanism or Mesopotamianism
+	eminent_holy_sites = {
+		damascus
+		palmyra
+		manbij
+	}
+
+	holy_sites = {
+		emesa
+		dura
+	}
+
+	localization = {
+		#HighGod
+		HighGodName = aramean_pagan_high_god_name
+		HighGodName2 = aramean_pagan_high_god_name
+		HighGodNamePossessive = aramean_pagan_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_HE
+		HighGodHerselfHimself = CHARACTER_HIMSELF
+		HighGodHerHis = CHARACTER_HERHIS_HIS
+		HighGodNameAlternate = aramean_pagan_high_god_name_alternate
+		HighGodNameAlternatePossessive = aramean_pagan_high_god_name_alternate_possessive
+
+		#Creator
+		CreatorName = aramean_pagan_creator_god_name
+		CreatorNamePossessive = aramean_pagan_creator_god_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_HE
+		CreatorHerHis = CHARACTER_HERHIS_HIS
+		CreatorHerHim = CHARACTER_HERHIM_HIM
+
+		#HealthGod
+		HealthGodName = aramean_pagan_health_god_name
+		HealthGodNamePossessive = aramean_pagan_health_god_name_possessive
+		HealthGodSheHe = CHARACTER_SHEHE_SHE
+		HealthGodHerHis = CHARACTER_HERHIS_HER
+		HealthGodHerHim = CHARACTER_HERHIM_HER
+
+		#FertilityGod
+		FertilityGodName = aramean_pagan_fertility_god_name
+		FertilityGodNamePossessive = aramean_pagan_fertility_god_name_possessive
+		FertilityGodSheHe = CHARACTER_SHEHE_SHE
+		FertilityGodHerHis = CHARACTER_HERHIS_HER
+		FertilityGodHerHim = CHARACTER_HERHIM_HER
+
+		#WealthGod
+		WealthGodName = aramean_pagan_wealth_god_name
+		WealthGodNamePossessive = aramean_pagan_wealth_god_name_possessive
+		WealthGodSheHe = CHARACTER_SHEHE_HE
+		WealthGodHerHis = CHARACTER_HERHIS_HIS
+		WealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		#HouseholdGod
+		HouseholdGodName = aramean_pagan_household_god_name
+		HouseholdGodNamePossessive = aramean_pagan_household_god_name_possessive
+		HouseholdGodSheHe = CHARACTER_SHEHE_HE
+		HouseholdGodHerHis = CHARACTER_HERHIS_HIS
+		HouseholdGodHerHim = CHARACTER_HERHIM_HIM
+
+		#FateGod
+		FateGodName = aramean_pagan_fate_god_name
+		FateGodNamePossessive = aramean_pagan_fate_god_name_possessive
+		FateGodSheHe = CHARACTER_SHEHE_HE
+		FateGodHerHis = CHARACTER_HERHIS_HIS
+		FateGodHerHim = CHARACTER_HERHIM_HIM
+
+		#KnowledgeGod
+		KnowledgeGodName = aramean_pagan_knowledge_god_name
+		KnowledgeGodNamePossessive = aramean_pagan_knowledge_god_name_possessive
+		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+
+		#WarGod
+		WarGodName = aramean_pagan_war_god_name
+		WarGodNamePossessive = aramean_pagan_war_god_name_possessive
+		WarGodSheHe = CHARACTER_SHEHE_HE
+		WarGodHerHis = CHARACTER_HERHIS_HIS
+		WarGodHerHim = CHARACTER_HERHIM_HIM
+
+		#TricksterGod
+		TricksterGodName = aramean_pagan_trickster_god_name
+		TricksterGodNamePossessive = aramean_pagan_trickster_god_name_possessive
+		TricksterGodSheHe = CHARACTER_SHEHE_HE
+		TricksterGodHerHis = CHARACTER_HERHIS_HIS
+		TricksterGodHerHim = CHARACTER_HERHIM_HIM
+
+		#NightGod
+		NightGodName = aramean_pagan_night_god_name
+		NightGodNamePossessive = aramean_pagan_night_god_name_possessive
+		NightGodSheHe = CHARACTER_SHEHE_HE
+		NightGodHerHis = CHARACTER_HERHIS_HIS
+		NightGodHerHim = CHARACTER_HERHIM_HIM
+
+		#WaterGod
+		WaterGodName = aramean_pagan_water_god_name
+		WaterGodNamePossessive = aramean_pagan_water_god_name_possessive
+		WaterGodSheHe = CHARACTER_SHEHE_SHE
+		WaterGodHerHis = CHARACTER_HERHIS_HER
+		WaterGodHerHim = CHARACTER_HERHIM_HER
+
+		#DeathDeity
+		DeathDeityName = aramean_pagan_death_deity_name
+		DeathDeityNamePossessive = aramean_pagan_death_deity_name_possessive
+		DeathDeitySheHe = CHARACTER_SHEHE_HE
+		DeathDeityHerHis = CHARACTER_HERHIS_HIS
+		DeathDeityHerHim = CHARACTER_HERHIM_HIM
+
+		GoodGodNames = {
+			aramean_pagan_high_god_name
+			aramean_pagan_creator_god_name
+			aramean_pagan_fertility_god_name
+			aramean_pagan_wealth_god_name
+			aramean_pagan_household_god_name
+			aramean_pagan_good_god_baalshamin
+			aramean_pagan_night_god_name
+		}
+		DevilName = aramean_pagan_devil_name
+		DevilNamePossessive = aramean_pagan_devil_name_possessive
+		DevilSheHe = CHARACTER_SHEHE_HE
+		DevilHerHis = CHARACTER_HERHIS_HIS
+		DevilHerselfHimself = CHARACTER_HIMSELF
+		EvilGodNames = {
+			aramean_pagan_devil_name
+		}
+		WitchGodName = aramean_pagan_witch_god_name
+		WitchGodNamePossessive = aramean_pagan_witch_god_name_possessive
+		WitchGodHerHis = CHARACTER_HERHIS_HER
+		WitchGodSheHe = CHARACTER_SHEHE_SHE
+		WitchGodHerHim = CHARACTER_HERHIM_HER
+		WitchGodMistressMaster = mistress
+		WitchGodMotherFather = mother
+
+		ReligiousSymbol = aramean_pagan_religious_symbol
+		ReligiousSymbol2 = aramean_pagan_religious_symbol
+		ReligiousSymbol3 = aramean_pagan_religious_symbol
+		ReligiousText = aramean_pagan_religious_text
+		ReligiousText2 = aramean_pagan_religious_text
+		ReligiousText3 = aramean_pagan_religious_text
+	}
+}

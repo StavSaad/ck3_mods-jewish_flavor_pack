@@ -14,3 +14,10 @@ semitic_pagan = {
 		created = yes
 	}
 }
+
+aramean_pagan = {
+	867.1.1 = {
+		# No one follows it at any start (the gods of Aram are restored in play); without created the faith list hides it
+		created = yes
+	}
+}

@@ -1,4 +1,4 @@
-﻿# Icons for new rites of Mesopotamianism and Canaanism (vanilla has no pack for them, so they would take a generic one).
+﻿# Icons for new rites of Mesopotamianism, Arameanism and Canaanism (vanilla has no pack for them, so they would take a generic one).
 # Sorts before vanilla's 00_rite_icons.txt. The first pack whose trigger is met and which has an unused icon is used
 
 # The named rites (00_jip_rite_names.txt): each god's own icon, under the same trigger and in the same order as its name,
@@ -12,33 +12,6 @@ jip_rite_marduk_icon = {
 	}
 
 	custom_faith_icons = { jip_rite_marduk }
-}
-
-# The eagle of Bel
-jip_rite_bel_icon = {
-	trigger = {
-		jip_rite_bel_trigger = yes
-	}
-
-	custom_faith_icons = { jip_rite_bel }
-}
-
-# Hadad's thunderbolts
-jip_rite_hadad_icon = {
-	trigger = {
-		jip_rite_hadad_trigger = yes
-	}
-
-	custom_faith_icons = { jip_rite_hadad }
-}
-
-# The fish of Atargatis
-jip_rite_atargatis_icon = {
-	trigger = {
-		jip_rite_atargatis_trigger = yes
-	}
-
-	custom_faith_icons = { jip_rite_atargatis }
 }
 
 # The sun disc of Shamash
@@ -212,6 +185,87 @@ jip_rite_asherah_icon = {
 	custom_faith_icons = { jip_rite_asherah }
 }
 
+# The betyl of Dushara
+jip_rite_dushara_icon = {
+	trigger = {
+		jip_rite_dushara_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_dushara }
+}
+
+# The eagle of Bel
+jip_rite_bel_icon = {
+	trigger = {
+		jip_rite_bel_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_bel }
+}
+
+# Allat's lion-headed axe and spear
+jip_rite_allat_icon = {
+	trigger = {
+		jip_rite_allat_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_allat }
+}
+
+# Hadad's thunderbolts
+jip_rite_hadad_icon = {
+	trigger = {
+		jip_rite_hadad_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_hadad }
+}
+
+# The fish of Atargatis
+jip_rite_atargatis_icon = {
+	trigger = {
+		jip_rite_atargatis_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_atargatis }
+}
+
+# The black stone and the sun
+jip_rite_elagabal_icon = {
+	trigger = {
+		jip_rite_elagabal_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_elagabal }
+}
+
+# The mural crown of Gad
+jip_rite_gad_icon = {
+	trigger = {
+		jip_rite_gad_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_gad }
+}
+
+# The yoke of Rakib-El
+jip_rite_rakibel_icon = {
+	trigger = {
+		jip_rite_rakibel_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_rakibel }
+}
+
+# The eagle of Baalshamin
+jip_rite_baalshamin_icon = {
+	trigger = {
+		jip_rite_baalshamin_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_baalshamin }
+}
+
 # Sinism's children: the Aramean cities and the star-readers take the crescent standard of Sin
 jip_harranian_rite = {
 	trigger = {
@@ -234,4 +288,14 @@ jip_canaanite_rite = {
 	}
 
 	custom_faith_icons = { canaanite_01 canaanite_02 canaanite_03 canaanite_04 canaanite_05 canaanite_06 }
+}
+
+# Arameanism: Hadad's lightning forks, in six colours (tools/make_aramean_icons.py)
+jip_aramean_rite = {
+	trigger = {
+		exists = scope:founder
+		scope:faith = faith:aramean_pagan
+	}
+
+	custom_faith_icons = { aramean_01 aramean_02 aramean_03 aramean_04 aramean_05 aramean_06 }
 }

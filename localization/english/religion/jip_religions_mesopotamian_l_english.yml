@@ -95,6 +95,4 @@
  holy_site_ashur_effect_name: "From [holy_site|E] #weak ($holy_site_ashur_name$)#!"
  holy_site_arbela_name: "Arbela"
  holy_site_arbela_effect_name: "From [holy_site|E] #weak ($holy_site_arbela_name$)#!"
- holy_site_palmyra_name: "Palmyra"
- holy_site_palmyra_effect_name: "From [holy_site|E] #weak ($holy_site_palmyra_name$)#!"
  NOT_jip_tenet_vicegerent_of_ashur_trigger: "The [faith|E] is not $canaanite_religion$"

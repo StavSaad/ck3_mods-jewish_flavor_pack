@@ -1,4 +1,4 @@
-﻿# Names for new rites of Mesopotamianism and Canaanism, like vanilla's Tyrism and Odinite for Asatru.
+﻿# Names for new rites of Mesopotamianism, Arameanism and Canaanism, like vanilla's Tyrism and Odinite for Asatru.
 # Sorts before vanilla's 00_rite_names.txt, so these come first; when all of a faith's are taken, vanilla's god names
 # (the faith's localization) and place names follow. Triggers in jip_rite_name_triggers.txt, loc in jip_rite_names_l_english.yml
 
@@ -11,30 +11,6 @@ jip_rite_marduk = {
 	name = jip_rite_name_marduk
 	trigger = {
 		jip_rite_marduk_trigger = yes
-	}
-}
-
-# Bel of Palmyra, for a founder ruling from Palmyra or holding the Palmyrene Empire
-jip_rite_bel = {
-	name = jip_rite_name_bel
-	trigger = {
-		jip_rite_bel_trigger = yes
-	}
-}
-
-# Hadad of Damascus
-jip_rite_hadad = {
-	name = jip_rite_name_hadad
-	trigger = {
-		jip_rite_hadad_trigger = yes
-	}
-}
-
-# Atargatis of Manbij, the Syrian goddess
-jip_rite_atargatis = {
-	name = jip_rite_name_atargatis
-	trigger = {
-		jip_rite_atargatis_trigger = yes
 	}
 }
 
@@ -91,6 +67,82 @@ jip_rite_enlil = {
 	name = jip_rite_name_enlil
 	trigger = {
 		jip_rite_enlil_trigger = yes
+	}
+}
+
+##############
+# ARAMEANISM #
+##############
+
+# Dushara of the Nabataeans, for a founder ruling from the Hauran
+jip_rite_dushara = {
+	name = jip_rite_name_dushara
+	trigger = {
+		jip_rite_dushara_trigger = yes
+	}
+}
+
+# Bel of Palmyra, for a founder ruling from Palmyra or holding the Palmyrene Empire
+jip_rite_bel = {
+	name = jip_rite_name_bel
+	trigger = {
+		jip_rite_bel_trigger = yes
+	}
+}
+
+# Allat of Palmyra and the Arabs, for the Syrian desert
+jip_rite_allat = {
+	name = jip_rite_name_allat
+	trigger = {
+		jip_rite_allat_trigger = yes
+	}
+}
+
+# Hadad-Rimmon of Damascus, or a war god
+jip_rite_hadad = {
+	name = jip_rite_name_hadad
+	trigger = {
+		jip_rite_hadad_trigger = yes
+	}
+}
+
+# Atargatis of Manbij, the Syrian goddess, or a fertility god
+jip_rite_atargatis = {
+	name = jip_rite_name_atargatis
+	trigger = {
+		jip_rite_atargatis_trigger = yes
+	}
+}
+
+# Elagabal of Emesa, or Sun Worship
+jip_rite_elagabal = {
+	name = jip_rite_name_elagabal
+	trigger = {
+		jip_rite_elagabal_trigger = yes
+	}
+}
+
+# Gad of Dura, the Fortune of the city, or a wealth god
+jip_rite_gad = {
+	name = jip_rite_name_gad
+	trigger = {
+		jip_rite_gad_trigger = yes
+	}
+}
+
+# Rakib-El, lord of the house of Sam'al's kings, for a household god
+jip_rite_rakibel = {
+	name = jip_rite_name_rakibel
+	trigger = {
+		jip_rite_rakibel_trigger = yes
+	}
+}
+
+# Baalshamin, the Lord of Heaven, for any other ruler
+jip_rite_baalshamin = {
+	name = jip_rite_name_baalshamin
+	trigger = {
+		jip_rite_baalshamin_trigger = yes
 	}
 }
 

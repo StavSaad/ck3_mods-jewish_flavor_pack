@@ -1,4 +1,4 @@
-﻿# Which god a new rite of Canaanism or Mesopotamianism is named after (common/religion/rite_names/00_jip_rite_names.txt),
+﻿# Which god a new rite of Canaanism, Mesopotamianism or Arameanism is named after (common/religion/rite_names/00_jip_rite_names.txt),
 # like vanilla's Tyrism and Odinite for Asatru. Root is the rite being created, scope:faith its faith, scope:founder its
 # founder (may not exist). A name goes to the first entry whose trigger is met and whose name is still unused, so the
 # names file lists the cult cities first, then the tenets. Canaanism has no catch-all god: it is Baal's faith already
@@ -23,27 +23,6 @@ jip_rite_founder_capital_under_trigger = {
 jip_rite_marduk_trigger = {
 	scope:faith = faith:mesopotamian_pagan
 	jip_rite_founder_capital_under_trigger = { TITLE = k_mesopotamia }
-}
-
-# Bel of Palmyra
-jip_rite_bel_trigger = {
-	scope:faith = { jip_is_aramean_faith_trigger = yes } # Arameanism's (0.15 plan, section 14)
-	OR = {
-		jip_rite_founder_capital_trigger = { COUNTY = c_palmyra }
-		scope:founder ?= { has_title = title:e_palmyra }
-	}
-}
-
-# Hadad of Damascus
-jip_rite_hadad_trigger = {
-	scope:faith = { jip_is_aramean_faith_trigger = yes } # Arameanism's (0.15 plan, section 14)
-	jip_rite_founder_capital_under_trigger = { TITLE = d_damascus }
-}
-
-# Atargatis of Manbij (Hierapolis), the Syrian goddess
-jip_rite_atargatis_trigger = {
-	scope:faith = { jip_is_aramean_faith_trigger = yes } # Arameanism's (0.15 plan, section 14)
-	jip_rite_founder_capital_trigger = { COUNTY = c_aleppo }
 }
 
 # Shamash of Hatra, the sun and the judge
@@ -92,6 +71,110 @@ jip_rite_nusku_trigger = {
 # Enlil of Nippur, lord of the wind, for any ruler
 jip_rite_enlil_trigger = {
 	scope:faith = faith:mesopotamian_pagan
+	scope:founder ?= { is_ruler = yes }
+}
+
+############
+# ARAMEANISM
+############
+
+# A founder ruling from one of the Aramean gods' cities: the tenets' names below wait for founders elsewhere, so a
+# city's own god comes first
+jip_rite_aramean_cult_city_trigger = {
+	OR = {
+		jip_rite_founder_capital_under_trigger = { TITLE = d_damascus }
+		jip_rite_founder_capital_trigger = { COUNTY = c_palmyra }
+		jip_rite_founder_capital_trigger = { COUNTY = c_aleppo }
+		jip_rite_founder_capital_trigger = { COUNTY = c_homs }
+		jip_rite_founder_capital_trigger = { COUNTY = c_rahba }
+		jip_rite_founder_capital_under_trigger = { TITLE = d_shammar }
+		jip_rite_founder_capital_under_trigger = { TITLE = d_eastern_desert }
+		scope:founder ?= { has_title = title:e_palmyra }
+	}
+}
+
+# Dushara of the Nabataeans, for the Hauran and Bosra (in the duchy of Damascus, so before Rimmon)
+jip_rite_dushara_trigger = {
+	scope:faith = faith:aramean_pagan
+	jip_rite_founder_capital_trigger = { COUNTY = c_hauran }
+}
+
+# Bel of Palmyra
+jip_rite_bel_trigger = {
+	scope:faith = faith:aramean_pagan
+	OR = {
+		jip_rite_founder_capital_trigger = { COUNTY = c_palmyra }
+		scope:founder ?= { has_title = title:e_palmyra }
+	}
+}
+
+# Allat of Palmyra and the Arabs, for the Syrian desert
+jip_rite_allat_trigger = {
+	scope:faith = faith:aramean_pagan
+	OR = {
+		jip_rite_founder_capital_under_trigger = { TITLE = d_shammar }
+		jip_rite_founder_capital_under_trigger = { TITLE = d_eastern_desert }
+	}
+}
+
+# Hadad-Rimmon of Damascus (Rimmonism: Hadadism is the faith's main rite), or a war god's rite elsewhere
+jip_rite_hadad_trigger = {
+	scope:faith = faith:aramean_pagan
+	OR = {
+		jip_rite_founder_capital_under_trigger = { TITLE = d_damascus }
+		AND = {
+			jip_rite_aramean_cult_city_trigger = no
+			has_wargod_tenet_trigger = yes
+		}
+	}
+}
+
+# Atargatis of Manbij, in the county of Aleppo, or a fertility god's rite elsewhere
+jip_rite_atargatis_trigger = {
+	scope:faith = faith:aramean_pagan
+	OR = {
+		jip_rite_founder_capital_trigger = { COUNTY = c_aleppo }
+		AND = {
+			jip_rite_aramean_cult_city_trigger = no
+			has_fertilitygod_tenet_trigger = yes
+		}
+	}
+}
+
+# Elagabal of Emesa, or a rite of Sun Worship elsewhere
+jip_rite_elagabal_trigger = {
+	scope:faith = faith:aramean_pagan
+	OR = {
+		jip_rite_founder_capital_trigger = { COUNTY = c_homs }
+		AND = {
+			jip_rite_aramean_cult_city_trigger = no
+			rite_has_tenet = tenet_sun_worship
+		}
+	}
+}
+
+# Gad of Dura (Rahba's county), or a wealth god's rite elsewhere
+jip_rite_gad_trigger = {
+	scope:faith = faith:aramean_pagan
+	OR = {
+		jip_rite_founder_capital_trigger = { COUNTY = c_rahba }
+		AND = {
+			jip_rite_aramean_cult_city_trigger = no
+			has_wealthgod_tenet_trigger = yes
+		}
+	}
+}
+
+# Rakib-El, lord of the house of Sam'al's kings: a household god's rite
+jip_rite_rakibel_trigger = {
+	scope:faith = faith:aramean_pagan
+	jip_rite_aramean_cult_city_trigger = no
+	has_householdgod_tenet_trigger = yes
+}
+
+# Baalshamin, the Lord of Heaven: any other rite of a ruler
+jip_rite_baalshamin_trigger = {
+	scope:faith = faith:aramean_pagan
 	scope:founder ?= { is_ruler = yes }
 }
 

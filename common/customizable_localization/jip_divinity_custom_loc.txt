@@ -357,6 +357,29 @@ GetActualBishopTitle = {
 		localization_key = councillor_court_chaplain_mesopotamian
 	}
 
+	#Arameanism: a priest is a Kumra (Aramaic kmr, the priests of the moon god at Neirab and of Bel at Palmyra), the chief
+	#priest of a king's court a Rab Kumre (Palmyra's rb kmr'), a priestess a Kumarta
+	text = {
+		trigger = {
+			faith = faith:aramean_pagan
+			is_female = yes
+		}
+		localization_key = councillor_court_chaplain_aramean_female
+	}
+	text = {
+		trigger = {
+			faith = faith:aramean_pagan
+			liege.highest_held_title_tier >= tier_kingdom
+		}
+		localization_key = councillor_court_chaplain_aramean_kingdom
+	}
+	text = {
+		trigger = {
+			faith = faith:aramean_pagan
+		}
+		localization_key = councillor_court_chaplain_aramean
+	}
+
 	#Canaanism: a priest of Baalism or Tanitism is a Kohen (Phoenician and Punic khn), the chief priest of a king's court
 	#a Rab Kohanim (rb khnm, attested at Carthage); a Yahwist priest a Komer (the kemarim of the high places, 2 Kings 23:5);
 	#a priestess a Kohenet (Punic khnt)
@@ -1848,6 +1871,29 @@ GetActualBishopTitlePossessive = {
 			faith = faith:mesopotamian_pagan
 		}
 		localization_key = councillor_court_chaplain_mesopotamian_possessive
+	}
+
+	#Arameanism: a priest is a Kumra (Aramaic kmr, the priests of the moon god at Neirab and of Bel at Palmyra), the chief
+	#priest of a king's court a Rab Kumre (Palmyra's rb kmr'), a priestess a Kumarta
+	text = {
+		trigger = {
+			faith = faith:aramean_pagan
+			is_female = yes
+		}
+		localization_key = councillor_court_chaplain_aramean_female_possessive
+	}
+	text = {
+		trigger = {
+			faith = faith:aramean_pagan
+			liege.highest_held_title_tier >= tier_kingdom
+		}
+		localization_key = councillor_court_chaplain_aramean_kingdom_possessive
+	}
+	text = {
+		trigger = {
+			faith = faith:aramean_pagan
+		}
+		localization_key = councillor_court_chaplain_aramean_possessive
 	}
 
 	#Canaanism: a priest of Baalism or Tanitism is a Kohen (Phoenician and Punic khn), the chief priest of a king's court

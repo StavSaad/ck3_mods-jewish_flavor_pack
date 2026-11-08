@@ -275,3 +275,150 @@ sinism = {
 		ReligiousText3 = sinism_religious_text
 	}
 }
+
+# Arameanism (aramean_pagan). Hadadism holds the faith's gods; Belism and Atargatism their cities' own
+hadadism = {
+	faith = aramean_pagan
+
+	color = { 0.55 0.4 0.15 }
+	icon = jip_rite_hadad # Hadad's lightning forks
+	# No conversion until the gods of Aram are restored (jip_unlock_aramean_conversion_effect) (set_can_convert_to_rite)
+	convert = no
+
+	cultures = { syriac }
+
+	tenets = {
+		tenet_warmonger # The kings of Damascus, Ben-Hadad and Hazael, sons of Hadad
+		tenet_sanctity_of_nature # Hadad's rain and the springs
+		tenet_ritual_celebrations
+	}
+}
+
+# Palmyra's gods: Bel with Yarhibol and Aglibol, Baalshamin, Malakbel and Allat
+belism = {
+	faith = aramean_pagan
+
+	color = { 0.7 0.55 0.3 }
+	icon = jip_rite_bel # The eagle of Bel
+	convert = no
+
+	tenets = {
+		tenet_astrology # The astral triad
+		tenet_ritual_celebrations # The marzeah banquets of the priests' brotherhoods
+		tenet_ritual_hospitality # The caravan city
+	}
+
+	localization = {
+		#HighGod
+		HighGodName = belism_high_god_name
+		HighGodName2 = belism_high_god_name
+		HighGodNamePossessive = belism_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_HE
+		HighGodHerselfHimself = CHARACTER_HIMSELF
+		HighGodHerHis = CHARACTER_HERHIS_HIS
+		HighGodNameAlternate = belism_high_god_name_alternate
+		HighGodNameAlternatePossessive = belism_high_god_name_alternate_possessive
+
+		#Creator
+		CreatorName = belism_creator_god_name
+		CreatorNamePossessive = belism_creator_god_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_HE
+		CreatorHerHis = CHARACTER_HERHIS_HIS
+		CreatorHerHim = CHARACTER_HERHIM_HIM
+
+		#FertilityGod
+		FertilityGodName = belism_fertility_god_name
+		FertilityGodNamePossessive = belism_fertility_god_name_possessive
+		FertilityGodSheHe = CHARACTER_SHEHE_SHE
+		FertilityGodHerHis = CHARACTER_HERHIS_HER
+		FertilityGodHerHim = CHARACTER_HERHIM_HER
+
+		#WealthGod
+		WealthGodName = belism_wealth_god_name
+		WealthGodNamePossessive = belism_wealth_god_name_possessive
+		WealthGodSheHe = CHARACTER_SHEHE_HE
+		WealthGodHerHis = CHARACTER_HERHIS_HIS
+		WealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		#HouseholdGod
+		HouseholdGodName = belism_household_god_name
+		HouseholdGodNamePossessive = belism_household_god_name_possessive
+		HouseholdGodSheHe = CHARACTER_SHEHE_HE
+		HouseholdGodHerHis = CHARACTER_HERHIS_HIS
+		HouseholdGodHerHim = CHARACTER_HERHIM_HIM
+
+		#WarGod
+		WarGodName = belism_war_god_name
+		WarGodNamePossessive = belism_war_god_name_possessive
+		WarGodSheHe = CHARACTER_SHEHE_SHE
+		WarGodHerHis = CHARACTER_HERHIS_HER
+		WarGodHerHim = CHARACTER_HERHIM_HER
+
+		#NightGod
+		NightGodName = belism_night_god_name
+		NightGodNamePossessive = belism_night_god_name_possessive
+		NightGodSheHe = CHARACTER_SHEHE_HE
+		NightGodHerHis = CHARACTER_HERHIS_HIS
+		NightGodHerHim = CHARACTER_HERHIM_HIM
+
+		GoodGodNames = {
+			belism_high_god_name
+			belism_creator_god_name
+			belism_fertility_god_name
+			belism_night_god_name
+		}
+	}
+}
+
+# The Syrian Goddess of Manbij: Atargatis, Hadad beside her, the sacred lake whose fish no one eats, the Galli
+atargatism = {
+	faith = aramean_pagan
+
+	color = { 0.25 0.55 0.6 }
+	icon = jip_rite_atargatis # Her sacred fish
+	convert = no
+
+	tenets = {
+		tenet_sanctity_of_nature # The sacred fish
+		tenet_sacred_childbirth
+		tenet_ritual_celebrations # The Pyre, the spring pilgrimage
+	}
+
+	localization = {
+		#HighGod
+		HighGodName = atargatism_high_god_name
+		HighGodName2 = atargatism_high_god_name
+		HighGodNamePossessive = atargatism_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_SHE
+		HighGodHerselfHimself = CHARACTER_HERSELF
+		HighGodHerHis = CHARACTER_HERHIS_HER
+		HighGodNameAlternate = atargatism_high_god_name_alternate
+		HighGodNameAlternatePossessive = atargatism_high_god_name_alternate_possessive
+
+		#Creator
+		CreatorName = atargatism_creator_god_name
+		CreatorNamePossessive = atargatism_creator_god_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_HE
+		CreatorHerHis = CHARACTER_HERHIS_HIS
+		CreatorHerHim = CHARACTER_HERHIM_HIM
+
+		#WarGod
+		WarGodName = atargatism_war_god_name
+		WarGodNamePossessive = atargatism_war_god_name_possessive
+		WarGodSheHe = CHARACTER_SHEHE_HE
+		WarGodHerHis = CHARACTER_HERHIS_HIS
+		WarGodHerHim = CHARACTER_HERHIM_HIM
+
+		#WaterGod
+		WaterGodName = atargatism_water_god_name
+		WaterGodNamePossessive = atargatism_water_god_name_possessive
+		WaterGodSheHe = CHARACTER_SHEHE_SHE
+		WaterGodHerHis = CHARACTER_HERHIS_HER
+		WaterGodHerHim = CHARACTER_HERHIM_HER
+
+		GoodGodNames = {
+			atargatism_high_god_name
+			atargatism_creator_god_name
+		}
+	}
+}
