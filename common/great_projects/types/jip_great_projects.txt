@@ -391,7 +391,7 @@ jip_gp_temple_of_bel = {
 
 	is_shown = {
 		# For an independent ruler of the gods of Aram (Arameanism, 0.15 plan, section 14)
-		faith = { jip_is_aramean_faith_trigger = yes }
+		faith = faith:aramean_pagan
 		is_independent_ruler = yes
 		is_landed = yes
 		NOT = { is_planning_great_project = jip_gp_temple_of_bel }
@@ -436,7 +436,7 @@ jip_gp_temple_of_bel = {
 
 	is_valid = {
 		scope:founder = {
-			faith = { jip_is_aramean_faith_trigger = yes }
+			faith = faith:aramean_pagan
 			is_independent_ruler = yes
 		}
 		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
@@ -484,6 +484,7 @@ jip_gp_temple_of_bel = {
 			}
 		}
 		scope:owner ?= {
+			jip_unlock_aramean_conversion_effect = yes
 			add_piety = major_piety_gain
 			add_prestige = major_prestige_gain
 		}
@@ -555,8 +556,8 @@ jip_gp_temple_of_bel = {
 		priests = {
 			contributor_is_valid = {
 				custom_tooltip = {
-					text = jip_gp_temple_of_bel_faithful_tt
-					faith = { jip_is_aramean_faith_trigger = yes }
+					text = jip_gp_aramean_faithful_tt
+					faith = faith:aramean_pagan
 				}
 			}
 			cost = {
@@ -3892,6 +3893,1195 @@ jip_gp_temple_of_astarte = {
 			on_complete = {
 				great_project_reward_contribution_completion_notification_effect = {
 					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		rank = county
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 5
+		duchy = 2
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+
+	ai_will_do = {
+		value = 100
+	}
+
+	group = major_project
+	is_important = yes
+	target_title_tier = barony
+}
+
+@jip_temple_of_hadad_icon = "gfx/interface/icons/great_projects/jip_temple_of_hadad.dds" # tools/make_great_project_art.py
+@jip_temple_of_hadad_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_hadad.dds" # default crop
+
+# An independent ruler of Arameanism (0.15 plan, section 14) who holds b_damascus rebuilds the temple of Hadad-Rimmon, later Jupiter Damascenus, in its great walled court
+jip_gp_temple_of_hadad = {
+	icon = { reference = @jip_temple_of_hadad_icon }
+	illustration = { reference = @jip_temple_of_hadad_illustration }
+
+	name = {
+		desc = great_project_type_jip_gp_temple_of_hadad
+	}
+
+	is_shown = {
+		# For an independent ruler of Arameanism (any rite)
+		faith = faith:aramean_pagan
+		is_independent_ruler = yes
+		is_landed = yes
+		NOT = { is_planning_great_project = jip_gp_temple_of_hadad }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_hadad
+			}
+		}
+	}
+
+	province_filter = landed_title
+	province_filter_target = c_damascus
+
+	is_location_valid = {
+		scope:province = {
+			custom_tooltip = {
+				text = jip_gp_temple_of_hadad_location_tt
+				this = title:b_damascus.title_province
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_held_tt
+				barony.holder ?= { target_is_same_character_or_above = root }
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_not_built_tt
+				NOT = { has_building_with_flag = jip_temple_of_hadad_building }
+			}
+		}
+	}
+
+	can_start_planning = {
+		custom_tooltip = {
+			text = jip_gp_temple_of_hadad_city_tt
+			title:c_damascus.holder ?= { target_is_same_character_or_above = root }
+		}
+		piety_level >= 2
+		is_at_war = no
+	}
+
+	owner = founder_primary_title_owner
+
+	is_valid = {
+		scope:founder = {
+			faith = faith:aramean_pagan
+			is_independent_ruler = yes
+		}
+		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = great_project_base_starting_cost
+		}
+		piety = {
+			value = 300
+		}
+	}
+
+	construction_time = 1825 # 5 years
+
+	allowed_contributor_filter = {
+		owner = yes
+		founder = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+		duchy = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:founder ?= {
+			add_piety = medium_piety_gain
+		}
+	}
+
+	on_complete = {
+		scope:province = {
+			custom_tooltip = jip_gp_temple_of_hadad_building_tt
+			hidden_effect = {
+				add_special_building = jip_temple_of_hadad_01 # The province's special building slot
+			}
+		}
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_hadad
+			}
+		}
+		scope:owner ?= {
+			jip_unlock_aramean_conversion_effect = yes
+			add_piety = major_piety_gain
+			add_prestige = major_prestige_gain
+		}
+	}
+
+	project_contributions = {
+		# Required: the walled court and its colonnades
+		temenos = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: Hadad on his bull with the thunderbolt
+		statue = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.75
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the priests of Hadad
+		priests = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_aramean_faithful_tt
+					faith = faith:aramean_pagan
+				}
+			}
+			cost = {
+				piety = {
+					value = 300
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = minor_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Optional: the great gateway
+		propylaea = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+		# Optional: the rain festival
+		rain = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		rank = county
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 5
+		duchy = 2
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+
+	ai_will_do = {
+		value = 100
+	}
+
+	group = major_project
+	is_important = yes
+	target_title_tier = barony
+}
+
+@jip_temple_of_atargatis_icon = "gfx/interface/icons/great_projects/jip_temple_of_atargatis.dds" # tools/make_great_project_art.py
+@jip_temple_of_atargatis_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_atargatis.dds" # default crop
+
+# An independent ruler of Arameanism (0.15 plan, section 14) who holds b_manbij rebuilds the temple of Atargatis, the Syrian Goddess, at Manbij (Hierapolis Bambyce, in the county of Aleppo), with its sacred lake
+jip_gp_temple_of_atargatis = {
+	icon = { reference = @jip_temple_of_atargatis_icon }
+	illustration = { reference = @jip_temple_of_atargatis_illustration }
+
+	name = {
+		desc = great_project_type_jip_gp_temple_of_atargatis
+	}
+
+	is_shown = {
+		# For an independent ruler of Arameanism (any rite)
+		faith = faith:aramean_pagan
+		is_independent_ruler = yes
+		is_landed = yes
+		NOT = { is_planning_great_project = jip_gp_temple_of_atargatis }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_atargatis
+			}
+		}
+	}
+
+	province_filter = landed_title
+	province_filter_target = c_aleppo
+
+	is_location_valid = {
+		scope:province = {
+			custom_tooltip = {
+				text = jip_gp_temple_of_atargatis_location_tt
+				this = title:b_manbij.title_province
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_held_tt
+				barony.holder ?= { target_is_same_character_or_above = root }
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_not_built_tt
+				NOT = { has_building_with_flag = jip_temple_of_atargatis_building }
+			}
+		}
+	}
+
+	can_start_planning = {
+		custom_tooltip = {
+			text = jip_gp_temple_of_atargatis_city_tt
+			title:c_aleppo.holder ?= { target_is_same_character_or_above = root }
+		}
+		piety_level >= 2
+		is_at_war = no
+	}
+
+	owner = founder_primary_title_owner
+
+	is_valid = {
+		scope:founder = {
+			faith = faith:aramean_pagan
+			is_independent_ruler = yes
+		}
+		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = great_project_base_starting_cost
+		}
+		piety = {
+			value = 300
+		}
+	}
+
+	construction_time = 1825 # 5 years
+
+	allowed_contributor_filter = {
+		owner = yes
+		founder = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+		duchy = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:founder ?= {
+			add_piety = medium_piety_gain
+		}
+	}
+
+	on_complete = {
+		scope:province = {
+			custom_tooltip = jip_gp_temple_of_atargatis_building_tt
+			hidden_effect = {
+				add_special_building = jip_temple_of_atargatis_01 # The province's special building slot
+			}
+		}
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_atargatis
+			}
+		}
+		scope:owner ?= {
+			jip_unlock_aramean_conversion_effect = yes
+			add_piety = major_piety_gain
+			add_prestige = major_prestige_gain
+		}
+	}
+
+	project_contributions = {
+		# Required: the high platform and the golden doors
+		platform = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the sacred lake
+		lake = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.75
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the Galli, her priests
+		galli = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_aramean_faithful_tt
+					faith = faith:aramean_pagan
+				}
+			}
+			cost = {
+				piety = {
+					value = 300
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = minor_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Optional: the images of the goddess and Hadad
+		images = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+		# Optional: the court of the Pyre
+		pyre = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		rank = county
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 5
+		duchy = 2
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+
+	ai_will_do = {
+		value = 100
+	}
+
+	group = major_project
+	is_important = yes
+	target_title_tier = barony
+}
+
+@jip_temple_of_elagabal_icon = "gfx/interface/icons/great_projects/jip_temple_of_elagabal.dds" # tools/make_great_project_art.py
+@jip_temple_of_elagabal_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_elagabal.dds" # default crop
+
+# An independent ruler of Arameanism (0.15 plan, section 14) who holds b_hims rebuilds the temple of Elagabal, the sun god of Emesa, whose black stone fell from heaven
+jip_gp_temple_of_elagabal = {
+	icon = { reference = @jip_temple_of_elagabal_icon }
+	illustration = { reference = @jip_temple_of_elagabal_illustration }
+
+	name = {
+		desc = great_project_type_jip_gp_temple_of_elagabal
+	}
+
+	is_shown = {
+		# For an independent ruler of Arameanism (any rite)
+		faith = faith:aramean_pagan
+		is_independent_ruler = yes
+		is_landed = yes
+		NOT = { is_planning_great_project = jip_gp_temple_of_elagabal }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_elagabal
+			}
+		}
+	}
+
+	province_filter = landed_title
+	province_filter_target = c_homs
+
+	is_location_valid = {
+		scope:province = {
+			custom_tooltip = {
+				text = jip_gp_temple_of_elagabal_location_tt
+				this = title:b_hims.title_province
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_held_tt
+				barony.holder ?= { target_is_same_character_or_above = root }
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_not_built_tt
+				NOT = { has_building_with_flag = jip_temple_of_elagabal_building }
+			}
+		}
+	}
+
+	can_start_planning = {
+		custom_tooltip = {
+			text = jip_gp_temple_of_elagabal_city_tt
+			title:c_homs.holder ?= { target_is_same_character_or_above = root }
+		}
+		piety_level >= 2
+		is_at_war = no
+	}
+
+	owner = founder_primary_title_owner
+
+	is_valid = {
+		scope:founder = {
+			faith = faith:aramean_pagan
+			is_independent_ruler = yes
+		}
+		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = great_project_base_starting_cost
+		}
+		piety = {
+			value = 300
+		}
+	}
+
+	construction_time = 1825 # 5 years
+
+	allowed_contributor_filter = {
+		owner = yes
+		founder = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+		duchy = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:founder ?= {
+			add_piety = medium_piety_gain
+		}
+	}
+
+	on_complete = {
+		scope:province = {
+			custom_tooltip = jip_gp_temple_of_elagabal_building_tt
+			hidden_effect = {
+				add_special_building = jip_temple_of_elagabal_01 # The province's special building slot
+			}
+		}
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_elagabal
+			}
+		}
+		scope:owner ?= {
+			jip_unlock_aramean_conversion_effect = yes
+			add_piety = major_piety_gain
+			add_prestige = major_prestige_gain
+		}
+	}
+
+	project_contributions = {
+		# Required: the high podium and its stair
+		podium = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the black stone
+		stone = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.75
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the priests of Elagabal
+		priests = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_aramean_faithful_tt
+					faith = faith:aramean_pagan
+				}
+			}
+			cost = {
+				piety = {
+					value = 300
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = minor_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Optional: the golden eagle
+		eagle = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+		# Optional: the god's chariot
+		procession = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		rank = county
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 5
+		duchy = 2
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+
+	ai_will_do = {
+		value = 100
+	}
+
+	group = major_project
+	is_important = yes
+	target_title_tier = barony
+}
+
+@jip_temple_of_gad_icon = "gfx/interface/icons/great_projects/jip_temple_of_gad.dds" # tools/make_great_project_art.py
+@jip_temple_of_gad_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_gad.dds" # default crop
+
+# An independent ruler of Arameanism (0.15 plan, section 14) who holds b_al-rahba rebuilds the temple of Gad, the Fortune of the city, as it stood at Dura-Europos on the Euphrates below Rahba
+jip_gp_temple_of_gad = {
+	icon = { reference = @jip_temple_of_gad_icon }
+	illustration = { reference = @jip_temple_of_gad_illustration }
+
+	name = {
+		desc = great_project_type_jip_gp_temple_of_gad
+	}
+
+	is_shown = {
+		# For an independent ruler of Arameanism (any rite)
+		faith = faith:aramean_pagan
+		is_independent_ruler = yes
+		is_landed = yes
+		NOT = { is_planning_great_project = jip_gp_temple_of_gad }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_gad
+			}
+		}
+	}
+
+	province_filter = landed_title
+	province_filter_target = c_rahba
+
+	is_location_valid = {
+		scope:province = {
+			custom_tooltip = {
+				text = jip_gp_temple_of_gad_location_tt
+				this = title:b_al-rahba.title_province
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_held_tt
+				barony.holder ?= { target_is_same_character_or_above = root }
+			}
+			custom_tooltip = {
+				text = jip_gp_temple_not_built_tt
+				NOT = { has_building_with_flag = jip_temple_of_gad_building }
+			}
+		}
+	}
+
+	can_start_planning = {
+		custom_tooltip = {
+			text = jip_gp_temple_of_gad_city_tt
+			title:c_rahba.holder ?= { target_is_same_character_or_above = root }
+		}
+		piety_level >= 1
+		is_at_war = no
+	}
+
+	owner = founder_primary_title_owner
+
+	is_valid = {
+		scope:founder = {
+			faith = faith:aramean_pagan
+			is_independent_ruler = yes
+		}
+		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = great_project_base_starting_cost
+		}
+		piety = {
+			value = 300
+		}
+	}
+
+	construction_time = 1460 # 4 years
+
+	allowed_contributor_filter = {
+		owner = yes
+		founder = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+		duchy = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:founder ?= {
+			add_piety = medium_piety_gain
+		}
+	}
+
+	on_complete = {
+		scope:province = {
+			custom_tooltip = jip_gp_temple_of_gad_building_tt
+			hidden_effect = {
+				add_special_building = jip_temple_of_gad_01 # The province's special building slot
+			}
+		}
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:jip_gp_temple_of_gad
+			}
+		}
+		scope:owner ?= {
+			jip_unlock_aramean_conversion_effect = yes
+			add_piety = major_piety_gain
+			add_prestige = major_prestige_gain
+		}
+	}
+
+	project_contributions = {
+		# Required: the courtyard and its rooms
+		court = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the reliefs of the two Fortunes
+		reliefs = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.75
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Required: the priests of Gad
+		priests = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = jip_gp_aramean_faithful_tt
+					faith = faith:aramean_pagan
+				}
+			}
+			cost = {
+				piety = {
+					value = 200
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = yes
+			on_contribution_funded = {
+				add_prestige = minor_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = major
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 6
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = { value = 50 }
+		}
+		# Optional: the caravan masters
+		caravans = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
+					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
+				}
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 12
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = { value = 25 }
+		}
+		# Optional: the altar of offerings
+		altar = {
+			cost = {
+				treasury_or_gold = {
+					value = great_project_base_contribution_cost
+					multiply = 0.5
+				}
+			}
+			contributor_cooldown = individual_contribution_cooldown_value
+			is_required = no
+			on_contribution_funded = {
+				add_prestige = medium_prestige_gain
+				great_project_notify_contribution = yes
+			}
+			on_complete = {
+				great_project_reward_contribution_completion_notification_effect = {
+					LEVEL = minor
 					NON_OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
 					OWNER_REWARD_EFFECT = great_project_reward_contribution_completion_null
 				}

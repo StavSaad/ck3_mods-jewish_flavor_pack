@@ -27,7 +27,7 @@
 	}
 }
 
-# 5948 - TADMUR (Palmyra): the Temple of Bel
+# 5948 - TADMUR (Palmyra): the Temple of Bel (Arameanism)
 5948 = {
 	1.1.1 = {
 		special_building_slot = jip_temple_of_bel_01
@@ -101,5 +101,34 @@
 5681 = {
 	1.1.1 = {
 		special_building_slot = jip_temple_of_astarte_01
+	}
+}
+
+# Arameanism's temples (0.15 plan, section 14); Palmyra's above
+# 5924 - DAMASCUS: the Temple of Hadad
+5924 = {
+	1.1.1 = {
+		special_building_slot = jip_temple_of_hadad_01
+	}
+}
+
+# 5908 - MANBIJ: the Temple of Atargatis
+5908 = {
+	1.1.1 = {
+		special_building_slot = jip_temple_of_atargatis_01
+	}
+}
+
+# 5929 - HIMS: the Temple of Elagabal
+5929 = {
+	1.1.1 = {
+		special_building_slot = jip_temple_of_elagabal_01
+	}
+}
+
+# 4889 - AL-RAHBA: the Temple of Gad
+4889 = {
+	1.1.1 = {
+		special_building_slot = jip_temple_of_gad_01
 	}
 }

@@ -42,6 +42,12 @@ jip_sabian_story_game_start_after_lobby_on_action = {
 			}
 			jip_unlock_canaanite_conversion_effect = yes
 		}
+		if = {
+			limit = {
+				any_player = { faith = faith:aramean_pagan }
+			}
+			jip_unlock_aramean_conversion_effect = yes
+		}
 		# In case the head changed in the lobby
 		jip_sabian_story_start_effect = yes
 		title:d_jip_harrani.holder ?= {
