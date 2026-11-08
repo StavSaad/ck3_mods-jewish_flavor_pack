@@ -49,8 +49,9 @@ mesopotamian_pagan = {
 	}
 
 	# The sites of the great projects (0.15 plan, section 5): Sinism's Temple of Sin, Ashurism's Temple of Ashur and
-	# Marduk's Esagila at Babylon (vanilla's babylon site, shared with Judaism) eminent, the Temple of Bel, the Temple of
-	# Ishtar and the Nineveh dig. Hatra is not one: it shares the county of Mosul with Ashur
+	# Marduk's Esagila at Babylon (vanilla's babylon site, shared with Judaism) eminent, the Temple of Ishtar and the
+	# Nineveh dig. Hatra is not one: it shares the county of Mosul with Ashur. Palmyra, Bel's, is the Aramean gods'
+	# (section 14)
 	eminent_holy_sites = {
 		harran
 		ashur
@@ -60,7 +61,6 @@ mesopotamian_pagan = {
 	holy_sites = {
 		nineveh
 		arbela
-		palmyra
 	}
 
 	localization = {

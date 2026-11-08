@@ -63,7 +63,7 @@ JipSabianStoryAct = {
 	}
 }
 
-# The six gods' cities in the story window in Acts IV and V, keyed on the story owner: the
+# The five gods' cities in the story window in Acts IV and V, keyed on the story owner: the
 # statue home, the temple standing in the realm, the temple standing outside it, the city in the realm without its
 # temple, or the city outside the realm; the tooltips of the window's houses of the gods (gui/window_situation_list.gui)
 
@@ -202,52 +202,6 @@ JipSabianSiteAshur = {
 	}
 	text = {
 		localization_key = jip_sabian_site_ashur_lost
-	}
-}
-
-JipSabianSiteBel = {
-	type = character
-	text = {
-		trigger = {
-			NOT = {
-				any_owned_story = {
-					type = story_jip_sabian_revival
-					OR = {
-						var:jip_sabian_act ?= 4
-						var:jip_sabian_act ?= 5
-					}
-				}
-			}
-		}
-		localization_key = jip_sabian_empty
-	}
-	text = {
-		trigger = {
-			is_target_in_global_variable_list = { name = jip_old_gods_home target = flag:bel }
-		}
-		localization_key = jip_sabian_site_bel_home
-	}
-	text = {
-		trigger = {
-			title:b_tadmur.title_province = { has_building = jip_temple_of_bel_01 }
-			title:b_tadmur.holder ?= { target_is_same_character_or_above = root }
-		}
-		localization_key = jip_sabian_site_bel_temple
-	}
-	text = {
-		trigger = {
-			title:b_tadmur.title_province = { has_building = jip_temple_of_bel_01 }
-		}
-		localization_key = jip_sabian_site_bel_temple_lost
-	}
-	text = {
-		trigger = {
-			title:b_tadmur.holder ?= { target_is_same_character_or_above = root }
-		}
-		localization_key = jip_sabian_site_bel_held
-	}
-	text = {
-		localization_key = jip_sabian_site_bel_lost
 	}
 }
 

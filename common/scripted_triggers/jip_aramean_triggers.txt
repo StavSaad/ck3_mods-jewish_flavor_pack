@@ -1,0 +1,7 @@
+﻿# Arameanism, the gods of Aram (0.15 plan, section 14)
+
+# Faith scope: the faith is Arameanism. Until the faith exists nothing is: the Temple of Bel and the Aramean gods' rite
+# names (Belism, Hadad's, Atargatism) wait on it, having left Mesopotamianism
+jip_is_aramean_faith_trigger = {
+	always = no
+}

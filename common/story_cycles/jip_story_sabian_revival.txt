@@ -5,8 +5,8 @@
 #                       the Old Gods, 5 Reclaim the Land); an owner who holds Harran in Act I or II skips to Act III, or
 #                       to Act IV if independent
 #  jip_sabian_unveiled  set when the mysteries are unveiled (Act IV); the act ends at the next New Year kept
-# The gods brought home in Act V are the global list jip_old_gods_home (flags sin, ishtar, ashur, bel, shamash, marduk);
-# with all six, or with the Palmyrene Empire or Beth Nahrain, the story ends (jip_sabian_story.5090)
+# The gods brought home in Act V are the global list jip_old_gods_home (flags sin, ishtar, ashur, shamash, marduk);
+# with all five, or with Beth Nahrain, the story ends (jip_sabian_story.5090)
 #  jip_sabian_standing  the Sabian community's standing, 0-10 (jip_sabian_story_raise/lower_standing_effect); at 10 in
 #                       Act 1 the act ends (jip_sabian_story.1090). Removed when Act I ends, so the window hides it
 #  jip_sabian_patron    the owner's liege or suzerain
@@ -275,7 +275,7 @@ story_jip_sabian_revival = {
 		}
 	}
 
-	# Act V: the story ends when all six gods are home, or the owner holds the Palmyrene Empire or Beth Nahrain, as an
+	# Act V: the story ends when all five gods are home, or the owner holds Beth Nahrain, as an
 	# independent ruler of the old faith
 	effect_group = {
 		days = 1
@@ -287,7 +287,6 @@ story_jip_sabian_revival = {
 				faith = faith:mesopotamian_pagan
 				OR = {
 					jip_sabian_all_gods_home_trigger = yes
-					has_title = title:e_palmyra
 					has_title = title:e_beth_nahrain
 				}
 			}

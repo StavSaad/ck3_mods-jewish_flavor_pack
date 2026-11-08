@@ -168,8 +168,8 @@ ashurism = {
 	}
 }
 
-# The cults of the Aramean cities: Sin of Harran, Hadad, Atargatis of Manbij, Bel of Palmyra. Astrology and
-# Esotericism are the Sabian rite's tenets too, the bridge the restoration crosses
+# The cult of Harran: Sin, the moon god of Ur, with Nikkal and Nusku, kept by Aramean worshippers, and the planets.
+# Astrology and Esotericism are the Sabian rite's tenets too, the bridge the restoration crosses
 sinism = {
 	faith = mesopotamian_pagan
 
@@ -183,7 +183,7 @@ sinism = {
 	tenets = {
 		tenet_astrology
 		tenet_esotericism
-		tenet_sanctity_of_nature # The sacred fish pools of Atargatis
+		tenet_sanctity_of_nature # The gods dwell in the planets and the elements
 	}
 
 	localization = {

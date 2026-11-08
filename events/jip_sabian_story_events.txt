@@ -1295,7 +1295,7 @@ jip_sabian_story.4090 = {
 #################### Act V: Reclaim the Land ####################
 #  5010 The search begins (Bring the Gods Home; scope:jip_sought_god)
 #  5011 / 5012 A god found and brought home / the trail lost (some months on)
-#  5090 The Return of the Moon God (all five gods home, or the Palmyrene Empire or Beth Nahrain: the story ends)
+#  5090 The Return of the Moon God (all five gods home, or Beth Nahrain: the story ends)
 
 # The search begins (root = the story owner)
 jip_sabian_story.5010 = {

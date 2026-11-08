@@ -379,7 +379,7 @@ jip_gp_temple_of_sin = {
 @jip_temple_of_bel_icon = "gfx/interface/icons/great_projects/jip_temple_of_bel.dds" # tools/make_great_project_art.py
 @jip_temple_of_bel_illustration = "gfx/interface/illustrations/great_projects/jip_temple_of_bel.dds" # default crop
 
-# An independent ruler of the old faith (Mesopotamianism, once the Temple of Sin has restored it) who holds Palmyra
+# An independent ruler of the gods of Aram (Arameanism; 0.15 plan, section 14) who holds Palmyra
 # rebuilds the temple of Bel, the caravan city's great temple, consecrated in 32 AD
 jip_gp_temple_of_bel = {
 	icon = { reference = @jip_temple_of_bel_icon }
@@ -390,8 +390,8 @@ jip_gp_temple_of_bel = {
 	}
 
 	is_shown = {
-		# Only once the old gods are restored, for an independent ruler who follows them
-		faith = faith:mesopotamian_pagan
+		# For an independent ruler of the gods of Aram (Arameanism, 0.15 plan, section 14)
+		faith = { jip_is_aramean_faith_trigger = yes }
 		is_independent_ruler = yes
 		is_landed = yes
 		NOT = { is_planning_great_project = jip_gp_temple_of_bel }
@@ -436,7 +436,7 @@ jip_gp_temple_of_bel = {
 
 	is_valid = {
 		scope:founder = {
-			faith = faith:mesopotamian_pagan
+			faith = { jip_is_aramean_faith_trigger = yes }
 			is_independent_ruler = yes
 		}
 		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
@@ -551,15 +551,12 @@ jip_gp_temple_of_bel = {
 			}
 			ai_will_do = { value = 50 }
 		}
-		# Required: the priests of Bel, from the Sabians or the old faith
+		# Required: the priests of Bel, from the gods of Aram's own
 		priests = {
 			contributor_is_valid = {
 				custom_tooltip = {
-					text = jip_gp_temple_of_sin_faithful_tt
-					OR = {
-						rite = rite:sabianism
-						faith = faith:mesopotamian_pagan
-					}
+					text = jip_gp_temple_of_bel_faithful_tt
+					faith = { jip_is_aramean_faith_trigger = yes }
 				}
 			}
 			cost = {

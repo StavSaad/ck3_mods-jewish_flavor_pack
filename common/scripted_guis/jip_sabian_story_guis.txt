@@ -73,30 +73,6 @@ jip_sabian_site_held_ashur = {
 	}
 }
 
-# bel: the temple stands
-jip_sabian_site_temple_bel = {
-	scope = character
-	is_shown = {
-		title:b_tadmur.title_province = { has_building = jip_temple_of_bel_01 }
-	}
-}
-
-# bel: the statue is home
-jip_sabian_site_home_bel = {
-	scope = character
-	is_shown = {
-		is_target_in_global_variable_list = { name = jip_old_gods_home target = flag:bel }
-	}
-}
-
-# bel: the temple's barony is in the owner's realm
-jip_sabian_site_held_bel = {
-	scope = character
-	is_shown = {
-		title:b_tadmur.holder ?= { target_is_same_character_or_above = root }
-	}
-}
-
 # shamash: the temple stands
 jip_sabian_site_temple_shamash = {
 	scope = character

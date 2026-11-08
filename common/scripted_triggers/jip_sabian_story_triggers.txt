@@ -166,15 +166,14 @@ jip_sabian_temple_of_sin_stands_trigger = {
 
 ### Act V: Reclaim the Land
 
-# The old cult cities whose counties the story may claim: Harran, Arbela, Nineveh, Mosul (Ashur and Hatra), Palmyra and
-# Kufa, where Babylon lies (b_al-hila, vanilla's Babylon holy site)
+# The old cult cities whose counties the story may claim: Harran, Arbela, Nineveh, Mosul (Ashur and Hatra) and Kufa,
+# where Babylon lies (b_al-hila, vanilla's Babylon holy site)
 jip_sabian_is_cult_city_trigger = {
 	OR = {
 		this = title:c_harran
 		this = title:c_irbil
 		this = title:c_ninive
 		this = title:c_mosul
-		this = title:c_palmyra
 		this = title:c_kufa
 	}
 }
@@ -196,7 +195,6 @@ jip_sabian_has_cult_city_to_claim_trigger = {
 		title:c_irbil = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
 		title:c_ninive = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
 		title:c_mosul = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
-		title:c_palmyra = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
 		title:c_kufa = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
 	}
 }
@@ -223,18 +221,16 @@ jip_sabian_any_statue_can_be_sought_trigger = {
 		jip_sabian_god_statue_can_be_sought_trigger = { GOD = sin BUILDING = jip_temple_of_sin_01 BARONY = b_harran }
 		jip_sabian_god_statue_can_be_sought_trigger = { GOD = ishtar BUILDING = jip_temple_of_ishtar_01 BARONY = b_irbil }
 		jip_sabian_god_statue_can_be_sought_trigger = { GOD = ashur BUILDING = jip_temple_of_ashur_01 BARONY = b_ain_al-qayyara }
-		jip_sabian_god_statue_can_be_sought_trigger = { GOD = bel BUILDING = jip_temple_of_bel_01 BARONY = b_tadmur }
 		jip_sabian_god_statue_can_be_sought_trigger = { GOD = shamash BUILDING = jip_temple_of_shamash_01 BARONY = b_al-hadr }
 		jip_sabian_god_statue_can_be_sought_trigger = { GOD = marduk BUILDING = jip_temple_of_marduk_01 BARONY = b_al-hila }
 	}
 }
 
-# All six gods are home: the story's ending
+# All five gods are home: the story's ending
 jip_sabian_all_gods_home_trigger = {
 	is_target_in_global_variable_list = { name = jip_old_gods_home target = flag:sin }
 	is_target_in_global_variable_list = { name = jip_old_gods_home target = flag:ishtar }
 	is_target_in_global_variable_list = { name = jip_old_gods_home target = flag:ashur }
-	is_target_in_global_variable_list = { name = jip_old_gods_home target = flag:bel }
 	is_target_in_global_variable_list = { name = jip_old_gods_home target = flag:shamash }
 	is_target_in_global_variable_list = { name = jip_old_gods_home target = flag:marduk }
 }

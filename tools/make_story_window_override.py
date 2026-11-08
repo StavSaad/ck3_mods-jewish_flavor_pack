@@ -1,6 +1,6 @@
 # Generates gui/window_situation_list.gui: a full copy of vanilla's situations and stories window, replacing it by path,
 # with the Sabian story's houses of the gods (0.15 plan, section 10) added to the story entry (vbox_story_cycle_entry)
-# after its custom string: in Acts IV and V (the story variable jip_sabian_show_sites), a column for each of the six gods
+# after its custom string: in Acts IV and V (the story variable jip_sabian_show_sites), a column for each of the five gods
 # (in Act IV only Sin's at Harran: the others wait for jip_sabian_show_all_sites, set in Act V)
 # with the icon of its temple's great project (faded until the temple stands, a check once its statue is home; the
 # status as a tooltip, JipSabianSite<God> custom loc) and the coat of arms of its county, which opens the title view.
@@ -17,7 +17,6 @@ GODS = [
     ('sin', 'Sin', 'b_harran', 'c_harran', 'jip_temple_of_sin_01', 'jip_temple_of_sin'),
     ('ishtar', 'Ishtar', 'b_irbil', 'c_irbil', 'jip_temple_of_ishtar_01', 'jip_temple_of_ishtar'),
     ('ashur', 'Ashur', 'b_ain_al-qayyara', 'c_mosul', 'jip_temple_of_ashur_01', 'jip_temple_of_ashur'),
-    ('bel', 'Bel', 'b_tadmur', 'c_palmyra', 'jip_temple_of_bel_01', 'jip_temple_of_bel'),
     ('shamash', 'Shamash', 'b_al-hadr', 'c_mosul', 'jip_temple_of_shamash_01', 'jip_temple_of_shamash'),
     ('marduk', 'Marduk', 'b_al-hila', 'c_kufa', 'jip_temple_of_marduk_01', 'jip_temple_of_marduk'),
 ]

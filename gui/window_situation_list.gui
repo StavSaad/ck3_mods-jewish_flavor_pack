@@ -832,64 +832,6 @@ types SituationList
 					widget = {
 						position = { 4 0 }
 						size = { 64 64 }
-						tooltip = "[Story.GetOwner.Custom('JipSabianSiteBel')]"
-
-						icon = {
-							visible = "[GetScriptedGui('jip_sabian_site_temple_bel').IsShown( GuiScope.SetRoot( Story.GetOwner.MakeScope ).End )]"
-							size = { 64 64 }
-							texture = "gfx/interface/icons/great_projects/jip_temple_of_bel.dds"
-						}
-						icon = {
-							visible = "[Not( GetScriptedGui('jip_sabian_site_temple_bel').IsShown( GuiScope.SetRoot( Story.GetOwner.MakeScope ).End ) )]"
-							size = { 64 64 }
-							texture = "gfx/interface/icons/great_projects/jip_temple_of_bel.dds"
-							alpha = 0.3
-						}
-						icon = {
-							visible = "[GetScriptedGui('jip_sabian_site_home_bel').IsShown( GuiScope.SetRoot( Story.GetOwner.MakeScope ).End )]"
-							parentanchor = bottom|right
-							size = { 24 24 }
-							texture = "gfx/interface/icons/symbols/icon_check.dds"
-						}
-					}
-
-					text_single = {
-						position = { 0 66 }
-						size = { 72 20 }
-						autoresize = no
-						text = "jip_sabian_god_bel"
-						using = Font_Size_Small
-						align = center|nobaseline
-					}
-
-					widget = {
-						position = { 10 90 }
-						size = { 52 52 }
-
-						widget = {
-							visible = "[GetScriptedGui('jip_sabian_site_held_bel').IsShown( GuiScope.SetRoot( Story.GetOwner.MakeScope ).End )]"
-							size = { 52 52 }
-							coa_title_small = {
-								datacontext = "[GetTitleByKey('c_palmyra')]"
-							}
-						}
-						widget = {
-							visible = "[Not( GetScriptedGui('jip_sabian_site_held_bel').IsShown( GuiScope.SetRoot( Story.GetOwner.MakeScope ).End ) )]"
-							size = { 52 52 }
-							alpha = 0.45
-							coa_title_small = {
-								datacontext = "[GetTitleByKey('c_palmyra')]"
-							}
-						}
-					}
-				}
-				widget = {
-					visible = "[Story.MakeScope.HasFlag('jip_sabian_show_all_sites')]"
-					size = { 72 144 }
-
-					widget = {
-						position = { 4 0 }
-						size = { 64 64 }
 						tooltip = "[Story.GetOwner.Custom('JipSabianSiteShamash')]"
 
 						icon = {

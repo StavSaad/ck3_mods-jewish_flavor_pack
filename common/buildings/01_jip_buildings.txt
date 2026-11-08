@@ -319,12 +319,9 @@ jip_temple_of_bel_01 = {
 
 	is_enabled = {
 		custom_description = {
-			text = jip_temple_of_the_old_gods_enabled_trigger
+			text = jip_temple_of_bel_enabled_trigger
 			scope:holder = {
-				OR = {
-					rite = rite:sabianism
-					faith = faith:mesopotamian_pagan
-				}
+				faith = { jip_is_aramean_faith_trigger = yes }
 			}
 		}
 	}

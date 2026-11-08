@@ -27,7 +27,7 @@ jip_rite_marduk_trigger = {
 
 # Bel of Palmyra
 jip_rite_bel_trigger = {
-	scope:faith = faith:mesopotamian_pagan
+	scope:faith = { jip_is_aramean_faith_trigger = yes } # Arameanism's (0.15 plan, section 14)
 	OR = {
 		jip_rite_founder_capital_trigger = { COUNTY = c_palmyra }
 		scope:founder ?= { has_title = title:e_palmyra }
@@ -36,13 +36,13 @@ jip_rite_bel_trigger = {
 
 # Hadad of Damascus
 jip_rite_hadad_trigger = {
-	scope:faith = faith:mesopotamian_pagan
+	scope:faith = { jip_is_aramean_faith_trigger = yes } # Arameanism's (0.15 plan, section 14)
 	jip_rite_founder_capital_under_trigger = { TITLE = d_damascus }
 }
 
 # Atargatis of Manbij (Hierapolis), the Syrian goddess
 jip_rite_atargatis_trigger = {
-	scope:faith = faith:mesopotamian_pagan
+	scope:faith = { jip_is_aramean_faith_trigger = yes } # Arameanism's (0.15 plan, section 14)
 	jip_rite_founder_capital_trigger = { COUNTY = c_aleppo }
 }
 

@@ -1227,7 +1227,7 @@ colored_emblem_texture_lists = {
 		special_selection = { trigger = { scope:faith.religion = religion:zunism_religion } 100 = "ce_religion_pagan_zunist.dds" }
 		special_selection = { trigger = { scope:faith.religion = religion:kushitism_religion } 100 = "ce_religion_kushism.dds" 100 = "ce_great_temple.dds" }
 		special_selection = { trigger = { scope:faith.religion = religion:paganism_religion } 100 = "ce_religion_pagan_generic.dds" }
-		special_selection = { trigger = { scope:faith = faith:mesopotamian_pagan } 100 = "ce_jip_ishtar_star.dds" 100 = "ce_jip_bel_eagle.dds" 100 = "ce_jip_hadad_bull.dds" } # Rising Lion
+		special_selection = { trigger = { scope:faith = faith:mesopotamian_pagan } 100 = "ce_jip_ishtar_star.dds" } # Rising Lion
 		special_selection = { trigger = { scope:faith = faith:semitic_pagan } 100 = "ce_jip_hadad_bull.dds" } # Rising Lion
 	}
 

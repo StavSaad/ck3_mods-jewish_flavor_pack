@@ -504,10 +504,6 @@ jip_sabian_claim_cult_city_effect = {
 		title:c_irbil = { save_scope_as = jip_cult_city }
 	}
 	else_if = {
-		limit = { scope:jip_claim_palmyra ?= yes }
-		title:c_palmyra = { save_scope_as = jip_cult_city }
-	}
-	else_if = {
 		limit = { scope:jip_claim_babylon ?= yes }
 		title:c_kufa = { save_scope_as = jip_cult_city }
 	}
@@ -539,13 +535,6 @@ jip_sabian_pick_sought_god_effect = {
 		save_scope_value_as = {
 			name = jip_sought_god
 			value = flag:ashur
-		}
-	}
-	else_if = {
-		limit = { scope:jip_seek_bel ?= yes }
-		save_scope_value_as = {
-			name = jip_sought_god
-			value = flag:bel
 		}
 	}
 	else_if = {
@@ -608,12 +597,6 @@ jip_sabian_bring_god_home_effect = {
 		holy_site:ashur = { save_scope_as = jip_statue_site }
 	}
 	else_if = {
-		limit = { scope:jip_sought_god = flag:bel }
-		jip_sabian_create_god_statue_effect = { GOD = bel }
-		title:c_palmyra = { save_scope_as = jip_statue_county }
-		holy_site:palmyra = { save_scope_as = jip_statue_site }
-	}
-	else_if = {
 		limit = { scope:jip_sought_god = flag:shamash }
 		jip_sabian_create_god_statue_effect = { GOD = shamash }
 		title:c_mosul = { save_scope_as = jip_statue_county }
@@ -654,7 +637,6 @@ jip_sabian_statues_at_new_year_effect = {
 	jip_sabian_statue_at_new_year_effect = { GOD = sin SITE = harran }
 	jip_sabian_statue_at_new_year_effect = { GOD = ishtar SITE = arbela }
 	jip_sabian_statue_at_new_year_effect = { GOD = ashur SITE = ashur }
-	jip_sabian_statue_at_new_year_effect = { GOD = bel SITE = palmyra }
 	jip_sabian_statue_at_new_year_effect = { GOD = shamash SITE = ashur }
 	jip_sabian_statue_at_new_year_effect = { GOD = marduk SITE = babylon }
 }

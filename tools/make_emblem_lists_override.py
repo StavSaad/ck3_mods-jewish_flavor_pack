@@ -5,7 +5,7 @@
 #                              Hadad's bull, the Abgarid tiara and Bel's eagle for Arameans and Nabati, Ishtar's star and
 #                              the bull for Assyrians
 #  religion_icons              the faith's own emblem, by the faith's icon: the Mandaeans' (icon mandaean, the drabsha)
-#  pagan_religious_icons       the pagan faiths' pool: Ishtar's star, Bel's eagle and Hadad's bull for Mesopotamianism, the
+#  pagan_religious_icons       the pagan faiths' pool: Ishtar's star for Mesopotamianism, the
 #                              bull (Baal-Hadad) for Canaanism
 #  zoroastrian_religious_icons the religious title generator's pool for the Iranian and dualist faiths (holy orders, heads of
 #                              faith): the drabsha for the Mandaean faith
@@ -46,7 +46,7 @@ ADDITIONS = {
         ['special_selection = { trigger = { scope:faith = { has_icon = "mandaean" } } 10000000 = "ce_jip_drabsha.dds" } # Rising Lion']),
     'pagan_religious_icons': (
         'special_selection = { trigger = { scope:faith.religion = religion:paganism_religion } 100 = "ce_religion_pagan_generic.dds" }',
-        ['special_selection = { trigger = { scope:faith = faith:mesopotamian_pagan } 100 = "ce_jip_ishtar_star.dds" 100 = "ce_jip_bel_eagle.dds" 100 = "ce_jip_hadad_bull.dds" } # Rising Lion',
+        ['special_selection = { trigger = { scope:faith = faith:mesopotamian_pagan } 100 = "ce_jip_ishtar_star.dds" } # Rising Lion',
          'special_selection = { trigger = { scope:faith = faith:semitic_pagan } 100 = "ce_jip_hadad_bull.dds" } # Rising Lion']),
     'zoroastrian_religious_icons': (
         'special_selection = { trigger = { scope:faith.religion = religion:dualism_religion } 100 = "ce_religion_dualism.dds" }',

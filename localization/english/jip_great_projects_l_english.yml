@@ -55,6 +55,8 @@
  jip_gp_temple_of_bel_location_tt:0 "Only at [GetTitleByKey('b_tadmur').GetName], where the temple of Bel stood"
  jip_gp_temple_of_bel_palmyra_tt:0 "You hold the county of [GetTitleByKey('c_palmyra').GetName], or your vassal does"
  jip_gp_temple_of_bel_building_tt:0 "The Temple of Bel rises at Palmyra"
+ jip_gp_temple_of_bel_faithful_tt:0 "Follows the gods of Aram"
+ jip_temple_of_bel_enabled_trigger:0 "The holder follows the gods of Aram"
  great_project_type_jip_gp_temple_of_bel_contribution_limestone:0 "Golden Limestone"
  great_project_type_jip_gp_temple_of_bel_contribution_limestone_desc:0 "The temple was built of the golden limestone of the hills around Palmyra. The old quarries must be opened again."
  great_project_type_jip_gp_temple_of_bel_contribution_caravans:0 "The Caravan Masters"
