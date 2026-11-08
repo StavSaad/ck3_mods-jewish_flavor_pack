@@ -977,7 +977,14 @@ jip_holy_site_ziggurat_01 = {
 
 # The Temple of Hadad (jip_gp_temple_of_hadad): Arameanism's, working only for its followers
 jip_temple_of_hadad_01 = {
-	# A Mediterranean temple, on the map locator of province 5924
+	# On Damascus's map locator (province 5924): with Medieval Monuments the Great Mosque of Damascus's model (the mosque
+	# stands on Hadad's court, and its walls and colonnades are the temple's own), as vanilla's St Peter's falls back to a
+	# generic cathedral; without it a Mediterranean temple
+	asset = {
+		type = pdxmesh
+		name = "building_special_damascus_mosque_01_mesh"
+		requires_dlc_flag = medieval_monuments
+	}
 	asset = {
 		type = pdxmesh
 		name = "building_mediterranean_temple_generic_01_mesh"
