@@ -32,3 +32,15 @@ judaism_hof_restored_effect = {
 	first = judaism_hof_restored_effect
 	first_past = judaism_hof_restored_effect
 }
+
+jip_muslims_resent_great_mosque = {
+	global = jip_muslims_resent_great_mosque
+	first = jip_muslims_resent_great_mosque_first_past
+	first_past = jip_muslims_resent_great_mosque_first_past
+}
+
+jip_neighbours_resent_gods_of_aram = {
+	global = jip_neighbours_resent_gods_of_aram
+	first = jip_neighbours_resent_gods_of_aram_first
+	first_past = jip_neighbours_resent_gods_of_aram_first_past
+}

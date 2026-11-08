@@ -29,6 +29,13 @@ jip_festival_guest_opinion = {
 	decaying = yes
 }
 
+# The Temple of Hadad took the place of the Great Mosque of Damascus (jip_gp_temple_of_hadad)
+jip_destroyed_great_mosque_opinion = {
+	opinion = -50
+	years = 30
+	decaying = yes
+}
+
 # The Sabian story: a neighbour brought back the old gods of Mesopotamia (jip_sabian_unveil_the_mysteries_effect)
 jip_restored_old_gods_opinion = {
 	opinion = -25

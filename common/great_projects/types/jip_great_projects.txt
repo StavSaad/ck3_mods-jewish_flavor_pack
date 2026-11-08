@@ -4026,6 +4026,25 @@ jip_gp_temple_of_hadad = {
 	}
 
 	on_complete = {
+		# The Great Mosque taken down: every Muslim ruler resents the builder (one line in the tooltip)
+		if = {
+			limit = {
+				scope:province = { has_building = damascus_mosque_01 }
+				exists = scope:owner
+			}
+			scope:owner = { save_scope_as = jip_mosque_destroyer }
+			custom_description = {
+				text = jip_muslims_resent_great_mosque
+				object = scope:jip_mosque_destroyer
+				every_ruler = {
+					limit = { has_religion = religion:islam_religion }
+					add_opinion = {
+						target = scope:jip_mosque_destroyer
+						modifier = jip_destroyed_great_mosque_opinion
+					}
+				}
+			}
+		}
 		scope:province = {
 			# The Great Mosque of Damascus (vanilla's damascus_mosque_01, placed at game start with Medieval Monuments)
 			# stands on the temple's site and fills the special building slot: it gives way to the temple
