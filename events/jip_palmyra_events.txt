@@ -46,13 +46,9 @@ jip_palmyra.0001 = {
 	}
 
 	after = {
-		# An Aramean or Nabati founder may bring back Palmyra's gods
+		# The founder may bring back Palmyra's gods
 		if = {
 			limit = {
-				OR = {
-					culture = culture:syriac
-					culture = culture:nabati
-				}
 				NOT = { faith = faith:aramean_pagan }
 			}
 			trigger_event = jip_palmyra.0002

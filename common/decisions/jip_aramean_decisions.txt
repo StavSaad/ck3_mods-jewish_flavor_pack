@@ -1,6 +1,6 @@
 ﻿# Arameanism (0.15 plan, section 14)
 
-# Restore the Gods of Aram: an independent Aramean or Nabati ruler who holds and controls Damascus, Palmyra and Manbij
+# Restore the Gods of Aram: an independent ruler of Syriac heritage (Aramean, Assyrian, Nabati) who holds and controls Damascus, Palmyra and Manbij
 # (the county of Aleppo), the cities of the three great temples, turns back to Hadad (jip_restore_gods_of_aram_effect)
 jip_restore_gods_of_aram_decision = {
 	picture = {
@@ -12,10 +12,7 @@ jip_restore_gods_of_aram_decision = {
 
 	is_shown = {
 		is_ruler = yes
-		OR = {
-			culture = culture:syriac
-			culture = culture:nabati
-		}
+		culture = { has_cultural_pillar = heritage_syriac }
 		NOT = { faith = faith:aramean_pagan }
 		NOT = { has_character_flag = jip_restored_gods_of_aram }
 		any_held_title = {
