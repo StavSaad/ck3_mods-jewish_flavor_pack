@@ -19,18 +19,18 @@ ICONS = MOD + 'gfx/interface/icons/faith/'
 SOURCES = {
     # Mesopotamianism
     'mesopotamian': 'mesopotamian', 'jip_rite_marduk': 'mesopotamian', 'jip_rite_shamash': 'mesopotamian',
-    'jip_rite_ishtar': 'mesopotamian', 'jip_rite_nabu': 'mesopotamian', 'jip_rite_nergal': 'mesopotamian',
+    'jip_rite_ishtar': 'mesopotamian', 'jip_rite_nanna': 'mesopotamian', 'jip_rite_nabu': 'mesopotamian', 'jip_rite_nergal': 'mesopotamian',
     'jip_rite_tammuz': 'mesopotamian', 'jip_rite_nusku': 'mesopotamian', 'jip_rite_enlil': 'mesopotamian',
     # Arameanism
     'jip_rite_dushara': 'aramean', 'jip_rite_bel': 'aramean', 'jip_rite_allat': 'aramean', 'jip_rite_rimmon': 'aramean',
     'jip_rite_atargatis': 'aramean', 'jip_rite_elagabal': 'aramean', 'jip_rite_gad': 'aramean',
-    'jip_rite_rakibel': 'aramean', 'jip_rite_shamin': 'aramean',
+    'jip_rite_rakibel': 'aramean', 'jip_rite_shamin': 'aramean', 'jip_rite_sahar': 'aramean',
     # Canaanism
     'jip_baal': 'canaanite', 'jip_yahwism': 'canaanite', 'jip_rite_chemosh': 'canaanite', 'jip_rite_milcom': 'canaanite',
     'jip_rite_qos': 'canaanite', 'jip_rite_eshmun': 'canaanite', 'jip_rite_adonis': 'canaanite',
     'jip_rite_dagon': 'canaanite', 'jip_rite_hammon': 'canaanite', 'jip_rite_melqart': 'canaanite',
     'jip_rite_anat': 'canaanite', 'jip_rite_astarte': 'canaanite', 'jip_rite_kothar': 'canaanite',
-    'jip_rite_asherah': 'canaanite',
+    'jip_rite_asherah': 'canaanite', 'jip_rite_yarikh': 'canaanite',
 }
 
 SILVER = '#16181c,#7c838d,#eef1f5'

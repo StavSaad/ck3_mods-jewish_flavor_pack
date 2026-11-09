@@ -32,6 +32,15 @@ jip_rite_ishtar_icon = {
 	custom_faith_icons = { jip_rite_ishtar }
 }
 
+# Nanna's crescent boat with the full moon
+jip_rite_nanna_icon = {
+	trigger = {
+		jip_rite_nanna_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_nanna }
+}
+
 # Nabu's stylus
 jip_rite_nabu_icon = {
 	trigger = {
@@ -167,6 +176,15 @@ jip_rite_astarte_icon = {
 	custom_faith_icons = { jip_rite_astarte }
 }
 
+# The moon stele of Hazor, for Yarikh
+jip_rite_yarikh_icon = {
+	trigger = {
+		jip_rite_yarikh_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_yarikh }
+}
+
 # Kothar's hammer, tongs and anvil
 jip_rite_kothar_icon = {
 	trigger = {
@@ -239,6 +257,15 @@ jip_rite_elagabal_icon = {
 	custom_faith_icons = { jip_rite_elagabal }
 }
 
+# Sahar's crescent cradling the disc
+jip_rite_sahar_icon = {
+	trigger = {
+		jip_rite_sahar_trigger = yes
+	}
+
+	custom_faith_icons = { jip_rite_sahar }
+}
+
 # The mural crown of Gad
 jip_rite_gad_icon = {
 	trigger = {
@@ -287,7 +314,7 @@ jip_mesopotamian_rite = {
 		scope:faith = faith:mesopotamian_pagan
 	}
 
-	custom_faith_icons = { mesopotamian_custom jip_rite_marduk_custom jip_rite_shamash_custom jip_rite_ishtar_custom jip_rite_nabu_custom jip_rite_nergal_custom jip_rite_tammuz_custom jip_rite_nusku_custom jip_rite_enlil_custom }
+	custom_faith_icons = { mesopotamian_custom jip_rite_marduk_custom jip_rite_shamash_custom jip_rite_ishtar_custom jip_rite_nanna_custom jip_rite_nabu_custom jip_rite_nergal_custom jip_rite_tammuz_custom jip_rite_nusku_custom jip_rite_enlil_custom }
 }
 
 # Canaanism: the sign of Tanit and the recoloured gods
@@ -297,7 +324,7 @@ jip_canaanite_rite = {
 		scope:faith = faith:semitic_pagan
 	}
 
-	custom_faith_icons = { canaanite_01 canaanite_02 canaanite_03 canaanite_04 canaanite_05 canaanite_06 jip_baal_custom jip_yahwism_custom jip_rite_chemosh_custom jip_rite_milcom_custom jip_rite_qos_custom jip_rite_eshmun_custom jip_rite_adonis_custom jip_rite_dagon_custom jip_rite_hammon_custom jip_rite_melqart_custom jip_rite_anat_custom jip_rite_astarte_custom jip_rite_kothar_custom jip_rite_asherah_custom }
+	custom_faith_icons = { canaanite_01 canaanite_02 canaanite_03 canaanite_04 canaanite_05 canaanite_06 jip_baal_custom jip_yahwism_custom jip_rite_chemosh_custom jip_rite_milcom_custom jip_rite_qos_custom jip_rite_eshmun_custom jip_rite_adonis_custom jip_rite_dagon_custom jip_rite_hammon_custom jip_rite_melqart_custom jip_rite_anat_custom jip_rite_astarte_custom jip_rite_yarikh_custom jip_rite_kothar_custom jip_rite_asherah_custom }
 }
 
 # Arameanism: Hadad's lightning forks in six colours (tools/make_aramean_icons.py) and the recoloured gods
@@ -307,5 +334,5 @@ jip_aramean_rite = {
 		scope:faith = faith:aramean_pagan
 	}
 
-	custom_faith_icons = { aramean_01 aramean_02 aramean_03 aramean_04 aramean_05 aramean_06 jip_rite_dushara_custom jip_rite_bel_custom jip_rite_allat_custom jip_rite_rimmon_custom jip_rite_atargatis_custom jip_rite_elagabal_custom jip_rite_gad_custom jip_rite_rakibel_custom jip_rite_shamin_custom }
+	custom_faith_icons = { aramean_01 aramean_02 aramean_03 aramean_04 aramean_05 aramean_06 jip_rite_dushara_custom jip_rite_bel_custom jip_rite_allat_custom jip_rite_rimmon_custom jip_rite_atargatis_custom jip_rite_elagabal_custom jip_rite_sahar_custom jip_rite_gad_custom jip_rite_rakibel_custom jip_rite_shamin_custom }
 }
