@@ -1,5 +1,5 @@
 ﻿l_english:
- # Mesopotamianism (mesopotamian_pagan, jip_canaanite_faith_types.txt) and its rites
+ # Mesopotamianism (mesopotamian_pagan, jip_levantine_faith_types.txt) and its rites
  mesopotamian_pagan: "Mesopotamianism"
  mesopotamian_pagan_adj: "Mesopotamian"
  mesopotamian_pagan_adherent: "Mesopotamian"
@@ -86,13 +86,13 @@
  # Vicegerent of Ashur (jip_tenets.txt)
  tenet_jip_vicegerent_of_ashur_name: "Vicegerent of Ashur"
  tenet_jip_vicegerent_of_ashur_desc: "The land belongs to the god, and the king is only his steward. As Ashur's high priest the ruler answers to the gods alone, and each Akitu they confirm his crown anew."
- jip_tenet_vicegerent_of_ashur_trigger: "The [faith|E] is $canaanite_religion$"
+ jip_tenet_vicegerent_of_ashur_trigger: "The [faith|E] is $levantine_religion$"
 
  # Moon Worship (jip_tenets.txt)
  tenet_jip_moon_worship_name: "Moon Worship"
  tenet_jip_moon_worship_desc: "The moon is lord of the month and judge of the night: he counts the days of the feasts, lights the caravans across the steppe and sees every deed done in the dark. At each new moon his crescent is greeted with offerings."
- jip_tenet_moon_worship_trigger: "The [faith|E] is $canaanite_religion$"
- NOT_jip_tenet_moon_worship_trigger: "The [faith|E] is not $canaanite_religion$"
+ jip_tenet_moon_worship_trigger: "The [faith|E] is $levantine_religion$"
+ NOT_jip_tenet_moon_worship_trigger: "The [faith|E] is not $levantine_religion$"
 
  # Holy sites (jip_holy_sites.txt)
  holy_site_nineveh_name: "Nineveh"
@@ -101,4 +101,4 @@
  holy_site_ashur_effect_name: "From [holy_site|E] #weak ($holy_site_ashur_name$)#!"
  holy_site_arbela_name: "Arbela"
  holy_site_arbela_effect_name: "From [holy_site|E] #weak ($holy_site_arbela_name$)#!"
- NOT_jip_tenet_vicegerent_of_ashur_trigger: "The [faith|E] is not $canaanite_religion$"
+ NOT_jip_tenet_vicegerent_of_ashur_trigger: "The [faith|E] is not $levantine_religion$"

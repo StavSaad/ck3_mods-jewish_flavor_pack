@@ -1,4 +1,4 @@
-﻿canaanite_religion = {
+﻿levantine_religion = {
 
 	religion_details = {
 		family = rf_pagan

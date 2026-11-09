@@ -1,4 +1,4 @@
-# Builds the custom faiths' sign-of-Tanit icons of the Levantine religion (canaanite_religion) from one silver Gemini
+# Builds the custom faiths' sign-of-Tanit icons of the Levantine religion (levantine_religion) from one silver Gemini
 # painting on flat green, through make_faith_icon.py: the silver as painted (punic) and colour variants (canaanite_01..06,
 # listed in the religion's custom_faith_icons). Tanitism's own icon (canaanite) is a separate gold painting, the
 # ornate votive sign with the crescent: make_faith_icon.py <gold_tanit> canaanite --reformed.

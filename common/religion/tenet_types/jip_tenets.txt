@@ -61,11 +61,11 @@ tenet_jip_vicegerent_of_ashur = {
 	can_pick = {
 		custom_description = {
 			text = jip_tenet_vicegerent_of_ashur_trigger
-			religion = religion:canaanite_religion
+			religion = religion:levantine_religion
 		}
 	}
 	can_pick_as_personal_tenet = {
-		has_religion = religion:canaanite_religion
+		has_religion = religion:levantine_religion
 	}
 	character_modifier = {
 		legitimacy_gain_mult = 0.15
@@ -99,11 +99,11 @@ tenet_jip_moon_worship = {
 	can_pick = {
 		custom_description = {
 			text = jip_tenet_moon_worship_trigger
-			religion = religion:canaanite_religion
+			religion = religion:levantine_religion
 		}
 	}
 	can_pick_as_personal_tenet = {
-		has_religion = religion:canaanite_religion
+		has_religion = religion:levantine_religion
 	}
 	character_modifier = {
 		monthly_piety_gain_mult = 0.1 # The offerings of each new moon

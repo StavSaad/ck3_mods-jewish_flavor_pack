@@ -104,7 +104,7 @@ shushtar = { # The Mandaeans of Khuzestan, by the great weir of Shushtar
 	}
 }
 
-# Mesopotamianism (mesopotamian_pagan, jip_canaanite_faith_types.txt): the sites of its great projects (0.15 plan,
+# Mesopotamianism (mesopotamian_pagan, jip_levantine_faith_types.txt): the sites of its great projects (0.15 plan,
 # section 5), with Harran (above). Not Hatra, which shares the county of Mosul with Ashur: no faith has two holy sites
 # in one county
 
@@ -208,7 +208,7 @@ palmyra = { # Tadmor, the caravan city and its temple of Bel (Arameanism)
 	}
 }
 
-# Canaanism (semitic_pagan, jip_canaanite_faith_types.txt): the Phoenician cities' own temples, in place of vanilla's
+# Canaanism (semitic_pagan, jip_levantine_faith_types.txt): the Phoenician cities' own temples, in place of vanilla's
 # Antioch and Beirut sites
 
 tyre = { # Tyre, the island city of Melqart, the King of the City (its barony, in the county of Acre)
@@ -261,7 +261,7 @@ sidon = { # Sidon and the temple of Eshmun, the god who heals, in the orchards a
 	}
 }
 
-# Arameanism (aramean_pagan, jip_canaanite_faith_types.txt): its temples' cities. Damascus is vanilla's site, Palmyra above
+# Arameanism (aramean_pagan, jip_levantine_faith_types.txt): its temples' cities. Damascus is vanilla's site, Palmyra above
 
 manbij = { # Hierapolis Bambyce, the city of Atargatis, the Syrian Goddess (its barony, in the county of Aleppo)
 	county = c_aleppo

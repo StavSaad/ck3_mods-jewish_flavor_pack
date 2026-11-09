@@ -3,7 +3,7 @@
 	main_rite = baalism
 
 	faith_details = {
-		religion = canaanite_religion
+		religion = levantine_religion
 		color = { 125 28 125 }
 		icon = canaanite_faith # The sacred tree between two rearing ibexes, under the crescent (tools/make_faith_icon.py)
 		reformed_icon = canaanite_faith_reformed
@@ -35,14 +35,14 @@
 }
 
 # The old gods of Assyria, Babylonia and the Aramean cities, restored from the Sabians of Harran (0.15 plan,
-# section 4). Reformed from the start (no unreformed_faith_doctrine), like Canaanism. Rites in jip_canaanite_rite_types.txt: Ashurism
+# section 4). Reformed from the start (no unreformed_faith_doctrine), like Canaanism. Rites in jip_levantine_rite_types.txt: Ashurism
 # (main; these gods) and Sinism (its own gods)
 mesopotamian_pagan = {
 
 	main_rite = ashurism
 
 	faith_details = {
-		religion = canaanite_religion
+		religion = levantine_religion
 		color = { 0.2 0.35 0.7 }
 		icon = mesopotamian_faith # The astral triad of Sin, Shamash and Ishtar on lapis (tools/make_faith_icon.py)
 		reformed_icon = mesopotamian_faith_reformed
@@ -188,14 +188,14 @@ mesopotamian_pagan = {
 
 # Arameanism, the gods of Aram (0.15 plan, section 14): the old gods of inland Syria and the Jazira, West Semitic like
 # the Canaanites' (Hadad is their Baal; Atargatis' name joins Astarte and Anat), as their inscriptions name them.
-# Reformed from the start, like the other two. Rites in jip_canaanite_rite_types.txt: Hadadism (main; these gods),
+# Reformed from the start, like the other two. Rites in jip_levantine_rite_types.txt: Hadadism (main; these gods),
 # Belism (Palmyra) and Atargatism (Manbij). Locked until restored (jip_unlock_aramean_conversion_effect)
 aramean_pagan = {
 
 	main_rite = hadadism
 
 	faith_details = {
-		religion = canaanite_religion
+		religion = levantine_religion
 		color = { 0.55 0.4 0.15 }
 		icon = aramean_faith # Hadad's bull carrying the lightning fork (tools/make_faith_icon.py)
 		reformed_icon = aramean_faith_reformed

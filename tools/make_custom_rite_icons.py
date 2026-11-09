@@ -1,7 +1,7 @@
 # Builds one recoloured copy (<icon>_custom) of each Levantine god's rite icon and of the main rites' icons that have no
 # colour set of their own, through make_faith_icon.py --palette. The originals stay with their own rites (the god-named
 # rites of 00_jip_rite_icons.txt, Baalism, Yahwism, Ashurism); the copies are for everything else: new rites that take
-# no god's name (the faiths' fallback packs in 00_jip_rite_icons.txt) and the custom faith icon list (jip_canaanite.txt).
+# no god's name (the faiths' fallback packs in 00_jip_rite_icons.txt) and the custom faith icon list (jip_levantine.txt).
 # A warm (gold, bronze, stone) icon becomes silver, a cool (silver, blue) one gold.
 # Usage: make_custom_rite_icons.py [--preview <png>]
 import colorsys
