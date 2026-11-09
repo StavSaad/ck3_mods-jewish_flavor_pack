@@ -89,7 +89,7 @@ jip_rite_aramean_cult_city_trigger = {
 		jip_rite_founder_capital_trigger = { COUNTY = c_rahba }
 		jip_rite_founder_capital_under_trigger = { TITLE = d_shammar }
 		jip_rite_founder_capital_under_trigger = { TITLE = d_eastern_desert }
-		scope:founder ?= { has_title = title:e_palmyra }
+		scope:founder ?= { has_title = title:e_aram }
 	}
 }
 
@@ -104,7 +104,7 @@ jip_rite_bel_trigger = {
 	scope:faith = faith:aramean_pagan
 	OR = {
 		jip_rite_founder_capital_trigger = { COUNTY = c_palmyra }
-		scope:founder ?= { has_title = title:e_palmyra }
+		scope:founder ?= { has_title = title:e_aram }
 	}
 }
 

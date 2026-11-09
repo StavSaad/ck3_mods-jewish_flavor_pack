@@ -1,6 +1,6 @@
 ﻿namespace = jip_palmyra
 
-# The Palmyrene Empire is founded (create_e_palmyra_decision)
+# Greater Aram is founded (create_e_aram_decision)
 jip_palmyra.0001 = {
 	type = character_event
 	title = jip_palmyra.0001.t
@@ -19,7 +19,7 @@ jip_palmyra.0001 = {
 
 	immediate = {
 		play_music_cue = "mx_cue_positive_effect"
-		create_palmyra_decision_effect = yes
+		create_aram_decision_effect = yes
 	}
 
 	# Rule from Palmyra, as Odaenathus and Zenobia did
@@ -37,7 +37,7 @@ jip_palmyra.0001 = {
 	# Keep the court where it is
 	option = {
 		name = jip_palmyra.0001.b
-		title:e_palmyra = {
+		title:e_aram = {
 			set_capital_county = root.capital_county
 		}
 		stress_impact = {
@@ -56,7 +56,7 @@ jip_palmyra.0001 = {
 	}
 }
 
-# The gods of Tadmor: the founder of the Palmyrene Empire may restore the gods of Aram (0.15 plan, section 14)
+# The gods of Tadmor: the founder of Greater Aram may restore the gods of Aram (0.15 plan, section 14)
 jip_palmyra.0002 = {
 	type = character_event
 	title = jip_palmyra.0002.t

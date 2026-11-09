@@ -82,7 +82,7 @@ jip_rite_dushara = {
 	}
 }
 
-# Bel of Palmyra, for a founder ruling from Palmyra or holding the Palmyrene Empire
+# Bel of Palmyra, for a founder ruling from Palmyra or holding Greater Aram
 jip_rite_bel = {
 	name = jip_rite_name_bel
 	trigger = {
