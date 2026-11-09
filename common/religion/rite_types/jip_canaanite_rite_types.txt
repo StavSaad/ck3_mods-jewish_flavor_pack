@@ -47,7 +47,7 @@ yahwism = {
 	cultures = { hebrew }
 
 	tenets = {
-		tenet_ancestor_worship
+		tenet_mountain_worship # The high places (bamot), the sin Kings charges them with most
 		tenet_sanctity_of_nature # Asherah's sacred trees
 		tenet_jewish_syncretism
 	}
@@ -183,7 +183,7 @@ sinism = {
 	tenets = {
 		tenet_astrology
 		tenet_esotericism
-		tenet_sanctity_of_nature # The gods dwell in the planets and the elements
+		tenet_adaptive # Harran kept its gods under Christians and Muslims, through Hermes and the Neoplatonists
 	}
 
 	localization = {
@@ -289,8 +289,8 @@ hadadism = {
 
 	tenets = {
 		tenet_warmonger # The kings of Damascus, Ben-Hadad and Hazael, sons of Hadad
-		tenet_sanctity_of_nature # Hadad's rain and the springs
-		tenet_ritual_celebrations
+		tenet_sanctity_of_nature # Hadad who rains abundance (the Tell Fekheriye statue)
+		tenet_ancestor_worship # The dead kings who eat and drink with Hadad (Panamuwa, the Katumuwa stele)
 	}
 }
 

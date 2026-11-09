@@ -41,8 +41,8 @@
 	#Allow pilgrimages
 	doctrine = doctrine_pilgrimage_encouraged
 
-	#Funeral tradition
-	doctrine = doctrine_funeral_stoic
+	#Funeral tradition: the mourning for Baal at Ugarit, the weeping for Tammuz, the Adonia of Byblos, the wailing women
+	doctrine = doctrine_funeral_bewailment
 
 	#Coronation tradition: kings anointed, or invested by the gods at the Akitu
 	doctrine = doctrine_anointment_permitted
