@@ -30,14 +30,6 @@ jip_rite_ishtar = {
 	}
 }
 
-# Nanna of Ur, a rite of Moon Worship
-jip_rite_nanna = {
-	name = jip_rite_name_nanna
-	trigger = {
-		jip_rite_nanna_trigger = yes
-	}
-}
-
 # Nabu the scribe: a knowledge tenet
 jip_rite_nabu = {
 	name = jip_rite_name_nabu

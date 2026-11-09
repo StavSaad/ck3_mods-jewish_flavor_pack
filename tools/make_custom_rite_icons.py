@@ -19,7 +19,7 @@ ICONS = MOD + 'gfx/interface/icons/faith/'
 SOURCES = {
     # Mesopotamianism
     'mesopotamian': 'mesopotamian', 'jip_rite_marduk': 'mesopotamian', 'jip_rite_shamash': 'mesopotamian',
-    'jip_rite_ishtar': 'mesopotamian', 'jip_rite_nanna': 'mesopotamian', 'jip_rite_nabu': 'mesopotamian', 'jip_rite_nergal': 'mesopotamian',
+    'jip_rite_ishtar': 'mesopotamian', 'jip_rite_nabu': 'mesopotamian', 'jip_rite_nergal': 'mesopotamian',
     'jip_rite_tammuz': 'mesopotamian', 'jip_rite_nusku': 'mesopotamian', 'jip_rite_enlil': 'mesopotamian',
     # Arameanism
     'jip_rite_dushara': 'aramean', 'jip_rite_bel': 'aramean', 'jip_rite_allat': 'aramean', 'jip_rite_rimmon': 'aramean',

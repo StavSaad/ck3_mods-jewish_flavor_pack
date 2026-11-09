@@ -44,12 +44,6 @@ jip_rite_ishtar_trigger = {
 	}
 }
 
-# Nanna (Nannar) of Ur, the moon god Harran calls Sin (Sinism is the faith's own rite): a rite of Moon Worship
-jip_rite_nanna_trigger = {
-	scope:faith = faith:mesopotamian_pagan
-	rite_has_tenet = tenet_jip_moon_worship
-}
-
 # Nabu of Borsippa, the scribe
 jip_rite_nabu_trigger = {
 	scope:faith = faith:mesopotamian_pagan

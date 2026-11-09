@@ -32,15 +32,6 @@ jip_rite_ishtar_icon = {
 	custom_faith_icons = { jip_rite_ishtar }
 }
 
-# Nanna's crescent boat with the full moon
-jip_rite_nanna_icon = {
-	trigger = {
-		jip_rite_nanna_trigger = yes
-	}
-
-	custom_faith_icons = { jip_rite_nanna }
-}
-
 # Nabu's stylus
 jip_rite_nabu_icon = {
 	trigger = {
@@ -314,7 +305,7 @@ jip_mesopotamian_rite = {
 		scope:faith = faith:mesopotamian_pagan
 	}
 
-	custom_faith_icons = { mesopotamian_custom jip_rite_marduk_custom jip_rite_shamash_custom jip_rite_ishtar_custom jip_rite_nanna_custom jip_rite_nabu_custom jip_rite_nergal_custom jip_rite_tammuz_custom jip_rite_nusku_custom jip_rite_enlil_custom }
+	custom_faith_icons = { mesopotamian_custom jip_rite_marduk_custom jip_rite_shamash_custom jip_rite_ishtar_custom jip_rite_nabu_custom jip_rite_nergal_custom jip_rite_tammuz_custom jip_rite_nusku_custom jip_rite_enlil_custom }
 }
 
 # Canaanism: the sign of Tanit and the recoloured gods
