@@ -312,7 +312,7 @@ jip_mesopotamian_rite = {
 jip_canaanite_rite = {
 	trigger = {
 		exists = scope:founder
-		scope:faith = faith:semitic_pagan
+		scope:faith = faith:canaanite_pagan
 	}
 
 	custom_faith_icons = { canaanite_01 canaanite_02 canaanite_03 canaanite_04 canaanite_05 canaanite_06 jip_baal_custom jip_yahwism_custom jip_rite_chemosh_custom jip_rite_milcom_custom jip_rite_qos_custom jip_rite_eshmun_custom jip_rite_adonis_custom jip_rite_dagon_custom jip_rite_hammon_custom jip_rite_melqart_custom jip_rite_anat_custom jip_rite_astarte_custom jip_rite_yarikh_custom jip_rite_kothar_custom jip_rite_asherah_custom }

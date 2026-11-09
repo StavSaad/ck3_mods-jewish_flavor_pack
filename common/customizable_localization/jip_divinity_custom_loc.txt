@@ -385,28 +385,28 @@ GetActualBishopTitle = {
 	#a priestess a Kohenet (Punic khnt)
 	text = {
 		trigger = {
-			faith = faith:semitic_pagan
+			faith = faith:canaanite_pagan
 			is_female = yes
 		}
 		localization_key = councillor_court_chaplain_canaanite_female
 	}
 	text = {
 		trigger = {
-			faith = faith:semitic_pagan
+			faith = faith:canaanite_pagan
 			rite = rite:yahwism
 		}
 		localization_key = councillor_court_chaplain_yahwism
 	}
 	text = {
 		trigger = {
-			faith = faith:semitic_pagan
+			faith = faith:canaanite_pagan
 			liege.highest_held_title_tier >= tier_kingdom
 		}
 		localization_key = councillor_court_chaplain_canaanite_kingdom
 	}
 	text = {
 		trigger = {
-			faith = faith:semitic_pagan
+			faith = faith:canaanite_pagan
 		}
 		localization_key = councillor_court_chaplain_canaanite
 	}
@@ -1901,28 +1901,28 @@ GetActualBishopTitlePossessive = {
 	#a priestess a Kohenet (Punic khnt)
 	text = {
 		trigger = {
-			faith = faith:semitic_pagan
+			faith = faith:canaanite_pagan
 			is_female = yes
 		}
 		localization_key = councillor_court_chaplain_canaanite_female_possessive
 	}
 	text = {
 		trigger = {
-			faith = faith:semitic_pagan
+			faith = faith:canaanite_pagan
 			rite = rite:yahwism
 		}
 		localization_key = councillor_court_chaplain_yahwism_possessive
 	}
 	text = {
 		trigger = {
-			faith = faith:semitic_pagan
+			faith = faith:canaanite_pagan
 			liege.highest_held_title_tier >= tier_kingdom
 		}
 		localization_key = councillor_court_chaplain_canaanite_kingdom_possessive
 	}
 	text = {
 		trigger = {
-			faith = faith:semitic_pagan
+			faith = faith:canaanite_pagan
 		}
 		localization_key = councillor_court_chaplain_canaanite_possessive
 	}

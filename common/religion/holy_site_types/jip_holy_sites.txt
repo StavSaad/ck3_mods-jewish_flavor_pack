@@ -208,7 +208,7 @@ palmyra = { # Tadmor, the caravan city and its temple of Bel (Arameanism)
 	}
 }
 
-# Canaanism (semitic_pagan, jip_levantine_faith_types.txt): the Phoenician cities' own temples, in place of vanilla's
+# Canaanism (canaanite_pagan, jip_levantine_faith_types.txt): the Phoenician cities' own temples, in place of vanilla's
 # Antioch and Beirut sites
 
 tyre = { # Tyre, the island city of Melqart, the King of the City (its barony, in the county of Acre)

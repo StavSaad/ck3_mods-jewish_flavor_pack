@@ -38,7 +38,7 @@ jip_sabian_story_game_start_after_lobby_on_action = {
 		}
 		if = {
 			limit = {
-				any_player = { faith = faith:semitic_pagan }
+				any_player = { faith = faith:canaanite_pagan }
 			}
 			jip_unlock_canaanite_conversion_effect = yes
 		}

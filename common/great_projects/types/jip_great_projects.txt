@@ -2159,7 +2159,7 @@ jip_gp_temple_of_melqart = {
 
 	is_shown = {
 		# For an independent ruler of Canaanism (any rite)
-		faith = faith:semitic_pagan
+		faith = faith:canaanite_pagan
 		is_independent_ruler = yes
 		is_landed = yes
 		NOT = { is_planning_great_project = jip_gp_temple_of_melqart }
@@ -2204,7 +2204,7 @@ jip_gp_temple_of_melqart = {
 
 	is_valid = {
 		scope:founder = {
-			faith = faith:semitic_pagan
+			faith = faith:canaanite_pagan
 			is_independent_ruler = yes
 		}
 		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
@@ -2325,7 +2325,7 @@ jip_gp_temple_of_melqart = {
 			contributor_is_valid = {
 				custom_tooltip = {
 					text = jip_gp_canaanite_faithful_tt
-					faith = faith:semitic_pagan
+					faith = faith:canaanite_pagan
 				}
 			}
 			cost = {
@@ -2457,7 +2457,7 @@ jip_gp_temple_of_tanit = {
 
 	is_shown = {
 		# For an independent ruler of Canaanism (any rite)
-		faith = faith:semitic_pagan
+		faith = faith:canaanite_pagan
 		is_independent_ruler = yes
 		is_landed = yes
 		NOT = { is_planning_great_project = jip_gp_temple_of_tanit }
@@ -2502,7 +2502,7 @@ jip_gp_temple_of_tanit = {
 
 	is_valid = {
 		scope:founder = {
-			faith = faith:semitic_pagan
+			faith = faith:canaanite_pagan
 			is_independent_ruler = yes
 		}
 		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
@@ -2623,7 +2623,7 @@ jip_gp_temple_of_tanit = {
 			contributor_is_valid = {
 				custom_tooltip = {
 					text = jip_gp_canaanite_faithful_tt
-					faith = faith:semitic_pagan
+					faith = faith:canaanite_pagan
 				}
 			}
 			cost = {
@@ -2755,7 +2755,7 @@ jip_gp_temple_of_eshmun = {
 
 	is_shown = {
 		# For an independent ruler of Canaanism (any rite)
-		faith = faith:semitic_pagan
+		faith = faith:canaanite_pagan
 		is_independent_ruler = yes
 		is_landed = yes
 		NOT = { is_planning_great_project = jip_gp_temple_of_eshmun }
@@ -2800,7 +2800,7 @@ jip_gp_temple_of_eshmun = {
 
 	is_valid = {
 		scope:founder = {
-			faith = faith:semitic_pagan
+			faith = faith:canaanite_pagan
 			is_independent_ruler = yes
 		}
 		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
@@ -2921,7 +2921,7 @@ jip_gp_temple_of_eshmun = {
 			contributor_is_valid = {
 				custom_tooltip = {
 					text = jip_gp_canaanite_faithful_tt
-					faith = faith:semitic_pagan
+					faith = faith:canaanite_pagan
 				}
 			}
 			cost = {
@@ -3053,7 +3053,7 @@ jip_gp_temple_of_baalat_gebal = {
 
 	is_shown = {
 		# For an independent ruler of Canaanism (any rite)
-		faith = faith:semitic_pagan
+		faith = faith:canaanite_pagan
 		is_independent_ruler = yes
 		is_landed = yes
 		NOT = { is_planning_great_project = jip_gp_temple_of_baalat_gebal }
@@ -3098,7 +3098,7 @@ jip_gp_temple_of_baalat_gebal = {
 
 	is_valid = {
 		scope:founder = {
-			faith = faith:semitic_pagan
+			faith = faith:canaanite_pagan
 			is_independent_ruler = yes
 		}
 		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
@@ -3219,7 +3219,7 @@ jip_gp_temple_of_baalat_gebal = {
 			contributor_is_valid = {
 				custom_tooltip = {
 					text = jip_gp_canaanite_faithful_tt
-					faith = faith:semitic_pagan
+					faith = faith:canaanite_pagan
 				}
 			}
 			cost = {
@@ -3351,7 +3351,7 @@ jip_gp_temple_of_baal = {
 
 	is_shown = {
 		# For an independent ruler of Canaanism (any rite)
-		faith = faith:semitic_pagan
+		faith = faith:canaanite_pagan
 		is_independent_ruler = yes
 		is_landed = yes
 		NOT = { is_planning_great_project = jip_gp_temple_of_baal }
@@ -3396,7 +3396,7 @@ jip_gp_temple_of_baal = {
 
 	is_valid = {
 		scope:founder = {
-			faith = faith:semitic_pagan
+			faith = faith:canaanite_pagan
 			is_independent_ruler = yes
 		}
 		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
@@ -3517,7 +3517,7 @@ jip_gp_temple_of_baal = {
 			contributor_is_valid = {
 				custom_tooltip = {
 					text = jip_gp_canaanite_faithful_tt
-					faith = faith:semitic_pagan
+					faith = faith:canaanite_pagan
 				}
 			}
 			cost = {
@@ -3649,7 +3649,7 @@ jip_gp_temple_of_astarte = {
 
 	is_shown = {
 		# For an independent ruler of Canaanism (any rite)
-		faith = faith:semitic_pagan
+		faith = faith:canaanite_pagan
 		is_independent_ruler = yes
 		is_landed = yes
 		NOT = { is_planning_great_project = jip_gp_temple_of_astarte }
@@ -3694,7 +3694,7 @@ jip_gp_temple_of_astarte = {
 
 	is_valid = {
 		scope:founder = {
-			faith = faith:semitic_pagan
+			faith = faith:canaanite_pagan
 			is_independent_ruler = yes
 		}
 		scope:province.barony.holder ?= { target_is_same_character_or_above = scope:founder }
@@ -3815,7 +3815,7 @@ jip_gp_temple_of_astarte = {
 			contributor_is_valid = {
 				custom_tooltip = {
 					text = jip_gp_canaanite_faithful_tt
-					faith = faith:semitic_pagan
+					faith = faith:canaanite_pagan
 				}
 			}
 			cost = {

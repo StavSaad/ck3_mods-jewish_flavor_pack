@@ -1,4 +1,4 @@
-﻿semitic_pagan = {
+﻿canaanite_pagan = {
 
 	main_rite = baalism
 

@@ -590,7 +590,7 @@ jip_temple_of_melqart_01 = {
 		custom_description = {
 			text = jip_temple_of_canaan_enabled_trigger
 			scope:holder = {
-				faith = faith:semitic_pagan
+				faith = faith:canaanite_pagan
 			}
 		}
 	}
@@ -636,7 +636,7 @@ jip_temple_of_tanit_01 = {
 		custom_description = {
 			text = jip_temple_of_canaan_enabled_trigger
 			scope:holder = {
-				faith = faith:semitic_pagan
+				faith = faith:canaanite_pagan
 			}
 		}
 	}
@@ -682,7 +682,7 @@ jip_temple_of_eshmun_01 = {
 		custom_description = {
 			text = jip_temple_of_canaan_enabled_trigger
 			scope:holder = {
-				faith = faith:semitic_pagan
+				faith = faith:canaanite_pagan
 			}
 		}
 	}
@@ -728,7 +728,7 @@ jip_temple_of_baalat_gebal_01 = {
 		custom_description = {
 			text = jip_temple_of_canaan_enabled_trigger
 			scope:holder = {
-				faith = faith:semitic_pagan
+				faith = faith:canaanite_pagan
 			}
 		}
 	}
@@ -774,7 +774,7 @@ jip_temple_of_baal_01 = {
 		custom_description = {
 			text = jip_temple_of_canaan_enabled_trigger
 			scope:holder = {
-				faith = faith:semitic_pagan
+				faith = faith:canaanite_pagan
 			}
 		}
 	}
@@ -823,7 +823,7 @@ jip_temple_of_astarte_01 = {
 		custom_description = {
 			text = jip_temple_of_canaan_enabled_trigger
 			scope:holder = {
-				faith = faith:semitic_pagan
+				faith = faith:canaanite_pagan
 			}
 		}
 	}

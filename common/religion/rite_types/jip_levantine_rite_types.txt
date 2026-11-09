@@ -1,6 +1,6 @@
 ﻿# Baalism, Canaanism's main rite: the Phoenician cities' Baal, Astarte and Melqart
 baalism = {
-	faith = semitic_pagan
+	faith = canaanite_pagan
 
 	color = { 125 28 125 }
 	icon = jip_baal # Baal of the stele, with club and thunderbolt
@@ -20,7 +20,7 @@ baalism = {
 
 # Tanitism, the faith of Carthage, whose first goddess is Tanit
 carthage_pagan = {
-	faith = semitic_pagan
+	faith = canaanite_pagan
 
 	color = { 125 28 58 }
 	icon = canaanite # The sign of Tanit, a gold votive standard under the crescent (tools/make_faith_icon.py)
@@ -37,7 +37,7 @@ carthage_pagan = {
 # Yahwism: the faith of the kings of Israel and Judah who "did evil in the eyes of the Lord", YHWH beside his Asherah,
 # the bull calves of Bethel and Dan and the high places. It keeps Jewish Syncretism (which was the main rite's)
 yahwism = {
-	faith = semitic_pagan
+	faith = canaanite_pagan
 
 	color = { 0.75 0.6 0.25 }
 	icon = jip_yahwism # The bull calf of Bethel and Dan

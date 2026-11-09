@@ -191,7 +191,7 @@ jip_rite_shamin_trigger = {
 
 # Chemosh of Moab
 jip_rite_chemosh_trigger = {
-	scope:faith = faith:semitic_pagan
+	scope:faith = faith:canaanite_pagan
 	OR = {
 		jip_rite_founder_capital_trigger = { COUNTY = c_maab }
 		jip_rite_founder_capital_trigger = { COUNTY = c_kerak }
@@ -200,13 +200,13 @@ jip_rite_chemosh_trigger = {
 
 # Milcom of Ammon (Rabbath Ammon, Amman)
 jip_rite_milcom_trigger = {
-	scope:faith = faith:semitic_pagan
+	scope:faith = faith:canaanite_pagan
 	jip_rite_founder_capital_trigger = { COUNTY = c_balqa }
 }
 
 # Qos of Edom
 jip_rite_qos_trigger = {
-	scope:faith = faith:semitic_pagan
+	scope:faith = faith:canaanite_pagan
 	scope:founder ?= {
 		OR = {
 			culture = culture:edomite
@@ -217,19 +217,19 @@ jip_rite_qos_trigger = {
 
 # Eshmun of Sidon
 jip_rite_eshmun_trigger = {
-	scope:faith = faith:semitic_pagan
+	scope:faith = faith:canaanite_pagan
 	jip_rite_founder_capital_trigger = { COUNTY = c_beirut }
 }
 
 # Adonis of Byblos
 jip_rite_adonis_trigger = {
-	scope:faith = faith:semitic_pagan
+	scope:faith = faith:canaanite_pagan
 	jip_rite_founder_capital_trigger = { COUNTY = c_tripoli }
 }
 
 # Dagon of Gaza and Ashdod
 jip_rite_dagon_trigger = {
-	scope:faith = faith:semitic_pagan
+	scope:faith = faith:canaanite_pagan
 	OR = {
 		jip_rite_founder_capital_trigger = { COUNTY = c_ghazza }
 		jip_rite_founder_capital_trigger = { COUNTY = c_jaffa }
@@ -238,13 +238,13 @@ jip_rite_dagon_trigger = {
 
 # Baal Hammon of Carthage (Tanit, his face, is Tanitism's)
 jip_rite_hammon_trigger = {
-	scope:faith = faith:semitic_pagan
+	scope:faith = faith:canaanite_pagan
 	jip_rite_founder_capital_under_trigger = { TITLE = k_africa }
 }
 
 # Melqart of Tyre, the merchants' god
 jip_rite_melqart_trigger = {
-	scope:faith = faith:semitic_pagan
+	scope:faith = faith:canaanite_pagan
 	OR = {
 		jip_rite_founder_capital_trigger = { COUNTY = c_acre }
 		has_wealthgod_tenet_trigger = yes
@@ -253,30 +253,30 @@ jip_rite_melqart_trigger = {
 
 # Anat, the warrior maiden
 jip_rite_anat_trigger = {
-	scope:faith = faith:semitic_pagan
+	scope:faith = faith:canaanite_pagan
 	has_wargod_tenet_trigger = yes
 }
 
 # Astarte, the morning star
 jip_rite_astarte_trigger = {
-	scope:faith = faith:semitic_pagan
+	scope:faith = faith:canaanite_pagan
 	has_fertilitygod_tenet_trigger = yes
 }
 
 # Yarikh of Ugarit, the moon, whose bride is Nikkal and whose city is Jericho: a rite of Moon Worship
 jip_rite_yarikh_trigger = {
-	scope:faith = faith:semitic_pagan
+	scope:faith = faith:canaanite_pagan
 	rite_has_tenet = tenet_jip_moon_worship
 }
 
 # Kothar-wa-Khasis, the craftsman
 jip_rite_kothar_trigger = {
-	scope:faith = faith:semitic_pagan
+	scope:faith = faith:canaanite_pagan
 	has_knowledgegod_tenet_trigger = yes
 }
 
 # Asherah of the sacred poles
 jip_rite_asherah_trigger = {
-	scope:faith = faith:semitic_pagan
+	scope:faith = faith:canaanite_pagan
 	has_householdgod_tenet_trigger = yes
 }
