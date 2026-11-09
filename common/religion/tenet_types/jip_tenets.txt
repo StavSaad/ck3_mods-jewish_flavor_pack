@@ -82,3 +82,42 @@ tenet_jip_vicegerent_of_ashur = {
 		}
 	}
 }
+
+# Moon Worship: the moon gods of the Levant and Mesopotamia, Sin of Harran and Ur, Sahar of the Arameans, Yarikh of
+# Ugarit; the lord of the month, the judge who sees by night, the lamp of the caravans. Sinism; vanilla has no moon tenet
+tenet_jip_moon_worship = {
+	icon = tenet_jip_moon_worship # The crescent of Sin
+	piety_cost = {
+		value = faith_tenet_cost_mid
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_jip_moon_worship }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+	# Only for the Levantine pagan faiths
+	can_pick = {
+		custom_description = {
+			text = jip_tenet_moon_worship_trigger
+			religion = religion:canaanite_religion
+		}
+	}
+	can_pick_as_personal_tenet = {
+		has_religion = religion:canaanite_religion
+	}
+	character_modifier = {
+		monthly_piety_gain_mult = 0.1 # The offerings of each new moon
+		character_travel_safety = 10 # The caravans travel by moonlight
+		enemy_hostile_scheme_success_chance_add = -5 # Nothing done by night is hidden from the moon
+	}
+	traits = {
+		virtues = {
+			just = { weight = 15 scale = 1 } # Sin, the lord of decisions
+			patient = { weight = 10 scale = 1 } # The month's slow turning
+		}
+		sins = {
+			arbitrary = { weight = 15 scale = 1 }
+			impatient = { weight = 10 scale = 1 }
+		}
+	}
+}

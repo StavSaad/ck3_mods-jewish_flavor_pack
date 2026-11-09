@@ -44,6 +44,12 @@ jip_rite_ishtar_trigger = {
 	}
 }
 
+# Nanna (Nannar) of Ur, the moon god Harran calls Sin (Sinism is the faith's own rite): a rite of Moon Worship
+jip_rite_nanna_trigger = {
+	scope:faith = faith:mesopotamian_pagan
+	rite_has_tenet = tenet_jip_moon_worship
+}
+
 # Nabu of Borsippa, the scribe
 jip_rite_nabu_trigger = {
 	scope:faith = faith:mesopotamian_pagan
@@ -153,6 +159,13 @@ jip_rite_elagabal_trigger = {
 	}
 }
 
+# Sahar, the Aramean moon (the Nerab steles' Sahar, Shamash, Nikkal and Nusk): a rite of Moon Worship elsewhere
+jip_rite_sahar_trigger = {
+	scope:faith = faith:aramean_pagan
+	jip_rite_aramean_cult_city_trigger = no
+	rite_has_tenet = tenet_jip_moon_worship
+}
+
 # Gad of Dura (Rahba's county), or a wealth god's rite elsewhere
 jip_rite_gad_trigger = {
 	scope:faith = faith:aramean_pagan
@@ -254,6 +267,12 @@ jip_rite_anat_trigger = {
 jip_rite_astarte_trigger = {
 	scope:faith = faith:semitic_pagan
 	has_fertilitygod_tenet_trigger = yes
+}
+
+# Yarikh of Ugarit, the moon, whose bride is Nikkal and whose city is Jericho: a rite of Moon Worship
+jip_rite_yarikh_trigger = {
+	scope:faith = faith:semitic_pagan
+	rite_has_tenet = tenet_jip_moon_worship
 }
 
 # Kothar-wa-Khasis, the craftsman

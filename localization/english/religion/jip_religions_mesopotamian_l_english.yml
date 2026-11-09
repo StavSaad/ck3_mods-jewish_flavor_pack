@@ -88,6 +88,12 @@
  tenet_jip_vicegerent_of_ashur_desc: "The land belongs to the god, and the king is only his steward. As Ashur's high priest the ruler answers to the gods alone, and each Akitu they confirm his crown anew."
  jip_tenet_vicegerent_of_ashur_trigger: "The [faith|E] is $canaanite_religion$"
 
+ # Moon Worship (jip_tenets.txt)
+ tenet_jip_moon_worship_name: "Moon Worship"
+ tenet_jip_moon_worship_desc: "The moon is lord of the month and judge of the night: he counts the days of the feasts, lights the caravans across the steppe and sees every deed done in the dark. At each new moon his crescent is greeted with offerings."
+ jip_tenet_moon_worship_trigger: "The [faith|E] is $canaanite_religion$"
+ NOT_jip_tenet_moon_worship_trigger: "The [faith|E] is not $canaanite_religion$"
+
  # Holy sites (jip_holy_sites.txt)
  holy_site_nineveh_name: "Nineveh"
  holy_site_nineveh_effect_name: "From [holy_site|E] #weak ($holy_site_nineveh_name$)#!"

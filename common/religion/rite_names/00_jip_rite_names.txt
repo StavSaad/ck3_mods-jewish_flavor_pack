@@ -30,6 +30,14 @@ jip_rite_ishtar = {
 	}
 }
 
+# Nanna of Ur, a rite of Moon Worship
+jip_rite_nanna = {
+	name = jip_rite_name_nanna
+	trigger = {
+		jip_rite_nanna_trigger = yes
+	}
+}
+
 # Nabu the scribe: a knowledge tenet
 jip_rite_nabu = {
 	name = jip_rite_name_nabu
@@ -119,6 +127,14 @@ jip_rite_elagabal = {
 	name = jip_rite_name_elagabal
 	trigger = {
 		jip_rite_elagabal_trigger = yes
+	}
+}
+
+# Sahar, the Aramean moon, a rite of Moon Worship elsewhere
+jip_rite_sahar = {
+	name = jip_rite_name_sahar
+	trigger = {
+		jip_rite_sahar_trigger = yes
 	}
 }
 
@@ -227,6 +243,14 @@ jip_rite_astarte = {
 	name = jip_rite_name_astarte
 	trigger = {
 		jip_rite_astarte_trigger = yes
+	}
+}
+
+# Yarikh, the moon of Ugarit, a rite of Moon Worship
+jip_rite_yarikh = {
+	name = jip_rite_name_yarikh
+	trigger = {
+		jip_rite_yarikh_trigger = yes
 	}
 }
 

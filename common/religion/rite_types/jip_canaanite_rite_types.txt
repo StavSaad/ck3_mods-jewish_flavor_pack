@@ -183,7 +183,7 @@ sinism = {
 	tenets = {
 		tenet_astrology
 		tenet_esotericism
-		tenet_adaptive # Harran kept its gods under Christians and Muslims, through Hermes and the Neoplatonists
+		tenet_jip_moon_worship # Sin, the moon god of Harran and Ur (jip_tenets.txt)
 	}
 
 	localization = {
