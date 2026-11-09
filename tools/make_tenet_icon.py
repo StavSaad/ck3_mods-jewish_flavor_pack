@@ -1,6 +1,6 @@
 # Builds a vanilla-style tenet icon (260x400, uncompressed DDS like tenet_simony.dds): a painted object, already cut
 # out to a transparent PNG, over a fan of white brush strokes falling from above.
-# Usage: make_tenet_icon.py <cut.png> <tenet_key> [<compare.png>]
+# Usage: make_tenet_icon.py <cut.png> <tenet_key> [<compare.png>]  (Kehunah, Vicegerent of Ashur, Moon Worship)
 # Writes gfx/interface/icons/faith_tenets/<tenet_key>.dds; the optional sheet compares it with vanilla's icons.
 import numpy as np, os, sys
 from PIL import Image
