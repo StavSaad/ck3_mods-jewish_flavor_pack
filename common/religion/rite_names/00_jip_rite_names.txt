@@ -99,10 +99,10 @@ jip_rite_allat = {
 }
 
 # Hadad-Rimmon of Damascus, or a war god
-jip_rite_hadad = {
-	name = jip_rite_name_hadad
+jip_rite_rimmon = {
+	name = jip_rite_name_rimmon
 	trigger = {
-		jip_rite_hadad_trigger = yes
+		jip_rite_rimmon_trigger = yes
 	}
 }
 
@@ -138,11 +138,11 @@ jip_rite_rakibel = {
 	}
 }
 
-# Baalshamin, the Lord of Heaven, for any other ruler
-jip_rite_baalshamin = {
-	name = jip_rite_name_baalshamin
+# Shamin, the Lord of Heaven, for any other ruler
+jip_rite_shamin = {
+	name = jip_rite_name_shamin
 	trigger = {
-		jip_rite_baalshamin_trigger = yes
+		jip_rite_shamin_trigger = yes
 	}
 }
 

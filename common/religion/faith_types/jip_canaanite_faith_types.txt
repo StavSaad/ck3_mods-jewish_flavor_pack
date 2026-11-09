@@ -316,7 +316,7 @@ aramean_pagan = {
 			aramean_pagan_fertility_god_name
 			aramean_pagan_wealth_god_name
 			aramean_pagan_household_god_name
-			aramean_pagan_good_god_baalshamin
+			aramean_pagan_good_god_shamin
 			aramean_pagan_night_god_name
 		}
 		DevilName = aramean_pagan_devil_name

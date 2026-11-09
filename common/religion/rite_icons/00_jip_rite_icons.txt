@@ -212,13 +212,13 @@ jip_rite_allat_icon = {
 	custom_faith_icons = { jip_rite_allat }
 }
 
-# Hadad's thunderbolts
-jip_rite_hadad_icon = {
+# Hadad-Rimmon's axe and thunderbolt
+jip_rite_rimmon_icon = {
 	trigger = {
-		jip_rite_hadad_trigger = yes
+		jip_rite_rimmon_trigger = yes
 	}
 
-	custom_faith_icons = { jip_rite_hadad }
+	custom_faith_icons = { jip_rite_rimmon }
 }
 
 # The fish of Atargatis
@@ -257,13 +257,13 @@ jip_rite_rakibel_icon = {
 	custom_faith_icons = { jip_rite_rakibel }
 }
 
-# The eagle of Baalshamin
-jip_rite_baalshamin_icon = {
+# The eagle of Shamin
+jip_rite_shamin_icon = {
 	trigger = {
-		jip_rite_baalshamin_trigger = yes
+		jip_rite_shamin_trigger = yes
 	}
 
-	custom_faith_icons = { jip_rite_baalshamin }
+	custom_faith_icons = { jip_rite_shamin }
 }
 
 # Sinism's children: the Aramean cities and the star-readers take the crescent standard of Sin

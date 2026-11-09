@@ -1,9 +1,6 @@
-# Builds Arameanism's recoloured icons (0.15 plan, section 14) from the mod's existing faith and rite icons, through
-# make_faith_icon.py --palette: each source icon is laid on flat green at 4x, then recoloured by its brightness.
-#  aramean_01..06   the custom faiths' colours, from Hadad's lightning forks (jip_rite_hadad)
-#  jip_rite_baalshamin  Bel's eagle (jip_rite_bel) in silver and lapis, the Lord of Heaven
-#  jip_rite_elagabal    Shamash's sun disc (jip_rite_shamash) as black stone and gold, the sun god of Emesa
-#  jip_rite_allat       Anat's lion-headed axe and spear (jip_rite_anat) in silver, Allat the warrior
+# Builds Arameanism's custom faith colours (0.15 plan, section 14), aramean_01..06, from Hadad's lightning forks
+# (jip_rite_hadad), through make_faith_icon.py --palette: the source icon is laid on flat green at 4x, then recoloured
+# by its brightness. The gods' rite icons (Shamin, Elagabal, Allat, Rimmon...) are their own Gemini emblems
 # Usage: make_aramean_icons.py [--preview <png>]
 import os
 import subprocess
@@ -23,9 +20,6 @@ RECOLOURS = {
     'aramean_04': ('jip_rite_hadad', '#0a1430,#2f4f9e,#a9c1f2'),  # lapis blue
     'aramean_05': ('jip_rite_hadad', '#082420,#2f8a78,#a8eadb'),  # turquoise
     'aramean_06': ('jip_rite_hadad', '#2a1f05,#9c7a22,#f4dc8a'),  # gold
-    'jip_rite_baalshamin': ('jip_rite_bel', '#0b1633,#4f6fae,#e3ebf8'),
-    'jip_rite_elagabal': ('jip_rite_shamash', '#080706,#3a3128,#e0b452'),
-    'jip_rite_allat': ('jip_rite_anat', '#15171b,#6f7680,#e9edf2'),
 }
 
 

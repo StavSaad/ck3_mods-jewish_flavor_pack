@@ -118,7 +118,7 @@ jip_rite_allat_trigger = {
 }
 
 # Hadad-Rimmon of Damascus (Rimmonism: Hadadism is the faith's main rite), or a war god's rite elsewhere
-jip_rite_hadad_trigger = {
+jip_rite_rimmon_trigger = {
 	scope:faith = faith:aramean_pagan
 	OR = {
 		jip_rite_founder_capital_under_trigger = { TITLE = d_damascus }
@@ -172,8 +172,8 @@ jip_rite_rakibel_trigger = {
 	has_householdgod_tenet_trigger = yes
 }
 
-# Baalshamin, the Lord of Heaven: any other rite of a ruler
-jip_rite_baalshamin_trigger = {
+# Shamin, the Lord of Heaven: any other rite of a ruler
+jip_rite_shamin_trigger = {
 	scope:faith = faith:aramean_pagan
 	scope:founder ?= { is_ruler = yes }
 }

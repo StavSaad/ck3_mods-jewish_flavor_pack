@@ -294,7 +294,7 @@ hadadism = {
 	}
 }
 
-# Palmyra's gods: Bel with Yarhibol and Aglibol, Baalshamin, Malakbel and Allat
+# Palmyra's gods: Bel with Yarhibol and Aglibol, Shamin, Malakbel and Allat
 belism = {
 	faith = aramean_pagan
 
