@@ -1,0 +1,57 @@
+﻿# Vanilla tenets overridden by key (keep each an exact copy of vanilla's, from common/religion/tenet_types/00_tenet_types.txt,
+# with only the marked lines added; check them after every vanilla update)
+# Sun Worship: the Levantine faiths may pick it too (Zunists and Saura only in vanilla)
+tenet_sun_worship = {
+	icon = tenet_sun_worship
+
+	piety_cost = {
+		value = faith_tenet_cost_mid
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { rite_has_tenet = tenet_sun_worship }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	can_pick = {
+		OR = {
+			religion = religion:zunism_religion
+			religion = religion:canaanite_religion # Rising Lion: Shamash, Elagabal, Yarhibol and Malakbel
+			has_tenet = tenet_sun_worship #If you already have it
+			AND = {
+				religion = religion:hinduism_religion
+				this = faith:saura #If you're into Saurism
+			}
+		}
+	}
+
+	parameters = {
+		summer_festivals_active
+		trial_by_sun_active
+		sanctify_artifacts_regal
+	}
+
+	personal_tenet_parameters = {
+		tenet_sun_worship_free_hikes
+		tenet_sun_worship_desert_pilgrim
+	}
+
+	character_modifier = {
+		desert_attrition_mult = -0.25
+		desert_mountains_attrition_mult = -0.25
+	}
+
+	personal_tenet_modifier = {
+		character_travel_speed_mult = 0.15
+	}
+
+	traits = {
+		virtues = {
+			honest = { weight = 15 scale = 1 }
+		}
+		sins = {
+			deceitful = { weight = 15 scale = 1 }
+		}
+	}
+}
