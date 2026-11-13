@@ -124,7 +124,7 @@
 [] Fixed the Persian Struggle not including the Bavlim culture
 [] Fixed many errors: Tanas holy site, Canaanite faith tenets, Lower Egypt adjective, Third Temple tenet check, Masada defense bonus, Maimonides' traits, Claim Exilarchate description, Semitic pagan religious head, and duplicate localization keys
 
-== Version 0.15.0 ==
+== Version 0.15.0: Children of Aram ==
 -- General --
 [] The Semitic pagan religion is now called Levantine
 [] Arameans, Assyrians and Nabati have place names of their own from Syria to Khuzestan, about 100 of them: Iron-Age Aramaic and Syriac for Arameans and Nabati (Arpad, Mabbug, Urhay, Ninwe, Arbel; Mesopotamia is Babylon), Neo-Assyrian for Assyrians (Bit Agusi, Ninua, Arbail, Karduniash)

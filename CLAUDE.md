@@ -13,7 +13,7 @@ Rising Lion is a CK3 mod focused on bringing deep historical and cultural flavor
 
 Generator scripts (`make_*.py`, `add_event_source_badge.py`) are in `tools/`; they use absolute paths to the mod and the vanilla game folder.
 
-Plans for the next versions are in `.docs/` (the only tracked files there; the rest of `.docs` is gitignored): `v0.15_beth_aramaye.md` (Arameans, Assyrians, Sabians, Mandaeans) and `v0.16_exilarchs_and_maccabees.md` (the Jewish features). Add new plans to the matching version file.
+Plans for the next versions are in `.docs/` (the only tracked files there; the rest of `.docs` is gitignored): `v0.15_children_of_aram.md` (Arameans, Assyrians, Sabians, Mandaeans) and `v0.16_exilarchs_and_maccabees.md` (the Jewish features). Add new plans to the matching version file.
 
 ---
 
@@ -256,4 +256,4 @@ A mod can't be a DLC or an event's `content_source`, so:
 | 0.12.0 | Hegemony of the Fertile Crescent; performance improvements; Kemet region rework |
 | 0.13.0 | Masada 3-tier building; Kemet/Crescent nickname grants; Mishpacha desc expansion; Jewish-flavored Exilarchate election tooltips |
 | 0.14.0 | CK3 1.20 update; Mishpacha charter, migration, succession, estate buildings, Mar/Geveret titles, court positions and contracts; Expel/Readmit the Jews; Court Financier; Kehunah tenet for Kohenism |
-| 0.15.0 | Beth Aramaye: Aramaic place names, Nabati culture, Mesopotamianism and the temples of the old gods (our own ziggurat models), the Sabian story and Court Astrologer, Mandaean flavour and the Rish Amma, Sabian and Mandaean families, Aram Rabba, feast variants and Pesach, cultural men-at-arms, the Third Temple as great projects, Jewish name lists |
+| 0.15.0 | Children of Aram: Aramaic place names, Nabati culture, Mesopotamianism and the temples of the old gods (our own ziggurat models), the Sabian story and Court Astrologer, Mandaean flavour and the Rish Amma, Sabian and Mandaean families, Aram Rabba, feast variants and Pesach, cultural men-at-arms, the Third Temple as great projects, Jewish name lists |
