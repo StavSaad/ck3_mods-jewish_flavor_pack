@@ -4153,7 +4153,7 @@ e_kemet = {
 
 e_beth_nahrain = {
 	color = { 35 79 78 }
-	capital = c_ninive # Nineveh; vanilla's Damascus is Greater Aram's land (0.15 plan, section 5)
+	capital = c_ninive # Nineveh; vanilla's Damascus is Aram Rabba's land (0.15 plan, section 5)
 
 	cultural_names = {
 		name_list_ashkenazi = cn_bethnaharaim
@@ -4959,11 +4959,6 @@ e_spain = {
 # The Aramean capstone, founded by create_e_aram_decision: Syria and Zenobia's conquests (0.15 plan, section 5)
 e_aram = {
 	color = { 176 128 64 }
-
-	cultural_names = {
-		name_list_aramean = cn_aram_rabba
-		name_list_nabati = cn_aram_rabba
-	}
 	capital = c_palmyra # Palmyra
 
 	definite_form = yes

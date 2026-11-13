@@ -606,7 +606,7 @@ d_kurdistan_adiabene = {
 	}
 }
 
-# Greater Aram (e_aram): the eagle of Bel from the ceiling of his temple, on Zenobia's purple
+# Aram Rabba (e_aram): the eagle of Bel from the ceiling of his temple, on Zenobia's purple
 e_aram = {
 	pattern = "pattern_solid.dds"
 	color1 = rgb { 90 30 80 }

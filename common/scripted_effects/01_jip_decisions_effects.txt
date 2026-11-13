@@ -375,7 +375,7 @@ create_edom_decision_effect = {
 	}
 }
 
-# Greater Aram (create_e_aram_decision): Syria, and the kingdoms around it that exist and that the founder
+# Aram Rabba (create_e_aram_decision): Syria, and the kingdoms around it that exist and that the founder
 # completely controls: the Jazira, Jerusalem, Israel and Phoenicia, and Zenobia's conquests, Arabia and Egypt. It seizes
 # them from any other empire, the mod's included
 create_aram_decision_effect = {
@@ -404,7 +404,7 @@ create_aram_decision_effect = {
 	give_nickname = nick_restorer_of_the_east
 }
 
-# Character scope (the founder of Greater Aram): $KINGDOM$ becomes a de jure kingdom of Greater Aram if it exists and
+# Character scope (the founder of Aram Rabba): $KINGDOM$ becomes a de jure kingdom of Aram Rabba if it exists and
 # the founder completely controls it, whatever empire it belonged to
 jip_aram_take_kingdom_effect = {
 	if = {
@@ -508,7 +508,7 @@ jip_unlock_mesopotamian_conversion_effect = {
 	}
 }
 
-# Arameanism: a temple of the gods of Aram completed, the founding of Greater Aram, or Restore the Gods of Aram
+# Arameanism: a temple of the gods of Aram completed, the founding of Aram Rabba, or Restore the Gods of Aram
 jip_unlock_aramean_conversion_effect = {
 	if = {
 		limit = {

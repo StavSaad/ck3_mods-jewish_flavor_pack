@@ -1,5 +1,5 @@
 ﻿# Triggers for the mod's Near Eastern empires and their arms. The empires share kingdoms: Canaan and Beth Nahrain can
-# both take Syria and Jerusalem, and Greater Aram Syria, the Jazira, Jerusalem, Israel, Phoenicia, Arabia and
+# both take Syria and Jerusalem, and Aram Rabba Syria, the Jazira, Jerusalem, Israel, Phoenicia, Arabia and
 # Egypt; each founding decision takes them from whoever holds them (0.15 plan, section 5).
 
 # Character scope: of a culture that uses the Aramean place names (Aramean, Nabati), so shows the Aramean arms of

@@ -1,6 +1,6 @@
 ﻿namespace = jip_palmyra
 
-# Greater Aram is founded (create_e_aram_decision)
+# Aram Rabba is founded (create_e_aram_decision)
 jip_palmyra.0001 = {
 	type = character_event
 	title = jip_palmyra.0001.t
@@ -56,7 +56,7 @@ jip_palmyra.0001 = {
 	}
 }
 
-# The gods of Tadmor: the founder of Greater Aram may restore the gods of Aram (0.15 plan, section 14)
+# The gods of Tadmor: the founder of Aram Rabba may restore the gods of Aram (0.15 plan, section 14)
 jip_palmyra.0002 = {
 	type = character_event
 	title = jip_palmyra.0002.t

@@ -60,7 +60,6 @@ NAMES = {
     'b_anjar': ('iturea', 'iturea'),
     'b_sarkhad': ('salcah', 'salcah'),
     'b_as-suwaida-hauran': ('canatha', 'canatha'),
-    'e_aram': (None, 'aram_rabba'),                   # Greater Aram
     'd_palmyra': ('tadmar', 'tadmur'),                # Tadmar of Tiglath-pileser I; Palmyrene Tadmor
     'c_palmyra': ('tadmar', 'tadmur'),
     'b_tadmur': ('tadmar', 'tadmur'),
