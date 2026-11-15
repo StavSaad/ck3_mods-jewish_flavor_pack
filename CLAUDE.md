@@ -13,7 +13,7 @@ Rising Lion is a CK3 mod focused on bringing deep historical and cultural flavor
 
 Generator scripts (`make_*.py`, `add_event_source_badge.py`) are in `tools/`; they use absolute paths to the mod and the vanilla game folder.
 
-Plans for the next versions are in `.docs/` (the only tracked files there; the rest of `.docs` is gitignored): `v0.15_children_of_aram.md` (Arameans, Assyrians, Sabians, Mandaeans) and `v0.16_exilarchs_and_maccabees.md` (the Jewish features). Add new plans to the matching version file.
+Plans for the next versions are in `.docs/` (the only tracked files there; the rest of `.docs` is gitignored): `v0.15_children_of_aram.md` (Arameans, Assyrians, Sabians, Mandaeans), `v0.15.1_florin_update.md` (compatibility with CK3 1.21 and Silk & Silver) and `v0.16_exilarchs_and_maccabees.md` (the Jewish features). Add new plans to the matching version file.
 
 ---
 
