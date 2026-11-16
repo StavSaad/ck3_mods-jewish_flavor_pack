@@ -106,25 +106,8 @@ found_empire_of_beth_nahrain_decision = {
 				set_de_jure_liege_title = title:e_beth_nahrain
 			}
 	
-			if = {
-				limit = {
-					has_title = title:k_jerusalem
-					completely_controls = title:k_jerusalem
-				}
-				title:k_jerusalem = {
-					set_de_jure_liege_title = title:e_beth_nahrain
-				}
-			}
-	
-			if = {
-				limit = {
-					has_title = title:k_syria
-					completely_controls = title:k_syria
-				}
-				title:k_syria = {
-					set_de_jure_liege_title = title:e_beth_nahrain
-				}
-			}
+			# The western kingdoms it holds and completely controls (Syria, Jerusalem and those carved from them)
+			jip_empire_takes_held_controlled_kingdoms_effect = { EMPIRE = e_beth_nahrain REGION = jip_region_beth_nahrain_claims }
 		}
 		#Create Beth Nahrain
 		title:e_beth_nahrain = {
@@ -232,9 +215,7 @@ create_israel_kingdom_decision = {
 	is_valid = {
 		prestige_level >= high_prestige_level
 		piety_level >= high_piety_level
-		completely_controls = title:d_palestine
-		completely_controls = title:d_urdunn
-		completely_controls = title:d_oultrejourdain
+		completely_controls_region = jip_region_land_of_israel
 		custom_description = {
 			text = "jerusalem_is_same_faith"
 			title:c_jerusalem.rite.faith = root.rite.faith

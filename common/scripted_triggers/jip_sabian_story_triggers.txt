@@ -166,15 +166,18 @@ jip_sabian_temple_of_sin_stands_trigger = {
 
 ### Act V: Reclaim the Land
 
-# The old cult cities whose counties the story may claim: Harran, Arbela, Nineveh, Mosul (Ashur and Hatra) and Kufa,
-# where Babylon lies (b_al-hila, vanilla's Babylon holy site)
+# Title scope (a county): one of the old cult cities whose counties the story may claim lies in it: Harran, Arbela,
+# Nineveh, Ashur, Hatra and Babylon (b_al-hila, vanilla's Babylon holy site); the region jip_sabian_cult_cities
 jip_sabian_is_cult_city_trigger = {
-	OR = {
-		this = title:c_harran
-		this = title:c_irbil
-		this = title:c_ninive
-		this = title:c_mosul
-		this = title:c_kufa
+	jip_county_has_city_trigger = { CITY = jip_sabian_cult_cities }
+}
+
+# Character scope: the county of the cult city $CITY$ (jip_city_<name>) is one they could claim
+jip_sabian_cult_city_can_be_claimed_trigger = {
+	save_temporary_scope_as = jip_cult_city_claimant
+	any_county_in_region = {
+		region = $CITY$
+		jip_sabian_cult_city_to_claim_trigger = { OWNER = scope:jip_cult_city_claimant }
 	}
 }
 
@@ -190,17 +193,15 @@ jip_sabian_cult_city_to_claim_trigger = {
 
 # Character scope: a cult city they could claim
 jip_sabian_has_cult_city_to_claim_trigger = {
-	OR = {
-		title:c_harran = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
-		title:c_irbil = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
-		title:c_ninive = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
-		title:c_mosul = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
-		title:c_kufa = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
+	save_temporary_scope_as = jip_cult_city_claimant
+	any_county_in_region = {
+		region = jip_sabian_cult_cities
+		jip_sabian_cult_city_to_claim_trigger = { OWNER = scope:jip_cult_city_claimant }
 	}
 }
 
-# Character scope: the god $GOD$'s statue can be sought: not yet home, and its restored temple ($BUILDING$ at $BARONY$)
-# stands in the realm, not occupied
+# Character scope: the god $GOD$'s statue can be sought: not yet home, and its restored temple ($BUILDING$ in the city
+# $CITY$, a jip_city_<name> region) stands in the realm, not occupied
 jip_sabian_god_statue_can_be_sought_trigger = {
 	NOT = {
 		is_target_in_global_variable_list = {
@@ -208,21 +209,26 @@ jip_sabian_god_statue_can_be_sought_trigger = {
 			target = flag:$GOD$
 		}
 	}
-	title:$BARONY$.title_province = {
-		has_building = $BUILDING$
-		is_occupied = no
+	save_temporary_scope_as = jip_statue_seeker
+	any_county_in_region = {
+		region = $CITY$
+		any_county_province = {
+			geographical_region = $CITY$
+			has_building = $BUILDING$
+			is_occupied = no
+			barony.holder ?= { target_is_same_character_or_above = scope:jip_statue_seeker }
+		}
 	}
-	title:$BARONY$.holder ?= { target_is_same_character_or_above = root }
 }
 
 # Character scope: a god's statue can be sought
 jip_sabian_any_statue_can_be_sought_trigger = {
 	OR = {
-		jip_sabian_god_statue_can_be_sought_trigger = { GOD = sin BUILDING = jip_temple_of_sin_01 BARONY = b_harran }
-		jip_sabian_god_statue_can_be_sought_trigger = { GOD = ishtar BUILDING = jip_temple_of_ishtar_01 BARONY = b_irbil }
-		jip_sabian_god_statue_can_be_sought_trigger = { GOD = ashur BUILDING = jip_temple_of_ashur_01 BARONY = b_ain_al-qayyara }
-		jip_sabian_god_statue_can_be_sought_trigger = { GOD = shamash BUILDING = jip_temple_of_shamash_01 BARONY = b_al-hadr }
-		jip_sabian_god_statue_can_be_sought_trigger = { GOD = marduk BUILDING = jip_temple_of_marduk_01 BARONY = b_al-hila }
+		jip_sabian_god_statue_can_be_sought_trigger = { GOD = sin BUILDING = jip_temple_of_sin_01 CITY = jip_city_harran }
+		jip_sabian_god_statue_can_be_sought_trigger = { GOD = ishtar BUILDING = jip_temple_of_ishtar_01 CITY = jip_city_arbela }
+		jip_sabian_god_statue_can_be_sought_trigger = { GOD = ashur BUILDING = jip_temple_of_ashur_01 CITY = jip_city_ashur }
+		jip_sabian_god_statue_can_be_sought_trigger = { GOD = shamash BUILDING = jip_temple_of_shamash_01 CITY = jip_city_hatra }
+		jip_sabian_god_statue_can_be_sought_trigger = { GOD = marduk BUILDING = jip_temple_of_marduk_01 CITY = jip_city_babylon }
 	}
 }
 

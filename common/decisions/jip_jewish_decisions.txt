@@ -109,12 +109,12 @@ reestablish_canaanite_city_decision = {
 			culture = { has_cultural_pillar = heritage_phoenician }
 		}
 		OR = {
-			has_title = title:c_acre
-			has_title = title:c_beirut
-			has_title = title:c_tripoli
-			has_title = title:c_antiocheia
-			has_title = title:c_famagusta
-			has_title = title:c_nicosia
+			jip_holds_city_county_trigger = { CITY = jip_city_tyre }
+			jip_holds_city_county_trigger = { CITY = jip_city_sidon }
+			jip_holds_city_county_trigger = { CITY = jip_city_tripoli }
+			jip_holds_city_county_trigger = { CITY = jip_city_latakia }
+			jip_holds_city_county_trigger = { CITY = jip_city_kyrenia }
+			jip_holds_city_county_trigger = { CITY = jip_city_limassol }
 		}
 	}
 
@@ -128,34 +128,27 @@ reestablish_canaanite_city_decision = {
 		decision_to_second_step_button = "CHOOSE_CITY"
 		show_from_start = yes
 
-		item = { # acre / tyre
+		# Each city is a one-province region (jip_city_<name>): the county is whichever holds it on the map
+		item = { # tyre
 			value = acre
 			is_shown = {
-				has_title = title:c_acre
+				jip_holds_city_county_trigger = { CITY = jip_city_tyre }
 			}
 			is_valid = {
-				has_title = title:c_acre
-				completely_controls = title:c_acre
-				NOT = {
-					capital_county = title:c_acre
-				}
+				jip_can_reestablish_canaanite_city_trigger = { CITY = jip_city_tyre }
 			}
 			current_description = canaanite_city_acre_desc
 			localization = canaanite_city_acre_desc
 			icon = "gfx/interface/icons/barony_crown.dds"
 			ai_chance = { value = 10 }
 		}
-		item = { # beirut / sidon
+		item = { # sidon
 			value = beirut
 			is_shown = {
-				has_title = title:c_beirut
+				jip_holds_city_county_trigger = { CITY = jip_city_sidon }
 			}
 			is_valid = {
-				has_title = title:c_beirut
-				completely_controls = title:c_beirut
-				NOT = {
-					capital_county = title:c_beirut
-				}
+				jip_can_reestablish_canaanite_city_trigger = { CITY = jip_city_sidon }
 			}
 			current_description = canaanite_city_beirut_desc
 			localization = canaanite_city_beirut_desc
@@ -165,36 +158,26 @@ reestablish_canaanite_city_decision = {
 		item = { # tripoli
 			value = tripoli
 			is_shown = {
-				has_title = title:c_tripoli
+				jip_holds_city_county_trigger = { CITY = jip_city_tripoli }
 			}
 			is_valid = {
-				has_title = title:c_tripoli
-				completely_controls = title:c_tripoli
-				NOT = {
-					capital_county = title:c_tripoli
-				}
+				jip_can_reestablish_canaanite_city_trigger = { CITY = jip_city_tripoli }
 			}
 			current_description = canaanite_city_tripoli_desc
 			localization = canaanite_city_tripoli_desc
 			icon = "gfx/interface/icons/barony_crown.dds"
 			ai_chance = { value = 10 }
 		}
-		item = { # antioch
+		item = { # latakia
 			value = antiocheia
 			is_shown = {
-				has_title = title:c_antiocheia
+				jip_holds_city_county_trigger = { CITY = jip_city_latakia }
 			}
 			is_valid = {
-				has_title = title:c_antiocheia
-				completely_controls = title:c_antiocheia
-				NOT = {
-					capital_county = title:c_antiocheia
-				}
-				custom_description = {	#The county must be developed or have at least one city
+				jip_can_reestablish_canaanite_city_trigger = { CITY = jip_city_latakia }
+				custom_description = {	# Latakia must be a city
 					text = latakia_must_be_city
-					title:b_latakia.title_province = {
-						has_holding_type = city_holding
-					}
+					jip_canaanite_city_is_city_holding_trigger = { CITY = jip_city_latakia }
 				}
 			}
 			current_description = canaanite_city_antiocheia_desc
@@ -202,34 +185,26 @@ reestablish_canaanite_city_decision = {
 			icon = "gfx/interface/icons/barony_crown.dds"
 			ai_chance = { value = 10 }
 		}
-		item = { # famagusta
+		item = { # kyrenia
 			value = famagusta
 			is_shown = {
-				has_title = title:c_famagusta
+				jip_holds_city_county_trigger = { CITY = jip_city_kyrenia }
 			}
 			is_valid = {
-				has_title = title:c_famagusta
-				completely_controls = title:c_famagusta
-				NOT = {
-					capital_county = title:c_famagusta
-				}
+				jip_can_reestablish_canaanite_city_trigger = { CITY = jip_city_kyrenia }
 			}
 			current_description = canaanite_city_famagusta_desc
 			localization = canaanite_city_famagusta_desc
 			icon = "gfx/interface/icons/barony_crown.dds"
 			ai_chance = { value = 10 }
 		}
-		item = { # nicosia
+		item = { # limassol
 			value = nicosia
 			is_shown = {
-				has_title = title:c_nicosia
+				jip_holds_city_county_trigger = { CITY = jip_city_limassol }
 			}
 			is_valid = {
-				has_title = title:c_nicosia
-				completely_controls = title:c_nicosia
-				NOT = {
-					capital_county = title:c_nicosia
-				}
+				jip_can_reestablish_canaanite_city_trigger = { CITY = jip_city_limassol }
 			}
 			current_description = canaanite_city_nicosia_desc
 			localization = canaanite_city_nicosia_desc
@@ -246,27 +221,27 @@ reestablish_canaanite_city_decision = {
 	effect = {
 		if = {
 			limit = { scope:acre = yes }
-			reestablish_canaanite_city_effect = { COUNTY = c_acre BARONY = b_tyre }
+			reestablish_canaanite_city_effect = { CITY = jip_city_tyre }
 		}
 		if = {
 			limit = { scope:beirut = yes }
-			reestablish_canaanite_city_effect = { COUNTY = c_beirut BARONY = b_saida }
+			reestablish_canaanite_city_effect = { CITY = jip_city_sidon }
 		}
 		if = {
 			limit = { scope:tripoli = yes }
-			reestablish_canaanite_city_effect = { COUNTY = c_tripoli BARONY = b_syrtripolis }
+			reestablish_canaanite_city_effect = { CITY = jip_city_tripoli }
 		}
 		if = {
 			limit = { scope:antiocheia = yes }
-			reestablish_canaanite_city_effect = { COUNTY = c_antiocheia BARONY = b_latakia }
+			reestablish_canaanite_city_effect = { CITY = jip_city_latakia }
 		}
 		if = {
 			limit = { scope:famagusta = yes }
-			reestablish_canaanite_city_effect = { COUNTY = c_famagusta BARONY = b_cerynia }
+			reestablish_canaanite_city_effect = { CITY = jip_city_kyrenia }
 		}
 		if = {
 			limit = { scope:nicosia = yes }
-			reestablish_canaanite_city_effect = { COUNTY = c_nicosia BARONY = b_limisol }
+			reestablish_canaanite_city_effect = { CITY = jip_city_limassol }
 		}
 	}
 

@@ -1,15 +1,33 @@
-﻿jip_region_israel = {
+﻿# The mod's regions. Decisions name regions, not titles, wherever a place is meant, so a map mod's compatch replaces
+# this file (and the landed titles) rather than the decisions. Duchy and kingdom lists follow a map's own de jure land;
+# county lists and the cities' provinces may need the compatch's versions. A region nested in another must not share
+# provinces with its siblings: the parent then counts them twice
+
+# Israel within Canaan: Palestine, the Jordan and the Negev (Kerak, Moab, is Edom's)
+jip_region_israel = {
+	duchies = {
+		d_palestine d_urdunn
+	}
 	counties = {
-		c_acre c_tiberias c_irbid c_jaffa c_ghazza c_jerusalem c_negev
+		c_negev
 	}
 }
 
+# The Land of Israel of Restore Israel and Form Hebrew Culture: Palestine, the Jordan and Oultrejourdain
+jip_region_land_of_israel = {
+	duchies = {
+		d_palestine d_urdunn d_oultrejourdain
+	}
+}
+
+# The Phoenician coast: the Phoenicia decisions, and the land the kingdom takes
 jip_region_phoenicia = {
 	counties = {
 		c_beirut c_tripoli c_baalbek c_antiocheia
 	}
 }
 
+# Edom: the Edomite decisions, and the land the kingdom takes
 jip_region_edom = {
 	counties = {
 		c_balqa c_maab c_jilat c_al_aqabah c_tabuk c_maan c_tayma c_sirhan c_kerak
@@ -38,5 +56,78 @@ jip_fertile_crescent = {
 	}
 	counties = {
 		c_balqa c_maab c_jilat c_al_aqabah c_tabuk c_maan c_tayma c_sirhan
+	}
+}
+
+# The Sawad, the farmland of Iraq: Copy the Nabataean Agriculture
+jip_region_sawad = {
+	kingdoms = {
+		k_mesopotamia
+	}
+}
+
+### The empires' claims: a kingdom whose de jure capital lies in the region joins the empire
+
+# Canaan: the kingdoms its founder holds. Israel's, Phoenicia's and Edom's capitals (Jerusalem, Beirut, Kerak) lie in
+# these two, so jip_region_canaan isn't added (it would list their provinces twice)
+jip_region_canaan_claims = {
+	kingdoms = {
+		k_syria k_jerusalem
+	}
+}
+
+# Canaan: the islands, if its founder also completely controls them
+jip_region_canaan_isles = {
+	kingdoms = {
+		k_cyprus
+	}
+}
+
+# Beth Nahrain (beyond the Jazira and Mesopotamia, which it needs): the kingdoms its founder holds and completely controls
+jip_region_beth_nahrain_claims = {
+	kingdoms = {
+		k_syria k_jerusalem
+	}
+}
+
+# Aram Rabba (beyond Syria, which it takes by name): the kingdoms its founder completely controls, Zenobia's
+# conquests among them. Not Syria itself, which would be taken twice; Phoenicia's coast brings in the kingdoms carved
+# from it
+jip_region_aram_claims = {
+	regions = {
+		jip_region_phoenicia
+	}
+	kingdoms = {
+		k_jazira k_jerusalem k_arabia k_egypt
+	}
+}
+
+### Cities: one province each, the city's barony. Script finds the county that holds it, whatever the map's counties
+
+# The Canaanite cities a ruler may make a trade republic (Reestablish Canaanite City)
+jip_city_tyre = { provinces = { 5921 } }		# b_tyre
+jip_city_sidon = { provinces = { 5920 } }		# b_saida
+jip_city_tripoli = { provinces = { 5918 } }		# b_syrtripolis
+jip_city_latakia = { provinces = { 5912 } }		# b_latakia
+jip_city_kyrenia = { provinces = { 5679 } }		# b_cerynia
+jip_city_limassol = { provinces = { 756 } }		# b_limisol
+
+# The cities of the gods of Aram (Restore the Gods of Aram, Aram Rabba)
+jip_city_damascus = { provinces = { 5924 } }	# b_damascus
+jip_city_palmyra = { provinces = { 5948 } }		# b_tadmur
+jip_city_manbij = { provinces = { 5908 } }		# b_manbij
+
+# The cities of the old gods (the Sabian story's Act V)
+jip_city_harran = { provinces = { 4870 } }		# b_harran, the Temple of Sin
+jip_city_arbela = { provinces = { 4777 } }		# b_irbil, the Temple of Ishtar
+jip_city_nineveh = { provinces = { 4811 } }		# b_ninawa
+jip_city_ashur = { provinces = { 4836 } }		# b_ain_al-qayyara, the Temple of Ashur
+jip_city_hatra = { provinces = { 4837 } }		# b_al-hadr, the Temple of Shamash
+jip_city_babylon = { provinces = { 4826 } }		# b_al-hila, the Esagila
+
+# The cult cities whose counties the story may claim
+jip_sabian_cult_cities = {
+	regions = {
+		jip_city_harran jip_city_arbela jip_city_nineveh jip_city_ashur jip_city_hatra jip_city_babylon
 	}
 }

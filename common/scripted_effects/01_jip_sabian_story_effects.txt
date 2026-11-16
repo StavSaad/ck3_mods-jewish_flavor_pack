@@ -489,23 +489,23 @@ jip_sabian_story_new_year_kept_effect = {
 jip_sabian_claim_cult_city_effect = {
 	if = {
 		limit = { scope:jip_claim_harran ?= yes }
-		title:c_harran = { save_scope_as = jip_cult_city }
+		random_county_in_region = { region = jip_city_harran save_scope_as = jip_cult_city }
 	}
 	else_if = {
-		limit = { scope:jip_claim_mosul ?= yes }
-		title:c_mosul = { save_scope_as = jip_cult_city }
+		limit = { scope:jip_claim_mosul ?= yes }	# Ashur's county
+		random_county_in_region = { region = jip_city_ashur save_scope_as = jip_cult_city }
 	}
 	else_if = {
 		limit = { scope:jip_claim_nineveh ?= yes }
-		title:c_ninive = { save_scope_as = jip_cult_city }
+		random_county_in_region = { region = jip_city_nineveh save_scope_as = jip_cult_city }
 	}
 	else_if = {
 		limit = { scope:jip_claim_arbela ?= yes }
-		title:c_irbil = { save_scope_as = jip_cult_city }
+		random_county_in_region = { region = jip_city_arbela save_scope_as = jip_cult_city }
 	}
 	else_if = {
 		limit = { scope:jip_claim_babylon ?= yes }
-		title:c_kufa = { save_scope_as = jip_cult_city }
+		random_county_in_region = { region = jip_city_babylon save_scope_as = jip_cult_city }
 	}
 	if = {
 		limit = { exists = scope:jip_cult_city }
@@ -581,31 +581,31 @@ jip_sabian_bring_god_home_effect = {
 	if = {
 		limit = { scope:jip_sought_god = flag:sin }
 		jip_sabian_create_god_statue_effect = { GOD = sin }
-		title:c_harran = { save_scope_as = jip_statue_county }
+		random_county_in_region = { region = jip_city_harran save_scope_as = jip_statue_county }
 		holy_site:harran = { save_scope_as = jip_statue_site }
 	}
 	else_if = {
 		limit = { scope:jip_sought_god = flag:ishtar }
 		jip_sabian_create_god_statue_effect = { GOD = ishtar }
-		title:c_irbil = { save_scope_as = jip_statue_county }
+		random_county_in_region = { region = jip_city_arbela save_scope_as = jip_statue_county }
 		holy_site:arbela = { save_scope_as = jip_statue_site }
 	}
 	else_if = {
 		limit = { scope:jip_sought_god = flag:ashur }
 		jip_sabian_create_god_statue_effect = { GOD = ashur }
-		title:c_mosul = { save_scope_as = jip_statue_county }
+		random_county_in_region = { region = jip_city_ashur save_scope_as = jip_statue_county }
 		holy_site:ashur = { save_scope_as = jip_statue_site }
 	}
 	else_if = {
 		limit = { scope:jip_sought_god = flag:shamash }
 		jip_sabian_create_god_statue_effect = { GOD = shamash }
-		title:c_mosul = { save_scope_as = jip_statue_county }
+		random_county_in_region = { region = jip_city_hatra save_scope_as = jip_statue_county }
 		holy_site:ashur = { save_scope_as = jip_statue_site }
 	}
 	else_if = {
 		limit = { scope:jip_sought_god = flag:marduk }
 		jip_sabian_create_god_statue_effect = { GOD = marduk }
-		title:c_kufa = { save_scope_as = jip_statue_county }
+		random_county_in_region = { region = jip_city_babylon save_scope_as = jip_statue_county }
 		holy_site:babylon = { save_scope_as = jip_statue_site }
 	}
 	scope:jip_statue_county = {
@@ -618,6 +618,7 @@ jip_sabian_bring_god_home_effect = {
 	}
 	if = {
 		limit = {
+			exists = scope:jip_statue # Not made yet while the tooltip is built
 			scope:jip_statue_site = { holy_site_artifact_count < 3 } # A holy site has three relic slots
 			can_enshrine_holy_site_artifact = {
 				holy_site = scope:jip_statue_site

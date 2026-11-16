@@ -1,0 +1,110 @@
+﻿# Places by region (map_data/geographical_regions/jip_geographical_regions.txt), so a map mod's compatch changes the
+# regions, not the script
+
+# Title scope: its de jure capital county lies in $REGION$
+jip_title_capital_in_region_trigger = {
+	title_capital_county ?= {
+		title_province = { geographical_region = $REGION$ }
+	}
+}
+
+# Title scope (a duchy): it joins a kingdom formed from $REGION$ (jip_kingdom_takes_region_effect) because its de jure
+# capital lies in the region
+jip_duchy_joins_region_by_capital_trigger = {
+	jip_title_capital_in_region_trigger = { REGION = $REGION$ }
+}
+
+# Title scope (a duchy): it joins a kingdom formed from $REGION$ because all its de jure counties lie in the region
+jip_duchy_joins_region_by_whole_trigger = {
+	NOT = {
+		any_de_jure_county = {
+			NOT = { title_province = { geographical_region = $REGION$ } }
+		}
+	}
+}
+
+# Title scope (a county): the city $CITY$ (a one-province region, jip_city_<name>) lies in it
+jip_county_has_city_trigger = {
+	any_county_province = { geographical_region = $CITY$ }
+}
+
+# Character scope: holds a duchy whose de jure capital lies in $REGION$
+jip_holds_duchy_in_region_trigger = {
+	any_held_title = {
+		tier = tier_duchy
+		jip_title_capital_in_region_trigger = { REGION = $REGION$ }
+	}
+}
+
+# Character scope: their primary title is a duchy whose de jure capital lies in $REGION$
+jip_primary_duchy_in_region_trigger = {
+	primary_title = {
+		tier = tier_duchy
+		jip_title_capital_in_region_trigger = { REGION = $REGION$ }
+	}
+}
+
+# Character scope: holds a kingdom whose de jure capital lies in $REGION$
+jip_holds_kingdom_in_region_trigger = {
+	any_held_title = {
+		tier = tier_kingdom
+		jip_title_capital_in_region_trigger = { REGION = $REGION$ }
+	}
+}
+
+# Character scope: holds the county of the city $CITY$
+jip_holds_city_county_trigger = {
+	any_held_title = {
+		tier = tier_county
+		jip_county_has_city_trigger = { CITY = $CITY$ }
+	}
+}
+
+# Character scope: the county of the city $CITY$ is theirs or a vassal's (anyone below them holds it)
+jip_city_county_in_realm_trigger = {
+	save_temporary_scope_as = jip_region_ruler
+	any_county_in_region = {
+		region = $CITY$
+		holder ?= { target_is_same_character_or_above = scope:jip_region_ruler }
+	}
+}
+
+# Character scope: completely controls the county of the city $CITY$
+jip_completely_controls_city_county_trigger = {
+	save_temporary_scope_as = jip_region_ruler
+	any_county_in_region = {
+		region = $CITY$
+		save_temporary_scope_as = jip_region_county
+		scope:jip_region_ruler = { completely_controls = scope:jip_region_county }
+	}
+}
+
+# Character scope: their capital county holds the city $CITY$
+jip_capital_is_city_trigger = {
+	capital_county ?= { jip_county_has_city_trigger = { CITY = $CITY$ } }
+}
+
+# Character scope (Reestablish Canaanite City): they hold the county of the city $CITY$, completely control it, and it
+# isn't their capital
+jip_can_reestablish_canaanite_city_trigger = {
+	custom_tooltip = {
+		text = jip_canaanite_city_county_tt
+		any_held_title = {
+			tier = tier_county
+			jip_county_has_city_trigger = { CITY = $CITY$ }
+			holder = { completely_controls = prev }
+			NOT = { this = prev.capital_county }
+		}
+	}
+}
+
+# Character scope (Reestablish Canaanite City): the city $CITY$, in a county they hold, is a city holding
+jip_canaanite_city_is_city_holding_trigger = {
+	any_held_title = {
+		tier = tier_county
+		any_county_province = {
+			geographical_region = $CITY$
+			has_holding_type = city_holding
+		}
+	}
+}

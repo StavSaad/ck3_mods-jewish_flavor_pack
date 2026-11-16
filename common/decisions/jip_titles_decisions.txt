@@ -191,8 +191,10 @@ create_k_phoenicia_decision = {
 			culture = { has_cultural_pillar = heritage_syriac }
 		}
 		OR = {
-			has_title = title:d_lebanon
-			has_title = title:d_antioch
+			custom_tooltip = {
+				text = jip_holds_duchy_in_phoenicia_tt
+				jip_holds_duchy_in_region_trigger = { REGION = jip_region_phoenicia }
+			}
 			custom_tooltip = { # The region trigger has no third-person text
 				text = jip_capital_in_phoenicia_tt
 				capital_province = { geographical_region = jip_region_phoenicia }
@@ -214,8 +216,10 @@ create_k_phoenicia_decision = {
 			culture = { has_cultural_pillar = heritage_phoenician }
 		}
 		OR = {
-			has_primary_title = title:d_lebanon
-			has_primary_title = title:d_antioch
+			custom_tooltip = {
+				text = jip_primary_duchy_in_phoenicia_tt
+				jip_primary_duchy_in_region_trigger = { REGION = jip_region_phoenicia }
+			}
 			custom_tooltip = { # The region trigger has no third-person text
 				text = jip_capital_in_phoenicia_tt
 				capital_province = { geographical_region = jip_region_phoenicia }
@@ -278,10 +282,13 @@ create_k_edom_decision = {
 			culture = { has_cultural_pillar = heritage_syriac }
 		}
 		OR = {
-			has_title = title:d_amman
-			has_title = title:d_shammar
-			capital_province = {
-				geographical_region = jip_region_edom
+			custom_tooltip = {
+				text = jip_holds_duchy_in_edom_tt
+				jip_holds_duchy_in_region_trigger = { REGION = jip_region_edom }
+			}
+			custom_tooltip = { # The region trigger has no third-person text
+				text = jip_capital_in_edom_tt
+				capital_province = { geographical_region = jip_region_edom }
 			}
 		}
 		NOT = {
@@ -301,10 +308,13 @@ create_k_edom_decision = {
 			
 		}
 		OR = {
-			has_primary_title = title:d_amman
-			has_primary_title = title:d_shammar
-			capital_province = {
-				geographical_region = jip_region_edom
+			custom_tooltip = {
+				text = jip_primary_duchy_in_edom_tt
+				jip_primary_duchy_in_region_trigger = { REGION = jip_region_edom }
+			}
+			custom_tooltip = { # The region trigger has no third-person text
+				text = jip_capital_in_edom_tt
+				capital_province = { geographical_region = jip_region_edom }
 			}
 		}
 		completely_controls_region = jip_region_edom
@@ -362,12 +372,9 @@ create_e_canaan_decision = {
 			culture = { has_cultural_pillar = heritage_egyptian }
 			culture = { has_cultural_pillar = heritage_syriac }
 		}
-		OR = {
-			has_title = title:k_israel
-			has_title = title:k_syria
-			has_title = title:k_jerusalem
-			has_title = title:k_phoenicia
-			has_title = title:k_edom
+		custom_tooltip = {
+			text = jip_holds_kingdom_of_canaan_tt
+			jip_holds_kingdom_in_region_trigger = { REGION = jip_region_canaan_claims }
 		}
 		highest_held_title_tier = tier_kingdom
 		NOT = {
@@ -568,7 +575,10 @@ create_e_aram_decision = {
 		culture = culture:syriac
 		OR = {
 			has_title = title:k_syria
-			has_title = title:c_palmyra
+			custom_tooltip = {
+				text = jip_holds_palmyra_tt
+				jip_holds_city_county_trigger = { CITY = jip_city_palmyra }
+			}
 		}
 		NOT = {
 			is_target_in_global_variable_list = {
@@ -583,7 +593,10 @@ create_e_aram_decision = {
 		is_independent_ruler = yes
 		culture = culture:syriac
 		highest_held_title_tier >= tier_kingdom
-		has_title = title:c_palmyra
+		custom_tooltip = {
+			text = jip_holds_palmyra_tt
+			jip_holds_city_county_trigger = { CITY = jip_city_palmyra }
+		}
 		has_title = title:k_syria
 		completely_controls = title:k_syria
 	}

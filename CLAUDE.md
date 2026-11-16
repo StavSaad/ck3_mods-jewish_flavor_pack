@@ -187,6 +187,8 @@ Unlocked when the dynasty dynast carries the `davidic_line` trait (or has alread
 
 ## Major Decisions
 
+Decisions name regions, not titles, wherever they mean a place (`map_data/geographical_regions/jip_geographical_regions.txt`, so a map mod's compatch overrides that file and the landed titles, not the decisions): areas as duchy, kingdom or county regions (`jip_region_*`; Phoenicia and Edom take their land through `jip_kingdom_takes_region_effect`, Canaan, Beth Nahrain and Aram Rabba kingdoms whose de jure capital lies in `jip_region_*_claims` through `jip_empire_takes_*_kingdoms_effect`, `01_jip_decisions_effects.txt`), cities as one-province regions (`jip_city_<name>`, the city's barony; its county found with `*_county_in_region`, triggers in `common/scripted_triggers/jip_region_triggers.txt`). Titles that exist on any map stay by name (kingdoms like `k_syria`, Jerusalem, Harran). A region nested in another must not share provinces with its siblings
+
 ### Culture Decisions
 - **Form Hebrew Culture** — Requires Israelite heritage, Jewish faith, control of Palestine/Transjordan, Jerusalem of same faith
 - **Form Edomite Culture** — Requires Israelite/Phoenician heritage, capital in Edom region

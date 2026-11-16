@@ -457,9 +457,9 @@ jip_sabian_unveil_the_mysteries_decision = {
 	}
 }
 
-# The Sabian story, Act V (Reclaim the Land): a pressed claim on one of the old cult cities (Harran, Mosul, Nineveh,
-# Arbela, Babylon in Kufa), chosen from a list, that lies outside the realm and isn't of the old faith; vanilla's
-# claim war takes it
+# The Sabian story, Act V (Reclaim the Land): a pressed claim on the county of one of the old cult cities (Harran,
+# Ashur, Nineveh, Arbela, Babylon; jip_city_<name> regions), chosen from a list, that lies outside the realm and isn't
+# of the old faith; vanilla's claim war takes it
 jip_sabian_claim_cult_city_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
@@ -484,7 +484,7 @@ jip_sabian_claim_cult_city_decision = {
 			is_valid = {
 				custom_tooltip = {
 					text = jip_sabian_cult_city_claimable_tt
-					title:c_harran = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
+					jip_sabian_cult_city_can_be_claimed_trigger = { CITY = jip_city_harran }
 				}
 			}
 			ai_chance = { value = 100 }
@@ -497,7 +497,7 @@ jip_sabian_claim_cult_city_decision = {
 			is_valid = {
 				custom_tooltip = {
 					text = jip_sabian_cult_city_claimable_tt
-					title:c_mosul = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
+					jip_sabian_cult_city_can_be_claimed_trigger = { CITY = jip_city_ashur }
 				}
 			}
 			ai_chance = { value = 100 }
@@ -510,7 +510,7 @@ jip_sabian_claim_cult_city_decision = {
 			is_valid = {
 				custom_tooltip = {
 					text = jip_sabian_cult_city_claimable_tt
-					title:c_ninive = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
+					jip_sabian_cult_city_can_be_claimed_trigger = { CITY = jip_city_nineveh }
 				}
 			}
 			ai_chance = { value = 100 }
@@ -523,7 +523,7 @@ jip_sabian_claim_cult_city_decision = {
 			is_valid = {
 				custom_tooltip = {
 					text = jip_sabian_cult_city_claimable_tt
-					title:c_irbil = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
+					jip_sabian_cult_city_can_be_claimed_trigger = { CITY = jip_city_arbela }
 				}
 			}
 			ai_chance = { value = 100 }
@@ -536,7 +536,7 @@ jip_sabian_claim_cult_city_decision = {
 			is_valid = {
 				custom_tooltip = {
 					text = jip_sabian_cult_city_claimable_tt
-					title:c_kufa = { jip_sabian_cult_city_to_claim_trigger = { OWNER = root } }
+					jip_sabian_cult_city_can_be_claimed_trigger = { CITY = jip_city_babylon }
 				}
 			}
 			ai_chance = { value = 100 }
@@ -606,7 +606,7 @@ jip_sabian_bring_the_gods_home_decision = {
 			is_valid = {
 				custom_tooltip = {
 					text = jip_sabian_god_can_be_sought_tt
-					jip_sabian_god_statue_can_be_sought_trigger = { GOD = sin BUILDING = jip_temple_of_sin_01 BARONY = b_harran }
+					jip_sabian_god_statue_can_be_sought_trigger = { GOD = sin BUILDING = jip_temple_of_sin_01 CITY = jip_city_harran }
 				}
 			}
 			ai_chance = { value = 100 }
@@ -619,7 +619,7 @@ jip_sabian_bring_the_gods_home_decision = {
 			is_valid = {
 				custom_tooltip = {
 					text = jip_sabian_god_can_be_sought_tt
-					jip_sabian_god_statue_can_be_sought_trigger = { GOD = ishtar BUILDING = jip_temple_of_ishtar_01 BARONY = b_irbil }
+					jip_sabian_god_statue_can_be_sought_trigger = { GOD = ishtar BUILDING = jip_temple_of_ishtar_01 CITY = jip_city_arbela }
 				}
 			}
 			ai_chance = { value = 100 }
@@ -632,7 +632,7 @@ jip_sabian_bring_the_gods_home_decision = {
 			is_valid = {
 				custom_tooltip = {
 					text = jip_sabian_god_can_be_sought_tt
-					jip_sabian_god_statue_can_be_sought_trigger = { GOD = ashur BUILDING = jip_temple_of_ashur_01 BARONY = b_ain_al-qayyara }
+					jip_sabian_god_statue_can_be_sought_trigger = { GOD = ashur BUILDING = jip_temple_of_ashur_01 CITY = jip_city_ashur }
 				}
 			}
 			ai_chance = { value = 100 }
@@ -645,7 +645,7 @@ jip_sabian_bring_the_gods_home_decision = {
 			is_valid = {
 				custom_tooltip = {
 					text = jip_sabian_god_can_be_sought_tt
-					jip_sabian_god_statue_can_be_sought_trigger = { GOD = shamash BUILDING = jip_temple_of_shamash_01 BARONY = b_al-hadr }
+					jip_sabian_god_statue_can_be_sought_trigger = { GOD = shamash BUILDING = jip_temple_of_shamash_01 CITY = jip_city_hatra }
 				}
 			}
 			ai_chance = { value = 100 }
@@ -658,7 +658,7 @@ jip_sabian_bring_the_gods_home_decision = {
 			is_valid = {
 				custom_tooltip = {
 					text = jip_sabian_god_can_be_sought_tt
-					jip_sabian_god_statue_can_be_sought_trigger = { GOD = marduk BUILDING = jip_temple_of_marduk_01 BARONY = b_al-hila }
+					jip_sabian_god_statue_can_be_sought_trigger = { GOD = marduk BUILDING = jip_temple_of_marduk_01 CITY = jip_city_babylon }
 				}
 			}
 			ai_chance = { value = 100 }

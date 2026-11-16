@@ -72,11 +72,7 @@ form_hebrew_decision_effects = {
 		limit = {
 			tier = tier_county
 			culture = { has_cultural_pillar = heritage_israelite }
-			OR = {
-				de_jure_liege = title:d_palestine
-				de_jure_liege = title:d_urdunn
-				de_jure_liege = title:d_oultrejourdain
-			}
+			title_province = { geographical_region = jip_region_land_of_israel }
 		}
 		custom = hebrew_convert_israelite_counties
 		set_county_culture = culture:hebrew
@@ -85,11 +81,7 @@ form_hebrew_decision_effects = {
 		limit = {
 			tier = tier_county
 			NOT = { culture = { has_cultural_pillar = heritage_israelite } }
-			OR = {
-				de_jure_liege = title:d_palestine
-				de_jure_liege = title:d_urdunn
-				de_jure_liege = title:d_oultrejourdain
-			}
+			title_province = { geographical_region = jip_region_land_of_israel }
 		}
 		custom = hebrew_convert_non_israelite_counties
 		random = {
@@ -218,33 +210,9 @@ create_canaan_decision_effect = {
 		save_scope_as = title_change
 		add_claim_on_loss = no
 	}
-	if = {
-		limit = { has_title = title:k_jerusalem }
-		title:k_jerusalem = { set_de_jure_liege_title = title:e_canaan }
-	}
-	if = {
-		limit = { has_title = title:k_israel }
-		title:k_israel = { set_de_jure_liege_title = title:e_canaan }
-	}
-	if = {
-		limit = { has_title = title:k_edom }
-		title:k_edom = { set_de_jure_liege_title = title:e_canaan }
-	}
-	if = {
-		limit = { has_title = title:k_phoenicia }
-		title:k_phoenicia = { set_de_jure_liege_title = title:e_canaan }
-	}
-	if = {
-		limit = { has_title = title:k_syria }
-		title:k_syria = { set_de_jure_liege_title = title:e_canaan }
-	}
-	if = {
-		limit = { 
-			has_title = title:k_cyprus
-			completely_controls = title:k_cyprus
-		}
-		title:k_cyprus = { set_de_jure_liege_title = title:e_canaan }
-	}
+	# The kingdoms of Canaan it holds (Jerusalem, Israel, Edom, Phoenicia, Syria), and Cyprus if it also controls it
+	jip_empire_takes_held_kingdoms_effect = { EMPIRE = e_canaan REGION = jip_region_canaan_claims }
+	jip_empire_takes_held_controlled_kingdoms_effect = { EMPIRE = e_canaan REGION = jip_region_canaan_isles }
 	title:e_canaan = {
 		change_title_holder = {
 			holder = root
@@ -321,15 +289,7 @@ create_phoenicia_decision_effect = {
 		save_scope_as = title_change
 		add_claim_on_loss = no
 	}
-	title:d_lebanon = {
-		set_de_jure_liege_title = title:k_phoenicia
-	}
-	title:d_antioch = {
-		set_de_jure_liege_title = title:k_phoenicia
-	}
-	title:c_baalbek = {
-		set_de_jure_liege_title = title:d_lebanon
-	}
+	jip_kingdom_takes_region_effect = { KINGDOM = k_phoenicia REGION = jip_region_phoenicia HOME = d_lebanon DUCHIES = capital }
 	title:k_phoenicia = {
 		change_title_holder = {
 			holder = root
@@ -348,21 +308,7 @@ create_edom_decision_effect = {
 		save_scope_as = title_change
 		add_claim_on_loss = no
 	}
-	title:d_amman = {
-		set_de_jure_liege_title = title:k_edom
-	}
-	title:c_sirhan = {
-		set_de_jure_liege_title = title:d_amman
-	}
-	title:c_kerak = {
-		set_de_jure_liege_title = title:d_amman
-	}
-	title:c_negev = {
-		set_de_jure_liege_title = title:d_palestine
-	}
-	title:d_shammar = {
-		set_de_jure_liege_title = title:k_edom
-	}
+	jip_kingdom_takes_region_effect = { KINGDOM = k_edom REGION = jip_region_edom HOME = d_amman DUCHIES = whole }
 	title:k_edom = {
 		change_title_holder = {
 			holder = root
@@ -375,9 +321,9 @@ create_edom_decision_effect = {
 	}
 }
 
-# Aram Rabba (create_e_aram_decision): Syria, and the kingdoms around it that exist and that the founder
-# completely controls: the Jazira, Jerusalem, Israel and Phoenicia, and Zenobia's conquests, Arabia and Egypt. It seizes
-# them from any other empire, the mod's included
+# Aram Rabba (create_e_aram_decision): Syria, and the kingdoms around it (jip_region_aram_claims) that the founder
+# completely controls: the Jazira, Jerusalem, Israel, Edom, Phoenicia, and Zenobia's conquests, Arabia and Egypt. It
+# seizes them from any other empire, the mod's included
 create_aram_decision_effect = {
 	create_title_and_vassal_change = {
 		type = created
@@ -385,12 +331,7 @@ create_aram_decision_effect = {
 		add_claim_on_loss = no
 	}
 	title:k_syria = { set_de_jure_liege_title = title:e_aram }
-	jip_aram_take_kingdom_effect = { KINGDOM = k_jazira }
-	jip_aram_take_kingdom_effect = { KINGDOM = k_jerusalem }
-	jip_aram_take_kingdom_effect = { KINGDOM = k_israel }
-	jip_aram_take_kingdom_effect = { KINGDOM = k_phoenicia }
-	jip_aram_take_kingdom_effect = { KINGDOM = k_arabia }
-	jip_aram_take_kingdom_effect = { KINGDOM = k_egypt }
+	jip_empire_takes_controlled_kingdoms_effect = { EMPIRE = e_aram REGION = jip_region_aram_claims }
 	title:e_aram = {
 		change_title_holder = {
 			holder = root
@@ -404,15 +345,77 @@ create_aram_decision_effect = {
 	give_nickname = nick_restorer_of_the_east
 }
 
-# Character scope (the founder of Aram Rabba): $KINGDOM$ becomes a de jure kingdom of Aram Rabba if it exists and
-# the founder completely controls it, whatever empire it belonged to
-jip_aram_take_kingdom_effect = {
-	if = {
+### Land by region (jip_geographical_regions.txt): a map mod's compatch changes the regions, not these
+
+# Character scope (the founder of the kingdom $KINGDOM$): the land of $REGION$ joins it. A duchy joins whole by the
+# rule $DUCHIES$: capital (its de jure capital lies in the region; Phoenicia, so Antioch comes with Alexandretta) or
+# whole (all its de jure counties lie in the region; Edom, so the Negev stays with Oultrejourdain). The region's other
+# counties join the duchy $HOME$ (one that joins)
+jip_kingdom_takes_region_effect = {
+	every_county_in_region = {
+		region = $REGION$
 		limit = {
-			title:$KINGDOM$ = { is_title_created = yes }
-			completely_controls = title:$KINGDOM$
+			duchy ?= {
+				title_capital_county ?= prev
+				jip_duchy_joins_region_by_$DUCHIES$_trigger = { REGION = $REGION$ }
+			}
 		}
-		title:$KINGDOM$ = { set_de_jure_liege_title = title:e_aram }
+		duchy = { set_de_jure_liege_title = title:$KINGDOM$ }
+	}
+	every_county_in_region = {
+		region = $REGION$
+		limit = {
+			NOT = { de_jure_liege ?= title:$HOME$ }
+			NOT = {
+				duchy ?= { jip_duchy_joins_region_by_$DUCHIES$_trigger = { REGION = $REGION$ } }
+			}
+		}
+		set_de_jure_liege_title = title:$HOME$
+	}
+}
+
+# Character scope (the founder of the empire $EMPIRE$): every kingdom they hold whose de jure capital lies in $REGION$
+# becomes its de jure kingdom, whatever empire it belonged to
+jip_empire_takes_held_kingdoms_effect = {
+	every_held_title = {
+		limit = {
+			tier = tier_kingdom
+			jip_title_capital_in_region_trigger = { REGION = $REGION$ }
+		}
+		set_de_jure_liege_title = title:$EMPIRE$
+	}
+}
+
+# Character scope (the founder of the empire $EMPIRE$): as above, for the kingdoms they also completely control
+jip_empire_takes_held_controlled_kingdoms_effect = {
+	save_scope_as = jip_empire_founder
+	every_held_title = {
+		limit = {
+			tier = tier_kingdom
+			jip_title_capital_in_region_trigger = { REGION = $REGION$ }
+			save_temporary_scope_as = jip_empire_kingdom
+			scope:jip_empire_founder = { completely_controls = scope:jip_empire_kingdom }
+		}
+		set_de_jure_liege_title = title:$EMPIRE$
+	}
+}
+
+# Character scope (the founder of the empire $EMPIRE$): every kingdom that exists, that they completely control and
+# whose de jure capital lies in $REGION$ becomes its de jure kingdom, whoever holds it. Found through its capital
+# county, which lies in the founder's realm
+jip_empire_takes_controlled_kingdoms_effect = {
+	save_scope_as = jip_empire_founder
+	every_sub_realm_county = {
+		limit = {
+			kingdom ?= {
+				title_capital_county ?= prev
+				is_title_created = yes
+				jip_title_capital_in_region_trigger = { REGION = $REGION$ }
+				save_temporary_scope_as = jip_empire_kingdom
+				scope:jip_empire_founder = { completely_controls = scope:jip_empire_kingdom }
+			}
+		}
+		kingdom = { set_de_jure_liege_title = title:$EMPIRE$ }
 	}
 }
 
@@ -446,10 +449,23 @@ create_fertile_crescent_decision_effect = {
 	}
 }
 
+# Character scope (the decision taker): the county they hold where the city $CITY$ lies (jip_city_<name>, a one-province
+# region) goes to a new republic, its city the county's capital
 reestablish_canaanite_city_effect = {
+	random_held_title = {
+		limit = {
+			tier = tier_county
+			jip_county_has_city_trigger = { CITY = $CITY$ }
+		}
+		save_scope_as = jip_canaanite_city_county
+		random_county_province = {
+			limit = { geographical_region = $CITY$ }
+			barony = { save_scope_as = jip_canaanite_city_barony }
+		}
+	}
 	custom_description = {
 		text = reestablish_canaanite_city_decision_effect
-		object = title:$BARONY$
+		object = scope:jip_canaanite_city_barony
 		create_character = {
 			random_traits = yes
 			culture = root.culture
@@ -463,7 +479,7 @@ reestablish_canaanite_city_effect = {
 			save_scope_as = change
 			add_claim_on_loss = no
 		}
-		title:$COUNTY$ = {
+		scope:jip_canaanite_city_county = {
 			change_title_holder = {
 				holder = scope:new_owner
 				change = scope:change
@@ -475,7 +491,7 @@ reestablish_canaanite_city_effect = {
 			change_government = republic_government
 		}
 	}
-	title:$BARONY$ = { set_capital_barony = yes }
+	scope:jip_canaanite_city_barony = { set_capital_barony = yes }
 }
 
 # Faiths that can't be converted to until an event restores them: their rites are convert = no until these run.
@@ -533,14 +549,13 @@ jip_restore_gods_of_aram_effect = {
 		set_county_faith = faith:aramean_pagan
 		set_county_rite = rite:$RITE$
 	}
-	title:c_palmyra = {
-		if = {
-			limit = {
-				holder ?= { target_is_same_character_or_above = root }
-			}
-			set_county_faith = faith:aramean_pagan
-			set_county_rite = rite:belism
+	every_county_in_region = {
+		region = jip_city_palmyra
+		limit = {
+			holder ?= { target_is_same_character_or_above = root }
 		}
+		set_county_faith = faith:aramean_pagan
+		set_county_rite = rite:belism
 	}
 	jip_unlock_aramean_conversion_effect = yes
 	add_piety = major_piety_gain

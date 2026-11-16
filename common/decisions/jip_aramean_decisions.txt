@@ -1,7 +1,8 @@
 ﻿# Arameanism (0.15 plan, section 14)
 
-# Restore the Gods of Aram: an independent ruler of Syriac heritage (Aramean, Assyrian, Nabati) who holds and controls Damascus, Palmyra and Manbij
-# (the county of Aleppo), the cities of the three great temples, turns back to Hadad (jip_restore_gods_of_aram_effect)
+# Restore the Gods of Aram: an independent ruler of Syriac heritage (Aramean, Assyrian, Nabati) who holds and controls the counties of
+# Damascus, Palmyra and Manbij (jip_city_<name> regions), the cities of the three great temples, turns back to Hadad
+# (jip_restore_gods_of_aram_effect)
 jip_restore_gods_of_aram_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
@@ -16,12 +17,10 @@ jip_restore_gods_of_aram_decision = {
 		culture = { has_cultural_pillar = heritage_syriac }
 		NOT = { faith = faith:aramean_pagan }
 		NOT = { has_character_flag = jip_restored_gods_of_aram }
-		any_held_title = {
-			OR = {
-				this = title:c_damascus
-				this = title:c_palmyra
-				this = title:c_aleppo
-			}
+		OR = {
+			jip_holds_city_county_trigger = { CITY = jip_city_damascus }
+			jip_holds_city_county_trigger = { CITY = jip_city_palmyra }
+			jip_holds_city_county_trigger = { CITY = jip_city_manbij }
 		}
 	}
 
@@ -30,13 +29,16 @@ jip_restore_gods_of_aram_decision = {
 		prestige_level >= 2
 		custom_tooltip = {
 			text = jip_restore_gods_of_aram_cities_tt
-			title:c_damascus.holder ?= { target_is_same_character_or_above = root }
-			title:c_palmyra.holder ?= { target_is_same_character_or_above = root }
-			title:c_aleppo.holder ?= { target_is_same_character_or_above = root }
+			jip_city_county_in_realm_trigger = { CITY = jip_city_damascus }
+			jip_city_county_in_realm_trigger = { CITY = jip_city_palmyra }
+			jip_city_county_in_realm_trigger = { CITY = jip_city_manbij }
 		}
-		completely_controls = title:c_damascus
-		completely_controls = title:c_palmyra
-		completely_controls = title:c_aleppo
+		custom_tooltip = {
+			text = jip_restore_gods_of_aram_control_tt
+			jip_completely_controls_city_county_trigger = { CITY = jip_city_damascus }
+			jip_completely_controls_city_county_trigger = { CITY = jip_city_palmyra }
+			jip_completely_controls_city_county_trigger = { CITY = jip_city_manbij }
+		}
 	}
 
 	is_valid_showing_failures_only = {
@@ -53,7 +55,7 @@ jip_restore_gods_of_aram_decision = {
 	effect = {
 		add_character_flag = jip_restored_gods_of_aram
 		if = {
-			limit = { capital_county = title:c_palmyra }
+			limit = { jip_capital_is_city_trigger = { CITY = jip_city_palmyra } }
 			jip_restore_gods_of_aram_effect = { RITE = belism }
 		}
 		else = {

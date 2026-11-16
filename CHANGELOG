@@ -198,3 +198,12 @@
 [] Taking a loan, tolls, physician, responsum or horoscope contract tells you what comes next
 [] Fixed old estate temples not turning into the family's own temple branch
 [] Saves from earlier versions are not compatible
+
+== Version 0.15.1 ==
+-- Compatibility --
+[] Decisions find their lands by region instead of by title, so map mods need only a regional patch: Restore Israel, Form Hebrew Culture, Phoenicia, Edom, Canaan, Beth Nahrain, Aram Rabba, Copy the Nabataean Agriculture, Restore the Gods of Aram, Reestablish a Phoenician Trade City, and the Sabian story's cult cities and statues
+[] The cities of those decisions are found by their own province, whatever county a map puts them in
+[] Edom takes the duchies that lie wholly in its lands and gathers its other counties into Amman, so the Negev now stays with Oultrejourdain; Phoenicia, as before, takes the duchies whose capital lies on its coast
+[] Canaan, Beth Nahrain and Aram Rabba take every kingdom whose capital lies in their lands, including kingdoms carved out of them: Aram Rabba may now take Edom and Upper Egypt, Beth Nahrain Israel and Phoenicia
+[] Fixed Tripoli showing as Tortosa in Reestablish a Phoenician Trade City
+[] Fixed an error log entry each time a god's statue was brought home in the Sabian story
