@@ -268,7 +268,6 @@ jip_contract_set_outcome_effect = {
 # $CONTRACT$ = the contract key without jip_contract_ (its jip_contract_<contract>_approach_effect), root = the family head
 jip_contract_finish_effect = {
 	jip_contract_$CONTRACT$_approach_effect = yes
-	jip_sabian_story_contract_effect = { CONTRACT = $CONTRACT$ }
 	if = {
 		limit = { jip_contract_outcome_is_trigger = { OUTCOME = critical } }
 		scope:task_contract = { complete_task_contract = success_critical }
@@ -486,6 +485,8 @@ jip_contract_physician_approach_effect = {
 			jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = disappointed_opinion OPINION = -20 }
 		}
 	}
+	# Standing for the Sabians of Baghdad (Act I)
+	jip_sabian_story_contract_effect = yes
 }
 
 jip_contract_translate_approach_effect = {
@@ -517,6 +518,8 @@ jip_contract_translate_approach_effect = {
 			add_prestige = minor_prestige_loss
 		}
 	}
+	# Standing for the Sabians of Baghdad (Act I)
+	jip_sabian_story_contract_effect = yes
 }
 
 jip_contract_responsum_approach_effect = {
@@ -684,5 +687,7 @@ jip_contract_horoscope_approach_effect = {
 			jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = disappointed_opinion OPINION = -20 }
 		}
 	}
+	# Standing for the Sabians of Baghdad (Act I)
+	jip_sabian_story_contract_effect = yes
 }
 

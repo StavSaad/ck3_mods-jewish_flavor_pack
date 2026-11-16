@@ -27,7 +27,14 @@ yearly_playable_pulse = {
 
 # Both war leaders with an astrologer have the campaign's stars read
 # scope:attacker, scope:defender, scope:war
+# Now and then the engine passes a casus belli that is already gone (a war over as soon as it began); vanilla's own
+# on_war_started logs the same error then. The trigger keeps such a war from going further.
 jip_astrologer_war_on_action = {
+	trigger = {
+		exists = scope:war
+		exists = scope:attacker
+		exists = scope:defender
+	}
 	effect = {
 		scope:attacker = {
 			if = {

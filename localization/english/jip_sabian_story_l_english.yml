@@ -235,6 +235,7 @@
  jip_sabian_bring_the_gods_home_decision_tooltip: "Search for the lost statue of a god whose temple stands in your [realm|E], of your choice"
  jip_sabian_bring_the_gods_home_decision_confirm: "Begin the search"
  jip_sabian_any_statue_can_be_sought_tt: "A temple of the old gods stands restored in your [realm|E], not occupied, and its god's statue is not yet home"
+ jip_sabian_statue_search_under_way_tt: "A search for a statue of the gods is not already under way"
  jip_sabian_bring_the_gods_home_effect_tt: "You search for the statue of the god you chose; in some months it is found or the trail goes cold. A god brought home is enshrined in its [holy_site|E] (Shamash of Hatra in Ashur's, which shares its county), or kept at your [court|E] if the site has no room, and the temple's [county|E] takes your [faith|E] and rejoices"
 
  jip_sabian_story.5010.t: "The Search for the Gods"

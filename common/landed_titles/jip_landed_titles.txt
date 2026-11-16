@@ -4893,21 +4893,6 @@ e_germany = {
 				add = @better_than_the_alternatives_score
 			}
 		}
-
-		d_west_franconia = {
-			color = { 170 170 170 }
-
-			capital = c_frankfurt
-
-			cultural_names = {
-				name_list_ashkenazi = cn_shum
-				name_list_sephardi = cn_shum
-				name_list_radhanite = cn_shum
-				name_list_hebrew = cn_shum
-				name_list_bavlim = cn_shum
-				name_list_kochinim = cn_shum
-			}
-		}
 	}
 }
 

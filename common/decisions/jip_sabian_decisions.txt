@@ -678,7 +678,10 @@ jip_sabian_bring_the_gods_home_decision = {
 			text = jip_sabian_any_statue_can_be_sought_tt
 			jip_sabian_any_statue_can_be_sought_trigger = yes
 		}
-		NOT = { has_variable = jip_seeking_god_statue }
+		custom_tooltip = {
+			text = jip_sabian_statue_search_under_way_tt
+			NOT = { has_variable = jip_seeking_god_statue }
+		}
 	}
 
 	is_valid_showing_failures_only = {

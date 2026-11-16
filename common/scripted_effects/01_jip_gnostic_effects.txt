@@ -67,7 +67,6 @@ jip_mandaean_copy_ginza_effect = {
 		decaying = yes
 		save_scope_as = jip_ginza
 	}
-	scope:jip_ginza = { set_variable = jip_ginza_rabba }
 	if = {
 		limit = { NOT = { scope:jip_ginza_copyist = root } }
 		scope:jip_ginza_copyist = {

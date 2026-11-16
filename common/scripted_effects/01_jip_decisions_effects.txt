@@ -97,11 +97,14 @@ form_hebrew_decision_effects = {
 	}
 
 	#fame
-	# This takes effect but scope doesn't work for the tooltip
-	scope:hebrew_former.dynasty = {
-		add_dynasty_prestige_level = 1	
-		add_dynasty_prestige = 250
-	}	
+	# Vanilla's add_dynasty_prestige_level has no past-tense tooltip, so both are shown as one line
+	custom_tooltip = {
+		text = form_hebrew_dynasty_renown_tt
+		scope:hebrew_former.dynasty = {
+			add_dynasty_prestige_level = 1
+			add_dynasty_prestige = 250
+		}
+	}
 }
 
 form_canaanite_decision_effects = {

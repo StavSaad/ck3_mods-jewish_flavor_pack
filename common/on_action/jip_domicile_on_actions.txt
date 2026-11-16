@@ -1,80 +1,80 @@
-﻿# on_domicile_moved fires on every province along the route, so the liege change
-# runs once on arrival instead, mirroring vanilla's domicile handling in on_travel_plan_complete.
+﻿# An estate never travels (vanilla's estate domicile type has no travel = yes), so a migrating AI family's head sets
+# out alone with the destination in var:jip_mishpacha_migrating_to (jip_mishpacha_ai_migration_effect), and the estate
+# is moved there when they arrive. A journey cut short leaves the family where it was.
+# root = the travelling character
 on_travel_plan_complete = {
 	on_actions = {
-		jewish_admin_migration_on_action
-		jip_mishpacha_contracts_estate_arrival_on_action
+		jip_familial_migration_arrival_on_action
 	}
 }
 
-# root = the travelling character
-# The estate is first set down where the family stopped, if the engine left it behind (jip_mishpacha_settle_estate_on_arrival_effect).
-jewish_admin_migration_on_action = {
+on_travel_plan_abort = {
+	on_actions = {
+		jip_familial_migration_abort_on_action
+	}
+}
+
+jip_familial_migration_arrival_on_action = {
 	trigger = {
-		has_government = familial_government
+		has_variable = jip_mishpacha_migrating_to
+		government_has_flag = government_is_familial
 		is_landed = no
-		current_travel_plan ?= { is_travel_with_domicile = yes }
 		exists = domicile
 	}
-
 	effect = {
 		jip_mishpacha_settle_estate_on_arrival_effect = yes
-		# Only switch when the estate actually lands in a different realm: the family leaves its old liege or
-		# suzerain and becomes the vassal, or under a duke or lesser ruler the tributary, of the new one
-		if = {
-			limit = {
-				domicile.domicile_location.county.holder.top_liege ?= {
-					this != root
-					NOT = { root.liege ?= this }
-					NOT = { root.suzerain ?= this }
-				}
-			}
-			jip_mishpacha_join_estate_realm_effect = yes
-		}
 	}
 }
 
-on_travel_plan_start = {
+jip_familial_migration_abort_on_action = {
+	trigger = {
+		has_variable = jip_mishpacha_migrating_to
+	}
+	effect = {
+		remove_variable = jip_mishpacha_migrating_to
+	}
+}
+
+# Every move of an estate, by the Move Estate button or by script, sets it down at once and fires on_domicile_moved
+# there. The family joins its new realm a day later, so a script that moves the estate and then sets the liege itself
+# (game start, expulsion refuge, conversion) goes first.
+# root = the domicile, scope:owner = its owner
+on_domicile_moved = {
 	on_actions = {
-		mishpacha_block_camp_travel_events_on_action
+		jip_familial_estate_moved_on_action
 	}
 }
 
-# root = the travelling character
-# The EP3 "Laamp Travel Danger Events" (pack animals, provisions, camp raids) are written for adventurer camps.
-# Each one is gated on a cooldown variable on the traveller's primary title, so setting those keeps them away
-# from a moving Mishpacha estate without overriding vanilla's travel danger on_action.
-mishpacha_block_camp_travel_events_on_action = {
+jip_familial_estate_moved_on_action = {
 	trigger = {
-		has_government = familial_government
-		current_travel_plan ?= { is_travel_with_domicile = yes }
-		exists = primary_title
+		exists = scope:owner
+		scope:owner = {
+			government_has_flag = government_is_familial
+			is_landed = no
+		}
 	}
-
 	effect = {
-		primary_title = {
-			set_variable = { name = had_ep3_laamp_flavour_ewan_4001 value = yes years = 3 } # Bandits!
-			set_variable = { name = had_ep3_laamp_flavour_ewan_4021 value = yes years = 3 } # Parched
-			set_variable = { name = had_ep3_laamp_flavour_ewan_4031 value = yes years = 3 } # Sickness in the Herd
-			set_variable = { name = had_ep3_laamp_flavour_ewan_4041 value = yes years = 3 } # Worn Down
-			set_variable = { name = had_ep3_laamp_flavour_ewan_4051 value = yes years = 3 } # Supplies Unaccounted For
-			set_variable = { name = had_ep3_laamp_flavour_ewan_4061 value = yes years = 3 } # Eyes in the Night
-			set_variable = { name = had_ep3_laamp_flavour_ewan_4071 value = yes years = 3 } # Slavers
-			set_variable = { name = had_ep3_laamp_flavour_ewan_4081 value = yes years = 3 } # Born of Desperation
-			set_variable = { name = had_ep3_laamp_flavour_ewan_4091 value = yes years = 3 } # Night Attack
+		scope:owner = {
+			trigger_event = {
+				on_action = jip_familial_estate_settled_on_action
+				days = 1
+			}
 		}
 	}
 }
 
-# The estate arrives somewhere new: offers from the new neighbourhood
-# root = the travelling character
-jip_mishpacha_contracts_estate_arrival_on_action = {
+# root = the family head, a day after the estate moved
+jip_familial_estate_settled_on_action = {
 	trigger = {
-		has_government = familial_government
-		current_travel_plan ?= { is_travel_with_domicile = yes }
+		government_has_flag = government_is_familial
+		is_landed = no
+		exists = domicile
 	}
 	effect = {
+		# Only switch when the estate lies in a different realm: the family leaves its old liege or suzerain and
+		# becomes the vassal, or under a duke or lesser ruler the tributary, of the new one
+		jip_mishpacha_join_estate_realm_if_new_effect = yes
+		# Offers from the new neighbourhood
 		trigger_event = { on_action = jip_mishpacha_contracts_new_area_on_action }
 	}
 }
-

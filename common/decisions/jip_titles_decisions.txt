@@ -48,8 +48,11 @@
 			AND = {
 				highest_held_title_tier = tier_empire
 				has_title = title:k_israel
-				primary_title = {
-					is_de_facto_liege_or_above_target = title:k_israel
+				custom_tooltip = {
+					text = expand_israel_empire_above_israel_tt
+					primary_title = {
+						is_de_facto_liege_or_above_target = title:k_israel
+					}
 				}
 			}
 		}
@@ -99,8 +102,11 @@
 			is_valid = {
 				OR = {
 					has_title = title:d_sinai
-					primary_title = {
-						is_de_facto_liege_or_above_target = title:d_sinai
+					custom_tooltip = {
+						text = expand_israel_above_sinai_tt
+						primary_title = {
+							is_de_facto_liege_or_above_target = title:d_sinai
+						}
 					}
 				}
 				completely_controls = title:d_sinai
@@ -122,8 +128,11 @@
 			is_valid = {
 				OR = {
 					has_title = title:d_amman
-					primary_title = {
-						is_de_facto_liege_or_above_target = title:d_amman
+					custom_tooltip = {
+						text = expand_israel_above_amman_tt
+						primary_title = {
+							is_de_facto_liege_or_above_target = title:d_amman
+						}
 					}
 				}
 				completely_controls = title:d_amman
@@ -684,7 +693,8 @@ create_h_fertile_crescent_decision = {
 			has_title = title:e_kemet
 			has_title = title:e_aram
 		}
-		custom_description = {
+		custom_tooltip = {
+			text = create_h_fertile_crescent_three_empires_tt
 			any_held_title = {
 				count >= 3
 				tier = tier_empire
