@@ -2353,8 +2353,19 @@ e_persia = {
 	}
 
 	# Only Khuzestan, for its Aramean, Assyrian and Nabati names (tools/make_aramaic_place_names.py): a copy of vanilla's
-	# d_khuzestan; the rest of k_persia is vanilla's, which a partial definition merges with
+	# d_khuzestan; the rest of k_persia is vanilla's. A redefinition keeps the title's children but replaces its
+	# properties, so vanilla's color, capital and AI priority are repeated here
 	k_persia = {
+		color = { 60 150 230 }
+		capital = c_isfahan
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:persian
+				}
+				add = @better_than_the_alternatives_score
+			}
+		}
 		d_khuzestan = {
 			color = { 55 115 255 }
 
@@ -4196,14 +4207,23 @@ e_maghreb = {
 		capital = c_kairwan # Kairouan
 
 		d_kairouan = {
+			cultural_names = {
+				name_list_carthaginian = cn_zama
+			}
 			color = { 60 98 170 }
 
 			capital = c_kairwan # Kairouan
 
 			c_kairwan = {
+				cultural_names = {
+					name_list_carthaginian = cn_zama
+				}
 				color = { 47 78 135 }
 
 				b_kairouan = {
+					cultural_names = {
+						name_list_carthaginian = cn_zama
+					}
 					province = 4594
 
 					color = { 47 78 135 }
@@ -4293,6 +4313,7 @@ e_maghreb = {
 				name_list_hebrew = cn_qarthadasht
 				name_list_bavlim = cn_qarthadasht
 				name_list_kochinim = cn_qarthadasht
+				name_list_carthaginian = cn_carthage
 			}
 
 			c_tunis = {
@@ -4307,6 +4328,7 @@ e_maghreb = {
 					name_list_hebrew = cn_qarthadasht
 					name_list_bavlim = cn_qarthadasht
 					name_list_kochinim = cn_qarthadasht
+					name_list_carthaginian = cn_carthage
 				}
 
 				b_tunis = {
@@ -4323,6 +4345,7 @@ e_maghreb = {
 						name_list_hebrew = cn_qarthadasht
 						name_list_bavlim = cn_qarthadasht
 						name_list_kochinim = cn_qarthadasht
+						name_list_carthaginian = cn_carthage
 					}
 				}
 				b_zaghwan = {
@@ -4368,6 +4391,7 @@ e_maghreb = {
 					name_list_kochinim = cn_ipun
 					name_list_ashkenazi = cn_ipun
 					name_list_sephardi = cn_ipun
+					name_list_carthaginian = cn_thabraca
 				}
 
 				b_banzart = {
@@ -4416,9 +4440,15 @@ e_maghreb = {
 				}
 			}
 			c_mahdiya = {
+				cultural_names = {
+					name_list_carthaginian = cn_hadrumetum
+				}
 				color = { 122 140 196 }
 
 				b_mahdiya = {
+					cultural_names = {
+						name_list_carthaginian = cn_hadrumetum
+					}
 					province = 4578
 
 					color = { 122 140 196 }
@@ -4457,6 +4487,9 @@ e_maghreb = {
 		}
 
 		d_kroumerie = {
+			cultural_names = {
+				name_list_carthaginian = cn_hippo
+			}
 			color = { 75 80 165 }
 
 			capital = c_constantine # Constantine
@@ -4491,9 +4524,15 @@ e_maghreb = {
 				}
 			}
 			c_annaba = {
+				cultural_names = {
+					name_list_carthaginian = cn_hippo
+				}
 				color = { 72 83 169 }
 
 				b_annaba = {
+					cultural_names = {
+						name_list_carthaginian = cn_hippo
+					}
 					province = 4588
 
 					color = { 72 83 169 }
@@ -4571,6 +4610,7 @@ e_maghreb = {
 					name_list_hebrew = cn_thynath
 					name_list_bavlim = cn_thynath
 					name_list_kochinim = cn_thynath
+					name_list_carthaginian = cn_tabrua
 				}
 
 				b_sfax = {
@@ -4586,6 +4626,7 @@ e_maghreb = {
 						name_list_hebrew = cn_thynath
 						name_list_bavlim = cn_thynath
 						name_list_kochinim = cn_thynath
+						name_list_carthaginian = cn_tabrua
 					}
 				}
 				b_el_jem = {
@@ -4602,6 +4643,9 @@ e_maghreb = {
 		}
 
 		d_jerid = {
+			cultural_names = {
+				name_list_carthaginian = cn_sufetula
+			}
 			color = { 66 82 227 }
 
 			capital = c_qashtiliya # Tozeur
@@ -4704,9 +4748,15 @@ e_maghreb = {
 				}
 			}
 			c_djerba = {
+				cultural_names = {
+					name_list_carthaginian = cn_girba
+				}
 				color = { 8 108 196 }
 
 				b_jerba = {
+					cultural_names = {
+						name_list_carthaginian = cn_girba
+					}
 					province = 4562
 
 					color = { 8 108 196 }
@@ -4754,14 +4804,23 @@ e_maghreb = {
 		}
 
 		d_syrte = {
+			cultural_names = {
+				name_list_carthaginian = cn_syrtis
+			}
 			color = { 53 55 189 }
 
 			capital = c_syrte
 
 			c_syrte = {
+				cultural_names = {
+					name_list_carthaginian = cn_syrtis
+				}
 				color = { 43 45 161 }
 
 				b_syrte = {
+					cultural_names = {
+						name_list_carthaginian = cn_syrtis
+					}
 					province = 4552
 
 					color = { 43 45 161 }
@@ -4786,6 +4845,9 @@ e_maghreb = {
 					color = { 54 56 133 }
 				}
 				b_tawurgha = {
+					cultural_names = {
+						name_list_carthaginian = cn_charax
+					}
 					province = 4554
 
 					color = { 54 56 133 }
@@ -4821,6 +4883,11 @@ e_maghreb = {
 }
 
 e_carthage = {
+	definite_form = yes
+	can_be_named_after_dynasty = no
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	color = { 191 220 255 }
 	capital = c_tunis # Tunis
 

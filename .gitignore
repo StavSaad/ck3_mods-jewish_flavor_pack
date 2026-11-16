@@ -1,3 +1,4 @@
 /.claude
+__pycache__/
 /.docs/*
 !/.docs/v[0-9]*.md

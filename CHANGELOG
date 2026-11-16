@@ -206,10 +206,12 @@
 [] Edom takes the duchies that lie wholly in its lands and gathers its other counties into Amman, so the Negev now stays with Oultrejourdain; Phoenicia, as before, takes the duchies whose capital lies on its coast
 [] Canaan, Beth Nahrain and Aram Rabba take every kingdom whose capital lies in their lands, including kingdoms carved out of them: Aram Rabba may now take Edom and Upper Egypt, Beth Nahrain Israel and Phoenicia
 [] Fixed Tripoli showing as Tortosa in Reestablish a Phoenician Trade City
+[] A compatch for More Provinces Expanded, Rising Lion MPE Compatch (load it after both): Rising Lion's names and titles on MPE's map, Tyre, Sidon and Byblos as Phoenicia's own counties, Antioch for Canaan and Aram Rabba, Petra for Edom, the temples, holy sites and Masada in MPE's provinces
 
 -- Fixes --
 [] AI families now migrate to more welcoming realms: the head travels to the new city and the estate is set down there on arrival (estates can't travel with their owner)
 [] A family whose estate is moved into another realm, by the Move Estate button or otherwise, becomes that realm's vassal or tributary
 [] Rising Lion no longer redefines West Franconia, which could leave Mainz, Worms, Speyer and its other counties out of their duchy
+[] Persia keeps its colour, capital and AI preference, the Carthaginian empire its creation rules and definite name, and Tunisia, Ifriqiya and Libya their Carthaginian place names, which Rising Lion's redefinitions of those titles had dropped
 [] Fixed missing tooltip texts in Expand Israel, Gather the Exiles, the Fertile Crescent, Reestablish a Phoenician Trade City and Bring the Gods Home
 [] Fixed error log entries when a god's statue is brought home, when the Court Astrologer reads the stars for a war that ended as it began, and from the contracts' and the Ginza Rabba's script
