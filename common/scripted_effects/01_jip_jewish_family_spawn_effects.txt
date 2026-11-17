@@ -1,4 +1,4 @@
-﻿# Game start: up to 60 new Mishpacha families across Europe, the Middle East and North Africa, so the Jewish world has
+﻿# Game start: up to 40 new Mishpacha families across Europe, the Middle East and North Africa, so the Jewish world has
 # more houses to trade, marry and compete with. Each region gets a share; a region with fewer welcoming cities than its
 # share (jip_jewish_family_home_county_trigger) gets fewer families. One family per county.
 # Courtiers, contracts and estate fixes come from the after-lobby setup like any other family.
@@ -11,20 +11,21 @@ jip_spawn_jewish_families_effect = {
 			domicile_location.county = { add_to_list = jip_family_counties }
 		}
 	}
-	# 60 in all
-	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_west_iberia COUNT = 8 }
-	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_west_francia COUNT = 5 }
-	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_west_germania COUNT = 5 }
-	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_south_italy COUNT = 6 }
-	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_east COUNT = 2 }
-	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_south_east COUNT = 3 }
-	jip_spawn_jewish_families_in_region_effect = { REGION = world_asia_minor COUNT = 3 }
-	jip_spawn_jewish_families_in_region_effect = { REGION = world_steppe_west COUNT = 2 }
-	jip_spawn_jewish_families_in_region_effect = { REGION = world_middle_east_jerusalem COUNT = 6 }
-	jip_spawn_jewish_families_in_region_effect = { REGION = world_middle_east_arabia COUNT = 6 }
-	jip_spawn_jewish_families_in_region_effect = { REGION = world_middle_east_persia COUNT = 4 }
-	jip_spawn_jewish_families_in_region_effect = { REGION = world_africa_north_west COUNT = 5 }
-	jip_spawn_jewish_families_in_region_effect = { REGION = world_africa_north_east COUNT = 5 }
+	# 40 in all (60 before 1.21): the game's own merchant companies, Jewish Musta'arabi and Radhanite ones among them,
+	# now trade from the cities of the Middle East, Egypt and the Silk Road, so those regions lose the most
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_west_iberia COUNT = 7 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_west_francia COUNT = 4 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_west_germania COUNT = 4 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_south_italy COUNT = 5 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_east COUNT = 1 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_south_east COUNT = 2 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_asia_minor COUNT = 2 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_steppe_west COUNT = 1 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_middle_east_jerusalem COUNT = 3 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_middle_east_arabia COUNT = 3 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_middle_east_persia COUNT = 2 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_africa_north_west COUNT = 3 }
+	jip_spawn_jewish_families_in_region_effect = { REGION = world_africa_north_east COUNT = 3 }
 }
 
 # Up to $COUNT$ new families in $REGION$, each in a different county, weighted by jip_jewish_family_county_weight_value

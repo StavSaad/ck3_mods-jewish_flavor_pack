@@ -207,6 +207,7 @@
 [] Canaan, Beth Nahrain and Aram Rabba take every kingdom whose capital lies in their lands, including kingdoms carved out of them: Aram Rabba may now take Edom and Upper Egypt, Beth Nahrain Israel and Phoenicia
 [] Fixed Tripoli showing as Tortosa in Reestablish a Phoenician Trade City
 [] A compatch for More Provinces Expanded, Rising Lion MPE Compatch (load it after both): Rising Lion's names and titles on MPE's map, Tyre, Sidon and Byblos as Phoenicia's own counties, Antioch for Canaan and Aram Rabba, Petra for Edom, the temples, holy sites and Masada in MPE's provinces
+[] Fewer Jewish families are created at game start, 40 instead of 60, now that the game's own merchant companies, Jewish ones among them, trade from the cities of the Middle East and Egypt
 
 -- Fixes --
 [] AI families now migrate to more welcoming realms: the head travels to the new city and the estate is set down there on arrival (estates can't travel with their owner)
