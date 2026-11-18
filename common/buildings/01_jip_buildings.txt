@@ -126,14 +126,13 @@ jip_temple_of_sin_01 = {
 	}
 
 	county_modifier = {
-		prosperity_growth_factor = 0.2
 		religious_tax_mult = 0.1
 		monthly_control_change_when_below_baseline_mult = 0.1
 	}
 
 	province_modifier = {
 		province_size_baseline_add = special_building_province_size_baseline
-		monthly_religious_tax = 2
+		monthly_religious_tax = 1.5
 	}
 
 	ai_value = {
@@ -228,13 +227,11 @@ jip_temple_of_bel_01 = {
 	}
 
 	county_modifier = {
-		prosperity_growth_factor = 0.2
 		religious_tax_mult = 0.15
 	}
 
 	province_modifier = {
-				monthly_religious_tax = special_building_need_tax
-				monthly_commerce_tax = 3 # The caravan trade
+		monthly_commerce_tax = 2 # The caravan trade
 	}
 
 	ai_value = {
@@ -266,7 +263,10 @@ jip_temple_of_bel_01 = {
 		can_be_filled_multiple_times = 5
 		not_rite_parameter = alcohol_forbidden
 		modifiers = {
-				}
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
 	}
 }
 
@@ -307,13 +307,11 @@ jip_temple_of_shamash_01 = {
 	}
 
 	county_modifier = {
-		prosperity_growth_factor = 0.1
 		religious_tax_mult = 0.1
 	}
 
 	province_modifier = {
-				monthly_religious_tax = special_building_need_tax
-				fort_level = 2 # Hatra's walls
+		fort_level = 2 # Hatra's walls
 		garrison_size = 0.25
 		monthly_religious_tax = 1
 	}
@@ -348,7 +346,10 @@ jip_temple_of_shamash_01 = {
 		can_be_filled_multiple_times = 5
 
 		modifiers = {
-				}
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
 	}
 	trade_good_need = {
 		trade_good = trade_good_grain
@@ -399,13 +400,11 @@ jip_temple_of_ashur_01 = {
 	}
 
 	county_modifier = {
-		prosperity_growth_factor = 0.2
 		religious_tax_mult = 0.1
 	}
 
 	province_modifier = {
-				monthly_religious_tax = special_building_need_tax
-				monthly_religious_tax = 2
+		monthly_religious_tax = 1.5
 	}
 
 	ai_value = {
@@ -438,7 +437,10 @@ jip_temple_of_ashur_01 = {
 		can_be_filled_multiple_times = 5
 
 		modifiers = {
-				}
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
 	}
 	trade_good_need = {
 		trade_good = trade_good_grain
@@ -492,13 +494,11 @@ jip_temple_of_ishtar_01 = {
 	}
 
 	county_modifier = {
-		prosperity_growth_factor = 0.1
 		religious_tax_mult = 0.1
 	}
 
 	province_modifier = {
-				monthly_religious_tax = special_building_need_tax
-				levy_size = 0.1
+		levy_size = 0.1
 		monthly_religious_tax = 1
 	}
 
@@ -532,7 +532,10 @@ jip_temple_of_ishtar_01 = {
 		can_be_filled_multiple_times = 5
 
 		modifiers = {
-				}
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
 	}
 	trade_good_need = {
 		trade_good = trade_good_grain
@@ -583,7 +586,6 @@ jip_temple_of_marduk_01 = {
 	}
 
 	county_modifier = {
-		prosperity_growth_factor = 0.25
 		religious_tax_mult = 0.1
 	}
 
@@ -671,7 +673,6 @@ jip_temple_of_melqart_01 = {
 
 	county_modifier = {
 		religious_tax_mult = 0.15
-		prosperity_growth_factor = 0.25
 	}
 
 	ai_value = {
@@ -747,7 +748,6 @@ jip_temple_of_tanit_01 = {
 	}
 
 	county_modifier = {
-		prosperity_growth_factor = 0.25
 		religious_tax_mult = 0.1
 	}
 
@@ -819,7 +819,6 @@ jip_temple_of_eshmun_01 = {
 	}
 
 	county_modifier = {
-		prosperity_growth_factor = 0.25
 		religious_tax_mult = 0.1
 	}
 
@@ -895,7 +894,6 @@ jip_temple_of_baalat_gebal_01 = {
 	}
 
 	county_modifier = {
-		prosperity_growth_factor = 0.25
 		religious_tax_mult = 0.15
 	}
 
@@ -975,7 +973,6 @@ jip_temple_of_baal_01 = {
 	}
 
 	county_modifier = {
-		prosperity_growth_factor = 0.25
 		religious_tax_mult = 0.1
 	}
 
@@ -1048,7 +1045,6 @@ jip_temple_of_astarte_01 = {
 	}
 
 	county_modifier = {
-		prosperity_growth_factor = 0.25
 		religious_tax_mult = 0.15
 	}
 
@@ -1183,14 +1179,11 @@ jip_holy_site_ziggurat_01 = {
 	county_modifier = {
 		religious_tax_mult = 0.1
 		levy_size = 0.1
-		prosperity_growth_factor = 0.2
-		prosperity_growth = 0.15
 	}
 	
 	levy = 500
 	province_modifier = {
-				monthly_religious_tax = special_building_need_tax
-				monthly_religious_tax = 1
+		monthly_religious_tax = 1
 	}
 
 	on_complete = {
@@ -1234,7 +1227,10 @@ jip_holy_site_ziggurat_01 = {
 		can_be_filled_multiple_times = 5
 
 		modifiers = {
-				}
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
 	}
 	trade_good_need = {
 		trade_good = trade_good_grain
@@ -1288,13 +1284,11 @@ jip_temple_of_hadad_01 = {
 	}
 
 	province_modifier = {
-				monthly_religious_tax = special_building_need_tax
-				fort_level = 1
+		fort_level = 1
 	}
 
 	county_modifier = {
 		levy_size = 0.1
-		prosperity_growth_factor = 0.15
 	}
 
 	ai_value = {
@@ -1326,7 +1320,10 @@ jip_temple_of_hadad_01 = {
 		can_be_filled_multiple_times = 5
 		not_rite_parameter = alcohol_forbidden
 		modifiers = {
-				}
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
 	}
 }
 
@@ -1361,7 +1358,6 @@ jip_temple_of_atargatis_01 = {
 	}
 
 	county_modifier = {
-		prosperity_growth_factor = 0.3
 		religious_tax_mult = 0.1
 	}
 
@@ -1433,7 +1429,6 @@ jip_temple_of_elagabal_01 = {
 	}
 
 	county_modifier = {
-		prosperity_growth_factor = 0.2
 		levy_size = 0.05
 	}
 
@@ -1606,14 +1601,11 @@ jip_holy_site_classical_temple_01 = {
 	county_modifier = {
 		religious_tax_mult = 0.1
 		levy_size = 0.1
-		prosperity_growth_factor = 0.2
-		prosperity_growth = 0.15
 	}
 	
 	levy = 500
 	province_modifier = {
-				monthly_religious_tax = special_building_need_tax
-				monthly_religious_tax = 1
+		monthly_religious_tax = 1
 	}
 
 	on_complete = {
@@ -1656,7 +1648,10 @@ jip_holy_site_classical_temple_01 = {
 		can_be_filled_multiple_times = 5
 		not_rite_parameter = alcohol_forbidden
 		modifiers = {
-				}
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
 	}
 }
 

@@ -426,7 +426,7 @@ jip_counting_house_01 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_gold_add = 0.15
+		domicile_monthly_gold_add = estate_income_market_level_1 # as vanilla's market (1.21)
 	}
 
 	ai_value = {
@@ -518,7 +518,7 @@ jip_counting_house_02 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_gold_add = 0.15
+		domicile_monthly_gold_add = estate_income_market_level_2 # as vanilla's market (1.21)
 	}
 
 	ai_value = {
@@ -603,7 +603,7 @@ jip_counting_house_03 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_gold_add = 0.3
+		domicile_monthly_gold_add = estate_income_market_level_3 # as vanilla's market (1.21)
 	}
 
 	ai_value = {
@@ -688,7 +688,7 @@ jip_counting_house_04 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_gold_add = 0.4
+		domicile_monthly_gold_add = estate_income_market_level_4 # as vanilla's market (1.21)
 		domicile_monthly_gold_mult = 0.05
 	}
 
@@ -774,7 +774,7 @@ jip_counting_house_05 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_gold_add = 0.8
+		domicile_monthly_gold_add = estate_income_market_level_5 # as vanilla's market (1.21)
 		domicile_monthly_gold_mult = 0.05
 	}
 
@@ -860,7 +860,7 @@ jip_counting_house_06 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_gold_add = 1.4
+		domicile_monthly_gold_add = estate_income_market_level_6 # as vanilla's market (1.21)
 		domicile_monthly_gold_mult = 0.05
 		stewardship = 1
 	}

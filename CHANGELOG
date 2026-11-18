@@ -214,6 +214,8 @@
 [] The temples of the old gods and the Third Temple need incense, oil, grain, wine and cedar wood like vanilla's holy buildings, and Tyre's, Sidon's, Byblos's, Baalbek's and Kition's temples make dyes, glass, books, stone and copper
 [] Jewish faiths lend at interest only to outsiders; the Mandaeans forbid alcohol, as in vanilla
 [] The cultural men-at-arms follow 1.21's costs and control
+[] Rebalanced for 1.21's economy: the temples' prosperity now comes from their offerings, as vanilla's holy buildings', with smaller flat taxes, Clever Administrators gives +20% prosperity growth and +10% taxes, and the families' Counting House earns what vanilla's market does
+[] Saves from 0.15.0 are not compatible
 
 -- Fixes --
 [] The Dome of the Rock can no longer be upgraded into a Temple: as before, the Third Temple is raised only through Clear the Temple Mount and Rebuild the Temple

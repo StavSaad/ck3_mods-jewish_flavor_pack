@@ -182,7 +182,7 @@ Unlocked when the dynasty dynast carries the `davidic_line` trait (or has alread
 | 2 | David's Virility | +1 seduction scheme slot, +25% fertility, +5 years of fertility |
 | 3 | Shepherd Kings | +2 Diplomacy, +0.5 monthly piety, +10 vassal opinion |
 | 4 | Solomon's Wisdom | +3 Learning, +1 language-learning scheme slot |
-| 5 | Clever Administrators | +50% development growth, +1 domain limit, +20% tax income |
+| 5 | Clever Administrators | +20% prosperity growth, +1 domain limit, +10% taxes (1.21: no vanilla perk gives more prosperity) |
 
 ---
 

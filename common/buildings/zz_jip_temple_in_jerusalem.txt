@@ -60,13 +60,11 @@ jip_temple_in_jerusalem_01 = {
 
 	county_modifier = {
 		religious_tax_mult = 0.3
-		prosperity_growth_factor = 0.3
-		prosperity_growth = 0.3
 	}
 
 	province_modifier = {
 		province_size_baseline_add = special_building_province_size_baseline
-		monthly_religious_tax = 3
+		monthly_religious_tax = 2
 	}
 
 	ai_value = {

@@ -53,9 +53,9 @@ davidic_legacy_5 = {
 	legacy = davidic_line_legacy_track
 
 	character_modifier = {
-		prosperity_growth_factor = 0.5
+		prosperity_growth_factor = 0.2 # 1.21: the most any vanilla perk gives
 		domain_limit = 1
-		all_tax_mult = 0.2
+		all_tax_mult = 0.1
 	}
 }
 
