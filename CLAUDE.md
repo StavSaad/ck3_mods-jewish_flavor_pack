@@ -262,4 +262,5 @@ A mod can't be a DLC or an event's `content_source`, so:
 | 0.12.0 | Hegemony of the Fertile Crescent; performance improvements; Kemet region rework |
 | 0.13.0 | Masada 3-tier building; Kemet/Crescent nickname grants; Mishpacha desc expansion; Jewish-flavored Exilarchate election tooltips |
 | 0.14.0 | CK3 1.20 update; Mishpacha charter, migration, succession, estate buildings, Mar/Geveret titles, court positions and contracts; Expel/Readmit the Jews; Court Financier; Kehunah tenet for Kohenism |
+| 0.15.1 | CK3 1.21 "Florin": temples in great project districts with trade-good needs, vanilla's Mandaean, Remenkhemi and Musta'arabi cultures in place of ours, fewer spawned families beside vanilla's Jewish merchants, Found a Merchant Company and Become a Familial House, AI family migration, MPE compatch |
 | 0.15.0 | Children of Aram: Aramaic place names, Nabati culture, Mesopotamianism and the temples of the old gods (our own ziggurat models), the Sabian story and Court Astrologer, Mandaean flavour and the Rish Amma, Sabian and Mandaean families, Aram Rabba, feast variants and Pesach, cultural men-at-arms, the Third Temple as great projects, Jewish name lists |
