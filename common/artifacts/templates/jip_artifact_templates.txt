@@ -1,6 +1,6 @@
 ﻿# The tablets of Ashurbanipal's library from the Nineveh dig (jip_create_nineveh_tablet_effect), like vanilla's Ark of
 # the Covenant (ark_covenant_template): their full modifiers (jip_nineveh_<tablet>_modifier) only for the heirs of
-# Assyria (jip_heir_of_assyria_trigger: Aramean, Nabati or Assyrian, or the old faith), the fallback for anyone else
+# Assyria (jip_heir_of_assyria_trigger: Aramean, Mandaean or Assyrian, or the old faith), the fallback for anyone else
 jip_nineveh_tablet_template = {
 	can_equip = {
 		always = yes

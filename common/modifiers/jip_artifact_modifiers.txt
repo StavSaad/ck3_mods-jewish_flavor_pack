@@ -63,10 +63,10 @@ jip_statue_of_shamash_modifier = {
 
 # A god's statue is home in its temple: the county rejoices (jip_sabian_bring_god_home_effect)
 jip_old_god_home_modifier = {
-	icon = county_modifier_development_positive
-	county_opinion_add = 15
-	development_growth_factor = 0.15
-	monthly_county_control_growth_add = 0.5
+	icon = county_modifier_prosperity_positive
+	popular_opinion_add = 15
+	prosperity_growth_factor = 0.15
+	monthly_control_change_when_below_baseline_add = 0.5
 }
 
 jip_statue_of_marduk_modifier = {
@@ -86,5 +86,5 @@ jip_ginza_rabba_modifier = {
 # The Nabataean Agriculture (jip_nabati_nabataean_agriculture_decision)
 jip_nabataean_agriculture_modifier = {
 	stewardship = 1
-	character_capital_county_monthly_development_growth_add = 0.1
+	character_capital_county_monthly_prosperity_growth_add = 0.1
 }

@@ -122,10 +122,10 @@ def replace_once(old, new, start=0, end=None):
 
 # Landless Mishpacha heads may host (the activity's is_shown and its host check in is_valid)
 head = t.index('\tcan_start_showing_failures_only')
-replace_once('\t\tis_landed_or_landless_administrative_or_theocratic = yes\n',
+replace_once('\t\tcan_host_feasts_trigger = yes\n',
              '\t\tjip_can_host_feast_trigger = yes # Rising Lion: also landless Mishpacha heads\n', 0, head)
 valid = t.index('\tis_valid = {')
-replace_once('\t\t\tis_landed_or_landless_administrative_or_theocratic = yes\n',
+replace_once('\t\t\tcan_host_feasts_trigger = yes\n',
              '\t\t\tjip_can_host_feast_trigger = yes # Rising Lion: also landless Mishpacha heads\n', valid,
              t.index('\ton_host_death'))
 

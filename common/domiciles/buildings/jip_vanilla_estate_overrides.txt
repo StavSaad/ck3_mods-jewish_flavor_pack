@@ -27,7 +27,7 @@ market_01 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_gold_add = 0.1
+		domicile_monthly_gold_add = estate_income_market_level_1
 	}
 	
 	ai_value = {
@@ -42,7 +42,11 @@ market_01 = {
 			}
 			add = 20
 		}
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_new_income_value
 	}
 	
 	asset = {
@@ -133,7 +137,11 @@ guest_room_01 = {
 			}
 			add = 2
 		}
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_new_value
 	}
 	
 	asset = {
@@ -181,7 +189,11 @@ wine_cellar_01 = {
 			}
 			add = 3
 		}
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_new_value
 	}
 	
 	asset = {
@@ -226,7 +238,11 @@ temple_small_01 = {
 	
 	ai_value = {
 		value = 9
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_new_value
 	}
 	
 	asset = {
@@ -374,7 +390,11 @@ prison_02 = {
 			}
 			add = 5
 		}
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_value
 	}
 	
 	asset = {
@@ -421,7 +441,11 @@ trophy_room_03 = {
 	
 	ai_value = {
 		value = 5
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_value
 	}
 	
 	asset = {
@@ -464,7 +488,11 @@ office_01 = {
 	
 	ai_value = {
 		value = 7
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_new_value
 	}
 	
 	asset = {
@@ -505,9 +533,14 @@ silk_01 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_gold_add = 0.1
+		domicile_monthly_gold_add = estate_income_small
 		domicile_monthly_influence_add = 0.05
 		owned_political_scheme_success_chance_add = 3
+	}
+
+	province_modifier = {
+		trade_good_silk_production_add = domicile_primary_production_add_6_levels_level_1
+		trade_good_silk_production_mult = domicile_primary_production_mult_6_levels
 	}
 
 	on_complete = {
@@ -536,7 +569,11 @@ silk_01 = {
 	
 	ai_value = {
 		value = 15
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_new_income_value
 	}
 	
 	asset = {

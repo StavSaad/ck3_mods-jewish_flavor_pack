@@ -201,6 +201,7 @@
 
 == Version 0.15.1 ==
 -- Compatibility --
+[] Updated for Crusader Kings III 1.21 "Florin": the temples of the old gods and the Third Temple stand in great project districts, Masada, the cleared Temple Mount and the old faiths' holy site temples in special districts; buildings, holy sites, perks and modifiers use prosperity, popular opinion, control baselines and religious tax; the holy sites trade in incense like vanilla's; the feast, the Persian Struggle, realm banners and the other reworked screens are rebuilt on 1.21's
 [] Decisions find their lands by region instead of by title, so map mods need only a regional patch: Restore Israel, Form Hebrew Culture, Phoenicia, Edom, Canaan, Beth Nahrain, Aram Rabba, Copy the Nabataean Agriculture, Restore the Gods of Aram, Reestablish a Phoenician Trade City, and the Sabian story's cult cities and statues
 [] The cities of those decisions are found by their own province, whatever county a map puts them in
 [] Edom takes the duchies that lie wholly in its lands and gathers its other counties into Amman, so the Negev now stays with Oultrejourdain; Phoenicia, as before, takes the duchies whose capital lies on its coast
@@ -208,6 +209,11 @@
 [] Fixed Tripoli showing as Tortosa in Reestablish a Phoenician Trade City
 [] A compatch for More Provinces Expanded, Rising Lion MPE Compatch (load it after both): Rising Lion's names and titles on MPE's map, Tyre, Sidon and Byblos as Phoenicia's own counties, Antioch for Canaan and Aram Rabba, Petra for Edom, the temples, holy sites and Masada in MPE's provinces
 [] Fewer Jewish families are created at game start, 40 instead of 60, now that the game's own merchant companies, Jewish ones among them, trade from the cities of the Middle East and Egypt
+[] Vanilla's new cultures take the place of ours: the Copts are Remenkhemi, and the Nabati are Mandaeans, whose Shu'ubiyya, Heirs of Babylon and Nabataean Agriculture now come to Mandaean characters; Mandaean place names are the Aramaic ones
+[] New Jewish families in the Levant, Egypt and the Maghreb are Musta'arabi, who use the Hebrew place names like every Jewish culture
+[] The temples of the old gods and the Third Temple need incense, oil, grain, wine and cedar wood like vanilla's holy buildings, and Tyre's, Sidon's, Byblos's, Baalbek's and Kition's temples make dyes, glass, books, stone and copper
+[] Jewish faiths lend at interest only to outsiders; the Mandaeans forbid alcohol, as in vanilla
+[] The cultural men-at-arms follow 1.21's costs and control
 
 -- Fixes --
 [] AI families now migrate to more welcoming realms: the head travels to the new city and the estate is set down there on arrival (estates can't travel with their owner)

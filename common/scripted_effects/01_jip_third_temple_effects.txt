@@ -45,8 +45,9 @@ jip_clear_the_temple_mount_effect = {
 	title:c_jerusalem.title_province = {
 		custom_tooltip = jip_temple_mount_cleared_building_tt
 		hidden_effect = {
-			remove_building = dome_of_the_rock_01
-			add_special_building = jip_temple_mount_cleared_01 # Fills the slot: no generic holy site building
+			special_district ?= { remove_district = yes } # The Dome of the Rock
+			# The cleared Mount takes the Dome's special district slot: no generic holy site building
+			add_special_district = jip_temple_mount_cleared_01_district
 		}
 	}
 	custom_description = {
@@ -90,14 +91,17 @@ jip_clear_the_temple_mount_effect = {
 	}
 }
 
-# The Temple stands: temple_in_jerusalem_01 in Jerusalem's special building slot, Kohanism open to conversion, and
+# The Temple stands: jip_temple_in_jerusalem_01 in Jerusalem's great project district, Kohanism open to conversion, and
 # the first time, jip_hebrew.0040 (the flag also keeps jip_third_temple_on_action from firing it a second time)
 jip_rebuild_the_temple_effect = {
 	title:c_jerusalem.title_province = {
 		custom_tooltip = jip_gp_rebuild_the_temple_building_tt
 		hidden_effect = {
-			remove_building = jip_temple_mount_cleared_01
-			add_special_building = temple_in_jerusalem_01
+			# The Temple stands in the great project district; the cleared Mount and its slot go, so nothing else is built
+			# on the Mount
+			special_district ?= { remove_district = yes } # The cleared Mount
+			remove_special_district_slot = yes
+			set_great_district = jip_temple_in_jerusalem_01_district
 		}
 	}
 	jip_unlock_kohanism_conversion_effect = yes

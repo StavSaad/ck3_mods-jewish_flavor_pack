@@ -1,0 +1,220 @@
+﻿# Rising Lion's districts (1.21). Each of our special buildings sits in a district of its own, as vanilla's do:
+# - the temples of the old gods and the Temple in Jerusalem in a province's great project district, which every province
+#   has; their great projects place them with set_great_district (common/great_projects/types/)
+# - Masada, the cleared Temple Mount and the holy site buildings of Mesopotamianism and Arameanism in a special district
+#   slot (province history, add_holy_site_fallback_special_district_slot_effect, the Third Temple effects)
+# Names: <district>: "$building_type_<building>$", like vanilla's (localization/english/jip_buildings_l_english.yml)
+
+### Great project districts
+
+jip_temple_of_sin_01_district = {
+	primary_building = jip_temple_of_sin_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_sin.dds"
+	}
+
+	type = great_district
+}
+
+jip_temple_of_bel_01_district = {
+	primary_building = jip_temple_of_bel_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_bel.dds"
+	}
+
+	type = great_district
+}
+
+jip_temple_of_shamash_01_district = {
+	primary_building = jip_temple_of_shamash_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_shamash.dds"
+	}
+
+	type = great_district
+}
+
+jip_temple_of_ashur_01_district = {
+	primary_building = jip_temple_of_ashur_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_ashur.dds"
+	}
+
+	type = great_district
+}
+
+jip_temple_of_ishtar_01_district = {
+	primary_building = jip_temple_of_ishtar_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_ishtar.dds"
+	}
+
+	type = great_district
+}
+
+jip_temple_of_marduk_01_district = {
+	primary_building = jip_temple_of_marduk_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_marduk.dds"
+	}
+
+	type = great_district
+}
+
+jip_temple_of_melqart_01_district = {
+	primary_building = jip_temple_of_melqart_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_melqart.dds"
+	}
+
+	type = great_district
+}
+
+jip_temple_of_tanit_01_district = {
+	primary_building = jip_temple_of_tanit_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_tanit.dds"
+	}
+
+	type = great_district
+}
+
+jip_temple_of_eshmun_01_district = {
+	primary_building = jip_temple_of_eshmun_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_eshmun.dds"
+	}
+
+	type = great_district
+}
+
+jip_temple_of_baalat_gebal_01_district = {
+	primary_building = jip_temple_of_baalat_gebal_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_baalat_gebal.dds"
+	}
+
+	type = great_district
+}
+
+jip_temple_of_baal_01_district = {
+	primary_building = jip_temple_of_baal_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_baal.dds"
+	}
+
+	type = great_district
+}
+
+jip_temple_of_astarte_01_district = {
+	primary_building = jip_temple_of_astarte_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_astarte.dds"
+	}
+
+	type = great_district
+}
+
+jip_temple_of_hadad_01_district = {
+	primary_building = jip_temple_of_hadad_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_hadad.dds"
+	}
+
+	type = great_district
+}
+
+jip_temple_of_atargatis_01_district = {
+	primary_building = jip_temple_of_atargatis_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_atargatis.dds"
+	}
+
+	type = great_district
+}
+
+jip_temple_of_elagabal_01_district = {
+	primary_building = jip_temple_of_elagabal_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_elagabal.dds"
+	}
+
+	type = great_district
+}
+
+jip_temple_of_gad_01_district = {
+	primary_building = jip_temple_of_gad_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_gad.dds"
+	}
+
+	type = great_district
+}
+
+jip_temple_in_jerusalem_01_district = {
+	primary_building = jip_temple_in_jerusalem_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_rebuild_the_temple.dds"
+	}
+
+	type = great_district
+}
+
+### Special districts
+
+masada_01_district = {
+	primary_building = masada_01
+
+	background = {
+		reference = "gfx/interface/illustrations/decisions/decision_castle_view.dds"
+	}
+
+	type = special
+}
+
+jip_temple_mount_cleared_01_district = {
+	primary_building = jip_temple_mount_cleared_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_clear_the_temple_mount.dds"
+	}
+
+	type = special
+}
+
+jip_holy_site_ziggurat_01_district = {
+	primary_building = jip_holy_site_ziggurat_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_sin.dds"
+	}
+
+	type = special
+}
+
+jip_holy_site_classical_temple_01_district = {
+	primary_building = jip_holy_site_classical_temple_01
+
+	background = {
+		reference = "gfx/interface/illustrations/great_projects/jip_temple_of_bel.dds"
+	}
+
+	type = special
+}

@@ -39,7 +39,7 @@ jip_nabati.0100 = {
 		}
 		random_courtier = {
 			limit = {
-				culture = culture:nabati
+				culture = culture:mandaean
 				is_adult = yes
 			}
 			weight = {
@@ -63,7 +63,7 @@ jip_nabati.0100 = {
 				opinion = -30
 			}
 		}
-		culture:nabati = {
+		culture:mandaean = {
 			change_cultural_acceptance = {
 				target = root.culture
 				value = low_negative_culture_acceptance
@@ -121,7 +121,7 @@ jip_nabati.0100 = {
 				opinion = 20
 			}
 		}
-		culture:nabati = {
+		culture:mandaean = {
 			change_cultural_acceptance = {
 				target = root.culture
 				value = medium_positive_culture_acceptance
@@ -168,7 +168,7 @@ jip_nabati.0200 = {
 			modifier = jip_nabati_pride_modifier
 			years = 10
 		}
-		culture:nabati = {
+		culture:mandaean = {
 			change_cultural_acceptance = {
 				target = scope:jip_arab_liege.culture
 				value = low_negative_culture_acceptance
@@ -181,7 +181,7 @@ jip_nabati.0200 = {
 	option = {
 		name = jip_nabati.0200.b
 		add_learning_lifestyle_xp = medium_lifestyle_xp
-		culture:nabati = {
+		culture:mandaean = {
 			change_cultural_acceptance = {
 				target = scope:jip_arab_liege.culture
 				value = low_positive_culture_acceptance

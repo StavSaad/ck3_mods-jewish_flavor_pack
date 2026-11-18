@@ -14,4 +14,9 @@ mandeaism = {
 		tenet_esotericism
 		tenet_christian_syncretism
 	}
+
+	doctrines = {
+		doctrine_diet_unrestricted
+		special_doctrine_alcohol_forbidden
+	}
 }

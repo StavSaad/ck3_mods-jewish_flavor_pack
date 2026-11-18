@@ -1,0 +1,3 @@
+﻿# What a temple of the old gods adds to its city's production of a good vanilla has no special-building
+# value for (dyes at Tyre, glass at Sidon, copper at Kition): the same as vanilla's special_building_books_output
+jip_temple_good_output = 10

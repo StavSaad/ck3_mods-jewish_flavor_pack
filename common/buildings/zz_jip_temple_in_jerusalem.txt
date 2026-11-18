@@ -1,0 +1,121 @@
+﻿# The Temple in Jerusalem, Rising Lion's own building (vanilla's temple_in_jerusalem_01 is the Dome of the Rock's next level,
+# which common/buildings/zz_jip_dome_of_the_rock.txt removes), with no cost: great project buildings take none. Raised by the great project Rebuild the Temple (jip_gp_rebuild_the_temple) in Jerusalem's great project district
+# (jip_temple_in_jerusalem_01_district, common/districts/jip_districts.txt), not as the next level of the Dome of the Rock
+# (common/buildings/zz_jip_dome_of_the_rock.txt drops that upgrade)
+
+jip_temple_in_jerusalem_01 = {
+	effect_desc = {
+		triggered_desc = {
+			trigger = { has_dlc_feature = legends_of_the_dead }
+			desc = building_funeral_effect_desc
+		}
+	}
+	construction_time = very_slow_construction_time
+
+	type_icon = "special_buildings/temple_in_jerusalem.dds"
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+	}
+	
+	can_construct = {
+		custom_description = {
+			text = holy_site_building_trigger
+			barony = {
+				is_holy_site_of = scope:holder.faith
+			}
+		}
+		scope:holder.religion = religion:judaism_religion
+	}
+	
+	is_enabled = {
+		custom_description = {
+			text = holy_site_jewish_or_holy_site_trigger
+			OR = {
+				custom_description = {
+					text = holy_site_building_trigger
+					barony = {
+						is_holy_site_of = scope:holder.faith
+					}
+				}
+				scope:holder = {
+					religion = religion:judaism_religion
+				}
+			}
+		}
+	}
+	
+	show_disabled = yes
+	
+
+	character_modifier = {
+		monthly_piety_gain_per_knight_mult = 0.03
+		monthly_dynasty_prestige_mult = 0.05
+		monthly_control_change_when_below_baseline_mult = 0.1
+		martial_per_piety_level = 1
+		learning_per_prestige_level = 1
+		knight_effectiveness_mult = 0.2
+		same_faith_opinion = 5
+	}
+
+	county_modifier = {
+		religious_tax_mult = 0.3
+		prosperity_growth_factor = 0.3
+		prosperity_growth = 0.3
+	}
+
+	province_modifier = {
+		province_size_baseline_add = special_building_province_size_baseline
+		monthly_religious_tax = 3
+	}
+
+	ai_value = {
+		base = 100
+		modifier = { # Fill all building slots before going for special buildings
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+
+	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_oil_sell_price_mult = special_building_need_sell_price
+		trade_good_wood_sell_price_mult = special_building_need_sell_price
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_oil
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_wood
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			character_modifier = {
+				monthly_piety = special_building_need_piety
+			}
+		}
+	}
+}

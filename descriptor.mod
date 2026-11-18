@@ -1,4 +1,4 @@
-version="0.15.0"
+version="0.15.1"
 tags={
 	"Religion"
 	"Culture"
@@ -7,5 +7,5 @@ tags={
 }
 name="Rising Lion - Canaanite Flavor Pack"
 picture="thumbnail.png"
-supported_version="1.20.*"
+supported_version="1.21.*"
 remote_file_id="3501948259"

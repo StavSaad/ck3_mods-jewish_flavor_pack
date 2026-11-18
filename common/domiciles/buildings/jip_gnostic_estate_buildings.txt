@@ -33,7 +33,6 @@ jip_diwan_03 = {
 
 	ai_value = {
 		value = 15
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -73,7 +72,6 @@ jip_diwan_04 = {
 
 	ai_value = {
 		value = 14
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -119,7 +117,6 @@ jip_haykal_04 = {
 
 	ai_value = {
 		value = 16
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -195,7 +192,6 @@ jip_haykal_05 = {
 
 	ai_value = {
 		value = 15
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -271,7 +267,6 @@ jip_haykal_06 = {
 
 	ai_value = {
 		value = 14
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -353,7 +348,6 @@ jip_scriptorium_03 = {
 
 	ai_value = {
 		value = 15
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -400,7 +394,6 @@ jip_scriptorium_04 = {
 
 	ai_value = {
 		value = 14
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -446,7 +439,6 @@ jip_mandi_04 = {
 
 	ai_value = {
 		value = 16
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -522,7 +514,6 @@ jip_mandi_05 = {
 
 	ai_value = {
 		value = 15
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -598,7 +589,6 @@ jip_mandi_06 = {
 
 	ai_value = {
 		value = 14
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {

@@ -127,16 +127,11 @@ jip_create_familial_family_effect = {
 }
 
 # Province scope: the Jewish culture of the community a new family joins, saved as scope:jip_new_family_culture.
-# Iberia and the Maghreb are Sephardi, Latin Europe Ashkenazi, the Khazar steppe Radhanite, and the lands of the
-# Caliphate and Byzantium Bavlim. Eastern Europe and Persia, on the Radhanite routes, mix in Radhanites.
+# Iberia is Sephardi, Latin Europe Ashkenazi, the Khazar steppe Radhanite, the Levant, Egypt and the Maghreb
+# Musta'arabi, and the rest of the Caliphate and Byzantium Bavlim. Eastern Europe and Persia, on the Radhanite routes, mix in Radhanites.
 jip_jewish_family_culture_effect = {
 	if = {
-		limit = {
-			OR = {
-				geographical_region = world_europe_west_iberia
-				geographical_region = world_africa_north_west
-			}
-		}
+		limit = { geographical_region = world_europe_west_iberia }
 		culture:sephardi = { save_scope_as = jip_new_family_culture }
 	}
 	else_if = {
@@ -158,6 +153,18 @@ jip_jewish_family_culture_effect = {
 			60 = { culture:ashkenazi = { save_scope_as = jip_new_family_culture } }
 			40 = { culture:radhanite = { save_scope_as = jip_new_family_culture } }
 		}
+	}
+	# The Arabic-speaking Jews of the Levant, Egypt and the Maghreb: vanilla's Musta'arabi (1.21), as its own Egyptian,
+	# Maghrebi and Yemeni Jews
+	else_if = {
+		limit = {
+			OR = {
+				geographical_region = world_middle_east_jerusalem
+				geographical_region = world_africa_north_east
+				geographical_region = world_africa_north_west
+			}
+		}
+		culture:mustaarabi = { save_scope_as = jip_new_family_culture }
 	}
 	else_if = {
 		limit = { geographical_region = world_middle_east_persia }

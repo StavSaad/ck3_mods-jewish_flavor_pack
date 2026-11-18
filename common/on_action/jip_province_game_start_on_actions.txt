@@ -6,7 +6,20 @@
 		jip_liege_effect_setup
 		jip_jewish_families_game_start_on_action
 		jip_rish_amma_game_start_on_action
+		jip_masada_game_start_on_action
     }
+}
+
+# The ruins of Masada at every start date, in the special district slot province history gives Zughar
+jip_masada_game_start_on_action = {
+	effect = {
+		title:b_zughar.title_province ?= {
+			if = {
+				limit = { NOT = { has_building_or_higher = masada_01 } }
+				add_special_district = masada_01_district
+			}
+		}
+	}
 }
 
 # The Mandaeans' head of faith, at every start date (jip_rish_amma_setup_effect)

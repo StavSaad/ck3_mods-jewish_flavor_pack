@@ -412,50 +412,6 @@ name_list_canaanite = {
 	
 }
 
-# Nabati: Aramaic, Mandaic and Harranian names, and the Arabic names the Nabat took under the caliphs
-name_list_nabati = {
-
-	cadet_dynasty_names = {
-		"dynn_Wahshiyya"
-		"dynn_Badniya"
-		"dynn_Buraniya"
-		"dynn_Harithiya"
-		"dynn_Karaya"
-		"dynn_Danqa"
-		"dynn_Kuthani"
-		"dynn_Surani"
-		"dynn_Kaskari"
-		"dynn_Tibi"
-	}
-
-	dynasty_names = {
-		"dynn_Wahshiyya"
-		"dynn_Badniya"
-		"dynn_Buraniya"
-		"dynn_Harithiya"
-		"dynn_Karaya"
-		"dynn_Danqa"
-		"dynn_Kuthani"
-		"dynn_Surani"
-		"dynn_Kaskari"
-		"dynn_Tibi"
-	}
-
-	male_names = {
-		Abba Adam Anush Bihram Danqa Hibil Karaya Mari Mhatam Nahir Narsai Nur Qutama Ram Sam Shitil Yuhana Zakia
-		Zihrun Hilal Ibrahim Ishaq Jabir Marinus Muhassin Sinan Thabit Abdul-Karim Ahmad Ali Hasan Hussayn Isa Ja_far
-		Mihran Mukhtar Musa Sabur Sulayman Yahya Zazai Bayan Qurra Yanbushad Abdallah Khalid Umar
-	}
-	female_names = {
-		Anhar Duvsha Hanna Hawa Hayuta Kitra Marta Maryam Nura Sabah Sharat Simat Talia Amina Fatima Khadija Layla
-		Rabiya Shirin Zaynab Shlama Haiwa
-	}
-
-	dynasty_of_location_prefix = "dynnp_of"
-
-	patronym_prefix_male = "dynnpat_pre_Bar"
-	patronym_prefix_female = "dynnpat_pre_Barta"
-}
 
 # Aramean (the syriac culture): the Syriac Christian names of vanilla's name_list_assyrian (00_byzantine.txt),
 # copied so the Arameans get place names of their own (tools/make_aramaic_place_names.py). Keep in sync with vanilla

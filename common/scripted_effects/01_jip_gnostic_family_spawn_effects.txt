@@ -22,7 +22,7 @@ jip_spawn_gnostic_families_effect = {
 	title:c_basra = { add_to_list = jip_mandaean_family_candidates }
 	title:c_wasit = { add_to_list = jip_mandaean_family_candidates }
 	title:c_ahvaz = { add_to_list = jip_mandaean_family_candidates }
-	jip_spawn_gnostic_families_from_list_effect = { LIST = jip_mandaean_family_candidates COUNT = 3 CULTURE = nabati RITE = mandeaism }
+	jip_spawn_gnostic_families_from_list_effect = { LIST = jip_mandaean_family_candidates COUNT = 3 CULTURE = mandaean RITE = mandeaism }
 }
 
 # Up to $COUNT$ new families of culture $CULTURE$ and the Mandaean faith's rite $RITE$, each in a free county of $LIST$

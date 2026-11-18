@@ -24,7 +24,8 @@ court_tutor_improve_others = {
 	}
 
 	employee_modifier = {
-		general_opinion = 5
+		vassal_opinion = 5
+		courtier_and_guest_opinion = 5
 	}
 
 	on_start = {
@@ -1051,24 +1052,24 @@ chief_qadi_court_position_task_public_alms = {
 
 	scaling_employer_modifiers = {
 		terrible = {
-		 	county_opinion_add = 2
-			monthly_county_control_growth_add = 0.02
+		 	popular_opinion_add = 3
+			monthly_control_change_when_below_baseline_add = 0.02
 		}
 		poor = {
-		 	county_opinion_add = 5
-			monthly_county_control_growth_add = 0.05
+		 	popular_opinion_add = 6
+			monthly_control_change_when_below_baseline_add = 0.05
 		}
 		average = {
-		 	county_opinion_add = 10
-			monthly_county_control_growth_add = 0.1
+		 	popular_opinion_add = 9
+			monthly_control_change_when_below_baseline_add = 0.1
 		}
 		good = {
-		 	county_opinion_add = 15
-			monthly_county_control_growth_add = 0.15
+		 	popular_opinion_add = 12
+			monthly_control_change_when_below_baseline_add = 0.15
 		}
 		excellent = {
-		 	county_opinion_add = 20
-			monthly_county_control_growth_add = 0.2
+		 	popular_opinion_add = 15
+			monthly_control_change_when_below_baseline_add = 0.2
 		}
 	}
 
@@ -1157,51 +1158,48 @@ chronicler_generate_seeds = {
 		custom_tooltip = yearly_legend_seed_tt
 	}
 	on_yearly = {
+		# Aptitude is expensive, so only work it out on the max possible chance. Outer chance x inner multiply must be 100
+		# See "Chance gates" in _court_position_tasks.info
 		random = {
-			chance = {
-				value = 1
-				if = {
-					limit = {
-						aptitude = {
-							court_position = chronicler_court_position
-							value >= 2
+			chance = 10
+			random = {
+				chance = {
+					value = 1
+					if = {
+						limit = {
+							aptitude = {
+								court_position = chronicler_court_position
+								value >= 2
+							}
 						}
+						add = 1
 					}
-					add = 1
-				}
-				if = {
-					limit = {
-						aptitude = {
-							court_position = chronicler_court_position
-							value >= 3
+					if = {
+						limit = {
+							aptitude = {
+								court_position = chronicler_court_position
+								value >= 3
+							}
 						}
+						add = 2
 					}
-					add = 2
-				}
-				if = {
-					limit = {
-						aptitude = {
-							court_position = chronicler_court_position
-							value >= 4
+					if = {
+						limit = {
+							aptitude = {
+								court_position = chronicler_court_position
+								value >= 4
+							}
 						}
+						add = 4
 					}
-					add = 4
+					multiply = 10
 				}
-				if = {
-					limit = {
-						aptitude = {
-							court_position = chronicler_court_position
-							value >= 5
-						}
+				save_scope_as = chronicler
+				scope:liege = {
+					trigger_event = {
+						id = legend_events.0001
+						months = { 0 6 } # To avoid triggering on January every year
 					}
-					add = 10
-				}
-			}
-			save_scope_as = chronicler
-			scope:liege = {
-				trigger_event = {
-					id = legend_events.0001
-					months = { 0 6 } # To avoid triggering on January every year
 				}
 			}
 		}

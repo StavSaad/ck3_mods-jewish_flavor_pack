@@ -7,7 +7,7 @@
 # Third Temple
 jip_third_temple_on_action = {
 	trigger = {
-		has_building = temple_in_jerusalem_01
+		has_building = jip_temple_in_jerusalem_01
 		NOT = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_decisions

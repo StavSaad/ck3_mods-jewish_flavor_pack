@@ -590,13 +590,13 @@ jip_restore_gods_of_aram_effect = {
 }
 
 # The old gods proclaimed (jip_sabian.0001): the ruler, their capital and Harran take the rite of their culture:
-# Assyrian and Nabati Ashurism, everyone else (Arameans first) Sinism, the rite of Sin of Harran
+# Assyrian and Mandaean Ashurism, everyone else (Arameans first) Sinism, the rite of Sin of Harran
 jip_proclaim_old_gods_effect = {
 	if = {
 		limit = {
 			OR = {
 				culture = culture:assyrian
-				culture = culture:nabati
+				culture = culture:mandaean
 			}
 		}
 		rite:ashurism = { save_scope_as = jip_old_gods_rite }

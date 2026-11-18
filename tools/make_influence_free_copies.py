@@ -89,11 +89,17 @@ write('common/domiciles/buildings/jip_vanilla_estate_overrides.txt', out)
 # 3) Localization: vanilla names
 p = 'localization/english/jip_estate_buildings_l_english.yml'
 t = read(p)
-if ' # Influence-free copies' in t:
-    t = t[:t.index('\n # Influence-free copies')].rstrip('\n') + '\n'
-t = t.rstrip('\n') + '\n\n # Influence-free copies of vanilla lines keep the vanilla names\n'
-for key, _ in COPIES:
-    t += f' jip_{key}_domicile_building: "${key}_domicile_building$"\n'
+sec = '\n # Influence-free copies of vanilla lines keep the vanilla names\n'
+lines = sec + ''.join(f' jip_{key}_domicile_building: "${key}_domicile_building$"\n' for key, _ in COPIES)
+if sec in t:
+    # only our section is replaced: its header and the copy lines right after it, not what follows
+    i = t.index(sec)
+    j = i + len(sec)
+    while re.match(r' jip_\w+_domicile_building: "\$\w+\$"\n', t[j:]):
+        j = t.index('\n', j) + 1
+    t = t[:i] + lines + t[j:]
+else:
+    t = t.rstrip('\n') + '\n' + lines
 write(p, t)
 
 # 4) Conversion: vanilla building -> list of buildings to add, in order
@@ -133,7 +139,9 @@ eff += '\t}\n}\n'
 p = 'common/scripted_effects/01_jip_utility_effects.txt'
 t = read(p)
 i = t.index('\n# Swaps the vanilla estate buildings hidden from Mishpacha families')
-t = t[:i].rstrip('\n') + '\n' + eff
+# only our effect is replaced, up to its closing brace, not the effects that follow it
+j = re.compile(r'^}\n', re.M).search(t, t.index('jip_mishpacha_replace_estate_buildings_effect = {', i)).end()
+t = t[:i].rstrip('\n') + '\n' + eff + t[j:]
 write(p, t)
 
 # 5) Trigger for the on_action: any vanilla building that needs swapping

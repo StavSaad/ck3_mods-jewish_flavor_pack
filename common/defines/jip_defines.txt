@@ -1,4 +1,6 @@
-﻿NGovernment = {
+﻿# Vanilla's government types (00_defines.txt) plus the Familial government; a define replaces the whole list, so it is
+# copied: keep in sync with vanilla after every update
+NGovernment = {
 	GOVERNMENT_TYPES = {
 		"feudal_government"
 		"republic_government"
@@ -7,6 +9,7 @@
 		"tribal_government"
 		"mercenary_government"
 		"holy_order_government"
+		"monastic_holy_order_government"
 		"administrative_government"
 		"landless_adventurer_government"
 		"nomad_government"
@@ -18,8 +21,8 @@
 		"wanua_government"
 		"meritocratic_government"
 		"steppe_admin_government"
-		"monastic_holy_order_government"
 		"ecclesiastical_government"
+		"merchant_government"
 		"familial_government"
 	}
 }

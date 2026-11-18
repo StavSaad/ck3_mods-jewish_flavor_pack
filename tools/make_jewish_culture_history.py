@@ -1,4 +1,4 @@
-# Gives each Jewish (Israelite heritage) culture, and the Nabati, the innovation history of the culture it lived among, by copying that
+# Gives each Jewish (Israelite heritage) culture, and the Arameans (syriac), the innovation history of the culture it lived among, by copying that
 # culture's vanilla history file (its own file if it has one, else its heritage's) into history/cultures/<jewish>.txt.
 # A culture's own file overrides the heritage file (see vanilla history/cultures/_culture.info). Rerun after a vanilla
 # update changes the source files.
@@ -18,8 +18,8 @@ MAP = {
     'hebrew': ('the Mashriqi Arabs of the Levant (levantine)', 'levantine.txt', ''),
     'edomite': ('the Bedouin of Edom (Arabic heritage)', 'heritage_arabic.txt',
                 '# Desert warfare from antiquity\n1.1.1 = {\n\tdiscover_innovation = innovation_war_camels\n}\n\n'),
-    # Not Jewish: the Aramaic peasants of the Sawad (0.15)
-    'nabati': ('the Mashriqi Arabs of Iraq (levantine)', 'levantine.txt', ''),
+    # Not Jewish: the Arameans (syriac), whose vanilla culture has no history of its own
+    'syriac': ('the Assyrians, their fellow Syriac Christians of the Jazira (assyrian)', 'assyrian.txt', ''),
 }
 
 for culture, (who, src, extra) in MAP.items():

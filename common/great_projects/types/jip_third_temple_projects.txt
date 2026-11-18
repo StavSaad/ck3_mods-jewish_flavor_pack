@@ -2,7 +2,7 @@
 #	The Third Temple as two great projects (0.16 plan, section 7; vanilla's system: _great_project_types.info)
 #	Founders and priestly contributors are Jews or Yahwists (jip_temple_faith_trigger)
 #	jip_gp_clear_the_temple_mount - Clear the Temple Mount: the Dome of the Rock comes down (while it stands)
-#	jip_gp_rebuild_the_temple - Rebuild the Temple: temple_in_jerusalem_01 (once the Mount is clear and no Temple stands)
+#	jip_gp_rebuild_the_temple - Rebuild the Temple: jip_temple_in_jerusalem_01 (once the Mount is clear and no Temple stands)
 #	Effects in common/scripted_effects/01_jip_third_temple_effects.txt
 #################
 
@@ -30,7 +30,7 @@ jip_gp_clear_the_temple_mount = {
 		NOT = { is_planning_great_project = jip_gp_clear_the_temple_mount }
 		title:c_jerusalem.title_province = {
 			has_building = dome_of_the_rock_01
-			NOT = { has_building = temple_in_jerusalem_01 }
+			NOT = { has_building = jip_temple_in_jerusalem_01 }
 		}
 	}
 
@@ -254,7 +254,7 @@ jip_gp_clear_the_temple_mount = {
 }
 
 # Stage 2. Any independent Jewish or Yahwist ruler who holds Jerusalem, once the Mount is clear (no Dome of the Rock) and no
-# Temple stands. On completion the Temple stands (temple_in_jerusalem_01), Kohanism opens and jip_hebrew.0040 fires.
+# Temple stands. On completion the Temple stands (jip_temple_in_jerusalem_01), Kohanism opens and jip_hebrew.0040 fires.
 jip_gp_rebuild_the_temple = {
 	icon = { reference = @jip_rebuild_the_temple_icon }
 	illustration = { reference = @jip_rebuild_the_temple_illustration }
@@ -270,7 +270,7 @@ jip_gp_rebuild_the_temple = {
 		NOT = { is_planning_great_project = jip_gp_rebuild_the_temple }
 		title:c_jerusalem.title_province = {
 			NOT = { has_building = dome_of_the_rock_01 }
-			NOT = { has_building = temple_in_jerusalem_01 }
+			NOT = { has_building = jip_temple_in_jerusalem_01 }
 		}
 	}
 

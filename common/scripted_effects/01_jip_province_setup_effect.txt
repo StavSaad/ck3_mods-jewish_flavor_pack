@@ -14,104 +14,100 @@ jip_867_setup_effect = {
 
 	# Scopes
 	culture:assyrian= { save_scope_as = assyrian }
-	culture:egyptian = { save_scope_as = egyptian }
 
 	# Innovations
 	culture:syriac = {
 		get_all_innovations_from = scope:assyrian
 	}
-	culture:copt = {
-		get_all_innovations_from = scope:egyptian
-	}
 
 	title:c_alexandria = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}		
 	title:c_fayyum = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}		
 	title:c_giza = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}		
 	title:c_al-buhaira = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}		
 	title:c_bahnasa = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}
 	title:c_ushmun = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}
 	title:c_asyut = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}
 	title:c_qus = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}
 	title:c_kharga = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}
 	title:c_dakhla = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}
 	title:c_aswan = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}
 	title:c_siwa = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}
 	title:c_al-gharbiya = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}
 	title:c_damietta = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}
 
 	#Coptic Popes
 
 	character:161518 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161520 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161508 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161521 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161514 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161515 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161522 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	#character:151524 = {
-	#	set_culture = culture:copt
+	#	set_culture = culture:remenkimi
 	#}
 	character:161516 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161523 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161509 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161517 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161510 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:168592 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 		every_courtier_or_guest = {
-			set_culture = culture:copt
+			set_culture = culture:remenkimi
 		}
 	}
 
@@ -158,27 +154,14 @@ jip_867_setup_effect = {
 		# The Sabians of Harran, star-worshippers who passed as the Qur'an's Sabians (vanilla: Armenian rite)
 		set_county_rite = rite:sabianism
 	}
-	# The Nabat, the Aramaic peasants of the Sawad and the marshes (vanilla: Levantine and Bedouin). Among them the
-	# Mandaeans, the "Sabians of the marshes"
+	# The Mandaeans of the marshes, the "Sabians of the marshes" (vanilla's Mandaean culture, 1.21; it replaced our Nabati)
 	title:c_tib = {
-		set_county_culture = culture:nabati
+		set_county_culture = culture:mandaean # vanilla's Mandaean culture (1.21)
 		set_county_rite = rite:mandeaism
 	}
 	title:c_batiha = {
-		set_county_culture = culture:nabati
+		set_county_culture = culture:mandaean # vanilla's Mandaean culture (1.21)
 		set_county_rite = rite:mandeaism
-	}
-	title:c_wasit = {
-		set_county_culture = culture:nabati
-	}
-	title:c_badaraya = {
-		set_county_culture = culture:nabati
-	}
-	title:c_iskaf = {
-		set_county_culture = culture:nabati
-	}
-	title:c_ubulla = {
-		set_county_culture = culture:nabati
 	}
 	title:c_tripoli = {
 		set_county_culture = culture:syriac
@@ -216,7 +199,6 @@ jip_1066_setup_effect = {
 
 	# Scopes
 	culture:assyrian= { save_scope_as = assyrian }
-	culture:egyptian = { save_scope_as = egyptian }
 
 	# Innovations
 	culture:syriac = {
@@ -295,84 +277,84 @@ jip_1066_setup_effect = {
 	}
 
 	title:c_alexandria = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}		
 	title:c_fayyum = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}		
 	title:c_giza = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}		
 	title:c_al-buhaira = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}	
 	title:c_asyut = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}	
 	title:c_qus = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}
 	title:c_aswan = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}
 	
 	# #Coptic Popes
 
 	character:161518 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161520 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161508 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161521 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161514 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161515 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161522 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	#character:151524 = {
-	#	set_culture = culture:copt
+	#	set_culture = culture:remenkimi
 	#}
 	character:161516 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161523 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161509 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161517 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161510 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:168592 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161511 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161513 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161513 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:35001 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 		every_courtier_or_guest = {
-			set_culture = culture:copt
+			set_culture = culture:remenkimi
 		}
 	}
 }
@@ -381,14 +363,10 @@ jip_1178_setup_effect = {
 
 	# Scopes
 	culture:assyrian= { save_scope_as = assyrian }
-	culture:egyptian = { save_scope_as = egyptian }
 
 	# Innovations
 	culture:syriac = {
 		get_all_innovations_from = scope:assyrian
-	}
-	culture:copt = {
-		get_all_innovations_from = scope:egyptian
 	}
 
 	# County Culture Shifts									
@@ -428,101 +406,101 @@ jip_1178_setup_effect = {
 		set_county_faith = faith:orthodox
 	}
 	title:c_alexandria = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}		
 	title:c_fayyum = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}					
 	title:c_asyut = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}
 	title:c_qus = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}
 	title:c_aswan = {
-		set_county_culture = culture:copt
+		set_county_culture = culture:remenkimi
 	}	
 	# #Coptic Popes
 
 	character:161518 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161520 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161508 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161521 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161514 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161515 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161522 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161524 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161516 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161523 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161509 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161517 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161510 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161519 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:168592 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161511 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161512 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161513 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:35001 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161491 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161492 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161493 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161494 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161495 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161496 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 	}
 	character:161497 = {
-		set_culture = culture:copt
+		set_culture = culture:remenkimi
 		every_courtier_or_guest = {
-			set_culture = culture:copt
+			set_culture = culture:remenkimi
 		}
 	}
 }

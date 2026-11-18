@@ -18,8 +18,8 @@ tib = { # A Mandaean centre of priests and scribes in the marshes north of Basra
 
 	county_modifier_scaled = {
 		scale = holy_site_total_artifact_rarity
-		development_growth_factor = 0.01
-		county_opinion_add = 1
+		prosperity_growth_factor = 0.01
+		popular_opinion_add = 1
 	}
 
 	faith_character_modifier = {
@@ -42,7 +42,7 @@ batiha = { # The Great Marsh, home of the "Sabians of the marshes" and their bap
 
 	county_modifier_scaled = {
 		scale = holy_site_total_artifact_rarity
-		development_growth_factor = 0.01
+		prosperity_growth_factor = 0.01
 		hostile_raid_time = 0.02
 	}
 
@@ -67,8 +67,9 @@ harran = { # The Sabian city of the moon god, its scholars and astronomers
 
 	county_modifier_scaled = {
 		scale = holy_site_total_artifact_rarity
-		development_growth_factor = 0.01
-		tax_mult = 0.01
+		prosperity_growth_factor = 0.01
+		religious_tax_mult = holy_site_relic_tax_bonus
+		trade_good_incense_sell_price_mult = holy_site_relic_sell_price_bonus
 	}
 
 	faith_character_modifier = {
@@ -90,8 +91,9 @@ shushtar = { # The Mandaeans of Khuzestan, by the great weir of Shushtar
 
 	county_modifier_scaled = {
 		scale = holy_site_total_artifact_rarity
-		development_growth_factor = 0.01
-		tax_mult = 0.01
+		prosperity_growth_factor = 0.01
+		religious_tax_mult = holy_site_relic_tax_bonus
+		trade_good_incense_sell_price_mult = holy_site_relic_sell_price_bonus
 	}
 
 	faith_character_modifier = {
@@ -100,7 +102,7 @@ shushtar = { # The Mandaeans of Khuzestan, by the great weir of Shushtar
 
 	faith_character_modifier_scaled = {
 		scale = holy_site_total_artifact_rarity
-		monthly_county_control_growth_factor = 0.01
+		monthly_control_change_when_below_baseline_mult = 0.01
 	}
 }
 
@@ -118,8 +120,8 @@ nineveh = { # The Assyrian royal city, home of Ishtar of Nineveh and Ashurbanipa
 
 	county_modifier_scaled = {
 		scale = holy_site_total_artifact_rarity
-		development_growth_factor = 0.01
-		county_opinion_add = 1
+		prosperity_growth_factor = 0.01
+		popular_opinion_add = 1
 	}
 
 	faith_character_modifier = {
@@ -143,7 +145,7 @@ ashur = { # The city of Ashur on the Tigris, the god Ashur's house and ziggurat,
 
 	county_modifier_scaled = {
 		scale = holy_site_total_artifact_rarity
-		development_growth_factor = 0.01
+		prosperity_growth_factor = 0.01
 		levy_size = 0.02
 	}
 
@@ -168,7 +170,7 @@ arbela = { # The temple of Ishtar of Arbela, whose prophetesses spoke to the Ass
 
 	county_modifier_scaled = {
 		scale = holy_site_total_artifact_rarity
-		development_growth_factor = 0.01
+		prosperity_growth_factor = 0.01
 		levy_size = 0.02
 	}
 
@@ -193,7 +195,8 @@ palmyra = { # Tadmor, the caravan city and its temple of Bel (Arameanism)
 
 	county_modifier_scaled = {
 		scale = holy_site_total_artifact_rarity
-		tax_mult = 0.01
+		religious_tax_mult = holy_site_relic_tax_bonus
+		trade_good_incense_sell_price_mult = holy_site_relic_sell_price_bonus
 		supply_limit_mult = 0.02
 	}
 
@@ -221,8 +224,9 @@ tyre = { # Tyre, the island city of Melqart, the King of the City (its barony, i
 
 	county_modifier_scaled = {
 		scale = holy_site_total_artifact_rarity
-		tax_mult = 0.01
-		development_growth_factor = 0.01
+		religious_tax_mult = holy_site_relic_tax_bonus
+		trade_good_incense_sell_price_mult = holy_site_relic_sell_price_bonus
+		prosperity_growth_factor = 0.01
 	}
 
 	faith_character_modifier = {
@@ -246,7 +250,7 @@ sidon = { # Sidon and the temple of Eshmun, the god who heals, in the orchards a
 
 	county_modifier_scaled = {
 		scale = holy_site_total_artifact_rarity
-		development_growth_factor = 0.01
+		prosperity_growth_factor = 0.01
 		epidemic_resistance = 1
 	}
 
@@ -273,8 +277,9 @@ manbij = { # Hierapolis Bambyce, the city of Atargatis, the Syrian Goddess (its 
 
 	county_modifier_scaled = {
 		scale = holy_site_total_artifact_rarity
-		development_growth_factor = 0.01
-		tax_mult = 0.01
+		prosperity_growth_factor = 0.01
+		religious_tax_mult = holy_site_relic_tax_bonus
+		trade_good_incense_sell_price_mult = holy_site_relic_sell_price_bonus
 	}
 
 	faith_character_modifier = {
@@ -298,7 +303,7 @@ emesa = { # Emesa (Homs), the city of Elagabal, the sun god of the black stone, 
 
 	county_modifier_scaled = {
 		scale = holy_site_total_artifact_rarity
-		development_growth_factor = 0.01
+		prosperity_growth_factor = 0.01
 		levy_size = 0.02
 	}
 
@@ -323,7 +328,8 @@ dura = { # Dura-Europos on the Euphrates, below Rahba, and its temple of Gad, th
 
 	county_modifier_scaled = {
 		scale = holy_site_total_artifact_rarity
-		tax_mult = 0.01
+		religious_tax_mult = holy_site_relic_tax_bonus
+		trade_good_incense_sell_price_mult = holy_site_relic_sell_price_bonus
 		supply_limit_mult = 0.02
 	}
 

@@ -2,7 +2,12 @@
 # Rich cities draw them, a royal seat twice as much, and a Jewish county most of all.
 jip_jewish_family_county_weight_value = {
 	value = 10
-	add = development_level
+	add = prosperity_level
+	# Settlement size (1-10): the Jews lived in the great cities
+	add = {
+		value = title_province.province_size_level
+		multiply = 5
+	}
 	if = {
 		limit = { this = holder.top_liege.capital_county }
 		multiply = 2

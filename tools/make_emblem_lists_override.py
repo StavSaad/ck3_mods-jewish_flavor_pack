@@ -2,7 +2,7 @@
 # with the mod's emblems added to the lists that pick an emblem by culture or faith. Not overridden by key: vanilla wraps
 # every list in one colored_emblem_texture_lists block, and a second block holding only some lists may drop the rest. The emblems' textures and their CoA designer entries are in gfx/coat_of_arms/colored_emblems/.
 #  charge                      the general charges, with vanilla's culture selections (Norse ships, the Persian simurgh):
-#                              Hadad's bull, the Abgarid tiara and Bel's eagle for Arameans and Nabati, Ishtar's star and
+#                              Hadad's bull, the Abgarid tiara and Bel's eagle for Arameans and Mandaeans, Ishtar's star and
 #                              the bull for Assyrians
 #  religion_icons              the faith's own emblem, by the faith's icon: the Mandaeans' (icon mandaean, the drabsha)
 #  pagan_religious_icons       the pagan faiths' pool: Ishtar's star for Mesopotamianism, Hadad's bull, Bel's eagle and
@@ -20,13 +20,13 @@ OUT = r'C:/Users/stavs/OneDrive/Documents/Paradox Interactive/Crusader Kings III
 # list: (vanilla line to add after, or None for the list's end, lines to add)
 ADDITIONS = {
     'charge': (None, [
-        '# Rising Lion: Arameans and Nabati (Hadad, Osroene, Palmyra)',
+        '# Rising Lion: Arameans and Mandaeans (Hadad, Osroene, Palmyra)',
         'special_selection = {',
         '	trigger = {',
         '		scope:culture = {',
         '			OR = {',
         '				this = culture:syriac',
-        '				this = culture:nabati',
+        '				this = culture:mandaean',
         '			}',
         '		}',
         '	}',
@@ -41,6 +41,13 @@ ADDITIONS = {
         '	}',
         '	100 = "ce_jip_ishtar_star.dds"',
         '	100 = "ce_jip_hadad_bull.dds"',
+        '}',
+        '# Rising Lion: Mandaeans (vanilla\'s culture, 1.21): the drabsha',
+        'special_selection = {',
+        '	trigger = {',
+        '		scope:culture = culture:mandaean',
+        '	}',
+        '	100 = "ce_jip_drabsha.dds"',
         '}']),
     'religion_icons': (
         'special_selection = { trigger = { scope:faith = { has_icon = "dualism" } } 10000000 = "ce_religion_dualism.dds" }',

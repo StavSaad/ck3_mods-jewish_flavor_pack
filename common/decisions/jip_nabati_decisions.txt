@@ -14,7 +14,7 @@ jip_nabati_nabataean_agriculture_decision = {
 
 	is_shown = {
 		OR = {
-			culture = culture:nabati
+			culture = culture:mandaean
 			custom_tooltip = { # The region trigger has no third-person text
 				text = jip_capital_in_sawad_tt
 				capital_province ?= { geographical_region = jip_region_sawad }
@@ -52,7 +52,7 @@ jip_nabati_nabataean_agriculture_decision = {
 	}
 
 	ai_potential = {
-		culture = culture:nabati
+		culture = culture:mandaean
 	}
 
 	ai_will_do = {

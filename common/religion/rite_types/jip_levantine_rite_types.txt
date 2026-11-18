@@ -14,6 +14,8 @@ baalism = {
 	}
 
 	doctrines = {
+		doctrine_diet_unrestricted # 1.21
+		doctrine_alcohol_permitted # 1.21
 		doctrine_polygamy
 	}
 }
@@ -31,6 +33,11 @@ carthage_pagan = {
 		tenet_ancestor_worship
 		tenet_sanctity_of_nature
 		tenet_adaptive
+	}
+
+	doctrines = {
+		doctrine_diet_unrestricted # 1.21
+		doctrine_alcohol_permitted # 1.21
 	}
 }
 
@@ -53,6 +60,8 @@ yahwism = {
 	}
 
 	doctrines = {
+		doctrine_diet_unrestricted # 1.21
+		doctrine_alcohol_permitted # 1.21
 		doctrine_polygamy
 	}
 
@@ -159,12 +168,17 @@ ashurism = {
 	# No conversion until the old gods are restored (the decision is still to come; 0.15 plan, section 4) (set_can_convert_to_rite)
 	convert = no
 
-	cultures = { assyrian nabati }
+	cultures = { assyrian mandaean }
 
 	tenets = {
 		tenet_jip_vicegerent_of_ashur
 		tenet_warmonger
 		tenet_ritual_celebrations # The Akitu
+	}
+
+	doctrines = {
+		doctrine_diet_unrestricted # 1.21
+		doctrine_alcohol_permitted # 1.21
 	}
 }
 
@@ -274,6 +288,11 @@ sinism = {
 		ReligiousText2 = sinism_religious_text
 		ReligiousText3 = sinism_religious_text
 	}
+
+	doctrines = {
+		doctrine_diet_unrestricted # 1.21
+		doctrine_alcohol_permitted # 1.21
+	}
 }
 
 # Arameanism (aramean_pagan). Hadadism holds the faith's gods; Belism and Atargatism their cities' own
@@ -291,6 +310,11 @@ hadadism = {
 		tenet_warmonger # The kings of Damascus, Ben-Hadad and Hazael, sons of Hadad
 		tenet_sanctity_of_nature # Hadad who rains abundance (the Tell Fekheriye statue)
 		tenet_ancestor_worship # The dead kings who eat and drink with Hadad (Panamuwa, the Katumuwa stele)
+	}
+
+	doctrines = {
+		doctrine_diet_unrestricted # 1.21
+		doctrine_alcohol_permitted # 1.21
 	}
 }
 
@@ -368,6 +392,11 @@ belism = {
 			belism_night_god_name
 		}
 	}
+
+	doctrines = {
+		doctrine_diet_unrestricted # 1.21
+		doctrine_alcohol_permitted # 1.21
+	}
 }
 
 # The Syrian Goddess of Manbij: Atargatis, Hadad beside her, the sacred lake whose fish no one eats, the Galli
@@ -420,5 +449,10 @@ atargatism = {
 			atargatism_high_god_name
 			atargatism_creator_god_name
 		}
+	}
+
+	doctrines = {
+		doctrine_diet_unrestricted # 1.21
+		doctrine_alcohol_permitted # 1.21
 	}
 }

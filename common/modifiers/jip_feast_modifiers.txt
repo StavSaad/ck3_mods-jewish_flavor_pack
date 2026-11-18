@@ -19,7 +19,7 @@ jip_akitu_fates_bad = {
 # Silver scattered to the crowds on the processional way (jip_feast.1003), on the capital county
 jip_akitu_largesse_modifier = {
 	icon = county_modifier_opinion_positive
-	county_opinion_add = 10
+	popular_opinion_add = 10
 }
 
 # Letting Akitu lapse (jip_akitu_neglect_effect); removed when the ruler holds one

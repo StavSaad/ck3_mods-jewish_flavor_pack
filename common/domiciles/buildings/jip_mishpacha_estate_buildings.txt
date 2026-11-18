@@ -41,7 +41,6 @@ jip_yeshiva_03 = {
 
 	ai_value = {
 		value = 15
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -88,7 +87,6 @@ jip_yeshiva_04 = {
 
 	ai_value = {
 		value = 14
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -129,7 +127,6 @@ jip_beit_din_03 = {
 
 	ai_value = {
 		value = 15
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -169,7 +166,6 @@ jip_beit_din_04 = {
 
 	ai_value = {
 		value = 14
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -215,7 +211,6 @@ jip_beit_knesset_04 = {
 
 	ai_value = {
 		value = 16
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -291,7 +286,6 @@ jip_beit_knesset_05 = {
 
 	ai_value = {
 		value = 15
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -367,7 +361,6 @@ jip_beit_knesset_06 = {
 
 	ai_value = {
 		value = 14
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -448,7 +441,6 @@ jip_counting_house_01 = {
 			}
 			add = 20
 		}
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -531,7 +523,6 @@ jip_counting_house_02 = {
 
 	ai_value = {
 		value = 18
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -617,7 +608,6 @@ jip_counting_house_03 = {
 
 	ai_value = {
 		value = 17
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -704,7 +694,6 @@ jip_counting_house_04 = {
 
 	ai_value = {
 		value = 16
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -791,7 +780,6 @@ jip_counting_house_05 = {
 
 	ai_value = {
 		value = 15
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -879,7 +867,6 @@ jip_counting_house_06 = {
 
 	ai_value = {
 		value = 14
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -972,7 +959,6 @@ jip_hachnasat_orchim_01 = {
 			}
 			add = 2
 		}
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -1020,7 +1006,6 @@ jip_hachnasat_orchim_02 = {
 			}
 			add = 2
 		}
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -1073,7 +1058,6 @@ jip_hachnasat_orchim_03 = {
 			}
 			add = 2
 		}
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -1125,7 +1109,6 @@ jip_hachnasat_orchim_04 = {
 			}
 			add = 2
 		}
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -1178,7 +1161,6 @@ jip_hachnasat_orchim_05 = {
 			}
 			add = 2
 		}
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -1230,7 +1212,6 @@ jip_hachnasat_orchim_06 = {
 			}
 			add = 2
 		}
-		add = estate_building_ai_modifier_value
 	}
 
 	asset = {
@@ -1274,7 +1255,11 @@ jip_temple_small_01 = {
 
 	ai_value = {
 		value = 9
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_new_value
 	}
 
 	asset = {
@@ -1402,7 +1387,11 @@ jip_temple_small_02 = {
 
 	ai_value = {
 		value = 8
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_value
 	}
 
 	asset = {
@@ -1534,7 +1523,11 @@ jip_temple_small_03 = {
 
 	ai_value = {
 		value = 7
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_value
 	}
 
 	asset = {
@@ -1679,7 +1672,11 @@ jip_temple_crypt_04 = {
 			}
 			add = 10
 		}
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_value
 	}
 
 	asset = {
@@ -1824,7 +1821,11 @@ jip_temple_crypt_05 = {
 			}
 			add = 10
 		}
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_value
 	}
 
 	asset = {
@@ -1973,7 +1974,11 @@ jip_temple_crypt_06 = {
 			}
 			add = 10
 		}
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_value
 	}
 
 	asset = {
@@ -2096,6 +2101,7 @@ jip_prison_02 = {
 		}
 	}
 
+	
 	character_modifier = {
 		dread_gain_mult = 0.05
 		hostage_income_mult = 0.05
@@ -2115,7 +2121,11 @@ jip_prison_02 = {
 			}
 			add = 5
 		}
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_value
 	}
 
 	asset = {
@@ -2149,6 +2159,7 @@ jip_prison_03 = {
 		}
 	}
 
+	
 	character_modifier = {
 		dread_gain_mult = 0.05
 		hostage_income_mult = 0.05
@@ -2169,7 +2180,11 @@ jip_prison_03 = {
 			}
 			add = 5
 		}
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_value
 	}
 
 	asset = {
@@ -2203,6 +2218,7 @@ jip_prison_04 = {
 		}
 	}
 
+	
 	character_modifier = {
 		dread_gain_mult = 0.05
 		hostage_income_mult = 0.05
@@ -2223,7 +2239,11 @@ jip_prison_04 = {
 			}
 			add = 5
 		}
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_value
 	}
 
 	asset = {
@@ -2264,7 +2284,11 @@ jip_trophy_room_03 = {
 
 	ai_value = {
 		value = 5
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_value
 	}
 
 	asset = {
@@ -2306,7 +2330,11 @@ jip_trophy_room_04 = {
 
 	ai_value = {
 		value = 4
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_value
 	}
 
 	asset = {
@@ -2342,7 +2370,11 @@ jip_office_01 = {
 
 	ai_value = {
 		value = 7
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_new_value
 	}
 
 	asset = {
@@ -2374,11 +2406,16 @@ jip_office_02 = {
 
 	character_modifier = {
 		monthly_stewardship_lifestyle_xp_gain_mult = 0.05
+		governor_efficiency_add = estate_governor_efficiency_bonus_value
 	}
 
 	ai_value = {
 		value = 6
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_value
 	}
 
 	asset = {
@@ -2418,7 +2455,11 @@ jip_office_03 = {
 
 	ai_value = {
 		value = 5
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_value
 	}
 
 	asset = {
@@ -2458,7 +2499,11 @@ jip_office_04 = {
 
 	ai_value = {
 		value = 4
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_value
 	}
 
 	asset = {
@@ -2497,8 +2542,13 @@ jip_silk_01 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_gold_add = 0.1
+		domicile_monthly_gold_add = estate_income_small
 		owned_political_scheme_success_chance_add = 3
+	}
+
+	province_modifier = {
+		trade_good_silk_production_add = domicile_primary_production_add_6_levels_level_1
+		trade_good_silk_production_mult = domicile_primary_production_mult_6_levels
 	}
 
 	on_complete = {
@@ -2527,7 +2577,11 @@ jip_silk_01 = {
 
 	ai_value = {
 		value = 15
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_new_income_value
 	}
 
 	asset = {
@@ -2577,8 +2631,13 @@ jip_silk_02 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_gold_add = 0.1
+		domicile_monthly_gold_add = estate_income_small
 		owned_political_scheme_success_chance_add = 3
+	}
+
+	province_modifier = {
+		trade_good_silk_production_add = domicile_primary_production_add_6_levels
+		trade_good_silk_production_mult = domicile_primary_production_mult_6_levels
 	}
 
 	on_complete = {
@@ -2607,7 +2666,11 @@ jip_silk_02 = {
 
 	ai_value = {
 		value = 13
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_income_value
 	}
 
 	asset = {
@@ -2658,8 +2721,13 @@ jip_silk_03 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_gold_add = 0.1
+		domicile_monthly_gold_add = estate_income_small
 		owned_political_scheme_success_chance_add = 3
+	}
+
+	province_modifier = {
+		trade_good_silk_production_add = domicile_primary_production_add_6_levels
+		trade_good_silk_production_mult = domicile_primary_production_mult_6_levels
 	}
 
 	on_complete = {
@@ -2688,7 +2756,11 @@ jip_silk_03 = {
 
 	ai_value = {
 		value = 11
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_income_value
 	}
 
 	asset = {
@@ -2743,8 +2815,13 @@ jip_silk_04 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_gold_add = 0.1
+		domicile_monthly_gold_add = estate_income_small
 		owned_political_scheme_success_chance_add = 3
+	}
+
+	province_modifier = {
+		trade_good_silk_production_add = domicile_primary_production_add_6_levels
+		trade_good_silk_production_mult = domicile_primary_production_mult_6_levels
 	}
 
 	on_complete = {
@@ -2773,7 +2850,11 @@ jip_silk_04 = {
 
 	ai_value = {
 		value = 9
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_income_value
 	}
 
 	asset = {
@@ -2828,8 +2909,13 @@ jip_silk_05 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_gold_add = 0.1
+		domicile_monthly_gold_add = estate_income_small
 		owned_political_scheme_success_chance_add = 4
+	}
+
+	province_modifier = {
+		trade_good_silk_production_add = domicile_primary_production_add_6_levels
+		trade_good_silk_production_mult = domicile_primary_production_mult_6_levels
 	}
 
 	on_complete = {
@@ -2858,7 +2944,11 @@ jip_silk_05 = {
 
 	ai_value = {
 		value = 7
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_income_value
 	}
 
 	asset = {
@@ -2913,8 +3003,13 @@ jip_silk_06 = {
 	}
 
 	character_modifier = {
-		domicile_monthly_gold_add = 0.1
+		domicile_monthly_gold_add = estate_income_small
 		owned_political_scheme_success_chance_add = 4
+	}
+
+	province_modifier = {
+		trade_good_silk_production_add = domicile_primary_production_add_6_levels
+		trade_good_silk_production_mult = domicile_primary_production_mult_6_levels
 	}
 
 	on_complete = {
@@ -2943,7 +3038,11 @@ jip_silk_06 = {
 
 	ai_value = {
 		value = 5
-		add = estate_building_ai_modifier_value
+		multiply = ai_building_domicile_nudge_slope
+		add = ai_building_domicile_nudge_offset
+		min = ai_building_domicile_nudge_min
+		max = ai_building_domicile_nudge_max
+		multiply = ai_building_domicile_upgrade_income_value
 	}
 
 	asset = {

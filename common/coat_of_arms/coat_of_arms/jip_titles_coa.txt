@@ -539,7 +539,7 @@ d_rish_amma = {
 	}
 }
 
-# Aramean arms for the titles named in Aramaic, shown under an Aramean or Nabati holder (Adiabene: Assyrian too),
+# Aramean arms for the titles named in Aramaic, shown under an Aramean or Mandaean holder (Adiabene: Assyrian too),
 # picked in common/coat_of_arms/dynamic_definitions/jip_aramean_coas.txt. Emblems by tools/make_coa_emblem.py from
 # Gemini drawings
 

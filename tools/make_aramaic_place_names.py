@@ -1,4 +1,4 @@
-# Writes the Aramean, Assyrian and Nabati cultural names (name_list_aramean, name_list_assyrian, name_list_nabati) in
+# Writes the Aramean, Assyrian and Mandaean cultural names (name_list_aramean, name_list_assyrian, name_list_mandaean) in
 # common/landed_titles/jip_landed_titles.txt from the table below, the one place to change them. Rerunnable: it
 # replaces those three lists' entries in every cultural_names block, removes them from titles not in the table,
 # and adds a cultural_names block where a title needs one. The other lists (Canaanite, Jewish) are left alone.
@@ -6,7 +6,7 @@
 # Naming rule (0.15 plan, section 1):
 # - Aramean: Iron-Age Aramaic where attested, otherwise Classical Syriac
 # - Assyrian: Neo-Assyrian (Akkadian) where attested, otherwise Classical Syriac
-# - Nabati: the Aramean name, except its own names in the Sawad (NABATI below)
+# - Mandaean (vanilla's culture since 1.21, which replaced our Nabati): the Aramean name, except its own names (NABATI below)
 # None leaves the list without a name there (the title's default name shows).
 import re
 
@@ -157,10 +157,10 @@ NAMES = {
     'e_kemet': ('musri', 'mesrin'),
 }
 
-# Nabati names that differ from the Aramean ones
+# Mandaean (formerly Nabati) names that differ from the Aramean ones
 NABATI = {}
 
-LISTS = ('name_list_assyrian', 'name_list_aramean', 'name_list_nabati')
+LISTS = ('name_list_assyrian', 'name_list_aramean', 'name_list_mandaean')
 
 
 def wanted(title):

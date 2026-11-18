@@ -1,7 +1,7 @@
 ﻿# The Nineveh dig (jip_gp_nineveh_excavation)
 
 # Character scope: an heir of Assyria, who benefits fully from the tablets of Ashurbanipal's library
-# (jip_nineveh_tablet_template): Aramean, Nabati or Assyrian (the cultures with Aramaic place names), or the old faith
+# (jip_nineveh_tablet_template): Aramean, Mandaean or Assyrian (the cultures with Aramaic place names), or the old faith
 jip_heir_of_assyria_trigger = {
 	OR = {
 		jip_uses_assyrian_arms_trigger = yes

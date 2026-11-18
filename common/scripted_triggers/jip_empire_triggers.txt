@@ -2,13 +2,13 @@
 # both take Syria and Jerusalem, and Aram Rabba Syria, the Jazira, Jerusalem, Israel, Phoenicia, Arabia and
 # Egypt; each founding decision takes them from whoever holds them (0.15 plan, section 5).
 
-# Character scope: of a culture that uses the Aramean place names (Aramean, Nabati), so shows the Aramean arms of
+# Character scope: of a culture that uses the Aramean place names (Aramean, Mandaean), so shows the Aramean arms of
 # Aram and Osroene (common/coat_of_arms/dynamic_definitions/jip_aramean_coas.txt)
 jip_uses_aramean_arms_trigger = {
 	culture ?= {
 		OR = {
 			has_name_list = name_list_aramean
-			has_name_list = name_list_nabati
+			has_name_list = name_list_mandaean
 		}
 	}
 }
@@ -18,7 +18,7 @@ jip_uses_assyrian_arms_trigger = {
 	culture ?= {
 		OR = {
 			has_name_list = name_list_aramean
-			has_name_list = name_list_nabati
+			has_name_list = name_list_mandaean
 			has_name_list = name_list_assyrian
 		}
 	}

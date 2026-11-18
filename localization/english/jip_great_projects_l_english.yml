@@ -27,8 +27,8 @@
  # The building (common/buildings/01_jip_buildings.txt)
  building_type_jip_temple_of_sin_01:0 "Temple of Sin"
  building_type_jip_temple_of_sin_01_desc:0 "The Ehulhul, the House of Rejoicing, temple of Sin, Lord of the Moon, at Harran."
- building_jip_temple_of_sin_01:0 "Temple of Sin"
- building_jip_temple_of_sin_01_desc:0 "The Ehulhul stands again at Harran. Cedar beams hold its roof, a silver crescent crowns its gate, and at night the star-readers climb to its terrace to watch the Moon."
+ jip_temple_of_sin_01:0 "Temple of Sin"
+ jip_temple_of_sin_01_desc:0 "The Ehulhul stands again at Harran. Cedar beams hold its roof, a silver crescent crowns its gate, and at night the star-readers climb to its terrace to watch the Moon."
  jip_temple_of_sin_enabled_trigger:0 "The holder is a Sabian or follows the old gods"
  jip_unlock_mesopotamian_conversion_tt:0 "The old gods are honoured again at Harran: characters may now convert to $mesopotamian_pagan$"
 
@@ -67,8 +67,8 @@
  great_project_type_jip_gp_temple_of_bel_contribution_colonnade_desc:0 "A double colonnade ran around the temple courtyard, the greatest in the East. It can be raised again, column by column."
  building_type_jip_temple_of_bel_01:0 "Temple of Bel"
  building_type_jip_temple_of_bel_01_desc:0 "The great temple of Bel at Palmyra, the caravan city's god."
- building_jip_temple_of_bel_01:0 "Temple of Bel"
- building_jip_temple_of_bel_01_desc:0 "The house of Bel stands again in the middle of Palmyra. Its stepped merlons catch the sun, the eagle spreads its wings over the inner shrine, and the caravans stop at its gate to give thanks for the crossing."
+ jip_temple_of_bel_01:0 "Temple of Bel"
+ jip_temple_of_bel_01_desc:0 "The house of Bel stands again in the middle of Palmyra. Its stepped merlons catch the sun, the eagle spreads its wings over the inner shrine, and the caravans stop at its gate to give thanks for the crossing."
 
  # The Temple of Shamash at Hatra
  great_project_type_jip_gp_temple_of_shamash:0 "Raise the Temple of the Sun"
@@ -89,8 +89,8 @@
  great_project_type_jip_gp_temple_of_shamash_contribution_kings_desc:0 "Statues of the kings of Hatra, the kings of the Arabs, in the temple courts where their fathers set them."
  building_type_jip_temple_of_shamash_01:0 "Temple of Shamash"
  building_type_jip_temple_of_shamash_01_desc:0 "The great temple of Shamash, the sun, at Hatra."
- building_jip_temple_of_shamash_01:0 "Temple of Shamash"
- building_jip_temple_of_shamash_01_desc:0 "The iwans of Hatra open to the sunrise again. Behind the round walls, the sun's priests sit in judgement, as they did when Rome came and went."
+ jip_temple_of_shamash_01:0 "Temple of Shamash"
+ jip_temple_of_shamash_01_desc:0 "The iwans of Hatra open to the sunrise again. Behind the round walls, the sun's priests sit in judgement, as they did when Rome came and went."
 
  # The Temple of Ashur at Ashur
  great_project_type_jip_gp_temple_of_ashur:0 "Raise the House of Ashur"
@@ -111,8 +111,8 @@
  great_project_type_jip_gp_temple_of_ashur_contribution_lamassu_desc:0 "Winged bulls with the faces of men, to guard the god's gate as they guarded the palaces of the kings."
  building_type_jip_temple_of_ashur_01:0 "Temple of Ashur"
  building_type_jip_temple_of_ashur_01_desc:0 "The Esharra, the house of the god Ashur, beside his ziggurat at Ashur."
- building_jip_temple_of_ashur_01:0 "Temple of Ashur"
- building_jip_temple_of_ashur_01_desc:0 "The ziggurat of Ashur rises over the Tigris again, and the god has his house. Lamassu guard the gate, and the king who built it rules as Ashur's vicegerent."
+ jip_temple_of_ashur_01:0 "Temple of Ashur"
+ jip_temple_of_ashur_01_desc:0 "The ziggurat of Ashur rises over the Tigris again, and the god has his house. Lamassu guard the gate, and the king who built it rules as Ashur's vicegerent."
 
  # The Temple of Ishtar at Arbela
  great_project_type_jip_gp_temple_of_ishtar:0 "Raise the House of the Lady of Arbela"
@@ -134,8 +134,8 @@
  great_project_type_jip_gp_temple_of_ishtar_contribution_milqia_desc:0 "The festival house in the open country outside Arbela, where the goddess rested on her processions and her kings were feasted."
  building_type_jip_temple_of_ishtar_01:0 "Temple of Ishtar"
  building_type_jip_temple_of_ishtar_01_desc:0 "The Egashankalamma, temple of Ishtar of Arbela, the goddess of war."
- building_jip_temple_of_ishtar_01:0 "Temple of Ishtar"
- building_jip_temple_of_ishtar_01_desc:0 "The Lady of Arbela has her house again. Her shrine shines with gold, her image sits on its lion throne, and before every war her prophetesses come to the ruler with her words."
+ jip_temple_of_ishtar_01:0 "Temple of Ishtar"
+ jip_temple_of_ishtar_01_desc:0 "The Lady of Arbela has her house again. Her shrine shines with gold, her image sits on its lion throne, and before every war her prophetesses come to the ruler with her words."
 
  # The Nineveh dig
  great_project_type_jip_gp_nineveh_excavation:0 "Dig into the Mound of Nineveh"
@@ -157,7 +157,7 @@
  great_project_type_jip_gp_nineveh_excavation_contribution_copyists_desc:0 "Copyists to copy what is found onto parchment before the clay crumbles in the open air."
 
  # The tablets (jip_nineveh_tablet_effect; full modifiers only for the heirs of Assyria, jip_nineveh_tablet_template)
- jip_heir_of_assyria_tt:0 "Is Aramean, Nabati or Assyrian, or follows the old gods"
+ jip_heir_of_assyria_tt:0 "Is Aramean, Mandaean or Assyrian, or follows the old gods"
  jip_artifact_nineveh_gilgamesh_name:0 "The Tablets of Gilgamesh"
  jip_artifact_nineveh_gilgamesh_desc:0 "Twelve clay tablets telling of Gilgamesh, king of Uruk, who sought the plant of life after the death of his friend Enkidu, and of the flood that Utnapishtim survived."
  jip_artifact_nineveh_enuma_elish_name:0 "The Tablets of Creation"
@@ -189,8 +189,8 @@
  great_project_type_jip_gp_temple_of_marduk_contribution_ziggurat_desc:0 "Beside the Esagila stood Etemenanki, \"the house of the foundation of heaven and earth\", the temple tower that the Jews remembered as the Tower of Babel. Raise it again, terrace by terrace."
  building_type_jip_temple_of_marduk_01:0 "Esagila"
  building_type_jip_temple_of_marduk_01_desc:0 "The temple of Marduk, king of the gods, at Babylon. Its New Year festival made and unmade kings."
- building_jip_temple_of_marduk_01:0 "Esagila"
- building_jip_temple_of_marduk_01_desc:0 "The house of Marduk stands again at Babylon, and the god waits in it for the New Year."
+ jip_temple_of_marduk_01:0 "Esagila"
+ jip_temple_of_marduk_01_desc:0 "The house of Marduk stands again at Babylon, and the god waits in it for the New Year."
 
  # The Canaanite temples
  jip_gp_canaanite_faithful_tt:0 "The contributor follows Canaanism"
@@ -216,8 +216,8 @@
  great_project_type_jip_gp_temple_of_melqart_contribution_altar_desc:0 "Each spring the king of Tyre burned the god's image on a great pyre, and the priests called him back to life: the egersis, the Awakening of Melqart. Build the altar where he rises."
  building_type_jip_temple_of_melqart_01:0 "Temple of Melqart"
  building_type_jip_temple_of_melqart_01_desc:0 "The house of Melqart, King of the City, the god of Tyre and of its ships."
- building_jip_temple_of_melqart_01:0 "Temple of Melqart"
- building_jip_temple_of_melqart_01_desc:0 "Melqart's house stands again at Tyre: cedar under the roof, purple at the doors, and the two pillars shining in the dark for the ships coming in."
+ jip_temple_of_melqart_01:0 "Temple of Melqart"
+ jip_temple_of_melqart_01_desc:0 "Melqart's house stands again at Tyre: cedar under the roof, purple at the doors, and the two pillars shining in the dark for the ships coming in."
 
  # The Temple of Tanit and Baal Hammon at Carthage
  great_project_type_jip_gp_temple_of_tanit:0 "Raise the House of Tanit"
@@ -239,8 +239,8 @@
  great_project_type_jip_gp_temple_of_tanit_contribution_steps_desc:0 "Sixty steps climbed the Byrsa, Carthage's hill, to the gilded temple at its top, the city's last refuge in the Roman siege. Cut them again."
  building_type_jip_temple_of_tanit_01:0 "Temple of Tanit"
  building_type_jip_temple_of_tanit_01_desc:0 "The sanctuary of Tanit, the Lady of Carthage."
- building_jip_temple_of_tanit_01:0 "Temple of Tanit"
- building_jip_temple_of_tanit_01_desc:0 "Tanit's sign is carved over the door of Carthage again, and the stones of new vows stand in her field."
+ jip_temple_of_tanit_01:0 "Temple of Tanit"
+ jip_temple_of_tanit_01_desc:0 "Tanit's sign is carved over the door of Carthage again, and the stones of new vows stand in her field."
 
  # The Temple of Eshmun at Sidon
  great_project_type_jip_gp_temple_of_eshmun:0 "Raise the House of Eshmun"
@@ -262,8 +262,8 @@
  great_project_type_jip_gp_temple_of_eshmun_contribution_tribune_desc:0 "A marble tribune carved with the god's festival, musicians above and dancers below, stood in the court. Let the carvers set it there again."
  building_type_jip_temple_of_eshmun_01:0 "Temple of Eshmun"
  building_type_jip_temple_of_eshmun_01_desc:0 "The temple of Eshmun, the healing god of Sidon, with its sacred pools."
- building_jip_temple_of_eshmun_01:0 "Temple of Eshmun"
- building_jip_temple_of_eshmun_01_desc:0 "Eshmun's pools are full again outside Sidon, and the sick sleep in his court waiting for his dreams."
+ jip_temple_of_eshmun_01:0 "Temple of Eshmun"
+ jip_temple_of_eshmun_01_desc:0 "Eshmun's pools are full again outside Sidon, and the sick sleep in his court waiting for his dreams."
 
  # The Temple of Baalat Gebal at Byblos
  great_project_type_jip_gp_temple_of_baalat_gebal:0 "Raise the House of the Lady"
@@ -285,8 +285,8 @@
  great_project_type_jip_gp_temple_of_baalat_gebal_contribution_gardens_desc:0 "Every spring the women of Byblos planted little gardens for the Lady that flowered and withered in days, and wept over them as the river ran red from the mountains. Plant them again."
  building_type_jip_temple_of_baalat_gebal_01:0 "Temple of Baalat Gebal"
  building_type_jip_temple_of_baalat_gebal_01_desc:0 "The temple of the Lady of Byblos, the oldest goddess of the Phoenician coast."
- building_jip_temple_of_baalat_gebal_01:0 "Temple of Baalat Gebal"
- building_jip_temple_of_baalat_gebal_01_desc:0 "The Lady of Byblos has her house again, with new obelisks of vows beside it and the old foundations under it."
+ jip_temple_of_baalat_gebal_01:0 "Temple of Baalat Gebal"
+ jip_temple_of_baalat_gebal_01_desc:0 "The Lady of Byblos has her house again, with new obelisks of vows beside it and the old foundations under it."
 
  # The Temple of Baal at Baalbek
  great_project_type_jip_gp_temple_of_baal:0 "Raise the House of Baal"
@@ -308,8 +308,8 @@
  great_project_type_jip_gp_temple_of_baal_contribution_lesser_temple_desc:0 "Beside Baal's temple stood a smaller one, finer carved than any in the Roman world. Restore it with him."
  building_type_jip_temple_of_baal_01:0 "Temple of Baal"
  building_type_jip_temple_of_baal_01_desc:0 "The great temple of Baal at Baalbek, the City of the Sun."
- building_jip_temple_of_baal_01:0 "Temple of Baal"
- building_jip_temple_of_baal_01_desc:0 "Baal's temple stands again at Baalbek on its giant stones, its columns taller than the walls of most cities."
+ jip_temple_of_baal_01:0 "Temple of Baal"
+ jip_temple_of_baal_01_desc:0 "Baal's temple stands again at Baalbek on its giant stones, its columns taller than the walls of most cities."
 
  # The Temple of Astarte at Kition
  great_project_type_jip_gp_temple_of_astarte:0 "Raise the House of Astarte"
@@ -331,8 +331,8 @@
  great_project_type_jip_gp_temple_of_astarte_contribution_harbour_desc:0 "Kition's war fleet lay in sheds by its inner harbour, under the goddess's eye. Dig out the harbour again."
  building_type_jip_temple_of_astarte_01:0 "Temple of Astarte"
  building_type_jip_temple_of_astarte_01_desc:0 "The temple of Astarte at Kition, the greatest Phoenician temple on Cyprus."
- building_jip_temple_of_astarte_01:0 "Temple of Astarte"
- building_jip_temple_of_astarte_01_desc:0 "Astarte's temple stands again at Kition, its doves on the walls and copper smoke rising beside it."
+ jip_temple_of_astarte_01:0 "Temple of Astarte"
+ jip_temple_of_astarte_01_desc:0 "Astarte's temple stands again at Kition, its doves on the walls and copper smoke rising beside it."
  # Negations of the buildings' custom_description texts, which the game looks up when they fail
  NOT_jip_temple_of_sin_enabled_trigger:0 "The holder is neither a Sabian nor a follower of the old gods"
  NOT_jip_temple_of_the_old_gods_enabled_trigger:0 "The holder is neither a Sabian nor a follower of the old gods"
@@ -367,8 +367,8 @@
  great_project_type_jip_gp_temple_of_hadad_contribution_rain_desc:0 "When the rain comes the people climb to Hadad's house with the first fruits. Pay for the feast, and the god will remember the city in the dry years."
  building_type_jip_temple_of_hadad_01:0 "Temple of Hadad"
  building_type_jip_temple_of_hadad_01_desc:0 "The house of Hadad, the storm god of the kings of Damascus, in its walled court."
- building_jip_temple_of_hadad_01:0 "Temple of Hadad"
- building_jip_temple_of_hadad_01_desc:0 "Hadad strides on his bull again in the great court of Damascus, the thunderbolt in his hand, and the people bring him the first fruits when the rain comes."
+ jip_temple_of_hadad_01:0 "Temple of Hadad"
+ jip_temple_of_hadad_01_desc:0 "Hadad strides on his bull again in the great court of Damascus, the thunderbolt in his hand, and the people bring him the first fruits when the rain comes."
 
  # The Temple of Atargatis
  great_project_type_jip_gp_temple_of_atargatis:0 "Raise the House of the Syrian Goddess"
@@ -390,8 +390,8 @@
  great_project_type_jip_gp_temple_of_atargatis_contribution_pyre_desc:0 "Every spring the pilgrims set great trees up in the temple court, hang them with offerings and burn them. Pave a court wide enough for the whole of Syria."
  building_type_jip_temple_of_atargatis_01:0 "Temple of Atargatis"
  building_type_jip_temple_of_atargatis_01_desc:0 "The temple of the Syrian Goddess at Manbij, with its sacred lake."
- building_jip_temple_of_atargatis_01:0 "Temple of Atargatis"
- building_jip_temple_of_atargatis_01_desc:0 "The golden doors of the Syrian Goddess open to the sunrise again at Manbij, her fish swim in the sacred lake, and the pilgrims come every spring to burn the Pyre."
+ jip_temple_of_atargatis_01:0 "Temple of Atargatis"
+ jip_temple_of_atargatis_01_desc:0 "The golden doors of the Syrian Goddess open to the sunrise again at Manbij, her fish swim in the sacred lake, and the pilgrims come every spring to burn the Pyre."
 
  # The Temple of Elagabal
  great_project_type_jip_gp_temple_of_elagabal:0 "Raise the House of the Sun"
@@ -413,8 +413,8 @@
  great_project_type_jip_gp_temple_of_elagabal_contribution_procession_desc:0 "Once a year the stone rode through the city in a chariot drawn by six white horses, the priest walking backwards before it. Build the chariot and breed the horses."
  building_type_jip_temple_of_elagabal_01:0 "Temple of Elagabal"
  building_type_jip_temple_of_elagabal_01_desc:0 "The temple of the sun god of Emesa and his black stone."
- building_jip_temple_of_elagabal_01:0 "Temple of Elagabal"
- building_jip_temple_of_elagabal_01_desc:0 "The black stone of Elagabal stands again on its high podium at Emesa, the golden eagle before it, and the priests dance before it in the sun."
+ jip_temple_of_elagabal_01:0 "Temple of Elagabal"
+ jip_temple_of_elagabal_01_desc:0 "The black stone of Elagabal stands again on its high podium at Emesa, the golden eagle before it, and the priests dance before it in the sun."
 
  # The Temple of Gad
  great_project_type_jip_gp_temple_of_gad:0 "Raise the House of Gad"
@@ -436,5 +436,5 @@
  great_project_type_jip_gp_temple_of_gad_contribution_altar_desc:0 "Before the sanctuary stood an altar where the faithful burned incense and laid their coins for luck. Set it up, and let the god take his share."
  building_type_jip_temple_of_gad_01:0 "Temple of Gad"
  building_type_jip_temple_of_gad_01_desc:0 "The temple of Gad, the Fortune of the city, on the Euphrates."
- building_jip_temple_of_gad_01:0 "Temple of Gad"
- building_jip_temple_of_gad_01_desc:0 "Gad's lamps burn again above the Euphrates, where the Fortunes of Dura and Palmyra sit side by side, and the caravan masters leave their coins at his altar before the desert road."
+ jip_temple_of_gad_01:0 "Temple of Gad"
+ jip_temple_of_gad_01_desc:0 "Gad's lamps burn again above the Euphrates, where the Fortunes of Dura and Palmyra sit side by side, and the caravan masters leave their coins at his altar before the desert road."

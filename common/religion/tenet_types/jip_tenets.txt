@@ -31,7 +31,7 @@ tenet_kehunah = {
 	}
 	# The tithes owed to the priests and Levites
 	county_modifier = {
-		tax_mult = 0.05
+		religious_tax_mult = 0.05
 	}
 	traits = {
 		virtues = {

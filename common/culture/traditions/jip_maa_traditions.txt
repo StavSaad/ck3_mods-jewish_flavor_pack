@@ -4,7 +4,8 @@
 #   Bellicose (Aramean) or Communal (Assyrian) culture
 # - Israelite: Edomite starts with the Bowmen of Seir (in place of vanilla's Desert Ribat)
 # - Phoenician: Phoenician and Carthaginian start with the Sacred Band
-# - Egyptian: Kemi (copt) and Ancient Egyptian start with Archers of the Two Lands, vanilla's Nile Archers
+# - Egyptian: Ancient Egyptian starts with Archers of the Two Lands, vanilla's Nile Archers (our Copt culture, Kemi, gave
+#   way to vanilla's Remenkhemi in 1.21, which keeps vanilla's traditions)
 # Forming Hebrew keeps them (handle_maa_traditions_for_culture in 01_jip_decisions_effects.txt)
 
 tradition_jip_palmyrene_archery = {

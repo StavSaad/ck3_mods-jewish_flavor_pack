@@ -13,8 +13,8 @@
  jip_nabati.0100.desc: "[jip_shuubi.GetTitledFirstName] of the Nabat has been reading aloud at court from a book of [jip_shuubi.GetHerHis] own. It says that when the Arabs were herding camels in the desert, the Nabat of the Sawad had built Babylon, dug the canals, measured the stars and written the laws, and that every science the Arabs boast of they learnt from older peoples.\n\nSome of your courtiers laugh. Others have their hands on their swords."
  jip_nabati.0100.a: "Have [jip_shuubi.GetHerHim] flogged for this insolence."
  jip_nabati.0100.b: "Answer [jip_shuubi.GetHerHim], if you can."
- jip_nabati.0100.b.win: "You confound the Nabati"
- jip_nabati.0100.b.loss: "The Nabati has the better of you"
+ jip_nabati.0100.b.win: "You confound the Mandaean"
+ jip_nabati.0100.b.loss: "The Mandaean has the better of you"
  jip_nabati.0100.c: "Every people has its glory."
 
  jip_nabati.0200.t: "Heirs of Babylon"

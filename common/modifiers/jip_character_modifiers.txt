@@ -1,4 +1,4 @@
-﻿# Character modifiers from the 0.15 content (Mandaeans, Nabati)
+﻿# Character modifiers from the 0.15 content (Mandaeans; the Nabati gave way to vanilla's Mandaean culture in 1.21)
 
 # The Masbuta received (jip_mandaean_masbuta_decision)
 jip_masbuta_modifier = {

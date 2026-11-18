@@ -16,6 +16,11 @@ rabbinism = {
 
 	# TODO_PAM_DESIGN TIT-72804
 	cultures = { ashkenazi }
+
+	doctrines = {
+		doctrine_diet_unrestricted # 1.21
+		doctrine_alcohol_permitted # 1.21
+	}
 }
 
 merkabah = {
@@ -33,6 +38,8 @@ merkabah = {
 	}
 
 	doctrines = {
+		doctrine_diet_unrestricted # 1.21
+		doctrine_alcohol_permitted # 1.21
 		doctrine_pluralism_righteous
 	}
 }
@@ -49,6 +56,8 @@ karaism = {
 	}
 
 	doctrines = {
+		doctrine_diet_unrestricted # 1.21
+		doctrine_alcohol_permitted # 1.21
 		temple_authority_toric_doctrine
 		special_doctrine_prophecy_of_malachi
 		doctrine_spiritual_head
@@ -68,6 +77,8 @@ haymanot = {
 	}
 
 	doctrines = {
+		doctrine_diet_unrestricted # 1.21
+		doctrine_alcohol_permitted # 1.21
 		temple_authority_kohanim_doctrine
 		special_doctrine_prophecy_of_malachi
 		doctrine_polygamy
@@ -88,6 +99,8 @@ malabarism = {
 	}
 
 	doctrines = {
+		doctrine_diet_unrestricted # 1.21
+		doctrine_alcohol_permitted # 1.21
 		temple_authority_toric_doctrine
 		special_doctrine_prophecy_of_malachi
 		doctrine_theocracy_lay_clergy
@@ -108,6 +121,8 @@ samaritan = {
 	}
 
 	doctrines = {
+		doctrine_diet_unrestricted # 1.21
+		doctrine_alcohol_permitted # 1.21
 		temple_authority_samaritan_torah_doctrine
 		doctrine_spiritual_head
 		doctrine_pluralism_righteous
@@ -127,6 +142,8 @@ kabarism = {
 	}
 
 	doctrines = {
+		doctrine_diet_unrestricted # 1.21
+		doctrine_alcohol_permitted # 1.21
 		unreformed_faith_doctrine
 		temple_authority_rabbinic_doctrine
 		special_doctrine_prophecy_of_malachi
@@ -152,6 +169,8 @@ kohanism = {
 	}
 
 	doctrines = {
+		doctrine_diet_unrestricted # 1.21
+		doctrine_alcohol_permitted # 1.21
 		temple_authority_kohanim_doctrine
 		special_doctrine_prophecy_of_malachi
 		doctrine_spiritual_head

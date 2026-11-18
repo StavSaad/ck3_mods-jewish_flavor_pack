@@ -65,7 +65,7 @@ jip_mishpacha_migration_city_score_value = {
 		add = 30
 	}
 	add = {
-		value = county.development_level
+		value = county.prosperity_level
 		multiply = 0.5
 	}
 	subtract = jip_mishpacha_migration_distance_value

@@ -53,9 +53,9 @@ davidic_legacy_5 = {
 	legacy = davidic_line_legacy_track
 
 	character_modifier = {
-		development_growth_factor = 0.5
+		prosperity_growth_factor = 0.5
 		domain_limit = 1
-		tax_mult = 0.2
+		all_tax_mult = 0.2
 	}
 }
 
@@ -119,7 +119,7 @@ harranian_legacy_5 = { # Return of the Gods
 
 	character_modifier = {
 		monthly_prestige = 1
-		county_opinion_add = 5
-		development_growth_factor = 0.2
+		popular_opinion_add = 5
+		prosperity_growth_factor = 0.2
 	}
 }

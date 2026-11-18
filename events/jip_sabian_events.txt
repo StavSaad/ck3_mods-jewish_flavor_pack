@@ -352,7 +352,7 @@ jip_sabian.0200 = {
 		name = jip_sabian.0200.b
 		add_stewardship_lifestyle_xp = medium_lifestyle_xp
 		capital_county ?= {
-			change_development_progress = medium_development_progress_gain
+			change_prosperity_progress = medium_prosperity_progress_gain
 		}
 		scope:jip_sabian_scholar = {
 			add_opinion = {

@@ -1,145 +1,4 @@
-﻿#################################
-# Fix Rebuilding the 3rd temple #
-#################################
-
-dome_of_the_rock_01 = {
-	effect_desc = {
-		triggered_desc = {
-			trigger = { has_dlc_feature = legends_of_the_dead }
-			desc = building_funeral_effect_desc
-		}
-	}
-	construction_time = very_slow_construction_time
-
-	type_icon = "icon_structure_dome_of_the_rock.dds"
-	
-	can_construct_potential = {
-		building_requirement_tribal = no
-	}
-	
-	is_enabled = {
-		custom_description = {
-			text = holy_site_building_trigger
-			barony = {
-				is_holy_site_of = scope:holder.faith
-			}
-		}
-	}
-	
-	show_disabled = yes
-	
-	cost_gold = 1000
-
-	character_modifier = {
-		monthly_piety_gain_per_knight_mult = 0.03
-		monthly_dynasty_prestige_mult = 0.05
-		monthly_county_control_growth_factor = 0.1
-		martial_per_piety_level = 1
-		knight_effectiveness_mult = 0.2
-	}
-	
-	county_modifier = {
-		tax_mult = 0.3
-		development_growth_factor = 0.3
-		development_growth = 0.3
-	}
-	
-	province_modifier = {
-		monthly_income = 3
-	}
-	
-	ai_value = {
-		base = 100
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
-		
-	type = special
-
-	flag = travel_point_of_interest_religious
-}
-
-temple_in_jerusalem_01 = {
-	effect_desc = {
-		triggered_desc = {
-			trigger = { has_dlc_feature = legends_of_the_dead }
-			desc = building_funeral_effect_desc
-		}
-	}
-	construction_time = very_slow_construction_time
-
-	type_icon = "icon_structure_temple_in_jerusalem.dds"
-	
-	can_construct_potential = {
-		building_requirement_tribal = no
-	}
-	
-	can_construct = {
-		custom_description = {
-			text = holy_site_building_trigger
-			barony = {
-				is_holy_site_of = scope:holder.faith
-			}
-		}
-		scope:holder.religion = religion:judaism_religion
-	}
-	
-	is_enabled = {
-		custom_description = {
-			text = holy_site_jewish_or_holy_site_trigger
-			OR = {
-				custom_description = {
-					text = holy_site_building_trigger
-					barony = {
-						is_holy_site_of = scope:holder.faith
-					}
-				}
-				scope:holder = {
-					religion = religion:judaism_religion
-				}
-			}
-		}
-	}
-	
-	show_disabled = yes
-	
-	cost_gold = 1000
-	cost_piety = 1000
-
-	character_modifier = {
-		monthly_piety_gain_per_knight_mult = 0.03
-		monthly_dynasty_prestige_mult = 0.05
-		monthly_county_control_growth_factor = 0.1
-		martial_per_piety_level = 1
-		learning_per_prestige_level = 1
-		knight_effectiveness_mult = 0.2
-		same_faith_opinion = 5
-	}
-
-	county_modifier = {
-		tax_mult = 0.3
-		development_growth_factor = 0.3
-		development_growth = 0.3
-	}
-
-	province_modifier = {
-		monthly_income = 3
-	}
-
-	ai_value = {
-		base = 100
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
-
-	type = special
-
-	flag = travel_point_of_interest_religious
-}
+﻿
 
 ################
 #    Masada    #
@@ -148,7 +7,7 @@ temple_in_jerusalem_01 = {
 masada_01 = {
 	next_building = masada_02
 
-	type_icon = "icon_structure_alamut_castle.dds"
+	type_icon = "special_buildings/alamut_castle.dds"
 
 	can_construct_potential = {
 		building_requirement_tribal = no
@@ -169,14 +28,12 @@ masada_01 = {
 	ai_value = {
 		base = 50
 	}
-
-	type = special
 }
 
 masada_02 = {
 	next_building = masada_03
 
-	type_icon = "icon_structure_alamut_castle.dds"
+	type_icon = "special_buildings/alamut_castle.dds"
 
 	can_construct_potential = {
 		building_requirement_tribal = no
@@ -198,12 +55,10 @@ masada_02 = {
 	ai_value = {
 		base = 75
 	}
-
-	type = special
 }
 
 masada_03 = {
-	type_icon = "icon_structure_alamut_castle.dds"
+	type_icon = "special_buildings/alamut_castle.dds"
 
 	can_construct_potential = {
 		building_requirement_tribal = no
@@ -226,8 +81,6 @@ masada_03 = {
 	ai_value = {
 		base = 100
 	}
-
-	type = special
 }
 
 #########################
@@ -245,7 +98,7 @@ jip_temple_of_sin_01 = {
 		name = "jip_temple_of_sin_mesh"
 	}
 
-	type_icon = "icon_structure_tomb_of_cyrus.dds"
+	type_icon = "special_buildings/tomb_of_cyrus.dds"
 
 	can_construct_potential = {
 		always = no # Built only by the great project
@@ -273,23 +126,62 @@ jip_temple_of_sin_01 = {
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.2
-		tax_mult = 0.1
-		monthly_county_control_growth_factor = 0.1
+		prosperity_growth_factor = 0.2
+		religious_tax_mult = 0.1
+		monthly_control_change_when_below_baseline_mult = 0.1
 	}
 
 	province_modifier = {
-		monthly_income = 2
+		province_size_baseline_add = special_building_province_size_baseline
+		monthly_religious_tax = 2
 	}
 
 	ai_value = {
 		base = 0
 	}
 
-	type = special
-
 	flag = jip_temple_of_sin_building
 	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_oil_sell_price_mult = special_building_need_sell_price
+		trade_good_grain_sell_price_mult = special_building_need_sell_price
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_oil
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_grain
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				popular_opinion_add = special_building_need_popular_opinion
+			}
+		}
+	}
 }
 
 #########################
@@ -311,7 +203,7 @@ jip_temple_of_bel_01 = {
 		name = "building_mediterranean_temple_generic_01_mesh"
 	}
 
-	type_icon = "icon_structure_temple_in_jerusalem.dds"
+	type_icon = "special_buildings/temple_in_jerusalem.dds"
 
 	can_construct_potential = {
 		always = no # Built only by the great project
@@ -336,22 +228,46 @@ jip_temple_of_bel_01 = {
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.2
-		tax_mult = 0.15
+		prosperity_growth_factor = 0.2
+		religious_tax_mult = 0.15
 	}
 
 	province_modifier = {
-		monthly_income = 3 # The caravan trade
+				monthly_religious_tax = special_building_need_tax
+				monthly_commerce_tax = 3 # The caravan trade
 	}
 
 	ai_value = {
 		base = 0
 	}
 
-	type = special
-
 	flag = jip_temple_of_bel_building
 	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_wine_sell_price_mult = special_building_need_sell_price
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_wine
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+		not_rite_parameter = alcohol_forbidden
+		modifiers = {
+				}
+	}
 }
 
 # The Temple of Shamash at Hatra (jip_gp_temple_of_shamash): the sun god's temple of the desert city that held off
@@ -364,7 +280,7 @@ jip_temple_of_shamash_01 = {
 		name = "jip_ziggurat_generic_mesh"
 	}
 
-	type_icon = "icon_structure_tomb_of_cyrus.dds"
+	type_icon = "special_buildings/tomb_of_cyrus.dds"
 
 	can_construct_potential = {
 		always = no # Built only by the great project
@@ -391,24 +307,60 @@ jip_temple_of_shamash_01 = {
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.1
-		tax_mult = 0.1
+		prosperity_growth_factor = 0.1
+		religious_tax_mult = 0.1
 	}
 
 	province_modifier = {
-		fort_level = 2 # Hatra's walls
+				monthly_religious_tax = special_building_need_tax
+				fort_level = 2 # Hatra's walls
 		garrison_size = 0.25
-		monthly_income = 1
+		monthly_religious_tax = 1
 	}
 
 	ai_value = {
 		base = 0
 	}
 
-	type = special
-
 	flag = jip_temple_of_shamash_building
 	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_oil_sell_price_mult = special_building_need_sell_price
+		trade_good_grain_sell_price_mult = special_building_need_sell_price
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_oil
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+				}
+	}
+	trade_good_need = {
+		trade_good = trade_good_grain
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				popular_opinion_add = special_building_need_popular_opinion
+			}
+		}
+	}
 }
 
 # The Temple of Ashur at Ashur (jip_gp_temple_of_ashur): the house of the god of the Assyrian kings, beside his
@@ -421,7 +373,7 @@ jip_temple_of_ashur_01 = {
 		name = "jip_temple_of_ashur_mesh"
 	}
 
-	type_icon = "icon_structure_tomb_of_cyrus.dds"
+	type_icon = "special_buildings/tomb_of_cyrus.dds"
 
 	can_construct_potential = {
 		always = no # Built only by the great project
@@ -447,22 +399,58 @@ jip_temple_of_ashur_01 = {
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.2
-		tax_mult = 0.1
+		prosperity_growth_factor = 0.2
+		religious_tax_mult = 0.1
 	}
 
 	province_modifier = {
-		monthly_income = 2
+				monthly_religious_tax = special_building_need_tax
+				monthly_religious_tax = 2
 	}
 
 	ai_value = {
 		base = 0
 	}
 
-	type = special
-
 	flag = jip_temple_of_ashur_building
 	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_oil_sell_price_mult = special_building_need_sell_price
+		trade_good_grain_sell_price_mult = special_building_need_sell_price
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_oil
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+				}
+	}
+	trade_good_need = {
+		trade_good = trade_good_grain
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				popular_opinion_add = special_building_need_popular_opinion
+			}
+		}
+	}
 }
 
 # The Temple of Ishtar at Arbela (jip_gp_temple_of_ishtar): the Egashankalamma of Ishtar of Arbela, goddess of war,
@@ -475,7 +463,7 @@ jip_temple_of_ishtar_01 = {
 		name = "jip_ziggurat_generic_mesh"
 	}
 
-	type_icon = "icon_structure_tomb_of_cyrus.dds"
+	type_icon = "special_buildings/tomb_of_cyrus.dds"
 
 	can_construct_potential = {
 		always = no # Built only by the great project
@@ -504,23 +492,59 @@ jip_temple_of_ishtar_01 = {
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.1
-		tax_mult = 0.1
+		prosperity_growth_factor = 0.1
+		religious_tax_mult = 0.1
 	}
 
 	province_modifier = {
-		levy_size = 0.1
-		monthly_income = 1
+				monthly_religious_tax = special_building_need_tax
+				levy_size = 0.1
+		monthly_religious_tax = 1
 	}
 
 	ai_value = {
 		base = 0
 	}
 
-	type = special
-
 	flag = jip_temple_of_ishtar_building
 	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_oil_sell_price_mult = special_building_need_sell_price
+		trade_good_grain_sell_price_mult = special_building_need_sell_price
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_oil
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+				}
+	}
+	trade_good_need = {
+		trade_good = trade_good_grain
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				popular_opinion_add = special_building_need_popular_opinion
+			}
+		}
+	}
 }
 
 jip_temple_of_marduk_01 = {
@@ -531,7 +555,7 @@ jip_temple_of_marduk_01 = {
 		name = "jip_temple_of_marduk_mesh"
 	}
 
-	type_icon = "icon_structure_tomb_of_cyrus.dds"
+	type_icon = "special_buildings/tomb_of_cyrus.dds"
 
 	can_construct_potential = {
 		always = no # Built only by the great project
@@ -559,18 +583,59 @@ jip_temple_of_marduk_01 = {
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.25
-		tax_mult = 0.1
+		prosperity_growth_factor = 0.25
+		religious_tax_mult = 0.1
 	}
 
 	ai_value = {
 		base = 0
 	}
 
-	type = special
-
 	flag = jip_temple_of_marduk_building
 	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_oil_sell_price_mult = special_building_need_sell_price
+		trade_good_grain_sell_price_mult = special_building_need_sell_price
+	}
+	province_modifier = {
+		province_size_baseline_add = special_building_province_size_baseline
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_oil
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_grain
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				popular_opinion_add = special_building_need_popular_opinion
+			}
+		}
+	}
 }
 
 jip_temple_of_melqart_01 = {
@@ -580,7 +645,7 @@ jip_temple_of_melqart_01 = {
 		name = "building_mediterranean_temple_generic_01_mesh"
 	}
 
-	type_icon = "icon_structure_temple_in_jerusalem.dds" # Solomon's temple, which Tyrian craftsmen built
+	type_icon = "special_buildings/temple_in_jerusalem.dds" # Solomon's temple, which Tyrian craftsmen built
 
 	can_construct_potential = {
 		always = no # Built only by the great project
@@ -605,18 +670,49 @@ jip_temple_of_melqart_01 = {
 	}
 
 	county_modifier = {
-		tax_mult = 0.15
-		development_growth_factor = 0.25
+		religious_tax_mult = 0.15
+		prosperity_growth_factor = 0.25
 	}
 
 	ai_value = {
 		base = 0
 	}
 
-	type = special
-
 	flag = jip_temple_of_melqart_building
 	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_wine_sell_price_mult = special_building_need_sell_price
+		trade_good_dyes_buy_price_mult = special_building_production_buy_price
+	}
+	province_modifier = {
+		trade_good_dyes_production_add = jip_temple_good_output
+		province_size_baseline_add = special_building_province_size_baseline
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_wine
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+		not_rite_parameter = alcohol_forbidden
+		modifiers = {
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
+	}
 }
 
 jip_temple_of_tanit_01 = {
@@ -626,7 +722,7 @@ jip_temple_of_tanit_01 = {
 		name = "building_mediterranean_temple_generic_01_mesh"
 	}
 
-	type_icon = "icon_structure_temple_in_jerusalem.dds" # Solomon's temple, which Tyrian craftsmen built
+	type_icon = "special_buildings/temple_in_jerusalem.dds" # Solomon's temple, which Tyrian craftsmen built
 
 	can_construct_potential = {
 		always = no # Built only by the great project
@@ -651,18 +747,44 @@ jip_temple_of_tanit_01 = {
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.25
-		tax_mult = 0.1
+		prosperity_growth_factor = 0.25
+		religious_tax_mult = 0.1
 	}
 
 	ai_value = {
 		base = 0
 	}
 
-	type = special
-
 	flag = jip_temple_of_tanit_building
 	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_wine_sell_price_mult = special_building_need_sell_price
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_wine
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+		not_rite_parameter = alcohol_forbidden
+		modifiers = {
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
+	}
 }
 
 jip_temple_of_eshmun_01 = {
@@ -672,7 +794,7 @@ jip_temple_of_eshmun_01 = {
 		name = "building_mediterranean_temple_generic_01_mesh"
 	}
 
-	type_icon = "icon_structure_temple_in_jerusalem.dds" # Solomon's temple, which Tyrian craftsmen built
+	type_icon = "special_buildings/temple_in_jerusalem.dds" # Solomon's temple, which Tyrian craftsmen built
 
 	can_construct_potential = {
 		always = no # Built only by the great project
@@ -697,18 +819,48 @@ jip_temple_of_eshmun_01 = {
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.25
-		tax_mult = 0.1
+		prosperity_growth_factor = 0.25
+		religious_tax_mult = 0.1
 	}
 
 	ai_value = {
 		base = 0
 	}
 
-	type = special
-
 	flag = jip_temple_of_eshmun_building
 	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_wine_sell_price_mult = special_building_need_sell_price
+		trade_good_glass_buy_price_mult = special_building_production_buy_price
+	}
+	province_modifier = {
+		trade_good_glass_production_add = jip_temple_good_output
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_wine
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+		not_rite_parameter = alcohol_forbidden
+		modifiers = {
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
+	}
 }
 
 jip_temple_of_baalat_gebal_01 = {
@@ -718,7 +870,7 @@ jip_temple_of_baalat_gebal_01 = {
 		name = "building_mediterranean_temple_generic_01_mesh"
 	}
 
-	type_icon = "icon_structure_temple_in_jerusalem.dds" # Solomon's temple, which Tyrian craftsmen built
+	type_icon = "special_buildings/temple_in_jerusalem.dds" # Solomon's temple, which Tyrian craftsmen built
 
 	can_construct_potential = {
 		always = no # Built only by the great project
@@ -743,18 +895,48 @@ jip_temple_of_baalat_gebal_01 = {
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.25
-		tax_mult = 0.15
+		prosperity_growth_factor = 0.25
+		religious_tax_mult = 0.15
 	}
 
 	ai_value = {
 		base = 0
 	}
 
-	type = special
-
 	flag = jip_temple_of_baalat_gebal_building
 	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_wine_sell_price_mult = special_building_need_sell_price
+		trade_good_books_paper_buy_price_mult = special_building_production_buy_price
+	}
+	province_modifier = {
+		trade_good_books_paper_production_add = special_building_books_output
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_wine
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+		not_rite_parameter = alcohol_forbidden
+		modifiers = {
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
+	}
 }
 
 jip_temple_of_baal_01 = {
@@ -764,7 +946,7 @@ jip_temple_of_baal_01 = {
 		name = "building_mediterranean_temple_generic_01_mesh"
 	}
 
-	type_icon = "icon_structure_temple_in_jerusalem.dds" # Solomon's temple, which Tyrian craftsmen built
+	type_icon = "special_buildings/temple_in_jerusalem.dds" # Solomon's temple, which Tyrian craftsmen built
 
 	can_construct_potential = {
 		always = no # Built only by the great project
@@ -788,22 +970,50 @@ jip_temple_of_baal_01 = {
 	}
 
 	province_modifier = {
+		trade_good_stone_production_add = special_building_stone_output
 		fort_level = 2
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.25
-		tax_mult = 0.1
+		prosperity_growth_factor = 0.25
+		religious_tax_mult = 0.1
 	}
 
 	ai_value = {
 		base = 0
 	}
 
-	type = special
-
 	flag = jip_temple_of_baal_building
 	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_wine_sell_price_mult = special_building_need_sell_price
+		trade_good_stone_buy_price_mult = special_building_production_buy_price
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_wine
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+		not_rite_parameter = alcohol_forbidden
+		modifiers = {
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
+	}
 }
 
 jip_temple_of_astarte_01 = {
@@ -813,7 +1023,7 @@ jip_temple_of_astarte_01 = {
 		name = "building_mediterranean_temple_generic_01_mesh"
 	}
 
-	type_icon = "icon_structure_temple_in_jerusalem.dds" # Solomon's temple, which Tyrian craftsmen built
+	type_icon = "special_buildings/temple_in_jerusalem.dds" # Solomon's temple, which Tyrian craftsmen built
 
 	can_construct_potential = {
 		always = no # Built only by the great project
@@ -838,24 +1048,54 @@ jip_temple_of_astarte_01 = {
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.25
-		tax_mult = 0.15
+		prosperity_growth_factor = 0.25
+		religious_tax_mult = 0.15
 	}
 
 	ai_value = {
 		base = 0
 	}
 
-	type = special
-
 	flag = jip_temple_of_astarte_building
 	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_wine_sell_price_mult = special_building_need_sell_price
+		trade_good_copper_buy_price_mult = special_building_production_buy_price
+	}
+	province_modifier = {
+		trade_good_copper_production_add = jip_temple_good_output
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_wine
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+		not_rite_parameter = alcohol_forbidden
+		modifiers = {
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
+	}
 }
 
 # The Temple Mount cleared (jip_gp_clear_the_temple_mount) and awaiting the Temple (jip_gp_rebuild_the_temple): it
 # fills Jerusalem's special building slot, so no generic holy site building can be raised in the Temple's place
 jip_temple_mount_cleared_01 = {
-	type_icon = "icon_structure_temple_in_jerusalem.dds"
+	type_icon = "special_buildings/temple_in_jerusalem.dds"
 
 	can_construct_potential = {
 		always = no # Placed only by the great project
@@ -879,8 +1119,6 @@ jip_temple_mount_cleared_01 = {
 	ai_value = {
 		base = 0
 	}
-
-	type = special
 }
 
 # The generic holy site building of Mesopotamianism, in place of vanilla's pagan grand temple: a copy of it (cost,
@@ -903,7 +1141,7 @@ jip_holy_site_ziggurat_01 = {
 
 	construction_time = very_slow_construction_time
 
-	type_icon = "icon_structure_tomb_of_cyrus.dds"
+	type_icon = "special_buildings/tomb_of_cyrus.dds"
 	
 	can_construct_potential = {
 		building_requirement_tribal = no
@@ -939,19 +1177,20 @@ jip_holy_site_ziggurat_01 = {
 		monthly_dynasty_prestige_mult = 0.05
 		knight_effectiveness_mult = 0.15
 		levy_reinforcement_rate = 0.1
-		monthly_county_control_growth_factor = 0.05
+		monthly_control_change_when_below_baseline_mult = 0.05
 	}
 	
 	county_modifier = {
-		tax_mult = 0.1
+		religious_tax_mult = 0.1
 		levy_size = 0.1
-		development_growth_factor = 0.2
-		development_growth = 0.15
+		prosperity_growth_factor = 0.2
+		prosperity_growth = 0.15
 	}
 	
 	levy = 500
 	province_modifier = {
-		monthly_income = 1
+				monthly_religious_tax = special_building_need_tax
+				monthly_religious_tax = 1
 	}
 
 	on_complete = {
@@ -967,12 +1206,47 @@ jip_holy_site_ziggurat_01 = {
 			free_building_slots > 0
 		}
 	}
-	
-	type = special
 
 	flag = travel_point_of_interest_religious
 	flag = holy_building
 	flag = religious_studies_location
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_oil_sell_price_mult = special_building_need_sell_price
+		trade_good_grain_sell_price_mult = special_building_need_sell_price
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_oil
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+				}
+	}
+	trade_good_need = {
+		trade_good = trade_good_grain
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				popular_opinion_add = special_building_need_popular_opinion
+			}
+		}
+	}
 }
 
 # The Temple of Hadad (jip_gp_temple_of_hadad): Arameanism's, working only for its followers
@@ -990,7 +1264,7 @@ jip_temple_of_hadad_01 = {
 		name = "building_mediterranean_temple_generic_01_mesh"
 	}
 
-	type_icon = "icon_structure_temple_in_jerusalem.dds"
+	type_icon = "special_buildings/temple_in_jerusalem.dds"
 
 	can_construct_potential = {
 		always = no # Built only by the great project
@@ -1014,22 +1288,46 @@ jip_temple_of_hadad_01 = {
 	}
 
 	province_modifier = {
-		fort_level = 1
+				monthly_religious_tax = special_building_need_tax
+				fort_level = 1
 	}
 
 	county_modifier = {
 		levy_size = 0.1
-		development_growth_factor = 0.15
+		prosperity_growth_factor = 0.15
 	}
 
 	ai_value = {
 		base = 0
 	}
 
-	type = special
-
 	flag = jip_temple_of_hadad_building
 	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_wine_sell_price_mult = special_building_need_sell_price
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_wine
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+		not_rite_parameter = alcohol_forbidden
+		modifiers = {
+				}
+	}
 }
 
 # The Temple of Atargatis (jip_gp_temple_of_atargatis): Arameanism's, working only for its followers
@@ -1040,7 +1338,7 @@ jip_temple_of_atargatis_01 = {
 		name = "building_mediterranean_temple_generic_01_mesh"
 	}
 
-	type_icon = "icon_structure_temple_in_jerusalem.dds"
+	type_icon = "special_buildings/temple_in_jerusalem.dds"
 
 	can_construct_potential = {
 		always = no # Built only by the great project
@@ -1063,18 +1361,44 @@ jip_temple_of_atargatis_01 = {
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.3
-		tax_mult = 0.1
+		prosperity_growth_factor = 0.3
+		religious_tax_mult = 0.1
 	}
 
 	ai_value = {
 		base = 0
 	}
 
-	type = special
-
 	flag = jip_temple_of_atargatis_building
 	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_wine_sell_price_mult = special_building_need_sell_price
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_wine
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+		not_rite_parameter = alcohol_forbidden
+		modifiers = {
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
+	}
 }
 
 # The Temple of Elagabal (jip_gp_temple_of_elagabal): Arameanism's, working only for its followers
@@ -1085,7 +1409,7 @@ jip_temple_of_elagabal_01 = {
 		name = "building_mediterranean_temple_generic_01_mesh"
 	}
 
-	type_icon = "icon_structure_temple_in_jerusalem.dds"
+	type_icon = "special_buildings/temple_in_jerusalem.dds"
 
 	can_construct_potential = {
 		always = no # Built only by the great project
@@ -1109,7 +1433,7 @@ jip_temple_of_elagabal_01 = {
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.2
+		prosperity_growth_factor = 0.2
 		levy_size = 0.05
 	}
 
@@ -1117,10 +1441,36 @@ jip_temple_of_elagabal_01 = {
 		base = 0
 	}
 
-	type = special
-
 	flag = jip_temple_of_elagabal_building
 	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_wine_sell_price_mult = special_building_need_sell_price
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_wine
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+		not_rite_parameter = alcohol_forbidden
+		modifiers = {
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
+	}
 }
 
 # The Temple of Gad (jip_gp_temple_of_gad): Arameanism's, working only for its followers
@@ -1131,7 +1481,7 @@ jip_temple_of_gad_01 = {
 		name = "building_mediterranean_temple_generic_01_mesh"
 	}
 
-	type_icon = "icon_structure_temple_in_jerusalem.dds"
+	type_icon = "special_buildings/temple_in_jerusalem.dds"
 
 	can_construct_potential = {
 		always = no # Built only by the great project
@@ -1155,7 +1505,7 @@ jip_temple_of_gad_01 = {
 	}
 
 	county_modifier = {
-		tax_mult = 0.15
+		religious_tax_mult = 0.15
 		supply_limit_mult = 0.25
 	}
 
@@ -1163,10 +1513,36 @@ jip_temple_of_gad_01 = {
 		base = 0
 	}
 
-	type = special
-
 	flag = jip_temple_of_gad_building
 	flag = travel_point_of_interest_religious
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_wine_sell_price_mult = special_building_need_sell_price
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_wine
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+		not_rite_parameter = alcohol_forbidden
+		modifiers = {
+			province_modifier = {
+				monthly_religious_tax = special_building_need_tax
+			}
+		}
+	}
 }
 
 # The generic holy site building of Arameanism (0.15 plan, section 14), in place of vanilla's pagan grand temple: the
@@ -1188,7 +1564,7 @@ jip_holy_site_classical_temple_01 = {
 
 	construction_time = very_slow_construction_time
 
-	type_icon = "icon_structure_temple_in_jerusalem.dds"
+	type_icon = "special_buildings/temple_in_jerusalem.dds"
 	
 	can_construct_potential = {
 		building_requirement_tribal = no
@@ -1224,19 +1600,20 @@ jip_holy_site_classical_temple_01 = {
 		monthly_dynasty_prestige_mult = 0.05
 		knight_effectiveness_mult = 0.15
 		levy_reinforcement_rate = 0.1
-		monthly_county_control_growth_factor = 0.05
+		monthly_control_change_when_below_baseline_mult = 0.05
 	}
 	
 	county_modifier = {
-		tax_mult = 0.1
+		religious_tax_mult = 0.1
 		levy_size = 0.1
-		development_growth_factor = 0.2
-		development_growth = 0.15
+		prosperity_growth_factor = 0.2
+		prosperity_growth = 0.15
 	}
 	
 	levy = 500
 	province_modifier = {
-		monthly_income = 1
+				monthly_religious_tax = special_building_need_tax
+				monthly_religious_tax = 1
 	}
 
 	on_complete = {
@@ -1252,11 +1629,34 @@ jip_holy_site_classical_temple_01 = {
 			free_building_slots > 0
 		}
 	}
-	
-	type = special
 
 	flag = travel_point_of_interest_religious
 	flag = holy_building
 	flag = religious_studies_location
+
+	# Trade goods (1.21): offerings the temple consumes, and its market
+	market_modifier = {
+		trade_good_incense_sell_price_mult = special_building_need_sell_price
+		trade_good_wine_sell_price_mult = special_building_need_sell_price
+	}
+	trade_good_need = {
+		trade_good = trade_good_incense
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+
+		modifiers = {
+			county_modifier = {
+				prosperity_growth_factor = special_building_need_prosperity_high
+			}
+		}
+	}
+	trade_good_need = {
+		trade_good = trade_good_wine
+		amount = special_building_need_amount
+		can_be_filled_multiple_times = 5
+		not_rite_parameter = alcohol_forbidden
+		modifiers = {
+				}
+	}
 }
 

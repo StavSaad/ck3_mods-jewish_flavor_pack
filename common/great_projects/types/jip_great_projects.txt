@@ -105,7 +105,7 @@ jip_gp_temple_of_sin = {
 		scope:province = {
 			custom_tooltip = jip_gp_temple_of_sin_building_tt
 			hidden_effect = {
-				add_special_building = jip_temple_of_sin_01 # Harran's special building slot
+				set_great_district = jip_temple_of_sin_01_district # The province's great project district
 			}
 		}
 		jip_unlock_mesopotamian_conversion_effect = yes
@@ -474,7 +474,7 @@ jip_gp_temple_of_bel = {
 		scope:province = {
 			custom_tooltip = jip_gp_temple_of_bel_building_tt
 			hidden_effect = {
-				add_special_building = jip_temple_of_bel_01 # The province's special building slot
+				set_great_district = jip_temple_of_bel_01_district # The province's great project district
 			}
 		}
 		hidden_effect = {
@@ -772,7 +772,7 @@ jip_gp_temple_of_shamash = {
 		scope:province = {
 			custom_tooltip = jip_gp_temple_of_shamash_building_tt
 			hidden_effect = {
-				add_special_building = jip_temple_of_shamash_01 # The province's special building slot
+				set_great_district = jip_temple_of_shamash_01_district # The province's great project district
 			}
 		}
 		hidden_effect = {
@@ -1072,7 +1072,7 @@ jip_gp_temple_of_ashur = {
 		scope:province = {
 			custom_tooltip = jip_gp_temple_of_ashur_building_tt
 			hidden_effect = {
-				add_special_building = jip_temple_of_ashur_01 # The province's special building slot
+				set_great_district = jip_temple_of_ashur_01_district # The province's great project district
 			}
 		}
 		hidden_effect = {
@@ -1377,7 +1377,7 @@ jip_gp_temple_of_ishtar = {
 		scope:province = {
 			custom_tooltip = jip_gp_temple_of_ishtar_building_tt
 			hidden_effect = {
-				add_special_building = jip_temple_of_ishtar_01 # The province's special building slot
+				set_great_district = jip_temple_of_ishtar_01_district # The province's great project district
 			}
 		}
 		hidden_effect = {
@@ -1942,7 +1942,7 @@ jip_gp_temple_of_marduk = {
 		scope:province = {
 			custom_tooltip = jip_gp_temple_of_marduk_building_tt
 			hidden_effect = {
-				add_special_building = jip_temple_of_marduk_01 # The province's special building slot
+				set_great_district = jip_temple_of_marduk_01_district # The province's great project district
 			}
 		}
 		hidden_effect = {
@@ -2242,7 +2242,7 @@ jip_gp_temple_of_melqart = {
 		scope:province = {
 			custom_tooltip = jip_gp_temple_of_melqart_building_tt
 			hidden_effect = {
-				add_special_building = jip_temple_of_melqart_01 # The province's special building slot
+				set_great_district = jip_temple_of_melqart_01_district # The province's great project district
 			}
 		}
 		hidden_effect = {
@@ -2540,7 +2540,7 @@ jip_gp_temple_of_tanit = {
 		scope:province = {
 			custom_tooltip = jip_gp_temple_of_tanit_building_tt
 			hidden_effect = {
-				add_special_building = jip_temple_of_tanit_01 # The province's special building slot
+				set_great_district = jip_temple_of_tanit_01_district # The province's great project district
 			}
 		}
 		hidden_effect = {
@@ -2838,7 +2838,7 @@ jip_gp_temple_of_eshmun = {
 		scope:province = {
 			custom_tooltip = jip_gp_temple_of_eshmun_building_tt
 			hidden_effect = {
-				add_special_building = jip_temple_of_eshmun_01 # The province's special building slot
+				set_great_district = jip_temple_of_eshmun_01_district # The province's great project district
 			}
 		}
 		hidden_effect = {
@@ -3136,7 +3136,7 @@ jip_gp_temple_of_baalat_gebal = {
 		scope:province = {
 			custom_tooltip = jip_gp_temple_of_baalat_gebal_building_tt
 			hidden_effect = {
-				add_special_building = jip_temple_of_baalat_gebal_01 # The province's special building slot
+				set_great_district = jip_temple_of_baalat_gebal_01_district # The province's great project district
 			}
 		}
 		hidden_effect = {
@@ -3434,7 +3434,7 @@ jip_gp_temple_of_baal = {
 		scope:province = {
 			custom_tooltip = jip_gp_temple_of_baal_building_tt
 			hidden_effect = {
-				add_special_building = jip_temple_of_baal_01 # The province's special building slot
+				set_great_district = jip_temple_of_baal_01_district # The province's great project district
 			}
 		}
 		hidden_effect = {
@@ -3732,7 +3732,7 @@ jip_gp_temple_of_astarte = {
 		scope:province = {
 			custom_tooltip = jip_gp_temple_of_astarte_building_tt
 			hidden_effect = {
-				add_special_building = jip_temple_of_astarte_01 # The province's special building slot
+				set_great_district = jip_temple_of_astarte_01_district # The province's great project district
 			}
 		}
 		hidden_effect = {
@@ -4047,7 +4047,7 @@ jip_gp_temple_of_hadad = {
 		}
 		scope:province = {
 			# The Great Mosque of Damascus (vanilla's damascus_mosque_01, placed at game start with Medieval Monuments)
-			# stands on the temple's site and fills the special building slot: it gives way to the temple
+			# stands on the temple's site: it gives way to the temple
 			if = {
 				limit = { has_building = damascus_mosque_01 }
 				custom_tooltip = jip_gp_temple_of_hadad_mosque_tt
@@ -4056,9 +4056,9 @@ jip_gp_temple_of_hadad = {
 			hidden_effect = {
 				if = {
 					limit = { has_building = damascus_mosque_01 }
-					remove_building = damascus_mosque_01
+					special_district ?= { remove_district = yes } # The Great Mosque, Damascus's special district
 				}
-				add_special_building = jip_temple_of_hadad_01 # The province's special building slot
+				set_great_district = jip_temple_of_hadad_01_district # The province's great project district
 			}
 		}
 		hidden_effect = {
@@ -4355,7 +4355,7 @@ jip_gp_temple_of_atargatis = {
 		scope:province = {
 			custom_tooltip = jip_gp_temple_of_atargatis_building_tt
 			hidden_effect = {
-				add_special_building = jip_temple_of_atargatis_01 # The province's special building slot
+				set_great_district = jip_temple_of_atargatis_01_district # The province's great project district
 			}
 		}
 		hidden_effect = {
@@ -4652,7 +4652,7 @@ jip_gp_temple_of_elagabal = {
 		scope:province = {
 			custom_tooltip = jip_gp_temple_of_elagabal_building_tt
 			hidden_effect = {
-				add_special_building = jip_temple_of_elagabal_01 # The province's special building slot
+				set_great_district = jip_temple_of_elagabal_01_district # The province's great project district
 			}
 		}
 		hidden_effect = {
@@ -4949,7 +4949,7 @@ jip_gp_temple_of_gad = {
 		scope:province = {
 			custom_tooltip = jip_gp_temple_of_gad_building_tt
 			hidden_effect = {
-				add_special_building = jip_temple_of_gad_01 # The province's special building slot
+				set_great_district = jip_temple_of_gad_01_district # The province's great project district
 			}
 		}
 		hidden_effect = {

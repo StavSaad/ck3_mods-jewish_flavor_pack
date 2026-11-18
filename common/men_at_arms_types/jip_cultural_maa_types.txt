@@ -10,6 +10,7 @@
 
 jip_palmyrene_archers = { # The Nile Archers' build, moved from the river into the desert
 	type = archers
+	control_value = 2 # 1.21: as vanilla's units of the same kind
 
 	damage = 30
 	toughness = 12
@@ -44,6 +45,7 @@ jip_palmyrene_archers = { # The Nile Archers' build, moved from the river into t
 
 jip_clibanarii = { # Tougher than cataphracts, but they hit less hard
 	type = heavy_cavalry
+	control_value = 10 # 1.21: as vanilla's units of the same kind
 
 	damage = 110
 	toughness = 42
@@ -88,6 +90,7 @@ jip_clibanarii = { # Tougher than cataphracts, but they hit less hard
 
 jip_seir_bowmen = { # Edom's archers: at home in the desert mountains of Seir, where few units fight well
 	type = archers
+	control_value = 2 # 1.21: as vanilla's units of the same kind
 
 	damage = 26
 	toughness = 12
@@ -123,6 +126,7 @@ jip_seir_bowmen = { # Edom's archers: at home in the desert mountains of Seir, w
 
 jip_sacred_band = { # Carthage's citizen elite: between vanilla's ayyar and mubarizun
 	type = heavy_infantry
+	control_value = 4 # 1.21: as vanilla's units of the same kind
 
 	damage = 40
 	toughness = 30

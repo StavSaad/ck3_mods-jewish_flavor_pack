@@ -12,12 +12,13 @@
 					root.culture = { has_name_list = name_list_sephardi }
 					root.culture = { has_name_list = name_list_radhanite }
 					root.culture = { has_name_list = name_list_bavlim }
+					root.culture = { has_name_list = name_list_mustaarabi }
 					root.culture = { has_name_list = name_list_kochinim }
 					root.culture = { has_name_list = name_list_hebrew }
 					root.culture = { has_name_list = name_list_canaanite }
 					root.culture = { has_name_list = name_list_assyrian }
 					root.culture = { has_name_list = name_list_aramean }
-					root.culture = { has_name_list = name_list_nabati }
+					root.culture = { has_name_list = name_list_mandaean }
 					root.culture = { has_name_list = name_list_nubian }
 					root.culture = { has_name_list = name_list_ancient_egyptian }
 					root.culture = { has_name_list = name_list_greek }
@@ -481,7 +482,7 @@ jip_mishpacha_replace_estate_buildings_effect = {
 			add_domicile_building = jip_temple_small_01
 			add_domicile_building = jip_temple_small_02
 			add_domicile_building = jip_temple_small_03
-			jip_add_family_temple_branch_effect = { TIER = 04 }
+			add_domicile_building = jip_beit_knesset_04
 		}
 		if = {
 			limit = { has_domicile_building = temple_monastery_04 }
@@ -489,7 +490,7 @@ jip_mishpacha_replace_estate_buildings_effect = {
 			add_domicile_building = jip_temple_small_01
 			add_domicile_building = jip_temple_small_02
 			add_domicile_building = jip_temple_small_03
-			jip_add_family_temple_branch_effect = { TIER = 04 }
+			add_domicile_building = jip_beit_knesset_04
 		}
 		if = {
 			limit = { has_domicile_building = temple_crypt_05 }
@@ -506,8 +507,8 @@ jip_mishpacha_replace_estate_buildings_effect = {
 			add_domicile_building = jip_temple_small_01
 			add_domicile_building = jip_temple_small_02
 			add_domicile_building = jip_temple_small_03
-			jip_add_family_temple_branch_effect = { TIER = 04 }
-			jip_add_family_temple_branch_effect = { TIER = 05 }
+			add_domicile_building = jip_beit_knesset_04
+			add_domicile_building = jip_beit_knesset_05
 		}
 		if = {
 			limit = { has_domicile_building = temple_monastery_05 }
@@ -515,8 +516,8 @@ jip_mishpacha_replace_estate_buildings_effect = {
 			add_domicile_building = jip_temple_small_01
 			add_domicile_building = jip_temple_small_02
 			add_domicile_building = jip_temple_small_03
-			jip_add_family_temple_branch_effect = { TIER = 04 }
-			jip_add_family_temple_branch_effect = { TIER = 05 }
+			add_domicile_building = jip_beit_knesset_04
+			add_domicile_building = jip_beit_knesset_05
 		}
 		if = {
 			limit = { has_domicile_building = temple_crypt_06 }
@@ -534,9 +535,9 @@ jip_mishpacha_replace_estate_buildings_effect = {
 			add_domicile_building = jip_temple_small_01
 			add_domicile_building = jip_temple_small_02
 			add_domicile_building = jip_temple_small_03
-			jip_add_family_temple_branch_effect = { TIER = 04 }
-			jip_add_family_temple_branch_effect = { TIER = 05 }
-			jip_add_family_temple_branch_effect = { TIER = 06 }
+			add_domicile_building = jip_beit_knesset_04
+			add_domicile_building = jip_beit_knesset_05
+			add_domicile_building = jip_beit_knesset_06
 		}
 		if = {
 			limit = { has_domicile_building = temple_monastery_06 }
@@ -544,9 +545,9 @@ jip_mishpacha_replace_estate_buildings_effect = {
 			add_domicile_building = jip_temple_small_01
 			add_domicile_building = jip_temple_small_02
 			add_domicile_building = jip_temple_small_03
-			jip_add_family_temple_branch_effect = { TIER = 04 }
-			jip_add_family_temple_branch_effect = { TIER = 05 }
-			jip_add_family_temple_branch_effect = { TIER = 06 }
+			add_domicile_building = jip_beit_knesset_04
+			add_domicile_building = jip_beit_knesset_05
+			add_domicile_building = jip_beit_knesset_06
 		}
 		if = {
 			limit = { has_domicile_building = prison_02 }

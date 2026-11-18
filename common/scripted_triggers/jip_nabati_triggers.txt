@@ -9,7 +9,7 @@ jip_can_hear_shuubiyya_trigger = {
 	culture = { has_cultural_pillar = heritage_arabic }
 	NOT = { has_variable = jip_shuubiyya_cooldown }
 	any_courtier = {
-		culture = culture:nabati
+		culture = culture:mandaean
 		is_adult = yes
 	}
 }
@@ -18,7 +18,7 @@ jip_can_hear_shuubiyya_trigger = {
 jip_can_take_nabati_pride_trigger = {
 	is_ai = no
 	is_available_adult = yes
-	culture = culture:nabati
+	culture = culture:mandaean
 	NOT = { has_variable = jip_nabati_pride_cooldown }
 	top_liege != this
 	top_liege = { culture = { has_cultural_pillar = heritage_arabic } }

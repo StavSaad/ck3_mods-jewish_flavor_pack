@@ -50,7 +50,23 @@ BOOKMARK_FAITHS = [(k, bookmark_named(FAITH_BOOKMARKS[k])) for k, _ in FAITH_DEC
 
 ARB_PRESENT = "Not( EqualTo_string( Localize('setting_arb_contract_decor_on'), 'setting_arb_contract_decor_on' ) )"
 
-use_arb = os.path.exists(ARB)
+
+
+def arb_supports_game():
+    """ARB's copy is only a base while it supports the installed game's version (its descriptor against the launcher's)"""
+    root = os.path.dirname(os.path.dirname(os.path.dirname(ARB)))
+    game = os.path.join(os.path.dirname(os.path.dirname(VANILLA)), '..', '..', 'launcher', 'launcher-settings.json')
+    try:
+        arb_ver = re.search(r'supported_version="([0-9.]+)', open(root + '/descriptor.mod', encoding='utf-8-sig').read())
+        game_ver = re.search(r'"rawVersion":\s*"([0-9.]+)', open(game, encoding='utf-8-sig').read())
+    except OSError:
+        return False
+    return bool(arb_ver and game_ver) and game_ver.group(1).split('.')[:2] == arb_ver.group(1).split('.')[:2]
+
+
+use_arb = os.path.exists(ARB) and arb_supports_game()
+if os.path.exists(ARB) and not use_arb:
+    print('Aligned Realm Banners does not support this game version yet: built on vanilla')
 src = open(ARB if use_arb else VANILLA, encoding='utf-8-sig').read()
 parts = re.split(r'(?m)^(?=\ttype )', src)
 count = {'crown': 0, 'decor': 0, 'topframe': 0}
@@ -86,7 +102,15 @@ def add_decor_after_adventurer(p, name):
     for mm in re.finditer(r'(\t+)icon = \{\n\t+name = "adventurer_top_decor"\n(?:.*\n)*?\1\}\n', p):
         blk = mm.group(0)
         size = re.search(r'landless_adventurer_topframe_(\d+)\.dds', blk).group(1)
-        w, h = re.search(r'size = \{ (\d+) (\d+) \}', blk).groups()
+        sz = re.search(r'size = \{ (\d+) (\d+) \}', blk)
+        if sz:
+            w, h = sz.groups()
+        else:
+            # 1.21 leaves some helmets at their texture's own size: read it from the DDS header (height, then width)
+            dds = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(VANILLA))),
+                               'gfx/interface/coat_of_arms/landless_adventurer_topframe_%s.dds' % size)
+            head = open(dds, 'rb').read(20)
+            h, w = (str(int.from_bytes(head[i:i + 4], 'little')) for i in (12, 16))
         position = re.search(r'position = \{ (-?\d+ -?\d+) \}', blk)
         vis = re.search(r'visible = "\[(.*)\]"', blk).group(1).replace("'landless_adventurer_government'", GOV)
         out.append(p[pos:mm.end()])
