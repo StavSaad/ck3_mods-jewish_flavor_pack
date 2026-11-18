@@ -29,7 +29,7 @@
  jip_gp_temple_mount_jerusalem_tt:0 "You hold the county of [GetTitleByKey('c_jerusalem').GetName], or your vassal does"
  jip_gp_temple_mount_cleared_tt:0 "The Dome of the Rock no longer stands on the Mount"
  jip_gp_temple_jewish_contributor_tt:0 "The contributor is a Jew or a Yahwist"
- jip_gp_rebuild_the_temple_building_tt:0 "The [GetBuilding('jip_temple_in_jerusalem_01').GetName] stands again in [GetTitleByKey('c_jerusalem').GetName]"
+ jip_gp_rebuild_the_temple_building_tt:0 "The [GetBuildingType('jip_temple_in_jerusalem_01').GetName] stands again in [GetTitleByKey('c_jerusalem').GetName]"
  jip_clearing_the_temple_mount_opinion:0 "Clearing the Temple Mount"
  jip_jerusalem_lost_to_islam:0 "[GetTitleByKey('c_jerusalem').GetName] is no longer a [holy_site|E] of Islam, and every Muslim faith loses #N 15#! [fervor|E]"
  jip_muslims_resent_temple_mount_clearing:0 "Every Muslim ruler loses #N 40#! [opinion|E] of [CHARACTER.GetName] while the Mount is cleared"

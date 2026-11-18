@@ -805,6 +805,7 @@ e_arabia = {
 			color = { 160 160 200 }
 
 			capital = c_jerusalem
+			market_capital = b_yaffa # vanilla's (tools/make_title_properties_restore.py)
 
 			cultural_names = {
 				name_list_canaanite = cn_judea
@@ -940,6 +941,7 @@ e_arabia = {
 			color = { 225 200 160 }
 
 			capital = c_tiberias
+			market_capital = b_tyre # vanilla's (tools/make_title_properties_restore.py)
 
 			cultural_names = {
 				name_list_canaanite = cn_galil
@@ -1118,6 +1120,22 @@ e_arabia = {
 				}
 
 				b_halab = {
+					cultural_names = { # vanilla's (tools/make_title_properties_restore.py)
+						name_list_french = cn_beroea
+						name_list_norman = cn_beroea
+						name_list_occitan = cn_beroea
+						name_list_outremer = cn_beroea
+						name_list_saxon = cn_beroea
+						name_list_italian = cn_beroea
+						name_list_cisalpine = cn_beroea
+						name_list_sicilian = cn_beroea
+						name_list_sardinian = cn_beroea
+						name_list_german = cn_beroea
+						name_list_franconian = cn_beroea
+						name_list_swabian = cn_beroea
+						name_list_bavarian = cn_beroea
+						name_list_dutch = cn_beroea
+					}
 					province = 5934
 
 					color = { 91 238 26 }
@@ -1150,6 +1168,20 @@ e_arabia = {
 						name_list_assyrian = cn_hazazu
 						name_list_aramean = cn_hazaz
 						name_list_mandaean = cn_hazaz
+						name_list_french = cn_hazart
+						name_list_norman = cn_hazart
+						name_list_occitan = cn_hazart
+						name_list_outremer = cn_hazart
+						name_list_saxon = cn_hazart
+						name_list_italian = cn_hazart
+						name_list_cisalpine = cn_hazart
+						name_list_sicilian = cn_hazart
+						name_list_sardinian = cn_hazart
+						name_list_german = cn_hazart
+						name_list_franconian = cn_hazart
+						name_list_swabian = cn_hazart
+						name_list_bavarian = cn_hazart
+						name_list_dutch = cn_hazart
 					}
 				}
 				b_manbij = {
@@ -1178,9 +1210,41 @@ e_arabia = {
 				}
 			}
 			c_suriya = {
+				cultural_names = { # vanilla's (tools/make_title_properties_restore.py)
+					name_list_french = cn_seriana
+					name_list_norman = cn_seriana
+					name_list_occitan = cn_seriana
+					name_list_outremer = cn_seriana
+					name_list_saxon = cn_seriana
+					name_list_italian = cn_seriana
+					name_list_cisalpine = cn_seriana
+					name_list_sicilian = cn_seriana
+					name_list_sardinian = cn_seriana
+					name_list_german = cn_seriana
+					name_list_franconian = cn_seriana
+					name_list_swabian = cn_seriana
+					name_list_bavarian = cn_seriana
+					name_list_dutch = cn_seriana
+				}
 				color = { 87 234 22 }
 
 				b_suriya = {
+					cultural_names = { # vanilla's (tools/make_title_properties_restore.py)
+						name_list_french = cn_seriana
+						name_list_norman = cn_seriana
+						name_list_occitan = cn_seriana
+						name_list_outremer = cn_seriana
+						name_list_saxon = cn_seriana
+						name_list_italian = cn_seriana
+						name_list_cisalpine = cn_seriana
+						name_list_sicilian = cn_seriana
+						name_list_sardinian = cn_seriana
+						name_list_german = cn_seriana
+						name_list_franconian = cn_seriana
+						name_list_swabian = cn_seriana
+						name_list_bavarian = cn_seriana
+						name_list_dutch = cn_seriana
+					}
 					province = 5942
 
 					color = { 87 234 22 }
@@ -1198,6 +1262,20 @@ e_arabia = {
 					name_list_assyrian = cn_rasappa
 					name_list_aramean = cn_resafa
 					name_list_mandaean = cn_resafa
+					name_list_french = cn_sergiopolis
+					name_list_norman = cn_sergiopolis
+					name_list_occitan = cn_sergiopolis
+					name_list_outremer = cn_sergiopolis
+					name_list_saxon = cn_sergiopolis
+					name_list_italian = cn_sergiopolis
+					name_list_cisalpine = cn_sergiopolis
+					name_list_sicilian = cn_sergiopolis
+					name_list_sardinian = cn_sergiopolis
+					name_list_german = cn_sergiopolis
+					name_list_franconian = cn_sergiopolis
+					name_list_swabian = cn_sergiopolis
+					name_list_bavarian = cn_sergiopolis
+					name_list_dutch = cn_sergiopolis
 				}
 
 				b_ar-rusafa = {
@@ -1209,6 +1287,20 @@ e_arabia = {
 						name_list_assyrian = cn_rasappa
 						name_list_aramean = cn_resafa
 						name_list_mandaean = cn_resafa
+						name_list_french = cn_sergiopolis
+						name_list_norman = cn_sergiopolis
+						name_list_occitan = cn_sergiopolis
+						name_list_outremer = cn_sergiopolis
+						name_list_saxon = cn_sergiopolis
+						name_list_italian = cn_sergiopolis
+						name_list_cisalpine = cn_sergiopolis
+						name_list_sicilian = cn_sergiopolis
+						name_list_sardinian = cn_sergiopolis
+						name_list_german = cn_sergiopolis
+						name_list_franconian = cn_sergiopolis
+						name_list_swabian = cn_sergiopolis
+						name_list_bavarian = cn_sergiopolis
+						name_list_dutch = cn_sergiopolis
 					}
 				}
 				b_siffin = {
@@ -1232,6 +1324,20 @@ e_arabia = {
 					name_list_assyrian = cn_qennesrin
 					name_list_aramean = cn_qennesrin
 					name_list_mandaean = cn_qennesrin
+					name_list_french = cn_artah
+					name_list_norman = cn_artah
+					name_list_occitan = cn_artah
+					name_list_outremer = cn_artah
+					name_list_saxon = cn_artah
+					name_list_italian = cn_artah
+					name_list_cisalpine = cn_artah
+					name_list_sicilian = cn_artah
+					name_list_sardinian = cn_artah
+					name_list_german = cn_artah
+					name_list_franconian = cn_artah
+					name_list_swabian = cn_artah
+					name_list_bavarian = cn_artah
+					name_list_dutch = cn_artah
 				}
 
 				b_qinnasrin = {
@@ -1251,6 +1357,20 @@ e_arabia = {
 						name_list_assyrian = cn_qennesrin
 						name_list_aramean = cn_qennesrin
 						name_list_mandaean = cn_qennesrin
+						name_list_french = cn_chalcis
+						name_list_norman = cn_chalcis
+						name_list_occitan = cn_chalcis
+						name_list_outremer = cn_chalcis
+						name_list_saxon = cn_chalcis
+						name_list_italian = cn_chalcis
+						name_list_cisalpine = cn_chalcis
+						name_list_sicilian = cn_chalcis
+						name_list_sardinian = cn_chalcis
+						name_list_german = cn_chalcis
+						name_list_franconian = cn_chalcis
+						name_list_swabian = cn_chalcis
+						name_list_bavarian = cn_chalcis
+						name_list_dutch = cn_chalcis
 					}
 				}
 				b_artah = {
@@ -1259,6 +1379,22 @@ e_arabia = {
 					color = { 84 220 20 }
 				}
 				b_ar-rikha = {
+					cultural_names = { # vanilla's (tools/make_title_properties_restore.py)
+						name_list_french = cn_rugia
+						name_list_norman = cn_rugia
+						name_list_occitan = cn_rugia
+						name_list_outremer = cn_rugia
+						name_list_saxon = cn_rugia
+						name_list_italian = cn_rugia
+						name_list_cisalpine = cn_rugia
+						name_list_sicilian = cn_rugia
+						name_list_sardinian = cn_rugia
+						name_list_german = cn_rugia
+						name_list_franconian = cn_rugia
+						name_list_swabian = cn_rugia
+						name_list_bavarian = cn_rugia
+						name_list_dutch = cn_rugia
+					}
 					province = 5936
 
 					color = { 84 220 20 }
@@ -1329,6 +1465,20 @@ e_arabia = {
 					cultural_names = {
 						name_list_aramean = cn_birtha
 						name_list_mandaean = cn_birtha
+						name_list_french = cn_bira
+						name_list_norman = cn_bira
+						name_list_occitan = cn_bira
+						name_list_outremer = cn_bira
+						name_list_saxon = cn_bira
+						name_list_italian = cn_bira
+						name_list_cisalpine = cn_bira
+						name_list_sicilian = cn_bira
+						name_list_sardinian = cn_bira
+						name_list_german = cn_bira
+						name_list_franconian = cn_bira
+						name_list_swabian = cn_bira
+						name_list_bavarian = cn_bira
+						name_list_dutch = cn_bira
 					}
 				}
 			}
@@ -1408,6 +1558,22 @@ e_arabia = {
 					color = { 195 125 55 }
 				}
 				b_tall_bashir = { #AKA Turbessel
+					cultural_names = { # vanilla's (tools/make_title_properties_restore.py)
+						name_list_french = cn_turbessel
+						name_list_norman = cn_turbessel
+						name_list_occitan = cn_turbessel
+						name_list_outremer = cn_turbessel
+						name_list_saxon = cn_turbessel
+						name_list_italian = cn_turbessel
+						name_list_cisalpine = cn_turbessel
+						name_list_sicilian = cn_turbessel
+						name_list_sardinian = cn_turbessel
+						name_list_german = cn_turbessel
+						name_list_franconian = cn_turbessel
+						name_list_swabian = cn_turbessel
+						name_list_bavarian = cn_turbessel
+						name_list_dutch = cn_turbessel
+					}
 					province = 5901
 
 					color = { 195 125 55 }
@@ -1457,6 +1623,20 @@ e_arabia = {
 				name_list_assyrian = cn_subat
 				name_list_aramean = cn_zobah
 				name_list_mandaean = cn_zobah
+				name_list_french = cn_emesa
+				name_list_norman = cn_emesa
+				name_list_occitan = cn_emesa
+				name_list_outremer = cn_emesa
+				name_list_saxon = cn_emesa
+				name_list_italian = cn_emesa
+				name_list_cisalpine = cn_emesa
+				name_list_sicilian = cn_emesa
+				name_list_sardinian = cn_emesa
+				name_list_german = cn_emesa
+				name_list_franconian = cn_emesa
+				name_list_swabian = cn_emesa
+				name_list_bavarian = cn_emesa
+				name_list_dutch = cn_emesa
 			}
 
 			c_homs = {
@@ -1475,6 +1655,20 @@ e_arabia = {
 					name_list_assyrian = cn_subat
 					name_list_aramean = cn_hems
 					name_list_mandaean = cn_hems
+					name_list_french = cn_emesa
+					name_list_norman = cn_emesa
+					name_list_occitan = cn_emesa
+					name_list_outremer = cn_emesa
+					name_list_saxon = cn_emesa
+					name_list_italian = cn_emesa
+					name_list_cisalpine = cn_emesa
+					name_list_sicilian = cn_emesa
+					name_list_sardinian = cn_emesa
+					name_list_german = cn_emesa
+					name_list_franconian = cn_emesa
+					name_list_swabian = cn_emesa
+					name_list_bavarian = cn_emesa
+					name_list_dutch = cn_emesa
 				}
 
 				b_hims = {
@@ -1495,6 +1689,20 @@ e_arabia = {
 						name_list_assyrian = cn_subat
 						name_list_aramean = cn_hems
 						name_list_mandaean = cn_hems
+						name_list_french = cn_emesa
+						name_list_norman = cn_emesa
+						name_list_occitan = cn_emesa
+						name_list_outremer = cn_emesa
+						name_list_saxon = cn_emesa
+						name_list_italian = cn_emesa
+						name_list_cisalpine = cn_emesa
+						name_list_sicilian = cn_emesa
+						name_list_sardinian = cn_emesa
+						name_list_german = cn_emesa
+						name_list_franconian = cn_emesa
+						name_list_swabian = cn_emesa
+						name_list_bavarian = cn_emesa
+						name_list_dutch = cn_emesa
 					}
 				}
 				b_rafaniya-krak = {
@@ -1528,6 +1736,20 @@ e_arabia = {
 					name_list_assyrian = cn_sezer
 					name_list_aramean = cn_sezer
 					name_list_mandaean = cn_sezer
+					name_list_french = cn_caesarea
+					name_list_norman = cn_caesarea
+					name_list_occitan = cn_caesarea
+					name_list_outremer = cn_caesarea
+					name_list_saxon = cn_caesarea
+					name_list_italian = cn_caesarea
+					name_list_cisalpine = cn_caesarea
+					name_list_sicilian = cn_caesarea
+					name_list_sardinian = cn_caesarea
+					name_list_german = cn_caesarea
+					name_list_franconian = cn_caesarea
+					name_list_swabian = cn_caesarea
+					name_list_bavarian = cn_caesarea
+					name_list_dutch = cn_caesarea
 				}
 
 				b_shayzar = {
@@ -1548,6 +1770,20 @@ e_arabia = {
 						name_list_assyrian = cn_sezer
 						name_list_aramean = cn_sezer
 						name_list_mandaean = cn_sezer
+						name_list_french = cn_caesarea
+						name_list_norman = cn_caesarea
+						name_list_occitan = cn_caesarea
+						name_list_outremer = cn_caesarea
+						name_list_saxon = cn_caesarea
+						name_list_italian = cn_caesarea
+						name_list_cisalpine = cn_caesarea
+						name_list_sicilian = cn_caesarea
+						name_list_sardinian = cn_caesarea
+						name_list_german = cn_caesarea
+						name_list_franconian = cn_caesarea
+						name_list_swabian = cn_caesarea
+						name_list_bavarian = cn_caesarea
+						name_list_dutch = cn_caesarea
 					}
 				}
 				b_masyaf = {
@@ -1642,6 +1878,20 @@ e_arabia = {
 						name_list_assyrian = cn_kfartav
 						name_list_aramean = cn_kfartav
 						name_list_mandaean = cn_kfartav
+						name_list_french = cn_capharda
+						name_list_norman = cn_capharda
+						name_list_occitan = cn_capharda
+						name_list_outremer = cn_capharda
+						name_list_saxon = cn_capharda
+						name_list_italian = cn_capharda
+						name_list_cisalpine = cn_capharda
+						name_list_sicilian = cn_capharda
+						name_list_sardinian = cn_capharda
+						name_list_german = cn_capharda
+						name_list_franconian = cn_capharda
+						name_list_swabian = cn_capharda
+						name_list_bavarian = cn_capharda
+						name_list_dutch = cn_capharda
 					}
 				}
 			}
@@ -1659,14 +1909,62 @@ e_arabia = {
 			capital = c_antiocheia
 
 			c_antiocheia = {
+				cultural_names = { # vanilla's (tools/make_title_properties_restore.py)
+					name_list_french = cn_antioch
+					name_list_norman = cn_antioch
+					name_list_occitan = cn_antioch
+					name_list_outremer = cn_antioch
+					name_list_saxon = cn_antioch
+					name_list_italian = cn_antioch
+					name_list_cisalpine = cn_antioch
+					name_list_sicilian = cn_antioch
+					name_list_sardinian = cn_antioch
+					name_list_german = cn_antioch
+					name_list_franconian = cn_antioch
+					name_list_swabian = cn_antioch
+					name_list_bavarian = cn_antioch
+					name_list_dutch = cn_antioch
+				}
 				color = { 152 69 135 }
 
 				b_antiocheia = {
+					cultural_names = { # vanilla's (tools/make_title_properties_restore.py)
+						name_list_french = cn_antioch
+						name_list_norman = cn_antioch
+						name_list_occitan = cn_antioch
+						name_list_outremer = cn_antioch
+						name_list_saxon = cn_antioch
+						name_list_italian = cn_antioch
+						name_list_cisalpine = cn_antioch
+						name_list_sicilian = cn_antioch
+						name_list_sardinian = cn_antioch
+						name_list_german = cn_antioch
+						name_list_franconian = cn_antioch
+						name_list_swabian = cn_antioch
+						name_list_bavarian = cn_antioch
+						name_list_dutch = cn_antioch
+					}
 					province = 5910
 
 					color = { 152 69 135 }
 				}
 				b_as-suwaydiya = {
+					cultural_names = { # vanilla's (tools/make_title_properties_restore.py)
+						name_list_french = cn_st_symeon
+						name_list_norman = cn_st_symeon
+						name_list_occitan = cn_st_symeon
+						name_list_outremer = cn_st_symeon
+						name_list_saxon = cn_st_symeon
+						name_list_italian = cn_st_symeon
+						name_list_cisalpine = cn_st_symeon
+						name_list_sicilian = cn_st_symeon
+						name_list_sardinian = cn_st_symeon
+						name_list_german = cn_st_symeon
+						name_list_franconian = cn_st_symeon
+						name_list_swabian = cn_st_symeon
+						name_list_bavarian = cn_st_symeon
+						name_list_dutch = cn_st_symeon
+					}
 					province = 5909
 
 					color = { 152 69 135 }
@@ -1688,9 +1986,39 @@ e_arabia = {
 						name_list_assyrian = cn_ramitha
 						name_list_aramean = cn_ramitha
 						name_list_mandaean = cn_ramitha
+						name_list_french = cn_laodicea
+						name_list_norman = cn_laodicea
+						name_list_occitan = cn_laodicea
+						name_list_outremer = cn_laodicea
+						name_list_saxon = cn_laodicea
+						name_list_italian = cn_laodicea
+						name_list_cisalpine = cn_laodicea
+						name_list_sicilian = cn_laodicea
+						name_list_sardinian = cn_laodicea
+						name_list_german = cn_laodicea
+						name_list_franconian = cn_laodicea
+						name_list_swabian = cn_laodicea
+						name_list_bavarian = cn_laodicea
+						name_list_dutch = cn_laodicea
 					}
 				}
 				b_jabala = {
+					cultural_names = { # vanilla's (tools/make_title_properties_restore.py)
+						name_list_french = cn_gibellum
+						name_list_norman = cn_gibellum
+						name_list_occitan = cn_gibellum
+						name_list_outremer = cn_gibellum
+						name_list_saxon = cn_gibellum
+						name_list_italian = cn_gibellum
+						name_list_cisalpine = cn_gibellum
+						name_list_sicilian = cn_gibellum
+						name_list_sardinian = cn_gibellum
+						name_list_german = cn_gibellum
+						name_list_franconian = cn_gibellum
+						name_list_swabian = cn_gibellum
+						name_list_bavarian = cn_gibellum
+						name_list_dutch = cn_gibellum
+					}
 					province = 5911
 
 					color = { 152 69 135 }
@@ -1723,11 +2051,43 @@ e_arabia = {
 					color = { 112 197 50 }
 				}
 				b_qurus = {
+					cultural_names = { # vanilla's (tools/make_title_properties_restore.py)
+						name_list_french = cn_coricie
+						name_list_norman = cn_coricie
+						name_list_occitan = cn_coricie
+						name_list_outremer = cn_coricie
+						name_list_saxon = cn_coricie
+						name_list_italian = cn_coricie
+						name_list_cisalpine = cn_coricie
+						name_list_sicilian = cn_coricie
+						name_list_sardinian = cn_coricie
+						name_list_german = cn_coricie
+						name_list_franconian = cn_coricie
+						name_list_swabian = cn_coricie
+						name_list_bavarian = cn_coricie
+						name_list_dutch = cn_coricie
+					}
 					province = 5903
 
 					color = { 112 197 50 }
 				}
 				b_baghras = {
+					cultural_names = { # vanilla's (tools/make_title_properties_restore.py)
+						name_list_french = cn_gaston
+						name_list_norman = cn_gaston
+						name_list_occitan = cn_gaston
+						name_list_outremer = cn_gaston
+						name_list_saxon = cn_gaston
+						name_list_italian = cn_gaston
+						name_list_cisalpine = cn_gaston
+						name_list_sicilian = cn_gaston
+						name_list_sardinian = cn_gaston
+						name_list_german = cn_gaston
+						name_list_franconian = cn_gaston
+						name_list_swabian = cn_gaston
+						name_list_bavarian = cn_gaston
+						name_list_dutch = cn_gaston
+					}
 					province = 5904
 
 					color = { 112 197 50 }
@@ -1759,6 +2119,20 @@ e_arabia = {
 					name_list_bavlim = cn_biruta
 					name_list_mustaarabi = cn_biruta
 					name_list_kochinim = cn_biruta
+					name_list_french = cn_barut
+					name_list_norman = cn_barut
+					name_list_occitan = cn_barut
+					name_list_outremer = cn_barut
+					name_list_saxon = cn_barut
+					name_list_italian = cn_barut
+					name_list_cisalpine = cn_barut
+					name_list_sicilian = cn_barut
+					name_list_sardinian = cn_barut
+					name_list_german = cn_barut
+					name_list_franconian = cn_barut
+					name_list_swabian = cn_barut
+					name_list_bavarian = cn_barut
+					name_list_dutch = cn_barut
 				}
 
 				b_beirut = {
@@ -1776,6 +2150,20 @@ e_arabia = {
 						name_list_bavlim = cn_biruta
 						name_list_mustaarabi = cn_biruta
 						name_list_kochinim = cn_biruta
+						name_list_french = cn_barut
+						name_list_norman = cn_barut
+						name_list_occitan = cn_barut
+						name_list_outremer = cn_barut
+						name_list_saxon = cn_barut
+						name_list_italian = cn_barut
+						name_list_cisalpine = cn_barut
+						name_list_sicilian = cn_barut
+						name_list_sardinian = cn_barut
+						name_list_german = cn_barut
+						name_list_franconian = cn_barut
+						name_list_swabian = cn_barut
+						name_list_bavarian = cn_barut
+						name_list_dutch = cn_barut
 					}
 				}
 				b_saida = { #Sidon
@@ -1793,6 +2181,20 @@ e_arabia = {
 						name_list_mustaarabi = cn_sidon
 						name_list_kochinim = cn_sidon
 						name_list_assyrian = cn_sidunu
+						name_list_french = cn_sagette
+						name_list_norman = cn_sagette
+						name_list_occitan = cn_sagette
+						name_list_outremer = cn_sagette
+						name_list_saxon = cn_sagette
+						name_list_italian = cn_sagette
+						name_list_cisalpine = cn_sagette
+						name_list_sicilian = cn_sagette
+						name_list_sardinian = cn_sagette
+						name_list_german = cn_sagette
+						name_list_franconian = cn_sagette
+						name_list_swabian = cn_sagette
+						name_list_bavarian = cn_sagette
+						name_list_dutch = cn_sagette
 					}
 				}
 			}
@@ -1843,6 +2245,20 @@ e_arabia = {
 						name_list_assyrian = cn_arwada
 						name_list_aramean = cn_arwad
 						name_list_mandaean = cn_arwad
+						name_list_french = cn_tortosa
+						name_list_norman = cn_tortosa
+						name_list_occitan = cn_tortosa
+						name_list_outremer = cn_tortosa
+						name_list_saxon = cn_tortosa
+						name_list_italian = cn_tortosa
+						name_list_cisalpine = cn_tortosa
+						name_list_sicilian = cn_tortosa
+						name_list_sardinian = cn_tortosa
+						name_list_german = cn_tortosa
+						name_list_franconian = cn_tortosa
+						name_list_swabian = cn_tortosa
+						name_list_bavarian = cn_tortosa
+						name_list_dutch = cn_tortosa
 					}
 				}
 			}
@@ -1943,9 +2359,41 @@ e_arabia = {
 				}
 			}
 			c_baalbek = {
+				cultural_names = { # vanilla's (tools/make_title_properties_restore.py)
+					name_list_french = cn_balbec
+					name_list_norman = cn_balbec
+					name_list_occitan = cn_balbec
+					name_list_outremer = cn_balbec
+					name_list_saxon = cn_balbec
+					name_list_italian = cn_balbec
+					name_list_cisalpine = cn_balbec
+					name_list_sicilian = cn_balbec
+					name_list_sardinian = cn_balbec
+					name_list_german = cn_balbec
+					name_list_franconian = cn_balbec
+					name_list_swabian = cn_balbec
+					name_list_bavarian = cn_balbec
+					name_list_dutch = cn_balbec
+				}
 				color = { 134 255 15 }
 
 				b_baalbak = {
+					cultural_names = { # vanilla's (tools/make_title_properties_restore.py)
+						name_list_french = cn_balbec
+						name_list_norman = cn_balbec
+						name_list_occitan = cn_balbec
+						name_list_outremer = cn_balbec
+						name_list_saxon = cn_balbec
+						name_list_italian = cn_balbec
+						name_list_cisalpine = cn_balbec
+						name_list_sicilian = cn_balbec
+						name_list_sardinian = cn_balbec
+						name_list_german = cn_balbec
+						name_list_franconian = cn_balbec
+						name_list_swabian = cn_balbec
+						name_list_bavarian = cn_balbec
+						name_list_dutch = cn_balbec
+					}
 					province = 5926
 
 					color = { 134 255 15 }
@@ -2082,6 +2530,20 @@ e_arabia = {
 						name_list_assyrian = cn_tadmar
 						name_list_aramean = cn_tadmur
 						name_list_mandaean = cn_tadmur
+						name_list_french = cn_palmyra
+						name_list_norman = cn_palmyra
+						name_list_occitan = cn_palmyra
+						name_list_outremer = cn_palmyra
+						name_list_saxon = cn_palmyra
+						name_list_italian = cn_palmyra
+						name_list_cisalpine = cn_palmyra
+						name_list_sicilian = cn_palmyra
+						name_list_sardinian = cn_palmyra
+						name_list_german = cn_palmyra
+						name_list_franconian = cn_palmyra
+						name_list_swabian = cn_palmyra
+						name_list_bavarian = cn_palmyra
+						name_list_dutch = cn_palmyra
 					}
 				}
 				b_arak = {
@@ -2124,6 +2586,20 @@ e_arabia = {
 					name_list_assyrian = cn_qiryatain
 					name_list_aramean = cn_qiryatain
 					name_list_mandaean = cn_qiryatain
+					name_list_french = cn_cariatein
+					name_list_norman = cn_cariatein
+					name_list_occitan = cn_cariatein
+					name_list_outremer = cn_cariatein
+					name_list_saxon = cn_cariatein
+					name_list_italian = cn_cariatein
+					name_list_cisalpine = cn_cariatein
+					name_list_sicilian = cn_cariatein
+					name_list_sardinian = cn_cariatein
+					name_list_german = cn_cariatein
+					name_list_franconian = cn_cariatein
+					name_list_swabian = cn_cariatein
+					name_list_bavarian = cn_cariatein
+					name_list_dutch = cn_cariatein
 				}
 
 				b_al-qaryatan = {
@@ -2143,6 +2619,20 @@ e_arabia = {
 						name_list_assyrian = cn_qiryatain
 						name_list_aramean = cn_qiryatain
 						name_list_mandaean = cn_qiryatain
+						name_list_french = cn_cariatein
+						name_list_norman = cn_cariatein
+						name_list_occitan = cn_cariatein
+						name_list_outremer = cn_cariatein
+						name_list_saxon = cn_cariatein
+						name_list_italian = cn_cariatein
+						name_list_cisalpine = cn_cariatein
+						name_list_sicilian = cn_cariatein
+						name_list_sardinian = cn_cariatein
+						name_list_german = cn_cariatein
+						name_list_franconian = cn_cariatein
+						name_list_swabian = cn_cariatein
+						name_list_bavarian = cn_cariatein
+						name_list_dutch = cn_cariatein
 					}
 				}
 				b_judr = {

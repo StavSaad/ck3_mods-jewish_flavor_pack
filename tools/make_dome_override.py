@@ -1,4 +1,5 @@
-# Generates common/buildings/zz_jip_dome_of_the_rock.txt: vanilla's dome_of_the_rock_01 (special_buildings/00_special_buildings.txt),
+# Generates common/buildings/special_buildings/zz_jip_dome_of_the_rock.txt: vanilla's dome_of_the_rock_01 (00_special_buildings.txt in
+# the same folder: the root folder loads before vanilla's subfolder, so an override there loses),
 # overridden by key (this file sorts after vanilla's folder), without its upgrade into vanilla's Temple in Jerusalem
 # (next_building = temple_in_jerusalem_01): the Temple is raised only by Rising Lion's great projects, Clear the Temple Mount
 # and Rebuild the Temple (common/great_projects/types/jip_third_temple_projects.txt), in Jerusalem's great project district.
@@ -7,7 +8,7 @@ import os
 import re
 
 VANILLA = r'C:/Program Files (x86)/Steam/steamapps/common/Crusader Kings III/game/common/buildings/special_buildings/00_special_buildings.txt'
-OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'common', 'buildings', 'zz_jip_dome_of_the_rock.txt')
+OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'common', 'buildings', 'special_buildings', 'zz_jip_dome_of_the_rock.txt')
 KEY = 'dome_of_the_rock_01'
 
 src = open(VANILLA, encoding='utf-8-sig').read()

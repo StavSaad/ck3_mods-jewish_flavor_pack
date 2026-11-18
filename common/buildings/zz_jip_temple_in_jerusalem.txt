@@ -1,7 +1,7 @@
 ﻿# The Temple in Jerusalem, Rising Lion's own building (vanilla's temple_in_jerusalem_01 is the Dome of the Rock's next level,
-# which common/buildings/zz_jip_dome_of_the_rock.txt removes), with no cost: great project buildings take none. Raised by the great project Rebuild the Temple (jip_gp_rebuild_the_temple) in Jerusalem's great project district
+# which common/buildings/special_buildings/zz_jip_dome_of_the_rock.txt removes), with no cost: great project buildings take none. Raised by the great project Rebuild the Temple (jip_gp_rebuild_the_temple) in Jerusalem's great project district
 # (jip_temple_in_jerusalem_01_district, common/districts/jip_districts.txt), not as the next level of the Dome of the Rock
-# (common/buildings/zz_jip_dome_of_the_rock.txt drops that upgrade)
+# (common/buildings/special_buildings/zz_jip_dome_of_the_rock.txt drops that upgrade)
 
 jip_temple_in_jerusalem_01 = {
 	effect_desc = {

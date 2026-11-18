@@ -112,7 +112,7 @@ jip_create_familial_family_effect = {
 		destroy_title = scope:jip_domicile_title
 		domicile ?= {
 			move_domicile = scope:jip_new_family_home
-			add_random_internal_estate_building = yes
+			jip_add_random_family_estate_building_effect = yes
 		}
 		jip_mishpacha_change_liege_effect = { LIEGE = scope:jip_new_family_liege }
 		if = {
@@ -210,6 +210,62 @@ jip_jewish_family_faith_effect = {
 			}
 			faith:karaism = { save_scope_as = jip_new_family_faith }
 			rite:karaism = { save_scope_as = jip_new_family_rite }
+		}
+	}
+}
+
+# Domicile scope: one starting room for a new family's estate, as vanilla's add_random_internal_estate_building does for
+# landless nobles, but with the families' own lines (the Clerk's Office and Hachnasat Orchim copies) and without the
+# Wine Cellar, which families don't build, or the Prison, whose vanilla option logs an error on a new estate (1.21)
+jip_add_random_family_estate_building_effect = {
+	random_list = {
+		10 = {
+			trigger = {
+				NOT = { has_domicile_building_or_higher = servants_quarters_01 }
+			}
+			add_domicile_building = servants_quarters_01
+		}
+		10 = {
+			trigger = {
+				NOT = { has_domicile_building_or_higher = library_01 }
+			}
+			add_domicile_building = library_01
+		}
+		10 = {
+			trigger = {
+				NOT = { has_domicile_building_or_higher = bath_01 }
+			}
+			add_domicile_building = bath_01
+		}
+		10 = {
+			trigger = {
+				NOT = { has_domicile_building_or_higher = courtyard_01 }
+			}
+			add_domicile_building = courtyard_01
+		}
+		10 = {
+			trigger = {
+				NOT = { has_domicile_building_or_higher = living_quarters_01 }
+			}
+			add_domicile_building = living_quarters_01
+		}
+		10 = {
+			trigger = {
+				NOT = { has_domicile_building_or_higher = trophy_room_01 }
+			}
+			add_domicile_building = trophy_room_01
+		}
+		10 = {
+			trigger = {
+				NOT = { has_domicile_building_or_higher = jip_office_01 }
+			}
+			add_domicile_building = jip_office_01
+		}
+		10 = {
+			trigger = {
+				NOT = { has_domicile_building_or_higher = jip_hachnasat_orchim_01 }
+			}
+			add_domicile_building = jip_hachnasat_orchim_01
 		}
 	}
 }
