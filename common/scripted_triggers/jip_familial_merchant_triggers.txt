@@ -1,0 +1,33 @@
+﻿# Familial families and 1.21's merchant companies (common/decisions/jip_familial_merchant_decisions.txt,
+# common/scripted_effects/01_jip_familial_merchant_effects.txt)
+
+# Character scope: the head of a Jewish merchant company. The game has about 75 at 867 (Radhanite, Sephardi, Bavlim and
+# Musta'arabi, from France to Samarkand); the family spawn skips their counties and counts them against its regional shares
+jip_is_jewish_merchant_trigger = {
+	government_has_flag = government_is_merchant
+	religion = religion:judaism_religion
+}
+
+# Character scope: a merchant of a people whose houses live as Familial families: a Jewish culture (Israelite heritage) of
+# the Jewish religion, a Mandaean, or a Sabian. They may turn their company into a family (jip_merchant_become_familial_decision)
+jip_merchant_of_familial_people_trigger = {
+	government_has_flag = government_is_merchant
+	OR = {
+		AND = {
+			culture = { has_cultural_pillar = heritage_israelite }
+			religion = religion:judaism_religion
+		}
+		culture = culture:mandaean
+		rite = rite:mandeaism
+		jip_is_sabian_rite_trigger = yes
+	}
+}
+
+# Character scope: holds no title but the family's own (the noble family or historical family title): an Exilarch, Kohen
+# Gadol or Rish Amma keeps the family, since their office can't go with it into a company
+jip_holds_only_family_title_trigger = {
+	any_held_title = { jip_is_mishpacha_family_title_trigger = yes }
+	NOT = {
+		any_held_title = { jip_is_mishpacha_family_title_trigger = no }
+	}
+}

@@ -1,0 +1,136 @@
+﻿# Familial families and 1.21's merchant companies (effects in common/scripted_effects/01_jip_familial_merchant_effects.txt,
+# triggers in common/scripted_triggers/jip_familial_merchant_triggers.txt)
+
+# Found a Merchant Company: a Familial family becomes a merchant company in its estate's city, as vanilla's Become Merchant
+# turns an adventurer into one. Playing a company needs the merchants' DLC (Silk & Silver), as vanilla's decision does
+jip_familial_found_company_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/event_story/gdp_decision_become_merchant.dds"
+	}
+	desc = jip_familial_found_company_decision_desc
+	selection_tooltip = jip_familial_found_company_decision_tooltip
+	sort_order = 41
+	decision_group_type = realm
+	ai_check_interval = 120
+
+	is_shown = {
+		has_gdp_dlc_trigger = yes
+		government_has_flag = government_is_familial
+		is_landed = no
+	}
+
+	is_valid = {
+		custom_tooltip = {
+			text = become_merchant_decision_house_head_tt
+			is_house_head = yes
+		}
+		custom_tooltip = {
+			text = jip_familial_found_company_only_family_title_tt
+			jip_holds_only_family_title_trigger = yes
+		}
+		custom_tooltip = {
+			text = jip_familial_found_company_estate_tt
+			exists = domicile
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_at_war = no
+		is_available_adult = yes
+		has_contagious_deadly_disease_trigger = no
+	}
+
+	effect = {
+		custom_tooltip = jip_familial_found_company_decision_effect_tt
+		jip_familial_found_company_effect = yes
+	}
+
+	ai_potential = {
+		is_at_war = no
+		jip_holds_only_family_title_trigger = yes
+	}
+
+	# Rarely: the families are what the mod is about, and the game has companies enough
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 5
+			has_trait = greedy
+		}
+		modifier = {
+			add = 5
+			has_trait = ambitious
+		}
+		modifier = {
+			add = 5
+			stewardship >= 15
+		}
+	}
+}
+
+# Become a Familial House: a merchant of a Jewish (Israelite heritage, the Jewish religion), Mandaean or Sabian house winds up
+# the company and becomes a Familial family in its city, under the realm's ruler (Roads to Power, which the families need)
+jip_merchant_become_familial_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	desc = jip_merchant_become_familial_decision_desc
+	selection_tooltip = jip_merchant_become_familial_decision_tooltip
+	sort_order = 41
+	decision_group_type = realm
+	ai_check_interval = 120
+
+	is_shown = {
+		has_ep3_dlc_trigger = yes
+		jip_merchant_of_familial_people_trigger = yes
+	}
+
+	is_valid = {
+		custom_tooltip = {
+			text = jip_merchant_become_familial_company_tt
+			exists = domicile
+		}
+		trigger_if = {
+			limit = {
+				religion = religion:judaism_religion
+				exists = domicile
+			}
+			custom_tooltip = {
+				text = jip_merchant_become_familial_expelled_tt
+				NOT = { jip_province_expels_jews_trigger = { PROVINCE = domicile.domicile_location } }
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_at_war = no
+		is_available_adult = yes
+		has_contagious_deadly_disease_trigger = no
+	}
+
+	effect = {
+		custom_tooltip = jip_merchant_become_familial_decision_effect_tt
+		jip_merchant_become_familial_effect = yes
+	}
+
+	ai_potential = {
+		is_at_war = no
+	}
+
+	# A few each decade, the devout and the unworldly first
+	ai_will_do = {
+		base = 5
+		modifier = {
+			add = 5
+			has_trait = zealous
+		}
+		modifier = {
+			add = 5
+			has_trait = content
+		}
+		modifier = {
+			add = -5
+			has_trait = greedy
+		}
+	}
+}

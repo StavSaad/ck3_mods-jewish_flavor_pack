@@ -1,0 +1,209 @@
+﻿# Familial families and 1.21's merchant companies: a family that founds a company, and a company of a Jewish, Mandaean or
+# Sabian house that becomes a family (common/decisions/jip_familial_merchant_decisions.txt)
+
+# root = a Familial head (jip_familial_found_company_decision). The family becomes a merchant company in its estate's city,
+# under that county's holder as patron, through vanilla's own create_merchant_title_effect (as Become Merchant does). The
+# family title and the estate go; so do the family's contracts and its ties to a liege or suzerain
+jip_familial_found_company_effect = {
+	save_scope_as = jip_company_founder
+	domicile ?= {
+		domicile_location = { save_scope_as = jip_company_city }
+	}
+	hidden_effect = {
+		# The family's contracts (their stakes come back on invalidation)
+		every_character_task_contract = {
+			limit = { has_task_contract_group = jip_mishpacha_contracts_group }
+			scheme ?= { invalidate_scheme = yes }
+			invalidate_contract = yes
+		}
+		# A tributary of a duke: the company takes the county holder as patron instead
+		if = {
+			limit = { is_tributary = yes }
+			end_tributary = yes
+		}
+		# Vanilla's effect destroys noble family titles; the historical family titles (d_jip_*) are not, so they go here
+		every_held_title = {
+			limit = {
+				jip_is_mishpacha_family_title_trigger = yes
+				is_noble_family_title = no
+			}
+			save_scope_as = jip_old_family_title
+			scope:jip_company_founder = { destroy_title = scope:jip_old_family_title }
+		}
+	}
+	create_merchant_title_effect = {
+		REASON = flag:voluntary
+		FLAVOR_CHAR = scope:jip_company_founder
+	}
+	hidden_effect = {
+		# The company opens where the estate stood, under that city's lord
+		if = {
+			limit = {
+				exists = scope:jip_company_city
+				domicile ?= {
+					NOT = { domicile_location = scope:jip_company_city }
+				}
+			}
+			domicile = { move_domicile = scope:jip_company_city }
+		}
+		domicile ?= {
+			domicile_location.county.holder ?= { save_scope_as = jip_company_patron }
+		}
+		if = {
+			limit = {
+				exists = scope:jip_company_patron
+				scope:jip_company_patron != scope:jip_company_founder
+				NOT = { suzerain ?= scope:jip_company_patron }
+			}
+			start_tributary_interaction_effect = {
+				TRIBUTARY = scope:jip_company_founder
+				SUZERAIN = scope:jip_company_patron
+			}
+		}
+	}
+}
+
+# root = a merchant of a Jewish, Mandaean or Sabian house (jip_merchant_become_familial_decision). The company is wound up
+# (vanilla's destroy_merchant_effect: its value paid out, its people kept as associates) and the house becomes a Familial
+# family in the company's city: a family title and an estate, the realm's ruler as liege or suzerain, as a new family gets
+# at game start (jip_create_familial_family_effect)
+jip_merchant_become_familial_effect = {
+	save_scope_as = jip_new_mishpacha_head
+	domicile ?= {
+		domicile_location = { save_scope_as = jip_new_family_home }
+	}
+	if = {
+		limit = { NOT = { exists = scope:jip_new_family_home } }
+		location ?= { save_scope_as = jip_new_family_home }
+	}
+	# Families live in cities: a company in a castle or temple moves to a city of its county, if it has one
+	if = {
+		limit = {
+			scope:jip_new_family_home ?= {
+				NOT = { has_holding_type = city_holding }
+				county = {
+					any_county_province = { has_holding_type = city_holding }
+				}
+			}
+		}
+		scope:jip_new_family_home.county = {
+			random_county_province = {
+				limit = { has_holding_type = city_holding }
+				save_scope_as = jip_new_family_home
+			}
+		}
+	}
+	scope:jip_new_family_home.county.holder.top_liege ?= { save_scope_as = jip_new_family_liege }
+	hidden_effect = {
+		# Keep the household through the moment between the company and the family
+		every_courtier = { add_to_list = jip_company_courtiers }
+		# The patron's contracts and the charter go with the patron tie
+		every_character_task_contract = {
+			limit = { has_task_contract_group = merchant_patron_contract_group }
+			scheme ?= { invalidate_scheme = yes }
+			invalidate_contract = yes
+		}
+		if = {
+			limit = { is_tributary = yes }
+			end_tributary = yes
+		}
+		every_character_artifact = {
+			limit = { has_variable = charter_patron }
+			save_temporary_scope_as = jip_surrendered_charter
+			scope:jip_new_mishpacha_head = { destroy_artifact = scope:jip_surrendered_charter }
+		}
+		# Loans given as a company are forgiven, as when a company becomes a patrician house
+		gdp_merchant_forgive_debtors_effect = yes
+		merchant_company_law_remove_purpose_effect = yes
+	}
+	destroy_merchant_effect = { MERCHANT = scope:jip_new_mishpacha_head }
+	hidden_effect = {
+		# destroy_merchant_effect finds the company by var:merchant_creation_reason, which vanilla gives the historical
+		# companies only with the DLC: the rest go here. A house holds one house title, so this comes before the family's
+		every_held_title = {
+			limit = { gdp_merchant_company_title_trigger = yes }
+			save_scope_as = jip_old_company_title
+			scope:jip_new_mishpacha_head = { destroy_title = scope:jip_old_company_title }
+		}
+		# The estate and the family title, in the same steps as a dispossessed lord's (jip_jewish_lord_lose_lands_effect)
+		if = {
+			limit = {
+				NOT = {
+					any_held_title = { jip_is_mishpacha_family_title_trigger = yes }
+				}
+			}
+			create_domicile_title = {
+				name = jip_mishpacha_house_title_name
+				holder = scope:jip_new_mishpacha_head
+				government = familial_government
+				tier = duchy
+				save_scope_as = jip_domicile_title
+			}
+			if = {
+				limit = {
+					exists = house
+					NOT = { house.house_head ?= this }
+				}
+				create_cadet_house_with_name_effect = yes
+			}
+			give_noble_family_title = {
+				name = noble_family_name
+				tier = duchy
+				article = DEFAULT_TITLE_NAME_ARTICLE
+				government = familial_government
+				save_scope_as = jip_new_family_title
+			}
+			destroy_title = scope:jip_domicile_title
+		}
+		if = {
+			limit = { NOT = { has_government = familial_government } }
+			change_government = familial_government
+		}
+		# The company's realm laws
+		if = {
+			limit = { has_realm_law = merchant_succession_law }
+			remove_realm_law = merchant_succession_law
+		}
+		if = {
+			limit = { has_realm_law = company_purpose_family }
+			remove_realm_law = company_purpose_family
+		}
+		if = {
+			limit = { has_realm_law = company_purpose_artisan }
+			remove_realm_law = company_purpose_artisan
+		}
+		if = {
+			limit = { has_realm_law = company_purpose_creditor }
+			remove_realm_law = company_purpose_creditor
+		}
+		if = {
+			limit = { has_realm_law = company_purpose_caravaneer }
+			remove_realm_law = company_purpose_caravaneer
+		}
+		jip_mishpacha_ensure_succession_law_effect = yes
+		domicile ?= {
+			if = {
+				limit = {
+					exists = scope:jip_new_family_home
+					NOT = { domicile_location = scope:jip_new_family_home }
+				}
+				move_domicile = scope:jip_new_family_home
+			}
+			jip_add_random_family_estate_building_effect = yes
+		}
+		every_in_list = {
+			list = jip_company_courtiers
+			limit = {
+				is_alive = yes
+				NOT = { liege_or_court_owner = scope:jip_new_mishpacha_head }
+			}
+			scope:jip_new_mishpacha_head = { add_courtier = prev }
+		}
+		if = {
+			limit = { exists = scope:jip_new_family_liege }
+			jip_mishpacha_change_liege_effect = { LIEGE = scope:jip_new_family_liege }
+		}
+		jip_familial_record_religion_effect = yes
+		jip_mishpacha_refresh_contracts_effect = yes
+	}
+}

@@ -11,8 +11,26 @@ jip_spawn_jewish_families_effect = {
 			domicile_location.county = { add_to_list = jip_family_counties }
 		}
 	}
-	# 40 in all (60 before 1.21): the game's own merchant companies, Jewish Musta'arabi and Radhanite ones among them,
-	# now trade from the cities of the Middle East, Egypt and the Silk Road, so those regions lose the most
+	# So are the counties of the game's Jewish merchant companies (1.21: about 75 at 867, most of them Radhanite, from
+	# France to Samarkand), which also count against their region's share (jip_spawn_jewish_families_in_region_effect)
+	every_ruler = {
+		limit = { jip_is_jewish_merchant_trigger = yes }
+		if = {
+			limit = { exists = domicile }
+			domicile.domicile_location.county = {
+				add_to_list = jip_family_counties
+				add_to_list = jip_jewish_company_counties
+			}
+		}
+		else_if = {
+			limit = { exists = location }
+			location.county = {
+				add_to_list = jip_family_counties
+				add_to_list = jip_jewish_company_counties
+			}
+		}
+	}
+	# Up to 40 in all (60 before 1.21), less half a family for each Jewish company in the region
 	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_west_iberia COUNT = 7 }
 	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_west_francia COUNT = 4 }
 	jip_spawn_jewish_families_in_region_effect = { REGION = world_europe_west_germania COUNT = 4 }
@@ -28,17 +46,32 @@ jip_spawn_jewish_families_effect = {
 	jip_spawn_jewish_families_in_region_effect = { REGION = world_africa_north_east COUNT = 3 }
 }
 
-# Up to $COUNT$ new families in $REGION$, each in a different county, weighted by jip_jewish_family_county_weight_value
+# Up to $COUNT$ new families in $REGION$, each in a different county, weighted by jip_jewish_family_county_weight_value:
+# half a family fewer for each Jewish merchant company in the region, but at least one. The share is a global variable,
+# since root is empty here
 jip_spawn_jewish_families_in_region_effect = {
 	every_county_in_region = {
 		region = $REGION$
 		limit = { jip_jewish_family_home_county_trigger = yes }
 		add_to_list = jip_family_candidates_$REGION$
 	}
+	set_global_variable = { name = jip_region_families_left value = $COUNT$ }
+	every_in_list = {
+		list = jip_jewish_company_counties
+		limit = {
+			title_province = { geographical_region = $REGION$ }
+		}
+		change_global_variable = { name = jip_region_families_left add = -0.5 }
+	}
+	if = {
+		limit = { global_var:jip_region_families_left < 1 }
+		set_global_variable = { name = jip_region_families_left value = 1 }
+	}
 	while = {
 		count = $COUNT$
 		if = {
 			limit = {
+				global_var:jip_region_families_left >= 1
 				any_in_list = {
 					list = jip_family_candidates_$REGION$
 					NOT = { is_in_list = jip_family_counties }
@@ -62,8 +95,10 @@ jip_spawn_jewish_families_in_region_effect = {
 				}
 			}
 			jip_create_jewish_family_effect = yes
+			change_global_variable = { name = jip_region_families_left add = -1 }
 		}
 	}
+	remove_global_variable = jip_region_families_left
 }
 
 # A new Mishpacha family in the city scope:jip_new_family_home (jip_create_familial_family_effect)

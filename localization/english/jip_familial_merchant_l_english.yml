@@ -1,0 +1,16 @@
+﻿l_english:
+ jip_familial_found_company_decision: "Found a Merchant Company"
+ jip_familial_found_company_decision_desc: "Our estate already keeps the books of half the city's trade. Why should we not put our name to a [company|E] of our own, and trade under it from one end of the world to the other?"
+ jip_familial_found_company_decision_tooltip: "Turn your family into a [merchant|E] [company|E] in your [estate|E]'s city"
+ jip_familial_found_company_decision_confirm: "Open the counting house to the world"
+ jip_familial_found_company_decision_effect_tt: "Your family becomes a [merchant|E] [company|E] in your [estate|E]'s city, with that city's lord as your patron. Your family title, your estate and its buildings, your [liege|E] or suzerain and your [task_contracts|E] are left behind"
+ jip_familial_found_company_only_family_title_tt: "You hold no [title|E] but your family's own"
+ jip_familial_found_company_estate_tt: "Your family has an [estate|E]"
+
+ jip_merchant_become_familial_decision: "Become a $game_concept_familial$ House"
+ jip_merchant_become_familial_decision_desc: "Caravans come and go, and so do patrons. But a house that lives among its own people, keeps their law and speaks for them at court, endures. Let the company be wound up, and let our house settle where it trades."
+ jip_merchant_become_familial_decision_tooltip: "Wind up your [company|E] and become a $game_concept_familial$ family in its city"
+ jip_merchant_become_familial_decision_confirm: "Settle the house"
+ jip_merchant_become_familial_decision_effect_tt: "Your [company|E] is wound up and your house becomes a [familial|E] family in its city, with a family title and an [estate|E], under the ruler of the realm as [liege|E] or suzerain. Your patron, your charter and the loans you have given are left behind"
+ jip_merchant_become_familial_company_tt: "You have a [company|E]"
+ jip_merchant_become_familial_expelled_tt: "The Jews have not been expelled from the realm your [company|E] lies in"
