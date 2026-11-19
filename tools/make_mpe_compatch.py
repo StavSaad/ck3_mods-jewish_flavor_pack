@@ -501,6 +501,8 @@ def build_files():
             copy_with('history/provinces/zz_jip_province_changes.txt', {}, province_history),
         'common/buildings/01_jip_buildings.txt':
             copy_with('common/buildings/01_jip_buildings.txt', {'b_zughar': 'b_masada'}),
+        'common/on_action/jip_province_game_start_on_actions.txt':
+            copy_with('common/on_action/jip_province_game_start_on_actions.txt', {'b_zughar': 'b_masada'}),
         'common/great_projects/types/jip_great_projects.txt':
             copy_with('common/great_projects/types/jip_great_projects.txt',
                       dict(TEMPLE_COUNTIES, **{'b_ain_al-qayyara': 'b_assur', 'b_nicosia': 'b_larnaka'})),
