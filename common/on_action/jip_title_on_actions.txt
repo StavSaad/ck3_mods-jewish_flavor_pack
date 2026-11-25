@@ -55,13 +55,20 @@ on_title_gain = {
 		jip_mishpacha_contracts_new_area_on_action # Offers for a new family head
 		jip_carthage_restored_on_action
 		jip_familial_patron_title_transfer_on_action
+	}
+}
+
+# Not delayed: the government must be right before the player plays on (0.16, 14a)
+on_title_gain = {
+	on_actions = {
 		jip_landless_keep_government_on_action
 	}
 }
 
 # A landless ruler keeps the government of their own title. Gaining the Exilarchate from a Familial Exilarch made a merchant
 # or adventurer Familial (the government is sticky and passes on with the title), and their heir, who inherits only the
-# company or camp, stayed Familial without a family title, so no longer playable (0.16, 14a)
+# company or camp, stayed Familial without a family title, so no longer playable (0.16, 14a). Also checked as a ruler dies,
+# while they still hold their titles, so the heir inherits the right government
 jip_landless_keep_government_on_action = {
 	trigger = {
 		is_landed = no
@@ -123,6 +130,7 @@ mishpacha_landed_government_switch_on_action = {
 on_death = {
 	on_actions = {
 		jip_kohen_gadol_death_on_action
+		jip_landless_keep_government_on_action
 	}
 }
 
