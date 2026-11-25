@@ -154,7 +154,7 @@ A central political mechanic of the mod. Two rival figurehead titles:
 - **d_exilarchate** — Rabbinic Exilarchate, held by the Davidite/Bostanite/Nathanite lines
 - **d_karaite_exilarchate** — Karaite Exilarchate, held by the Ananite line
 
-Both use **Exilarchate Elective** succession: dynasty members and claimants of the same faith vote. Players can use the **Claim Exilarchate** decision to start a scheme, gain a claim, become an elector, and campaign for the title. The Exilarchate has deep history files going back to -596.1.1 (the Babylonian exile).
+Both use **Exilarchate Elective** succession: dynasty members and claimants of the same faith vote. Players can use the **Claim Exilarchate** decision to start a scheme, gain a claim, become an elector, and campaign for the title. The Exilarchate is Familial only (0.16): the decision and the `claim_exilarchate` scheme take only Familial heads, and the election's candidates are Familial heads or the holder's heir who isn't yet a ruler (`jip_exilarchate_elective.txt`). Merchants and adventurers were tried and dropped: one who gained the title from a Familial holder took the Familial government with it, leaving their heir unplayable. The Exilarchate has deep history files going back to -596.1.1 (the Babylonian exile).
 
 ---
 

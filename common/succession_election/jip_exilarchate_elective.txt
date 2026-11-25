@@ -96,6 +96,8 @@ exilarchate_elective = { #Witenagemot
 	}
 	
 	#scope:candidate = Candidate, scope:title = Title, scope:holder_candidate = Candidate currently selected by ruler.
+	# Only Familial heads, or the holder's heir who isn't yet a ruler (they inherit the family), may stand: the office belongs
+	# to the families (Stav, 2026-11-25: merchants and adventurers left out, as the title's government passed to them)
 	candidates = {
 		character_sets = {
 			exilarchate_elective_claimants = {
@@ -105,6 +107,7 @@ exilarchate_elective = { #Witenagemot
 					faith = scope:holder.faith
 					is_male = yes
 					is_ruler = yes
+					government_has_flag = government_is_familial
 				}
 			}
 			exilarchate_elective_family = {
@@ -114,8 +117,11 @@ exilarchate_elective = { #Witenagemot
 					faith = scope:holder.faith
 					is_male = yes
 					OR = {
-						is_player_heir_of = scope:holder
-						is_ruler = yes
+						government_has_flag = government_is_familial
+						AND = {
+							is_ruler = no
+							is_player_heir_of = scope:holder
+						}
 					}
 				}
 			}

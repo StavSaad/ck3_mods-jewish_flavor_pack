@@ -39,6 +39,10 @@
 		is_independent_ruler = yes 		
 		culture = { has_cultural_pillar = heritage_israelite }
 		custom_tooltip = {
+			text = claim_exilarchate_familial_only_tt
+			government_has_flag = government_is_familial
+		}
+		custom_tooltip = {
 			text = no_active_claim_exilarchate_scheme
 			NOT = {
 				any_scheme = {

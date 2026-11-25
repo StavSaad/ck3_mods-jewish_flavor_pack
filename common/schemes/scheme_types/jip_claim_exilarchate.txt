@@ -25,15 +25,9 @@
 	allow = {
 		is_adult = yes
 		is_imprisoned = no
-		# Mishpacha families are landless by design, their family title makes them rulers
-		trigger_if = {
-			limit = { has_government = familial_government }
-			is_ruler = yes
-		}
-		trigger_else = {
-			is_landed = yes
-		}
-		highest_held_title_tier > tier_county
+		# Only Familial heads may claim the Exilarchate (Stav, 2026-11-25); their family title makes them rulers
+		government_has_flag = government_is_familial
+		is_ruler = yes
 		scope:target.holder = {
 			has_faith = scope:owner.faith
 		}
