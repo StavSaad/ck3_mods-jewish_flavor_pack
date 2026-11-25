@@ -251,3 +251,30 @@ JipPhysicianMaster = {
 		fallback = yes
 	}
 }
+
+# Seek Debtors (jip_contract_debtors): how the market's lord, standing for its borrowers, sees lending at interest, by the
+# usury precept of their faith (1.21). Keyed on the lord
+JipDebtorsUsury = {
+	type = character
+	text = {
+		trigger = { religion = religion:judaism_religion }
+		localization_key = jip_debtors_usury_jewish
+	}
+	text = {
+		trigger = { rite = { rite_has_doctrine = doctrine_usury_forbidden } }
+		localization_key = jip_debtors_usury_forbidden
+	}
+	text = {
+		trigger = { rite = { rite_has_doctrine = doctrine_usury_discouraged } }
+		localization_key = jip_debtors_usury_discouraged
+	}
+	text = {
+		trigger = { rite = { rite_has_doctrine = doctrine_usury_outsiders_only } }
+		localization_key = jip_debtors_usury_outsiders_only
+	}
+	text = {
+		trigger = { always = no }
+		localization_key = jip_debtors_usury_accepted
+		fallback = yes
+	}
+}

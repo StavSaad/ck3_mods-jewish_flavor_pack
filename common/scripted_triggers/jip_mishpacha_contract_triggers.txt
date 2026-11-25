@@ -146,6 +146,45 @@ jip_contract_hobnob_employer_trigger = {
 	NOT = { root = { has_character_flag = jip_contract_hobnob_cooldown } }
 }
 
+# Seek Debtors: holds a market on one of the family's trade routes (F8), once in five years
+# (jip_contract_debtors_cooldown on the family head). root = the family head
+jip_contract_debtors_employer_trigger = {
+	is_landed = yes
+	NOT = { root = { has_character_flag = jip_contract_debtors_cooldown } }
+	any_held_trade_market = {
+		save_temporary_scope_as = jip_debtors_market
+		root = {
+			any_trade_route = {
+				has_trader = yes
+				any_trade_market_on_route = { this = scope:jip_debtors_market }
+			}
+		}
+	}
+}
+
+# Lending at interest to these borrowers is forbidden to the family: a Jewish family lending to Jews (the market's lord
+# stands for its borrowers), or a family whose own precept forbids usury. root = the family head, scope:employer = the lord
+jip_contract_debtors_usury_sinful_trigger = {
+	OR = {
+		AND = {
+			jip_is_jewish_family_trigger = yes
+			scope:employer.religion = root.religion
+		}
+		rite = { rite_has_doctrine = doctrine_usury_forbidden }
+	}
+}
+
+# The borrowers' own faith forbids or discourages lending at interest, so they turn to outsiders for credit, and resent
+# them for it. scope:employer = the market's lord
+jip_contract_debtors_usury_frowned_trigger = {
+	scope:employer.rite ?= {
+		OR = {
+			rite_has_doctrine = doctrine_usury_forbidden
+			rite_has_doctrine = doctrine_usury_discouraged
+		}
+	}
+}
+
 # Finance a Caravan: a ruler with money to put into a venture
 jip_contract_caravan_employer_trigger = {
 	is_landed = yes
