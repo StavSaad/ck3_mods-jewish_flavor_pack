@@ -2022,7 +2022,7 @@ types JominiMultiplayerLobby
 					tooltip = "JIP_RULER_DESIGNER_OPEN_FAMILIAL"
 
 					blockoverride "designer_icon" {
-						texture = "gfx/interface/icons/government_types/familial_government.dds"
+						texture = "gfx/interface/icons/flat_icons/jip_familial_designer.dds"
 					}
 				}
 

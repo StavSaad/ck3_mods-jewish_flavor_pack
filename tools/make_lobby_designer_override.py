@@ -34,7 +34,7 @@ NEW = (ADV.replace('\t\t\t\t\tonclick = "[TryStartRulerDesigning',
        '\t\t\t\t\ttooltip = "JIP_RULER_DESIGNER_OPEN_FAMILIAL"\n'
        '\n'
        '\t\t\t\t\tblockoverride "designer_icon" {\n'
-       '\t\t\t\t\t\ttexture = "gfx/interface/icons/government_types/familial_government.dds"\n'
+       '\t\t\t\t\t\ttexture = "gfx/interface/icons/flat_icons/jip_familial_designer.dds"\n'
        '\t\t\t\t\t}\n'
        '\t\t\t\t}\n')
 t = t.replace(ADV, NEW)
