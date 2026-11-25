@@ -60,6 +60,33 @@ jip_is_pyre = {
 	}
 }
 
+jip_is_purim = {
+	scope:activity = {
+		has_activity_option = {
+			category = special_type
+			option = jip_feast_type_purim
+		}
+	}
+}
+
+jip_is_sukkot = {
+	scope:activity = {
+		has_activity_option = {
+			category = special_type
+			option = jip_feast_type_sukkot
+		}
+	}
+}
+
+jip_is_hanukkah = {
+	scope:activity = {
+		has_activity_option = {
+			category = special_type
+			option = jip_feast_type_hanukkah
+		}
+	}
+}
+
 jip_is_festival = {
 	OR = {
 		jip_is_akitu = yes
@@ -68,6 +95,9 @@ jip_is_festival = {
 		jip_is_dehwa_rabba = yes
 		jip_is_pesach = yes
 		jip_is_pyre = yes
+		jip_is_purim = yes
+		jip_is_sukkot = yes
+		jip_is_hanukkah = yes
 	}
 }
 
@@ -121,5 +151,111 @@ jip_is_exilarch_trigger = {
 	OR = {
 		has_title = title:d_exilarchate
 		has_title = title:d_karaite_exilarchate
+	}
+}
+
+# Purim, Sukkot and Hanukkah (0.16 plan, section 2)
+
+# Character scope: keeps the rabbinic feasts, Hanukkah among them: every Jewish faith but the Karaites, the Samaritans
+# and the Beta Israel, who keep the Torah's feasts alone and never took up the sages' Hanukkah. The same faiths read the
+# rabbinic Haggadah at Pesach
+jip_keeps_rabbinic_feasts_trigger = {
+	jip_pesach_haggadah_trigger = yes
+}
+
+# Character scope: keeps Purim: the rabbinic faiths and the Karaites, who keep it for the Scroll of Esther, though with
+# their own calendar and none of the sages' rules (the Samaritans' Bible has no Esther, and the Beta Israel never kept it)
+jip_keeps_purim_trigger = {
+	OR = {
+		jip_keeps_rabbinic_feasts_trigger = yes
+		faith = faith:karaism
+	}
+}
+
+# Character scope: the character's liege or suzerain is a gentile who bears the Jews ill will: hostile by nature
+# (jip_jewish_hostility_value, the Expel the Jews weights), or hostile to this character, or ruling a realm that
+# expelled the Jews. Purim's Haman (jip_feast.7001), Hanukkah's lights kept within (jip_feast.9001)
+jip_hostile_gentile_overlord_trigger = {
+	save_temporary_scope_as = jip_overlord_subject
+	OR = {
+		liege ?= {
+			NOT = { this = scope:jip_overlord_subject }
+			jip_is_hostile_gentile_overlord_trigger = { SUBJECT = scope:jip_overlord_subject }
+		}
+		suzerain ?= {
+			jip_is_hostile_gentile_overlord_trigger = { SUBJECT = scope:jip_overlord_subject }
+		}
+	}
+}
+
+# Character scope (the overlord): a gentile hostile to the Jews or to $SUBJECT$
+jip_is_hostile_gentile_overlord_trigger = {
+	NOT = { religion = religion:judaism_religion }
+	OR = {
+		jip_jewish_hostility_value >= 30
+		opinion = {
+			target = $SUBJECT$
+			value <= -25
+		}
+		jip_ruler_has_expelled_jews_trigger = yes
+	}
+}
+
+# The feast (scope:activity) is held in the city of Hamadan, where the Jews of Persia keep the tomb of Esther and Mordecai
+jip_feast_at_hamadan_trigger = {
+	scope:activity.activity_location ?= { geographical_region = jip_city_hamadan }
+}
+
+# Character scope: is in a land where the citron grows (the Levant, Egypt, the Maghreb, Iberia, Italy and
+# the Greek lands), so the etrog for Sukkot needs no buying (jip_feast.8002)
+jip_sukkot_citron_land_trigger = {
+	location ?= { geographical_region = jip_region_citron_lands }
+}
+
+# Character scope: an etrog comes without buying: a Shaliach of the court brings one from the Land, or a merchant
+# company's ships carry them
+jip_sukkot_etrog_provided_trigger = {
+	OR = {
+		employs_court_position = jip_shaliach_court_position
+		government_has_flag = government_is_merchant
+	}
+}
+
+# Character scope: keeps Sukkot in the Land of Israel before about 1200, when its synagogues still read the Torah over
+# three years and had no Simchat Torah (jip_feast.8004)
+jip_sukkot_palestinian_rite_trigger = {
+	current_year < 1200
+	location ?= { geographical_region = jip_region_israel }
+}
+
+# Character scope: of a house descended from the Hasmoneans (0.16 plan, section 3; the house sets the variable when it
+# is built)
+jip_is_hasmonean_heir_trigger = {
+	house ?= { has_variable = jip_hasmonean_house }
+}
+
+# Purim: the feast (scope:activity) pours wine, normal or extensive, for ad de-lo yada (jip_feast.7003)
+jip_purim_wine_trigger = {
+	scope:activity = {
+		OR = {
+			has_activity_option = {
+				category = feast_option_wine
+				option = feast_wine_normal
+			}
+			has_activity_option = {
+				category = feast_option_wine
+				option = feast_wine_extensive
+			}
+		}
+	}
+}
+
+# Purim: a guest at the feast (scope:activity) keeps a secret that root does not know (jip_feast.7003)
+jip_purim_guest_secret_trigger = {
+	scope:activity = {
+		any_attending_character = {
+			NOT = { this = root }
+			any_secret = { NOT = { is_known_by = root } }
+		}
 	}
 }

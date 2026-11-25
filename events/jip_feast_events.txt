@@ -60,6 +60,26 @@
 #  6101 Guest pulse: the Galli dance
 #  6102 Guest pulse: the goddess's fish
 #  6103 Guest pulse: the pilgrim's mark
+# 7000s Purim (rabbinic faiths and the Karaites; 0.16 plan, section 2)
+#  7001 Host: the Megillah (a Haman of one's own, scope:jip_haman)
+#  7002 Host: gifts and alms
+#  7003 Host: ad de-lo yada
+#  7004 Host: the Purim play (a paytan's parody before 1100)
+#  7005 Host: light and gladness (summary; the tomb of Esther and Mordecai at Hamadan)
+#  7010 Guest: farewell
+# 8000s Sukkot (every Jewish faith)
+#  8001 Host: the booth (the roof for families; Karaite, Samaritan, Beta Israel; the ushpizin from 1280)
+#  8002 Host: the four species (rabbinic faiths; the etrog bought outside the citron lands)
+#  8003 Host: the water-drawing
+#  8004 Host: Hoshana Rabba and Simchat Torah (the three-year cycle in the Land before 1200)
+#  8005 Host: the season of our rejoicing (summary; the seventy bulls at a rebuilt Temple)
+#  8010 Guest: farewell
+# 9000s Hanukkah (rabbinic faiths)
+#  9001 Host: the lights (within, under a hostile overlord, scope:jip_hanukkah_overlord)
+#  9002 Host: the Scroll of Antiochus (Saadia from 930, the Josippon from 950)
+#  9003 Host: Judith's feast
+#  9004 Host: the eighth light (summary; the Hasmoneans' house, the rededication in a rebuilt Temple)
+#  9010 Guest: farewell
 
 ##################################################
 # AKITU
@@ -3222,5 +3242,1334 @@ jip_feast.6103 = {
 	option = {
 		name = jip_feast.6103.b
 		add_stress = minor_stress_gain
+	}
+}
+
+##################################################
+# PURIM
+##################################################
+
+# The Megillah: Haman's name drowned out
+jip_feast.7001 = {
+	type = activity_event
+	title = jip_feast.7001.t
+	desc = {
+		desc = jip_feast.7001.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { faith = faith:karaism }
+				desc = jip_feast.7001.desc_karaite
+			}
+			desc = jip_feast.7001.desc_rabbinic
+		}
+		triggered_desc = {
+			trigger = { exists = scope:jip_haman }
+			desc = jip_feast.7001.desc_haman
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		trigger = { exists = scope:jip_haman }
+		character = scope:jip_haman
+		animation = disapproval
+	}
+
+	immediate = {
+		jip_feast_save_scopes_effect = yes
+		# A Haman of one's own: a rival, else a liege or suzerain who wishes the Jews ill
+		if = {
+			limit = {
+				any_relation = {
+					type = rival
+					is_alive = yes
+				}
+			}
+			random_relation = {
+				type = rival
+				limit = { is_alive = yes }
+				save_scope_as = jip_haman
+			}
+		}
+		else_if = {
+			limit = {
+				suzerain ?= { jip_is_hostile_gentile_overlord_trigger = { SUBJECT = root } }
+			}
+			suzerain = { save_scope_as = jip_haman }
+		}
+		else_if = {
+			limit = {
+				jip_hostile_gentile_overlord_trigger = yes
+				exists = liege
+			}
+			liege = { save_scope_as = jip_haman }
+		}
+	}
+
+	# Drown his name with the rattles and the stamping
+	option = {
+		name = jip_feast.7001.a
+		add_piety = minor_piety_gain
+		add_stress = minor_stress_loss
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# Read it word by word, as a scholar
+	option = {
+		name = jip_feast.7001.b
+		add_learning_lifestyle_xp = minor_lifestyle_xp
+		add_piety = miniscule_piety_gain
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 30
+				learning >= 12
+			}
+		}
+	}
+
+	# Give Haman another name
+	option = {
+		name = jip_feast.7001.c
+		trigger = { exists = scope:jip_haman }
+		add_stress = medium_stress_loss
+		random_list = {
+			85 = {
+				desc = jip_feast.7001.c_safe
+			}
+			15 = {
+				desc = jip_feast.7001.c_repeated
+				scope:jip_haman = {
+					add_opinion = {
+						target = root
+						modifier = jip_named_as_haman_opinion
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 40
+				OR = {
+					has_trait = vengeful
+					has_trait = wrathful
+					has_trait = arrogant
+				}
+			}
+			modifier = {
+				factor = 0
+				has_trait = craven
+			}
+		}
+	}
+
+	after = {
+		trigger_event = {
+			id = jip_feast.7002
+			days = 2
+		}
+	}
+}
+
+# Gifts to friends and alms to the poor (Esther 9:22)
+jip_feast.7002 = {
+	type = activity_event
+	title = jip_feast.7002.t
+	desc = {
+		desc = jip_feast.7002.desc
+		triggered_desc = {
+			trigger = { employs_court_position = jip_gabbai_tzedakah_court_position }
+			desc = jip_feast.7002.desc_gabbai
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	# Portions to every guest
+	option = {
+		name = jip_feast.7002.a
+		scope:activity = {
+			every_attending_character = {
+				limit = { NOT = { this = root } }
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 10
+				}
+			}
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 20
+				has_trait = gregarious
+			}
+		}
+	}
+
+	# Alms for the poor, more than for the guests
+	option = {
+		name = jip_feast.7002.b
+		remove_short_term_gold = minor_gold_value
+		add_piety = medium_piety_gain
+		capital_county ?= {
+			add_county_modifier = {
+				modifier = jip_purim_alms_modifier
+				years = 2
+			}
+		}
+		if = {
+			limit = { employs_court_position = jip_gabbai_tzedakah_court_position }
+			add_piety = minor_piety_gain
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 40
+				OR = {
+					has_trait = generous
+					has_trait = compassionate
+				}
+			}
+			modifier = {
+				factor = 0
+				gold < minor_gold_value
+			}
+		}
+	}
+
+	# Two portions, as the law requires, and not a crumb more
+	option = {
+		name = jip_feast.7002.c
+		trigger = { has_trait = greedy }
+		add_stress = minor_stress_loss
+		add_prestige = minor_prestige_loss
+		ai_chance = {
+			base = 60
+		}
+	}
+
+	after = {
+		trigger_event = {
+			id = jip_feast.7003
+			days = 2
+		}
+	}
+}
+
+# Ad de-lo yada: drink until you can't tell "cursed is Haman" from "blessed is Mordecai" (Megillah 7b)
+jip_feast.7003 = {
+	type = activity_event
+	title = jip_feast.7003.t
+	desc = {
+		desc = jip_feast.7003.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { faith = faith:karaism }
+				desc = jip_feast.7003.desc_karaite
+			}
+			triggered_desc = {
+				trigger = { jip_purim_wine_trigger = yes }
+				desc = jip_feast.7003.desc_wine
+			}
+			desc = jip_feast.7003.desc_dry
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = ecstasy
+	}
+
+	# Until I can't tell the one from the other
+	option = {
+		name = jip_feast.7003.a
+		trigger = { jip_purim_wine_trigger = yes }
+		add_stress = medium_stress_loss
+		random_list = {
+			55 = {
+				desc = jip_feast.7003.a_merry
+			}
+			30 = {
+				desc = jip_feast.7003.a_secret
+				trigger = { jip_purim_guest_secret_trigger = yes }
+				scope:activity = {
+					random_attending_character = {
+						limit = {
+							NOT = { this = root }
+							any_secret = { NOT = { is_known_by = root } }
+						}
+						random_secret = {
+							limit = { NOT = { is_known_by = root } }
+							reveal_to = root
+						}
+					}
+				}
+			}
+			15 = {
+				desc = jip_feast.7003.a_drunkard
+				trigger = {
+					NOR = {
+						has_trait = drunkard
+						has_trait = temperate
+					}
+				}
+				add_trait = drunkard
+			}
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 40
+				OR = {
+					has_trait = drunkard
+					has_trait = gregarious
+				}
+			}
+			modifier = {
+				factor = 0
+				has_trait = temperate
+			}
+		}
+	}
+
+	# Drink a little more than usual, and sleep, as Maimonides allows
+	option = {
+		name = jip_feast.7003.b
+		trigger = { jip_purim_wine_trigger = yes }
+		add_stress = minor_stress_loss
+		add_piety = miniscule_piety_gain
+		ai_chance = {
+			base = 40
+		}
+	}
+
+	# Keep sober
+	option = {
+		name = jip_feast.7003.c
+		trigger = {
+			OR = {
+				has_trait = temperate
+				has_trait = zealous
+				jip_purim_wine_trigger = no
+			}
+		}
+		add_piety = minor_piety_gain
+		stress_impact = {
+			gregarious = minor_stress_impact_gain
+			drunkard = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 60
+				has_trait = temperate
+			}
+		}
+	}
+
+	after = {
+		trigger_event = {
+			id = jip_feast.7004
+			days = 2
+		}
+	}
+}
+
+# The Purim play
+jip_feast.7004 = {
+	type = activity_event
+	title = jip_feast.7004.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { current_year < 1100 }
+				desc = jip_feast.7004.desc_paytan
+			}
+			desc = jip_feast.7004.desc_play
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	# Laugh loudest of all
+	option = {
+		name = jip_feast.7004.a
+		add_stress = minor_stress_loss
+		scope:activity = {
+			every_attending_character = {
+				limit = { NOT = { this = root } }
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 5
+				}
+			}
+		}
+		ai_chance = {
+			base = 60
+		}
+	}
+
+	# Put on a mask and join them
+	option = {
+		name = jip_feast.7004.b
+		add_diplomacy_lifestyle_xp = minor_lifestyle_xp
+		add_prestige = miniscule_prestige_loss
+		add_stress = medium_stress_loss
+		stress_impact = {
+			shy = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 40
+				has_trait = gregarious
+			}
+			modifier = {
+				factor = 0.2
+				has_trait = shy
+			}
+		}
+	}
+
+	# Some jokes go too far
+	option = {
+		name = jip_feast.7004.c
+		add_prestige = minor_prestige_gain
+		add_dread = 5
+		scope:activity = {
+			every_attending_character = {
+				limit = { NOT = { this = root } }
+				add_opinion = {
+					target = root
+					modifier = annoyed_opinion
+					opinion = -5
+				}
+			}
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 50
+				OR = {
+					has_trait = arrogant
+					has_trait = wrathful
+				}
+			}
+		}
+	}
+}
+
+# "The Jews had light and gladness" (host summary, toast phase)
+jip_feast.7005 = {
+	type = activity_event
+	title = jip_feast.7005.t
+	desc = {
+		desc = jip_feast.7005.desc
+		triggered_desc = {
+			trigger = { faith = faith:karaism }
+			desc = jip_feast.7005.desc_karaite
+		}
+		triggered_desc = {
+			trigger = { jip_feast_at_hamadan_trigger = yes }
+			desc = jip_feast.7005.desc_hamadan
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	option = {
+		name = jip_feast.7005.a
+		add_piety = minor_piety_gain
+		add_character_modifier = {
+			modifier = jip_purim_gladness
+			years = 1
+		}
+		# At the tomb of Esther and Mordecai
+		if = {
+			limit = { jip_feast_at_hamadan_trigger = yes }
+			add_piety = medium_piety_gain
+		}
+	}
+}
+
+# Guest farewell
+jip_feast.7010 = {
+	type = activity_event
+	title = jip_feast.7010.t
+	desc = jip_feast.7010.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		character = scope:host
+		animation = personality_honorable
+	}
+
+	trigger = {
+		is_alive = yes
+		is_imprisoned = no
+	}
+
+	option = {
+		name = jip_feast.7010.a
+		add_opinion = {
+			target = scope:host
+			modifier = jip_festival_guest_opinion
+		}
+		add_stress = minor_stress_loss
+	}
+}
+
+##################################################
+# SUKKOT
+##################################################
+
+# The booth
+jip_feast.8001 = {
+	type = activity_event
+	title = jip_feast.8001.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { faith = faith:haymanot }
+				desc = jip_feast.8001.desc_haymanot
+			}
+			triggered_desc = {
+				trigger = { faith = faith:samaritan }
+				desc = jip_feast.8001.desc_samaritan
+			}
+			triggered_desc = {
+				trigger = { faith = faith:karaism }
+				desc = jip_feast.8001.desc_karaite
+			}
+			triggered_desc = {
+				trigger = { government_has_flag = government_is_familial }
+				desc = jip_feast.8001.desc_roof
+			}
+			desc = jip_feast.8001.desc
+		}
+		triggered_desc = {
+			trigger = {
+				jip_keeps_rabbinic_feasts_trigger = yes
+				current_year >= 1280
+			}
+			desc = jip_feast.8001.desc_ushpizin
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	immediate = {
+		jip_feast_save_scopes_effect = yes
+	}
+
+	# Seat the guests in the booth, each by rank
+	option = {
+		name = jip_feast.8001.a
+		scope:activity = {
+			every_attending_character = {
+				limit = { NOT = { this = root } }
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 10
+				}
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# Bring in the poor of the town, as the guests of the feast
+	option = {
+		name = jip_feast.8001.b
+		add_piety = medium_piety_gain
+		add_prestige = minor_prestige_loss
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 40
+				OR = {
+					has_trait = compassionate
+					has_trait = humble
+					has_trait = zealous
+				}
+			}
+			modifier = {
+				factor = 0.2
+				has_trait = arrogant
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = { jip_keeps_rabbinic_feasts_trigger = yes }
+			trigger_event = {
+				id = jip_feast.8002
+				days = 2
+			}
+		}
+		else = {
+			trigger_event = {
+				id = jip_feast.8003
+				days = 2
+			}
+		}
+	}
+}
+
+# The four species: palm, myrtle, willow and the etrog
+jip_feast.8002 = {
+	type = activity_event
+	title = jip_feast.8002.t
+	desc = {
+		desc = jip_feast.8002.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { jip_sukkot_citron_land_trigger = yes }
+				desc = jip_feast.8002.desc_orchard
+			}
+			triggered_desc = {
+				trigger = { employs_court_position = jip_shaliach_court_position }
+				desc = jip_feast.8002.desc_shaliach
+			}
+			triggered_desc = {
+				trigger = { government_has_flag = government_is_merchant }
+				desc = jip_feast.8002.desc_ships
+			}
+			desc = jip_feast.8002.desc_bought
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = prayer
+	}
+
+	# The etrog is at hand: wave the four species
+	option = {
+		name = jip_feast.8002.a
+		trigger = {
+			OR = {
+				jip_sukkot_citron_land_trigger = yes
+				jip_sukkot_etrog_provided_trigger = yes
+			}
+		}
+		add_piety = medium_piety_gain
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# Pay for a flawless etrog
+	option = {
+		name = jip_feast.8002.b
+		trigger = {
+			jip_sukkot_citron_land_trigger = no
+			jip_sukkot_etrog_provided_trigger = no
+		}
+		remove_short_term_gold = minor_gold_value
+		add_piety = medium_piety_gain
+		add_prestige = minor_prestige_gain
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 0
+				gold < minor_gold_value
+			}
+			modifier = {
+				factor = 0.3
+				has_trait = greedy
+			}
+		}
+	}
+
+	# Share the community's one etrog
+	option = {
+		name = jip_feast.8002.c
+		trigger = {
+			jip_sukkot_citron_land_trigger = no
+			jip_sukkot_etrog_provided_trigger = no
+		}
+		add_piety = minor_piety_gain
+		add_stewardship_lifestyle_xp = minor_lifestyle_xp
+		ai_chance = {
+			base = 40
+		}
+	}
+
+	after = {
+		trigger_event = {
+			id = jip_feast.8003
+			days = 2
+		}
+	}
+}
+
+# The water-drawing: "Whoever has not seen the rejoicing of the water-drawing has never seen joy" (Sukkah 5:1)
+jip_feast.8003 = {
+	type = activity_event
+	title = jip_feast.8003.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { jip_temple_stands_trigger = yes }
+				desc = jip_feast.8003.desc_temple
+			}
+			desc = jip_feast.8003.desc
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = ecstasy
+	}
+
+	# Dance with the torches, as Rabban Shimon ben Gamliel did
+	option = {
+		name = jip_feast.8003.a
+		add_prowess_lifestyle_xp = minor_lifestyle_xp
+		random_list = {
+			50 = {
+				desc = jip_feast.8003.a_good
+				modifier = {
+					add = 20
+					prowess >= 12
+				}
+				modifier = {
+					add = 20
+					prowess >= 18
+				}
+				add_prestige = medium_prestige_gain
+			}
+			30 = {
+				desc = jip_feast.8003.a_bad
+				add_prestige = minor_prestige_loss
+				add_stress = minor_stress_gain
+			}
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 40
+				OR = {
+					has_trait = brave
+					has_trait = gregarious
+				}
+			}
+			modifier = {
+				factor = 0.2
+				OR = {
+					has_trait = craven
+					has_trait = shy
+				}
+			}
+		}
+	}
+
+	# Lead the singing of the Songs of Ascents
+	option = {
+		name = jip_feast.8003.b
+		add_diplomacy_lifestyle_xp = minor_lifestyle_xp
+		scope:activity = {
+			every_attending_character = {
+				limit = { NOT = { this = root } }
+				add_opinion = {
+					target = root
+					modifier = pleased_opinion
+					opinion = 5
+				}
+			}
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 20
+				diplomacy >= 12
+			}
+		}
+	}
+
+	# Watch, and be glad
+	option = {
+		name = jip_feast.8003.c
+		add_stress = medium_stress_loss
+		ai_chance = {
+			base = 30
+		}
+	}
+
+	after = {
+		trigger_event = {
+			id = jip_feast.8004
+			days = 2
+		}
+	}
+}
+
+# Hoshana Rabba and Simchat Torah. Later the Mount of Olives assembly in Jerusalem (0.16 plan, section 8) hangs here
+jip_feast.8004 = {
+	type = activity_event
+	title = jip_feast.8004.t
+	desc = {
+		desc = jip_feast.8004.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { jip_keeps_rabbinic_feasts_trigger = no }
+				desc = jip_feast.8004.desc_torah_only
+			}
+			triggered_desc = {
+				trigger = { jip_sukkot_palestinian_rite_trigger = yes }
+				desc = jip_feast.8004.desc_palestinian
+			}
+			desc = jip_feast.8004.desc_simchat_torah
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+	right_portrait = {
+		trigger = { exists = scope:jip_sukkot_guest }
+		character = scope:jip_sukkot_guest
+		animation = interested
+	}
+
+	immediate = {
+		# The guest most worth honouring: of the host's religion, the most renowned
+		scope:activity = {
+			ordered_attending_character = {
+				limit = {
+					NOT = { this = root }
+					religion = root.religion
+					is_adult = yes
+				}
+				order_by = prestige
+				save_scope_as = jip_sukkot_guest
+			}
+		}
+	}
+
+	# Give the last reading to the guest
+	option = {
+		name = jip_feast.8004.a
+		trigger = { exists = scope:jip_sukkot_guest }
+		scope:jip_sukkot_guest = {
+			add_opinion = {
+				target = root
+				modifier = respect_opinion
+				opinion = 20
+			}
+			add_piety = minor_piety_gain
+		}
+		add_prestige = minor_prestige_gain
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# Read it yourself
+	option = {
+		name = jip_feast.8004.b
+		add_piety = medium_piety_gain
+		add_learning_lifestyle_xp = minor_lifestyle_xp
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 30
+				OR = {
+					has_trait = arrogant
+					has_trait = zealous
+				}
+			}
+		}
+	}
+}
+
+# The season of our rejoicing (host summary, toast phase)
+jip_feast.8005 = {
+	type = activity_event
+	title = jip_feast.8005.t
+	desc = {
+		desc = jip_feast.8005.desc
+		triggered_desc = {
+			trigger = { jip_temple_stands_trigger = yes }
+			desc = jip_feast.8005.desc_temple
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	option = {
+		name = jip_feast.8005.a
+		add_piety = minor_piety_gain
+		add_character_modifier = {
+			modifier = jip_sukkot_rejoicing
+			years = 1
+		}
+		# The pilgrimage to the Temple and the seventy bulls, offered for the seventy nations (Sukkah 55b)
+		if = {
+			limit = { jip_temple_stands_trigger = yes }
+			add_piety = medium_piety_gain
+			every_neighboring_top_liege_realm_owner = {
+				limit = { NOT = { religion = religion:judaism_religion } }
+				add_opinion = {
+					target = root
+					modifier = jip_seventy_bulls_opinion
+				}
+			}
+		}
+	}
+}
+
+# Guest farewell
+jip_feast.8010 = {
+	type = activity_event
+	title = jip_feast.8010.t
+	desc = jip_feast.8010.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = admiration
+	}
+	right_portrait = {
+		character = scope:host
+		animation = personality_honorable
+	}
+
+	trigger = {
+		is_alive = yes
+		is_imprisoned = no
+	}
+
+	option = {
+		name = jip_feast.8010.a
+		add_opinion = {
+			target = scope:host
+			modifier = jip_festival_guest_opinion
+		}
+		if = {
+			limit = { religion = scope:host.religion }
+			add_piety = minor_piety_gain
+		}
+	}
+}
+
+##################################################
+# HANUKKAH
+##################################################
+
+# The lights: at the door, or within "in time of danger" (Shabbat 21b)
+jip_feast.9001 = {
+	type = activity_event
+	title = jip_feast.9001.t
+	desc = {
+		desc = jip_feast.9001.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { exists = scope:jip_hanukkah_overlord }
+				desc = jip_feast.9001.desc_danger
+			}
+			desc = jip_feast.9001.desc_door
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = prayer
+	}
+
+	immediate = {
+		jip_feast_save_scopes_effect = yes
+		if = {
+			limit = {
+				suzerain ?= { jip_is_hostile_gentile_overlord_trigger = { SUBJECT = root } }
+			}
+			suzerain = { save_scope_as = jip_hanukkah_overlord }
+		}
+		else_if = {
+			limit = {
+				jip_hostile_gentile_overlord_trigger = yes
+				exists = liege
+			}
+			liege = { save_scope_as = jip_hanukkah_overlord }
+		}
+	}
+
+	# At the door, to proclaim the miracle to the street
+	option = {
+		name = jip_feast.9001.a
+		trigger = { NOT = { exists = scope:jip_hanukkah_overlord } }
+		add_piety = minor_piety_gain
+		add_prestige = minor_prestige_gain
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# On the table within, as the sages allow in time of danger
+	option = {
+		name = jip_feast.9001.b
+		trigger = { exists = scope:jip_hanukkah_overlord }
+		add_piety = minor_piety_gain
+		add_stress = minor_stress_loss
+		ai_chance = {
+			base = 60
+		}
+	}
+
+	# At the door, danger or no danger
+	option = {
+		name = jip_feast.9001.c
+		trigger = {
+			exists = scope:jip_hanukkah_overlord
+			OR = {
+				has_trait = brave
+				has_trait = zealous
+				has_trait = stubborn
+			}
+		}
+		add_piety = medium_piety_gain
+		add_prestige = minor_prestige_gain
+		scope:jip_hanukkah_overlord = {
+			add_opinion = {
+				target = root
+				modifier = annoyed_opinion
+				opinion = -10
+			}
+		}
+		ai_chance = {
+			base = 40
+		}
+	}
+
+	after = {
+		trigger_event = {
+			id = jip_feast.9002
+			days = 2
+		}
+	}
+}
+
+# The Scroll of Antiochus
+jip_feast.9002 = {
+	type = activity_event
+	title = jip_feast.9002.t
+	desc = {
+		desc = jip_feast.9002.desc
+		triggered_desc = {
+			trigger = { current_year >= 930 }
+			desc = jip_feast.9002.desc_saadia
+		}
+		triggered_desc = {
+			trigger = { current_year >= 950 }
+			desc = jip_feast.9002.desc_josippon
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = reading
+	}
+
+	# Tell of Judah the Hammer and his brothers
+	option = {
+		name = jip_feast.9002.a
+		add_prestige = minor_prestige_gain
+		random = {
+			chance = 30
+			add_martial_lifestyle_xp = medium_lifestyle_xp
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 30
+				OR = {
+					has_trait = brave
+					martial >= 12
+				}
+			}
+		}
+	}
+
+	# Tell of the cruse of oil that burned eight days
+	option = {
+		name = jip_feast.9002.b
+		add_piety = minor_piety_gain
+		add_learning_lifestyle_xp = minor_lifestyle_xp
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	after = {
+		trigger_event = {
+			id = jip_feast.9003
+			days = 2
+		}
+	}
+}
+
+# Judith's feast: cheese and wine, for the widow who saved her city
+jip_feast.9003 = {
+	type = activity_event
+	title = jip_feast.9003.t
+	desc = jip_feast.9003.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	# Honour the women of the house
+	option = {
+		name = jip_feast.9003.a
+		every_spouse = {
+			limit = { is_alive = yes }
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 15
+			}
+		}
+		every_child = {
+			limit = {
+				is_alive = yes
+				is_female = yes
+				is_courtier_of = root
+			}
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 15
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# Cheese, and more cheese
+	option = {
+		name = jip_feast.9003.b
+		add_stress = medium_stress_loss
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 40
+				has_trait = gluttonous
+			}
+		}
+	}
+}
+
+# The eighth light (host summary, toast phase). Later the Hasmonean story's Rededication hangs here (0.16 plan, section 3)
+jip_feast.9004 = {
+	type = activity_event
+	title = jip_feast.9004.t
+	desc = {
+		desc = jip_feast.9004.desc
+		triggered_desc = {
+			trigger = { jip_is_hasmonean_heir_trigger = yes }
+			desc = jip_feast.9004.desc_hasmonean
+		}
+		triggered_desc = {
+			trigger = {
+				jip_temple_stands_trigger = yes
+				jip_pesach_host_holds_jerusalem_trigger = yes
+			}
+			desc = jip_feast.9004.desc_rededication
+		}
+	}
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = admiration
+	}
+
+	option = {
+		name = jip_feast.9004.a
+		add_piety = minor_piety_gain
+		add_character_modifier = {
+			modifier = jip_hanukkah_lights
+			years = 1
+		}
+		# The house of the Maccabees
+		if = {
+			limit = { jip_is_hasmonean_heir_trigger = yes }
+			add_legitimacy = medium_legitimacy_gain
+		}
+		# The lights of the rededication in the Temple itself
+		if = {
+			limit = {
+				jip_temple_stands_trigger = yes
+				jip_pesach_host_holds_jerusalem_trigger = yes
+			}
+			add_piety = major_piety_gain
+			add_prestige = medium_prestige_gain
+		}
+	}
+}
+
+# Guest farewell
+jip_feast.9010 = {
+	type = activity_event
+	title = jip_feast.9010.t
+	desc = jip_feast.9010.desc
+	theme = feast_activity
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = admiration
+	}
+	right_portrait = {
+		character = scope:host
+		animation = personality_honorable
+	}
+
+	trigger = {
+		is_alive = yes
+		is_imprisoned = no
+	}
+
+	option = {
+		name = jip_feast.9010.a
+		add_opinion = {
+			target = scope:host
+			modifier = jip_festival_guest_opinion
+		}
+		if = {
+			limit = { religion = scope:host.religion }
+			add_piety = minor_piety_gain
+		}
 	}
 }
