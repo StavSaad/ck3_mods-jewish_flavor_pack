@@ -284,10 +284,10 @@ T.append(task('jip_parnas_collect_dues', ['jip_parnas'],
               ai='value = 25\nscope:liege = {\n\tif = {\n\t\tlimit = { gold < 50 }\n\t\tadd = 50\n\t}\n}'))
 
 T.append(task('jip_parnas_petition_authorities', ['jip_parnas'],
-              "The Parnas speaks for the community before the liege, earning their goodwill and making an AI liege less likely to\n# expel the Jews (jip_expel_the_jews_ai_modifier). Marked with a variable, like vanilla's Organize Court.",
+              "The Parnas speaks for the community before the liege (a family's patron), earning their goodwill and making an AI liege less likely to\n# expel the Jews (jip_expel_the_jews_ai_modifier). Marked with a variable, like vanilla's Organize Court.",
               cost('gold'), {},
               [{'liege_opinion': 2}, {'liege_opinion': 4}, {'liege_opinion': 6}, {'liege_opinion': 8}, {'liege_opinion': 10}],
-              shown='is_independent_ruler = no',
+              shown='OR = {\n\tis_independent_ruler = no\n\tis_tributary = yes # 0.16: the patron of a family\n}',
               on_start='custom_tooltip = jip_parnas_petition_authorities_tt\nset_variable = jip_parnas_petitioning',
               on_end='remove_variable = jip_parnas_petitioning',
               ai='value = 25\nscope:liege = {\n\tif = {\n\t\tlimit = {\n\t\t\tliege ?= { jip_jewish_hostility_value > 0 }\n\t\t}\n\t\tadd = 50\n\t}\n}'))

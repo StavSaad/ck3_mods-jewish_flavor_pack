@@ -128,11 +128,22 @@ jip_contract_loan_employer_trigger = {
 	}
 }
 
-# Farm the Tolls: holds a city in the domain
+# Negotiate the Tolls: holds a market (whose tolls jip_contract_toll_exception_effect lowers) or a city in the domain
 jip_contract_tolls_employer_trigger = {
 	is_landed = yes
 	highest_held_title_tier >= tier_county
-	any_directly_owned_province = { has_holding_type = city_holding }
+	OR = {
+		any_held_trade_market = { count >= 1 }
+		any_directly_owned_province = { has_holding_type = city_holding }
+	}
+}
+
+# Hobnob with the Patron: the family's patron (F3), once a decade (jip_contract_hobnob_cooldown on the family head)
+# root = the family head
+jip_contract_hobnob_employer_trigger = {
+	root.suzerain ?= this
+	is_landed = yes
+	NOT = { root = { has_character_flag = jip_contract_hobnob_cooldown } }
 }
 
 # Finance a Caravan: a ruler with money to put into a venture

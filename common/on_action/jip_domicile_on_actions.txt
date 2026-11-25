@@ -71,8 +71,8 @@ jip_familial_estate_settled_on_action = {
 		exists = domicile
 	}
 	effect = {
-		# Only switch when the estate lies in a different realm: the family leaves its old liege or suzerain and
-		# becomes the vassal, or under a duke or lesser ruler the tributary, of the new one
+		# Only switch when the estate lies under a different lord: the family takes the lord of its new city as patron
+		# (0.16), and leaves its old one
 		jip_mishpacha_join_estate_realm_if_new_effect = yes
 		# Offers from the new neighbourhood
 		trigger_event = { on_action = jip_mishpacha_contracts_new_area_on_action }

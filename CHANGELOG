@@ -229,3 +229,17 @@
 [] Persia keeps its colour, capital and AI preference, the Carthaginian empire its creation rules and definite name, and Tunisia, Ifriqiya and Libya their Carthaginian place names, which Rising Lion's redefinitions of those titles had dropped
 [] Fixed missing tooltip texts in Expand Israel, Gather the Exiles, the Fertile Crescent, Reestablish a Phoenician Trade City and Bring the Gods Home
 [] Fixed error log entries when a god's statue is brought home, when the Court Astrologer reads the stars for a war that ended as it began, and from the contracts' and the Ginza Rabba's script
+
+== Version 0.16.0 (in progress) ==
+-- Familial families --
+[] Patronage replaces the Charter of Privileges: a family is the tributary of whoever holds its estate's county, pays them the patron's taxes and prestige, keeps its religious rights and own courts, and follows the county to a new holder. A count can now be a family's patron
+[] Families keep ordinary men-at-arms (no upkeep penalty) and defend themselves well: +4 defender advantage, hostile schemes against them 10% less likely
+[] Families no longer see the empty council tab
+[] Families can profit from trade routes, at half a merchant company's trade capacity
+[] With Silk & Silver, family estates can build the merchant companies' Towers, Information Network and Accounting Office
+[] New contract, Hobnob with the Patron; Farm the Tolls is now Negotiate the Tolls, which also lowers the family's tolls at the ruler's markets
+[] Found a Merchant Company now works like vanilla's Become Merchant (prestige reset, five years of the voluntary merchant modifier)
+[] Landless adventurers of the families' peoples can settle as a Familial House
+[] The 867 bookmark has a new custom character: design a Jewish adventurer and settle as a family on day one
+[] Shtadlanut's Ease the Charter is now Ease the Patronage
+[] Saves from 0.15 are not compatible

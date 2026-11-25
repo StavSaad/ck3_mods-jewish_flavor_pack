@@ -1,0 +1,42 @@
+﻿namespace = jip_familial
+
+# The Familial government's own events (0.16 plan, section F)
+#  0001 A custom family: a ruler-designer adventurer of the families' peoples is offered to settle as a family on day 0
+#       (bookmark_jip_new_family in our 867 bookmark; jip_familial_game_start_after_lobby_on_action)
+
+# A House Among Its Own
+jip_familial.0001 = {
+	type = character_event
+	title = jip_familial.0001.t
+	desc = jip_familial.0001.desc
+	theme = realm
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = ep2_travel_settlement_town }
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	trigger = {
+		government_has_flag = government_is_landless_adventurer
+		jip_of_familial_people_trigger = yes
+	}
+
+	# Settle as a family
+	option = {
+		name = jip_familial.0001.a
+		custom_tooltip = jip_adventurer_become_familial_decision_effect_tt
+		jip_adventurer_become_familial_effect = yes
+	}
+
+	# Keep to the road (the decision Become a Familial House stays open)
+	option = {
+		name = jip_familial.0001.b
+		custom_tooltip = jip_familial.0001.b.tt
+	}
+}

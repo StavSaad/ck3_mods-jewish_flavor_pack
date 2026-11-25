@@ -2,7 +2,9 @@
 # triggers in common/scripted_triggers/jip_familial_merchant_triggers.txt)
 
 # Found a Merchant Company: a Familial family becomes a merchant company in its estate's city, as vanilla's Become Merchant
-# turns an adventurer into one. Playing a company needs the merchants' DLC (Silk & Silver), as vanilla's decision does
+# turns an adventurer into one, and on its terms (0.16: picture, prestige loss, modifier, stress, AI weight). Ours, not an
+# override: vanilla's conversion runs in the event gdp_merchant.0001, not one effect we could call after our cleanup.
+# Playing a company needs the merchants' DLC (Silk & Silver), as vanilla's decision does
 jip_familial_found_company_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/event_story/gdp_decision_become_merchant.dds"
@@ -50,26 +52,16 @@ jip_familial_found_company_decision = {
 		jip_holds_only_family_title_trigger = yes
 	}
 
-	# Rarely: the families are what the mod is about, and the game has companies enough
+	# As vanilla's Become Merchant: rarely, and the more so the less mercantile the character
 	ai_will_do = {
-		base = 0
-		modifier = {
-			add = 5
-			has_trait = greedy
-		}
-		modifier = {
-			add = 5
-			has_trait = ambitious
-		}
-		modifier = {
-			add = 5
-			stewardship >= 15
-		}
+		base = -75
+		modifier = { add = merchant_chance_score_value }
 	}
 }
 
-# Become a Familial House: a merchant of a Jewish (Israelite heritage, the Jewish religion), Mandaean or Sabian house winds up
-# the company and becomes a Familial family in its city, under the realm's ruler (Roads to Power, which the families need)
+# Become a Familial House: a merchant or (0.16) a landless adventurer of a Jewish (Israelite heritage, the Jewish
+# religion), Mandaean or Sabian house winds up the company or breaks up the camp and becomes a Familial family in its
+# city, under that city's lord as patron (Roads to Power, which the families need)
 jip_merchant_become_familial_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
@@ -94,6 +86,20 @@ jip_merchant_become_familial_decision = {
 			limit = {
 				religion = religion:judaism_religion
 				exists = domicile
+				government_has_flag = government_is_merchant
+			}
+			custom_tooltip = {
+				text = jip_merchant_become_familial_expelled_tt
+				NOT = { jip_province_expels_jews_trigger = { PROVINCE = domicile.domicile_location } }
+			}
+		}
+		# An adventurer settles where the camp is, or in the nearest city that takes them
+		# (jip_adventurer_find_family_home_effect), which can't be in a realm that has expelled the Jews
+		trigger_if = {
+			limit = {
+				government_has_flag = government_is_landless_adventurer
+				religion = religion:judaism_religion
+				exists = domicile
 			}
 			custom_tooltip = {
 				text = jip_merchant_become_familial_expelled_tt
@@ -109,8 +115,15 @@ jip_merchant_become_familial_decision = {
 	}
 
 	effect = {
-		custom_tooltip = jip_merchant_become_familial_decision_effect_tt
-		jip_merchant_become_familial_effect = yes
+		if = {
+			limit = { government_has_flag = government_is_landless_adventurer }
+			custom_tooltip = jip_adventurer_become_familial_decision_effect_tt
+			jip_adventurer_become_familial_effect = yes
+		}
+		else = {
+			custom_tooltip = jip_merchant_become_familial_decision_effect_tt
+			jip_merchant_become_familial_effect = yes
+		}
 	}
 
 	ai_potential = {

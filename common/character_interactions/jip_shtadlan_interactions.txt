@@ -286,7 +286,7 @@ jip_shtadlan_release_interaction = {
 	# No ai_targets or ai_frequency: the AI never sends these (a frequency without targets logs an error)
 }
 
-# The family's liege eases the charter: jizya is waived, or else communal taxes drop a level
+# The family's patron eases the terms of their patronage: jizya is waived, or else taxes drop a level
 jip_shtadlan_charter_interaction = {
 	category = interaction_category_diplomacy
 	icon = icon_contract_modification_single
@@ -302,8 +302,7 @@ jip_shtadlan_charter_interaction = {
 	is_shown = {
 		jip_shtadlan_can_intercede_trigger = yes
 		scope:actor = {
-			is_independent_ruler = no
-			liege = scope:recipient
+			suzerain ?= scope:recipient
 		}
 	}
 
@@ -314,7 +313,7 @@ jip_shtadlan_charter_interaction = {
 			scope:actor = {
 				OR = {
 					vassal_contract_obligation_level:jizya_special_rights >= 1
-					vassal_contract_obligation_level_can_be_decreased = mishpacha_communal_taxes
+					vassal_contract_obligation_level_can_be_decreased = merchant_taxes
 				}
 			}
 		}
@@ -374,7 +373,7 @@ jip_shtadlan_charter_interaction = {
 				vassal_contract_set_obligation_level = { type = jizya_special_rights level = 0 }
 			}
 			else = {
-				vassal_contract_decrease_obligation_level = mishpacha_communal_taxes
+				vassal_contract_decrease_obligation_level = merchant_taxes
 			}
 		}
 		jip_shtadlan_accepted_message_effect = { TEXT = jip_shtadlan_charter_accepted_msg_desc }

@@ -195,7 +195,7 @@ jip_mishpacha_contract.0011 = {
 	}
 }
 
-# The Season's Tolls (tolls): choose an approach
+# Bargaining at the Gates (tolls): choose an approach
 jip_mishpacha_contract.0020 = {
 	type = character_event
 	title = jip_mishpacha_contract.0020.t
@@ -239,7 +239,7 @@ jip_mishpacha_contract.0020 = {
 	}
 }
 
-# The Season's Tolls (tolls): the contract is taken
+# Bargaining at the Gates (tolls): the contract is taken
 jip_mishpacha_contract.0022 = {
 	type = character_event
 	title = jip_mishpacha_contract.0022.t
@@ -270,7 +270,7 @@ jip_mishpacha_contract.0022 = {
 	}
 }
 
-# The Season's Tolls (tolls): the result
+# Bargaining at the Gates (tolls): the result
 jip_mishpacha_contract.0021 = {
 	type = character_event
 	title = {
@@ -2331,5 +2331,179 @@ jip_mishpacha_contract.0101 = {
 		name = jip_mishpacha_contract.0101.failure.a
 		trigger = { jip_contract_outcome_is_trigger = { OUTCOME = failure } }
 		jip_contract_finish_effect = { CONTRACT = horoscope }
+	}
+}
+
+# At the Patron's Table (hobnob): choose an approach
+jip_mishpacha_contract.0110 = {
+	type = character_event
+	title = jip_mishpacha_contract.0110.t
+	desc = jip_mishpacha_contract.0110.desc
+	theme = diplomacy_family_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:employer
+		animation = interested
+	}
+
+	trigger = { jip_mishpacha_contract_event_trigger = yes }
+
+	immediate = { jip_mishpacha_contract_event_scopes_effect = yes }
+
+	option = {
+		name = jip_mishpacha_contract.0110.a
+		custom_tooltip = jip_mishpacha_contract.0110.a.tt
+		jip_contract_choose_approach_effect = { SKILL = diplomacy BONUS = 0 APPROACH = company EVENT = jip_mishpacha_contract.0111 }
+	}
+
+	option = {
+		name = jip_mishpacha_contract.0110.b
+		custom_tooltip = jip_mishpacha_contract.0110.b.tt
+		jip_contract_choose_approach_effect = { SKILL = stewardship BONUS = 0 APPROACH = counsel EVENT = jip_mishpacha_contract.0111 }
+	}
+
+	option = {
+		name = jip_mishpacha_contract.0110.c
+		custom_tooltip = jip_mishpacha_contract.0110.c.tt
+		jip_contract_choose_approach_effect = { SKILL = intrigue BONUS = 10 APPROACH = gossip EVENT = jip_mishpacha_contract.0111 }
+	}
+}
+
+# At the Patron's Table (hobnob): the contract is taken
+jip_mishpacha_contract.0112 = {
+	type = character_event
+	title = jip_mishpacha_contract.0112.t
+	desc = jip_mishpacha_contract.0112.desc
+	theme = diplomacy_family_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:employer
+		animation = interested
+	}
+
+	trigger = { jip_mishpacha_contract_event_trigger = yes }
+
+	immediate = { jip_mishpacha_contract_event_scopes_effect = yes }
+
+	option = {
+		name = jip_mishpacha_contract.0112.a
+		custom_tooltip = jip_contract_accepted_tt
+	}
+}
+
+# At the Patron's Table (hobnob): the result
+jip_mishpacha_contract.0111 = {
+	type = character_event
+	title = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { jip_contract_outcome_is_trigger = { OUTCOME = critical } }
+				desc = jip_mishpacha_contract.0111.t.critical
+			}
+			triggered_desc = {
+				trigger = { jip_contract_outcome_is_trigger = { OUTCOME = success } }
+				desc = jip_mishpacha_contract.0111.t.success
+			}
+			desc = jip_mishpacha_contract.0111.t.failure
+		}
+	}
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = company } }
+				desc = jip_mishpacha_contract.0111.company
+			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = counsel } }
+				desc = jip_mishpacha_contract.0111.counsel
+			}
+			triggered_desc = {
+				trigger = { jip_contract_approach_is_trigger = { APPROACH = gossip } }
+				desc = jip_mishpacha_contract.0111.gossip
+			}
+			desc = jip_mishpacha_contract.0111.gossip
+		}
+		first_valid = {
+			triggered_desc = {
+				trigger = { jip_contract_outcome_is_trigger = { OUTCOME = critical } }
+				desc = jip_mishpacha_contract.0111.critical
+			}
+			triggered_desc = {
+				trigger = { jip_contract_outcome_is_trigger = { OUTCOME = success } }
+				desc = jip_mishpacha_contract.0111.success
+			}
+			desc = jip_mishpacha_contract.0111.failure
+		}
+	}
+	theme = diplomacy_family_focus
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	left_portrait = {
+		character = root
+		triggered_animation = {
+			trigger = { jip_contract_outcome_is_trigger = { OUTCOME = critical } }
+			animation = happiness
+		}
+		triggered_animation = {
+			trigger = { jip_contract_outcome_is_trigger = { OUTCOME = failure } }
+			animation = worry
+		}
+		animation = personality_content
+	}
+	right_portrait = {
+		character = scope:employer
+		triggered_animation = {
+			trigger = { jip_contract_outcome_is_trigger = { OUTCOME = critical } }
+			animation = admiration
+		}
+		triggered_animation = {
+			trigger = { jip_contract_outcome_is_trigger = { OUTCOME = failure } }
+			animation = disapproval
+		}
+		animation = acknowledging
+	}
+
+	trigger = { jip_mishpacha_contract_event_trigger = yes }
+
+	immediate = { jip_mishpacha_contract_event_scopes_effect = yes }
+
+	option = {
+		name = jip_mishpacha_contract.0111.critical.a
+		trigger = { jip_contract_outcome_is_trigger = { OUTCOME = critical } }
+		jip_contract_finish_effect = { CONTRACT = hobnob }
+	}
+
+	option = {
+		name = jip_mishpacha_contract.0111.success.a
+		trigger = { jip_contract_outcome_is_trigger = { OUTCOME = success } }
+		jip_contract_finish_effect = { CONTRACT = hobnob }
+	}
+
+	option = {
+		name = jip_mishpacha_contract.0111.failure.a
+		trigger = { jip_contract_outcome_is_trigger = { OUTCOME = failure } }
+		jip_contract_finish_effect = { CONTRACT = hobnob }
 	}
 }

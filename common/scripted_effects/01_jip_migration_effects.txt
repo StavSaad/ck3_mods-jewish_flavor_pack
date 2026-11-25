@@ -6,7 +6,8 @@
 jip_mishpacha_ai_migration_effect = {
 	save_scope_as = jip_migrant
 	domicile.domicile_location = { save_scope_as = jip_migrant_origin }
-	# How well the family fares where it is: its liege's (or suzerain's) realm plus the city it lives in
+	# How well the family fares where it is: its patron's realm (its liege's, for a family from before 0.16) plus the
+	# city it lives in
 	if = {
 		limit = { is_independent_ruler = no }
 		top_liege = {
@@ -18,7 +19,7 @@ jip_mishpacha_ai_migration_effect = {
 	}
 	else_if = {
 		limit = { is_tributary = yes }
-		suzerain = {
+		suzerain.top_liege = {
 			save_scope_value_as = {
 				name = jip_current_host_score
 				value = jip_mishpacha_host_score_value
@@ -41,6 +42,7 @@ jip_mishpacha_ai_migration_effect = {
 	ordered_independent_ruler = {
 		limit = {
 			NOT = { this = scope:jip_migrant.top_liege }
+			NOT = { this = scope:jip_migrant.suzerain.top_liege }
 			highest_held_title_tier >= tier_kingdom
 			is_at_war = no
 			jip_ruler_has_expelled_jews_trigger = no
@@ -181,55 +183,43 @@ jip_mishpacha_settle_estate_on_arrival_effect = {
 	}
 }
 
-# The family joins the realm its estate lies in, if it isn't already that realm's vassal or tributary. Used after a
-# move (jip_familial_estate_settled_on_action, a migration's arrival). Call in the family head's scope.
+# The family takes the lord of its estate's city as patron, if that lord isn't already (0.16: a move within a realm
+# changes patron too). Used after a move (jip_familial_estate_settled_on_action, a migration's arrival), when the county
+# changes hands (jip_familial_patron_title_transfer_on_action) and at game start. Call in the family head's scope.
 jip_mishpacha_join_estate_realm_if_new_effect = {
+	save_scope_as = jip_patron_seeker
 	if = {
 		limit = {
-			domicile.domicile_location.county.holder.top_liege ?= {
-				this != root
-				NOT = { root.liege ?= this }
-				NOT = { root.suzerain ?= this }
+			domicile.domicile_location.county.holder ?= {
+				this != scope:jip_patron_seeker
+				is_landed = yes
+				NOT = { scope:jip_patron_seeker.suzerain ?= this }
 			}
 		}
 		jip_mishpacha_join_estate_realm_effect = yes
 	}
 }
 
-# The family joins the realm its estate now lies in, and a player liege or suzerain hears of it.
-# Used by jip_mishpacha_join_estate_realm_if_new_effect. Call in the family head's scope.
+# The family takes the lord of its estate's city as patron (jip_mishpacha_change_liege_effect), and a player patron hears
+# of it. Used by jip_mishpacha_join_estate_realm_if_new_effect. Call in the family head's scope.
 jip_mishpacha_join_estate_realm_effect = {
-	domicile.domicile_location.county.holder.top_liege = {
+	domicile.domicile_location.county.holder = {
 		save_scope_as = recipient_liege
 	}
 	jip_mishpacha_change_liege_effect = { LIEGE = scope:recipient_liege }
 	if = {
 		limit = {
-			OR = {
-				liege ?= scope:recipient_liege
-				suzerain ?= scope:recipient_liege
-			}
+			suzerain ?= scope:recipient_liege
 			scope:recipient_liege = { is_ai = no }
 		}
 		save_scope_as = jip_arriving_family
 		domicile.domicile_location = { save_scope_as = jip_arrival_city }
 		scope:recipient_liege = {
-			if = {
-				limit = { scope:jip_arriving_family.suzerain ?= this }
-				send_interface_message = {
-					type = event_generic_good
-					title = jip_mishpacha_migration_arrival_msg
-					desc = jip_mishpacha_migration_arrival_tributary_msg_desc
-					left_icon = scope:jip_arriving_family
-				}
-			}
-			else = {
-				send_interface_message = {
-					type = event_generic_good
-					title = jip_mishpacha_migration_arrival_msg
-					desc = jip_mishpacha_migration_arrival_msg_desc
-					left_icon = scope:jip_arriving_family
-				}
+			send_interface_message = {
+				type = event_generic_good
+				title = jip_mishpacha_migration_arrival_msg
+				desc = jip_mishpacha_migration_arrival_tributary_msg_desc
+				left_icon = scope:jip_arriving_family
 			}
 		}
 	}

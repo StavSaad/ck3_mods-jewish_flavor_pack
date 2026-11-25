@@ -163,4 +163,21 @@
 			animation = dismissal
 		}
 	}
+
+	# A custom family (0.16, plan F6): the ruler designer makes a landless adventurer, as vanilla's custom adventurer of
+	# 1066, and a family-people player is offered to settle as a Familial family on day 0 (jip_familial.0001, by
+	# jip_adventurer_become_familial_effect). The noble_family design type is the Celestial government's
+	character = {
+		name = "bookmark_jip_new_family"
+		character_design_type = landless_adventurer
+		title = k_jerusalem
+		dynasty = new_adventurer_dynasty
+		dynasty_splendor_level = 1
+		government = landless_adventurer_government
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		religion = rabbinism
+		position = { 560 380 }
+
+		animation = steward
+	}
 }

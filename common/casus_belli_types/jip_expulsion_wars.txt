@@ -61,7 +61,7 @@ jip_resist_expulsion_cb = {
 				limit = { has_variable = jip_expelled_by }
 				remove_variable = jip_expelled_by
 				add_prestige_experience = major_prestige_value
-				# Families who stood alone are taken back under the expeller's charter
+				# Families who stood alone take a patron in the expeller's realm again
 				if = {
 					limit = {
 						has_government = familial_government

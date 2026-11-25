@@ -1,44 +1,8 @@
 ﻿@ai_standard_liege_desire = 2
 @ai_standard_vassal_desire = 1
 
-mishpacha_communal_taxes = {
-	display_mode = tree
-	icon = gold_icon
-	obligation_levels = {
-		mishpacha_tax_low = {
-			position = { 0 0 }
-
-			tax = 0.15
-			subject_opinion = 10
-
-			ai_liege_desire = 1
-			ai_subject_desire = 10
-			score = 1
-		}
-		mishpacha_tax_normal = {
-			default = yes
-			parent = mishpacha_tax_low
-			position = { 1 0 }
-
-			tax = 0.3
-
-			ai_liege_desire = 2
-			ai_subject_desire = 5
-			score = 0
-		}
-		mishpacha_tax_high = {
-			parent = mishpacha_tax_normal
-			position = { 2 0 }
-
-			tax = 0.45
-			subject_opinion = -20
-
-			ai_liege_desire = 3
-			ai_subject_desire = 0
-			score = -1
-		}
-	}
-}
+# The patron tie's own obligation (tributary_familial). 0.16 dropped the Charter's communal taxes (now vanilla's
+# merchant_taxes) and trade rights (families trade on their own routes)
 
 mishpacha_beit_din_rights = {
 	display_mode = checkbox
@@ -65,39 +29,6 @@ mishpacha_beit_din_rights = {
 			ai_liege_desire = 0
 			ai_subject_desire = @ai_standard_vassal_desire
 			score = 2
-		}
-	}
-}
-
-mishpacha_trade_rights = {
-	display_mode = checkbox
-	obligation_levels = {
-		mishpacha_trade_rights_none = {
-			default = yes
-			position = { 0 0 }
-
-			ai_liege_desire = 0
-			ai_subject_desire = 0
-		}
-		mishpacha_trade_rights_granted = {
-			parent = mishpacha_trade_rights_none
-			position = { 1 0 }
-
-			subject_opinion = 5
-
-			# The liege profits from the family's trade too
-			liege_modifier = {
-				monthly_income_mult = 0.02
-			}
-			subject_modifier = {
-				monthly_income_mult = 0.1
-			}
-
-			flag = mishpacha_trade_rights
-
-			ai_liege_desire = 1
-			ai_subject_desire = @ai_standard_vassal_desire
-			score = 1
 		}
 	}
 }
