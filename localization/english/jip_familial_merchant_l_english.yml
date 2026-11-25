@@ -4,7 +4,7 @@
  jip_familial_found_company_decision_tooltip: "Turn your family into a [merchant|E] [company|E] in your [estate|E]'s city"
  jip_familial_found_company_decision_confirm: "Open the counting house to the world"
  jip_familial_found_company_decision_effect_tt: "Your family becomes a [merchant|E] [company|E] in your [estate|E]'s city, with that city's lord as your patron. Your family title, your estate and its buildings and your [task_contracts|E] are left behind"
- jip_familial_found_company_only_family_title_tt: "You hold no [title|E] but your family's own"
+ jip_familial_found_company_only_family_title_tt: "You hold no [title|E] but your family's own, or an Exilarchate"
  jip_familial_found_company_estate_tt: "Your family has an [estate|E]"
 
  jip_merchant_become_familial_decision: "Become a $game_concept_familial$ House"

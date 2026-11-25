@@ -25,15 +25,22 @@
 	allow = {
 		is_adult = yes
 		is_imprisoned = no
-		# Mishpacha families are landless by design, their family title makes them rulers
+		# Landless rulers claim it from their own title: Familial families (a duchy-tier family title), merchant companies
+		# (a county-tier company title) and landless adventurers (0.16, 14a)
 		trigger_if = {
-			limit = { has_government = familial_government }
+			limit = {
+				OR = {
+					government_has_flag = government_is_familial
+					government_has_flag = government_is_merchant
+					government_has_flag = government_is_landless_adventurer
+				}
+			}
 			is_ruler = yes
 		}
 		trigger_else = {
 			is_landed = yes
+			highest_held_title_tier > tier_county
 		}
-		highest_held_title_tier > tier_county
 		scope:target.holder = {
 			has_faith = scope:owner.faith
 		}

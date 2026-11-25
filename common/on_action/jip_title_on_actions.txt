@@ -21,10 +21,23 @@ exilarchate_inheritance_on_action = {
 	}
 
 	effect = {
-		scope:title = {
-			set_capital_county = root.primary_title.title_capital_county
-			holder.domicile ?= {
-				move_domicile = root.primary_title.title_capital_county.title_province
+		# A merchant company or adventurer's camp keeps its place: the Exilarchate's seat moves to it (its primary title
+		# may be the Exilarchate itself, a duchy over the company's county-tier title)
+		if = {
+			limit = {
+				NOT = { government_has_flag = government_is_familial }
+				exists = domicile
+			}
+			scope:title = {
+				set_capital_county = root.domicile.domicile_location.county
+			}
+		}
+		else = {
+			scope:title = {
+				set_capital_county = root.primary_title.title_capital_county
+				holder.domicile ?= {
+					move_domicile = root.primary_title.title_capital_county.title_province
+				}
 			}
 		}
 	}

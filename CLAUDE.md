@@ -154,7 +154,7 @@ A central political mechanic of the mod. Two rival figurehead titles:
 - **d_exilarchate** — Rabbinic Exilarchate, held by the Davidite/Bostanite/Nathanite lines
 - **d_karaite_exilarchate** — Karaite Exilarchate, held by the Ananite line
 
-Both use **Exilarchate Elective** succession: dynasty members and claimants of the same faith vote. Players can use the **Claim Exilarchate** decision to start a scheme, gain a claim, become an elector, and campaign for the title. The Exilarchate has deep history files going back to -596.1.1 (the Babylonian exile).
+Both use **Exilarchate Elective** succession: dynasty members and claimants of the same faith vote. Players can use the **Claim Exilarchate** decision to start a scheme, gain a claim, become an elector, and campaign for the title. Landless rulers claim and stand like landed ones (0.16, 14a): Familial heads, merchant companies (county-tier titles, so the scheme's duke-or-above check is for landed rulers only) and landless adventurers (`claim_exilarchate`'s `allow`); candidates are ruler claimants and the holder's family, whatever their government. An Exilarch may found a merchant company and keep the office (`jip_holds_only_family_title_trigger` allows the Exilarchates; the founding leaves landless titles with their holder), and a company or camp that inherits it keeps its place: the Exilarchate's seat moves to its domicile (`exilarchate_inheritance_on_action`). The Keter shows on Familial frames only. The Exilarchate has deep history files going back to -596.1.1 (the Babylonian exile).
 
 ---
 
