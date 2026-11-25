@@ -102,6 +102,15 @@ jip_region_aram_claims = {
 	}
 }
 
+# The lands where the citron grows, whose Jews need not buy the etrog for Sukkot (jip_feast.8002): the Levant, Egypt
+# and the Maghreb, Iberia, Italy and the Greek lands (vanilla's regions)
+jip_region_citron_lands = {
+	regions = {
+		world_middle_east_jerusalem world_africa_north_east world_africa_north_west world_europe_west_iberia
+		world_europe_south_italy world_europe_south_east
+	}
+}
+
 ### Cities: one province each, the city's barony. Script finds the county that holds it, whatever the map's counties
 
 # The Canaanite cities a ruler may make a trade republic (Reestablish Canaanite City)
@@ -124,6 +133,9 @@ jip_city_nineveh = { provinces = { 4811 } }		# b_ninawa
 jip_city_ashur = { provinces = { 4836 } }		# b_ain_al-qayyara, the Temple of Ashur
 jip_city_hatra = { provinces = { 4837 } }		# b_al-hadr, the Temple of Shamash
 jip_city_babylon = { provinces = { 4826 } }		# b_al-hila, the Esagila
+
+# Purim at the tomb of Esther and Mordecai (jip_feast.7005)
+jip_city_hamadan = { provinces = { 4333 } }		# b_hamadan
 
 # The cult cities whose counties the story may claim
 jip_sabian_cult_cities = {
