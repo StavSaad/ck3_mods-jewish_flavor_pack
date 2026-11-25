@@ -452,6 +452,42 @@ jip_contract_hobnob_approach_effect = {
 	}
 }
 
+jip_contract_debtors_approach_effect = {
+	# Against pledges: the pledges cover part of a bad debt
+	if = {
+		limit = {
+			jip_contract_approach_is_trigger = { APPROACH = pledges }
+			NOT = { jip_contract_succeeded_trigger = yes }
+		}
+		jip_contract_extra_stake_effect = { SHARE = 0.25 }
+	}
+	# Through the market's own brokers: safer, a smaller share, and the lord is glad of the credit
+	else_if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = brokers } }
+		if = {
+			limit = { jip_contract_succeeded_trigger = yes }
+			jip_contract_less_stake_effect = { SHARE = 0.1 }
+		}
+		jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = grateful_opinion OPINION = 10 }
+	}
+	# At the rate the market will bear: more interest, at the cost of the lender's conscience or the borrowers' goodwill
+	else_if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = usury } }
+		if = {
+			limit = { jip_contract_succeeded_trigger = yes }
+			jip_contract_extra_stake_effect = { SHARE = 0.4 }
+		}
+		if = {
+			limit = { jip_contract_debtors_usury_sinful_trigger = yes }
+			add_piety = medium_piety_loss
+		}
+		if = {
+			limit = { jip_contract_debtors_usury_frowned_trigger = yes }
+			jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = disappointed_opinion OPINION = -20 }
+		}
+	}
+}
+
 jip_contract_caravan_approach_effect = {
 	# Spreading the cargo: little lost, little gained
 	if = {

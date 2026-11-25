@@ -26,3 +26,10 @@
  jip_translate_road_mandaean: "From Aramaic into Arabic"
  jip_physician_master_jewish: "Asaf HaRofe"
  jip_physician_master_other: "Hippocrates"
+
+ # Seek Debtors: the borrowers' faith and lending at interest (JipDebtorsUsury)
+ jip_debtors_usury_jewish: "Many who borrow there are Jews, and the Torah forbids a Jew to take interest from a brother: only 'unto a stranger thou mayest lend upon usury'."
+ jip_debtors_usury_forbidden: "Their priests call any interest a sin, so the market's honest folk borrow from outsiders, and think the worse of them for it."
+ jip_debtors_usury_discouraged: "Their faith frowns on interest, but they borrow all the same, quietly, and from outsiders."
+ jip_debtors_usury_outsiders_only: "Their faith lets them take interest only from strangers, and the family is a stranger to them."
+ jip_debtors_usury_accepted: "There lending at interest is an honest trade, and the family will have rivals at it."

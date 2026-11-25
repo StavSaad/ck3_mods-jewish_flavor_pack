@@ -20,6 +20,7 @@
 # jip_contract_news			Gather News from Correspondents	intrigue
 # jip_contract_horoscope	Cast a Horoscope (Sabian)		learning
 # jip_contract_hobnob		Hobnob with the Patron		diplomacy
+# jip_contract_debtors		Seek Debtors				stewardship
 ##################################################
 
 # Extend a Loan
@@ -1011,6 +1012,91 @@ jip_contract_hobnob = {
 				jip_contract_reward_scopes_effect = { SOUND = failure }
 				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_failure_value TYPE = failed_task_contract_opinion }
 				scope:taker ?= { add_stress = minor_stress_gain }
+			}
+		}
+	}
+}
+
+# Seek Debtors, after vanilla's seek_debtors (creditor companies' trade opportunity): the lord of a market on one of the
+# family's trade routes (F8) lets it lend to the traders and landholders there. The stake is lent on acceptance and comes
+# back with interest; how it is lent decides the risk, and whether the lender's or the borrowers' faith frowns on it
+# (the usury precepts: JipDebtorsUsury, jip_familial_custom_loc.txt). Once in five years
+jip_contract_debtors = {
+	group = jip_mishpacha_contracts_group
+	icon = "gfx/interface/icons/character_interactions/loan_money_interaction.dds"
+	travel = no
+	use_diplomatic_range = yes
+
+	weight = {
+		value = task_contract_weight_default_value
+		add = {
+			value = stewardship
+			multiply = 5
+		}
+		scope:employer = { multiply = task_contract_weight_by_tier_value }
+	}
+
+	valid_to_create = {
+		jip_mishpacha_contract_create_trigger = yes
+		scope:employer = { jip_contract_debtors_employer_trigger = yes }
+	}
+	valid_to_accept = {
+		jip_mishpacha_contract_accept_trigger = yes
+		custom_tooltip = {
+			text = jip_contract_loan_gold_tt
+			gold >= jip_contract_stake_value
+		}
+	}
+	valid_to_keep = {
+		jip_mishpacha_contract_keep_trigger = yes
+	}
+	valid_to_continue = {
+		jip_mishpacha_contract_continue_trigger = yes
+	}
+
+	on_create = {
+		jip_mishpacha_contract_on_create_effect = yes
+	}
+	on_accepted = {
+		task_contract_taker = {
+			add_character_flag = {
+				flag = jip_contract_debtors_cooldown
+				years = 5
+			}
+		}
+		jip_mishpacha_contract_on_accepted_effect = { EVENT = jip_mishpacha_contract.0120 ACCEPT = jip_mishpacha_contract.0122 }
+		jip_mishpacha_contract_pay_stake_effect = yes
+	}
+	on_invalidated = {
+		jip_mishpacha_contract_on_invalidated_effect = yes
+	}
+
+	task_contract_reward = {
+		success_critical = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_return_stake_effect = { SHARE = 1.6 }
+				scope:taker ?= { add_prestige = minor_prestige_gain }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_excelled_reward_value TYPE = critically_succeeded_task_contract_opinion }
+				jip_contract_add_contact_effect = { HOOK = no }
+			}
+		}
+		success_standard = {
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = success }
+				jip_contract_return_stake_effect = { SHARE = 1.3 }
+				jip_contract_employer_opinion_effect = { OPINION = task_contract_opinion_standard_reward_value TYPE = succeeded_task_contract_opinion }
+			}
+		}
+		failure_standard = {
+			positive = no
+			should_print_on_complete = yes
+			effect = {
+				jip_contract_reward_scopes_effect = { SOUND = failure }
+				jip_contract_return_stake_effect = { SHARE = 0.6 }
+				scope:taker ?= { add_prestige = minor_prestige_loss }
 			}
 		}
 	}
