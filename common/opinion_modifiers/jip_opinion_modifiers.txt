@@ -29,6 +29,20 @@ jip_festival_guest_opinion = {
 	decaying = yes
 }
 
+# Purim (jip_feast.7001): the host named this character as Haman at the reading of the Megillah, and a guest told
+jip_named_as_haman_opinion = {
+	opinion = -15
+	years = 5
+	decaying = yes
+}
+
+# Sukkot (jip_feast.8005): the seventy bulls offered at the Temple for the seventy nations (Sukkah 55b)
+jip_seventy_bulls_opinion = {
+	opinion = 10
+	years = 3
+	decaying = yes
+}
+
 # The Temple of Hadad took the place of the Great Mosque of Damascus (jip_gp_temple_of_hadad)
 jip_destroyed_great_mosque_opinion = {
 	opinion = -50

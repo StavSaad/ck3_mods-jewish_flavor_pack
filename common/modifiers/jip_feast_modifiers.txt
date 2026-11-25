@@ -85,6 +85,33 @@ jip_pesach_this_year_in_jerusalem = {
 	legitimacy_gain_mult = 0.15
 }
 
+# Purim (jip_feast.7005), one year: "The Jews had light and gladness, and joy and honour" (Esther 8:16)
+jip_purim_gladness = {
+	icon = diplomacy_positive
+	stress_loss_mult = 0.15
+	diplomacy = 1
+}
+
+# Purim's alms for the poor (jip_feast.7002), on the capital county, two years
+jip_purim_alms_modifier = {
+	icon = county_modifier_opinion_positive
+	county_opinion_add = 5
+}
+
+# Sukkot (jip_feast.8005), one year: "the season of our rejoicing"
+jip_sukkot_rejoicing = {
+	icon = piety_positive
+	monthly_piety_gain_mult = 0.1
+	courtier_and_guest_opinion = 5
+}
+
+# Hanukkah (jip_feast.9004), one year: the lights of the eight nights
+jip_hanukkah_lights = {
+	icon = piety_positive
+	monthly_piety_gain_mult = 0.1
+	monthly_prestige_gain_mult = 0.1
+}
+
 # The Pyre (Arameanism): the goddess's blessing for the year
 jip_pyre_blessed = {
 	icon = piety_positive

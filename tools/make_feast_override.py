@@ -7,7 +7,7 @@
 # - the meal phase calls jip_feast_meal_phase_effect for the host and the toast phase jip_feast_toast_phase_effect for
 #   everyone (common/scripted_effects/01_jip_feast_effects.txt), which start each variant's events
 # Each variant is shown only to its faith and in its season (the 0.15 plan's visibility rule); is_valid holds only its
-# cooldown. Pesach is the first of 0.16's Jewish feasts; add the others to VARIANTS and BACKGROUNDS. Their art for the planning window is made by
+# cooldown. 0.16's Jewish feasts are Pesach, Purim, Sukkot and Hanukkah; add new variants to VARIANTS and BACKGROUNDS. Their art for the planning window is made by
 # make_feast_type_art.py. Rerun after every vanilla update.
 import os
 
@@ -38,6 +38,19 @@ VARIANTS = {
     'jip_feast_type_pesach': (1.5, '''religion = religion:judaism_religion
 					current_month >= 3
 					current_month <= 4''', 'jip_recent_pesach_feast_var'),
+    # Purim, 14 Adar (0.16 plan, section 2): every Jewish faith that reads the Scroll of Esther, the Karaites too, not
+    # the Samaritans or the Beta Israel, whose Bible has no Esther
+    'jip_feast_type_purim': (1, '''jip_keeps_purim_trigger = yes
+					current_month >= 2
+					current_month <= 3''', 'jip_recent_purim_feast_var'),
+    # Sukkot, 15 Tishri, the feast of booths, for every Jewish faith
+    'jip_feast_type_sukkot': (1.5, '''religion = religion:judaism_religion
+					current_month >= 9
+					current_month <= 10''', 'jip_recent_sukkot_feast_var'),
+    # Hanukkah, 25 Kislev, the rabbinic feast of the Temple's rededication: not the Karaites, Samaritans or Beta Israel
+    'jip_feast_type_hanukkah': (1, '''jip_keeps_rabbinic_feasts_trigger = yes
+					current_month >= 11
+					current_month <= 12''', 'jip_recent_hanukkah_feast_var'),
     # The Pyre, the spring festival of the Syrian Goddess at Manbij (Lucian), for Arameanism (0.15 plan, section 14)
     'jip_feast_type_pyre': (1.5, '''faith = faith:aramean_pagan
 					current_month >= 3
@@ -157,6 +170,11 @@ BACKGROUNDS = [  # (trigger, texture, environment, ambience)
     ('jip_is_dehwa_rabba = yes', 'ep2_feast_mena', 'environment_mena_feast', 'event:/SFX/Events/Backgrounds/feasthall'),
     ('jip_is_pesach = yes', 'bp1_relaxing_room_mena', 'environment_event_bp1_relaxing_room_mena',
      'event:/SFX/Events/Backgrounds/feasthall'),
+    ('jip_is_purim = yes', 'gdp_carnival_background', 'environment_event_feast',
+     'event:/DLC/EP5/SFX/Events/Event_Backgrounds/ep5_evn_carnival'),
+    ('jip_is_sukkot = yes', 'bp1_courtyard_mena', 'environment_event_bp1_courtyard_mena',
+     'event:/SFX/Events/Backgrounds/castle_courtyard_western'),
+    ('jip_is_hanukkah = yes', 'gdp_jewish_temple', 'environment_event_temple', 'event:/SFX/Events/Backgrounds/temple_generic'),
     ('jip_is_pyre = yes', 'fp3_courtyard_night', 'environment_event_fp3_courtyard_night',
      'event:/SFX/Events/Backgrounds/castle_corridor_night'),
 ]

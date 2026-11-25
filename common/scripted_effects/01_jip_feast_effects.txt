@@ -77,6 +77,39 @@ jip_feast_meal_phase_effect = {
 			days = 2
 		}
 	}
+	else_if = {
+		limit = { jip_is_purim = yes }
+		set_variable = {
+			name = jip_recent_purim_feast_var
+			years = 5
+		}
+		trigger_event = {
+			id = jip_feast.7001
+			days = 2
+		}
+	}
+	else_if = {
+		limit = { jip_is_sukkot = yes }
+		set_variable = {
+			name = jip_recent_sukkot_feast_var
+			years = 5
+		}
+		trigger_event = {
+			id = jip_feast.8001
+			days = 2
+		}
+	}
+	else_if = {
+		limit = { jip_is_hanukkah = yes }
+		set_variable = {
+			name = jip_recent_hanukkah_feast_var
+			years = 5
+		}
+		trigger_event = {
+			id = jip_feast.9001
+			days = 2
+		}
+	}
 }
 
 # Called by the feast override in the toast phase, for every participant: the host's summary, the guests' farewell
@@ -144,6 +177,51 @@ jip_feast_toast_phase_effect = {
 		}
 		else = {
 			trigger_event = jip_feast.6010
+		}
+	}
+	else_if = {
+		limit = { jip_is_purim = yes }
+		# For the household feast through the year: whoever kept it at a feast skips this year's
+		add_character_flag = {
+			flag = jip_kept_purim
+			months = 10
+		}
+		if = {
+			limit = { this = scope:host }
+			trigger_event = jip_feast.7005
+		}
+		else = {
+			trigger_event = jip_feast.7010
+		}
+	}
+	else_if = {
+		limit = { jip_is_sukkot = yes }
+		# For the household feast through the year: whoever kept it at a feast skips this year's
+		add_character_flag = {
+			flag = jip_kept_sukkot
+			months = 10
+		}
+		if = {
+			limit = { this = scope:host }
+			trigger_event = jip_feast.8005
+		}
+		else = {
+			trigger_event = jip_feast.8010
+		}
+	}
+	else_if = {
+		limit = { jip_is_hanukkah = yes }
+		# For the household feast through the year: whoever kept it at a feast skips this year's
+		add_character_flag = {
+			flag = jip_kept_hanukkah
+			months = 10
+		}
+		if = {
+			limit = { this = scope:host }
+			trigger_event = jip_feast.9004
+		}
+		else = {
+			trigger_event = jip_feast.9010
 		}
 	}
 }
