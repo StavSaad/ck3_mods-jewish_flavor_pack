@@ -15,9 +15,4 @@
  jip_adventurer_become_familial_decision_effect_tt: "Your camp is broken up, its buildings sold off, and your house becomes a [familial|E] family with a family title and an [estate|E] in a city of the camp's county, or the nearest city that will take you, under that city's lord as patron. Your camp officers and followers stay with you as courtiers; your provisions and your [task_contracts|E] are left behind"
  jip_merchant_become_familial_company_tt: "You have a [company|E] or a camp"
  jip_merchant_become_familial_expelled_tt: "The Jews have not been expelled from the realm your [company|E] or camp lies in"
-
- jip_familial.0001.t: "A House Among Its Own"
- jip_familial.0001.desc: "The road has been long, and the camp has followed it from one lord's gates to the next. But in every city there is a street where [ROOT.Char.Custom('JipFaithfulOne')]s live, a house of study and a court of our own law, and a lord who would take a family under his protection for the taxes it pays.\n\nWe could strike the camp and settle among our own. Or we could keep to the road a while yet."
- jip_familial.0001.a: "Strike the camp and settle the house"
- jip_familial.0001.b: "The road is not done with us"
- jip_familial.0001.b.tt: "You stay an adventurer. You can still take the decision $jip_merchant_become_familial_decision$ later"
+ JIP_RULER_DESIGNER_OPEN_FAMILIAL: "Design a new [familial|E] family: a Jewish, Sabian or Mandaean house that settles in a city on the first day, with an [estate|E] and the city's lord as its patron"

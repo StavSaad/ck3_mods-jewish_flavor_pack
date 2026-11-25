@@ -113,22 +113,24 @@ on_game_start_after_lobby = {
 	}
 }
 
-# A custom family (bookmark_jip_new_family): a player who designed an adventurer of the families' peoples is offered to
-# settle as a family (jip_familial.0001). Any bookmark's designed adventurer qualifies, since the decision would let them anyway
+# A custom family (0.16 plan F6): the lobby's Familial design button (gui/multiplayer_types.gui, make_lobby_designer_override.py)
+# designs a landless adventurer and sets the global jip_design_familial_house (scripted GUI jip_design_familial_house; the
+# adventurer button clears it); after the lobby, a designed adventurer of the families' peoples settles as a family at once
 jip_familial_custom_family_start_on_action = {
 	trigger = {
-		has_ep3_dlc_trigger = yes
+		has_global_variable = jip_design_familial_house
 	}
 	effect = {
-		every_player = {
-			limit = {
-				is_from_ruler_designer = yes
-				government_has_flag = government_is_landless_adventurer
-				jip_of_familial_people_trigger = yes
-			}
-			trigger_event = {
-				id = jip_familial.0001
-				days = 1
+		remove_global_variable = jip_design_familial_house
+		if = {
+			limit = { has_ep3_dlc_trigger = yes }
+			every_player = {
+				limit = {
+					is_from_ruler_designer = yes
+					government_has_flag = government_is_landless_adventurer
+					jip_of_familial_people_trigger = yes
+				}
+				jip_adventurer_become_familial_effect = yes
 			}
 		}
 	}
