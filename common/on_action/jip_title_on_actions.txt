@@ -41,6 +41,33 @@ on_title_gain = {
 		jip_mishpacha_villa_on_action # Villa prestige for a family head who inherits the estate
 		jip_mishpacha_contracts_new_area_on_action # Offers for a new family head
 		jip_carthage_restored_on_action
+		jip_familial_patron_title_transfer_on_action
+	}
+}
+
+# The patron is whoever holds the estate's county (0.16): when a county changes hands, the families whose estates lie in
+# it take the new lord as patron, as vanilla's companies do (gdp_merchant_patron_change_on_title_transfer_effect)
+jip_familial_patron_title_transfer_on_action = {
+	trigger = {
+		scope:title = {
+			tier = tier_county
+			is_landless_type_title = no
+		}
+	}
+	effect = {
+		scope:title = {
+			every_county_province = {
+				every_province_domicile = {
+					limit = {
+						owner ?= {
+							government_has_flag = government_is_familial
+							is_landed = no
+						}
+					}
+					owner = { jip_mishpacha_join_estate_realm_if_new_effect = yes }
+				}
+			}
+		}
 	}
 }
 

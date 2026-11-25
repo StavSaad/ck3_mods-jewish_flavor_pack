@@ -8,10 +8,10 @@ jip_is_jewish_merchant_trigger = {
 	religion = religion:judaism_religion
 }
 
-# Character scope: a merchant of a people whose houses live as Familial families: a Jewish culture (Israelite heritage) of
-# the Jewish religion, a Mandaean, or a Sabian. They may turn their company into a family (jip_merchant_become_familial_decision)
-jip_merchant_of_familial_people_trigger = {
-	government_has_flag = government_is_merchant
+# Character scope: of a people whose houses live as Familial families: a Jewish culture (Israelite heritage) of the
+# Jewish religion, a Mandaean, or a Sabian. Their merchants and adventurers may become a family
+# (jip_merchant_become_familial_decision)
+jip_of_familial_people_trigger = {
 	OR = {
 		AND = {
 			culture = { has_cultural_pillar = heritage_israelite }
@@ -23,11 +23,31 @@ jip_merchant_of_familial_people_trigger = {
 	}
 }
 
+# Character scope: a merchant or a landless adventurer of the families' peoples (jip_of_familial_people_trigger)
+jip_merchant_of_familial_people_trigger = {
+	OR = {
+		government_has_flag = government_is_merchant
+		government_has_flag = government_is_landless_adventurer
+	}
+	jip_of_familial_people_trigger = yes
+}
+
 # Character scope: holds no title but the family's own (the noble family or historical family title): an Exilarch, Kohen
 # Gadol or Rish Amma keeps the family, since their office can't go with it into a company
 jip_holds_only_family_title_trigger = {
 	any_held_title = { jip_is_mishpacha_family_title_trigger = yes }
 	NOT = {
 		any_held_title = { jip_is_mishpacha_family_title_trigger = no }
+	}
+}
+
+# Province scope: a city where $FAMILY$ can settle as a Familial family: a city holding with a lord, outside any realm
+# that has expelled the Jews if they are Jewish
+jip_familial_new_home_trigger = {
+	has_holding_type = city_holding
+	exists = county.holder
+	trigger_if = {
+		limit = { $FAMILY$ = { religion = religion:judaism_religion } }
+		NOT = { jip_province_expels_jews_trigger = { PROVINCE = this } }
 	}
 }

@@ -112,7 +112,7 @@ jip_create_jewish_family_effect = {
 
 # A new Familial family of any faith in the city scope:jip_new_family_home, of the culture, faith and rite saved as
 # scope:jip_new_family_culture, scope:jip_new_family_faith and scope:jip_new_family_rite: a head aged 20 to 40, a family
-# title and estate, the local ruler as liege or suzerain, a spouse and children
+# title and estate, the city's lord as patron, a spouse and children
 jip_create_familial_family_effect = {
 	scope:jip_new_family_home = {
 		county.holder.top_liege = { save_scope_as = jip_new_family_liege }

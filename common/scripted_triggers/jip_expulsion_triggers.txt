@@ -9,8 +9,8 @@ jip_province_expels_jews_trigger = {
 	$PROVINCE$.county.holder ?= { jip_ruler_has_expelled_jews_trigger = yes }
 }
 
-# Province scope: a city outside $EXPELLER$'s realm where an expelled family can settle. Under a king or emperor they
-# become vassals, under anyone else tributaries (jip_mishpacha_change_liege_effect)
+# Province scope: a city outside $EXPELLER$'s realm where an expelled family can settle, under its lord as patron
+# (jip_mishpacha_change_liege_effect)
 jip_valid_expulsion_refuge_trigger = {
 	has_holding_type = city_holding
 	county.holder ?= {

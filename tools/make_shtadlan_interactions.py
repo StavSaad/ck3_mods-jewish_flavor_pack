@@ -49,17 +49,16 @@ REQUESTS = [
          accept='''		jip_shtadlan_find_prisoner_effect = yes
 		scope:jip_shtadlan_prisoner ?= { release_from_prison = yes }
 		jip_shtadlan_accepted_message_effect = { TEXT = jip_shtadlan_release_accepted_msg_desc }'''),
-    dict(key='charter', icon='icon_contract_modification_single', what="The family's liege eases the charter: jizya is waived, or else communal taxes drop a level",
+    dict(key='charter', icon='icon_contract_modification_single', what="The family's patron eases the terms of their patronage: jizya is waived, or else taxes drop a level",
          shown='''		scope:actor = {
-			is_independent_ruler = no
-			liege = scope:recipient
+			suzerain ?= scope:recipient
 		}''',
          valid='''		custom_tooltip = {
 			text = jip_shtadlan_charter_nothing_tt
 			scope:actor = {
 				OR = {
 					vassal_contract_obligation_level:jizya_special_rights >= 1
-					vassal_contract_obligation_level_can_be_decreased = mishpacha_communal_taxes
+					vassal_contract_obligation_level_can_be_decreased = merchant_taxes
 				}
 			}
 		}''',
@@ -69,7 +68,7 @@ REQUESTS = [
 				vassal_contract_set_obligation_level = { type = jizya_special_rights level = 0 }
 			}
 			else = {
-				vassal_contract_decrease_obligation_level = mishpacha_communal_taxes
+				vassal_contract_decrease_obligation_level = merchant_taxes
 			}
 		}
 		jip_shtadlan_accepted_message_effect = { TEXT = jip_shtadlan_charter_accepted_msg_desc }'''),

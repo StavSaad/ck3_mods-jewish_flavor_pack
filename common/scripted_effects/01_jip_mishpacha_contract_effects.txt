@@ -355,8 +355,39 @@ jip_contract_loan_approach_effect = {
 	}
 }
 
+# Negotiate the Tolls: the family's toll at the employer's market comes down a level or two for 10 years, as in
+# vanilla's negotiate_tolls, at every market the employer holds: $NO$, $MINIMAL$, $LOW$ and $MEDIUM$ are the highest toll tiers that become each level
+# (1 2 3 4 for one level down, 2 3 4 5 for two); only if the family pays tolls there, i.e. trades on a route through it (F8).
+# root = the family head (scope:taker), in the contract's reward
+jip_contract_toll_exception_effect = {
+	scope:employer ?= {
+		every_held_trade_market = {
+			limit = { pays_any_tolls_in_market_without_exception_trigger = { CHARACTER = scope:taker } }
+			if = {
+				limit = { toll_tier_in_market = { target = scope:taker value <= $NO$ } }
+				add_toll_exception = { target = scope:taker toll_level = toll_level:toll_level_no_tolls years = 10 }
+			}
+			else_if = {
+				limit = { toll_tier_in_market = { target = scope:taker value <= $MINIMAL$ } }
+				add_toll_exception = { target = scope:taker toll_level = toll_level:toll_level_minimal_tolls years = 10 }
+			}
+			else_if = {
+				limit = { toll_tier_in_market = { target = scope:taker value <= $LOW$ } }
+				add_toll_exception = { target = scope:taker toll_level = toll_level:toll_level_low_tolls years = 10 }
+			}
+			else_if = {
+				limit = { toll_tier_in_market = { target = scope:taker value <= $MEDIUM$ } }
+				add_toll_exception = { target = scope:taker toll_level = toll_level:toll_level_medium_tolls years = 10 }
+			}
+			else = {
+				add_toll_exception = { target = scope:taker toll_level = toll_level:toll_level_high_tolls years = 10 }
+			}
+		}
+	}
+}
+
 jip_contract_tolls_approach_effect = {
-	# Strict ledgers: every coin counted
+	# The ledgers: the case made in figures
 	if = {
 		limit = {
 			jip_contract_approach_is_trigger = { APPROACH = strict }
@@ -364,7 +395,7 @@ jip_contract_tolls_approach_effect = {
 		}
 		jip_contract_extra_gold_effect = { SHARE = 0.5 }
 	}
-	# Going easy: a smaller take, but the merchants and the ruler remember it
+	# Speaking for every merchant: a smaller reward, but the merchants and the ruler remember it
 	else_if = {
 		limit = { jip_contract_approach_is_trigger = { APPROACH = lenient } }
 		if = {
@@ -374,7 +405,7 @@ jip_contract_tolls_approach_effect = {
 		add_prestige = minor_prestige_gain
 		jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = grateful_opinion OPINION = 20 }
 	}
-	# Creative books: a fat skim, or a scandal
+	# Smuggling the goods through: a fat saving, or a scandal
 	else_if = {
 		limit = { jip_contract_approach_is_trigger = { APPROACH = books } }
 		if = {
@@ -384,6 +415,39 @@ jip_contract_tolls_approach_effect = {
 		else = {
 			add_prestige = medium_prestige_loss
 			jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = disappointed_opinion OPINION = -40 }
+		}
+	}
+}
+
+jip_contract_hobnob_approach_effect = {
+	# Good company: the patron's friendship
+	if = {
+		limit = {
+			jip_contract_approach_is_trigger = { APPROACH = company }
+			jip_contract_succeeded_trigger = yes
+		}
+		jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = friendliness_opinion OPINION = 20 }
+	}
+	# Counsel on the treasury: paid for in gold
+	else_if = {
+		limit = {
+			jip_contract_approach_is_trigger = { APPROACH = counsel }
+			jip_contract_succeeded_trigger = yes
+		}
+		jip_contract_extra_gold_effect = { SHARE = 0.5 }
+	}
+	# The rivals' gossip: a hold over the patron, or an offended one
+	else_if = {
+		limit = { jip_contract_approach_is_trigger = { APPROACH = gossip } }
+		if = {
+			limit = { jip_contract_succeeded_trigger = yes }
+			add_hook_if_possible_default_length_effect = {
+				TARGET = scope:employer
+				TYPE = contact_list_weak_hook
+			}
+		}
+		else = {
+			jip_contract_extra_opinion_effect = { WHO = scope:employer TYPE = insulted_opinion OPINION = -20 }
 		}
 	}
 }

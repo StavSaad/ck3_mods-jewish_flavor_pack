@@ -631,7 +631,7 @@ jip_parnas_collect_dues = {
 	}
 }
 
-# The Parnas speaks for the community before the liege, earning their goodwill and making an AI liege less likely to
+# The Parnas speaks for the community before the liege (a family's patron), earning their goodwill and making an AI liege less likely to
 # expel the Jews (jip_expel_the_jews_ai_modifier). Marked with a variable, like vanilla's Organize Court.
 jip_parnas_petition_authorities = {
 	court_position_types = { jip_parnas_court_position }
@@ -685,7 +685,10 @@ jip_parnas_petition_authorities = {
 	}
 
 	is_shown = {
-		is_independent_ruler = no
+		OR = {
+			is_independent_ruler = no
+			is_tributary = yes # 0.16: the patron of a family
+		}
 	}
 	is_valid_showing_failures_only = {
 	}

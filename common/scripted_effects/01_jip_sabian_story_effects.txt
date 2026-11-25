@@ -91,7 +91,8 @@ jip_sabian_story_check_standing_effect = {
 	}
 }
 
-# Story scope: the patron is the owner's liege, or the suzerain of a tributary family; from Act IV, when Harran is free,
+# Story scope: the patron is the owner's liege, or for a family (0.16: the tributary of the lord of its estate's city)
+# the ruler of that lord's realm, the court where the Sabians must win their standing; from Act IV, when Harran is free,
 # there is none
 jip_sabian_story_update_patron_effect = {
 	story_owner = {
@@ -107,7 +108,7 @@ jip_sabian_story_update_patron_effect = {
 				exists = suzerain
 				prev.var:jip_sabian_act < 4
 			}
-			suzerain = { save_scope_as = jip_sabian_patron }
+			suzerain.top_liege = { save_scope_as = jip_sabian_patron }
 		}
 	}
 	if = {

@@ -50,19 +50,10 @@ jip_liege_effect_setup = {
 			limit = { has_government = familial_government }
 			jip_mishpacha_ensure_succession_law_effect = yes
 			jip_familial_record_religion_effect = yes
-			# A family whose estate lies under a duke or lesser ruler leaves any other liege and pays them tribute
-			save_scope_as = jip_family_head
+			# Every family takes the lord of its estate's city as patron (0.16), whoever the setup above named
 			if = {
-				limit = {
-					is_landed = no
-					domicile.domicile_location.county.holder.top_liege ?= {
-						this != scope:jip_family_head
-						highest_held_title_tier <= tier_duchy
-						NOT = { scope:jip_family_head.suzerain ?= this }
-					}
-				}
-				domicile.domicile_location.county.holder.top_liege = { save_scope_as = jip_estate_ruler }
-				jip_mishpacha_change_liege_effect = { LIEGE = scope:jip_estate_ruler }
+				limit = { is_landed = no }
+				jip_mishpacha_join_estate_realm_if_new_effect = yes
 			}
 		}
 	}

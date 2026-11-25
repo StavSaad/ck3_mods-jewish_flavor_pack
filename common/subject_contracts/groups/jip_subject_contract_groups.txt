@@ -1,11 +1,26 @@
-﻿# Charter of privileges: what a Jewish family owes its liege and the rights it is granted in return.
-# Mishpacha families pay in coin, not soldiers.
-mishpacha_vassal = {
+﻿# The patron (0.16, in place of 0.14's Charter of Privileges vassal contract): a Familial family is the tributary of the
+# holder of the county its estate lies in, as Silk & Silver's merchant companies are of theirs (vanilla's
+# tributary_merchant, which only merchants can hold). Set by jip_mishpacha_change_liege_effect. Needs no DLC.
+tributary_familial = {
+	is_tributary = yes
+	is_beneficiary_relationship = yes # as tributary_merchant: the family is the patron's beneficiary
+	tributary_can_break_free = { always = no }
+	suzerain_line_type = line_suzerain
+	tributary_line_type = line_tributary
+	tributary_heir_succession = yes
+	suzerain_heir_succession = yes
+
+	is_valid_tributary_contract = {
+		government_has_flag = government_is_familial
+		is_landed = no
+		scope:suzerain = { is_landed = yes }
+	}
+
 	contracts = {
-		mishpacha_communal_taxes
+		merchant_taxes				# The communal tax, vanilla's merchant tax levels
+		merchant_prestige
 		religious_rights			# Freedom of worship, no forced conversion
-		jizya_special_rights		# Dhimmi status under Muslim lieges
+		jizya_special_rights		# Dhimmi status under Muslim patrons
 		mishpacha_beit_din_rights	# Self-jurisdiction, shown as Own Courts (every faith's families have it)
-		mishpacha_trade_rights
 	}
 }

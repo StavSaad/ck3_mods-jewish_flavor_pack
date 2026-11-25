@@ -16,7 +16,7 @@ jip_familial_found_company_effect = {
 			scheme ?= { invalidate_scheme = yes }
 			invalidate_contract = yes
 		}
-		# A tributary of a duke: the company takes the county holder as patron instead
+		# The family's patron tie ends: the company takes the county holder as patron through vanilla's tie
 		if = {
 			limit = { is_tributary = yes }
 			end_tributary = yes
@@ -61,11 +61,26 @@ jip_familial_found_company_effect = {
 			}
 		}
 	}
+	# As vanilla's Become Merchant (gdp_merchant.0001): the new company's first associates, all prestige gone, the
+	# reluctant stressed, and five years of the voluntary merchant's modifier
+	adventurer_prestige_reset_effect = yes
+	hidden_effect = {
+		trigger_event = gdp_merchant.1001
+	}
+	stress_impact = {
+		craven = minor_stress_impact_gain
+		content = minor_stress_impact_gain
+		lazy = minor_stress_impact_gain
+	}
+	add_character_modifier = {
+		modifier = gdp_voluntary_merchant_modifier
+		years = 5
+	}
 }
 
 # root = a merchant of a Jewish, Mandaean or Sabian house (jip_merchant_become_familial_decision). The company is wound up
 # (vanilla's destroy_merchant_effect: its value paid out, its people kept as associates) and the house becomes a Familial
-# family in the company's city: a family title and an estate, the realm's ruler as liege or suzerain, as a new family gets
+# family in the company's city: a family title and an estate, the city's lord as patron, as a new family gets
 # at game start (jip_create_familial_family_effect)
 jip_merchant_become_familial_effect = {
 	save_scope_as = jip_new_mishpacha_head
@@ -96,7 +111,7 @@ jip_merchant_become_familial_effect = {
 	scope:jip_new_family_home.county.holder.top_liege ?= { save_scope_as = jip_new_family_liege }
 	hidden_effect = {
 		# Keep the household through the moment between the company and the family
-		every_courtier = { add_to_list = jip_company_courtiers }
+		every_courtier = { add_to_list = jip_house_courtiers }
 		# The patron's contracts and the charter go with the patron tie
 		every_character_task_contract = {
 			limit = { has_task_contract_group = merchant_patron_contract_group }
@@ -125,6 +140,39 @@ jip_merchant_become_familial_effect = {
 			save_scope_as = jip_old_company_title
 			scope:jip_new_mishpacha_head = { destroy_title = scope:jip_old_company_title }
 		}
+	}
+	jip_make_familial_house_effect = yes
+	hidden_effect = {
+		# The company's realm laws
+		if = {
+			limit = { has_realm_law = merchant_succession_law }
+			remove_realm_law = merchant_succession_law
+		}
+		if = {
+			limit = { has_realm_law = company_purpose_family }
+			remove_realm_law = company_purpose_family
+		}
+		if = {
+			limit = { has_realm_law = company_purpose_artisan }
+			remove_realm_law = company_purpose_artisan
+		}
+		if = {
+			limit = { has_realm_law = company_purpose_creditor }
+			remove_realm_law = company_purpose_creditor
+		}
+		if = {
+			limit = { has_realm_law = company_purpose_caravaneer }
+			remove_realm_law = company_purpose_caravaneer
+		}
+	}
+}
+
+# root = the head of a merchant company or an adventurer's camp, already wound up (jip_merchant_become_familial_effect,
+# jip_adventurer_become_familial_effect): the house becomes a Familial family in scope:jip_new_family_home, with a family
+# title and an estate and the city's lord as patron, in the same steps as a dispossessed lord's. The household kept in
+# the list jip_house_courtiers stays at court. Uses scope:jip_new_mishpacha_head and scope:jip_new_family_liege
+jip_make_familial_house_effect = {
+	hidden_effect = {
 		# The estate and the family title, in the same steps as a dispossessed lord's (jip_jewish_lord_lose_lands_effect)
 		if = {
 			limit = {
@@ -159,27 +207,6 @@ jip_merchant_become_familial_effect = {
 			limit = { NOT = { has_government = familial_government } }
 			change_government = familial_government
 		}
-		# The company's realm laws
-		if = {
-			limit = { has_realm_law = merchant_succession_law }
-			remove_realm_law = merchant_succession_law
-		}
-		if = {
-			limit = { has_realm_law = company_purpose_family }
-			remove_realm_law = company_purpose_family
-		}
-		if = {
-			limit = { has_realm_law = company_purpose_artisan }
-			remove_realm_law = company_purpose_artisan
-		}
-		if = {
-			limit = { has_realm_law = company_purpose_creditor }
-			remove_realm_law = company_purpose_creditor
-		}
-		if = {
-			limit = { has_realm_law = company_purpose_caravaneer }
-			remove_realm_law = company_purpose_caravaneer
-		}
 		jip_mishpacha_ensure_succession_law_effect = yes
 		domicile ?= {
 			if = {
@@ -192,7 +219,7 @@ jip_merchant_become_familial_effect = {
 			jip_add_random_family_estate_building_effect = yes
 		}
 		every_in_list = {
-			list = jip_company_courtiers
+			list = jip_house_courtiers
 			limit = {
 				is_alive = yes
 				NOT = { liege_or_court_owner = scope:jip_new_mishpacha_head }
@@ -205,5 +232,83 @@ jip_merchant_become_familial_effect = {
 		}
 		jip_familial_record_religion_effect = yes
 		jip_mishpacha_refresh_contracts_effect = yes
+	}
+}
+
+# root = a landless adventurer of a Jewish, Mandaean or Sabian house (jip_merchant_become_familial_decision, 0.16). The camp
+# is broken up (its buildings sold off, as vanilla's liquidator does; not destroy_laamp_effect, which is the camp's
+# defeat), its title ends, its provisions go with it and its contracts are dropped; the officers and followers stay as
+# the family's courtiers. Then the house becomes a family by the same steps as a company's (jip_make_familial_house_effect),
+# in a city of the camp's county, else the nearest city that will take them (jip_adventurer_find_family_home_effect)
+jip_adventurer_become_familial_effect = {
+	save_scope_as = jip_new_mishpacha_head
+	jip_adventurer_find_family_home_effect = yes
+	scope:jip_new_family_home.county.holder.top_liege ?= { save_scope_as = jip_new_family_liege }
+	hidden_effect = {
+		# Keep the camp's officers and followers through the moment between the camp and the family
+		every_courtier = { add_to_list = jip_house_courtiers }
+		# The adventurer's contracts
+		every_character_task_contract = {
+			scheme ?= { invalidate_scheme = yes }
+			invalidate_contract = yes
+		}
+	}
+	# The camp's buildings are sold off and the proceeds paid out, as when a camp is broken up
+	laamp_clear_domicile_buildings_liquidator_effect = yes
+	hidden_effect = {
+		every_held_title = {
+			limit = { has_variable = adventurer_creation_reason }
+			save_scope_as = jip_old_camp_title
+			scope:jip_new_mishpacha_head = { destroy_title = scope:jip_old_camp_title }
+		}
+		remove_character_flag = laamp_stay_same_kingdom
+	}
+	jip_make_familial_house_effect = yes
+}
+
+# Character scope, an adventurer about to become a family: saves scope:jip_new_family_home, a city of the camp's county if
+# it has one that takes them, else the nearest such city in the realms around (jip_familial_new_home_trigger)
+jip_adventurer_find_family_home_effect = {
+	save_scope_as = jip_home_seeker
+	domicile ?= {
+		domicile_location = { save_scope_as = jip_home_origin }
+	}
+	if = {
+		limit = { NOT = { exists = scope:jip_home_origin } }
+		location ?= { save_scope_as = jip_home_origin }
+	}
+	scope:jip_home_origin.county ?= {
+		random_county_province = {
+			limit = { jip_familial_new_home_trigger = { FAMILY = scope:jip_home_seeker } }
+			save_scope_as = jip_new_family_home
+		}
+	}
+	if = {
+		limit = {
+			NOT = { exists = scope:jip_new_family_home }
+			exists = scope:jip_home_origin.county.holder
+		}
+		# The realm around the camp and its neighbours, nearest city first
+		scope:jip_home_origin.county.holder.top_liege = {
+			add_to_list = jip_home_realms
+			every_neighboring_and_across_water_top_liege_realm_owner = { add_to_list = jip_home_realms }
+		}
+		every_in_list = {
+			list = jip_home_realms
+			every_realm_county = {
+				every_county_province = {
+					limit = { jip_familial_new_home_trigger = { FAMILY = scope:jip_home_seeker } }
+					add_to_list = jip_home_provinces
+				}
+			}
+		}
+		ordered_in_list = {
+			list = jip_home_provinces
+			order_by = {
+				value = "squared_distance(scope:jip_home_origin)"
+				multiply = -1
+			}
+			save_scope_as = jip_new_family_home
+		}
 	}
 }

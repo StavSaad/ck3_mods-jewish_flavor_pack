@@ -17,6 +17,9 @@ familial_government = {
 		deny_powerful_vassal = yes
 		uses_culture_and_house_head_named_realms = no
 		council = no
+		can_have_vassal_suzerain = yes # 0.16: the patron is the lord of the estate's city, often a vassal count (as for companies)
+		profit_trade_routes = yes # 0.16: families trade too, with half a company's trade capacity (trade_capacity_mult below)
+		distribution_trade_routes = no
 	}
 
 	royal_court = any
@@ -31,15 +34,20 @@ familial_government = {
 	valid_holdings = { city_holding }
 	required_county_holdings = { city_holding }
 
-	vassal_contract_group = mishpacha_vassal
+	# 0.16: no vassal contract. A family is the tributary of its patron, the holder of its estate's county, under
+	# tributary_familial (common/subject_contracts/groups/jip_subject_contract_groups.txt, jip_mishpacha_change_liege_effect)
 
 	character_modifier = {
 		title_creation_cost_mult = -0.5
 		mercenary_hire_cost_mult = -0.25
-		men_at_arms_maintenance = 0.5
+		# 0.16: the company trades, the family protects its own. A family's army fights best attacked, and the
+		# community watches its own (vanilla's Towers and Information Network use the same modifier at -1 to -3 a level)
+		defender_advantage = 4
+		enemy_hostile_scheme_success_chance_add = -10
 		diplomatic_range_mult = 2
 		domicile_travel_speed = -0.75 # Moving the estate means moving the whole family; matches the adventurer camp penalty
 		monthly_income_mult = 0.15
+		trade_capacity_mult = -0.5 # 0.16: a family's trade is smaller than a company's
 		monthly_learning_lifestyle_xp_gain_mult = 0.1
 		monthly_stewardship_lifestyle_xp_gain_mult = 0.1 # Financiers as much as scholars
 		character_travel_safety = 10 # Trade networks and the hospitality of fellow believers on the road

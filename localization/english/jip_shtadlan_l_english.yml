@@ -6,8 +6,8 @@
  jip_shtadlan_protection_interaction_desc: "As [shtadlan|E], ask [recipient.GetShortUIName] to take the Jews of [recipient.GetHerHis] [realm|E] under [recipient.GetHerHis] protection, as the bishops and kings of old granted privileges to their communities."
  jip_shtadlan_release_interaction: "Intercede: Release a Prisoner"
  jip_shtadlan_release_interaction_desc: "As [shtadlan|E], ask [recipient.GetShortUIName] to free a Jew held in [recipient.GetHerHis] dungeons. Your own kin are freed first, then the highest-ranking prisoner."
- jip_shtadlan_charter_interaction: "Intercede: Ease the Charter"
- jip_shtadlan_charter_interaction_desc: "As [shtadlan|E], ask your [liege|E] [recipient.GetShortUIName] to lighten the burdens of your charter: jizya is waived, or else your communal taxes are lowered."
+ jip_shtadlan_charter_interaction: "Intercede: Ease the Patronage"
+ jip_shtadlan_charter_interaction_desc: "As [shtadlan|E], ask your patron [recipient.GetShortUIName] to lighten the burdens of your patronage: jizya is waived, or else your [taxes|E] are lowered."
 
  game_concept_shtadlan: "Shtadlan"
  game_concept_shtadlan_desc: "A shtadlan (intercessor) was the man who spoke for a Jewish community before the gentile authorities, pleading against expulsions and taxes and for the release of captives. The head of a Jewish [familial|E] family can intercede with any [ruler|E] in [diplomatic_range|E], offering [gold|E], [prestige|E], a [hook|E] on them or a favour owed to them to win them over."
@@ -35,7 +35,7 @@
 
  jip_shtadlan_already_protected_tt: "[recipient.GetShortUIName|U] has not already granted the Jews a letter of protection"
  jip_shtadlan_offer_hook_held_tt: "[recipient.GetShortUIName|U] does not already hold a [hook|E] on you"
- jip_shtadlan_charter_nothing_tt: "Your charter has jizya, or communal taxes above the lowest level"
+ jip_shtadlan_charter_nothing_tt: "Your patronage has jizya, or [taxes|E] above the lowest level"
  jip_shtadlan_protection_tt: "The Jews of the [realm|E] cannot be expelled for 15 years"
  jip_expel_the_jews_protected_tt: "You have not granted the Jews a letter of protection"
 
@@ -43,6 +43,6 @@
  jip_shtadlan_readmit_accepted_msg_desc: "[recipient.GetShortUIName|U] has lifted the edict: the Jews may settle in [recipient.GetHerHis] [realm|E] again"
  jip_shtadlan_protection_accepted_msg_desc: "[recipient.GetShortUIName|U] has taken the Jews of [recipient.GetHerHis] [realm|E] under [recipient.GetHerHis] protection"
  jip_shtadlan_release_accepted_msg_desc: "[recipient.GetShortUIName|U] has freed [jip_shtadlan_prisoner.GetShortUIName]"
- jip_shtadlan_charter_accepted_msg_desc: "[recipient.GetShortUIName|U] has eased the terms of your charter"
+ jip_shtadlan_charter_accepted_msg_desc: "[recipient.GetShortUIName|U] has eased the terms of your patronage"
  jip_shtadlan_declined_msg: "Intercession Refused"
  jip_shtadlan_declined_msg_desc: "[recipient.GetShortUIName|U] would not hear your plea"

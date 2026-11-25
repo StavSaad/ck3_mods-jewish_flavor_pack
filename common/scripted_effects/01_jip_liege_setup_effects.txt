@@ -1,51 +1,67 @@
-﻿# This file contains the game start liege setup for the mod's Mishpacha families.
+﻿# This file contains the patron tie of the mod's Familial families and its game start setup.
 # Sections are organized by liege.
 
-# Puts a landless Mishpacha family head under $LIEGE$, the ruler of the realm their estate lies in. Call in the family head's scope.
-# Family titles are duchy tier, so only a king or emperor can take them in as vassals; a duke or lesser ruler takes tribute
-# from them instead (vanilla's settled tributary contract). Any tie to a former liege or suzerain ends. Their family title
-# survives independence because our copy of yearly_on_actions.txt spares Mishpacha families from vanilla's cleanup.
-# Ranks are compared with tier_duchy, the family title's tier, not the head's highest_held_title_tier, which may not count
-# a family title; if it doesn't, a duke passes as a valid liege, the engine refuses the fealty and the family keeps its old liege.
+# Puts a landless Familial family under a patron (0.16, in place of the Charter of Privileges): the holder of the county
+# its estate lies in, as Silk & Silver's companies have theirs, if that lord serves $LIEGE$'s realm; else $LIEGE$
+# themselves (an estate not yet moved into that realm, as an expelled family's before it sets off). The family becomes
+# their tributary under tributary_familial (common/subject_contracts/groups/jip_subject_contract_groups.txt), and any
+# tie to a former liege or suzerain ends. $LIEGE$ = the family head themselves leaves them independent. Call in the
+# family head's scope. The name stays from 0.14, when a family was a vassal: every caller still passes the realm's ruler.
+# Their family title survives independence because our copy of yearly_on_actions.txt spares Familial families from
+# vanilla's cleanup.
 jip_mishpacha_change_liege_effect = {
+	save_scope_as = jip_patron_client
 	$LIEGE$ = { save_scope_as = jip_new_liege }
 	if = {
 		limit = {
-			scope:jip_new_liege != this
-			scope:jip_new_liege.highest_held_title_tier <= tier_duchy
+			domicile.domicile_location.county.holder ?= {
+				this != scope:jip_patron_client
+				is_landed = yes
+				OR = {
+					this = scope:jip_new_liege
+					top_liege = scope:jip_new_liege.top_liege
+				}
+			}
 		}
-		jip_mishpacha_become_tributary_effect = yes
+		domicile.domicile_location.county.holder = { save_scope_as = jip_new_patron }
 	}
-	# Already their vassal: nothing to change (otherwise the fallback below would make them independent)
-	else_if = {
+	else = {
+		scope:jip_new_liege = { save_scope_as = jip_new_patron }
+	}
+	jip_familial_take_patron_effect = yes
+}
+
+# Part of jip_mishpacha_change_liege_effect: the family leaves any liege or other suzerain and takes scope:jip_new_patron
+# as its patron, or stays independent if that is the family head themselves
+jip_familial_take_patron_effect = {
+	if = {
 		limit = {
-			NOT = { liege ?= scope:jip_new_liege }
+			NOR = {
+				suzerain ?= scope:jip_new_patron
+				scope:jip_new_patron = this
+			}
 		}
 		if = {
 			limit = { is_tributary = yes }
 			end_tributary = yes
 		}
+		# A vassal can't become a tributary (a family from before 0.16): leave the old liege first, as vanilla's
+		# tributary setup does
+		jip_familial_leave_liege_effect = yes
+		start_tributary = {
+			contract_group = tributary_familial
+			suzerain = scope:jip_new_patron
+		}
 		if = {
-			limit = {
-				scope:jip_new_liege != this
-				scope:jip_new_liege.highest_held_title_tier > tier_duchy
-			}
-			create_title_and_vassal_change = {
-				type = swear_fealty
-				save_scope_as = jip_liege_change
-			}
-			change_liege = {
-				liege = scope:jip_new_liege
-				change = scope:jip_liege_change
-			}
-			resolve_title_and_vassal_change = scope:jip_liege_change
-			# Dhimmi status: under a liege who taxes nonbelievers, the charter starts with jizya (same check as the jizya option's is_valid)
+			limit = { is_tributary = yes }
+			# The standing vanilla gives a new tributary (start_tributary_interaction_effect)
+			add_subject_standing = 10
+			# Dhimmi status: under a patron who taxes nonbelievers, the tie starts with jizya (the same check as the
+			# jizya option's is_valid)
 			if = {
 				limit = {
-					is_independent_ruler = no
-					liege = scope:jip_new_liege
-					faith != scope:jip_new_liege.faith
-					scope:jip_new_liege = {
+					faith != scope:jip_new_patron.faith
+					scope:jip_new_patron = {
 						OR = {
 							rite = { rite_has_tenet = tenet_tax_nonbelievers }
 							faith = { has_doctrine = special_doctrine_jizya }
@@ -55,54 +71,30 @@ jip_mishpacha_change_liege_effect = {
 				vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 }
 			}
 		}
-		else_if = {
-			limit = { is_independent_ruler = no }
-			create_title_and_vassal_change = {
-				type = independency
-				save_scope_as = jip_liege_change
-				add_claim_on_loss = no
-			}
-			becomes_independent = {
-				change = scope:jip_liege_change
-			}
-			resolve_title_and_vassal_change = scope:jip_liege_change
-		}
 	}
-}
-
-# Part of jip_mishpacha_change_liege_effect: the family leaves any liege or other suzerain and pays tribute to
-# scope:jip_new_liege, the duke or lesser ruler whose land their estate lies in
-jip_mishpacha_become_tributary_effect = {
-	if = {
-		limit = {
-			NOT = { suzerain ?= scope:jip_new_liege }
-		}
+	else_if = {
+		limit = { scope:jip_new_patron = this }
 		if = {
 			limit = { is_tributary = yes }
 			end_tributary = yes
 		}
-		# A vassal can't become a tributary: leave the old liege first, as vanilla's tributary setup does
-		if = {
-			limit = { liege != this }
-			create_title_and_vassal_change = {
-				type = independency
-				save_scope_as = jip_liege_change
-				add_claim_on_loss = no
-			}
-			becomes_independent = {
-				change = scope:jip_liege_change
-			}
-			resolve_title_and_vassal_change = scope:jip_liege_change
+		jip_familial_leave_liege_effect = yes
+	}
+}
+
+# A family that is still someone's vassal (only from before 0.16) becomes independent
+jip_familial_leave_liege_effect = {
+	if = {
+		limit = { is_independent_ruler = no }
+		create_title_and_vassal_change = {
+			type = independency
+			save_scope_as = jip_liege_change
+			add_claim_on_loss = no
 		}
-		start_tributary = {
-			contract_group = tributary_settled
-			suzerain = scope:jip_new_liege
+		becomes_independent = {
+			change = scope:jip_liege_change
 		}
-		# The standing vanilla gives a new tributary (start_tributary_interaction_effect)
-		if = {
-			limit = { is_tributary = yes }
-			add_subject_standing = 10
-		}
+		resolve_title_and_vassal_change = scope:jip_liege_change
 	}
 }
 
