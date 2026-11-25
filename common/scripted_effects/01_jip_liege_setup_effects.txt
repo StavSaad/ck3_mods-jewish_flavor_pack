@@ -68,7 +68,8 @@ jip_familial_take_patron_effect = {
 						}
 					}
 				}
-				vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 }
+				# A tributary's terms are set with the tributary effect; the vassal one finds no vassal contract
+				tributary_contract_set_obligation_level = { type = jizya_special_rights level = 1 }
 			}
 		}
 	}

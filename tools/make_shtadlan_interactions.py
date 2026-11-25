@@ -58,17 +58,23 @@ REQUESTS = [
 			scope:actor = {
 				OR = {
 					vassal_contract_obligation_level:jizya_special_rights >= 1
-					vassal_contract_obligation_level_can_be_decreased = merchant_taxes
+					vassal_contract_obligation_level:merchant_taxes >= 1
 				}
 			}
 		}''',
          accept='''		scope:actor = {
+			# The family is a tributary: vanilla reads its terms with the vassal trigger but sets them with the tributary effect
 			if = {
 				limit = { vassal_contract_obligation_level:jizya_special_rights >= 1 }
-				vassal_contract_set_obligation_level = { type = jizya_special_rights level = 0 }
+				tributary_contract_set_obligation_level = { type = jizya_special_rights level = 0 }
 			}
-			else = {
-				vassal_contract_decrease_obligation_level = merchant_taxes
+			else_if = {
+				limit = { vassal_contract_obligation_level:merchant_taxes >= 2 }
+				tributary_contract_set_obligation_level = { type = merchant_taxes level = 1 }
+			}
+			else_if = {
+				limit = { vassal_contract_obligation_level:merchant_taxes >= 1 }
+				tributary_contract_set_obligation_level = { type = merchant_taxes level = 0 }
 			}
 		}
 		jip_shtadlan_accepted_message_effect = { TEXT = jip_shtadlan_charter_accepted_msg_desc }'''),
