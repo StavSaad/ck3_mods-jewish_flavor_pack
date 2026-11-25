@@ -32,19 +32,12 @@ jip_merchant_of_familial_people_trigger = {
 	jip_of_familial_people_trigger = yes
 }
 
-# Character scope: holds no title but the family's own (the noble family or historical family title) and an Exilarchate.
-# An Exilarch may found a company and keep the office (0.16, 14a): the company's founding leaves landless titles with
-# their holder, and the Exilarchate elects merchants. A Kohen Gadol or Rish Amma keeps the family
+# Character scope: holds no title but the family's own (the noble family or historical family title): an Exilarch, Kohen
+# Gadol or Rish Amma keeps the family, since their office can't go with it into a company
 jip_holds_only_family_title_trigger = {
 	any_held_title = { jip_is_mishpacha_family_title_trigger = yes }
 	NOT = {
-		any_held_title = {
-			jip_is_mishpacha_family_title_trigger = no
-			NOR = {
-				this = title:d_exilarchate
-				this = title:d_karaite_exilarchate
-			}
-		}
+		any_held_title = { jip_is_mishpacha_family_title_trigger = no }
 	}
 }
 

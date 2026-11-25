@@ -21,23 +21,10 @@ exilarchate_inheritance_on_action = {
 	}
 
 	effect = {
-		# A merchant company or adventurer's camp keeps its place: the Exilarchate's seat moves to it (its primary title
-		# may be the Exilarchate itself, a duchy over the company's county-tier title)
-		if = {
-			limit = {
-				NOT = { government_has_flag = government_is_familial }
-				exists = domicile
-			}
-			scope:title = {
-				set_capital_county = root.domicile.domicile_location.county
-			}
-		}
-		else = {
-			scope:title = {
-				set_capital_county = root.primary_title.title_capital_county
-				holder.domicile ?= {
-					move_domicile = root.primary_title.title_capital_county.title_province
-				}
+		scope:title = {
+			set_capital_county = root.primary_title.title_capital_county
+			holder.domicile ?= {
+				move_domicile = root.primary_title.title_capital_county.title_province
 			}
 		}
 	}
@@ -55,26 +42,6 @@ on_title_gain = {
 		jip_mishpacha_contracts_new_area_on_action # Offers for a new family head
 		jip_carthage_restored_on_action
 		jip_familial_patron_title_transfer_on_action
-	}
-}
-
-# Not delayed: the government must be right before the player plays on (0.16, 14a)
-on_title_gain = {
-	on_actions = {
-		jip_landless_keep_government_on_action
-	}
-}
-
-# A landless ruler keeps the government of their own title. Gaining the Exilarchate from a Familial Exilarch made a merchant
-# or adventurer Familial (the government is sticky and passes on with the title), and their heir, who inherits only the
-# company or camp, stayed Familial without a family title, so no longer playable (0.16, 14a). Also checked as a ruler dies,
-# while they still hold their titles, so the heir inherits the right government
-jip_landless_keep_government_on_action = {
-	trigger = {
-		is_landed = no
-	}
-	effect = {
-		jip_landless_restore_government_effect = yes
 	}
 }
 
@@ -130,7 +97,6 @@ mishpacha_landed_government_switch_on_action = {
 on_death = {
 	on_actions = {
 		jip_kohen_gadol_death_on_action
-		jip_landless_keep_government_on_action
 	}
 }
 

@@ -63,32 +63,6 @@ jip_mishpacha_adopt_landed_government_effect = {
 }
 
 
-# Character scope, landless: the government that goes with the ruler's own landless title, if they have another: a merchant
-# company's title (vanilla's gdp_merchant_company_title_trigger) makes a merchant, an adventurer's camp title (vanilla's
-# adventurer_creation_reason) an adventurer. Other landless titles (the Exilarchates, heads of faith) carry no government of
-# their own; family titles are left alone, as admin noble families hold them too
-jip_landless_restore_government_effect = {
-	if = {
-		limit = {
-			any_held_title = { gdp_merchant_company_title_trigger = yes }
-			NOT = { government_has_flag = government_is_merchant }
-		}
-		change_government = merchant_government
-	}
-	else_if = {
-		limit = {
-			NOT = { any_held_title = { gdp_merchant_company_title_trigger = yes } }
-			OR = {
-				any_held_title = { has_variable = adventurer_creation_reason }
-				# historical and designed camps may lack the variable; their domicile is still a camp
-				domicile ?= { is_domicile_type = camp }
-			}
-			NOT = { government_has_flag = government_is_landless_adventurer }
-		}
-		change_government = landless_adventurer_government
-	}
-}
-
 # Character scope: records the family's religion on its family titles, once: the religion of the head who first holds them
 # as a Familial family (at game start, then yearly for new families). jip_family_left_faith_on_action compares the head's with it.
 jip_familial_record_religion_effect = {
