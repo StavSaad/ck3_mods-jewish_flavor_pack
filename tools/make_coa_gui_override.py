@@ -1,8 +1,8 @@
 # Generates gui/shared/coat_of_arms.gui: a full copy of the realm CoA GUI with the Familial government's decoration.
 # A Familial head's realm CoA has no tier crown. A Jewish head's (jip_coa_is_jewish) shows a kippah
-# (jip_mishpacha_topframe_<size>.dds), or the Keter Shem Tov for an Exilarch
-# (jip_exilarch_topframe_<size>.dds, jip_coa_is_exilarch in common/scripted_guis), instead of the tier crown; the tier bar
-# stays, as for adventurers (the shield shape itself comes from gfx/interface/icons/realm_frames/familial_government_*,
+# (jip_mishpacha_topframe_<size>.dds) instead of the tier crown; the tier bar stays, as for adventurers. The current
+# Exilarch of either line (jip_coa_is_exilarch in common/scripted_guis), whatever the government, shows the Keter Shem Tov
+# (jip_exilarch_topframe_<size>.dds) in place of the tier crown, the merchant's decoration or the adventurer's helmet (the shield shape itself comes from gfx/interface/icons/realm_frames/familial_government_*,
 # picked by the engine from the government's name).
 #
 # Built on Aligned Realm Banners' copy of the file when that mod is installed (workshop 3823433423), so Rising Lion can load
@@ -69,7 +69,7 @@ if os.path.exists(ARB) and not use_arb:
     print('Aligned Realm Banners does not support this game version yet: built on vanilla')
 src = open(ARB if use_arb else VANILLA, encoding='utf-8-sig').read()
 parts = re.split(r'(?m)^(?=\ttype )', src)
-count = {'crown': 0, 'decor': 0, 'topframe': 0}
+count = {'crown': 0, 'decor': 0, 'topframe': 0, 'keter_hides': 0}
 
 
 def hide_topframes(block, gov_expr):
@@ -115,7 +115,9 @@ def add_decor_after_adventurer(p, name):
         vis = re.search(r'visible = "\[(.*)\]"', blk).group(1).replace("'landless_adventurer_government'", GOV)
         out.append(p[pos:mm.end()])
         out.append(decor_icon(mm.group(1), f'[And( And( {vis}, {JEWISH} ), Not({EXILARCH}) )]', size, w, h, position=position and position.group(1)))
-        out.append(decor_icon(mm.group(1), f'[And( {vis}, {EXILARCH} )]', size, w, h, 'exilarch', position and position.group(1)))
+        # the Keter for any government: the helmet's own condition with its government test swapped for the Exilarch's
+        gov_test = re.search(r"[\w.]+\.IsType\(" + re.escape(GOV) + r"\)", vis).group(0)
+        out.append(decor_icon(mm.group(1), f'[{vis.replace(gov_test, EXILARCH)}]', size, w, h, 'exilarch', position and position.group(1)))
         for kind, shown in FAITH_DECOR:
             out.append(decor_icon(mm.group(1), f'[And( {vis}, {shown} )]', size, w, h, kind, position and position.group(1)))
         pos = mm.end()
@@ -125,6 +127,14 @@ def add_decor_after_adventurer(p, name):
     return ''.join(out)
 
 
+def keter_hides_decor(p):
+    """The merchant's decoration and the adventurer's helmet give way to an Exilarch's Keter"""
+    def sub(mm):
+        count['keter_hides'] += 1
+        return f'{mm.group(1)}visible = "[And( {mm.group(2)}, Not({EXILARCH}) )]"'
+    return re.sub(r'(name = "(?:merchant|adventurer)_top_decor"\n\t+)visible = "\[(.*)\]"', sub, p)
+
+
 out = []
 for p in parts:
     m = re.match(r'\ttype (\w+)', p)
@@ -132,13 +142,14 @@ for p in parts:
     if re.fullmatch(r'coa_realm_(tiny|small|medium|big|huge)_crown', name):
         # the tier crown is hidden for Mishpacha heads, as for adventurers and theocracies
         p, n = re.subn(r'(blockoverride "crown"\s*\{\s*)visible = "\[(.*)\]"',
-                       lambda mm: f'{mm.group(1)}visible = "[And( {mm.group(2)}, Not(Character.GetGovernment.IsType({GOV})) )]"', p)
+                       lambda mm: f'{mm.group(1)}visible = "[And( And( {mm.group(2)}, Not(Character.GetGovernment.IsType({GOV})) ), Not({EXILARCH}) )]"', p)
         assert n == 1, name
         count['crown'] += 1
         if use_arb:
-            p = add_decor_after_adventurer(p, name)
+            p = keter_hides_decor(add_decor_after_adventurer(p, name))
     elif re.fullmatch(r'coa_realm_(tiny|small|medium|big|huge)', name):
-        p = add_decor_after_adventurer(p, name)
+        # after the decorations are added, which copy the helmet's own condition
+        p = keter_hides_decor(add_decor_after_adventurer(p, name))
         p = hide_topframes(p, 'GovernmentType')
     # a save game has no character to look titles or faith up on, so it always shows the kippah
     elif name == 'coa_savegame':
@@ -180,6 +191,8 @@ if use_arb:
 # realm types: a pair per helmet (vanilla: 5 in the flow; ARB: 5 in the _crown flows + 5 overlays); save game 1; bookmark 2,
 # plus one per faith with bookmark families
 expected_decor = (10 if use_arb else 5) * (2 + len(FAITH_DECOR)) + 1 + 2 + len(BOOKMARK_FAITHS)
+keter_hides = count.pop('keter_hides')
+assert keter_hides >= 10, keter_hides  # a merchant decoration and a helmet in each of the five sizes at least
 assert count == {'crown': 7, 'decor': expected_decor, 'topframe': 9 if HIDE_TIER_BAR else 0}, count
 if use_arb:
     base = ("Aligned Realm Banners' copy (workshop 3823433423; its changes are marked \"arb\", and its references are guarded\n"
@@ -189,7 +202,8 @@ if use_arb:
 else:
     base = 'vanilla 1.20'
 header = (f'# Generated by make_coa_gui_override.py from {base}: a full copy of gui/shared/coat_of_arms.gui with the\n'
-          "# Familial government's realm CoA decoration (no tier crown; for Jews a kippah, or the Keter Shem Tov for an Exilarch).\n"
+          "# Familial government's realm CoA decoration (no tier crown; for Jews a kippah) and the Exilarch's Keter Shem Tov\n"
+          "# (any government, in place of the tier crown).\n"
           '# With Aligned Realm Banners, Rising Lion must load after it. Rerun after every vanilla or ARB update.\n')
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 open(OUT, 'wb').write(b'\xef\xbb\xbf' + (header + text).encode('utf-8'))
