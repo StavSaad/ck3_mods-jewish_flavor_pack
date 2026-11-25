@@ -15,4 +15,6 @@
  jip_adventurer_become_familial_decision_effect_tt: "Your camp is broken up, its buildings sold off, and your house becomes a [familial|E] family with a family title and an [estate|E] in a city of the camp's county, or the nearest city that will take you, under that city's lord as patron. Your camp officers and followers stay with you as courtiers; your provisions and your [task_contracts|E] are left behind"
  jip_merchant_become_familial_company_tt: "You have a [company|E] or a camp"
  jip_merchant_become_familial_expelled_tt: "The Jews have not been expelled from the realm your [company|E] or camp lies in"
- JIP_RULER_DESIGNER_OPEN_FAMILIAL: "Design a new [familial|E] family: a Jewish, Sabian or Mandaean house that settles in a city on the first day, with an [estate|E] and the city's lord as its patron"
+ JIP_RULER_DESIGNER_OPEN_FAMILIAL: "Design a new [familial|E] family: a house that settles in a city on the first day, with an [estate|E] and the city's lord as its patron.\n\n#warning Give it a Jewish, Sabian or Mandaean faith: a house of any other faith stays an adventurer.#!"
+ jip_familial_design_wrong_faith_title: "Not a Familial House"
+ jip_familial_design_wrong_faith_desc: "Only Jewish, Sabian and Mandaean houses can be [familial|E]. Your house stays an adventurer."

@@ -132,6 +132,19 @@ jip_familial_custom_family_start_on_action = {
 				}
 				jip_adventurer_become_familial_effect = yes
 			}
+			# The designer can't be limited to the families' faiths, so one of another faith stays an adventurer, and is told why
+			every_player = {
+				limit = {
+					is_from_ruler_designer = yes
+					government_has_flag = government_is_landless_adventurer
+					jip_of_familial_people_trigger = no
+				}
+				send_interface_toast = {
+					type = event_generic_neutral
+					title = jip_familial_design_wrong_faith_title
+					desc = jip_familial_design_wrong_faith_desc
+				}
+			}
 		}
 	}
 }
