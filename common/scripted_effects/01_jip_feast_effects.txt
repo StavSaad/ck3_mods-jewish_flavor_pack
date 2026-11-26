@@ -157,10 +157,7 @@ jip_feast_toast_phase_effect = {
 	else_if = {
 		limit = { jip_is_pesach = yes }
 		# Whoever sat at the grand seder skips this year's household seder (jip_feast.5020)
-		add_character_flag = {
-			flag = jip_kept_pesach
-			months = 10
-		}
+		jip_feast_mark_kept_effect = { FEAST = pesach }
 		if = {
 			limit = { this = scope:host }
 			trigger_event = jip_feast.5005
@@ -182,10 +179,7 @@ jip_feast_toast_phase_effect = {
 	else_if = {
 		limit = { jip_is_purim = yes }
 		# For the household feast through the year: whoever kept it at a feast skips this year's
-		add_character_flag = {
-			flag = jip_kept_purim
-			months = 10
-		}
+		jip_feast_mark_kept_effect = { FEAST = purim }
 		if = {
 			limit = { this = scope:host }
 			trigger_event = jip_feast.7005
@@ -197,10 +191,7 @@ jip_feast_toast_phase_effect = {
 	else_if = {
 		limit = { jip_is_sukkot = yes }
 		# For the household feast through the year: whoever kept it at a feast skips this year's
-		add_character_flag = {
-			flag = jip_kept_sukkot
-			months = 10
-		}
+		jip_feast_mark_kept_effect = { FEAST = sukkot }
 		if = {
 			limit = { this = scope:host }
 			trigger_event = jip_feast.8005
@@ -212,10 +203,7 @@ jip_feast_toast_phase_effect = {
 	else_if = {
 		limit = { jip_is_hanukkah = yes }
 		# For the household feast through the year: whoever kept it at a feast skips this year's
-		add_character_flag = {
-			flag = jip_kept_hanukkah
-			months = 10
-		}
+		jip_feast_mark_kept_effect = { FEAST = hanukkah }
 		if = {
 			limit = { this = scope:host }
 			trigger_event = jip_feast.9004
@@ -311,5 +299,62 @@ jip_pesach_find_child_effect = {
 			subtract = age
 		}
 		save_scope_as = jip_seder_child
+	}
+}
+
+# The household feast through the year (0.16 plan, section 2; jip_household_feast_on_action). Character scope: kept
+# $FEAST$ (pesach, purim, sukkot or hanukkah) this year, at a feast or at home: the flag skips this season's household
+# event, the year rotates the household feast to whichever the character has gone longest without
+# (jip_household_<feast>_wait_value)
+jip_feast_mark_kept_effect = {
+	add_character_flag = {
+		flag = jip_kept_$FEAST$
+		months = 10
+	}
+	set_variable = {
+		name = jip_last_kept_$FEAST$
+		value = current_year
+	}
+}
+
+# Character scope (a Jewish playable character, from the yearly pulse): sends this year's household feast, the one of
+# the four the faith keeps that the character has gone longest without, to land in its season. Ties go to Pesach, then
+# Sukkot, Hanukkah and Purim, so a new character starts with the seder
+jip_household_feast_schedule_effect = {
+	if = {
+		limit = {
+			jip_household_pesach_wait_value >= jip_household_sukkot_wait_value
+			jip_household_pesach_wait_value >= jip_household_hanukkah_wait_value
+			jip_household_pesach_wait_value >= jip_household_purim_wait_value
+		}
+		trigger_event = {
+			id = jip_feast.5020
+			days = { jip_days_to_pesach_value jip_days_to_pesach_late_value }
+		}
+	}
+	else_if = {
+		limit = {
+			jip_household_sukkot_wait_value >= jip_household_hanukkah_wait_value
+			jip_household_sukkot_wait_value >= jip_household_purim_wait_value
+		}
+		trigger_event = {
+			id = jip_feast.8020
+			days = { jip_days_to_sukkot_value jip_days_to_sukkot_late_value }
+		}
+	}
+	else_if = {
+		limit = {
+			jip_household_hanukkah_wait_value >= jip_household_purim_wait_value
+		}
+		trigger_event = {
+			id = jip_feast.9020
+			days = { jip_days_to_hanukkah_value jip_days_to_hanukkah_late_value }
+		}
+	}
+	else = {
+		trigger_event = {
+			id = jip_feast.7020
+			days = { jip_days_to_purim_value jip_days_to_purim_late_value }
+		}
 	}
 }
