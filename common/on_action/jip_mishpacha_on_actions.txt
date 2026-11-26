@@ -123,7 +123,7 @@ jip_familial_custom_family_start_on_action = {
 	effect = {
 		remove_global_variable = jip_design_familial_house
 		if = {
-			limit = { has_ep3_dlc_trigger = yes }
+			limit = { jip_familial_estates_available_trigger = yes }
 			every_player = {
 				limit = {
 					is_from_ruler_designer = yes

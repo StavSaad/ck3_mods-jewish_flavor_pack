@@ -15,7 +15,7 @@ jip_familial_contract_family_trigger = {
 jip_mishpacha_contract_owner_trigger = {
 	jip_familial_contract_family_trigger = yes
 	is_ai = no
-	has_ep3_dlc_trigger = yes
+	jip_familial_estates_available_trigger = yes
 	exists = domicile
 }
 

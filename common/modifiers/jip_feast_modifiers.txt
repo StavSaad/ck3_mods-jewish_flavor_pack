@@ -95,7 +95,7 @@ jip_purim_gladness = {
 # Purim's alms for the poor (jip_feast.7002), on the capital county, two years
 jip_purim_alms_modifier = {
 	icon = county_modifier_opinion_positive
-	county_opinion_add = 5
+	popular_opinion_add = 5
 }
 
 # Sukkot (jip_feast.8005), one year: "the season of our rejoicing"

@@ -898,7 +898,7 @@ jip_katib_keep_estate = {
 	}
 
 	is_shown = {
-		has_ep3_dlc_trigger = yes
+		jip_familial_estates_available_trigger = yes
 		has_domicile = yes
 	}
 	is_valid_showing_failures_only = {
@@ -976,7 +976,7 @@ jip_sapra_keep_estate = {
 	}
 
 	is_shown = {
-		has_ep3_dlc_trigger = yes
+		jip_familial_estates_available_trigger = yes
 		has_domicile = yes
 	}
 	is_valid_showing_failures_only = {
@@ -1026,7 +1026,7 @@ jip_sabian_wakil_collect_dues = {
 	}
 
 	is_shown = {
-		has_ep3_dlc_trigger = yes
+		jip_familial_estates_available_trigger = yes
 		has_domicile = yes
 	}
 	is_valid_showing_failures_only = {
@@ -1082,7 +1082,7 @@ jip_mandaean_wakil_collect_dues = {
 	}
 
 	is_shown = {
-		has_ep3_dlc_trigger = yes
+		jip_familial_estates_available_trigger = yes
 		has_domicile = yes
 	}
 	is_valid_showing_failures_only = {

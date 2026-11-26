@@ -21,7 +21,8 @@ jip_familial_found_company_effect = {
 			limit = { is_tributary = yes }
 			end_tributary = yes
 		}
-		# Vanilla's effect destroys noble family titles; the historical family titles (d_jip_*) are not, so they go here
+		# Vanilla's effect destroys noble family titles; the historical family titles (d_jip_*) are of that type since 0.16, and
+		# any family title it would still leave goes here
 		every_held_title = {
 			limit = {
 				jip_is_mishpacha_family_title_trigger = yes

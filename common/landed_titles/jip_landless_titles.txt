@@ -1,9 +1,15 @@
-﻿@correct_culture_primary_score = 100
+﻿# The historical family titles (d_jip_*) are of vanilla's noble family title type (common/title_types, 1.21), like the
+# titles give_noble_family_title creates for new families: a house title (it follows the house head), counted by
+# is_noble_family_title and allowed an estate. The type comes first: the properties after it are the type's own, kept
+# so the titles read the same without it.
+
+@correct_culture_primary_score = 100
 @better_than_the_alternatives_score = 50
 @always_primary_score = 1000
 @never_primary_score = -1000
 
 d_jip_kalonymos = {
+	type = title_type_noble_family
 	color = { 100 100 100 }
 	capital = c_lucca
 
@@ -19,6 +25,7 @@ d_jip_kalonymos = {
 }
 
 d_jip_nathanite = {
+	type = title_type_noble_family
 	color = { 100 100 100 }
 	capital = c_tiberias
 
@@ -34,6 +41,7 @@ d_jip_nathanite = {
 }
 
 d_jip_bostanite = {
+	type = title_type_noble_family
 	color = { 100 100 100 }
 	capital = c_baghdad
 
@@ -49,6 +57,7 @@ d_jip_bostanite = {
 }
 
 d_jip_ananite = {
+	type = title_type_noble_family
 	color = { 100 100 100 }
 	capital = c_baghdad
 
@@ -64,6 +73,7 @@ d_jip_ananite = {
 }
 
 d_jip_shealtiel = {
+	type = title_type_noble_family
 	color = { 100 100 100 }
 	capital = c_barcelona
 
@@ -79,6 +89,7 @@ d_jip_shealtiel = {
 }
 
 d_jip_benveniste = {
+	type = title_type_noble_family
 	color = { 100 100 100 }
 	capital = c_barcelona
 
@@ -94,6 +105,7 @@ d_jip_benveniste = {
 }
 
 d_jip_maimon = {
+	type = title_type_noble_family
 	color = { 100 100 100 }
 	capital = c_cairo
 
@@ -109,6 +121,7 @@ d_jip_maimon = {
 }
 
 d_jip_makhirite = {
+	type = title_type_noble_family
 	color = { 100 100 100 }
 	capital = c_carcassonne
 
@@ -125,6 +138,7 @@ d_jip_makhirite = {
 
 # Thabit ibn Qurra's family, the Sabians of Baghdad: a Familial family title like the Jewish ones above
 d_jip_harrani = {
+	type = title_type_noble_family
 	color = { 120 140 170 }
 	capital = c_baghdad
 

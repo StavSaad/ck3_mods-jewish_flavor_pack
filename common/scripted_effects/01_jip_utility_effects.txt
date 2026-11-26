@@ -137,6 +137,14 @@ jip_mishpacha_leave_faith_effect = {
 			}
 		}
 		resolve_title_and_vassal_change = scope:jip_convert_change
+		# Family titles are house titles (title_type_noble_family), which follow the house head: the new head leads the
+		# house, or the title would go back to the convert's line when the headship next passes
+		house = {
+			if = {
+				limit = { house_head != scope:jip_new_head }
+				set_house_head = scope:jip_new_head
+			}
+		}
 		# A landed heir keeps their own government and realm, the family title just joins their other titles
 		scope:jip_new_head = {
 			if = {

@@ -4006,7 +4006,7 @@ jip_feast.8003 = {
 	# Dance with the torches, as Rabban Shimon ben Gamliel did
 	option = {
 		name = jip_feast.8003.a
-		add_prowess_lifestyle_xp = minor_lifestyle_xp
+		add_martial_lifestyle_xp = minor_lifestyle_xp
 		random_list = {
 			50 = {
 				desc = jip_feast.8003.a_good
