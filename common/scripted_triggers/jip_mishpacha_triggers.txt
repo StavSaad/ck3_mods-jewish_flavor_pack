@@ -1,10 +1,9 @@
-﻿# Can the families live in their estates? (0.16 plan F9.) Until 0.16 the families were Roads to Power only
-# (has_ep3_dlc_trigger): estates came with it. In 1.21 adventurers and contracts are base game and administrative realms
-# (with their noble families and estates) run without it, so the families do too. Every gate on the families' estate,
-# spawn and contracts goes through this trigger: if a game without Roads to Power shows the families can't live in an
-# estate, put has_ep3_dlc_trigger = yes back here
+﻿# Can the families live in their estates? (0.16 plan F9.) Every gate on the families' estate, spawn and contracts goes
+# through this trigger. Roads to Power only: tested without it on 1.21 (2026-11-26), every family title but the
+# Exilarchs' was destroyed on day 1 (probably because landless heads are playable only with the DLC's landless_playable flag), though
+# adventurers, contracts and administrative realms are base game
 jip_familial_estates_available_trigger = {
-	always = yes
+	has_ep3_dlc_trigger = yes
 }
 
 # Title scope: a Jewish family title: one of the historical d_jip_* titles, or a noble family title given to a dispossessed lord
