@@ -267,20 +267,20 @@ T.append(task('jip_shaliach_bind_communities', ['jip_shaliach'],
               ai='value = 40'))
 
 T.append(task('jip_sofer_keep_estate', ['jip_sofer'],
-              "The Sofer keeps the estate's accounts and contracts: the Mishpacha counterpart of the Seneschal's Handle the\n# Estate, without its influence. Estates come with Roads to Power.",
+              "The Sofer keeps the estate's accounts and contracts: the Mishpacha counterpart of the Seneschal's Handle the\n# Estate, without its influence.",
               cost('gold'), {'stress_gain_mult': 0.1},
               [{'domicile_build_speed': -0.05, 'domicile_build_gold_cost': -0.02}, {'domicile_build_speed': -0.07, 'domicile_build_gold_cost': -0.04},
                {'domicile_build_speed': -0.1, 'domicile_build_gold_cost': -0.06}, {'domicile_build_speed': -0.15, 'domicile_build_gold_cost': -0.08},
                {'domicile_build_speed': -0.2, 'domicile_build_gold_cost': -0.1}],
-              shown='has_ep3_dlc_trigger = yes\nhas_domicile = yes',
+              shown='jip_familial_estates_available_trigger = yes\nhas_domicile = yes',
               ai='value = 50'))
 
 T.append(task('jip_parnas_collect_dues', ['jip_parnas'],
-              "The Parnas collects the community's dues for the family's estate. Estates come with Roads to Power.",
+              "The Parnas collects the community's dues for the family's estate.",
               cost('prestige'), {},
               [{'domicile_monthly_gold_add': 0.1}, {'domicile_monthly_gold_add': 0.2}, {'domicile_monthly_gold_add': 0.3},
                {'domicile_monthly_gold_add': 0.4}, {'domicile_monthly_gold_add': 0.5}],
-              shown='has_ep3_dlc_trigger = yes\nhas_domicile = yes',
+              shown='jip_familial_estates_available_trigger = yes\nhas_domicile = yes',
               ai='value = 25\nscope:liege = {\n\tif = {\n\t\tlimit = { gold < 50 }\n\t\tadd = 50\n\t}\n}'))
 
 T.append(task('jip_parnas_petition_authorities', ['jip_parnas'],

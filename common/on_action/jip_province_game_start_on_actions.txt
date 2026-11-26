@@ -34,8 +34,7 @@ jip_rish_amma_game_start_on_action = {
 # Before the lobby, so they can be played; the after-lobby setup gives them courtiers and contracts like any family.
 jip_jewish_families_game_start_on_action = {
 	trigger = {
-		# Estates are Roads to Power
-		has_ep3_dlc_trigger = yes
+		jip_familial_estates_available_trigger = yes
 	}
 	effect = {
 		jip_spawn_jewish_families_effect = yes
@@ -50,6 +49,17 @@ jip_liege_effect_setup = {
 			limit = { has_government = familial_government }
 			jip_mishpacha_ensure_succession_law_effect = yes
 			jip_familial_record_religion_effect = yes
+			# Family titles are house titles (title_type_noble_family): their holders lead their houses, as vanilla's
+			# noble_family_title_realm_setup_effect makes sure for its own historical families
+			save_temporary_scope_as = jip_family_holder
+			if = {
+				limit = {
+					any_held_title = { jip_is_mishpacha_family_title_trigger = yes }
+					exists = house
+					NOT = { house.house_head ?= this }
+				}
+				house = { set_house_head = scope:jip_family_holder }
+			}
 			# Every family takes the lord of its estate's city as patron (0.16), whoever the setup above named
 			if = {
 				limit = { is_landed = no }

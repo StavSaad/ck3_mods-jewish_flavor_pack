@@ -497,7 +497,7 @@ jip_shaliach_bind_communities = {
 }
 
 # The Sofer keeps the estate's accounts and contracts: the Mishpacha counterpart of the Seneschal's Handle the
-# Estate, without its influence. Estates come with Roads to Power.
+# Estate, without its influence.
 jip_sofer_keep_estate = {
 	court_position_types = { jip_sofer_court_position }
 
@@ -559,7 +559,7 @@ jip_sofer_keep_estate = {
 	}
 
 	is_shown = {
-		has_ep3_dlc_trigger = yes
+		jip_familial_estates_available_trigger = yes
 		has_domicile = yes
 	}
 	is_valid_showing_failures_only = {
@@ -575,7 +575,7 @@ jip_sofer_keep_estate = {
 	}
 }
 
-# The Parnas collects the community's dues for the family's estate. Estates come with Roads to Power.
+# The Parnas collects the community's dues for the family's estate.
 jip_parnas_collect_dues = {
 	court_position_types = { jip_parnas_court_position }
 
@@ -609,7 +609,7 @@ jip_parnas_collect_dues = {
 	}
 
 	is_shown = {
-		has_ep3_dlc_trigger = yes
+		jip_familial_estates_available_trigger = yes
 		has_domicile = yes
 	}
 	is_valid_showing_failures_only = {

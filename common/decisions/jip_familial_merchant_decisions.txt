@@ -61,7 +61,7 @@ jip_familial_found_company_decision = {
 
 # Become a Familial House: a merchant or (0.16) a landless adventurer of a Jewish (Israelite heritage, the Jewish
 # religion), Mandaean or Sabian house winds up the company or breaks up the camp and becomes a Familial family in its
-# city, under that city's lord as patron (Roads to Power, which the families need)
+# city, under that city's lord as patron (jip_familial_estates_available_trigger)
 jip_merchant_become_familial_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
@@ -73,7 +73,7 @@ jip_merchant_become_familial_decision = {
 	ai_check_interval = 120
 
 	is_shown = {
-		has_ep3_dlc_trigger = yes
+		jip_familial_estates_available_trigger = yes
 		jip_merchant_of_familial_people_trigger = yes
 	}
 
