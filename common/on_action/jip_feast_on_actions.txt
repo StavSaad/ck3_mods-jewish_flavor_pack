@@ -1,7 +1,7 @@
 ﻿yearly_playable_pulse = {
 	on_actions = {
 		jip_akitu_neglect_on_action
-		jip_household_seder_on_action
+		jip_household_feast_on_action
 	}
 }
 
@@ -37,16 +37,15 @@ feast_default_event_selection = {
 	}
 }
 
-# Every Jewish playable character keeps a household seder each Pesach (jip_feast.5020), sent to land in April; it is
-# skipped by whoever sat at a grand seder that spring (jip_kept_pesach)
-jip_household_seder_on_action = {
+# The household feast through the year (0.16 plan, section 2): every Jewish playable character keeps one small feast at
+# home each year, rotating among Pesach (jip_feast.5020), Purim (7020), Sukkot (8020) and Hanukkah (9020), whichever the
+# faith keeps and the character has gone longest without (jip_household_feast_schedule_effect), sent to land in its
+# season; it is skipped by whoever kept that feast at a grand feast that season (jip_kept_<feast>)
+jip_household_feast_on_action = {
 	trigger = {
 		religion = religion:judaism_religion
 	}
 	effect = {
-		trigger_event = {
-			id = jip_feast.5020
-			days = { jip_days_to_pesach_value jip_days_to_pesach_late_value }
-		}
+		jip_household_feast_schedule_effect = yes
 	}
 }

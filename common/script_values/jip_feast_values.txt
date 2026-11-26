@@ -150,8 +150,11 @@ jip_years_since_akitu_value = {
 	subtract = var:jip_akitu_last_year
 }
 
-# The household seder (jip_feast.5020) is sent from the yearly pulse to land in April, between days 100 and 120 of the
-# year (10-30 April; Pesach, 15 Nisan, falls from late March to late April)
+# The household feast (jip_household_feast_schedule_effect) is sent from the yearly pulse to land in its season: the
+# seder (jip_feast.5020) between days 100 and 120 of the year (10-30 April; Pesach, 15 Nisan, falls from late March to
+# late April), Purim (7020) between 60 and 80 (1-21 March; 14 Adar falls from late February to late March), Sukkot
+# (8020) between 265 and 285 (22 September to 12 October; 15 Tishri falls from mid-September to mid-October), Hanukkah
+# (9020) between 335 and 355 (1-21 December; 25 Kislev falls from late November to late December)
 jip_day_of_year_value = {
 	value = current_day
 	if = {
@@ -212,4 +215,97 @@ jip_days_to_pesach_value = {
 jip_days_to_pesach_late_value = {
 	value = jip_days_to_pesach_value
 	add = 20
+}
+
+jip_days_to_purim_value = {
+	value = 60
+	subtract = jip_day_of_year_value
+	if = {
+		limit = { jip_day_of_year_value >= 60 }
+		add = 365
+	}
+}
+
+jip_days_to_purim_late_value = {
+	value = jip_days_to_purim_value
+	add = 20
+}
+
+jip_days_to_sukkot_value = {
+	value = 265
+	subtract = jip_day_of_year_value
+	if = {
+		limit = { jip_day_of_year_value >= 265 }
+		add = 365
+	}
+}
+
+jip_days_to_sukkot_late_value = {
+	value = jip_days_to_sukkot_value
+	add = 20
+}
+
+jip_days_to_hanukkah_value = {
+	value = 335
+	subtract = jip_day_of_year_value
+	if = {
+		limit = { jip_day_of_year_value >= 335 }
+		add = 365
+	}
+}
+
+jip_days_to_hanukkah_late_value = {
+	value = jip_days_to_hanukkah_value
+	add = 20
+}
+
+# The household feast's rotation (jip_household_feast_schedule_effect): years since the character last kept each feast,
+# at a feast or at home (var:jip_last_kept_<feast>, jip_feast_mark_kept_effect), 1000 if never, -1 if the faith doesn't
+# keep it; the fraction breaks ties (Pesach, Sukkot, Hanukkah, Purim)
+jip_household_pesach_wait_value = {
+	value = 1000
+	if = {
+		limit = { has_variable = jip_last_kept_pesach }
+		value = current_year
+		subtract = var:jip_last_kept_pesach
+	}
+	add = 0.4
+}
+
+jip_household_sukkot_wait_value = {
+	value = 1000
+	if = {
+		limit = { has_variable = jip_last_kept_sukkot }
+		value = current_year
+		subtract = var:jip_last_kept_sukkot
+	}
+	add = 0.3
+}
+
+jip_household_hanukkah_wait_value = {
+	value = 1000
+	if = {
+		limit = { has_variable = jip_last_kept_hanukkah }
+		value = current_year
+		subtract = var:jip_last_kept_hanukkah
+	}
+	add = 0.2
+	if = {
+		limit = { NOT = { jip_keeps_rabbinic_feasts_trigger = yes } }
+		value = -1
+	}
+}
+
+jip_household_purim_wait_value = {
+	value = 1000
+	if = {
+		limit = { has_variable = jip_last_kept_purim }
+		value = current_year
+		subtract = var:jip_last_kept_purim
+	}
+	add = 0.1
+	if = {
+		limit = { NOT = { jip_keeps_purim_trigger = yes } }
+		value = -1
+	}
 }
