@@ -2585,7 +2585,7 @@ jip_feast.5010 = {
 	}
 }
 
-# The household seder
+# The household seder: the household feast through the year, in its Pesach year (jip_household_feast_schedule_effect)
 jip_feast.5020 = {
 	type = character_event
 	title = jip_feast.5020.t
@@ -2635,6 +2635,7 @@ jip_feast.5020 = {
 	}
 
 	immediate = {
+		jip_feast_mark_kept_effect = { FEAST = pesach }
 		jip_pesach_find_child_effect = yes
 	}
 
@@ -3775,6 +3776,143 @@ jip_feast.7010 = {
 	}
 }
 
+# The household Purim: the household feast through the year, in its Purim year (jip_household_feast_schedule_effect)
+jip_feast.7020 = {
+	type = character_event
+	title = jip_feast.7020.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { faith = faith:karaism }
+				desc = jip_feast.7020.desc_karaite
+			}
+			desc = jip_feast.7020.desc
+		}
+		first_valid = {
+			triggered_desc = {
+				trigger = { location ?= { geographical_region = jip_city_hamadan } }
+				desc = jip_feast.7020.desc_hamadan
+			}
+			triggered_desc = {
+				trigger = { employs_court_position = jip_gabbai_tzedakah_court_position }
+				desc = jip_feast.7020.desc_gabbai
+			}
+			desc = jip_feast.7020.desc_end
+		}
+	}
+	theme = family
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = bp1_relaxing_room_mena }
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	trigger = {
+		is_alive = yes
+		jip_keeps_purim_trigger = yes
+		is_imprisoned = no
+		NOT = { has_character_flag = jip_kept_purim }
+	}
+
+	immediate = {
+		jip_feast_mark_kept_effect = { FEAST = purim }
+	}
+
+	# Portions to friends and neighbours
+	option = {
+		name = jip_feast.7020.a
+		remove_short_term_gold = minor_gold_value
+		add_prestige = minor_prestige_gain
+		add_stress = minor_stress_loss
+		every_close_family_member = {
+			limit = {
+				is_alive = yes
+				is_courtier_of = root
+			}
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 10
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 20
+				has_trait = gregarious
+			}
+		}
+	}
+
+	# More to the poor than to friends, as the sages teach
+	option = {
+		name = jip_feast.7020.b
+		remove_short_term_gold = minor_gold_value
+		add_piety = minor_piety_gain
+		capital_county ?= {
+			add_county_modifier = {
+				modifier = jip_purim_alms_modifier
+				years = 1
+			}
+		}
+		if = {
+			limit = { employs_court_position = jip_gabbai_tzedakah_court_position }
+			add_piety = minor_piety_gain
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 40
+				OR = {
+					has_trait = generous
+					has_trait = zealous
+					has_trait = compassionate
+				}
+			}
+		}
+	}
+
+	# Until one cannot tell
+	option = {
+		name = jip_feast.7020.c
+		trigger = {
+			jip_keeps_rabbinic_feasts_trigger = yes
+			NOT = { has_trait = temperate }
+		}
+		add_stress = medium_stress_loss
+		if = {
+			limit = { NOT = { has_trait = drunkard } }
+			random = {
+				chance = 5
+				add_trait = drunkard
+			}
+		}
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 40
+				OR = {
+					has_trait = drunkard
+					has_trait = gluttonous
+				}
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = { location ?= { geographical_region = jip_city_hamadan } }
+			add_piety = minor_piety_gain
+		}
+	}
+}
+
 ##################################################
 # SUKKOT
 ##################################################
@@ -4255,6 +4393,134 @@ jip_feast.8010 = {
 	}
 }
 
+# The household Sukkot: the household feast through the year, in its Sukkot year (jip_household_feast_schedule_effect)
+jip_feast.8020 = {
+	type = character_event
+	title = jip_feast.8020.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { faith = faith:haymanot }
+				desc = jip_feast.8020.desc_haymanot
+			}
+			triggered_desc = {
+				trigger = { faith = faith:samaritan }
+				desc = jip_feast.8020.desc_samaritan
+			}
+			triggered_desc = {
+				trigger = { faith = faith:karaism }
+				desc = jip_feast.8020.desc_karaite
+			}
+			triggered_desc = {
+				trigger = { is_landed = no }
+				desc = jip_feast.8020.desc_roof
+			}
+			desc = jip_feast.8020.desc
+		}
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { jip_keeps_rabbinic_feasts_trigger = yes } }
+				desc = jip_feast.8020.desc_end
+			}
+			triggered_desc = {
+				trigger = { jip_sukkot_citron_land_trigger = yes }
+				desc = jip_feast.8020.desc_orchard
+			}
+			triggered_desc = {
+				trigger = { jip_sukkot_etrog_provided_trigger = yes }
+				desc = jip_feast.8020.desc_brought
+			}
+			desc = jip_feast.8020.desc_bought
+		}
+	}
+	theme = family
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = fp3_courtyard_night }
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	trigger = {
+		is_alive = yes
+		religion = religion:judaism_religion
+		is_imprisoned = no
+		NOT = { has_character_flag = jip_kept_sukkot }
+	}
+
+	immediate = {
+		jip_feast_mark_kept_effect = { FEAST = sukkot }
+	}
+
+	# The household eats and sleeps in the booth
+	option = {
+		name = jip_feast.8020.a
+		add_piety = minor_piety_gain
+		add_stress = minor_stress_loss
+		every_close_family_member = {
+			limit = {
+				is_alive = yes
+				is_courtier_of = root
+			}
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 10
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# The poor of the town as the booth's guests
+	option = {
+		name = jip_feast.8020.b
+		remove_short_term_gold = minor_gold_value
+		add_piety = medium_piety_gain
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 40
+				OR = {
+					has_trait = generous
+					has_trait = compassionate
+				}
+			}
+		}
+	}
+
+	# A flawless etrog of the household's own, where none grows
+	option = {
+		name = jip_feast.8020.c
+		trigger = {
+			jip_keeps_rabbinic_feasts_trigger = yes
+			NOR = {
+				jip_sukkot_citron_land_trigger = yes
+				jip_sukkot_etrog_provided_trigger = yes
+			}
+		}
+		remove_short_term_gold = minor_gold_value
+		add_piety = minor_piety_gain
+		add_prestige = minor_prestige_gain
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 40
+				OR = {
+					has_trait = zealous
+					has_trait = arrogant
+				}
+			}
+		}
+	}
+}
+
 ##################################################
 # HANUKKAH
 ##################################################
@@ -4570,6 +4836,116 @@ jip_feast.9010 = {
 		if = {
 			limit = { religion = scope:host.religion }
 			add_piety = minor_piety_gain
+		}
+	}
+}
+
+# The household Hanukkah: the household feast through the year, in its Hanukkah year
+# (jip_household_feast_schedule_effect)
+jip_feast.9020 = {
+	type = character_event
+	title = jip_feast.9020.t
+	desc = {
+		desc = jip_feast.9020.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { exists = scope:jip_hanukkah_overlord }
+				desc = jip_feast.9020.desc_danger
+			}
+			desc = jip_feast.9020.desc_door
+		}
+		first_valid = {
+			triggered_desc = {
+				trigger = { jip_is_hasmonean_heir_trigger = yes }
+				desc = jip_feast.9020.desc_hasmonean
+			}
+			desc = jip_feast.9020.desc_end
+		}
+	}
+	theme = family
+	widgets = {
+		widget = {
+			gui = "jip_event_source_badge"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	override_background = { reference = bp1_relaxing_room_mena }
+	left_portrait = {
+		character = root
+		animation = prayer
+	}
+
+	trigger = {
+		is_alive = yes
+		jip_keeps_rabbinic_feasts_trigger = yes
+		is_imprisoned = no
+		NOT = { has_character_flag = jip_kept_hanukkah }
+	}
+
+	immediate = {
+		jip_feast_mark_kept_effect = { FEAST = hanukkah }
+		# The overlord who keeps the lights within, as in jip_feast.9001
+		if = {
+			limit = {
+				suzerain ?= { jip_is_hostile_gentile_overlord_trigger = { SUBJECT = root } }
+			}
+			suzerain = { save_scope_as = jip_hanukkah_overlord }
+		}
+		else_if = {
+			limit = {
+				jip_hostile_gentile_overlord_trigger = yes
+				exists = liege
+			}
+			liege = { save_scope_as = jip_hanukkah_overlord }
+		}
+	}
+
+	# At the door, to proclaim the miracle to the street
+	option = {
+		name = jip_feast.9020.a
+		trigger = { NOT = { exists = scope:jip_hanukkah_overlord } }
+		add_piety = minor_piety_gain
+		add_prestige = minor_prestige_gain
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# On the table within, as the sages allow in time of danger
+	option = {
+		name = jip_feast.9020.b
+		trigger = { exists = scope:jip_hanukkah_overlord }
+		add_piety = minor_piety_gain
+		add_stress = minor_stress_loss
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# Cheese for Yehudit, and the tale of the Makabim for the children
+	option = {
+		name = jip_feast.9020.c
+		add_stress = minor_stress_loss
+		every_close_family_member = {
+			limit = {
+				is_alive = yes
+				is_courtier_of = root
+			}
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 10
+			}
+		}
+		ai_chance = {
+			base = 40
+		}
+	}
+
+	after = {
+		if = {
+			limit = { jip_is_hasmonean_heir_trigger = yes }
+			add_legitimacy = minor_legitimacy_gain
 		}
 	}
 }
